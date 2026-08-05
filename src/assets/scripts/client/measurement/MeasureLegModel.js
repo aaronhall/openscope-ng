@@ -221,10 +221,7 @@ export default class MeasureLegModel {
         const start = this.startPoint;
         const end = this.endPoint;
 
-        this._midPoint = [
-            (start[0] + end[0]) / 2,
-            (start[1] + end[1]) / 2
-        ];
+        this._midPoint = [(start[0] + end[0]) / 2, (start[1] + end[1]) / 2];
         this._bearing = bearingToPoint(start, end);
         this._distance = distance2d(start, end);
     }

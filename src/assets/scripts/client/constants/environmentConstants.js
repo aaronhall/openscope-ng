@@ -24,5 +24,5 @@ export const ENVIRONMENT = {
      * @type {number}
      * @final
      */
-    DENSITY_ALT_INCREASE_FACTOR_PER_FT: 0.000016 // 0.16% per thousand feet
+    DENSITY_ALT_INCREASE_FACTOR_PER_FT: 0.000016, // 0.16% per thousand feet
 };

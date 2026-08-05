@@ -3,9 +3,7 @@
     "name": "Asiana Airlines",
     "callsign": {
         "name": "Asiana",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -34,8 +32,6 @@
             ["B744", 12],
             ["B763", 1]
         ],
-        "a333": [
-            ["A333", 15]
-        ]
+        "a333": [["A333", 15]]
     }
 }

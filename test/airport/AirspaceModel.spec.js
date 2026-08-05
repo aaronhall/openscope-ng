@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import AirspaceModel from '../../src/assets/scripts/client/airport/AirspaceModel';
 import DynamicPositionModel from '../../src/assets/scripts/client/base/DynamicPositionModel';
@@ -9,68 +9,96 @@ const currentPosition = ['N36.080056', 'W115.15225', '2181ft'];
 const magneticNorth = 11.9;
 const airportPositionFixtureKSFO = new StaticPositionModel(currentPosition, null, magneticNorth);
 
-ava('throws if called with invalid parameters', t => {
-    t.throws(() => new AirspaceModel());
-    t.throws(() => new AirspaceModel(AIRSPACE_MOCK));
-    t.throws(() => new AirspaceModel(null, airportPositionFixtureKSFO, magneticNorth));
-    t.throws(() => new AirspaceModel(AIRSPACE_MOCK, null, magneticNorth));
-    t.throws(() => new AirspaceModel(AIRSPACE_MOCK, airportPositionFixtureKSFO));
-    t.throws(() => new AirspaceModel(AIRSPACE_MOCK, airportPositionFixtureKSFO));
+test('throws if called with invalid parameters', () => {
+    expect(() => new AirspaceModel()).toThrow();
+    expect(() => new AirspaceModel(AIRSPACE_MOCK)).toThrow();
+    expect(() => new AirspaceModel(null, airportPositionFixtureKSFO, magneticNorth)).toThrow();
+    expect(() => new AirspaceModel(AIRSPACE_MOCK, null, magneticNorth)).toThrow();
+    expect(() => new AirspaceModel(AIRSPACE_MOCK, airportPositionFixtureKSFO)).toThrow();
+    expect(() => new AirspaceModel(AIRSPACE_MOCK, airportPositionFixtureKSFO)).toThrow();
 });
 
-ava('does not throw when instantiated with a 0 magneticNorth', t => {
-    t.notThrows(() => new AirspaceModel(AIRSPACE_MOCK, airportPositionFixtureKSFO, 0));
-})
+test('does not throw when instantiated with a 0 magneticNorth', () => {
+    expect(() => new AirspaceModel(AIRSPACE_MOCK, airportPositionFixtureKSFO, 0)).not.toThrow();
+});
 
-ava('accepts an airspace object that is used to set the instance properties', t => {
+test('accepts an airspace object that is used to set the instance properties', () => {
     const model = new AirspaceModel(AIRSPACE_MOCK, airportPositionFixtureKSFO, magneticNorth);
 
-    t.false(typeof model._id === 'undefined');
-    t.true(model.floor === (AIRSPACE_MOCK.floor * 100));
-    t.true(model.ceiling === (AIRSPACE_MOCK.ceiling * 100));
-    t.true(model.airspace_class === AIRSPACE_MOCK.airspace_class);
-    t.true(model.poly.length === AIRSPACE_MOCK.poly.length);
+    expect(typeof model._id === 'undefined').toBe(false);
+    expect(model.floor === AIRSPACE_MOCK.floor * 100).toBe(true);
+    expect(model.ceiling === AIRSPACE_MOCK.ceiling * 100).toBe(true);
+    expect(model.airspace_class === AIRSPACE_MOCK.airspace_class).toBe(true);
+    expect(model.poly.length === AIRSPACE_MOCK.poly.length).toBe(true);
 });
 
-ava('removes last element in poly array if it is the same as the first element', t => {
-    const model = new AirspaceModel(AIRSPACE_MOCK_WITH_CLOSING_ENTRY, airportPositionFixtureKSFO, magneticNorth);
+test('removes last element in poly array if it is the same as the first element', () => {
+    const model = new AirspaceModel(
+        AIRSPACE_MOCK_WITH_CLOSING_ENTRY,
+        airportPositionFixtureKSFO,
+        magneticNorth
+    );
 
-    t.false(model.poly.length === AIRSPACE_MOCK_WITH_CLOSING_ENTRY.poly.length);
-    t.true(model.poly.length === AIRSPACE_MOCK_WITH_CLOSING_ENTRY.poly.length - 1);
+    expect(model.poly.length === AIRSPACE_MOCK_WITH_CLOSING_ENTRY.poly.length).toBe(false);
+    expect(model.poly.length === AIRSPACE_MOCK_WITH_CLOSING_ENTRY.poly.length - 1).toBe(true);
 });
 
-ava('.isPointInside() returns true if the specified point is inside the lateral and vertical boundaries', t => {
-    const model = new AirspaceModel(AIRSPACE_MOCK_WITH_CLOSING_ENTRY, airportPositionFixtureKSFO, magneticNorth);
+test('.isPointInside() returns true if the specified point is inside the lateral and vertical boundaries', () => {
+    const model = new AirspaceModel(
+        AIRSPACE_MOCK_WITH_CLOSING_ENTRY,
+        airportPositionFixtureKSFO,
+        magneticNorth
+    );
     const airportPosition = airportPositionFixtureKSFO;
     const airportMagNorth = airportPositionFixtureKSFO.magneticNorth;
     const coordinatesMock = [36, -114.5];
-    const positionMock = DynamicPositionModel.calculateRelativePosition(coordinatesMock, airportPosition, airportMagNorth);
+    const positionMock = DynamicPositionModel.calculateRelativePosition(
+        coordinatesMock,
+        airportPosition,
+        airportMagNorth
+    );
     const altitudeMock = 19000;
     const result = model.isPointInside(positionMock, altitudeMock);
 
-    t.true(result);
+    expect(result).toBe(true);
 });
 
-ava('.isPointInside() returns false if the specified point is within the lateral boundaries but not within the vertical boundaries', t => {
-    const model = new AirspaceModel(AIRSPACE_MOCK_WITH_CLOSING_ENTRY, airportPositionFixtureKSFO, magneticNorth);
+test('.isPointInside() returns false if the specified point is within the lateral boundaries but not within the vertical boundaries', () => {
+    const model = new AirspaceModel(
+        AIRSPACE_MOCK_WITH_CLOSING_ENTRY,
+        airportPositionFixtureKSFO,
+        magneticNorth
+    );
     const airportPosition = airportPositionFixtureKSFO;
     const airportMagNorth = airportPositionFixtureKSFO.magneticNorth;
     const coordinatesMock = [36, -114.5];
-    const positionMock = DynamicPositionModel.calculateRelativePosition(coordinatesMock, airportPosition, airportMagNorth);
+    const positionMock = DynamicPositionModel.calculateRelativePosition(
+        coordinatesMock,
+        airportPosition,
+        airportMagNorth
+    );
     const altitudeMock = 19001;
     const result = model.isPointInside(positionMock, altitudeMock);
 
-    t.false(result);
+    expect(result).toBe(false);
 });
 
-ava('.isPointInside() returns false if the specified point is within vertical boundaries but not within the lateral boundaries', t => {
-    const model = new AirspaceModel(AIRSPACE_MOCK_WITH_CLOSING_ENTRY, airportPositionFixtureKSFO, magneticNorth);
+test('.isPointInside() returns false if the specified point is within vertical boundaries but not within the lateral boundaries', () => {
+    const model = new AirspaceModel(
+        AIRSPACE_MOCK_WITH_CLOSING_ENTRY,
+        airportPositionFixtureKSFO,
+        magneticNorth
+    );
     const airportPosition = airportPositionFixtureKSFO;
     const airportMagNorth = airportPositionFixtureKSFO.magneticNorth;
     const coordinatesMock = [36, -114];
-    const positionMock = DynamicPositionModel.calculateRelativePosition(coordinatesMock, airportPosition, airportMagNorth);
+    const positionMock = DynamicPositionModel.calculateRelativePosition(
+        coordinatesMock,
+        airportPosition,
+        airportMagNorth
+    );
     const altitudeMock = 19000;
     const result = model.isPointInside(positionMock, altitudeMock);
 
-    t.false(result);
+    expect(result).toBe(false);
 });

@@ -3,9 +3,7 @@
     "name": "General Aviation Andorra",
     "callsign": {
         "name": "Charlie Three",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

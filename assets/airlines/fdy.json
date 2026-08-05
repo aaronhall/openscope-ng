@@ -3,15 +3,9 @@
     "name": "Sun Air Express",
     "callsign": {
         "name": "Friendly",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["####", "###", "##"]
     },
     "fleets": {
-        "default": [
-            ["C208", 20]
-        ]
+        "default": [["C208", 20]]
     }
 }

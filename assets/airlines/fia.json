@@ -3,9 +3,7 @@
     "name": "FLYONE ",
     "callsign": {
         "name": "Foxtrot India Alpha",
-        "callsignFormats": [
-            "###"             
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

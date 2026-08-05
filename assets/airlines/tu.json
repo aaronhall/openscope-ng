@@ -3,9 +3,7 @@
     "name": "General Aviation Ivory Coast",
     "callsign": {
         "name": "Tango Uniform",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

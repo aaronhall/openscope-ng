@@ -3,15 +3,9 @@
     "name": "Air Tahiti Nui",
     "callsign": {
         "name": "Tahiti Airlines",
-        "callsignFormats": [
-            "#",
-            "##",
-            "###"
-        ]
+        "callsignFormats": ["#", "##", "###"]
     },
     "fleets": {
-        "default": [
-            ["B789", 4]
-        ]
+        "default": [["B789", 4]]
     }
 }

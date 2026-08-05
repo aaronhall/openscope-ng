@@ -3,15 +3,9 @@
     "name": "Skymark Airlines",
     "callsign": {
         "name": "Skymark",
-        "callsignFormats": [
-            "#",
-            "##",
-            "###"
-        ]
+        "callsignFormats": ["#", "##", "###"]
     },
     "fleets": {
-        "default": [
-            ["B738", 29]
-        ]
+        "default": [["B738", 29]]
     }
 }

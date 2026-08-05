@@ -3,9 +3,7 @@
     "name": "interCaribbean Airways",
     "callsign": {
         "name": "Islandways",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

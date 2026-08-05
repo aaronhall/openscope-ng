@@ -3,9 +3,7 @@
     "name": "Volaris",
     "callsign": {
         "name": "Volaris",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -13,8 +11,6 @@
             ["A320", 44],
             ["A321", 10]
         ],
-        "jfk": [
-            ["A320",  1]
-        ]
+        "jfk": [["A320", 1]]
     }
 }

@@ -3,13 +3,9 @@
     "name": "AirAsia X",
     "callsign": {
         "name": "Xanadu",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A333", 22]
-        ]
+        "default": [["A333", 22]]
     }
 }

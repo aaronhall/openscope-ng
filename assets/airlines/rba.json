@@ -3,17 +3,13 @@
     "name": "Royal Brunei Airlines",
     "callsign": {
         "name": "Brunei",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
             ["A320", 6],
             ["B788", 4]
         ],
-        "b788": [
-            ["B788", 4]
-        ]
+        "b788": [["B788", 4]]
     }
 }

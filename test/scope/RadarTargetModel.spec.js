@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import sinon from 'sinon';
 import EventBus from '../../src/assets/scripts/client/lib/EventBus';
 import RadarTargetModel from '../../src/assets/scripts/client/scope/RadarTargetModel';
@@ -6,175 +6,185 @@ import {
     ARRIVAL_AIRCRAFT_MODEL_MOCK,
     ARRIVAL_AIRCRAFT_MODEL_MOCK_HEAVY,
     ARRIVAL_AIRCRAFT_MODEL_MOCK_SUPER,
-    DEPARTURE_AIRCRAFT_MODEL_MOCK
+    DEPARTURE_AIRCRAFT_MODEL_MOCK,
 } from '../aircraft/_mocks/aircraftMocks';
 import { INVALID_NUMBER } from '../../src/assets/scripts/client/constants/globalConstants';
 import { THEME } from '../../src/assets/scripts/client/constants/themes';
 
 let sandbox; // using the sinon sandbox ensures stubs are restored after each test
 
-ava.beforeEach(() => {
+beforeEach(() => {
     sandbox = sinon.createSandbox();
 });
 
-ava.afterEach(() => {
+afterEach(() => {
     sandbox.restore();
 });
 
-ava('throws when called to instantiate with no parameters', (t) => {
-    t.throws(() => new RadarTargetModel());
+test('throws when called to instantiate with no parameters', () => {
+    expect(() => new RadarTargetModel()).toThrow();
 });
 
-ava('initializes correctly when called to instantiate with correct parameters', (t) => {
+test('initializes correctly when called to instantiate with correct parameters', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
-    t.deepEqual(model.aircraftModel, ARRIVAL_AIRCRAFT_MODEL_MOCK);
-    t.true(model._cruiseAltitude === 28000);
-    t.true(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION);
-    t.true(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH);
-    t.deepEqual(model._eventBus, EventBus);
-    t.true(model._hasFullDataBlock === true);
-    t.true(model._haloRadius === INVALID_NUMBER);
-    t.true(model._hasSuppressedDataBlock === false);
-    t.true(model._interimAltitude === INVALID_NUMBER);
-    t.true(model._isUnderOurControl === true);
-    t.true(model._routeString === 'DAG.KEPEC3.KLAS07R');
-    t.true(model._scratchPadText === 'LAS');
-    t.true(model._theme === THEME.DEFAULT);
+    expect(model.aircraftModel).toEqual(ARRIVAL_AIRCRAFT_MODEL_MOCK);
+    expect(model._cruiseAltitude === 28000).toBe(true);
+    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(
+        true
+    );
+    expect(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH).toBe(true);
+    expect(model._eventBus).toEqual(EventBus);
+    expect(model._hasFullDataBlock === true).toBe(true);
+    expect(model._haloRadius === INVALID_NUMBER).toBe(true);
+    expect(model._hasSuppressedDataBlock === false).toBe(true);
+    expect(model._interimAltitude === INVALID_NUMBER).toBe(true);
+    expect(model._isUnderOurControl === true).toBe(true);
+    expect(model._routeString === 'DAG.KEPEC3.KLAS07R').toBe(true);
+    expect(model._scratchPadText === 'LAS').toBe(true);
+    expect(model._theme === THEME.DEFAULT).toBe(true);
 });
 
-ava('#dataBlockLeaderDirection returns appropriate value', (t) => {
+test('#dataBlockLeaderDirection returns appropriate value', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
-    t.true(model.dataBlockLeaderDirection === model._dataBlockLeaderDirection);
+    expect(model.dataBlockLeaderDirection === model._dataBlockLeaderDirection).toBe(true);
 });
 
-ava('#dataBlockLeaderLength returns appropriate value', (t) => {
+test('#dataBlockLeaderLength returns appropriate value', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
-    t.true(model.dataBlockLeaderLength === model._dataBlockLeaderLength);
+    expect(model.dataBlockLeaderLength === model._dataBlockLeaderLength).toBe(true);
 });
 
-ava('#positionModel returns appropriate value', (t) => {
+test('#positionModel returns appropriate value', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
-    t.deepEqual(model.positionModel, model.aircraftModel.positionModel);
+    expect(model.positionModel).toEqual(model.aircraftModel.positionModel);
 });
 
-ava('#indicatedAltitude returns appropriate value', (t) => {
+test('#indicatedAltitude returns appropriate value', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
-    t.true(model.indicatedAltitude === model.aircraftModel.altitude);
+    expect(model.indicatedAltitude === model.aircraftModel.altitude).toBe(true);
 });
 
-ava('.amendAltitude() sets #_cruiseAltitude to the specified altitude', (t) => {
+test('.amendAltitude() sets #_cruiseAltitude to the specified altitude', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedResponse = [true, 'AMEND ALTITUDE'];
     const newAltitude = 210;
 
     const response = model.amendAltitude(newAltitude);
 
-    t.deepEqual(response, expectedResponse);
-    t.true(model._cruiseAltitude === newAltitude);
+    expect(response).toEqual(expectedResponse);
+    expect(model._cruiseAltitude === newAltitude).toBe(true);
 });
 
-ava('.markAsNotOurControl() sets #_isUnderOurControl to false', (t) => {
+test('.markAsNotOurControl() sets #_isUnderOurControl to false', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
     model.markAsNotOurControl();
 
-    t.false(model._isUnderOurControl);
+    expect(model._isUnderOurControl).toBe(false);
 });
 
-ava('.markAsOurControl() sets #_isUnderOurControl to false', (t) => {
+test('.markAsOurControl() sets #_isUnderOurControl to false', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
     model.markAsOurControl();
 
-    t.true(model._isUnderOurControl);
+    expect(model._isUnderOurControl).toBe(true);
 });
 
-ava('.moveDataBlock() returns syntax error when no arguments provided', (t) => {
+test('.moveDataBlock() returns syntax error when no arguments provided', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedResponse = [false, 'ERR: BAD SYNTAX'];
     const response = model.moveDataBlock('');
 
-    t.deepEqual(response, expectedResponse);
-    t.true(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION);
-    t.true(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH);
+    expect(response).toEqual(expectedResponse);
+    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(
+        true
+    );
+    expect(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH).toBe(true);
 });
 
-ava('.moveDataBlock() returns syntax error when invalid direction provided', (t) => {
+test('.moveDataBlock() returns syntax error when invalid direction provided', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedResponse = [false, 'ERR: BAD SYNTAX'];
     const response = model.moveDataBlock('0');
 
-    t.deepEqual(response, expectedResponse);
-    t.true(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION);
-    t.true(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH);
+    expect(response).toEqual(expectedResponse);
+    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(
+        true
+    );
+    expect(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH).toBe(true);
 });
 
-ava('.moveDataBlock() returns error when a leader length greater than 6 is requested', (t) => {
+test('.moveDataBlock() returns error when a leader length greater than 6 is requested', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedResponse = [false, 'ERR: LEADER LENGTH 0-6 ONLY'];
     const response = model.moveDataBlock('/7');
 
-    t.deepEqual(response, expectedResponse);
-    t.true(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION);
-    t.true(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH);
+    expect(response).toEqual(expectedResponse);
+    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(
+        true
+    );
+    expect(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH).toBe(true);
 });
 
-ava('.moveDataBlock() correctly sets properties when only a direction is provided', (t) => {
+test('.moveDataBlock() correctly sets properties when only a direction is provided', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedResponse = [true, 'ADJUST DATA BLOCK'];
     const response = model.moveDataBlock('1');
 
-    t.deepEqual(response, expectedResponse);
-    t.true(model._dataBlockLeaderDirection === 225);
-    t.true(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH);
+    expect(response).toEqual(expectedResponse);
+    expect(model._dataBlockLeaderDirection === 225).toBe(true);
+    expect(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH).toBe(true);
 });
 
-ava('.moveDataBlock() correctly sets properties when only a length is provided', (t) => {
+test('.moveDataBlock() correctly sets properties when only a length is provided', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedResponse = [true, 'ADJUST DATA BLOCK'];
     const response = model.moveDataBlock('/3');
 
-    t.deepEqual(response, expectedResponse);
-    t.true(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION);
-    t.true(model._dataBlockLeaderLength === 3);
+    expect(response).toEqual(expectedResponse);
+    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(
+        true
+    );
+    expect(model._dataBlockLeaderLength === 3).toBe(true);
 });
 
-ava('.moveDataBlock() correctly sets properties when both a direction and length are provided', (t) => {
+test('.moveDataBlock() correctly sets properties when both a direction and length are provided', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedResponse = [true, 'ADJUST DATA BLOCK'];
     const response = model.moveDataBlock('3/2');
 
-    t.deepEqual(response, expectedResponse);
-    t.true(model._dataBlockLeaderDirection === 135);
-    t.true(model._dataBlockLeaderLength === 2);
+    expect(response).toEqual(expectedResponse);
+    expect(model._dataBlockLeaderDirection === 135).toBe(true);
+    expect(model._dataBlockLeaderLength === 2).toBe(true);
 });
 
-ava('.setScratchpad() sets #_scratchPadText to the specified string', (t) => {
+test('.setScratchpad() sets #_scratchPadText to the specified string', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedResponse = [true, 'SET SCRATCHPAD'];
     const newScratchPadText = 'V6R';
 
     const response = model.setScratchpad(newScratchPadText);
 
-    t.deepEqual(response, expectedResponse);
-    t.true(model._scratchPadText === newScratchPadText);
+    expect(response).toEqual(expectedResponse);
+    expect(model._scratchPadText === newScratchPadText).toBe(true);
 });
 
-ava('.setHalo() sets halo radius correctly when no halo previously existed', (t) => {
+test('.setHalo() sets halo radius correctly when no halo previously existed', () => {
     const radarTargetModel = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedResponse = [true, 'TOGGLE HALO'];
     const response = radarTargetModel.setHalo(7);
 
-    t.deepEqual(response, expectedResponse);
-    t.true(radarTargetModel._haloRadius === 7);
+    expect(response).toEqual(expectedResponse);
+    expect(radarTargetModel._haloRadius === 7).toBe(true);
 });
 
-ava('.setHalo() adjusts halo radius correctly when a halo previously existed', (t) => {
+test('.setHalo() adjusts halo radius correctly when a halo previously existed', () => {
     const radarTargetModel = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
     radarTargetModel._haloRadius = 5;
@@ -182,11 +192,11 @@ ava('.setHalo() adjusts halo radius correctly when a halo previously existed', (
     const expectedResponse = [true, 'ADJUST HALO'];
     const response = radarTargetModel.setHalo(7);
 
-    t.deepEqual(response, expectedResponse);
-    t.true(radarTargetModel._haloRadius === 7);
+    expect(response).toEqual(expectedResponse);
+    expect(radarTargetModel._haloRadius === 7).toBe(true);
 });
 
-ava('.setHalo() calls .removeHalo() when a halo is requested of the same radius as the existing', (t) => {
+test('.setHalo() calls .removeHalo() when a halo is requested of the same radius as the existing', () => {
     const radarTargetModel = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const removeHaloStub = sinon.stub(radarTargetModel, 'removeHalo');
 
@@ -195,72 +205,72 @@ ava('.setHalo() calls .removeHalo() when a halo is requested of the same radius 
     const expectedResponse = undefined;
     const response = radarTargetModel.setHalo(7);
 
-    t.true(response === expectedResponse);
-    t.true(removeHaloStub.calledWithExactly());
+    expect(response === expectedResponse).toBe(true);
+    expect(removeHaloStub.calledWithExactly()).toBe(true);
 });
 
-ava('.setDefaultScratchpad() sets #_scratchPadText to show aircraft\'s destination', (t) => {
+test(".setDefaultScratchpad() sets #_scratchPadText to show aircraft's destination", () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedValue = model.aircraftModel.destination.substr(1);
 
     model.setDefaultScratchpad();
 
-    t.true(model._scratchPadText === expectedValue);
+    expect(model._scratchPadText === expectedValue).toBe(true);
 });
 
-ava('.setDefaultScratchpad() sets #_scratchPadText to departure exit fix when aircraft is on departure route', (t) => {
+test('.setDefaultScratchpad() sets #_scratchPadText to departure exit fix when aircraft is on departure route', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, DEPARTURE_AIRCRAFT_MODEL_MOCK);
     const expectedValue = 'GUP';
 
     model.setDefaultScratchpad();
 
-    t.true(model._scratchPadText === expectedValue);
+    expect(model._scratchPadText === expectedValue).toBe(true);
 });
 
-ava('.setDefaultScratchpad() sets #_scratchPadText to arrival airport when aircraft is on arrival route', (t) => {
+test('.setDefaultScratchpad() sets #_scratchPadText to arrival airport when aircraft is on arrival route', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedValue = 'LAS';
 
     model.setDefaultScratchpad();
 
-    t.true(model._scratchPadText === expectedValue);
+    expect(model._scratchPadText === expectedValue).toBe(true);
 });
 
-ava('._setTheme returns early when an invalid theme name is passed', (t) => {
+test('._setTheme returns early when an invalid theme name is passed', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const themeName = 'great googly moogly!';
 
     model._setTheme(themeName);
 
-    t.true(model._theme === THEME.DEFAULT);
+    expect(model._theme === THEME.DEFAULT).toBe(true);
 });
 
-ava('._setTheme() changes the value of #_theme', (t) => {
+test('._setTheme() changes the value of #_theme', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const themeName = 'CLASSIC';
 
     model._setTheme(themeName);
 
-    t.true(model._theme === THEME.CLASSIC);
+    expect(model._theme === THEME.CLASSIC).toBe(true);
 });
 
-ava('.buildDataBlockRowOne() creates correct first row for Large', (t) => {
+test('.buildDataBlockRowOne() creates correct first row for Large', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedValue = 'AAL432';
 
-    t.true(model.buildDataBlockRowOne() === expectedValue);
+    expect(model.buildDataBlockRowOne() === expectedValue).toBe(true);
 });
 
-ava('.buildDataBlockRowOne() creates correct first row for Heavy', (t) => {
+test('.buildDataBlockRowOne() creates correct first row for Heavy', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK_HEAVY);
     const expectedValue = 'UAL99 H';
 
-    t.true(model.buildDataBlockRowOne() === expectedValue);
+    expect(model.buildDataBlockRowOne() === expectedValue).toBe(true);
 });
 
-ava('.buildDataBlockRowOne() creates correct first row for Super', (t) => {
+test('.buildDataBlockRowOne() creates correct first row for Super', () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK_SUPER);
     const expectedValue = 'UAE11 J';
 
-    t.true(model.buildDataBlockRowOne() === expectedValue);
+    expect(model.buildDataBlockRowOne() === expectedValue).toBe(true);
 });

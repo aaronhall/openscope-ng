@@ -4,9 +4,7 @@
     "callsign": {
         "name": "Sichuan",
         "length": 3,
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
@@ -18,8 +16,6 @@
             ["A332", 6],
             ["A333", 6]
         ],
-        "a333": [
-            ["A333", 6]
-        ]
+        "a333": [["A333", 6]]
     }
 }

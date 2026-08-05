@@ -3,9 +3,7 @@
     "name": "Air Century",
     "callsign": {
         "name": "Century Flight",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -14,8 +12,6 @@
             ["JS41", 4],
             ["SF34", 2]
         ],
-        "crj2": [
-            ["CRJ2", 2]
-        ]
+        "crj2": [["CRJ2", 2]]
     }
 }

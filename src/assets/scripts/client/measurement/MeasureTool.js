@@ -60,9 +60,7 @@ class MeasureTool {
          */
         this._style = null;
 
-        this._init()
-            ._setupHandlers()
-            .enable();
+        this._init()._setupHandlers().enable();
     }
 
     /**
@@ -232,7 +230,7 @@ class MeasureTool {
      */
     startNewPath() {
         if (this.isMeasuring) {
-            throw new Error('Cannot start a new path. The current path hasn\'t been ended.');
+            throw new Error("Cannot start a new path. The current path hasn't been ended.");
         }
 
         const path = new MeasurePath(this._style);

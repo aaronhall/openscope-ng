@@ -3,11 +3,7 @@
     "name": "General Aviation China",
     "callsign": {
         "name": "Bravo",
-        "callsignFormats": [
-            "#####",
-            "####",
-            "##@@"
-        ]
+        "callsignFormats": ["#####", "####", "##@@"]
     },
     "fleets": {
         "default": [

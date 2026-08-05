@@ -3,15 +3,13 @@
     "name": "Juneyao Airlines",
     "callsign": {
         "name": "Air Juneyao",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
-            ["A319",     1],
-            ["A320",    41],
-            ["A321",    15]
+            ["A319", 1],
+            ["A320", 41],
+            ["A321", 15]
         ]
     }
 }

@@ -6,8 +6,6 @@
         "length": 3
     },
     "fleets": {
-        "default": [
-            ["A332", 5]
-        ]
+        "default": [["A332", 5]]
     }
 }

@@ -3,7 +3,7 @@ export const EMPTY_HOLD_PARAMETERS_MOCK = {};
 export const CUSTOM_HOLD_PARAMETERS_MOCK = {
     legLength: '5nm',
     turnDirection: 'right',
-    inboundHeading: Math.PI
+    inboundHeading: Math.PI,
 };
 
 export const CUSTOM_HOLD_PARAMETERS_EXECPTED = {
@@ -11,7 +11,7 @@ export const CUSTOM_HOLD_PARAMETERS_EXECPTED = {
     legLength: '5nm',
     turnDirection: 'right',
     speedMaximum: 220,
-    timer: -1
+    timer: -1,
 };
 
 export const GRNPA8_HOLD_PARAMETERS_EXPECTED = {
@@ -19,5 +19,5 @@ export const GRNPA8_HOLD_PARAMETERS_EXPECTED = {
     legLength: '1min',
     turnDirection: 'left',
     speedMaximum: 220,
-    timer: -1
+    timer: -1,
 };

@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import sinon from 'sinon';
 import _isArray from 'lodash/isArray';
 import _isObject from 'lodash/isObject';
@@ -66,107 +66,108 @@ function buildPilotWithComplexRoute() {
 
 let sandbox;
 /* eslint-disable no-unused-vars, no-undef */
-ava.beforeEach(() => {
+beforeEach(() => {
     sandbox = sinon.createSandbox();
 });
 
-ava.afterEach(() => {
+afterEach(() => {
     sandbox.restore();
 });
 /* eslint-enable no-unused-vars, no-undef */
 
-ava('throws when instantiated without parameters', (t) => {
-    t.throws(() => new Pilot());
-    t.throws(() => new Pilot({}));
-    t.throws(() => new Pilot([]));
-    t.throws(() => new Pilot('threeve'));
-    t.throws(() => new Pilot(42));
-    t.throws(() => new Pilot(false));
-    t.throws(() => new Pilot(null, createModeControllerFixture()));
-    t.throws(() => new Pilot('', createModeControllerFixture()));
-    t.throws(() => new Pilot({}, createModeControllerFixture()));
-    t.throws(() => new Pilot(createFmsArrivalFixture(), {}));
+test('throws when instantiated without parameters', () => {
+    expect(() => new Pilot()).toThrow();
+    expect(() => new Pilot({})).toThrow();
+    expect(() => new Pilot([])).toThrow();
+    expect(() => new Pilot('threeve')).toThrow();
+    expect(() => new Pilot(42)).toThrow();
+    expect(() => new Pilot(false)).toThrow();
+    expect(() => new Pilot(null, createModeControllerFixture())).toThrow();
+    expect(() => new Pilot('', createModeControllerFixture())).toThrow();
+    expect(() => new Pilot({}, createModeControllerFixture())).toThrow();
+    expect(() => new Pilot(createFmsArrivalFixture(), {})).toThrow();
 });
 
-ava('does not throw when passed valid parameters', (t) => {
-    t.notThrows(() => createPilotFixture());
+test('does not throw when passed valid parameters', () => {
+    expect(() => createPilotFixture()).not.toThrow();
 });
 
-ava('.reset() properly resets the instance properties to their null state', (t) => {
+test('.reset() properly resets the instance properties to their null state', () => {
     const pilotModel = createPilotFixture().reset();
 
-    t.true(pilotModel._fms === null);
-    t.true(pilotModel._mcp === null);
-    t.true(pilotModel.hasApproachClearance === false);
-    t.true(pilotModel.hasDepartureClearance === false);
+    expect(pilotModel._fms === null).toBe(true);
+    expect(pilotModel._mcp === null).toBe(true);
+    expect(pilotModel.hasApproachClearance === false).toBe(true);
+    expect(pilotModel.hasDepartureClearance === false).toBe(true);
 });
 
-ava('.applyArrivalProcedure() returns an error when passed an invalid routeString', (t) => {
+
+test('.applyArrivalProcedure() returns an error when passed an invalid routeString', () => {
     const expectedResult = [false, 'arrival procedure format not understood'];
     const pilot = createPilotFixture();
     const result = pilot.applyArrivalProcedure('~!@#$%', airportNameMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.applyArrivalProcedure() returns an error when passed an invalid procedure name', (t) => {
+test('.applyArrivalProcedure() returns an error when passed an invalid procedure name', () => {
     const invalidRouteStringMock = 'DAG.~!@#$.KLAS';
     const expectedResult = [false, 'unknown procedure "~!@#$"'];
     const pilot = createPilotFixture();
     const result = pilot.applyArrivalProcedure(invalidRouteStringMock, airportNameMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.applyArrivalProcedure() returns an error when passed a procedure with an invaild entry', (t) => {
+test('.applyArrivalProcedure() returns an error when passed a procedure with an invaild entry', () => {
     const invalidRouteStringMock = 'a.KEPEC3.KLAS';
     const expectedResult = [false, 'route of "a.KEPEC3.KLAS" is not valid'];
     const pilot = createPilotFixture();
     const result = pilot.applyArrivalProcedure(invalidRouteStringMock, airportNameMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.applyArrivalProcedure() returns a success message after success', (t) => {
+test('.applyArrivalProcedure() returns a success message after success', () => {
     const pilot = createPilotFixture();
     const result = pilot.applyArrivalProcedure(validRouteStringMock, airportNameMock);
 
-    t.true(_isArray(result));
-    t.true(result[0]);
-    t.true(result[1].log === 'cleared to McCarran International Airport via the KEPEC3 arrival');
-    t.true(result[1].say === 'cleared to McCarran International Airport via the KEPEC THREE arrival');
+    expect(_isArray(result)).toBe(true);
+    expect(result[0]).toBe(true);
+    expect(result[1].log === 'cleared to McCarran International Airport via the KEPEC3 arrival').toBe(true);
+    expect(result[1].say === 'cleared to McCarran International Airport via the KEPEC THREE arrival').toBe(true);
 });
 
-ava('.applyArrivalProcedure() calls #_fms.replaceArrivalProcedure() with the correct parameters', (t) => {
+test('.applyArrivalProcedure() calls #_fms.replaceArrivalProcedure() with the correct parameters', () => {
     const pilot = createPilotFixture();
     const replaceArrivalProcedureSpy = sinon.spy(pilot._fms, 'replaceArrivalProcedure');
 
     pilot.applyArrivalProcedure(validRouteStringMock, airportNameMock);
 
-    t.true(replaceArrivalProcedureSpy.calledWithExactly(validRouteStringMock));
+    expect(replaceArrivalProcedureSpy.calledWithExactly(validRouteStringMock)).toBe(true);
 });
 
-ava('.applyDepartureProcedure() returns an error when passed an invalid sidId', (t) => {
+test('.applyDepartureProcedure() returns an error when passed an invalid sidId', () => {
     const procedureName = '~!@#$%';
     const expectedResult = [false, 'unknown procedure "~!@#$%"'];
     const pilot = new Pilot(createFmsDepartureFixture(), createModeControllerFixture(), createNavigationLibraryFixture());
     const result = pilot.applyDepartureProcedure(procedureName, airportIcaoMock);
 
-    t.deepEqual(result, expectedResult);
-    t.false(pilot.hasDepartureClearance);
+    expect(result).toEqual(expectedResult);
+    expect(pilot.hasDepartureClearance).toBe(false);
 });
 
-ava('.applyDepartureProcedure() returns an error when passed an invalid runway', (t) => {
+test('.applyDepartureProcedure() returns an error when passed an invalid runway', () => {
     const routeString = 'EDDF30R.COWBY6.GUP';
     const expectedResult = [false, 'requested route of "EDDF30R.COWBY6.GUP" is invalid'];
     const pilot = new Pilot(createFmsDepartureFixture(), createModeControllerFixture(), createNavigationLibraryFixture());
     const result = pilot.applyDepartureProcedure(routeString, airportIcaoMock);
 
-    t.deepEqual(result, expectedResult);
-    t.false(pilot.hasDepartureClearance);
+    expect(result).toEqual(expectedResult);
+    expect(pilot.hasDepartureClearance).toBe(false);
 });
 
-ava('.applyDepartureProcedure() should NOT change mcp modes', (t) => {
+test('.applyDepartureProcedure() should NOT change mcp modes', () => {
     const pilot = new Pilot(createFmsDepartureFixture(), createModeControllerFixture(), createNavigationLibraryFixture());
     const mcp = pilot._mcp;
     const expectedAltitudeMode = mcp.altitudeMode;
@@ -174,22 +175,22 @@ ava('.applyDepartureProcedure() should NOT change mcp modes', (t) => {
 
     pilot.applyDepartureProcedure(sidIdMock, airportIcaoMock);
 
-    // workaround: t.true(pilot._mcp..altitudeMode) causes out of memory crash
-    t.true(mcp.altitudeMode === expectedAltitudeMode);
-    t.true(mcp.speedMode === expectedSpeedMode);
+    // workaround: expect(pilot._mcp..altitudeMode).toBe(true) causes out of memory crash
+    expect(mcp.altitudeMode === expectedAltitudeMode).toBe(true);
+    expect(mcp.speedMode === expectedSpeedMode).toBe(true);
 });
 
-ava('.applyDepartureProcedure() returns a success message after success', (t) => {
+test('.applyDepartureProcedure() returns a success message after success', () => {
     const pilot = new Pilot(createFmsDepartureFixture(), createModeControllerFixture(), createNavigationLibraryFixture());
     const result = pilot.applyDepartureProcedure(sidIdMock, airportIcaoMock);
 
-    t.true(_isArray(result));
-    t.true(result[0]);
-    t.true(result[1].log === 'cleared to destination via the COWBY6 departure, then as filed');
-    t.true(result[1].say === 'cleared to destination via the COWBOY SIX departure, then as filed');
+    expect(_isArray(result)).toBe(true);
+    expect(result[0]).toBe(true);
+    expect(result[1].log === 'cleared to destination via the COWBY6 departure, then as filed').toBe(true);
+    expect(result[1].say === 'cleared to destination via the COWBOY SIX departure, then as filed').toBe(true);
 });
 
-ava('.replaceFlightPlanWithNewRoute() returns an error when passed an invalid route', (t) => {
+test('.replaceFlightPlanWithNewRoute() returns an error when passed an invalid route', () => {
     const expectedResult = [
         false,
         {
@@ -200,20 +201,20 @@ ava('.replaceFlightPlanWithNewRoute() returns an error when passed an invalid ro
     const pilot = createPilotFixture();
     const result = pilot.replaceFlightPlanWithNewRoute('a..b.c.d');
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.replaceFlightPlanWithNewRoute() removes an existing route and replaces it with a new one', (t) => {
+test('.replaceFlightPlanWithNewRoute() removes an existing route and replaces it with a new one', () => {
     const pilot = createPilotFixture();
 
     pilot.replaceFlightPlanWithNewRoute('COWBY..BIKKR');
 
-    t.true(pilot._fms.currentWaypoint.name === 'COWBY');
+    expect(pilot._fms.currentWaypoint.name === 'COWBY').toBe(true);
 });
 
-ava.todo('.replaceFlightPlanWithNewRoute() replaces old route with new one, and skips ahead to the old current waypoint');
+test.todo('.replaceFlightPlanWithNewRoute() replaces old route with new one, and skips ahead to the old current waypoint');
 
-ava('.replaceFlightPlanWithNewRoute() returns a success message when finished successfully', (t) => {
+test('.replaceFlightPlanWithNewRoute() returns a success message when finished successfully', () => {
     const expectedResult = [
         true,
         {
@@ -224,26 +225,26 @@ ava('.replaceFlightPlanWithNewRoute() returns a success message when finished su
     const pilot = createPilotFixture();
     const result = pilot.replaceFlightPlanWithNewRoute('COWBY..BIKKR');
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.applyPartialRouteAmendment() returns an error with passed an invalid routeString', (t) => {
+test('.applyPartialRouteAmendment() returns an error with passed an invalid routeString', () => {
     const expectedResult = [false, 'requested route of "A..B.C.D" is invalid'];
     const pilot = buildPilotWithComplexRoute();
     const result = pilot.applyPartialRouteAmendment(invalidRouteString);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.applyPartialRouteAmendment() returns an error with passed a routeString without a shared waypoint', (t) => {
+test('.applyPartialRouteAmendment() returns an error with passed a routeString without a shared waypoint', () => {
     const expectedResult = [false, 'routes do not have continuity!'];
     const pilot = buildPilotWithComplexRoute();
     const result = pilot.applyPartialRouteAmendment('HITME..HOLDM');
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.applyPartialRouteAmendment() returns a success message when complete', (t) => {
+test('.applyPartialRouteAmendment() returns a success message when complete', () => {
     const expectedResult = [
         true,
         {
@@ -254,10 +255,10 @@ ava('.applyPartialRouteAmendment() returns a success message when complete', (t)
     const pilot = buildPilotWithComplexRoute();
     const result = pilot.applyPartialRouteAmendment(amendRouteString);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.applyPartialRouteAmendment() calls #_fms.applyPartialRouteAmendment()', (t) => {
+test('.applyPartialRouteAmendment() calls #_fms.applyPartialRouteAmendment()', () => {
     const pilot = buildPilotWithComplexRoute();
     const fmsApplyPartialRouteAmendmentSpy = sinon.spy(pilot._fms, 'applyPartialRouteAmendment');
     const expectedResult = [
@@ -269,28 +270,28 @@ ava('.applyPartialRouteAmendment() calls #_fms.applyPartialRouteAmendment()', (t
     ];
     const result = pilot.applyPartialRouteAmendment(amendRouteString);
 
-    t.true(fmsApplyPartialRouteAmendmentSpy.calledWithExactly(amendRouteString));
-    t.deepEqual(result, expectedResult);
+    expect(fmsApplyPartialRouteAmendmentSpy.calledWithExactly(amendRouteString)).toBe(true);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.applyPartialRouteAmendment() does not grant departure clearance when the route amendment fails', (t) => {
+test('.applyPartialRouteAmendment() does not grant departure clearance when the route amendment fails', () => {
     const pilot = buildPilotWithComplexRoute();
 
     pilot.hasDepartureClearance = false;
-    t.false(pilot.hasDepartureClearance);
+    expect(pilot.hasDepartureClearance).toBe(false);
 
     const expectedResult = [false, `requested route of "${invalidAmendRouteString}" is invalid`];
     const result = pilot.applyPartialRouteAmendment(invalidAmendRouteString);
 
-    t.deepEqual(result, expectedResult);
-    t.false(pilot.hasDepartureClearance);
+    expect(result).toEqual(expectedResult);
+    expect(pilot.hasDepartureClearance).toBe(false);
 });
 
-ava('.applyPartialRouteAmendment() grants departure clearance when the route amendment succeeds', (t) => {
+test('.applyPartialRouteAmendment() grants departure clearance when the route amendment succeeds', () => {
     const pilot = buildPilotWithComplexRoute();
 
     pilot.hasDepartureClearance = false;
-    t.false(pilot.hasDepartureClearance);
+    expect(pilot.hasDepartureClearance).toBe(false);
 
     const expectedResult = [true,
         {
@@ -300,32 +301,32 @@ ava('.applyPartialRouteAmendment() grants departure clearance when the route ame
     ];
     const result = pilot.applyPartialRouteAmendment(amendRouteString);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 
-    // workaround: t.true(pilot.hasDepartureClearance) causes out of memory crash
+    // workaround: expect(pilot.hasDepartureClearance).toBe(true) causes out of memory crash
     const departureClearance = pilot.hasDepartureClearance;
-    t.true(departureClearance);
+    expect(departureClearance).toBe(true);
 });
 
-ava('.applyPartialRouteAmendment() calls .cancelHoldingPattern()', (t) => {
+test('.applyPartialRouteAmendment() calls .cancelHoldingPattern()', () => {
     const pilot = buildPilotWithComplexRoute();
     const cancelHoldingPatternSpy = sinon.spy(pilot, 'cancelHoldingPattern');
 
     pilot.initiateHoldingPattern('MISEN', holdParametersMock);
     pilot.applyPartialRouteAmendment(amendRouteString);
 
-    t.true(cancelHoldingPatternSpy.calledWithExactly());
+    expect(cancelHoldingPatternSpy.calledWithExactly()).toBe(true);
 });
 
-ava('.cancelApproachClearance() returns early if #hasApproachClearance is false', (t) => {
+test('.cancelApproachClearance() returns early if #hasApproachClearance is false', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK, createNavigationLibraryFixture());
     const result = aircraftModel.pilot.cancelApproachClearance(aircraftModel);
     const expectedResult = [false, 'we have no approach clearance to cancel!'];
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.cancelApproachClearance() sets the correct modes and values in the Mcp', (t) => {
+test('.cancelApproachClearance() sets the correct modes and values in the Mcp', () => {
     const nextAltitudeMock = 4000;
     const nextHeadingDegreesMock = 250;
     const shouldExpediteDescentMock = false;
@@ -344,15 +345,15 @@ ava('.cancelApproachClearance() sets the correct modes and values in the Mcp', (
     aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
     aircraftModel.pilot.cancelApproachClearance(aircraftModel);
 
-    t.true(aircraftModel.pilot._mcp.altitudeMode === 'HOLD');
-    t.true(aircraftModel.pilot._mcp.altitude === nextAltitudeMock);
-    t.true(aircraftModel.pilot._mcp.headingMode === 'HOLD');
-    t.true(aircraftModel.pilot._mcp.heading === aircraftModel.heading);
-    t.true(aircraftModel.pilot._mcp.speedMode === 'HOLD');
-    t.true(aircraftModel.pilot._mcp.speed === speedMock);
+    expect(aircraftModel.pilot._mcp.altitudeMode === 'HOLD').toBe(true);
+    expect(aircraftModel.pilot._mcp.altitude === nextAltitudeMock).toBe(true);
+    expect(aircraftModel.pilot._mcp.headingMode === 'HOLD').toBe(true);
+    expect(aircraftModel.pilot._mcp.heading === aircraftModel.heading).toBe(true);
+    expect(aircraftModel.pilot._mcp.speedMode === 'HOLD').toBe(true);
+    expect(aircraftModel.pilot._mcp.speed === speedMock).toBe(true);
 });
 
-ava('.cancelApproachClearance() returns a success message when finished', (t) => {
+test('.cancelApproachClearance() returns a success message when finished', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK, createNavigationLibraryFixture());
     const expectedResult = [
         true,
@@ -363,28 +364,28 @@ ava('.cancelApproachClearance() returns a success message when finished', (t) =>
 
     const result = aircraftModel.pilot.cancelApproachClearance(aircraftModel);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.cancelApproachClearance() sets #hasApproachClearance to false', (t) => {
+test('.cancelApproachClearance() sets #hasApproachClearance to false', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK, createNavigationLibraryFixture());
 
     aircraftModel.pilot.hasApproachClearance = true;
 
     aircraftModel.pilot.cancelApproachClearance(aircraftModel);
 
-    t.false(aircraftModel.pilot.hasApproachClearance);
+    expect(aircraftModel.pilot.hasApproachClearance).toBe(false);
 });
 
-ava('.cancelHoldingPattern() returns error response when the aircraft does not have any hold waypoints', (t) => {
+test('.cancelHoldingPattern() returns error response when the aircraft does not have any hold waypoints', () => {
     const pilot = createPilotFixture();
     const expectedResult = [false, 'that must be for somebody else, we weren\'t given any holding instructions'];
     const result = pilot.cancelHoldingPattern();
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.cancelHoldingPattern() returns error response when the aircraft has holding, but the specified fix is not on the route', (t) => {
+test('.cancelHoldingPattern() returns error response when the aircraft has holding, but the specified fix is not on the route', () => {
     const pilot = createPilotFixture();
 
     pilot.initiateHoldingPattern('KEPEC', holdParametersMock);
@@ -395,10 +396,10 @@ ava('.cancelHoldingPattern() returns error response when the aircraft has holdin
     }];
     const result = pilot.cancelHoldingPattern('ABCDE');
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.cancelHoldingPattern() returns error response when the aircraft has holding, but not at the specified fix', (t) => {
+test('.cancelHoldingPattern() returns error response when the aircraft has holding, but not at the specified fix', () => {
     const pilot = createPilotFixture();
 
     pilot.initiateHoldingPattern('KEPEC', holdParametersMock);
@@ -409,10 +410,10 @@ ava('.cancelHoldingPattern() returns error response when the aircraft has holdin
     }];
     const result = pilot.cancelHoldingPattern('SUNST');
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.cancelHoldingPattern() calls WaypointModel.deactivateHold() when no hold fix is specified', (t) => {
+test('.cancelHoldingPattern() calls WaypointModel.deactivateHold() when no hold fix is specified', () => {
     const pilot = createPilotFixture();
     const currentWaypointModel = pilot._fms.currentWaypoint;
     const holdWaypointName = 'KEPEC';
@@ -428,12 +429,12 @@ ava('.cancelHoldingPattern() calls WaypointModel.deactivateHold() when no hold f
     }];
     const result = pilot.cancelHoldingPattern();
 
-    t.deepEqual(result, expectedResult);
-    t.true(currentWaypointDeactivateHoldStub.notCalled);
-    t.true(holdWaypointDeactivateHoldStub.calledWithExactly());
+    expect(result).toEqual(expectedResult);
+    expect(currentWaypointDeactivateHoldStub.notCalled).toBe(true);
+    expect(holdWaypointDeactivateHoldStub.calledWithExactly()).toBe(true);
 });
 
-ava('.cancelHoldingPattern() calls WaypointModel.deactivateHold() when the fix is specified by the user', (t) => {
+test('.cancelHoldingPattern() calls WaypointModel.deactivateHold() when the fix is specified by the user', () => {
     const pilot = createPilotFixture();
     const currentWaypointModel = pilot._fms.currentWaypoint;
     const holdWaypointName = 'KEPEC';
@@ -449,24 +450,24 @@ ava('.cancelHoldingPattern() calls WaypointModel.deactivateHold() when the fix i
     }];
     const result = pilot.cancelHoldingPattern('KEPEC');
 
-    t.deepEqual(result, expectedResult);
-    t.true(currentWaypointDeactivateHoldStub.notCalled);
-    t.true(holdWaypointDeactivateHoldStub.calledWithExactly());
+    expect(result).toEqual(expectedResult);
+    expect(currentWaypointDeactivateHoldStub.notCalled).toBe(true);
+    expect(holdWaypointDeactivateHoldStub.calledWithExactly()).toBe(true);
 });
 
-ava('.clearedAsFiled() grants pilot departure clearance and returns the correct response strings', (t) => {
+test('.clearedAsFiled() grants pilot departure clearance and returns the correct response strings', () => {
     const aircraftModel = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK, createNavigationLibraryFixture());
     const result = aircraftModel.pilot.clearedAsFiled();
 
-    t.true(_isArray(result));
-    t.true(result[0] === true);
-    t.true(_isObject(result[1]));
-    t.true(result[1].log === 'cleared to destination as filed');
-    t.true(result[1].say === 'cleared to destination as filed');
-    t.true(aircraftModel.pilot.hasDepartureClearance === true);
+    expect(_isArray(result)).toBe(true);
+    expect(result[0] === true).toBe(true);
+    expect(_isObject(result[1])).toBe(true);
+    expect(result[1].log === 'cleared to destination as filed').toBe(true);
+    expect(result[1].say === 'cleared to destination as filed').toBe(true);
+    expect(aircraftModel.pilot.hasDepartureClearance === true).toBe(true);
 });
 
-ava('.climbViaSID() returns error response if #flightPlanAltitude has not been set', (t) => {
+test('.climbViaSID() returns error response if #flightPlanAltitude has not been set', () => {
     const expectedResult = [false, 'unable, no altitude assigned'];
     const aircraftModel = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
     aircraftModel.altitude = 0;
@@ -476,12 +477,12 @@ ava('.climbViaSID() returns error response if #flightPlanAltitude has not been s
 
     const result = pilot.climbViaSid(aircraftModel);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 
     pilot._fms.flightPlanAltitude = previousFlightPlanAltitude;
 });
 
-ava('.climbViaSID() returns early when the aircraft is already above the top altitude', (t) => {
+test('.climbViaSID() returns early when the aircraft is already above the top altitude', () => {
     const aircraftModel = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
     aircraftModel.altitude = 13000;
     const topAltitude = 5000;
@@ -497,10 +498,10 @@ ava('.climbViaSID() returns early when the aircraft is already above the top alt
 
     const response = pilot.climbViaSid(aircraftModel, topAltitude);
 
-    t.deepEqual(response, expectedResponse);
+    expect(response).toEqual(expectedResponse);
 });
 
-ava('.climbViaSID() correctly configures MCP and returns correct response when no altitude is given', (t) => {
+test('.climbViaSID() correctly configures MCP and returns correct response when no altitude is given', () => {
     const aircraftModel = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
     aircraftModel.altitude = 0;
     const pilot = new Pilot(createFmsDepartureFixture(), createModeControllerFixture(), createNavigationLibraryFixture());
@@ -516,13 +517,13 @@ ava('.climbViaSID() correctly configures MCP and returns correct response when n
 
     const response = pilot.climbViaSid(aircraftModel);
 
-    t.deepEqual(response, expectedResponse);
-    t.true(pilot._mcp.altitudeMode === 'VNAV');
-    t.true(pilot._mcp.speedMode === 'VNAV');
-    t.true(pilot._mcp.altitude === pilot._fms.departureAirportModel.maxAssignableAltitude);
+    expect(response).toEqual(expectedResponse);
+    expect(pilot._mcp.altitudeMode === 'VNAV').toBe(true);
+    expect(pilot._mcp.speedMode === 'VNAV').toBe(true);
+    expect(pilot._mcp.altitude === pilot._fms.departureAirportModel.maxAssignableAltitude).toBe(true);
 });
 
-ava('.climbViaSID() correctly configures MCP and returns correct response when an altitude is given', (t) => {
+test('.climbViaSID() correctly configures MCP and returns correct response when an altitude is given', () => {
     const aircraftModel = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
     aircraftModel.altitude = 0;
     const pilot = new Pilot(createFmsDepartureFixture(), createModeControllerFixture(), createNavigationLibraryFixture());
@@ -538,21 +539,21 @@ ava('.climbViaSID() correctly configures MCP and returns correct response when a
 
     const response = pilot.climbViaSid(aircraftModel, 11000);
 
-    t.deepEqual(response, expectedResponse);
-    t.true(pilot._mcp.altitudeMode === 'VNAV');
-    t.true(pilot._mcp.speedMode === 'VNAV');
-    t.true(pilot._mcp.altitude === 11000);
+    expect(response).toEqual(expectedResponse);
+    expect(pilot._mcp.altitudeMode === 'VNAV').toBe(true);
+    expect(pilot._mcp.speedMode === 'VNAV').toBe(true);
+    expect(pilot._mcp.altitude === 11000).toBe(true);
 });
 
-ava('.conductInstrumentApproach() returns failure message when no runway is provided', (t) => {
+test('.conductInstrumentApproach() returns failure message when no runway is provided', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK, createNavigationLibraryFixture());
     const expectedResult = [false, 'the specified runway does not exist'];
     const result = aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, null);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.conductInstrumentApproach() returns failure message when assigned altitude is lower than minimum glideslope intercept altitude', (t) => {
+test('.conductInstrumentApproach() returns failure message when assigned altitude is lower than minimum glideslope intercept altitude', () => {
     const expectedResult = [false, {
         log: 'unable ILS 19L, our assigned altitude is below the minimum glideslope ' +
             'intercept altitude, request climb to 3700',
@@ -565,58 +566,58 @@ ava('.conductInstrumentApproach() returns failure message when assigned altitude
 
     const result = aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.conductInstrumentApproach() calls .setArrivalRunway() with the runwayName', (t) => {
+test('.conductInstrumentApproach() calls .setArrivalRunway() with the runwayName', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK, createNavigationLibraryFixture());
     const setArrivalRunwaySpy = sinon.spy(aircraftModel.pilot._fms, 'setArrivalRunway');
 
     aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
 
-    t.true(setArrivalRunwaySpy.calledWithExactly(runwayModelMock));
+    expect(setArrivalRunwaySpy.calledWithExactly(runwayModelMock)).toBe(true);
 });
 
-ava('.conductInstrumentApproach() calls ._interceptCourse() with the correct properties', (t) => {
+test('.conductInstrumentApproach() calls ._interceptCourse() with the correct properties', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK, createNavigationLibraryFixture());
     const _interceptCourseSpy = sinon.spy(aircraftModel.pilot, '_interceptCourse');
 
     aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
 
-    t.true(_interceptCourseSpy.calledWithExactly(runwayModelMock.positionModel, runwayModelMock.angle));
+    expect(_interceptCourseSpy.calledWithExactly(runwayModelMock.positionModel, runwayModelMock.angle)).toBe(true);
 });
 
-ava('.conductInstrumentApproach() calls ._interceptGlidepath() with the correct properties', (t) => {
+test('.conductInstrumentApproach() calls ._interceptGlidepath() with the correct properties', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK, createNavigationLibraryFixture());
     const _interceptGlidepathSpy = sinon.spy(aircraftModel.pilot, '_interceptGlidepath');
 
     aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
 
-    t.true(_interceptGlidepathSpy.calledWithExactly(
+    expect(_interceptGlidepathSpy.calledWithExactly(
         runwayModelMock.positionModel,
         runwayModelMock.angle,
         runwayModelMock.ils.glideslopeGradient
-    ));
+    )).toBe(true);
 });
 
-ava('.conductInstrumentApproach() calls .cancelHoldingPattern', (t) => {
+test('.conductInstrumentApproach() calls .cancelHoldingPattern', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK, createNavigationLibraryFixture());
     const cancelHoldingPatternSpy = sinon.spy(aircraftModel.pilot, 'cancelHoldingPattern');
 
     aircraftModel.pilot._fms.setFlightPhase('HOLD');
     aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
 
-    t.true(cancelHoldingPatternSpy.calledWithExactly());
+    expect(cancelHoldingPatternSpy.calledWithExactly()).toBe(true);
 });
 
-ava('.conductInstrumentApproach() sets #hasApproachClearance to true', (t) => {
+test('.conductInstrumentApproach() sets #hasApproachClearance to true', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK, createNavigationLibraryFixture());
     aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
 
-    t.true(aircraftModel.pilot.hasApproachClearance);
+    expect(aircraftModel.pilot.hasApproachClearance).toBe(true);
 });
 
-ava('.conductInstrumentApproach() returns a success message', (t) => {
+test('.conductInstrumentApproach() returns a success message', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK, createNavigationLibraryFixture());
     const expectedResult = [
         true,
@@ -627,10 +628,10 @@ ava('.conductInstrumentApproach() returns a success message', (t) => {
     ];
     const result = aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.crossFix() returns early when the specified fix does not exist', (t) => {
+test('.crossFix() returns early when the specified fix does not exist', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const invalidFixNameMock = 'threeve';
     const altitudeMock = 13000;
@@ -640,10 +641,10 @@ ava('.crossFix() returns early when the specified fix does not exist', (t) => {
     }];
     const result = aircraftModel.pilot.crossFix(aircraftModel, invalidFixNameMock, altitudeMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.crossFix() returns early when the specified fix exists but is not on the aircraft\'s route', (t) => {
+test('.crossFix() returns early when the specified fix exists but is not on the aircraft\'s route', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const nonRouteFixNameMock = 'ogkij';
     const altitudeMock = 13000;
@@ -653,10 +654,10 @@ ava('.crossFix() returns early when the specified fix exists but is not on the a
     }];
     const result = aircraftModel.pilot.crossFix(aircraftModel, nonRouteFixNameMock, altitudeMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.crossFix() returns early when the specified altitude fails .validateNextAltitude()', (t) => {
+test('.crossFix() returns early when the specified altitude fails .validateNextAltitude()', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const fixNameMock = 'kepec';
     const altitudeMock = 13000;
@@ -666,10 +667,10 @@ ava('.crossFix() returns early when the specified altitude fails .validateNextAl
 
     const result = aircraftModel.pilot.crossFix(aircraftModel, fixNameMock, altitudeMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.crossFix() correctly configures arrival aircraft\'s MCP and returns correct response when provided valid parameters', (t) => {
+test('.crossFix() correctly configures arrival aircraft\'s MCP and returns correct response when provided valid parameters', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const fixNameMock = 'kepec';
     const altitudeMock = 13000;
@@ -679,10 +680,10 @@ ava('.crossFix() correctly configures arrival aircraft\'s MCP and returns correc
     }];
     const result = aircraftModel.pilot.crossFix(aircraftModel, fixNameMock, altitudeMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.crossFix() correctly configures departure aircraft\'s MCP and returns correct response when provided valid parameters', (t) => {
+test('.crossFix() correctly configures departure aircraft\'s MCP and returns correct response when provided valid parameters', () => {
     const aircraftModel = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
     const fixNameMock = 'cowby';
     const altitudeMock = 13000;
@@ -692,10 +693,10 @@ ava('.crossFix() correctly configures departure aircraft\'s MCP and returns corr
     }];
     const result = aircraftModel.pilot.crossFix(aircraftModel, fixNameMock, altitudeMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.descendViaStar() returns early when provided bottom altitude parameter is invalid', (t) => {
+test('.descendViaStar() returns early when provided bottom altitude parameter is invalid', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const pilot = createPilotFixture();
 
@@ -705,11 +706,11 @@ ava('.descendViaStar() returns early when provided bottom altitude parameter is 
     const expectedResponse = [false, 'unable to maintain an altitude of threeve'];
     const response = pilot.descendViaStar(aircraftModel, invalidAltitudeMock);
 
-    t.deepEqual(response, expectedResponse);
-    t.true(pilot._mcp.altitude === initialAltitudeMock);
+    expect(response).toEqual(expectedResponse);
+    expect(pilot._mcp.altitude === initialAltitudeMock).toBe(true);
 });
 
-ava('.descendViaStar() returns early when no bottom altitude param provided and FMS has no bottom altitude', (t) => {
+test('.descendViaStar() returns early when no bottom altitude param provided and FMS has no bottom altitude', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const pilot = createPilotFixture();
     const failureResponseMock = [false, 'unable, no altitude assigned'];
@@ -722,11 +723,11 @@ ava('.descendViaStar() returns early when no bottom altitude param provided and 
 
     const response = pilot.descendViaStar(aircraftModel);
 
-    t.deepEqual(response, failureResponseMock);
-    t.true(pilot._mcp.altitude === initialAltitudeMock);
+    expect(response).toEqual(failureResponseMock);
+    expect(pilot._mcp.altitude === initialAltitudeMock).toBe(true);
 });
 
-ava('.descendViaStar() returns early when no bottom altitude param provided and FMS bottom altitude is invalid', (t) => {
+test('.descendViaStar() returns early when no bottom altitude param provided and FMS bottom altitude is invalid', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const pilot = createPilotFixture();
     const failureResponseMock = [false, 'unable, no altitude assigned'];
@@ -741,11 +742,11 @@ ava('.descendViaStar() returns early when no bottom altitude param provided and 
 
     const response = pilot.descendViaStar(aircraftModel);
 
-    t.deepEqual(response, failureResponseMock);
-    t.true(pilot._mcp.altitude === initialAltitudeMock);
+    expect(response).toEqual(failureResponseMock);
+    expect(pilot._mcp.altitude === initialAltitudeMock).toBe(true);
 });
 
-ava('.descendViaStar() returns early when the bottom altitude is above the aircraft\'s current altitude', (t) => {
+test('.descendViaStar() returns early when the bottom altitude is above the aircraft\'s current altitude', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const pilot = createPilotFixture();
     aircraftModel.altitude = 5000;
@@ -758,10 +759,10 @@ ava('.descendViaStar() returns early when the bottom altitude is above the aircr
     ];
 
     const response = pilot.descendViaStar(aircraftModel, 17000);
-    t.deepEqual(response, expectedResponse);
+    expect(response).toEqual(expectedResponse);
 });
 
-ava('.descendViaStar() correctly configures MCP when no bottom altitude parameter provided but FMS has valid bottom altitude', (t) => {
+test('.descendViaStar() correctly configures MCP when no bottom altitude parameter provided but FMS has valid bottom altitude', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const pilot = createPilotFixture();
     const expectedResponse = [
@@ -777,13 +778,13 @@ ava('.descendViaStar() correctly configures MCP when no bottom altitude paramete
 
     const response = pilot.descendViaStar(aircraftModel);
 
-    t.deepEqual(response, expectedResponse);
-    t.true(pilot._mcp.altitudeMode === 'VNAV');
-    t.true(pilot._mcp.speedMode === 'VNAV');
-    t.true(pilot._mcp.altitude === 8000);
+    expect(response).toEqual(expectedResponse);
+    expect(pilot._mcp.altitudeMode === 'VNAV').toBe(true);
+    expect(pilot._mcp.speedMode === 'VNAV').toBe(true);
+    expect(pilot._mcp.altitude === 8000).toBe(true);
 });
 
-ava('.descendViaStar() correctly configures MCP when provided valid bottom altitude parameter', (t) => {
+test('.descendViaStar() correctly configures MCP when provided valid bottom altitude parameter', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const pilot = createPilotFixture();
     const expectedResponse = [
@@ -799,25 +800,25 @@ ava('.descendViaStar() correctly configures MCP when provided valid bottom altit
 
     const response = pilot.descendViaStar(aircraftModel, nextAltitudeMock);
 
-    t.deepEqual(response, expectedResponse);
-    t.true(pilot._mcp.altitudeMode === 'VNAV');
-    t.true(pilot._mcp.altitude === nextAltitudeMock);
+    expect(response).toEqual(expectedResponse);
+    expect(pilot._mcp.altitudeMode === 'VNAV').toBe(true);
+    expect(pilot._mcp.altitude === nextAltitudeMock).toBe(true);
 });
 
-ava('.goAround() sets the correct Mcp modes and values', (t) => {
+test('.goAround() sets the correct Mcp modes and values', () => {
     const pilot = createPilotFixture();
 
     pilot.goAround(headingMock, speedMock, airportElevationMock);
 
-    t.true(pilot._mcp.altitudeMode === 'HOLD');
-    t.true(pilot._mcp.altitude === 1100);
-    t.true(pilot._mcp.headingMode === 'HOLD');
-    t.true(pilot._mcp.heading === headingMock);
-    t.true(pilot._mcp.speedMode === 'HOLD');
-    t.true(pilot._mcp.speed === 190);
+    expect(pilot._mcp.altitudeMode === 'HOLD').toBe(true);
+    expect(pilot._mcp.altitude === 1100).toBe(true);
+    expect(pilot._mcp.headingMode === 'HOLD').toBe(true);
+    expect(pilot._mcp.heading === headingMock).toBe(true);
+    expect(pilot._mcp.speedMode === 'HOLD').toBe(true);
+    expect(pilot._mcp.speed === 190).toBe(true);
 });
 
-ava('.goAround() returns a success message', (t) => {
+test('.goAround() returns a success message', () => {
     const expectedResult = [
         true,
         {
@@ -828,10 +829,10 @@ ava('.goAround() returns a success message', (t) => {
     const pilot = createPilotFixture();
     const result = pilot.goAround(headingMock, speedMock, airportElevationMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.initiateHoldingPattern() returns error response when specified fix is not in the route', (t) => {
+test('.initiateHoldingPattern() returns error response when specified fix is not in the route', () => {
     const pilot = createPilotFixture();
     const expectedResult = [false, {
         log: 'unable to hold at COWBY; it is not on our route!',
@@ -839,10 +840,10 @@ ava('.initiateHoldingPattern() returns error response when specified fix is not 
     }];
     const result = pilot.initiateHoldingPattern('COWBY', holdParametersMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.initiateHoldingPattern() returns correct readback when hold implemented successfully', (t) => {
+test('.initiateHoldingPattern() returns correct readback when hold implemented successfully', () => {
     const pilot = createPilotFixture();
     const expectedResult = [true, {
         log: 'hold east of KEPEC on the 087 radial, right turns, 1min legs',
@@ -850,10 +851,10 @@ ava('.initiateHoldingPattern() returns correct readback when hold implemented su
     }];
     const result = pilot.initiateHoldingPattern('KEPEC', holdParametersMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.maintainAltitude() returns early responding that they are unable to maintain the requested altitude', (t) => {
+test('.maintainAltitude() returns early responding that they are unable to maintain the requested altitude', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const nextAltitudeMock = 90000;
     const shouldExpediteMock = false;
@@ -876,12 +877,12 @@ ava('.maintainAltitude() returns early responding that they are unable to mainta
         aircraftModel
     );
 
-    t.true(mcp.altitudeMode === 'VNAV');
-    t.true(mcp.altitude === expectedAltitude);
-    t.deepEqual(result, expectedResult);
+    expect(mcp.altitudeMode === 'VNAV').toBe(true);
+    expect(mcp.altitude === expectedAltitude).toBe(true);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.maintainAltitude() adds 1 additional foot to assigned altitude when assigned top altitude and "shouldUseSoftCeiling" is true', (t) => {
+test('.maintainAltitude() adds 1 additional foot to assigned altitude when assigned top altitude and "shouldUseSoftCeiling" is true', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const nextAltitudeMock = 19000;
     const shouldExpediteMock = false;
@@ -895,11 +896,11 @@ ava('.maintainAltitude() adds 1 additional foot to assigned altitude when assign
         aircraftModel
     );
 
-    t.true(aircraftModel.mcp.altitudeMode === 'HOLD');
-    t.true(aircraftModel.mcp.altitude === 19001);
+    expect(aircraftModel.mcp.altitudeMode === 'HOLD').toBe(true);
+    expect(aircraftModel.mcp.altitude === 19001).toBe(true);
 });
 
-ava('.maintainAltitude() sets mcp.altitudeMode to `HOLD` and set mcp.altitude to the correct value', (t) => {
+test('.maintainAltitude() sets mcp.altitudeMode to `HOLD` and set mcp.altitude to the correct value', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const nextAltitudeMock = 13000;
     const shouldExpediteMock = false;
@@ -913,11 +914,11 @@ ava('.maintainAltitude() sets mcp.altitudeMode to `HOLD` and set mcp.altitude to
         aircraftModel
     );
 
-    t.true(aircraftModel.mcp.altitudeMode === 'HOLD');
-    t.true(aircraftModel.mcp.altitude === 13000);
+    expect(aircraftModel.mcp.altitudeMode === 'HOLD').toBe(true);
+    expect(aircraftModel.mcp.altitude === 13000).toBe(true);
 });
 
-ava('.maintainAltitude() sets #shouldExpediteAltitudeChange to true when shouldExpedite is true', (t) => {
+test('.maintainAltitude() sets #shouldExpediteAltitudeChange to true when shouldExpedite is true', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const nextAltitudeMock = 13000;
     const shouldExpediteMock = true;
@@ -933,10 +934,10 @@ ava('.maintainAltitude() sets #shouldExpediteAltitudeChange to true when shouldE
         aircraftModel
     );
 
-    t.true(aircraftModel.pilot._mcp.shouldExpediteAltitudeChange);
+    expect(aircraftModel.pilot._mcp.shouldExpediteAltitudeChange).toBe(true);
 });
 
-ava('.maintainAltitude() returns the correct response strings when shouldExpedite is false', (t) => {
+test('.maintainAltitude() returns the correct response strings when shouldExpedite is false', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const nextAltitudeMock = 13000;
     const shouldExpediteMock = false;
@@ -950,14 +951,14 @@ ava('.maintainAltitude() returns the correct response strings when shouldExpedit
         aircraftModel
     );
 
-    t.true(_isArray(result));
-    t.true(result[0] === true);
-    t.true(_isObject(result[1]));
-    t.true(result[1].log === 'descend and maintain 13000');
-    t.true(result[1].say === 'descend and maintain one three thousand');
+    expect(_isArray(result)).toBe(true);
+    expect(result[0] === true).toBe(true);
+    expect(_isObject(result[1])).toBe(true);
+    expect(result[1].log === 'descend and maintain 13000').toBe(true);
+    expect(result[1].say === 'descend and maintain one three thousand').toBe(true);
 });
 
-ava('.maintainAltitude() returns the correct response strings when shouldExpedite is true', (t) => {
+test('.maintainAltitude() returns the correct response strings when shouldExpedite is true', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const nextAltitudeMock = 19000;
     const shouldExpediteMock = true;
@@ -971,11 +972,11 @@ ava('.maintainAltitude() returns the correct response strings when shouldExpedit
         aircraftModel
     );
 
-    t.true(result[1].log === 'descend and maintain 19000 and expedite');
-    t.true(result[1].say === 'descend and maintain flight level one niner zero and expedite');
+    expect(result[1].log === 'descend and maintain 19000 and expedite').toBe(true);
+    expect(result[1].say === 'descend and maintain flight level one niner zero and expedite').toBe(true);
 });
 
-ava('.maintainAltitude() calls .cancelApproachClearance()', (t) => {
+test('.maintainAltitude() calls .cancelApproachClearance()', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const approachTypeMock = 'ils';
     const runwayModelMock = airportModelFixture.getRunway('19L');
@@ -986,7 +987,7 @@ ava('.maintainAltitude() calls .cancelApproachClearance()', (t) => {
 
     aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
 
-    t.true(aircraftModel.pilot.hasApproachClearance);
+    expect(aircraftModel.pilot.hasApproachClearance).toBe(true);
 
     aircraftModel.pilot.maintainAltitude(
         nextAltitudeMock,
@@ -996,29 +997,29 @@ ava('.maintainAltitude() calls .cancelApproachClearance()', (t) => {
         aircraftModel
     );
 
-    t.true(cancelApproachClearanceSpy.called);
+    expect(cancelApproachClearanceSpy.called).toBe(true);
 });
 
-ava('.maintainHeading() sets the #mcp with the correct modes and values', (t) => {
+test('.maintainHeading() sets the #mcp with the correct modes and values', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
 
     aircraftModel.pilot.maintainHeading(aircraftModel, nextHeadingDegreesMock, null, false);
 
-    t.true(aircraftModel.pilot._mcp.headingMode === 'HOLD');
-    t.true(aircraftModel.pilot._mcp.heading === 3.141592653589793);
+    expect(aircraftModel.pilot._mcp.headingMode === 'HOLD').toBe(true);
+    expect(aircraftModel.pilot._mcp.heading === 3.141592653589793).toBe(true);
 });
 
-ava('.maintainHeading() calls .cancelHoldingPattern()', (t) => {
+test('.maintainHeading() calls .cancelHoldingPattern()', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const cancelHoldingPatternSpy = sinon.spy(aircraftModel.pilot, 'cancelHoldingPattern');
 
     aircraftModel.pilot._fms.setFlightPhase('HOLD');
     aircraftModel.pilot.maintainHeading(aircraftModel, nextHeadingDegreesMock, null, false);
 
-    t.true(cancelHoldingPatternSpy.calledWithExactly());
+    expect(cancelHoldingPatternSpy.calledWithExactly()).toBe(true);
 });
 
-ava('.maintainHeading() returns a success message when incremental is true and direction is left', (t) => {
+test('.maintainHeading() returns a success message when incremental is true and direction is left', () => {
     const directionMock = 'left';
     const expectedResult = [
         true,
@@ -1030,10 +1031,10 @@ ava('.maintainHeading() returns a success message when incremental is true and d
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const result = aircraftModel.pilot.maintainHeading(aircraftModel, 42, directionMock, true);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.maintainHeading() returns a success message when incremental is true, direction is right, and a 2-digit numeral is used for the increment', (t) => {
+test('.maintainHeading() returns a success message when incremental is true, direction is right, and a 2-digit numeral is used for the increment', () => {
     const directionMock = 'right';
     const expectedResult = [
         true,
@@ -1045,10 +1046,10 @@ ava('.maintainHeading() returns a success message when incremental is true, dire
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const result = aircraftModel.pilot.maintainHeading(aircraftModel, 42, directionMock, true);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.maintainHeading() returns a success message when incremental is true and direction is right, and a 1-digit numeral is used for the increment', (t) => {
+test('.maintainHeading() returns a success message when incremental is true and direction is right, and a 1-digit numeral is used for the increment', () => {
     const directionMock = 'right';
     const expectedResult = [
         true,
@@ -1060,10 +1061,10 @@ ava('.maintainHeading() returns a success message when incremental is true and d
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const result = aircraftModel.pilot.maintainHeading(aircraftModel, 5, directionMock, true);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.maintainHeading() returns a success message when incremental is false and direction is provided', (t) => {
+test('.maintainHeading() returns a success message when incremental is false and direction is provided', () => {
     const directionMock = 'right';
     const isIncremental = false;
     const expectedResult = [
@@ -1076,10 +1077,10 @@ ava('.maintainHeading() returns a success message when incremental is false and 
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const result = aircraftModel.pilot.maintainHeading(aircraftModel, 42, directionMock, isIncremental);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.maintainHeading() returns a success message when incremental is false and no direction is provided', (t) => {
+test('.maintainHeading() returns a success message when incremental is false and no direction is provided', () => {
     const directionMock = '';
     const isIncremental = false;
     const expectedResult = [
@@ -1092,10 +1093,10 @@ ava('.maintainHeading() returns a success message when incremental is false and 
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const result = aircraftModel.pilot.maintainHeading(aircraftModel, 42, directionMock, isIncremental);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.maintainHeading() calls .cancelApproachClearance()', (t) => {
+test('.maintainHeading() calls .cancelApproachClearance()', () => {
     const approachTypeMock = 'ils';
     const runwayModelMock = airportModelFixture.getRunway('19L');
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
@@ -1103,38 +1104,23 @@ ava('.maintainHeading() calls .cancelApproachClearance()', (t) => {
 
     aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
 
-    t.true(aircraftModel.pilot.hasApproachClearance);
+    expect(aircraftModel.pilot.hasApproachClearance).toBe(true);
 
     aircraftModel.pilot.maintainHeading(aircraftModel, nextHeadingDegreesMock);
 
-    t.true(cancelApproachClearanceSpy.called);
+    expect(cancelApproachClearanceSpy.called).toBe(true);
 });
 
-ava('.maintainPresentHeading() calls .cancelApproachClearance()', (t) => {
-    const approachTypeMock = 'ils';
-    const runwayModelMock = airportModelFixture.getRunway('19L');
-    const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
-    const cancelApproachClearanceSpy = sinon.spy(aircraftModel.pilot, 'cancelApproachClearance');
-
-    aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
-
-    t.true(aircraftModel.pilot.hasApproachClearance);
-
-    aircraftModel.pilot.maintainPresentHeading(aircraftModel);
-
-    t.true(cancelApproachClearanceSpy.called);
-});
-
-ava('.maintainPresentHeading() sets the #mcp with the correct modes and values', (t) => {
+test('.maintainPresentHeading() sets the #mcp with the correct modes and values', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
 
     aircraftModel.pilot.maintainPresentHeading(aircraftModel);
 
-    t.true(aircraftModel.pilot._mcp.headingMode === 'HOLD');
-    t.true(aircraftModel.pilot._mcp.heading === aircraftModel.heading);
+    expect(aircraftModel.pilot._mcp.headingMode === 'HOLD').toBe(true);
+    expect(aircraftModel.pilot._mcp.heading === aircraftModel.heading).toBe(true);
 });
 
-ava('.maintainPresentHeading() returns a success message when finished (general case)', (t) => {
+test('.maintainPresentHeading() returns a success message when finished', () => {
     const expectedResult = [
         true,
         {
@@ -1145,10 +1131,48 @@ ava('.maintainPresentHeading() returns a success message when finished (general 
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const result = aircraftModel.pilot.maintainPresentHeading(aircraftModel);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.maintainPresentHeading() returns a success message when finished (pre-departure)', (t) => {
+test('.maintainPresentHeading() calls .cancelApproachClearance()', () => {
+    const approachTypeMock = 'ils';
+    const runwayModelMock = airportModelFixture.getRunway('19L');
+    const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
+    const cancelApproachClearanceSpy = sinon.spy(aircraftModel.pilot, 'cancelApproachClearance');
+
+    aircraftModel.pilot.conductInstrumentApproach(aircraftModel, approachTypeMock, runwayModelMock);
+
+    expect(aircraftModel.pilot.hasApproachClearance).toBe(true);
+
+    aircraftModel.pilot.maintainPresentHeading(aircraftModel);
+
+    expect(cancelApproachClearanceSpy.called).toBe(true);
+});
+
+test('.maintainPresentHeading() sets the #mcp with the correct modes and values', () => {
+    const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
+
+    aircraftModel.pilot.maintainPresentHeading(aircraftModel);
+
+    expect(aircraftModel.pilot._mcp.headingMode === 'HOLD').toBe(true);
+    expect(aircraftModel.pilot._mcp.heading === aircraftModel.heading).toBe(true);
+});
+
+test('.maintainPresentHeading() returns a success message when finished (general case)', () => {
+    const expectedResult = [
+        true,
+        {
+            log: 'fly present heading',
+            say: 'fly present heading'
+        }
+    ];
+    const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
+    const result = aircraftModel.pilot.maintainPresentHeading(aircraftModel);
+
+    expect(result).toEqual(expectedResult);
+});
+
+test('.maintainPresentHeading() returns a success message when finished (pre-departure)', () => {
     const expectedResult = [
         true,
         {
@@ -1160,10 +1184,10 @@ ava('.maintainPresentHeading() returns a success message when finished (pre-depa
     aircraftModel.setFlightPhase(FLIGHT_PHASE.WAITING);
     const result = aircraftModel.pilot.maintainPresentHeading(aircraftModel);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.maintainSpeed() sets the correct Mcp mode and value', (t) => {
+test('.maintainSpeed() sets the correct Mcp mode and value', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const pilot = createPilotFixture();
     const expectedResult = [
@@ -1175,12 +1199,12 @@ ava('.maintainSpeed() sets the correct Mcp mode and value', (t) => {
     ];
     const result = pilot.maintainSpeed(cruiseSpeedMock, aircraftModel);
 
-    t.true(pilot._mcp.speedMode === 'HOLD');
-    t.true(pilot._mcp.speed === 460);
-    t.deepEqual(result, expectedResult);
+    expect(pilot._mcp.speedMode === 'HOLD').toBe(true);
+    expect(pilot._mcp.speed === 460).toBe(true);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.maintainSpeed() returns early with a warning when assigned an unreachable speed', (t) => {
+test('.maintainSpeed() returns early with a warning when assigned an unreachable speed', () => {
     const aircraftModel = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const pilot = createPilotFixture();
     const expectedResult = [
@@ -1192,10 +1216,10 @@ ava('.maintainSpeed() returns early with a warning when assigned an unreachable 
     ];
     const result = pilot.maintainSpeed(unattainableSpeedMock, aircraftModel);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.proceedDirect() returns an error if the waypointName provided is not in the current flightPlan', (t) => {
+test('.proceedDirect() returns an error if the waypointName provided is not in the current flightPlan', () => {
     const expectedResult = [false, {
         log: 'cannot proceed direct to ABC, it does not exist in our flight plan',
         say: 'cannot proceed direct to abc, it does not exist in our flight plan'
@@ -1203,37 +1227,37 @@ ava('.proceedDirect() returns an error if the waypointName provided is not in th
     const pilot = createPilotFixture();
     const result = pilot.proceedDirect('ABC');
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.proceedDirect() calls ._fms.skipToWaypointName() with the correct arguments', (t) => {
+test('.proceedDirect() calls ._fms.skipToWaypointName() with the correct arguments', () => {
     const pilot = createPilotFixture();
     const skipToWaypointNameSpy = sinon.spy(pilot._fms, 'skipToWaypointName');
 
     pilot.proceedDirect(waypointNameMock);
 
-    t.true(skipToWaypointNameSpy.calledWithExactly(waypointNameMock));
+    expect(skipToWaypointNameSpy.calledWithExactly(waypointNameMock)).toBe(true);
 });
 
-ava('.proceedDirect() sets the correct #_mcp mode', (t) => {
+test('.proceedDirect() sets the correct #_mcp mode', () => {
     const pilot = createPilotFixture();
 
     pilot.proceedDirect(waypointNameMock);
 
-    t.true(pilot._mcp.headingMode === 'LNAV');
+    expect(pilot._mcp.headingMode === 'LNAV').toBe(true);
 });
 
-ava('.proceedDirect() calls .cancelHoldingPattern()', (t) => {
+test('.proceedDirect() calls .cancelHoldingPattern()', () => {
     const pilot = createPilotFixture();
     const cancelHoldingPatternSpy = sinon.spy(pilot, 'cancelHoldingPattern');
 
     pilot._fms.setFlightPhase('HOLD');
     pilot.proceedDirect(waypointNameMock);
 
-    t.true(cancelHoldingPatternSpy.calledWithExactly());
+    expect(cancelHoldingPatternSpy.calledWithExactly()).toBe(true);
 });
 
-ava('.proceedDirect() returns success message when finished', (t) => {
+test('.proceedDirect() returns success message when finished', () => {
     const expectedResult = [true, {
         log: 'proceed direct SUNST',
         say: 'proceed direct sunst'
@@ -1241,10 +1265,10 @@ ava('.proceedDirect() returns success message when finished', (t) => {
     const pilot = createPilotFixture();
     const result = pilot.proceedDirect(waypointNameMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.sayTargetHeading() returns a message when #headingMode is HOLD', (t) => {
+test('.sayTargetHeading() returns a message when #headingMode is HOLD', () => {
     const modeController = new ModeController();
     const pilot = new Pilot(createFmsArrivalFixture(), modeController);
     const expectedResult = [
@@ -1259,10 +1283,10 @@ ava('.sayTargetHeading() returns a message when #headingMode is HOLD', (t) => {
 
     const result = pilot.sayTargetHeading();
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.sayTargetHeading() returns a message when #headingMode is VOR/LOC', (t) => {
+test('.sayTargetHeading() returns a message when #headingMode is VOR/LOC', () => {
     const modeController = new ModeController();
     const pilot = new Pilot(createFmsArrivalFixture(), modeController);
     const expectedResult = [
@@ -1277,12 +1301,12 @@ ava('.sayTargetHeading() returns a message when #headingMode is VOR/LOC', (t) =>
 
     const result = pilot.sayTargetHeading();
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava.todo('.sayTargetHeading() returns a message when #headingMode is LNAV');
+test.todo('.sayTargetHeading() returns a message when #headingMode is LNAV');
 
-ava('.sayTargetHeading() returns a message when #headingMode is OFF', (t) => {
+test('.sayTargetHeading() returns a message when #headingMode is OFF', () => {
     const modeController = new ModeController();
     const pilot = new Pilot(createFmsArrivalFixture(), modeController);
     const expectedResult = [
@@ -1294,5 +1318,5 @@ ava('.sayTargetHeading() returns a message when #headingMode is OFF', (t) => {
     ];
     const result = pilot.sayTargetHeading();
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });

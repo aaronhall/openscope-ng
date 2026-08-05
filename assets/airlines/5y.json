@@ -3,9 +3,7 @@
     "name": "General Aviation Kenya",
     "callsign": {
         "name": "Five Yankee",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

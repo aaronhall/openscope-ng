@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /**
  * @property INVALID_ARG
  * @type {string}
@@ -42,5 +41,5 @@ export const ERROR_MESSAGE = {
     MUST_BE_STRING: `${INVALID_ARG}. Must be a string`,
     INVALID_DIRECTION_STRING: `${INVALID_ARG}. Expected one of 'left / l / right / r' as the first argument when passed three arguments`,
     HEADING_ACCEPTS_BOOLEAN_AS_THIRD_ARG: `${INVALID_ARG}. Heading accepts a boolean for the third argument when passed three arguments`,
-    INVALID_SQUAWK: `${INVALID_ARG}. Expected '0000'-'7777' for the transponder code.`
+    INVALID_SQUAWK: `${INVALID_ARG}. Expected '0000'-'7777' for the transponder code.`,
 };

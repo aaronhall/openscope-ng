@@ -3,13 +3,9 @@
     "name": "Air Hamburg",
     "callsign": {
         "name": "Air Hamburg",
-        "callsignFormats": [
-            "###@"
-        ]
+        "callsignFormats": ["###@"]
     },
     "fleets": {
-        "default": [
-            ["E35L", 17]
-        ]
+        "default": [["E35L", 17]]
     }
 }

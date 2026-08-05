@@ -3,11 +3,7 @@
     "name": "Alaska Airlines",
     "callsign": {
         "name": "Alaska",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["####", "###", "##"]
     },
     "fleets": {
         "default": [

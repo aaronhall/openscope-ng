@@ -3,10 +3,7 @@
     "name": "Arkia Israeli Airlines",
     "callsign": {
         "name": "Arkia",
-        "callsignFormats": [
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["###", "####"]
     },
     "fleets": {
         "default": [
@@ -14,8 +11,6 @@
             ["B753", 1],
             ["E190", 5]
         ],
-        "e190": [
-            ["E190", 5]
-        ]
+        "e190": [["E190", 5]]
     }
 }

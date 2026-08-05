@@ -1,16 +1,13 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import _every from 'lodash/every';
 import _map from 'lodash/map';
 import _isArray from 'lodash/isArray';
 import ProcedureModel from '../../../src/assets/scripts/client/navigationLibrary/ProcedureModel';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../../fixtures/navigationLibraryFixtures';
-import {
-    SID_MOCK,
-    STAR_MOCK
-} from './_mocks/procedureMocks';
+import { SID_MOCK, STAR_MOCK } from './_mocks/procedureMocks';
 import { PROCEDURE_TYPE } from '../../../src/assets/scripts/client/constants/routeConstants';
 
 // mocks
@@ -19,111 +16,145 @@ const invalidExitMock = 'blahblahblah';
 const validBoachEntryMock = 'KLAS07R';
 const validBoachExitMock = 'TNP';
 
-ava.beforeEach(() => {
+beforeEach(() => {
     createNavigationLibraryFixture();
 });
 
-ava.afterEach(() => {
+afterEach(() => {
     resetNavigationLibraryFixture();
 });
 
-ava('throws when instantiated without parameters', (t) => {
-    t.throws(() => new ProcedureModel());
+test('throws when instantiated without parameters', () => {
+    expect(() => new ProcedureModel()).toThrow();
 });
 
-ava('throws when instantiated with a procedure type but no data', (t) => {
-    t.throws(() => new ProcedureModel(PROCEDURE_TYPE.SID));
+test('throws when instantiated with a procedure type but no data', () => {
+    expect(() => new ProcedureModel(PROCEDURE_TYPE.SID)).toThrow();
 });
 
-ava('throws when instantiated with unknown procedure type', (t) => {
-    t.throws(() => new ProcedureModel('invalidProcedureType', SID_MOCK.BOACH6));
+test('throws when instantiated with unknown procedure type', () => {
+    expect(() => new ProcedureModel('invalidProcedureType', SID_MOCK.BOACH6)).toThrow();
 });
 
-ava('instantiates correctly when given valid SID data', (t) => {
+test('instantiates correctly when given valid SID data', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
-    const expectedEntries = ['KLAS01L', 'KLAS01R', 'KLAS07L', 'KLAS07R', 'KLAS19L', 'KLAS19R', 'KLAS25L', 'KLAS25R'];
+    const expectedEntries = [
+        'KLAS01L',
+        'KLAS01R',
+        'KLAS07L',
+        'KLAS07R',
+        'KLAS19L',
+        'KLAS19R',
+        'KLAS25L',
+        'KLAS25R',
+    ];
     const expectedExits = ['HEC', 'TNP'];
 
-    t.deepEqual(model._body[0], ['BOACH', 'A130+']);
-    t.true(model._body.length === 1);
-    t.true(model._entryPoints.KLAS07R[0] === 'JESJI');
-    t.deepEqual(Object.keys(model._entryPoints), expectedEntries);
-    t.true(model._exitPoints.TNP[0] === 'ZELMA');
-    t.deepEqual(Object.keys(model._exitPoints), expectedExits);
-    t.deepEqual(model._draw, SID_MOCK.BOACH6.draw);
-    t.true(model._icao === SID_MOCK.BOACH6.icao);
-    t.true(model._name === SID_MOCK.BOACH6.name);
+    expect(model._body[0]).toEqual(['BOACH', 'A130+']);
+    expect(model._body.length === 1).toBe(true);
+    expect(model._entryPoints.KLAS07R[0] === 'JESJI').toBe(true);
+    expect(Object.keys(model._entryPoints)).toEqual(expectedEntries);
+    expect(model._exitPoints.TNP[0] === 'ZELMA').toBe(true);
+    expect(Object.keys(model._exitPoints)).toEqual(expectedExits);
+    expect(model._draw).toEqual(SID_MOCK.BOACH6.draw);
+    expect(model._icao === SID_MOCK.BOACH6.icao).toBe(true);
+    expect(model._name === SID_MOCK.BOACH6.name).toBe(true);
 });
 
-ava('instantiates correctly when given valid STAR data', (t) => {
+test('instantiates correctly when given valid STAR data', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.STAR, STAR_MOCK.KEPEC1);
     const expectedEntries = ['DAG', 'TNP'];
-    const expectedExits = ['KLAS01L', 'KLAS01R', 'KLAS07L', 'KLAS07R', 'KLAS19L', 'KLAS19R', 'KLAS25L', 'KLAS25R'];
+    const expectedExits = [
+        'KLAS01L',
+        'KLAS01R',
+        'KLAS07L',
+        'KLAS07R',
+        'KLAS19L',
+        'KLAS19R',
+        'KLAS25L',
+        'KLAS25R',
+    ];
 
-
-    t.deepEqual(model._body[0], ['CLARR', 'A130|S250']);
-    t.true(model._body.length === 4);
-    t.true(model._entryPoints.TNP[1] === 'JOTNU');
-    t.deepEqual(Object.keys(model._entryPoints), expectedEntries);
-    t.deepEqual(model._exitPoints.KLAS07R[0], ['CHIPZ', 'A80|S170']);
-    t.deepEqual(Object.keys(model._exitPoints), expectedExits);
-    t.deepEqual(model._draw, STAR_MOCK.KEPEC1.draw);
-    t.true(model._icao === STAR_MOCK.KEPEC1.icao);
-    t.true(model._name === STAR_MOCK.KEPEC1.name);
+    expect(model._body[0]).toEqual(['CLARR', 'A130|S250']);
+    expect(model._body.length === 4).toBe(true);
+    expect(model._entryPoints.TNP[1] === 'JOTNU').toBe(true);
+    expect(Object.keys(model._entryPoints)).toEqual(expectedEntries);
+    expect(model._exitPoints.KLAS07R[0]).toEqual(['CHIPZ', 'A80|S170']);
+    expect(Object.keys(model._exitPoints)).toEqual(expectedExits);
+    expect(model._draw).toEqual(STAR_MOCK.KEPEC1.draw);
+    expect(model._icao === STAR_MOCK.KEPEC1.icao).toBe(true);
+    expect(model._name === STAR_MOCK.KEPEC1.name).toBe(true);
 });
 
-ava('#draw returns value of #_draw', (t) => {
+test('#draw returns value of #_draw', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const expectedResult = model._draw;
     const result = model.draw;
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('#icao returns value of #_icao', (t) => {
+test('#icao returns value of #_icao', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const expectedResult = model._icao;
     const result = model.icao;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('#name returns value of #_name', (t) => {
+test('#name returns value of #_name', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const expectedResult = model._name;
     const result = model.name;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('#procedureType returns value of #_procedureType', (t) => {
+test('#procedureType returns value of #_procedureType', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const expectedResult = model._procedureType;
     const result = model.procedureType;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getAllFixNamesInUse() throws when #_draw is not a 2D array', (t) => {
+test('.getAllFixNamesInUse() throws when #_draw is not a 2D array', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
 
     model._draw = [];
 
-    t.throws(() => model.getAllFixNamesInUse());
+    expect(() => model.getAllFixNamesInUse()).toThrow();
 });
 
-ava('.getAllFixNamesInUse() returns all fix names that exist in any portion of the procedure', (t) => {
+test('.getAllFixNamesInUse() returns all fix names that exist in any portion of the procedure', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const expectedResult = [
-        'BESSY', 'WITLA', 'JEBBB', 'WASTE', 'BAKRR', 'MINEY', 'HITME', 'JESJI', 'FIXIX',
-        'ROPPR', 'RODDD', 'JAKER', 'PIRMD', 'RBELL', 'BOACH', 'HEC', 'ZELMA', 'JOTNU', 'TNP'
+        'BESSY',
+        'WITLA',
+        'JEBBB',
+        'WASTE',
+        'BAKRR',
+        'MINEY',
+        'HITME',
+        'JESJI',
+        'FIXIX',
+        'ROPPR',
+        'RODDD',
+        'JAKER',
+        'PIRMD',
+        'RBELL',
+        'BOACH',
+        'HEC',
+        'ZELMA',
+        'JOTNU',
+        'TNP',
     ];
     const result = model.getAllFixNamesInUse();
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.getRandomExitPoint() returns different exit point names on successive calls', (t) => {
+test('.getRandomExitPoint() returns different exit point names on successive calls', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     // making call count high to prevent chance of erroneous failure
     // callCount 15 yields 1 in 32k chance of failure on 2-exit SID (such as in this test)
@@ -134,103 +165,115 @@ ava('.getRandomExitPoint() returns different exit point names on successive call
         randomlySelectedExitNames.push(model.getRandomExitPoint());
     }
 
-    const allExitsAreEqual = _every(randomlySelectedExitNames, (name) => name === randomlySelectedExitNames[0]);
+    const allExitsAreEqual = _every(
+        randomlySelectedExitNames,
+        (name) => name === randomlySelectedExitNames[0]
+    );
 
-    t.false(allExitsAreEqual);
+    expect(allExitsAreEqual).toBe(false);
 });
 
-ava('.getWaypointModelsForEntryAndExit() returns early when specified entry point is invalid', (t) => {
+test('.getWaypointModelsForEntryAndExit() returns early when specified entry point is invalid', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const result = model.getWaypointModelsForEntryAndExit(invalidEntryMock, validBoachExitMock);
 
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.getWaypointModelsForEntryAndExit() returns early when specified exit point is invalid', (t) => {
+test('.getWaypointModelsForEntryAndExit() returns early when specified exit point is invalid', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const result = model.getWaypointModelsForEntryAndExit(validBoachEntryMock, invalidExitMock);
 
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.getWaypointModelsForEntryAndExit() returns correct waypoints when specified entry/exit are valid', (t) => {
+test('.getWaypointModelsForEntryAndExit() returns correct waypoints when specified entry/exit are valid', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const result = model.getWaypointModelsForEntryAndExit(validBoachEntryMock, validBoachExitMock);
     const resultingWaypointNames = _map(result, (waypointModel) => waypointModel._name);
-    const expectedWaypointNames = ['JESJI', 'BAKRR', 'MINEY', 'HITME', 'BOACH', 'ZELMA', 'JOTNU', 'TNP'];
+    const expectedWaypointNames = [
+        'JESJI',
+        'BAKRR',
+        'MINEY',
+        'HITME',
+        'BOACH',
+        'ZELMA',
+        'JOTNU',
+        'TNP',
+    ];
 
-    t.true(_isArray(result));
-    t.true(result.length === 8);
-    t.deepEqual(resultingWaypointNames, expectedWaypointNames);
+    expect(_isArray(result)).toBe(true);
+    expect(result.length === 8).toBe(true);
+    expect(resultingWaypointNames).toEqual(expectedWaypointNames);
 });
 
-ava('.hasEntry() returns false when the specified entry is not valid for the procedure', (t) => {
+test('.hasEntry() returns false when the specified entry is not valid for the procedure', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const result = model.hasEntry(invalidEntryMock);
 
-    t.false(result);
+    expect(result).toBe(false);
 });
 
-ava('.hasEntry() returns true when the specified entry is valid for the procedure', (t) => {
+test('.hasEntry() returns true when the specified entry is valid for the procedure', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const result = model.hasEntry(validBoachEntryMock);
 
-    t.true(result);
+    expect(result).toBe(true);
 });
 
-ava('.hasExit() returns false when the specified exit is not valid for the procedure', (t) => {
+test('.hasExit() returns false when the specified exit is not valid for the procedure', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const result = model.hasExit(invalidExitMock);
 
-    t.false(result);
+    expect(result).toBe(false);
 });
 
-ava('.hasExit() returns true when the specified exit is valid for the procedure', (t) => {
+test('.hasExit() returns true when the specified exit is valid for the procedure', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const result = model.hasExit(validBoachExitMock);
 
-    t.true(result);
+    expect(result).toBe(true);
 });
 
-ava('.isSid() returns false when this procedure is not a SID', (t) => {
+test('.isSid() returns false when this procedure is not a SID', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.STAR, STAR_MOCK.KEPEC1);
 
-    t.false(model.isSid());
+    expect(model.isSid()).toBe(false);
 });
 
-ava('.isSid() returns true when this procedure is a SID', (t) => {
+test('.isSid() returns true when this procedure is a SID', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
 
-    t.true(model.isSid());
+    expect(model.isSid()).toBe(true);
 });
 
-ava('.isStar() returns false when this procedure is not a STAR', (t) => {
+test('.isStar() returns false when this procedure is not a STAR', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
 
-    t.false(model.isStar());
+    expect(model.isStar()).toBe(false);
 });
 
-ava('.isStar() returns true when this procedure is a STAR', (t) => {
+test('.isStar() returns true when this procedure is a STAR', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.STAR, STAR_MOCK.KEPEC1);
 
-    t.true(model.isStar());
+    expect(model.isStar()).toBe(true);
 });
 
-ava('._getFixNameFromRestrictedFixArray() returns undefined when provided a vector waypoint name', (t) => {
+test('._getFixNameFromRestrictedFixArray() returns undefined when provided a vector waypoint name', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const result = model._getFixNameFromRestrictedFixArray('#123');
 
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('._generateWaypointsForEntry() throws when specified entry point is invalid', (t) => {
+test('._generateWaypointsForEntry() throws when specified entry point is invalid', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
 
-    t.throws(() => model._generateWaypointsForEntry(invalidEntryMock));
+    expect(() => model._generateWaypointsForEntry(invalidEntryMock)).toThrow();
 });
 
-ava('._generateWaypointsForExit() throws when specified exit point is invalid', (t) => {
+test('._generateWaypointsForExit() throws when specified exit point is invalid', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
 
-    t.throws(() => model._generateWaypointsForExit(invalidExitMock));
+    expect(() => model._generateWaypointsForExit(invalidExitMock)).toThrow();
 });

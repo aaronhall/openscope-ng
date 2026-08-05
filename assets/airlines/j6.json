@@ -3,9 +3,7 @@
     "name": "General Aviation Saint Lucia",
     "callsign": {
         "name": "Juliet Six",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

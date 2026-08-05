@@ -1,90 +1,91 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import AircraftTypeDefinitionModel from '../../src/assets/scripts/client/aircraft/AircraftTypeDefinitionModel';
 import { AIRCRAFT_DEFINITION_MOCK } from './_mocks/aircraftMocks';
 
-ava('throws when passed invalid parameters', (t) => {
-    const expectedMessage = /Invalid aircraftTypeDefinition passed to AircraftTypeDefinitionModel constructor\. Expected a non-empty object, but received .*/;
+test('throws when passed invalid parameters', () => {
+    const expectedMessage =
+        /Invalid aircraftTypeDefinition passed to AircraftTypeDefinitionModel constructor\. Expected a non-empty object, but received .*/;
 
-    t.throws(() => new AircraftTypeDefinitionModel(), {
+    expect(() => new AircraftTypeDefinitionModel(), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionModel(null), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionModel(null), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionModel([]), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionModel([]), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionModel({}), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionModel({}), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionModel(42), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionModel(42), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionModel('threeve'), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionModel('threeve'), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionModel(false), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionModel(false), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
+        message: expectedMessage,
+    }).toThrow();
 });
 
-ava('does not throw when passed valid parameters', (t) => {
-    t.notThrows(() => new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK));
+test('does not throw when passed valid parameters', () => {
+    expect(() => new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK)).not.toThrow();
 });
 
-ava('._buildTypeForStripView() returns the icao when not a heavy/super weightClass', (t) => {
+test('._buildTypeForStripView() returns the icao when not a heavy/super weightClass', () => {
     const model = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     const result = model._buildTypeForStripView();
 
-    t.true(result === 'B737/L');
+    expect(result === 'B737/L').toBe(true);
 });
 
-ava('._buildTypeForStripView() returns the correct string for H weightClass', (t) => {
+test('._buildTypeForStripView() returns the correct string for H weightClass', () => {
     const model = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     model.weightClass = 'H';
     const result = model._buildTypeForStripView();
 
-    t.true(result === 'H/B737/L');
+    expect(result === 'H/B737/L').toBe(true);
 });
 
-ava('._buildTypeForStripView() returns the correct string for J weightClass', (t) => {
+test('._buildTypeForStripView() returns the correct string for J weightClass', () => {
     const model = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     model.weightClass = 'J';
     const result = model._buildTypeForStripView();
 
-    t.true(result === 'J/B737/L');
+    expect(result === 'J/B737/L').toBe(true);
 });
 
-ava('.isHeavyOrSuper() returns true when `#weightClass` is `H`', (t) => {
+test('.isHeavyOrSuper() returns true when `#weightClass` is `H`', () => {
     const model = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     model.weightClass = 'H';
 
-    t.true(model.isHeavyOrSuper());
+    expect(model.isHeavyOrSuper()).toBe(true);
 });
 
-ava('.isHeavyOrSuper() returns true when `#weightClass` is `J`', (t) => {
+test('.isHeavyOrSuper() returns true when `#weightClass` is `J`', () => {
     const model = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     model.weightClass = 'J';
 
-    t.true(model.isHeavyOrSuper());
+    expect(model.isHeavyOrSuper()).toBe(true);
 });
 
-ava('.isHeavyOrSuper() returns false when `#weightClass` is not `H` or `J`', (t) => {
+test('.isHeavyOrSuper() returns false when `#weightClass` is not `H` or `J`', () => {
     const model = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     model.weightClass = 'L';
 
-    t.false(model.isHeavyOrSuper());
+    expect(model.isHeavyOrSuper()).toBe(false);
 });
 
-ava('.calculateSameRunwaySeparationDistanceInFeet() returns the correct distance as long as the previous aircraft is not a srs category 3', (t) => {
+test('.calculateSameRunwaySeparationDistanceInFeet() returns the correct distance as long as the previous aircraft is not a srs category 3', () => {
     const model = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     const previousModel = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     previousModel.category.srs = 1;
@@ -92,20 +93,20 @@ ava('.calculateSameRunwaySeparationDistanceInFeet() returns the correct distance
 
     let distance = model.calculateSameRunwaySeparationDistanceInFeet(previousModel);
 
-    t.true(distance === 3000);
+    expect(distance === 3000).toBe(true);
 
     model.category.srs = 2;
     distance = model.calculateSameRunwaySeparationDistanceInFeet(previousModel);
 
-    t.true(distance === 4500);
+    expect(distance === 4500).toBe(true);
 
     model.category.srs = 3;
     distance = model.calculateSameRunwaySeparationDistanceInFeet(previousModel);
 
-    t.true(distance === 6000);
+    expect(distance === 6000).toBe(true);
 });
 
-ava('.calculateSameRunwaySeparationDistanceInFeet() returns 6000ft when the previous aircraft has no srs category or is srs category 3', (t) => {
+test('.calculateSameRunwaySeparationDistanceInFeet() returns 6000ft when the previous aircraft has no srs category or is srs category 3', () => {
     const model = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     const previousModel = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     model.category.srs = undefined;
@@ -113,31 +114,31 @@ ava('.calculateSameRunwaySeparationDistanceInFeet() returns 6000ft when the prev
 
     let distance = model.calculateSameRunwaySeparationDistanceInFeet(previousModel);
 
-    t.true(distance === 6000);
+    expect(distance === 6000).toBe(true);
 
     previousModel.category.srs = 3;
     distance = model.calculateSameRunwaySeparationDistanceInFeet(previousModel);
 
-    t.true(distance === 6000);
+    expect(distance === 6000).toBe(true);
 });
 
-ava('.getRadioWeightClass() returns heavy for heavy aircrafts', (t) => {
+test('.getRadioWeightClass() returns heavy for heavy aircrafts', () => {
     const model = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     model.weightClass = 'H';
 
-    t.true(model.getRadioWeightClass() === 'heavy');
+    expect(model.getRadioWeightClass() === 'heavy').toBe(true);
 });
 
-ava('.getRadioWeightClass() returns super for super aircrafts', (t) => {
+test('.getRadioWeightClass() returns super for super aircrafts', () => {
     const model = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     model.weightClass = 'J';
 
-    t.true(model.getRadioWeightClass() === 'super');
+    expect(model.getRadioWeightClass() === 'super').toBe(true);
 });
 
-ava('.getRadioWeightClass() returns empty string if aircraft is neither super nor heavy', (t) => {
+test('.getRadioWeightClass() returns empty string if aircraft is neither super nor heavy', () => {
     const model = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
     model.weightClass = 'L';
 
-    t.true(model.getRadioWeightClass() === '');
+    expect(model.getRadioWeightClass() === '').toBe(true);
 });

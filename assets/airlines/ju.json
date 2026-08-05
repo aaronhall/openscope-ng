@@ -3,9 +3,7 @@
     "name": "General Aviation Mongolia",
     "callsign": {
         "name": "Juliet Uniform",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

@@ -3,12 +3,7 @@
     "name": "Kalitta Air",
     "callsign": {
         "name": "Connie",
-        "callsignFormats": [
-            "#",
-            "##",
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["#", "##", "###", "####"]
     },
     "fleets": {
         "default": [

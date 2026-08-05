@@ -3,13 +3,9 @@
     "name": "AirAsia India",
     "callsign": {
         "name": "Red Knight",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 18]
-        ]
+        "default": [["A320", 18]]
     }
 }

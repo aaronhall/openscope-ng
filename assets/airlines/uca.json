@@ -3,13 +3,9 @@
     "name": "CommutAir",
     "callsign": {
         "name": "Commutair",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["E145", 37]
-        ]
+        "default": [["E145", 37]]
     }
 }

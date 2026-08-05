@@ -3,9 +3,7 @@
     "name": "General Aviation Aruba",
     "callsign": {
         "name": "Papa Four",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

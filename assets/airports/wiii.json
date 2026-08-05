@@ -24,7 +24,6 @@
     "arrivalRunway": "25L",
     "departureRunway": "25L",
     "fixes": {
-
         "DKI": ["S5d57.7m0", "E107d2.1m0"],
         "_DKIR": ["S6d1m24.44", "E106d39m11.46"],
         "CKG": ["S6d11.3m0", "E106d31.8m0"],
@@ -49,20 +48,31 @@
         "DOLTA": ["S5d7.6m0", "E105d55.5m0"],
         "TULIP": ["S5d25.4m0", "E105d37.8m0"],
         "KASAL": ["S6d32.6m0", "E107d56.4m0"]
-
     },
     "runways": [
         {
             "name": ["07R", "25L"],
-            "name_offset": [[0, 0], [0, 0]],
-            "end":    [["S6d8.55m0", "E106d38.62m0"], ["S6d7.82m0", "E106d40.46m0"]],
+            "name_offset": [
+                [0, 0],
+                [0, 0]
+            ],
+            "end": [
+                ["S6d8.55m0", "E106d38.62m0"],
+                ["S6d7.82m0", "E106d40.46m0"]
+            ],
             "length": 3.6,
             "ils": [true, true]
         },
         {
             "name": ["07L", "25R"],
-            "name_offset": [[0, 0], [0, 0]],
-            "end":    [["S6d7.25m0", "E106d38.33m0"], ["S6d6.54m0", "E106d40.15m0"]],
+            "name_offset": [
+                [0, 0],
+                [0, 0]
+            ],
+            "end": [
+                ["S6d7.25m0", "E106d38.33m0"],
+                ["S6d6.54m0", "E106d40.15m0"]
+            ],
             "length": 3.6,
             "ils": [true, true]
         }
@@ -72,17 +82,21 @@
             "icao": "DKI2",
             "name": "Jakarta Two",
             "rwy": {
-                "25R": ["GL", "_DKIR",["DKI","A12+"]],
-                "25L": ["GR", "_DKIR",["DKI","A12+"]],
-                "07L": ["CR", ["DKI","A12+"]],
-                "07R": ["CL", ["DKI","A12+"]]
+                "25R": ["GL", "_DKIR", ["DKI", "A12+"]],
+                "25L": ["GR", "_DKIR", ["DKI", "A12+"]],
+                "07L": ["CR", ["DKI", "A12+"]],
+                "07R": ["CL", ["DKI", "A12+"]]
             },
             "exitPoints": {
                 "DENDY": ["DENDY"],
                 "LEPAS": ["LEPAS"],
                 "SPADA": ["SPADA"]
             },
-            "draw": [["_DKIR","DKI", "DENDY*"],["_DKIR","DKI","LEPAS*"],["_DKIR","DKI","SPADA*"]]
+            "draw": [
+                ["_DKIR", "DKI", "DENDY*"],
+                ["_DKIR", "DKI", "LEPAS*"],
+                ["_DKIR", "DKI", "SPADA*"]
+            ]
         },
         "HALIM1": {
             "icao": "HALIM1",
@@ -96,7 +110,11 @@
                 "PW": ["PW"],
                 "RENDA": ["RENDA"]
             },
-            "draw": [["HLM", "KASAL*"],["HLM","PW*"],["HLM","RENDA*"]]
+            "draw": [
+                ["HLM", "KASAL*"],
+                ["HLM", "PW*"],
+                ["HLM", "RENDA*"]
+            ]
         },
         "CKG2": {
             "icao": "CKG2",
@@ -104,32 +122,33 @@
             "rwy": {
                 "25R": ["GL", "SIKAD"],
                 "25L": ["GR", "SIKAD"],
-                "07L": ["CR","SIKAD"],
-                "07R": ["CL","SIKAD"]
+                "07L": ["CR", "SIKAD"],
+                "07R": ["CL", "SIKAD"]
             },
             "exitPoints": {
                 "DOLTA": ["DOLTA"],
                 "TULIP": ["TULIP"]
             },
-            "draw": [["SIKAD","DOLTA*"],["SIKAD","TULIP*"]]
+            "draw": [
+                ["SIKAD", "DOLTA*"],
+                ["SIKAD", "TULIP*"]
+            ]
         }
     },
     "departures": {
         "airlines": [
             ["gia", 35],
-            ["lni",35],
-            ["ctv",20],
+            ["lni", 35],
+            ["ctv", 20],
             ["sjy", 35],
-            ["btk",35],
-            ["awq",20],
-            ["eva/long",5],
-            ["cpa",10],
-            ["jal/long",5],
-            ["kal/long",5]
+            ["btk", 35],
+            ["awq", 20],
+            ["eva/long", 5],
+            ["cpa", 10],
+            ["jal/long", 5],
+            ["kal/long", 5]
         ],
-        "destinations": [
-            "HALIM1", "CKG2", "DKI2"
-        ],
+        "destinations": ["HALIM1", "CKG2", "DKI2"],
         "type": "cyclic",
         "offset": 0,
         "period": 30,
@@ -148,15 +167,15 @@
             "fixes": ["NOKTA"],
             "airlines": [
                 ["gia", 35],
-                ["lni",35],
-                ["ctv",20],
+                ["lni", 35],
+                ["ctv", 20],
                 ["sjy", 35],
-                ["btk",35],
-                ["awq",20],
-                ["eva/long",5],
-                ["cpa",10],
-                ["jal/long",5],
-                ["kal/long",5]
+                ["btk", 35],
+                ["awq", 20],
+                ["eva/long", 5],
+                ["cpa", 10],
+                ["jal/long", 5],
+                ["kal/long", 5]
             ]
         },
         {
@@ -172,11 +191,11 @@
             "fixes": ["NOKTA"],
             "airlines": [
                 ["gia", 35],
-                ["lni",35],
-                ["ctv",20],
+                ["lni", 35],
+                ["ctv", 20],
                 ["sjy", 35],
-                ["btk",35],
-                ["awq",20]
+                ["btk", 35],
+                ["awq", 20]
             ]
         },
         {
@@ -191,11 +210,11 @@
             "fixes": ["DKI"],
             "airlines": [
                 ["gia", 35],
-                ["lni",35],
-                ["ctv",20],
+                ["lni", 35],
+                ["ctv", 20],
                 ["sjy", 35],
-                ["btk",35],
-                ["awq",20]
+                ["btk", 35],
+                ["awq", 20]
             ]
         },
         {
@@ -210,11 +229,11 @@
             "fixes": ["DKI"],
             "airlines": [
                 ["gia", 35],
-                ["lni",35],
-                ["ctv",20],
+                ["lni", 35],
+                ["ctv", 20],
                 ["sjy", 35],
-                ["btk",35],
-                ["awq",20]
+                ["btk", 35],
+                ["awq", 20]
             ]
         }
     ]

@@ -3,9 +3,7 @@
     "name": "General Aviation Russian Federation",
     "callsign": {
         "name": "Romeo Alpha",
-        "callsignFormats": [
-            "#####"
-        ]
+        "callsignFormats": ["#####"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "General Aviation Central African Republic",
     "callsign": {
         "name": "Tango Lima",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

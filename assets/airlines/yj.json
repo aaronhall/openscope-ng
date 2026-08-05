@@ -3,10 +3,7 @@
     "name": "General Aviation Vanuatu",
     "callsign": {
         "name": "Yankee Juliet",
-        "callsignFormats": [
-            "@@#",
-            "@@##"
-        ]
+        "callsignFormats": ["@@#", "@@##"]
     },
     "fleets": {
         "default": [

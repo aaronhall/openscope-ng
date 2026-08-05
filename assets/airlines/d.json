@@ -3,9 +3,7 @@
     "name": "General Aviation Germany",
     "callsign": {
         "name": "Delta",
-        "callsignFormats": [
-            "@@@@"
-        ]
+        "callsignFormats": ["@@@@"]
     },
     "fleets": {
         "default": [

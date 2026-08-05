@@ -226,8 +226,10 @@ export default class ProcedureModel {
             return this._initEntriesAndExitsForStar(data);
         }
 
-        throw new TypeError('Expected procedure definition with known type, ' +
-            `but received unknown type '${this._procedureType}'`);
+        throw new TypeError(
+            'Expected procedure definition with known type, ' +
+                `but received unknown type '${this._procedureType}'`
+        );
     }
 
     /**
@@ -293,9 +295,11 @@ export default class ProcedureModel {
      */
     getAllFixNamesInUse() {
         if (!_isArray(this._draw[0])) {
-            throw new TypeError(`Invalid data set in draw segment of the ${this._icao} procedure. Expected a 2D ` +
-                'array: `[[FIXXA, FIXXB*], [FIXXC, FIXXD*]]`. Please see airport documentation for more information ' +
-                '(https://github.com/openscope/openscope/blob/develop/documentation/airport-format.md#sids).');
+            throw new TypeError(
+                `Invalid data set in draw segment of the ${this._icao} procedure. Expected a 2D ` +
+                    'array: `[[FIXXA, FIXXB*], [FIXXC, FIXXD*]]`. Please see airport documentation for more information ' +
+                    '(https://github.com/openscope/openscope/blob/develop/documentation/airport-format.md#sids).'
+            );
         }
 
         const entryFixNames = this._getFixNamesFromEntries();
@@ -366,14 +370,14 @@ export default class ProcedureModel {
     }
 
     /**
-    * Given an entry point and exit point, return a list of all applicable waypoints
-    *
-    * @for ProcedureModel
-    * @method getWaypointModelsForEntryAndExit
-    * @param entry {string} name of the requested entry point
-    * @param exit {string} name of the requested exit point
-    * @return {array<WaypointModel>}
-    */
+     * Given an entry point and exit point, return a list of all applicable waypoints
+     *
+     * @for ProcedureModel
+     * @method getWaypointModelsForEntryAndExit
+     * @param entry {string} name of the requested entry point
+     * @param exit {string} name of the requested exit point
+     * @return {array<WaypointModel>}
+     */
     getWaypointModelsForEntryAndExit(entry, exit) {
         if (!(entry in this._entryPoints)) {
             console.error(`Expected valid entry of ${this._icao}, but received ${entry}`);
@@ -462,43 +466,45 @@ export default class ProcedureModel {
     }
 
     /**
-    * Generate new `WaypointModel`s for the body portion of the procedure
-    *
-    * @for ProcedureModel
-    * @method _generateWaypointsForBody
-    * @return {array<WaypointModel>}
-    * @private
-    */
+     * Generate new `WaypointModel`s for the body portion of the procedure
+     *
+     * @for ProcedureModel
+     * @method _generateWaypointsForBody
+     * @return {array<WaypointModel>}
+     * @private
+     */
     _generateWaypointsForBody() {
         return _map(this._body, (waypoint) => this._generateWaypoint(waypoint));
     }
 
     /**
-    * Generate new `WaypointModel`s for the specified entry
-    *
-    * @for ProcedureModel
-    * @method _generateWaypointsForEntry
-    * @param entryPoint {string} name of the requested entry point
-    * @return {array<WaypointModel>}
-    * @private
-    */
+     * Generate new `WaypointModel`s for the specified entry
+     *
+     * @for ProcedureModel
+     * @method _generateWaypointsForEntry
+     * @param entryPoint {string} name of the requested entry point
+     * @return {array<WaypointModel>}
+     * @private
+     */
     _generateWaypointsForEntry(entryPoint) {
         if (!(entryPoint in this._entryPoints)) {
-            throw new TypeError(`Expected valid entry of ${this._icao}, but received ${entryPoint}`);
+            throw new TypeError(
+                `Expected valid entry of ${this._icao}, but received ${entryPoint}`
+            );
         }
 
         return _map(this._entryPoints[entryPoint], (waypoint) => this._generateWaypoint(waypoint));
     }
 
     /**
-    * Generate new `WaypointModel`s for the specified exit
-    *
-    * @for ProcedureModel
-    * @method _generateWaypointsForEntry
-    * @param exitPoint {string} name of the requested exit point
-    * @return {array<WaypointModel>}
-    * @private
-    */
+     * Generate new `WaypointModel`s for the specified exit
+     *
+     * @for ProcedureModel
+     * @method _generateWaypointsForEntry
+     * @param exitPoint {string} name of the requested exit point
+     * @return {array<WaypointModel>}
+     * @private
+     */
     _generateWaypointsForExit(exitPoint) {
         if (!(exitPoint in this._exitPoints)) {
             throw new TypeError(`Expected valid exit of ${this._icao}, but received ${exitPoint}`);
@@ -530,8 +536,12 @@ export default class ProcedureModel {
      * @private
      */
     _getFixNamesFromDraw() {
-        const drawFixNames = this._draw.reduce((fixList, lineSegment) => fixList.concat(lineSegment));
-        const drawFixNamesWithoutAsterisks = drawFixNames.map((fixName) => fixName.replace('*', ''));
+        const drawFixNames = this._draw.reduce((fixList, lineSegment) =>
+            fixList.concat(lineSegment)
+        );
+        const drawFixNamesWithoutAsterisks = drawFixNames.map((fixName) =>
+            fixName.replace('*', '')
+        );
 
         return drawFixNamesWithoutAsterisks;
     }

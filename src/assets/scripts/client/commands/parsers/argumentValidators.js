@@ -4,10 +4,7 @@ import _forEach from 'lodash/forEach';
 import { convertStringToNumber } from '../../utilities/unitConverters';
 import { EXPEDITE } from '../aircraftCommand/aircraftCommandMap';
 import { ERROR_MESSAGE } from './parserMessages';
-import {
-    INVALID_INDEX,
-    REGEX
-} from '../../constants/globalConstants';
+import { INVALID_INDEX, REGEX } from '../../constants/globalConstants';
 
 /**
  * Check that `args` has exactly zero values
@@ -208,10 +205,7 @@ export const isValidCourseString = (value) => {
  * @return {boolean}
  */
 export const isValidDirectionString = (value) => {
-    return value === 'left' ||
-        value === 'l' ||
-        value === 'right' ||
-        value === 'r';
+    return value === 'left' || value === 'l' || value === 'right' || value === 'r';
 };
 
 /**

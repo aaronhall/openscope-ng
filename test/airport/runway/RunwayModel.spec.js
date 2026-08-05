@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import RunwayModel from '../../../src/assets/scripts/client/airport/runway/RunwayModel';
 import { airportPositionFixtureKLAS } from '../../fixtures/airportFixtures';
@@ -21,124 +21,124 @@ import { AIRPORT_JSON_KLAS_MOCK } from '../_mocks/airportJsonMock';
 
 const runway07L25R = AIRPORT_JSON_KLAS_MOCK.runways[0];
 
-ava('does not throw when instantiated with vaild parameters', (t) => {
-    t.notThrows(() => new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS));
+test('does not throw when instantiated with vaild parameters', () => {
+    expect(() => new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS)).not.toThrow();
 });
 
-ava('#gps returns the gps coordinates for a runway', (t) => {
+test('#gps returns the gps coordinates for a runway', () => {
     const expectedResult = [36.07633888888889, -115.17138333333334];
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
 
-    t.deepEqual(model.gps, expectedResult);
+    expect(model.gps).toEqual(expectedResult);
 });
 
-ava('#elevation returns #_positionModel.elevation if it exists', (t) => {
+test('#elevation returns #_positionModel.elevation if it exists', () => {
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
 
-    t.true(model.elevation === model._positionModel.elevation);
+    expect(model.elevation === model._positionModel.elevation).toBe(true);
 });
 
-ava('#elevation returns #airportPositionModel.elevation if #_positionModel.elevation does not exist', (t) => {
+test('#elevation returns #airportPositionModel.elevation if #_positionModel.elevation does not exist', () => {
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
     model._positionModel.elevation = null;
 
-    t.true(model.elevation === model.airportPositionModel.elevation);
+    expect(model.elevation === model.airportPositionModel.elevation).toBe(true);
 });
 
-ava('#oppositeAngle returns opposite of runway heading', (t) => {
+test('#oppositeAngle returns opposite of runway heading', () => {
     const runwayModel = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
     const result = runwayModel.oppositeAngle;
     const expectedResult = 4.502864578080533;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.addAircraftToQueue() adds an aircraft#id to the queue', (t) => {
+test('.addAircraftToQueue() adds an aircraft#id to the queue', () => {
     const aircraftIdMock = 'aircraft-221';
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
 
     model.addAircraftToQueue(aircraftIdMock);
 
-    t.true(model.queue.length === 1);
-    t.true(model.queue[0] === aircraftIdMock);
+    expect(model.queue.length === 1).toBe(true);
+    expect(model.queue[0] === aircraftIdMock).toBe(true);
 });
 
-ava('.calculateCrosswindAngleForRunway() returns the crosswind angle for a given runway based on a given windAngle', (t) => {
+test('.calculateCrosswindAngleForRunway() returns the crosswind angle for a given runway based on a given windAngle', () => {
     const windAngleMock = 3.839724354387525;
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
     const expectedResult = 2.478452429896785;
     const result = model.calculateCrosswindAngleForRunway(windAngleMock);
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getGlideslopeAltitude() returns glideslope altitude at the specified distance', (t) => {
+test('.getGlideslopeAltitude() returns glideslope altitude at the specified distance', () => {
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
     const distanceNm = 10;
     const expectedResult = 1719.4153308084387 + model.positionModel.elevation;
     const result = model.getGlideslopeAltitude(distanceNm);
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getGlideslopeAltitudeAtFinalApproachFix() returns glideslope altitude at the final approach fix', (t) => {
+test('.getGlideslopeAltitudeAtFinalApproachFix() returns glideslope altitude at the final approach fix', () => {
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
     const expectedResult = 3771.178596328614;
     const result = model.getGlideslopeAltitudeAtFinalApproachFix();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getMinimumGlideslopeInterceptAltitude() returns glideslope altitude at the final approach fix', (t) => {
+test('.getMinimumGlideslopeInterceptAltitude() returns glideslope altitude at the final approach fix', () => {
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
     const expectedResult = 3800;
     const result = model.getMinimumGlideslopeInterceptAltitude();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.isAircraftInQueue() returns true when an aircraftId is in the queue', (t) => {
+test('.isAircraftInQueue() returns true when an aircraftId is in the queue', () => {
     const aircraftIdMock = 'aircraft-221';
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
     model.queue = [aircraftIdMock];
 
-    t.true(model.isAircraftInQueue(aircraftIdMock));
-    t.false(model.isAircraftInQueue('threeve'));
+    expect(model.isAircraftInQueue(aircraftIdMock)).toBe(true);
+    expect(model.isAircraftInQueue('threeve')).toBe(false);
 });
 
-ava('.isAircraftNextInQueue() returns true only when an aircraftId is at index 0', (t) => {
+test('.isAircraftNextInQueue() returns true only when an aircraftId is at index 0', () => {
     const aircraftIdMock = 'aircraft-221';
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
     model.queue = [aircraftIdMock, 'threeve'];
 
-    t.true(model.isAircraftNextInQueue(aircraftIdMock));
-    t.false(model.isAircraftNextInQueue('threeve'));
+    expect(model.isAircraftNextInQueue(aircraftIdMock)).toBe(true);
+    expect(model.isAircraftNextInQueue('threeve')).toBe(false);
 });
 
 // need an aircraftModel to be able to test
-ava.todo('.isOnApproachCourse()');
+test.todo('.isOnApproachCourse()');
 
 // need an aircraftModel to be able to test
-ava.todo('.isOnCorrectApproachGroundTrack()');
+test.todo('.isOnCorrectApproachGroundTrack()');
 
-ava('.removeAircraftFromQueue() removes an aircraft#id from the queue', (t) => {
+test('.removeAircraftFromQueue() removes an aircraft#id from the queue', () => {
     const aircraftIdMock = 'aircraft-221';
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
     model.queue = ['1', '2', aircraftIdMock, '4'];
 
     model.removeAircraftFromQueue(aircraftIdMock);
 
-    t.true(model.queue.length === 3);
-    t.true(model.queue.indexOf(aircraftIdMock) === -1);
+    expect(model.queue.length === 3).toBe(true);
+    expect(model.queue.indexOf(aircraftIdMock) === -1).toBe(true);
 });
 
-ava('.resetQueue() removes all aircraft from the queue and clears #lastDepartedAircraftModel', (t) => {
+test('.resetQueue() removes all aircraft from the queue and clears #lastDepartedAircraftModel', () => {
     const model = new RunwayModel(runway07L25R, 0, airportPositionFixtureKLAS);
     model.queue = ['aircraft1', 'aircraft2', 'aircraft3'];
     model.lastDepartedAircraftModel = { callsign: 'aircraft2' };
 
     model.resetQueue();
 
-    t.true(model.queue.length === 0);
-    t.true(model.lastDepartedAircraftModel === null);
+    expect(model.queue.length === 0).toBe(true);
+    expect(model.lastDepartedAircraftModel === null).toBe(true);
 });

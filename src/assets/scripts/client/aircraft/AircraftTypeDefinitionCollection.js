@@ -28,8 +28,10 @@ export default class AircraftTypeDefinitionCollection extends BaseCollection {
         super();
 
         if (isEmptyOrNotArray(aircraftTypeDefinitionList)) {
-            throw new TypeError('Invalid aircraftTypeDefinitionList passed to AircraftTypeDefinitionCollection constructor. ' +
-                `Expected a non-empty array, but received ${typeof aircraftTypeDefinitionList}`);
+            throw new TypeError(
+                'Invalid aircraftTypeDefinitionList passed to AircraftTypeDefinitionCollection constructor. ' +
+                    `Expected a non-empty array, but received ${typeof aircraftTypeDefinitionList}`
+            );
         }
 
         /**
@@ -57,7 +59,9 @@ export default class AircraftTypeDefinitionCollection extends BaseCollection {
      * @param aircraftTypeDefinitionList {array<object>}
      */
     init(aircraftTypeDefinitionList) {
-        this.definitionList = this._buildAircraftTypeDefinitionModelList(aircraftTypeDefinitionList);
+        this.definitionList = this._buildAircraftTypeDefinitionModelList(
+            aircraftTypeDefinitionList
+        );
     }
 
     /**

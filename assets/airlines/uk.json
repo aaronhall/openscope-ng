@@ -3,9 +3,7 @@
     "name": "General Aviation Uzbekistan",
     "callsign": {
         "name": "Uniform Kilo",
-        "callsignFormats": [
-            "#####"
-        ]
+        "callsignFormats": ["#####"]
     },
     "fleets": {
         "default": [

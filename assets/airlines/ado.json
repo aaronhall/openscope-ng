@@ -3,9 +3,7 @@
     "name": "Air Do",
     "callsign": {
         "name": "Air Do",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

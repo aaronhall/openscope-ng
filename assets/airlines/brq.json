@@ -3,9 +3,7 @@
     "name": "Buraq Air",
     "callsign": {
         "name": "Buraqair",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

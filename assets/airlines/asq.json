@@ -3,9 +3,7 @@
     "name": "ExpressJet",
     "callsign": {
         "name": "Acey",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

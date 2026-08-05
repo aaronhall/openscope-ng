@@ -3,19 +3,14 @@
     "name": "Air Macau",
     "callsign": {
         "name": "Air Macau",
-        "callsignFormats": [
-			"#",
-			"##",
-            "###",
-			"####"
-        ]
+        "callsignFormats": ["#", "##", "###", "####"]
     },
     "fleets": {
         "default": [
             ["A20N", 4],
-			["A21N", 1],
+            ["A21N", 1],
             ["A320", 6],
-			["A321", 10]
+            ["A321", 10]
         ]
     }
 }

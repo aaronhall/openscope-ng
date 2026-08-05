@@ -3,9 +3,7 @@
     "name": "SCAT Airlines",
     "callsign": {
         "name": "Vlasta",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

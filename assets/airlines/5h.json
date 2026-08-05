@@ -3,9 +3,7 @@
     "name": "General Aviation Tanzania",
     "callsign": {
         "name": "Five Hotel",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

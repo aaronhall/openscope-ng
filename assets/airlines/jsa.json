@@ -3,13 +3,9 @@
     "name": "Jestar Asia Airways",
     "callsign": {
         "name": "Jetstar Asia",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 18]
-        ]
+        "default": [["A320", 18]]
     }
 }

@@ -3,9 +3,7 @@
     "name": "General Aviation Mali",
     "callsign": {
         "name": "Tango Zulu",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

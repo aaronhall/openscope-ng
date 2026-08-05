@@ -7,11 +7,12 @@ const app = express();
 const server = http.Server(app);
 
 const PORT = process.env.PORT || 3003;
+const PUBLIC_DIR = path.resolve(__dirname, '../../../../public');
 
-app.use('/assets', express.static(path.join(__dirname, '/../../../assets')));
+app.use('/assets', express.static(path.join(PUBLIC_DIR, 'assets')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/../../../index.html'));
+    res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
 server.listen(PORT, () => {

@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import App from './App';
 
-require('raf').polyfill();
+import 'raf/polyfill';
 
 /**
  * Entry point for the application.

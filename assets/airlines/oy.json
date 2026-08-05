@@ -3,9 +3,7 @@
     "name": "General Aviation Denmark",
     "callsign": {
         "name": "Oscar Yankee",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "Hawaiian Airlines",
     "callsign": {
         "name": "Hawaiian",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -25,14 +23,8 @@
             ["A332", 24],
             ["B763", 8]
         ],
-        "a332": [
-            ["A332", 24]
-        ],
-        "short": [
-            ["B712", 20]
-        ],
-        "jfk": [
-            ["A332", 23]
-        ]
+        "a332": [["A332", 24]],
+        "short": [["B712", 20]],
+        "jfk": [["A332", 23]]
     }
 }

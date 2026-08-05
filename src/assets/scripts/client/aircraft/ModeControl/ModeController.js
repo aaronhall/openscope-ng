@@ -1,8 +1,4 @@
-import {
-    MCP_MODE,
-    MCP_MODE_NAME,
-    MCP_FIELD_NAME
-} from './modeControlConstants';
+import { MCP_MODE, MCP_MODE_NAME, MCP_FIELD_NAME } from './modeControlConstants';
 import { INVALID_NUMBER } from '../../constants/globalConstants';
 import { radiansToDegrees } from '../../utilities/unitConverters';
 
@@ -369,7 +365,13 @@ export default class ModeController {
      * @param {number} currentHeading - aircraft's current heading, in radians
      * @param {number} currentSpeed - aircraft's current speed, in knots
      */
-    initializeForAirborneFlight(bottomAltitude, airspaceCeiling, currentAltitude, currentHeading, currentSpeed) {
+    initializeForAirborneFlight(
+        bottomAltitude,
+        airspaceCeiling,
+        currentAltitude,
+        currentHeading,
+        currentSpeed
+    ) {
         // ensure aircraft will always descend at least to reach our airspace ceiling
         const descentAltitude = Math.min(bottomAltitude, airspaceCeiling, currentAltitude);
 
@@ -390,13 +392,13 @@ export default class ModeController {
     }
 
     /**
-    * Set the value of a given fieldName
-    *
-    * @for ModeController
-    * @method _setFieldValue
-    * @param fieldName {MCP_FIELD_NAME}
-    * @param value {number}
-    */
+     * Set the value of a given fieldName
+     *
+     * @for ModeController
+     * @method _setFieldValue
+     * @param fieldName {MCP_FIELD_NAME}
+     * @param value {number}
+     */
     _setFieldValue(fieldName, value) {
         this[fieldName] = value;
     }

@@ -3,9 +3,7 @@
     "name": "Spirit Airlines",
     "callsign": {
         "name": "Spirit Wings",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

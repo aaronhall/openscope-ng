@@ -3,20 +3,14 @@
     "name": "TUI fly Nordic",
     "callsign": {
         "name": "Bluescan",
-        "callsignFormats": [
-            "###"             
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
             ["B738", 1],
             ["B763", 2]
         ],
-        "short": [
-            ["B738", 1]
-        ],
-        "long": [
-            ["B763", 2]
-        ]
+        "short": [["B738", 1]],
+        "long": [["B763", 2]]
     }
 }

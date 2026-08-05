@@ -3,17 +3,13 @@
     "name": "Air Guyane",
     "callsign": {
         "name": "Green Bird",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
             ["AT45", 1],
             ["L410", 2]
         ],
-        "at45": [
-            ["AT45", 1]
-        ]
+        "at45": [["AT45", 1]]
     }
 }

@@ -85,9 +85,7 @@ export default class TrafficRateController {
          */
         this._wind = null;
 
-        this._setupHandlers()
-            .init()
-            .enable();
+        this._setupHandlers().init().enable();
     }
 
     /**
@@ -102,8 +100,12 @@ export default class TrafficRateController {
 
         this._buildDialogBody();
         this.$element.append(this.$dialog);
-        this.$dialog.find(SELECTORS.DOM_SELECTORS.TRAFFIC_DEFAULT_BUTTON).click(this._onFormResetHandler);
-        this.$dialog.find(SELECTORS.DOM_SELECTORS.TRAFFIC_RESTART_BUTTON).click(this._onTrafficResetHandler);
+        this.$dialog
+            .find(SELECTORS.DOM_SELECTORS.TRAFFIC_DEFAULT_BUTTON)
+            .click(this._onFormResetHandler);
+        this.$dialog
+            .find(SELECTORS.DOM_SELECTORS.TRAFFIC_RESTART_BUTTON)
+            .click(this._onTrafficResetHandler);
 
         return this;
     }
@@ -167,9 +169,9 @@ export default class TrafficRateController {
     }
 
     /**
-    * @for TrafficRateController
-    * @method toggleDialog
-    */
+     * @for TrafficRateController
+     * @method toggleDialog
+     */
     toggleDialog() {
         this.$dialog.toggleClass(SELECTORS.CLASSNAMES.OPEN);
     }
@@ -192,7 +194,10 @@ export default class TrafficRateController {
      */
     onFormReset() {
         const airport = AirportController.airport_get();
-        this._wind = { speed: airport.defaultWind.speed, angle: Math.round(radiansToDegrees(airport.defaultWind.angle)) };
+        this._wind = {
+            speed: airport.defaultWind.speed,
+            angle: Math.round(radiansToDegrees(airport.defaultWind.angle)),
+        };
 
         this._eventBus.trigger(EVENT.WIND_CHANGE, this._wind);
         SpawnPatternCollection.resetRates();
@@ -221,7 +226,10 @@ export default class TrafficRateController {
         this._elements = {};
 
         const airport = AirportController.airport_get();
-        this._wind = { speed: airport.wind.speed, angle: Math.round(radiansToDegrees(airport.wind.angle)) };
+        this._wind = {
+            speed: airport.wind.speed,
+            angle: Math.round(radiansToDegrees(airport.wind.angle)),
+        };
 
         const $windDirSlider = this._buildWindDirectionSlider(this._wind.angle);
         const $windSpdSlider = this._buildWindSpeedSlider(this._wind.speed);
@@ -233,7 +241,12 @@ export default class TrafficRateController {
         for (const category of Object.values(FLIGHT_CATEGORY)) {
             this._rates[category] = 1;
             this._elements[category] = [];
-            const $formElement = this._buildSlider(category, category, category, this._onChangeFlightCategoryRate);
+            const $formElement = this._buildSlider(
+                category,
+                category,
+                category,
+                this._onChangeFlightCategoryRate
+            );
 
             this.$dialogBody.append($formElement);
         }
@@ -248,7 +261,12 @@ export default class TrafficRateController {
             _forEach(spawnPatterns, (spawnPattern) => {
                 const label = spawnPattern.routeString.replace(REGEX.SINGLE_DOT, ' ');
                 this._rates[spawnPattern.id] = spawnPattern.rate;
-                const $formElement = this._buildInputField(spawnPattern.id, label, spawnPattern, this._onChangeSpawnPatternRate);
+                const $formElement = this._buildInputField(
+                    spawnPattern.id,
+                    label,
+                    spawnPattern,
+                    this._onChangeSpawnPatternRate
+                );
 
                 this.$dialogBody.append($formElement);
                 this._elements[category].push({ spawnPattern, $formElement });
@@ -407,7 +425,11 @@ export default class TrafficRateController {
         this._rates[category] = parseFloat(value);
 
         $output.text(value);
-        EventTracker.recordEvent(TRACKABLE_EVENT.CHANGE_SPAWN_PATTERN, 'flight-category', `${airportIcao}:${category}:${value}`);
+        EventTracker.recordEvent(
+            TRACKABLE_EVENT.CHANGE_SPAWN_PATTERN,
+            'flight-category',
+            `${airportIcao}:${category}:${value}`
+        );
 
         for (const { spawnPattern, $formElement } of elements) {
             const $childOutput = $formElement.children(`.${CLASSNAMES.FORM_VALUE}`);

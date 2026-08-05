@@ -3,9 +3,7 @@
     "name": "Kish Airlines",
     "callsign": {
         "name": "Kish Air",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
@@ -16,11 +14,7 @@
             ["MD82", 4],
             ["MD83", 3]
         ],
-        "a321": [
-            ["MD82", 4]
-        ],
-        "md82": [
-            ["A321", 2]
-        ]
+        "a321": [["MD82", 4]],
+        "md82": [["A321", 2]]
     }
 }

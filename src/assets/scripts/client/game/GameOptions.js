@@ -64,7 +64,7 @@ export default class GameOptions {
      */
     addOption(optionProps) {
         const optionStorageKey = this.buildStorageName(optionProps.name);
-        const storedOptionValue = global.localStorage.getItem(optionStorageKey);
+        const storedOptionValue = window.localStorage.getItem(optionStorageKey);
         this._options[optionProps.name] = optionProps;
         let optionValue = optionProps.defaultValue;
 
@@ -110,7 +110,7 @@ export default class GameOptions {
         this[name] = value;
         const optionStorageKey = this.buildStorageName(name);
 
-        global.localStorage.setItem(optionStorageKey, value);
+        window.localStorage.setItem(optionStorageKey, value);
         EventTracker.recordEvent(TRACKABLE_EVENT.SETTINGS, name, value);
 
         if (this._options[name].onChangeEventHandler) {

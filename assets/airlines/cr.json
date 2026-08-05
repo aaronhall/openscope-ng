@@ -3,9 +3,7 @@
     "name": "General Aviation Portugal",
     "callsign": {
         "name": "Charlie Romeo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

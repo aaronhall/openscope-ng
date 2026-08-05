@@ -1,9 +1,5 @@
 import _uniqueId from 'lodash/uniqueId';
-import {
-    km_ft,
-    km,
-    degreesToRadians
-} from '../../utilities/unitConverters';
+import { km_ft, km, degreesToRadians } from '../../utilities/unitConverters';
 import { abs } from '../../math/core';
 import { angle_offset } from '../../math/circle';
 import { getOffset } from '../../math/flightMath';
@@ -24,7 +20,9 @@ export default class RunwayRelationshipModel {
      */
     constructor(primaryRunway, comparatorRunway) {
         if (!primaryRunway || !comparatorRunway) {
-            throw new TypeError('Invalid parameters. RunwayRelationshipModel requires two RunwayModel instances');
+            throw new TypeError(
+                'Invalid parameters. RunwayRelationshipModel requires two RunwayModel instances'
+            );
         }
 
         /**
@@ -81,7 +79,11 @@ export default class RunwayRelationshipModel {
      * @param comparatorRunway {RunwayModel}
      */
     calculateRelationshipValues(primaryRunway, comparatorRunway) {
-        const offset = getOffset(primaryRunway, comparatorRunway.relativePosition, primaryRunway.angle);
+        const offset = getOffset(
+            primaryRunway,
+            comparatorRunway.relativePosition,
+            primaryRunway.angle
+        );
 
         this.lateral_dist = abs(offset[0]);
         this.straight_dist = abs(offset[2]);
@@ -91,7 +93,8 @@ export default class RunwayRelationshipModel {
             comparatorRunway.relativePosition,
             comparatorRunway.angle
         );
-        this.parallel = abs(angle_offset(primaryRunway.angle, comparatorRunway.angle)) < degreesToRadians(10);
+        this.parallel =
+            abs(angle_offset(primaryRunway.angle, comparatorRunway.angle)) < degreesToRadians(10);
         this.separationMinimum = this.calculateSeparationMinimums();
     }
 

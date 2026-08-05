@@ -3,9 +3,7 @@
     "name": "General Aviation United Kingdom",
     "callsign": {
         "name": "Golf",
-        "callsignFormats": [
-            "@@@@"
-        ]
+        "callsignFormats": ["@@@@"]
     },
     "fleets": {
         "default": [

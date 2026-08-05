@@ -1,39 +1,39 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import { buildFlightNumber } from '../../src/assets/scripts/client/airline/buildFlightNumber';
 
-ava('.buildFlightNumber() creates a callsign made up of random numbers only if callsign format is [\'###\'] ', (t) => {
+test(".buildFlightNumber() creates a callsign made up of random numbers only if callsign format is ['###'] ", () => {
     const callsignFormat = ['###'];
     const result = buildFlightNumber(callsignFormat);
 
-    t.true(!isNaN(result));
+    expect(!isNaN(result)).toBe(true);
 });
 
-ava('.buildFlightNumber() creates a callsign made up of random lowercase letters only if callsign format is [\'@@@\'] ', (t) => {
+test(".buildFlightNumber() creates a callsign made up of random lowercase letters only if callsign format is ['@@@'] ", () => {
     const lowerAlphabeticalRegex = /^[a-z]+$/;
     const callsignFormat = ['@@@'];
     const result = buildFlightNumber(callsignFormat);
 
-    t.true(lowerAlphabeticalRegex.test(result));
+    expect(lowerAlphabeticalRegex.test(result)).toBe(true);
 });
 
-ava('.buildFlightNumber() creates a callsign made up of one random number and one random lowercase letter if callsign format is [\'#@\'] ', (t) => {
+test(".buildFlightNumber() creates a callsign made up of one random number and one random lowercase letter if callsign format is ['#@'] ", () => {
     const regex = /[1-9]/;
     const callsignFormat = ['#@'];
     const result = buildFlightNumber(callsignFormat);
 
-    t.true(regex.test(result));
+    expect(regex.test(result)).toBe(true);
 });
 
-ava('.buildFlightNumber() returns callsignFormat as is if the format does not contain @ or #', (t) => {
+test('.buildFlightNumber() returns callsignFormat as is if the format does not contain @ or #', () => {
     const callsignFormat = ['4EVR', '8AE'];
     const result = buildFlightNumber(callsignFormat);
 
-    t.true(callsignFormat.includes(result));
+    expect(callsignFormat.includes(result)).toBe(true);
 });
 
-ava('.buildFlightNumber() does not allow 0 to be at the start of a callsign, returns a three digit callsign', (t) => {
+test('.buildFlightNumber() does not allow 0 to be at the start of a callsign, returns a three digit callsign', () => {
     const callsignFormat = ['0##', '00@@'];
     const result = buildFlightNumber(callsignFormat);
 
-    t.true(!isNaN(result));
+    expect(!isNaN(result)).toBe(true);
 });

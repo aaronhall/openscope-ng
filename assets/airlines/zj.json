@@ -3,9 +3,7 @@
     "name": "General Aviation Jersey",
     "callsign": {
         "name": "Zulu Juliet",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

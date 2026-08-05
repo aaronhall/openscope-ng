@@ -3,9 +3,7 @@
     "name": "General Aviation Bulgaria",
     "callsign": {
         "name": "Lima Zulu",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

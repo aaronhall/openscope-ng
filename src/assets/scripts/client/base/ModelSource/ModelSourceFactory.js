@@ -38,7 +38,9 @@ class ModelSourceFactory {
      */
     returnModelToPool(model) {
         if (!_has(CLASS_MAP, model.constructor.name)) {
-            throw new TypeError(`Unsupported type passed to ModelSourceFactory: ${model.constructor.name}`);
+            throw new TypeError(
+                `Unsupported type passed to ModelSourceFactory: ${model.constructor.name}`
+            );
         }
 
         modelSourcePool.returnReusable(model);

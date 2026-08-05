@@ -1,72 +1,72 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import ModeController from '../../../src/assets/scripts/client/aircraft/ModeControl/ModeController';
 import {
     MCP_MODE,
     MCP_MODE_NAME,
-    MCP_FIELD_NAME
+    MCP_FIELD_NAME,
 } from '../../../src/assets/scripts/client/aircraft/ModeControl/modeControlConstants';
 
 const headingOrCourseMock = 3.141592653589793;
 
-ava('does not throw when instantiated without parameters', (t) => {
-    t.notThrows(() => new ModeController());
+test('does not throw when instantiated without parameters', () => {
+    expect(() => new ModeController()).not.toThrow();
 });
 
-ava('does not throw when instantiated with parameters', (t) => {
-    t.notThrows(() => new ModeController());
-    t.notThrows(() => new ModeController());
+test('does not throw when instantiated with parameters', () => {
+    expect(() => new ModeController()).not.toThrow();
+    expect(() => new ModeController()).not.toThrow();
 });
 
-ava('#isEnabled is false on instantiation', (t) => {
+test('#isEnabled is false on instantiation', () => {
     const mcp = new ModeController();
 
-    t.false(mcp.isEnabled);
+    expect(mcp.isEnabled).toBe(false);
 });
 
-ava('.#headingInDegrees returns a whole number', (t) => {
+test('.#headingInDegrees returns a whole number', () => {
     const mcp = new ModeController();
 
     mcp.heading = 3.839724354387525;
 
-    t.true(mcp.headingInDegrees === 220);
+    expect(mcp.headingInDegrees === 220).toBe(true);
 });
 
-ava('.enable() sets #isEnabled to true', (t) => {
+test('.enable() sets #isEnabled to true', () => {
     const mcp = new ModeController();
 
     mcp.enable();
 
-    t.true(mcp.isEnabled);
+    expect(mcp.isEnabled).toBe(true);
 });
 
-ava('.enable() does not change #isEnabled when #isEnabled is true', (t) => {
+test('.enable() does not change #isEnabled when #isEnabled is true', () => {
     const mcp = new ModeController();
 
     mcp.isEnabled = true;
     mcp.enable();
 
-    t.true(mcp.isEnabled);
+    expect(mcp.isEnabled).toBe(true);
 });
 
-ava('.disable() sets #isEnabled to false', (t) => {
+test('.disable() sets #isEnabled to false', () => {
     const mcp = new ModeController();
 
     mcp.disable();
 
-    t.false(mcp.isEnabled);
+    expect(mcp.isEnabled).toBe(false);
 });
 
-ava('.disable() does not change #isEnabled when #isEnabled is false', (t) => {
+test('.disable() does not change #isEnabled when #isEnabled is false', () => {
     const mcp = new ModeController();
 
     mcp.isEnabled = false;
     mcp.disable();
 
-    t.false(mcp.isEnabled);
+    expect(mcp.isEnabled).toBe(false);
 });
 
-ava('.initializeForAirborneFlight() sets MCP for arrival descending via STAR which ends still above the airspace ceiling', (t) => {
+test('.initializeForAirborneFlight() sets MCP for arrival descending via STAR which ends still above the airspace ceiling', () => {
     const mcp = new ModeController();
     const bottomAltitudeMock = 15000;
     const airspaceCeilingMock = 12000;
@@ -82,15 +82,15 @@ ava('.initializeForAirborneFlight() sets MCP for arrival descending via STAR whi
         currentSpeedMock
     );
 
-    t.true(mcp.altitude === airspaceCeilingMock);
-    t.true(mcp.altitudeMode === MCP_MODE.ALTITUDE.VNAV);
-    t.true(mcp.heading === currentHeadingMock);
-    t.true(mcp.headingMode === MCP_MODE.HEADING.LNAV);
-    t.true(mcp.speed === currentSpeedMock);
-    t.true(mcp.speedMode === MCP_MODE.SPEED.VNAV);
+    expect(mcp.altitude === airspaceCeilingMock).toBe(true);
+    expect(mcp.altitudeMode === MCP_MODE.ALTITUDE.VNAV).toBe(true);
+    expect(mcp.heading === currentHeadingMock).toBe(true);
+    expect(mcp.headingMode === MCP_MODE.HEADING.LNAV).toBe(true);
+    expect(mcp.speed === currentSpeedMock).toBe(true);
+    expect(mcp.speedMode === MCP_MODE.SPEED.VNAV).toBe(true);
 });
 
-ava('.initializeForAirborneFlight() sets MCP for arrival descending via STAR which ends below the airspace ceiling', (t) => {
+test('.initializeForAirborneFlight() sets MCP for arrival descending via STAR which ends below the airspace ceiling', () => {
     const mcp = new ModeController();
     const bottomAltitudeMock = 6000;
     const airspaceCeilingMock = 12000;
@@ -106,15 +106,15 @@ ava('.initializeForAirborneFlight() sets MCP for arrival descending via STAR whi
         currentSpeedMock
     );
 
-    t.true(mcp.altitude === bottomAltitudeMock);
-    t.true(mcp.altitudeMode === MCP_MODE.ALTITUDE.VNAV);
-    t.true(mcp.heading === currentHeadingMock);
-    t.true(mcp.headingMode === MCP_MODE.HEADING.LNAV);
-    t.true(mcp.speed === currentSpeedMock);
-    t.true(mcp.speedMode === MCP_MODE.SPEED.VNAV);
+    expect(mcp.altitude === bottomAltitudeMock).toBe(true);
+    expect(mcp.altitudeMode === MCP_MODE.ALTITUDE.VNAV).toBe(true);
+    expect(mcp.heading === currentHeadingMock).toBe(true);
+    expect(mcp.headingMode === MCP_MODE.HEADING.LNAV).toBe(true);
+    expect(mcp.speed === currentSpeedMock).toBe(true);
+    expect(mcp.speedMode === MCP_MODE.SPEED.VNAV).toBe(true);
 });
 
-ava('.initializeForAirborneFlight() sets MCP for arrival descending from above airspace ceiling (not via STAR)', (t) => {
+test('.initializeForAirborneFlight() sets MCP for arrival descending from above airspace ceiling (not via STAR)', () => {
     const mcp = new ModeController();
     const bottomAltitudeMock = -1;
     const airspaceCeilingMock = 12000;
@@ -130,15 +130,15 @@ ava('.initializeForAirborneFlight() sets MCP for arrival descending from above a
         currentSpeedMock
     );
 
-    t.true(mcp.altitude === airspaceCeilingMock);
-    t.true(mcp.altitudeMode === MCP_MODE.ALTITUDE.HOLD);
-    t.true(mcp.heading === currentHeadingMock);
-    t.true(mcp.headingMode === MCP_MODE.HEADING.LNAV);
-    t.true(mcp.speed === currentSpeedMock);
-    t.true(mcp.speedMode === MCP_MODE.SPEED.VNAV);
+    expect(mcp.altitude === airspaceCeilingMock).toBe(true);
+    expect(mcp.altitudeMode === MCP_MODE.ALTITUDE.HOLD).toBe(true);
+    expect(mcp.heading === currentHeadingMock).toBe(true);
+    expect(mcp.headingMode === MCP_MODE.HEADING.LNAV).toBe(true);
+    expect(mcp.speed === currentSpeedMock).toBe(true);
+    expect(mcp.speedMode === MCP_MODE.SPEED.VNAV).toBe(true);
 });
 
-ava('.initializeForAirborneFlight() sets MCP for arrival spawning below airspace ceiling ', (t) => {
+test('.initializeForAirborneFlight() sets MCP for arrival spawning below airspace ceiling ', () => {
     const mcp = new ModeController();
     const bottomAltitudeMock = -1;
     const airspaceCeilingMock = 12000;
@@ -154,124 +154,124 @@ ava('.initializeForAirborneFlight() sets MCP for arrival spawning below airspace
         currentSpeedMock
     );
 
-    t.true(mcp.altitude === currentAltitudeMock);
-    t.true(mcp.altitudeMode === MCP_MODE.ALTITUDE.HOLD);
-    t.true(mcp.heading === currentHeadingMock);
-    t.true(mcp.headingMode === MCP_MODE.HEADING.LNAV);
-    t.true(mcp.speed === currentSpeedMock);
-    t.true(mcp.speedMode === MCP_MODE.SPEED.VNAV);
+    expect(mcp.altitude === currentAltitudeMock).toBe(true);
+    expect(mcp.altitudeMode === MCP_MODE.ALTITUDE.HOLD).toBe(true);
+    expect(mcp.heading === currentHeadingMock).toBe(true);
+    expect(mcp.headingMode === MCP_MODE.HEADING.LNAV).toBe(true);
+    expect(mcp.speed === currentSpeedMock).toBe(true);
+    expect(mcp.speedMode === MCP_MODE.SPEED.VNAV).toBe(true);
 });
 
-ava('._setModeSelectorMode() sets modeSelector to the specified mode', (t) => {
+test('._setModeSelectorMode() sets modeSelector to the specified mode', () => {
     const mcp = new ModeController();
 
     mcp._setModeSelectorMode(MCP_MODE_NAME.SPEED, MCP_MODE.SPEED.VNAV);
 
-    t.true(mcp.speedMode === MCP_MODE.SPEED.VNAV);
+    expect(mcp.speedMode === MCP_MODE.SPEED.VNAV).toBe(true);
 });
 
-ava('._setFieldValue() sets field to the specified value', (t) => {
+test('._setFieldValue() sets field to the specified value', () => {
     const speedMock = 325;
     const mcp = new ModeController();
 
     mcp._setFieldValue(MCP_FIELD_NAME.SPEED, speedMock);
 
-    t.true(mcp.speed === speedMock);
+    expect(mcp.speed === speedMock).toBe(true);
 });
 
-ava('.setAltitudeApproach() sets altitude mode to approach', (t) => {
+test('.setAltitudeApproach() sets altitude mode to approach', () => {
     const mcp = new ModeController();
 
     mcp.setAltitudeApproach();
 
-    t.true(mcp.altitudeMode === MCP_MODE.ALTITUDE.APPROACH);
+    expect(mcp.altitudeMode === MCP_MODE.ALTITUDE.APPROACH).toBe(true);
 });
 
-ava('.setAltitudeHold() sets altitude mode to hold', (t) => {
+test('.setAltitudeHold() sets altitude mode to hold', () => {
     const mcp = new ModeController();
 
     mcp.setAltitudeHold();
 
-    t.true(mcp.altitudeMode === MCP_MODE.ALTITUDE.HOLD);
+    expect(mcp.altitudeMode === MCP_MODE.ALTITUDE.HOLD).toBe(true);
 });
 
-ava('.setAltitudeVnav() sets altitude mode to VNAV', (t) => {
+test('.setAltitudeVnav() sets altitude mode to VNAV', () => {
     const mcp = new ModeController();
 
     mcp.setAltitudeVnav();
 
-    t.true(mcp.altitudeMode === MCP_MODE.ALTITUDE.VNAV);
+    expect(mcp.altitudeMode === MCP_MODE.ALTITUDE.VNAV).toBe(true);
 });
 
-ava('.setAltitudeFieldValue() sets the value of the altitude field', (t) => {
+test('.setAltitudeFieldValue() sets the value of the altitude field', () => {
     const altitudeMock = 5500;
     const mcp = new ModeController();
 
     mcp.setAltitudeFieldValue(altitudeMock);
 
-    t.true(mcp.altitude === altitudeMock);
+    expect(mcp.altitude === altitudeMock).toBe(true);
 });
 
-ava('.setCourseFieldValue() sets the value of the course field', (t) => {
+test('.setCourseFieldValue() sets the value of the course field', () => {
     const mcp = new ModeController();
 
     mcp.setCourseFieldValue(headingOrCourseMock);
 
-    t.true(mcp.course === headingOrCourseMock);
+    expect(mcp.course === headingOrCourseMock).toBe(true);
 });
 
-ava('.setHeadingHold() sets the heading mode to hold', (t) => {
+test('.setHeadingHold() sets the heading mode to hold', () => {
     const mcp = new ModeController();
 
     mcp.setHeadingHold();
 
-    t.true(mcp.headingMode === MCP_MODE.HEADING.HOLD);
+    expect(mcp.headingMode === MCP_MODE.HEADING.HOLD).toBe(true);
 });
 
-ava('.setHeadingLnav() sets the heading mode to LNAV', (t) => {
+test('.setHeadingLnav() sets the heading mode to LNAV', () => {
     const mcp = new ModeController();
 
     mcp.setHeadingLnav();
 
-    t.true(mcp.headingMode === MCP_MODE.HEADING.LNAV);
+    expect(mcp.headingMode === MCP_MODE.HEADING.LNAV).toBe(true);
 });
 
-ava('.setHeadingVorLoc() sets the heading mode to VOR_LOC', (t) => {
+test('.setHeadingVorLoc() sets the heading mode to VOR_LOC', () => {
     const mcp = new ModeController();
 
     mcp.setHeadingVorLoc();
 
-    t.true(mcp.headingMode === MCP_MODE.HEADING.VOR_LOC);
+    expect(mcp.headingMode === MCP_MODE.HEADING.VOR_LOC).toBe(true);
 });
 
-ava('.setHeadingFieldValue() sets the value of the heading field', (t) => {
+test('.setHeadingFieldValue() sets the value of the heading field', () => {
     const mcp = new ModeController();
 
     mcp.setHeadingFieldValue(headingOrCourseMock);
 
-    t.true(mcp.heading === headingOrCourseMock);
+    expect(mcp.heading === headingOrCourseMock).toBe(true);
 });
 
-ava('.setSpeedHold() sets the heading mode to hold', (t) => {
+test('.setSpeedHold() sets the heading mode to hold', () => {
     const mcp = new ModeController();
 
     mcp.setSpeedHold();
 
-    t.true(mcp.speedMode === MCP_MODE.SPEED.HOLD);
+    expect(mcp.speedMode === MCP_MODE.SPEED.HOLD).toBe(true);
 });
 
-ava('.setSpeedN1() sets the heading mode to N1', (t) => {
+test('.setSpeedN1() sets the heading mode to N1', () => {
     const mcp = new ModeController();
 
     mcp.setSpeedN1();
 
-    t.true(mcp.speedMode === MCP_MODE.SPEED.N1);
+    expect(mcp.speedMode === MCP_MODE.SPEED.N1).toBe(true);
 });
 
-ava('.setSpeedVnav() sets the heading mode to VNAV', (t) => {
+test('.setSpeedVnav() sets the heading mode to VNAV', () => {
     const mcp = new ModeController();
 
     mcp.setSpeedVnav();
 
-    t.true(mcp.speedMode === MCP_MODE.SPEED.VNAV);
+    expect(mcp.speedMode === MCP_MODE.SPEED.VNAV).toBe(true);
 });

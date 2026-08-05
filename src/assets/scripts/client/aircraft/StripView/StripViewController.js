@@ -76,8 +76,7 @@ export default class StripViewController {
          */
         this._cidNumbersInUse = [];
 
-        return this._init()
-            .enable();
+        return this._init().enable();
     }
 
     /**
@@ -216,8 +215,10 @@ export default class StripViewController {
      */
     deselectStripView(stripViewModel) {
         if (!(stripViewModel instanceof StripViewModel)) {
-            throw new TypeError('Expected stripViewModel to be an instance of ' +
-                `StripViewModel but instead found ${typeof stripViewModel}`);
+            throw new TypeError(
+                'Expected stripViewModel to be an instance of ' +
+                    `StripViewModel but instead found ${typeof stripViewModel}`
+            );
         }
 
         stripViewModel.removeActiveState();
@@ -237,15 +238,7 @@ export default class StripViewController {
             throw Error(`No StripViewModel found for selected Aircraft: ${aircraftModel.callsign}`);
         }
 
-        if (this.$stripView.hasClass(SELECTORS.CLASSNAMES.STRIP_VIEW_IS_HIDDEN)) {
-            this.$stripView.removeClass(SELECTORS.CLASSNAMES.STRIP_VIEW_IS_HIDDEN);
-            // wait 0.3s for strip view drawer slide out transition to complete
-            setTimeout(() => {
-                stripModel.scrollIntoView();
-            }, 300);
-        } else {
-            stripModel.scrollIntoView();
-        }
+        stripModel.scrollIntoView();
     }
 
     /**
@@ -281,6 +274,11 @@ export default class StripViewController {
         const stripViewModel = this._collection.findStripByAircraftId(aircraftModel.id);
 
         if (!stripViewModel) {
+            console.warn(
+                `Attempted to remove a StripViewModel for ${aircraftModel.callsign} that does not exist.` +
+                    'This is likely not a fatal problem, but if you are seeing this, please let somebody know.'
+            );
+
             return;
         }
 
@@ -302,10 +300,14 @@ export default class StripViewController {
      */
     _addViewToStripList(stripViewModel) {
         if (!(stripViewModel instanceof StripViewModel)) {
-            throw new TypeError(`Expected an instance of StripViewModel but received ${typeof stripViewModel}`);
+            throw new TypeError(
+                `Expected an instance of StripViewModel but received ${typeof stripViewModel}`
+            );
         }
 
-        const listView = stripViewModel.isDeparture ? this.$stripViewListDepartures : this.$stripViewListArrivals;
+        const listView = stripViewModel.isDeparture
+            ? this.$stripViewListDepartures
+            : this.$stripViewListArrivals;
         const scrollPosition = listView.scrollTop();
 
         listView.prepend(stripViewModel.$element);
@@ -314,7 +316,7 @@ export default class StripViewController {
     }
 
     /**
-     * Event handler for when a the strip view drawer toggle is clicked
+     * Event handler for when a `StripViewModel` instance is clicked
      *
      * @for StripViewController
      * @method _onStripListToggle

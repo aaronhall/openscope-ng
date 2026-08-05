@@ -2,11 +2,7 @@ import _has from 'lodash/has';
 import EventBus from '../lib/EventBus';
 import { round } from '../math/core';
 import { EVENT } from '../constants/eventNames';
-import {
-    DEFAULT_CANVAS_SIZE,
-    PAN,
-    SCALE
-} from '../constants/canvasConstants';
+import { DEFAULT_CANVAS_SIZE, PAN, SCALE } from '../constants/canvasConstants';
 import { STORAGE_KEY } from '../constants/storageKeys';
 import { INVALID_NUMBER } from '../constants/globalConstants';
 
@@ -269,7 +265,7 @@ class CanvasStageModel {
     calculatePreciseCanvasPositionFromRelativePosition(relativePosition) {
         const [x, y] = relativePosition;
         const canvasX = this._translateKilometersToPixels(x) + this._panX;
-        const canvasY = (this._translateKilometersToPixels(y) * -1) + this._panY;
+        const canvasY = this._translateKilometersToPixels(y) * -1 + this._panY;
         const precisePosition = [canvasX, canvasY];
 
         return precisePosition;
@@ -290,7 +286,8 @@ class CanvasStageModel {
      * @return {array<number>} - `[154.173, 381.029]`
      */
     calculateRoundedCanvasPositionFromRelativePosition(relativePosition) {
-        const precisePosition = this.calculatePreciseCanvasPositionFromRelativePosition(relativePosition);
+        const precisePosition =
+            this.calculatePreciseCanvasPositionFromRelativePosition(relativePosition);
         const roundedPosition = [round(precisePosition[0]), round(precisePosition[1])];
 
         return roundedPosition;

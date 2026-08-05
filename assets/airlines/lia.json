@@ -3,9 +3,7 @@
     "name": "Leeward Islands Air Transport - LIAT",
     "callsign": {
         "name": "LIAT",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

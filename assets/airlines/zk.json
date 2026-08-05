@@ -3,9 +3,7 @@
     "name": "General Aviation New Zealand",
     "callsign": {
         "name": "Zulu Kilo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

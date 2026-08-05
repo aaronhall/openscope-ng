@@ -3,9 +3,7 @@
     "name": "General Aviation Philippines",
     "callsign": {
         "name": "Romeo Papa",
-        "callsignFormats": [
-            "@####"
-        ]
+        "callsignFormats": ["@####"]
     },
     "fleets": {
         "default": [

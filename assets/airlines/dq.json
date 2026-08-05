@@ -3,9 +3,7 @@
     "name": "General Aviation Fiji Islands",
     "callsign": {
         "name": "Delta Quebec",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

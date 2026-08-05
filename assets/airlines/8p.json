@@ -3,9 +3,7 @@
     "name": "General Aviation Barbados",
     "callsign": {
         "name": "Eight Papa",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

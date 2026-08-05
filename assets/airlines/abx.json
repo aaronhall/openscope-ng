@@ -3,12 +3,7 @@
     "name": "ABX Air",
     "callsign": {
         "name": "Abex",
-        "callsignFormats": [
-            "#",
-            "##",
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["#", "##", "###", "####"]
     },
     "fleets": {
         "default": [

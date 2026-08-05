@@ -3,9 +3,7 @@
     "name": "Kenya Airways",
     "callsign": {
         "name": "Kenya",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -20,11 +18,7 @@
             ["B77W", 3],
             ["B788", 9]
         ],
-        "b738": [
-            ["B738", 8]
-        ],
-        "b788": [
-            ["B788", 9]
-        ]
+        "b738": [["B738", 8]],
+        "b788": [["B788", 9]]
     }
 }

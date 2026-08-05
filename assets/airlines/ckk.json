@@ -3,9 +3,7 @@
     "name": "China Cargo Airlines",
     "callsign": {
         "name": "Cargo King",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

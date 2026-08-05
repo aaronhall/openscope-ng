@@ -3,9 +3,7 @@
     "name": "Eastern Airlines",
     "callsign": {
         "name": "Eastern",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

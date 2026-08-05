@@ -8,9 +8,7 @@ import GameController from '../game/GameController';
 import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
 import UiController from '../ui/UiController';
 import { MCP_MODE } from './ModeControl/modeControlConstants';
-import {
-    FLIGHT_PHASE
-} from '../constants/aircraftConstants';
+import { FLIGHT_PHASE } from '../constants/aircraftConstants';
 import { EVENT } from '../constants/eventNames';
 import { radians_normalize } from '../math/circle';
 import { round } from '../math/core';
@@ -20,7 +18,7 @@ import {
     radio_runway,
     radio_spellOut,
     radio_heading,
-    radio_altitude
+    radio_altitude,
 } from '../utilities/radioUtilities';
 import { heading_to_string, radiansToDegrees, degreesToRadians } from '../utilities/unitConverters';
 
@@ -76,15 +74,14 @@ export default class AircraftCommander {
                         retval[0],
                         {
                             log: retval[1],
-                            say: retval[1]
-                        }
+                            say: retval[1],
+                        },
                     ];
                 }
 
                 response.push(retval[1]);
 
                 if (retval[2]) {
-                    // eslint-disable-next-line prefer-destructuring
                     response_end = retval[2];
                 }
             }
@@ -106,7 +103,7 @@ export default class AircraftCommander {
                     // make into log/say object
                     retval[1] = {
                         say: retval[1],
-                        log: retval[1]
+                        log: retval[1],
                     };
                 }
 
@@ -119,10 +116,12 @@ export default class AircraftCommander {
         }
 
         if (commands.length === 0) {
-            response = [{
-                say: 'say again',
-                log: 'say again'
-            }];
+            response = [
+                {
+                    say: 'say again',
+                    log: 'say again',
+                },
+            ];
         }
 
         if (response.length >= 1) {
@@ -137,7 +136,7 @@ export default class AircraftCommander {
             speech_say(
                 [
                     { type: 'callsign', content: aircraft },
-                    { type: 'text', content: `${r_say} ${response_end}` }
+                    { type: 'text', content: `${r_say} ${response_end}` },
                 ],
                 aircraft.pilotVoice
             );
@@ -172,7 +171,10 @@ export default class AircraftCommander {
      * @return {array} [success of operation, readback]
      */
     runAbort() {
-        return [false, "the 'abort' command has been deprecated, please see documentation for help"];
+        return [
+            false,
+            "the 'abort' command has been deprecated, please see documentation for help",
+        ];
     }
 
     /**
@@ -187,7 +189,8 @@ export default class AircraftCommander {
     runAltitude(aircraft, data) {
         const altitudeRequested = data[0];
         const expediteRequested = data[1];
-        const shouldUseSoftCeiling = GameController.game.option.getOptionByName('softCeiling') === 'yes';
+        const shouldUseSoftCeiling =
+            GameController.game.option.getOptionByName('softCeiling') === 'yes';
         const airport = AirportController.airport_get();
 
         return aircraft.pilot.maintainAltitude(
@@ -340,10 +343,16 @@ export default class AircraftCommander {
             // As radial has not been explicitly requested, we need to pass a "fallback"
             // inboundHeading, as it's possible that a default inboundHeading doesn't exist for
             // the `WaypointModel`s _holdParameters (eg. if the procedure JSON has no holds)
-            fallbackInboundHeading = fixModel.positionModel.bearingFromPosition(aircraft.positionModel);
+            fallbackInboundHeading = fixModel.positionModel.bearingFromPosition(
+                aircraft.positionModel
+            );
         }
 
-        return aircraft.pilot.initiateHoldingPattern(fixName, holdParameters, fallbackInboundHeading);
+        return aircraft.pilot.initiateHoldingPattern(
+            fixName,
+            holdParameters,
+            fallbackInboundHeading
+        );
     }
 
     /**
@@ -394,9 +403,11 @@ export default class AircraftCommander {
         if (_isNil(runwayModel)) {
             const previousRunwayModel = aircraft.fms.arrivalRunwayModel;
             const readback = {};
-            readback.log = `unable to find Runway ${runwayName} on our charts, ` +
+            readback.log =
+                `unable to find Runway ${runwayName} on our charts, ` +
                 `expecting Runway ${previousRunwayModel.name} instead`;
-            readback.say = `unable to find Runway ${radio_runway(runwayName)} on our ` +
+            readback.say =
+                `unable to find Runway ${radio_runway(runwayName)} on our ` +
                 `charts, expecting Runway ${previousRunwayModel.getRadioName()} instead`;
 
             return [false, readback];
@@ -411,19 +422,6 @@ export default class AircraftCommander {
      * @param aircraft {AircraftModel}
      */
     runFlyPresentHeading(aircraft) {
-        if (aircraft.flightPhase === FLIGHT_PHASE.APRON) {
-            return [false, 'we\'re still at the gate'];
-        }
-
-        if (aircraft.flightPhase === FLIGHT_PHASE.TAXI) {
-            const runway = aircraft.fms.departureRunwayModel;
-            const readback = {};
-            readback.log = `we're still taxiing to Runway ${runway.name}`;
-            readback.say = `we're still taxiing to Runway ${radio_runway(runway.name)}`;
-
-            return [false, readback];
-        }
-
         return aircraft.pilot.maintainPresentHeading(aircraft);
     }
 
@@ -490,17 +488,17 @@ export default class AircraftCommander {
     }
 
     /**
-      * Removes all legs, and replaces them with the specified route
-      * Note: Input data needs to be provided with single dots connecting all
-      * procedurally-linked points (eg KSFO.OFFSH9.SXC or SGD.V87.MOVER), and
-      * all other points that will be simply a fix direct to another fix need
-      * to be connected with double-dots (eg HLI..SQS..BERRA..JAN..KJAN)
-      *
-      * @for AircraftCommander
-      * @method runReroute
-      * @param data
-      * @return {array}   [success of operation, readback]
-      */
+     * Removes all legs, and replaces them with the specified route
+     * Note: Input data needs to be provided with single dots connecting all
+     * procedurally-linked points (eg KSFO.OFFSH9.SXC or SGD.V87.MOVER), and
+     * all other points that will be simply a fix direct to another fix need
+     * to be connected with double-dots (eg HLI..SQS..BERRA..JAN..KJAN)
+     *
+     * @for AircraftCommander
+     * @method runReroute
+     * @param data
+     * @return {array}   [success of operation, readback]
+     */
     runReroute(aircraft, data) {
         // TODO: is this .toUpperCase() necessary??
         const routeString = data[0].toUpperCase();
@@ -548,7 +546,7 @@ export default class AircraftCommander {
         const readback = {};
 
         if (altitude === 0) {
-            return [false, 'we haven\'t been assigned an altitude'];
+            return [false, "we haven't been assigned an altitude"];
         }
 
         readback.log = `assigned ${altitude}`;
@@ -581,7 +579,7 @@ export default class AircraftCommander {
      */
     runSayAssignedHeading(aircraft) {
         if (aircraft.mcp.headingMode !== MCP_MODE.HEADING.HOLD) {
-            return [false, 'we haven\'t been assigned a heading'];
+            return [false, "we haven't been assigned a heading"];
         }
 
         const heading = heading_to_string(aircraft.mcp.heading);
@@ -617,7 +615,7 @@ export default class AircraftCommander {
      */
     runSayAssignedSpeed(aircraft) {
         if (aircraft.mcp.speedMode !== MCP_MODE.SPEED.HOLD) {
-            return [false, 'we haven\'t been assigned a speed'];
+            return [false, "we haven't been assigned a speed"];
         }
 
         const speed = _round(aircraft.mcp.speed);
@@ -645,7 +643,7 @@ export default class AircraftCommander {
         const requestedRunwayName = data[0];
 
         if (!requestedRunwayName) {
-            const readback = 'we don\'t know which runway to taxi to';
+            const readback = "we don't know which runway to taxi to";
 
             return [false, readback];
         }
@@ -681,12 +679,16 @@ export default class AircraftCommander {
         const roundedWindSpeed = round(wind.speed);
         const readback = {};
 
+        if (!isInQueue) {
+            return [false, "unable to take off, we're not at any runway"];
+        }
+
         if (aircraft.isAirborne()) {
-            return [false, 'unable to take off, we\'re already airborne'];
+            return [false, "unable to take off, we're already airborne"];
         }
 
         if (aircraft.flightPhase === FLIGHT_PHASE.APRON) {
-            return [false, 'unable to take off, we\'re still at the gate'];
+            return [false, "unable to take off, we're still at the gate"];
         }
 
         if (aircraft.flightPhase === FLIGHT_PHASE.TAXI) {
@@ -698,10 +700,6 @@ export default class AircraftCommander {
 
         if (aircraft.flightPhase === FLIGHT_PHASE.TAKEOFF) {
             return [false, 'already taking off'];
-        }
-
-        if (!isInQueue) {
-            return [false, 'unable to take off, we\'re not at any runway'];
         }
 
         if (spotInQueue > 0) {
@@ -717,9 +715,11 @@ export default class AircraftCommander {
 
         // see #1154, we may have been rerouted since we started taxiing.
         if (!aircraft.fms.isRunwayModelValidForSid(runway)) {
-            readback.log = `according to our charts, Runway ${runway.name} ` +
+            readback.log =
+                `according to our charts, Runway ${runway.name} ` +
                 `is not valid for the ${aircraft.fms.getSidIcao()} departure`;
-            readback.say = `according to our charts, Runway ${runway.getRadioName()} ` +
+            readback.say =
+                `according to our charts, Runway ${runway.getRadioName()} ` +
                 `is not valid for the ${aircraft.fms.getSidName()} departure`;
 
             return [false, readback];
@@ -728,11 +728,13 @@ export default class AircraftCommander {
         runway.removeAircraftFromQueue(aircraft.id);
         aircraft.takeoff(runway);
 
-        readback.log = `wind ${roundedWindAngleInDegrees} at ${roundedWindSpeed}, ` +
+        readback.log =
+            `wind ${roundedWindAngleInDegrees} at ${roundedWindSpeed}, ` +
             `Runway ${runway.name}, cleared for takeoff`;
 
         // We have to make it say winned to make it sound like "Wind" and not "Whined"
-        readback.say = `winned ${radio_spellOut(roundedWindAngleInDegrees)} at ` +
+        readback.say =
+            `winned ${radio_spellOut(roundedWindAngleInDegrees)} at ` +
             `${radio_spellOut(roundedWindSpeed)}, Runway ${radio_runway(runway.name)}, ` +
             'cleared for takeoff';
 
@@ -775,13 +777,13 @@ export default class AircraftCommander {
         const result = this._onChangeTransponderCode(squawk, aircraft);
         let readback = {
             log: `squawk ${squawk}`,
-            say: `squawk ${radio_spellOut(squawk)}`
+            say: `squawk ${radio_spellOut(squawk)}`,
         };
 
         if (!result) {
             readback = {
                 log: `unable to squawk ${squawk}`,
-                say: `unable to squawk ${radio_spellOut(squawk)}`
+                say: `unable to squawk ${radio_spellOut(squawk)}`,
             };
         }
 

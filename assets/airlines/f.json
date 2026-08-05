@@ -3,9 +3,7 @@
     "name": "General Aviation France",
     "callsign": {
         "name": "Foxtrot",
-        "callsignFormats": [
-            "@@@@"
-        ]
+        "callsignFormats": ["@@@@"]
     },
     "fleets": {
         "default": [

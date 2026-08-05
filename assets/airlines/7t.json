@@ -3,9 +3,7 @@
     "name": "General Aviation Algeria",
     "callsign": {
         "name": "Seven Tango",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "Kam Air",
     "callsign": {
         "name": "Kamgar",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

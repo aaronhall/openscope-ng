@@ -1,1084 +1,1083 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import sinon from 'sinon';
 import WaypointModel from '../../../src/assets/scripts/client/aircraft/FlightManagementSystem/WaypointModel';
 import StaticPositionModel from '../../../src/assets/scripts/client/base/StaticPositionModel';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../../fixtures/navigationLibraryFixtures';
 import { INVALID_NUMBER } from '../../../src/assets/scripts/client/constants/globalConstants';
 import { DEFAULT_HOLD_PARAMETERS } from '../../../src/assets/scripts/client/constants/waypointConstants';
 
 let sandbox;
 
-ava.beforeEach(() => {
+beforeEach(() => {
     sandbox = sinon.createSandbox();
     createNavigationLibraryFixture();
 });
 
-ava.afterEach(() => {
+afterEach(() => {
     sandbox.restore();
     resetNavigationLibraryFixture();
 });
 
-ava('throws when instantiated without parameters', (t) => {
-    t.throws(() => new WaypointModel());
+test('throws when instantiated without parameters', () => {
+    expect(() => new WaypointModel()).toThrow();
 });
 
-ava('throws when instantiated with string containing unknown fix', (t) => {
-    t.throws(() => new WaypointModel('INVALIDFIXNAME'));
+test('throws when instantiated with string containing unknown fix', () => {
+    expect(() => new WaypointModel('INVALIDFIXNAME')).toThrow();
 });
 
-ava('throws when instantiated with array containing unknown fix', (t) => {
-    t.throws(() => new WaypointModel(['INVALIDFIXNAME', 'A100']));
+test('throws when instantiated with array containing unknown fix', () => {
+    expect(() => new WaypointModel(['INVALIDFIXNAME', 'A100'])).toThrow();
 });
 
-ava('throws when instantiated with an array containing an unrestricted fix', (t) => {
-    t.throws(() => new WaypointModel(['BOACH']));
+test('throws when instantiated with an array containing an unrestricted fix', () => {
+    expect(() => new WaypointModel(['BOACH'])).toThrow();
 });
 
-ava('throws when instantiated with an array containing improperly formatted restrictions', (t) => {
-    t.throws(() => new WaypointModel(['BOACH', '100A']));
+test('throws when instantiated with an array containing improperly formatted restrictions', () => {
+    expect(() => new WaypointModel(['BOACH', '100A'])).toThrow();
 });
 
-ava('throws when instantiated with an array containing improperly formatted altitude restrictions', (t) => {
-    t.throws(() => new WaypointModel(['BOACH', 'A1000']));
-    t.throws(() => new WaypointModel(['BOACH', 'A150@']));
+test('throws when instantiated with an array containing improperly formatted altitude restrictions', () => {
+    expect(() => new WaypointModel(['BOACH', 'A1000'])).toThrow();
+    expect(() => new WaypointModel(['BOACH', 'A150@'])).toThrow();
 });
 
-ava('throws when instantiated with an array containing improperly formatted speed restrictions', (t) => {
-    t.throws(() => new WaypointModel(['BOACH', 'S50+']));
-    t.throws(() => new WaypointModel(['BOACH', 'S1000+']));
-    t.throws(() => new WaypointModel(['BOACH', 'S150@']));
+test('throws when instantiated with an array containing improperly formatted speed restrictions', () => {
+    expect(() => new WaypointModel(['BOACH', 'S50+'])).toThrow();
+    expect(() => new WaypointModel(['BOACH', 'S1000+'])).toThrow();
+    expect(() => new WaypointModel(['BOACH', 'S150@'])).toThrow();
 });
 
-ava('does not throw when instantiated with string containing known fix', (t) => {
-    t.notThrows(() => new WaypointModel('BOACH'));
+test('does not throw when instantiated with string containing known fix', () => {
+    expect(() => new WaypointModel('BOACH')).not.toThrow();
 });
 
-ava('does not throw when instantiated with array containing known fix', (t) => {
-    t.notThrows(() => new WaypointModel(['BOACH', 'A100-']));
+test('does not throw when instantiated with array containing known fix', () => {
+    expect(() => new WaypointModel(['BOACH', 'A100-'])).not.toThrow();
 });
 
-ava('instantiates correctly when given a fly-over fix', (t) => {
+test('instantiates correctly when given a fly-over fix', () => {
     const model = new WaypointModel('^BOACH');
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === true);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === true).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a hold fix', (t) => {
+test('instantiates correctly when given a hold fix', () => {
     const model = new WaypointModel('@BOACH');
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === true);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === true).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a vector fix', (t) => {
+test('instantiates correctly when given a vector fix', () => {
     const model = new WaypointModel('#320');
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === true);
-    t.true(model._name === '#320');
-    t.true(!model._positionModel);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === true).toBe(true);
+    expect(model._name === '#320').toBe(true);
+    expect(!model._positionModel).toBe(true);
 });
 
-ava('instantiates correctly when given an unrestricted fix', (t) => {
+test('instantiates correctly when given an unrestricted fix', () => {
     const model = new WaypointModel('BOACH');
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (simple altitude)', (t) => {
+test('instantiates correctly when given a restricted fix (simple altitude)', () => {
     const model = new WaypointModel(['BOACH', 'A100']);
 
-    t.true(model.altitudeMaximum === 10000);
-    t.true(model.altitudeMinimum === 10000);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 10000).toBe(true);
+    expect(model.altitudeMinimum === 10000).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (minimum altitude)', (t) => {
+test('instantiates correctly when given a restricted fix (minimum altitude)', () => {
     const model = new WaypointModel(['BOACH', 'A100+']);
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === 10000);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === 10000).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (maximum altitude)', (t) => {
+test('instantiates correctly when given a restricted fix (maximum altitude)', () => {
     const model = new WaypointModel(['BOACH', 'A100-']);
 
-    t.true(model.altitudeMaximum === 10000);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 10000).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (ranged altitude)', (t) => {
+test('instantiates correctly when given a restricted fix (ranged altitude)', () => {
     const model = new WaypointModel(['BOACH', 'A80+|A120-']);
 
-    t.true(model.altitudeMaximum === 12000);
-    t.true(model.altitudeMinimum === 8000);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 12000).toBe(true);
+    expect(model.altitudeMinimum === 8000).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (simple speed)', (t) => {
+test('instantiates correctly when given a restricted fix (simple speed)', () => {
     const model = new WaypointModel(['BOACH', 'S210']);
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === 210);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (minimum speed)', (t) => {
+test('instantiates correctly when given a restricted fix (minimum speed)', () => {
     const model = new WaypointModel(['BOACH', 'S210+']);
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === 210);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (maximum speed)', (t) => {
+test('instantiates correctly when given a restricted fix (maximum speed)', () => {
     const model = new WaypointModel(['BOACH', 'S210-']);
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (ranged speed)', (t) => {
+test('instantiates correctly when given a restricted fix (ranged speed)', () => {
     const model = new WaypointModel(['BOACH', 'S200+|S220-']);
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === 220);
-    t.true(model.speedMinimum === 200);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === 220).toBe(true);
+    expect(model.speedMinimum === 200).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (simple altitude and simple speed)', (t) => {
+test('instantiates correctly when given a restricted fix (simple altitude and simple speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100|S210']);
 
-    t.true(model.altitudeMaximum === 10000);
-    t.true(model.altitudeMinimum === 10000);
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === 210);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 10000).toBe(true);
+    expect(model.altitudeMinimum === 10000).toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (simple altitude and minimum speed)', (t) => {
+test('instantiates correctly when given a restricted fix (simple altitude and minimum speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100|S210+']);
 
-    t.true(model.altitudeMaximum === 10000);
-    t.true(model.altitudeMinimum === 10000);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === 210);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 10000).toBe(true);
+    expect(model.altitudeMinimum === 10000).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (simple altitude and maximum speed)', (t) => {
+test('instantiates correctly when given a restricted fix (simple altitude and maximum speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100|S210-']);
 
-    t.true(model.altitudeMaximum === 10000);
-    t.true(model.altitudeMinimum === 10000);
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 10000).toBe(true);
+    expect(model.altitudeMinimum === 10000).toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (simple altitude and ranged speed)', (t) => {
+test('instantiates correctly when given a restricted fix (simple altitude and ranged speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100|S200+|S220-']);
 
-    t.true(model.altitudeMaximum === 10000);
-    t.true(model.altitudeMinimum === 10000);
-    t.true(model.speedMaximum === 220);
-    t.true(model.speedMinimum === 200);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 10000).toBe(true);
+    expect(model.altitudeMinimum === 10000).toBe(true);
+    expect(model.speedMaximum === 220).toBe(true);
+    expect(model.speedMinimum === 200).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (minimum altitude and simple speed)', (t) => {
+test('instantiates correctly when given a restricted fix (minimum altitude and simple speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100+|S210']);
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === 10000);
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === 210);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === 10000).toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (minimum altitude and minimum speed)', (t) => {
+test('instantiates correctly when given a restricted fix (minimum altitude and minimum speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100+|S210+']);
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === 10000);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === 210);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === 10000).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (minimum altitude and maximum speed)', (t) => {
+test('instantiates correctly when given a restricted fix (minimum altitude and maximum speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100+|S210-']);
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === 10000);
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === 10000).toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (minimum altitude and ranged speed)', (t) => {
+test('instantiates correctly when given a restricted fix (minimum altitude and ranged speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100+|S200+|S220-']);
 
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === 10000);
-    t.true(model.speedMaximum === 220);
-    t.true(model.speedMinimum === 200);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === 10000).toBe(true);
+    expect(model.speedMaximum === 220).toBe(true);
+    expect(model.speedMinimum === 200).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (maximum altitude and simple speed)', (t) => {
+test('instantiates correctly when given a restricted fix (maximum altitude and simple speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100-|S210']);
 
-    t.true(model.altitudeMaximum === 10000);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === 210);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 10000).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (maximum altitude and minimum speed)', (t) => {
+test('instantiates correctly when given a restricted fix (maximum altitude and minimum speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100-|S210+']);
 
-    t.true(model.altitudeMaximum === 10000);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === 210);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 10000).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (maximum altitude and maximum speed)', (t) => {
+test('instantiates correctly when given a restricted fix (maximum altitude and maximum speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100-|S210-']);
 
-    t.true(model.altitudeMaximum === 10000);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 10000).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (maximum altitude and ranged speed)', (t) => {
+test('instantiates correctly when given a restricted fix (maximum altitude and ranged speed)', () => {
     const model = new WaypointModel(['BOACH', 'A100-|S200+|S220-']);
 
-    t.true(model.altitudeMaximum === 10000);
-    t.true(model.altitudeMinimum === -1);
-    t.true(model.speedMaximum === 220);
-    t.true(model.speedMinimum === 200);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 10000).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
+    expect(model.speedMaximum === 220).toBe(true);
+    expect(model.speedMinimum === 200).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (ranged altitude and simple speed)', (t) => {
+test('instantiates correctly when given a restricted fix (ranged altitude and simple speed)', () => {
     const model = new WaypointModel(['BOACH', 'A80+|A120-|S210']);
 
-    t.true(model.altitudeMaximum === 12000);
-    t.true(model.altitudeMinimum === 8000);
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === 210);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 12000).toBe(true);
+    expect(model.altitudeMinimum === 8000).toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (ranged altitude and minimum speed)', (t) => {
+test('instantiates correctly when given a restricted fix (ranged altitude and minimum speed)', () => {
     const model = new WaypointModel(['BOACH', 'A80+|A120-|S210+']);
 
-    t.true(model.altitudeMaximum === 12000);
-    t.true(model.altitudeMinimum === 8000);
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === 210);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 12000).toBe(true);
+    expect(model.altitudeMinimum === 8000).toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (ranged altitude and maximum speed)', (t) => {
+test('instantiates correctly when given a restricted fix (ranged altitude and maximum speed)', () => {
     const model = new WaypointModel(['BOACH', 'A80+|A120-|S210-']);
 
-    t.true(model.altitudeMaximum === 12000);
-    t.true(model.altitudeMinimum === 8000);
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === -1);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 12000).toBe(true);
+    expect(model.altitudeMinimum === 8000).toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('instantiates correctly when given a restricted fix (ranged altitude and ranged speed)', (t) => {
+test('instantiates correctly when given a restricted fix (ranged altitude and ranged speed)', () => {
     const model = new WaypointModel(['BOACH', 'A80+|A120-|S200+|S220-']);
 
-    t.true(model.altitudeMaximum === 12000);
-    t.true(model.altitudeMinimum === 8000);
-    t.true(model.speedMaximum === 220);
-    t.true(model.speedMinimum === 200);
-    t.true(model._isFlyOverWaypoint === false);
-    t.true(model._isHoldWaypoint === false);
-    t.true(model._isVectorWaypoint === false);
-    t.true(model._name === 'BOACH');
-    t.deepEqual(model._positionModel.gps, [35.6782610435946, -115.29470074200118]);
+    expect(model.altitudeMaximum === 12000).toBe(true);
+    expect(model.altitudeMinimum === 8000).toBe(true);
+    expect(model.speedMaximum === 220).toBe(true);
+    expect(model.speedMinimum === 200).toBe(true);
+    expect(model._isFlyOverWaypoint === false).toBe(true);
+    expect(model._isHoldWaypoint === false).toBe(true);
+    expect(model._isVectorWaypoint === false).toBe(true);
+    expect(model._name === 'BOACH').toBe(true);
+    expect(model._positionModel.gps).toEqual([35.6782610435946, -115.29470074200118]);
 });
 
-ava('#hasAltitudeRestriction returns true when a minimum or maximium altitude restriction exists', (t) => {
+test('#hasAltitudeRestriction returns true when a minimum or maximium altitude restriction exists', () => {
     const modelWithSimpleRestriction = new WaypointModel(['BOACH', 'A100']);
     const modelWithMaximumRestriction = new WaypointModel(['BOACH', 'A120-']);
     const modelWithMininmumRestriction = new WaypointModel(['BOACH', 'A80+']);
     const modelWithRangedRestriction = new WaypointModel(['BOACH', 'A80+|A80-']);
 
-    t.true(modelWithSimpleRestriction.hasAltitudeRestriction);
-    t.true(modelWithMaximumRestriction.hasAltitudeRestriction);
-    t.true(modelWithMininmumRestriction.hasAltitudeRestriction);
-    t.true(modelWithRangedRestriction.hasAltitudeRestriction);
+    expect(modelWithSimpleRestriction.hasAltitudeRestriction).toBe(true);
+    expect(modelWithMaximumRestriction.hasAltitudeRestriction).toBe(true);
+    expect(modelWithMininmumRestriction.hasAltitudeRestriction).toBe(true);
+    expect(modelWithRangedRestriction.hasAltitudeRestriction).toBe(true);
 });
 
-ava('#hasAltitudeRestriction returns false when neither minimum nor maximum altitude restriction exists', (t) => {
+test('#hasAltitudeRestriction returns false when neither minimum nor maximum altitude restriction exists', () => {
     const model = new WaypointModel('BOACH');
 
-    t.false(model.hasAltitudeRestriction);
+    expect(model.hasAltitudeRestriction).toBe(false);
 });
 
-ava('#hasRestriction returns true when any altitude or speed restriction exists', (t) => {
+test('#hasRestriction returns true when any altitude or speed restriction exists', () => {
     const modelWithAltitudeRestriction = new WaypointModel(['BOACH', 'A100']);
     const modelWithSpeedRestriction = new WaypointModel(['BOACH', 'S250']);
 
-    t.true(modelWithAltitudeRestriction.hasRestriction);
-    t.true(modelWithSpeedRestriction.hasRestriction);
+    expect(modelWithAltitudeRestriction.hasRestriction).toBe(true);
+    expect(modelWithSpeedRestriction.hasRestriction).toBe(true);
 });
 
-ava('#hasRestriction returns false when neither altitude nor speed restriction exists', (t) => {
+test('#hasRestriction returns false when neither altitude nor speed restriction exists', () => {
     const model = new WaypointModel('BOACH');
 
-    t.false(model.hasRestriction);
+    expect(model.hasRestriction).toBe(false);
 });
 
-ava('#hasSpeedRestriction returns true when a minimum or maximum speed restriction exists', (t) => {
+test('#hasSpeedRestriction returns true when a minimum or maximum speed restriction exists', () => {
     const modelWithSimpleRestriction = new WaypointModel(['BOACH', 'S210']);
     const modelWithMaximumRestriction = new WaypointModel(['BOACH', 'S220-']);
     const modelWithMininmumRestriction = new WaypointModel(['BOACH', 'S200+']);
     const modelWithRangedRestriction = new WaypointModel(['BOACH', 'S200+|S220-']);
 
-    t.true(modelWithSimpleRestriction.hasSpeedRestriction);
-    t.true(modelWithMaximumRestriction.hasSpeedRestriction);
-    t.true(modelWithMininmumRestriction.hasSpeedRestriction);
-    t.true(modelWithRangedRestriction.hasSpeedRestriction);
+    expect(modelWithSimpleRestriction.hasSpeedRestriction).toBe(true);
+    expect(modelWithMaximumRestriction.hasSpeedRestriction).toBe(true);
+    expect(modelWithMininmumRestriction.hasSpeedRestriction).toBe(true);
+    expect(modelWithRangedRestriction.hasSpeedRestriction).toBe(true);
 });
 
-
-ava('#hasSpeedRestriction returns true when a hold with a speed restriction is set', (t) => {
+test('#hasSpeedRestriction returns true when a hold with a speed restriction is set', () => {
     const modelWithHold = new WaypointModel('@BOACH');
     const holdParametersMock = {
         inboundHeading: 3.14,
         legLength: '2min',
         speedMaximum: 220,
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
 
-    modelWithHold.setHoldParameters(
-        holdParametersMock
-    );
+    modelWithHold.setHoldParameters(holdParametersMock);
 
-    t.true(modelWithHold.hasSpeedRestriction);
+    expect(modelWithHold.hasSpeedRestriction).toBe(true);
 });
 
-ava('#hasSpeedRestriction returns false when neither a minimum nor maximum speed restriction exists', (t) => {
+test('#hasSpeedRestriction returns false when neither a minimum nor maximum speed restriction exists', () => {
     const model = new WaypointModel('BOACH');
 
-    t.false(model.hasSpeedRestriction);
+    expect(model.hasSpeedRestriction).toBe(false);
 });
 
-ava('#holdParameters returns undefined when #_isHoldWaypoint is false', (t) => {
+test('#holdParameters returns undefined when #_isHoldWaypoint is false', () => {
     const model = new WaypointModel('BOACH');
     const result = model.holdParameters;
 
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('#holdParameters returns object with appropriate contents when #_isHoldWaypoint is true', (t) => {
+test('#holdParameters returns object with appropriate contents when #_isHoldWaypoint is true', () => {
     const model = new WaypointModel('@BOACH');
     const expectedResult = {
         inboundHeading: undefined,
         legLength: '1min',
         speedMaximum: undefined,
         timer: INVALID_NUMBER,
-        turnDirection: 'right'
+        turnDirection: 'right',
     };
     const result = model.holdParameters;
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('#isFlyOverWaypoint returns false when #_isFlyOverWaypoint is false', (t) => {
+test('#isFlyOverWaypoint returns false when #_isFlyOverWaypoint is false', () => {
     const model = new WaypointModel('BOACH');
     const result = model.isFlyOverWaypoint;
 
-    t.false(result);
+    expect(result).toBe(false);
 });
 
-ava('#isFlyOverWaypoint returns true when #_isFlyOverWaypoint is true', (t) => {
+test('#isFlyOverWaypoint returns true when #_isFlyOverWaypoint is true', () => {
     const model = new WaypointModel('^BOACH');
     const result = model.isFlyOverWaypoint;
 
-    t.true(result);
+    expect(result).toBe(true);
 });
 
-ava('#isHoldWaypoint returns false when #_isHoldWaypoint is false', (t) => {
+test('#isHoldWaypoint returns false when #_isHoldWaypoint is false', () => {
     const model = new WaypointModel('BOACH');
     const result = model.isHoldWaypoint;
 
-    t.false(result);
+    expect(result).toBe(false);
 });
 
-ava('#isHoldWaypoint returns true when #_isHoldWaypoint is true', (t) => {
+test('#isHoldWaypoint returns true when #_isHoldWaypoint is true', () => {
     const model = new WaypointModel('@BOACH');
     const result = model.isHoldWaypoint;
 
-    t.true(result);
+    expect(result).toBe(true);
 });
 
-ava('#isVectorWaypoint returns false when #_isVectorWaypoint is false', (t) => {
+test('#isVectorWaypoint returns false when #_isVectorWaypoint is false', () => {
     const model = new WaypointModel('BOACH');
     const result = model.isVectorWaypoint;
 
-    t.false(result);
+    expect(result).toBe(false);
 });
 
-ava('#isVectorWaypoint returns true when #_isVectorWaypoint is true', (t) => {
+test('#isVectorWaypoint returns true when #_isVectorWaypoint is true', () => {
     const model = new WaypointModel('#BOACH');
     const result = model.isVectorWaypoint;
 
-    t.true(result);
+    expect(result).toBe(true);
 });
 
-ava('#name returns value of #_name for fixes with names prefixed with underscore', (t) => {
+test('#name returns value of #_name for fixes with names prefixed with underscore', () => {
     const model = new WaypointModel('_NAPSE068');
     const expectedResult = '_NAPSE068';
     const result = model.name;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('#name returns value of #_name for fixes with names not prefixed with underscore', (t) => {
+test('#name returns value of #_name for fixes with names not prefixed with underscore', () => {
     const model = new WaypointModel('BOACH');
     const expectedResult = 'BOACH';
     const result = model.name;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('#positionModel returns #_positionModel', (t) => {
+test('#positionModel returns #_positionModel', () => {
     const waypointModel = new WaypointModel('BOACH');
     const { positionModel } = waypointModel;
     const expectedResult = [35.6782610435946, -115.29470074200118];
     const result = positionModel.gps;
 
-    t.true(positionModel instanceof StaticPositionModel);
-    t.deepEqual(result, expectedResult);
+    expect(positionModel instanceof StaticPositionModel).toBe(true);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('#relativePosition returns undefined for vector waypoints', (t) => {
+test('#relativePosition returns undefined for vector waypoints', () => {
     const waypointModel = new WaypointModel('#320');
     const result = waypointModel.relativePosition;
 
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('#relativePosition returns #_positionModel.relativePosition for non-vector waypoints', (t) => {
+test('#relativePosition returns #_positionModel.relativePosition for non-vector waypoints', () => {
     const waypointModel = new WaypointModel('BOACH');
     const expectedResult = [-3.3138243641281715, -46.35714730047791];
     const result = waypointModel.relativePosition;
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('#speedMaximum returns expected value when hold with speed restriction is inactive', (t) => {
+test('#speedMaximum returns expected value when hold with speed restriction is inactive', () => {
     const modelWithHold = new WaypointModel(['BOACH', 'S250-']);
     const holdParametersMock = {
         inboundHeading: 3.14,
         legLength: '2min',
         speedMaximum: 220,
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
 
-    modelWithHold.setHoldParameters(
-        holdParametersMock
-    );
+    modelWithHold.setHoldParameters(holdParametersMock);
 
-    t.is(modelWithHold.speedMaximum, 250);
+    expect(modelWithHold.speedMaximum).toBe(250);
 });
 
-ava('#speedMaximum returns expected value when hold with speed restriction is active', (t) => {
+test('#speedMaximum returns expected value when hold with speed restriction is active', () => {
     const modelWithHold = new WaypointModel(['@BOACH', 'S250-']);
     const holdParametersMock = {
         inboundHeading: 3.14,
         legLength: '2min',
         speedMaximum: 220,
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
 
-    modelWithHold.setHoldParameters(
-        holdParametersMock
-    );
+    modelWithHold.setHoldParameters(holdParametersMock);
 
-    t.is(modelWithHold.speedMaximum, holdParametersMock.speedMaximum);
+    expect(modelWithHold.speedMaximum).toBe(holdParametersMock.speedMaximum);
 });
 
-ava('.activateHold() sets #_isHoldWaypoint to true', (t) => {
+test('.activateHold() sets #_isHoldWaypoint to true', () => {
     const waypointModel = new WaypointModel('@BOACH');
 
     waypointModel._isHoldWaypoint = false;
 
     const result = waypointModel.activateHold();
 
-    t.true(typeof result === 'undefined');
-    t.true(waypointModel._isHoldWaypoint);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(waypointModel._isHoldWaypoint).toBe(true);
 });
 
-ava('.calculateBearingToWaypoint() calls ._ensureNonVectorWaypointsForThisAndWaypoint()', (t) => {
+test('.calculateBearingToWaypoint() calls ._ensureNonVectorWaypointsForThisAndWaypoint()', () => {
     const model = new WaypointModel('BOACH');
     const otherModel = new WaypointModel('FRAWG');
-    const ensureNonVectorWaypointsForThisAndWaypointSpy = sinon.spy(model, '_ensureNonVectorWaypointsForThisAndWaypoint');
+    const ensureNonVectorWaypointsForThisAndWaypointSpy = sinon.spy(
+        model,
+        '_ensureNonVectorWaypointsForThisAndWaypoint'
+    );
 
     model.calculateBearingToWaypoint(otherModel);
 
-    t.true(ensureNonVectorWaypointsForThisAndWaypointSpy.calledWithExactly(otherModel));
+    expect(ensureNonVectorWaypointsForThisAndWaypointSpy.calledWithExactly(otherModel)).toBe(true);
 });
 
-ava('.calculateBearingToWaypoint() returns correct bearing', (t) => {
+test('.calculateBearingToWaypoint() returns correct bearing', () => {
     const model = new WaypointModel('BOACH');
     const otherModel = new WaypointModel('FRAWG');
     const expectedResult = 0.5299639748799476;
     const result = model.calculateBearingToWaypoint(otherModel);
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.calculateDistanceToWaypoint() calls ._ensureNonVectorWaypointsForThisAndWaypoint()', (t) => {
+test('.calculateDistanceToWaypoint() calls ._ensureNonVectorWaypointsForThisAndWaypoint()', () => {
     const model = new WaypointModel('BOACH');
     const otherModel = new WaypointModel('FRAWG');
-    const ensureNonVectorWaypointsForThisAndWaypointSpy = sinon.spy(model, '_ensureNonVectorWaypointsForThisAndWaypoint');
+    const ensureNonVectorWaypointsForThisAndWaypointSpy = sinon.spy(
+        model,
+        '_ensureNonVectorWaypointsForThisAndWaypoint'
+    );
 
     model.calculateDistanceToWaypoint(otherModel);
 
-    t.true(ensureNonVectorWaypointsForThisAndWaypointSpy.calledWithExactly(otherModel));
+    expect(ensureNonVectorWaypointsForThisAndWaypointSpy.calledWithExactly(otherModel)).toBe(true);
 });
 
-ava('.calculateDistanceToWaypoint() returns correct distance', (t) => {
+test('.calculateDistanceToWaypoint() returns correct distance', () => {
     const model = new WaypointModel('BOACH');
     const otherModel = new WaypointModel('FRAWG');
     const expectedResult = 37.98364876057637;
     const result = model.calculateDistanceToWaypoint(otherModel);
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.deactivateHold() sets #_isHoldWaypoint to false', (t) => {
+test('.deactivateHold() sets #_isHoldWaypoint to false', () => {
     const model = new WaypointModel('BOACH');
 
     model._isHoldWaypoint = true;
     model.deactivateHold();
 
-    t.false(model._isHoldWaypoint);
+    expect(model._isHoldWaypoint).toBe(false);
 });
 
-ava('.getDisplayName() returns "[RNAV]" for fixes with names prefixed with underscore', (t) => {
+test('.getDisplayName() returns "[RNAV]" for fixes with names prefixed with underscore', () => {
     const model = new WaypointModel('_NAPSE068');
     const expectedResult = '[RNAV]';
     const result = model.getDisplayName();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getDisplayName() returns value of #_name for fixes with names not prefixed with underscore', (t) => {
+test('.getDisplayName() returns value of #_name for fixes with names not prefixed with underscore', () => {
     const model = new WaypointModel('BOACH');
     const expectedResult = 'BOACH';
     const result = model.getDisplayName();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getVector() returns undefined if waypoint is not a vector waypoint', (t) => {
+test('.getVector() returns undefined if waypoint is not a vector waypoint', () => {
     const model = new WaypointModel('BOACH');
     const result = model.getVector();
 
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.getVector() returns correct heading (in radians) for vector waypoints', (t) => {
+test('.getVector() returns correct heading (in radians) for vector waypoints', () => {
     const model = new WaypointModel('#180');
     const expectedResult = Math.PI;
     const result = model.getVector();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.hasMaximumAltitudeAtOrBelow() returns false when waypoint does not have max restriction at or below specified value', (t) => {
+test('.hasMaximumAltitudeAtOrBelow() returns false when waypoint does not have max restriction at or below specified value', () => {
     const waypointWithNoRestrictions = new WaypointModel('BOACH');
     const waypointWithMinAltOnly = new WaypointModel(['BOACH', 'A80+']);
     const waypointWithMaxAltAboveConstraint = new WaypointModel(['BOACH', 'A110-']);
     const constraint = 10000;
 
-    t.false(waypointWithNoRestrictions.hasMaximumAltitudeAtOrBelow(constraint));
-    t.false(waypointWithMinAltOnly.hasMaximumAltitudeAtOrBelow(constraint));
-    t.false(waypointWithMaxAltAboveConstraint.hasMaximumAltitudeAtOrBelow(constraint));
+    expect(waypointWithNoRestrictions.hasMaximumAltitudeAtOrBelow(constraint)).toBe(false);
+    expect(waypointWithMinAltOnly.hasMaximumAltitudeAtOrBelow(constraint)).toBe(false);
+    expect(waypointWithMaxAltAboveConstraint.hasMaximumAltitudeAtOrBelow(constraint)).toBe(false);
 });
 
-ava('.hasMaximumAltitudeAtOrBelow() returns true when waypoint has max restriction at or below specified value', (t) => {
+test('.hasMaximumAltitudeAtOrBelow() returns true when waypoint has max restriction at or below specified value', () => {
     const waypointWithMaxAltAtConstraint = new WaypointModel(['BOACH', 'A100-']);
     const waypointWithMaxAltBelowConstraint = new WaypointModel(['BOACH', 'A80-']);
     const constraint = 10000;
 
-    t.true(waypointWithMaxAltAtConstraint.hasMaximumAltitudeAtOrBelow(constraint));
-    t.true(waypointWithMaxAltBelowConstraint.hasMaximumAltitudeAtOrBelow(constraint));
+    expect(waypointWithMaxAltAtConstraint.hasMaximumAltitudeAtOrBelow(constraint)).toBe(true);
+    expect(waypointWithMaxAltBelowConstraint.hasMaximumAltitudeAtOrBelow(constraint)).toBe(true);
 });
 
-ava('.hasMinimumAltitudeAtOrAbove() returns false when waypoint does not have min restriction at or above specified value', (t) => {
+test('.hasMinimumAltitudeAtOrAbove() returns false when waypoint does not have min restriction at or above specified value', () => {
     const waypointWithNoRestrictions = new WaypointModel('BOACH');
     const waypointWithMaxAltOnly = new WaypointModel(['BOACH', 'A110-']);
     const waypointWithMinAltBelowConstraint = new WaypointModel(['BOACH', 'A80+']);
     const constraint = 10000;
 
-    t.false(waypointWithNoRestrictions.hasMinimumAltitudeAtOrAbove(constraint));
-    t.false(waypointWithMaxAltOnly.hasMinimumAltitudeAtOrAbove(constraint));
-    t.false(waypointWithMinAltBelowConstraint.hasMinimumAltitudeAtOrAbove(constraint));
+    expect(waypointWithNoRestrictions.hasMinimumAltitudeAtOrAbove(constraint)).toBe(false);
+    expect(waypointWithMaxAltOnly.hasMinimumAltitudeAtOrAbove(constraint)).toBe(false);
+    expect(waypointWithMinAltBelowConstraint.hasMinimumAltitudeAtOrAbove(constraint)).toBe(false);
 });
 
-ava('.hasMinimumAltitudeAtOrAbove() returns true when waypoint has min restriction at or above specified value', (t) => {
+test('.hasMinimumAltitudeAtOrAbove() returns true when waypoint has min restriction at or above specified value', () => {
     const waypointWithMinAltAtConstraint = new WaypointModel(['BOACH', 'A100+']);
     const waypointWithMinAltAboveConstraint = new WaypointModel(['BOACH', 'A110+']);
     const constraint = 10000;
 
-    t.true(waypointWithMinAltAtConstraint.hasMinimumAltitudeAtOrAbove(constraint));
-    t.true(waypointWithMinAltAboveConstraint.hasMinimumAltitudeAtOrAbove(constraint));
+    expect(waypointWithMinAltAtConstraint.hasMinimumAltitudeAtOrAbove(constraint)).toBe(true);
+    expect(waypointWithMinAltAboveConstraint.hasMinimumAltitudeAtOrAbove(constraint)).toBe(true);
 });
 
-ava('.setAltitude() calls .setAltitudeMinimum() and .setAltitudeMaximum()', (t) => {
+test('.setAltitude() calls .setAltitudeMinimum() and .setAltitudeMaximum()', () => {
     const model = new WaypointModel('BOACH');
     const altitudeMock = 5000;
     const setAltitudeMinimumStub = sinon.stub(model, 'setAltitudeMinimum');
     const setAltitudeMaximumStub = sinon.stub(model, 'setAltitudeMaximum');
     const result = model.setAltitude(altitudeMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(setAltitudeMinimumStub.calledOnce);
-    t.true(setAltitudeMaximumStub.calledOnce);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(setAltitudeMinimumStub.calledOnce).toBe(true);
+    expect(setAltitudeMaximumStub.calledOnce).toBe(true);
 });
 
-ava('.setAltitudeMaximum() returns early if specified altitude is not a number', (t) => {
+test('.setAltitudeMaximum() returns early if specified altitude is not a number', () => {
     const model = new WaypointModel('BOACH');
     const originalAltitudeMaximimValueMock = 7000;
     const nextAltitudeMock = 'chipz';
     model.altitudeMaximum = originalAltitudeMaximimValueMock;
     const result = model.setAltitudeMaximum(nextAltitudeMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.altitudeMaximum === originalAltitudeMaximimValueMock);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.altitudeMaximum === originalAltitudeMaximimValueMock).toBe(true);
 });
 
-ava('.setAltitudeMaximum() returns early if specified altitude is an "unreasonable" value', (t) => {
+test('.setAltitudeMaximum() returns early if specified altitude is an "unreasonable" value', () => {
     const model = new WaypointModel('BOACH');
     const originalAltitudeMaximimValueMock = 7000;
     const nextAltitudeMock = 99999;
     model.altitudeMaximum = originalAltitudeMaximimValueMock;
     const result = model.setAltitudeMaximum(nextAltitudeMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.altitudeMaximum === originalAltitudeMaximimValueMock);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.altitudeMaximum === originalAltitudeMaximimValueMock).toBe(true);
 });
 
-ava('.setAltitudeMaximum() sets #altitudeMaximum to the specified altitude', (t) => {
+test('.setAltitudeMaximum() sets #altitudeMaximum to the specified altitude', () => {
     const model = new WaypointModel('BOACH');
     const originalAltitudeMaximimValueMock = 7000;
     const nextAltitudeMock = 5500;
     model.altitudeMaximum = originalAltitudeMaximimValueMock;
     const result = model.setAltitudeMaximum(nextAltitudeMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.altitudeMaximum === nextAltitudeMock);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.altitudeMaximum === nextAltitudeMock).toBe(true);
 });
 
-ava('.setAltitudeMinimum() returns early if specified altitude is not a number', (t) => {
+test('.setAltitudeMinimum() returns early if specified altitude is not a number', () => {
     const model = new WaypointModel('BOACH');
     const originalAltitudeMinimimValueMock = 7000;
     const nextAltitudeMock = 'chipz';
     model.altitudeMinimum = originalAltitudeMinimimValueMock;
     const result = model.setAltitudeMinimum(nextAltitudeMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.altitudeMinimum === originalAltitudeMinimimValueMock);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.altitudeMinimum === originalAltitudeMinimimValueMock).toBe(true);
 });
 
-ava('.setAltitudeMinimum() returns early if specified altitude is an "unreasonable" value', (t) => {
+test('.setAltitudeMinimum() returns early if specified altitude is an "unreasonable" value', () => {
     const model = new WaypointModel('BOACH');
     const originalAltitudeMinimimValueMock = 7000;
     const nextAltitudeMock = 99999;
     model.altitudeMinimum = originalAltitudeMinimimValueMock;
     const result = model.setAltitudeMinimum(nextAltitudeMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.altitudeMinimum === originalAltitudeMinimimValueMock);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.altitudeMinimum === originalAltitudeMinimimValueMock).toBe(true);
 });
 
-ava('.setAltitudeMinimum() sets #altitudeMinimum to the specified altitude', (t) => {
+test('.setAltitudeMinimum() sets #altitudeMinimum to the specified altitude', () => {
     const model = new WaypointModel('BOACH');
     const originalAltitudeMinimimValueMock = 7000;
     const nextAltitudeMock = 5500;
     model.altitudeMinimum = originalAltitudeMinimimValueMock;
     const result = model.setAltitudeMinimum(nextAltitudeMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.altitudeMinimum === nextAltitudeMock);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.altitudeMinimum === nextAltitudeMock).toBe(true);
 });
 
-ava('.setHoldParameters() sets #_holdParameters to default values when no argument is provided', (t) => {
+test('.setHoldParameters() sets #_holdParameters to default values when no argument is provided', () => {
     const model = new WaypointModel('BOACH');
 
     model.setHoldParameters();
 
-    t.deepEqual(model._holdParameters, DEFAULT_HOLD_PARAMETERS);
+    expect(model._holdParameters).toEqual(DEFAULT_HOLD_PARAMETERS);
 });
 
-ava('.setHoldParameters() sets #_holdParameters according to provided parameters', (t) => {
+test('.setHoldParameters() sets #_holdParameters according to provided parameters', () => {
     const model = new WaypointModel('BOACH');
     const holdParametersMock = {
         inboundHeading: 3.14,
         legLength: '2min',
         speedMaximum: 220,
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
     const expectedResult = {
         inboundHeading: 3.14,
         legLength: '2min',
         speedMaximum: 220,
         timer: -1,
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
 
     const result = model.setHoldParameters(holdParametersMock);
 
-    t.deepEqual(result, expectedResult);
-    t.deepEqual(model._holdParameters, expectedResult);
+    expect(result).toEqual(expectedResult);
+    expect(model._holdParameters).toEqual(expectedResult);
 });
 
-ava('.resetHoldTimer() sets #_holdParameters.timer back to the default value', (t) => {
+test('.resetHoldTimer() sets #_holdParameters.timer back to the default value', () => {
     const model = new WaypointModel('BOACH');
 
     model._holdParameters.timer = 515;
 
     const result = model.resetHoldTimer();
 
-    t.true(typeof result === 'undefined');
-    t.true(model._holdParameters.timer === DEFAULT_HOLD_PARAMETERS.timer);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model._holdParameters.timer === DEFAULT_HOLD_PARAMETERS.timer).toBe(true);
 });
 
-ava('.setHoldParametersAndActivateHold() calls .setHoldParameters() and .activateHold()', (t) => {
+test('.setHoldParametersAndActivateHold() calls .setHoldParameters() and .activateHold()', () => {
     const model = new WaypointModel('BOACH');
     const setHoldParametersSpy = sinon.spy(model, 'setHoldParameters');
     const activateHoldSpy = sinon.spy(model, 'activateHold');
     const holdParametersMock = {
         inboundHeading: 3.14,
         legLength: '2min',
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
     const result = model.setHoldParametersAndActivateHold(holdParametersMock);
 
-    t.not(typeof result, 'undefined');
-    t.true(setHoldParametersSpy.calledWith(holdParametersMock));
-    t.true(activateHoldSpy.calledWithExactly());
+    expect(typeof result).not.toBe('undefined');
+    expect(setHoldParametersSpy.calledWith(holdParametersMock)).toBe(true);
+    expect(activateHoldSpy.calledWithExactly()).toBe(true);
 });
 
-ava('.setHoldTimer() throws when specified timer value is not a number', (t) => {
+test('.setHoldTimer() throws when specified timer value is not a number', () => {
     const model = new WaypointModel('BOACH');
 
-    t.throws(() => model.setHoldTimer());
-    t.throws(() => model.setHoldTimer(''));
-    t.throws(() => model.setHoldTimer([]));
-    t.throws(() => model.setHoldTimer({}));
+    expect(() => model.setHoldTimer()).toThrow();
+    expect(() => model.setHoldTimer('')).toThrow();
+    expect(() => model.setHoldTimer([])).toThrow();
+    expect(() => model.setHoldTimer({})).toThrow();
 });
 
-ava('.setHoldTimer() sets #_holdParameters.timer to the specified value', (t) => {
+test('.setHoldTimer() sets #_holdParameters.timer to the specified value', () => {
     const model = new WaypointModel('BOACH');
     const timerValueMock = 881.1234;
     const result = model.setHoldTimer(timerValueMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model._holdParameters.timer === timerValueMock);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model._holdParameters.timer === timerValueMock).toBe(true);
 });
 
-ava('._applyAltitudeRestriction() sets #altitudeMinimum to specified value (x100) when restriction has "+" character', (t) => {
+test('._applyAltitudeRestriction() sets #altitudeMinimum to specified value (x100) when restriction has "+" character', () => {
     const model = new WaypointModel('BOACH');
     const restrictionMock = 'A65+';
     const result = model._applyAltitudeRestriction(restrictionMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.altitudeMaximum === -1);
-    t.true(model.altitudeMinimum === 6500);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.altitudeMaximum === -1).toBe(true);
+    expect(model.altitudeMinimum === 6500).toBe(true);
 });
 
-ava('._applyAltitudeRestriction() sets #altitudeMaximum to specified value (x100) when restriction has "-" character', (t) => {
+test('._applyAltitudeRestriction() sets #altitudeMaximum to specified value (x100) when restriction has "-" character', () => {
     const model = new WaypointModel('BOACH');
     const restrictionMock = 'A65-';
     const result = model._applyAltitudeRestriction(restrictionMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.altitudeMaximum === 6500);
-    t.true(model.altitudeMinimum === -1);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.altitudeMaximum === 6500).toBe(true);
+    expect(model.altitudeMinimum === -1).toBe(true);
 });
 
-ava('._applyAltitudeRestriction() sets #altitudeMinimum and #altitudeMaximum to specified value (x100) when restriction has neither "+" or "-" characters', (t) => {
+test('._applyAltitudeRestriction() sets #altitudeMinimum and #altitudeMaximum to specified value (x100) when restriction has neither "+" or "-" characters', () => {
     const model = new WaypointModel('BOACH');
     const restrictionMock = 'A65';
     const result = model._applyAltitudeRestriction(restrictionMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.altitudeMaximum === 6500);
-    t.true(model.altitudeMinimum === 6500);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.altitudeMaximum === 6500).toBe(true);
+    expect(model.altitudeMinimum === 6500).toBe(true);
 });
 
-ava('._applyRestrictions() throws when an invalid restriction-type-qualifier is used to prefix the value', (t) => {
+test('._applyRestrictions() throws when an invalid restriction-type-qualifier is used to prefix the value', () => {
     const model = new WaypointModel('BOACH');
 
-    t.throws(() => model._applyRestrictions('Y80'));
-    t.throws(() => model._applyRestrictions('A120|Y80'));
+    expect(() => model._applyRestrictions('Y80')).toThrow();
+    expect(() => model._applyRestrictions('A120|Y80')).toThrow();
 });
 
-ava('._applyRestrictions() returns early when specified restriction is an empty string', (t) => {
+test('._applyRestrictions() returns early when specified restriction is an empty string', () => {
     const model = new WaypointModel('BOACH');
     const applyAltitudeRestrictionSpy = sinon.spy(model, '_applyAltitudeRestriction');
     const applySpeedRestrictionSpy = sinon.spy(model, '_applySpeedRestriction');
     const result = model._applyRestrictions('');
 
-    t.true(typeof result === 'undefined');
-    t.true(applyAltitudeRestrictionSpy.notCalled);
-    t.true(applySpeedRestrictionSpy.notCalled);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(applyAltitudeRestrictionSpy.notCalled).toBe(true);
+    expect(applySpeedRestrictionSpy.notCalled).toBe(true);
 });
 
-ava('._applyRestrictions() calls ._applyAltitudeRestriction() and ._applySpeedRestriction() appropriately', (t) => {
+test('._applyRestrictions() calls ._applyAltitudeRestriction() and ._applySpeedRestriction() appropriately', () => {
     const model = new WaypointModel('BOACH');
     const applyAltitudeRestrictionSpy = sinon.spy(model, '_applyAltitudeRestriction');
     const applySpeedRestrictionSpy = sinon.spy(model, '_applySpeedRestriction');
     const result = model._applyRestrictions('A125|S210');
 
-    t.true(typeof result === 'undefined');
-    t.true(applyAltitudeRestrictionSpy.calledWithExactly('A125'));
-    t.true(applySpeedRestrictionSpy.calledWithExactly('S210'));
+    expect(typeof result === 'undefined').toBe(true);
+    expect(applyAltitudeRestrictionSpy.calledWithExactly('A125')).toBe(true);
+    expect(applySpeedRestrictionSpy.calledWithExactly('S210')).toBe(true);
 });
 
-ava('._applySpeedRestriction() sets #speedMinimum to specified value when restriction has "+" character', (t) => {
+test('._applySpeedRestriction() sets #speedMinimum to specified value when restriction has "+" character', () => {
     const model = new WaypointModel('BOACH');
     const restrictionMock = 'S210+';
     const result = model._applySpeedRestriction(restrictionMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.speedMaximum === -1);
-    t.true(model.speedMinimum === 210);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.speedMaximum === -1).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
 });
 
-ava('._applySpeedRestriction() sets #speedMaximum to specified value when restriction has "-" character', (t) => {
+test('._applySpeedRestriction() sets #speedMaximum to specified value when restriction has "-" character', () => {
     const model = new WaypointModel('BOACH');
     const restrictionMock = 'S210-';
     const result = model._applySpeedRestriction(restrictionMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === -1);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === -1).toBe(true);
 });
 
-ava('._applySpeedRestriction() sets #speedMinimum and #speedMaximum to specified value when restriction has neither "+" or "-" characters', (t) => {
+test('._applySpeedRestriction() sets #speedMinimum and #speedMaximum to specified value when restriction has neither "+" or "-" characters', () => {
     const model = new WaypointModel('BOACH');
     const restrictionMock = 'S210';
     const result = model._applySpeedRestriction(restrictionMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(model.speedMaximum === 210);
-    t.true(model.speedMinimum === 210);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(model.speedMaximum === 210).toBe(true);
+    expect(model.speedMinimum === 210).toBe(true);
 });
 
-ava('._ensureNonVectorWaypointsForThisAndWaypoint() throws if parameter is not a WaypointModel', (t) => {
+test('._ensureNonVectorWaypointsForThisAndWaypoint() throws if parameter is not a WaypointModel', () => {
     const model = new WaypointModel('BOACH');
     const nonWaypoint = 'BOACH';
 
-    t.throws(() => model._ensureNonVectorWaypointsForThisAndWaypoint(nonWaypoint));
+    expect(() => model._ensureNonVectorWaypointsForThisAndWaypoint(nonWaypoint)).toThrow();
 });
 
-ava('._ensureNonVectorWaypointsForThisAndWaypoint() throws if this is a vector waypoint', (t) => {
+test('._ensureNonVectorWaypointsForThisAndWaypoint() throws if this is a vector waypoint', () => {
     const model = new WaypointModel('#320');
     const otherModel = new WaypointModel('BOACH');
 
-    t.throws(() => model._ensureNonVectorWaypointsForThisAndWaypoint(otherModel));
+    expect(() => model._ensureNonVectorWaypointsForThisAndWaypoint(otherModel)).toThrow();
 });
 
-ava('._ensureNonVectorWaypointsForThisAndWaypoint() throws if parameter is a vector waypoint', (t) => {
+test('._ensureNonVectorWaypointsForThisAndWaypoint() throws if parameter is a vector waypoint', () => {
     const model = new WaypointModel('BOACH');
     const otherModel = new WaypointModel('#320');
 
-    t.throws(() => model._ensureNonVectorWaypointsForThisAndWaypoint(otherModel));
+    expect(() => model._ensureNonVectorWaypointsForThisAndWaypoint(otherModel)).toThrow();
 });
 
-ava('._ensureNonVectorWaypointsForThisAndWaypoint() does not throw when both are valid, non-vector waypoints', (t) => {
+test('._ensureNonVectorWaypointsForThisAndWaypoint() does not throw when both are valid, non-vector waypoints', () => {
     const model = new WaypointModel('BOACH');
     const otherModel = new WaypointModel('FRAWG');
 
-    t.notThrows(() => model._ensureNonVectorWaypointsForThisAndWaypoint(otherModel));
+    expect(() => model._ensureNonVectorWaypointsForThisAndWaypoint(otherModel)).not.toThrow();
 });
 
-ava('._initializePosition() returns early when this is a vector waypoint', (t) => {
+test('._initializePosition() returns early when this is a vector waypoint', () => {
     const model = new WaypointModel('#320');
     const result = model._initializePosition();
 
-    t.true(typeof result === 'undefined');
-    t.true(!model._positionModel);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(!model._positionModel).toBe(true);
 });
 
-ava('._initializePosition() throws when #_name does not have a corresponding fix definition in the FixCollection', (t) => {
+test('._initializePosition() throws when #_name does not have a corresponding fix definition in the FixCollection', () => {
     const model = new WaypointModel('BOACH');
 
     model._name = 'nonsense';
 
-    t.throws(() => model._initializePosition());
+    expect(() => model._initializePosition()).toThrow();
 });
 
-ava('._initializePosition() sets #_positionModel to the position corresponding with the #_name waypoint', (t) => {
+test('._initializePosition() sets #_positionModel to the position corresponding with the #_name waypoint', () => {
     const model = new WaypointModel('BIKKR');
 
     model._name = 'BOACH';
 
     const result = model._initializePosition();
-    const expectedGpsCoordinates = [35.67826104359460, -115.29470074200118];
+    const expectedGpsCoordinates = [35.6782610435946, -115.29470074200118];
     const resultingGpsCoordinates = model.positionModel.gps;
 
-    t.true(typeof result === 'undefined');
-    t.deepEqual(resultingGpsCoordinates, expectedGpsCoordinates);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(resultingGpsCoordinates).toEqual(expectedGpsCoordinates);
 });

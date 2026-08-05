@@ -32,7 +32,7 @@ const GAME_EVENTS_POINT_VALUES = {
     LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE: -10,
     NOT_CLEARED_ON_ROUTE: -25,
     SEPARATION_LOSS: -200,
-    NO_TAKEOFF_SEPARATION: -200
+    NO_TAKEOFF_SEPARATION: -200,
 };
 
 /**
@@ -51,20 +51,20 @@ export const GAME_EVENTS = {
     HIGH_TAILWIND_OPERATION: 'HIGH_TAILWIND_OPERATION',
     ILLEGAL_APPROACH_CLEARANCE: 'ILLEGAL_APPROACH_CLEARANCE',
     /**
-    * Aircraft is cleared for the approach, has just become fully established on the localizer,
-    * but they are above the glideslope, and will have to chase it down
-    *
-    * This event is used to assess a penalty to the controller because they are required to have
-    * aircraft at/below glideslope altitude when intercepting the localizer
-    *
-    * @memberof GAME_EVENTS
-    * @property LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE
-    * @type {string}
-    */
+     * Aircraft is cleared for the approach, has just become fully established on the localizer,
+     * but they are above the glideslope, and will have to chase it down
+     *
+     * This event is used to assess a penalty to the controller because they are required to have
+     * aircraft at/below glideslope altitude when intercepting the localizer
+     *
+     * @memberof GAME_EVENTS
+     * @property LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE
+     * @type {string}
+     */
     LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE: 'LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE',
     NOT_CLEARED_ON_ROUTE: 'NOT_CLEARED_ON_ROUTE',
     SEPARATION_LOSS: 'SEPARATION_LOSS',
-    NO_TAKEOFF_SEPARATION: 'NO_TAKEOFF_SEPARATION'
+    NO_TAKEOFF_SEPARATION: 'NO_TAKEOFF_SEPARATION',
 };
 
 /**
@@ -122,18 +122,16 @@ class GameController {
      * @method init_pre
      */
     init_pre() {
-        return this.setupHandlers()
-            .createChildren()
-            .enable();
+        return this.setupHandlers().createChildren().enable();
     }
 
     /**
-    * Initialize blur functions used during game pausing
-    *
-    * @for GameController
-    * @method setupHandlers
-    * @chainable
-    */
+     * Initialize blur functions used during game pausing
+     *
+     * @for GameController
+     * @method setupHandlers
+     * @chainable
+     */
     setupHandlers() {
         this._onWindowBlurHandler = this._onWindowBlur.bind(this);
         this._onWindowFocusHandler = this._onWindowFocus.bind(this);
@@ -236,7 +234,9 @@ class GameController {
      */
     events_recordNew(gameEvent) {
         if (!_has(GAME_EVENTS, gameEvent)) {
-            throw new TypeError(`Expected a game event listed in GAME_EVENTS, but instead received ${gameEvent}`);
+            throw new TypeError(
+                `Expected a game event listed in GAME_EVENTS, but instead received ${gameEvent}`
+            );
         }
 
         this.game.events[gameEvent] += 1;
@@ -245,7 +245,6 @@ class GameController {
         this.game_updateScore();
         this.updateScoreHistory(gameEvent);
     }
-
 
     /**
      * @for GameController
@@ -589,7 +588,7 @@ class GameController {
      * @param event {UIEvent}
      * @private
      */
-    _onWindowBlur(event) {
+    _onWindowBlur(_event) {
         this.game.focused = false;
 
         // resetting back to 1 here so when focus returns, we can reliably reset
@@ -611,7 +610,7 @@ class GameController {
      * @param event {UIEvent}
      * @private
      */
-    _onWindowFocus(event) {
+    _onWindowFocus(_event) {
         this.game.focused = true;
 
         // if was already manually paused when lost focus, respect that
@@ -621,7 +620,6 @@ class GameController {
 
         TimeKeeper.setPause(false);
     }
-
 
     /**
      * Change theme to the specified name

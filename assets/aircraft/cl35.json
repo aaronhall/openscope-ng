@@ -22,11 +22,11 @@
         "takeoff": 1.466,
         "landing": 0.792
     },
-    "speed":{
+    "speed": {
         "min": 110,
         "landing": 130,
         "cruise": 459,
-        "cruiseM": 0.80,
+        "cruiseM": 0.8,
         "max": 470,
         "maxM": 0.82
     },

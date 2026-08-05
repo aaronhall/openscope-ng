@@ -3,9 +3,7 @@
     "name": "General Aviation Sri Lanka",
     "callsign": {
         "name": "Four Romeo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

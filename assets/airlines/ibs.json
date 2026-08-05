@@ -3,9 +3,7 @@
     "name": "Iberia Express",
     "callsign": {
         "name": "Iberexpress",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

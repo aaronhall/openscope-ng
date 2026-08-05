@@ -71,7 +71,7 @@ export function airlineNameAndFleetHelper(airline) {
     // and update its key values as needed.
     const airlineNameAndFleet = {
         name: '',
-        fleet: 'default'
+        fleet: 'default',
     };
 
     if (airline.length === 0) {
@@ -82,7 +82,6 @@ export function airlineNameAndFleetHelper(airline) {
     // gets sent off to the next function to be modified.
     return _extractNameAndFleetFromCurrentAirline(airline[FIRST_INDEX], airlineNameAndFleet);
 }
-
 
 // @deprecated
 /**
@@ -104,7 +103,7 @@ export function randomAirlineSelectionHelper(airlineList) {
     // and update its key values as needed.
     const airlineNameAndFleet = {
         name: '',
-        fleet: ''
+        fleet: '',
     };
 
     if (airlineList.length === 0) {

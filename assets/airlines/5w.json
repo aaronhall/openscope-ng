@@ -3,9 +3,7 @@
     "name": "General Aviation Samoa",
     "callsign": {
         "name": "Five Whiskey",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

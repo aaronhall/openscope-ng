@@ -3,9 +3,7 @@
     "name": "General Aviation Myanmar",
     "callsign": {
         "name": "Xray Yankee",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

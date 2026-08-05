@@ -3,7 +3,7 @@
     flex-direction: column;
     height: auto;
     // LESS itself tries to evaluate calc(), using ~"" here to prevent that
-    max-height: ~"calc(100% - 2*36px - 2*7px)";
+    max-height: ~'calc(100% - 2*36px - 2*7px)';
     width: 600px;
     margin: auto;
     padding: 0px 10px 10px 10px;
@@ -17,7 +17,7 @@
     border: 6px solid @blue-medium;
     border-radius: 8px;
     box-sizing: border-box;
-    box-shadow: 0 0 50px -10px rgba(0,0,0,.3);
+    box-shadow: 0 0 50px -10px rgba(0, 0, 0, 0.3);
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
@@ -79,7 +79,7 @@
     display: flex;
 }
 
-.form-element input[type="range"] {
+.form-element input[type='range'] {
     display: block;
     flex-grow: 1;
 }
@@ -116,7 +116,7 @@
     right: 0;
     font-size: 8px;
     line-height: 25px;
-    content: "\25BC";
+    content: '\25BC';
     pointer-events: none;
 }
 
@@ -127,7 +127,7 @@
     overflow: hidden;
 }
 
-input[type=number].form-input {
+input[type='number'].form-input {
     /* ensure number steppers are visible */
     min-width: 50px;
 }

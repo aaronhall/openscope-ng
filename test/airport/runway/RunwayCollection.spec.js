@@ -1,135 +1,134 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import RunwayCollection from '../../../src/assets/scripts/client/airport/runway/RunwayCollection';
 import RunwayModel from '../../../src/assets/scripts/client/airport/runway/RunwayModel';
 import RunwayRelationshipModel from '../../../src/assets/scripts/client/airport/runway/RunwayRelationshipModel';
-import {
-    airportModelFixture,
-    airportPositionFixtureKLAS
-} from '../../fixtures/airportFixtures';
+import { airportModelFixture, airportPositionFixtureKLAS } from '../../fixtures/airportFixtures';
 import { AIRPORT_JSON_KLAS_MOCK } from '../_mocks/airportJsonMock';
 
 const RUNWAY_LIST_MOCK = AIRPORT_JSON_KLAS_MOCK.runways;
 
-ava('throws when called with missing parameters', (t) => {
-    const expectedMessage = /Invalid parameter\(s\) passed to RunwayCollection constructor\. Expected runwayJson and airportPositionModel to be defined, but received .*/;
+test('throws when called with missing parameters', () => {
+    const expectedMessage =
+        /Invalid parameter\(s\) passed to RunwayCollection constructor\. Expected runwayJson and airportPositionModel to be defined, but received .*/;
 
-    t.throws(() => new RunwayCollection(), {
+    expect(() => new RunwayCollection(), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
+        message: expectedMessage,
+    }).toThrow();
 
-    t.throws(() => new RunwayCollection(RUNWAY_LIST_MOCK), {
+    expect(() => new RunwayCollection(RUNWAY_LIST_MOCK), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new RunwayCollection(airportPositionFixtureKLAS), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new RunwayCollection(airportPositionFixtureKLAS), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
+        message: expectedMessage,
+    }).toThrow();
 
-    t.throws(() => new RunwayCollection(null, airportPositionFixtureKLAS), {
+    expect(() => new RunwayCollection(null, airportPositionFixtureKLAS), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new RunwayCollection(RUNWAY_LIST_MOCK, null), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new RunwayCollection(RUNWAY_LIST_MOCK, null), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
+        message: expectedMessage,
+    }).toThrow();
 });
 
-ava('throws when called with invalid runwayJson', (t) => {
-    const expectedMessage = /Invalid runwayJson passed to RunwayCollection constructor\. Expected a non-empty array, but received .*/;
+test('throws when called with invalid runwayJson', () => {
+    const expectedMessage =
+        /Invalid runwayJson passed to RunwayCollection constructor\. Expected a non-empty array, but received .*/;
 
-    t.throws(() => new RunwayCollection({}, airportPositionFixtureKLAS), {
+    expect(() => new RunwayCollection({}, airportPositionFixtureKLAS), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new RunwayCollection([], airportPositionFixtureKLAS), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new RunwayCollection([], airportPositionFixtureKLAS), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new RunwayCollection(42, airportPositionFixtureKLAS), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new RunwayCollection(42, airportPositionFixtureKLAS), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new RunwayCollection('threeve', airportPositionFixtureKLAS), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new RunwayCollection('threeve', airportPositionFixtureKLAS), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new RunwayCollection(false, airportPositionFixtureKLAS), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new RunwayCollection(false, airportPositionFixtureKLAS), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
+        message: expectedMessage,
+    }).toThrow();
 });
 
-ava('does not throw when called with valid parameters', (t) => {
-    t.notThrows(() => new RunwayCollection(RUNWAY_LIST_MOCK, airportPositionFixtureKLAS));
+test('does not throw when called with valid parameters', () => {
+    expect(() => new RunwayCollection(RUNWAY_LIST_MOCK, airportPositionFixtureKLAS)).not.toThrow();
 });
 
-ava('sets #_items when instantiated', (t) => {
+test('sets #_items when instantiated', () => {
     const collection = new RunwayCollection(RUNWAY_LIST_MOCK, airportPositionFixtureKLAS);
 
-    t.true(collection.length === 8);
+    expect(collection.length === 8).toBe(true);
 });
 
-ava('provides #runways getter that returns the contents of #_items', (t) => {
+test('provides #runways getter that returns the contents of #_items', () => {
     const collection = new RunwayCollection(RUNWAY_LIST_MOCK, airportPositionFixtureKLAS);
 
-    t.true(collection.runways.length === 8);
-    t.true(collection.runways[0] instanceof RunwayModel);
+    expect(collection.runways.length === 8).toBe(true);
+    expect(collection.runways[0] instanceof RunwayModel).toBe(true);
 });
 
-ava('.findRunwayModelByName() returns null when passed an invalid runway name', (t) => {
+test('.findRunwayModelByName() returns null when passed an invalid runway name', () => {
     const collection = new RunwayCollection(RUNWAY_LIST_MOCK, airportPositionFixtureKLAS);
     const result = collection.findRunwayModelByName();
 
-    t.true(!result);
+    expect(!result).toBe(true);
 });
 
-ava('.findRunwayModelByName() returns a RunwayModel when passed a valid runway name', (t) => {
+test('.findRunwayModelByName() returns a RunwayModel when passed a valid runway name', () => {
     const runwayNameMock = '07L';
     const collection = new RunwayCollection(RUNWAY_LIST_MOCK, airportPositionFixtureKLAS);
     const result = collection.findRunwayModelByName(runwayNameMock);
 
-    t.true(result instanceof RunwayModel);
-    t.true(result.name === runwayNameMock);
+    expect(result instanceof RunwayModel).toBe(true);
+    expect(result.name === runwayNameMock).toBe(true);
 });
 
-ava('.getRunwayRelationshipForRunwayNames() returns a RunwayRelationshipModel given two runwayName strings', (t) => {
+test('.getRunwayRelationshipForRunwayNames() returns a RunwayRelationshipModel given two runwayName strings', () => {
     const collection = new RunwayCollection(RUNWAY_LIST_MOCK, airportPositionFixtureKLAS);
     const result = collection.getRunwayRelationshipForRunwayNames('07l', '07r');
 
-    t.true(result instanceof RunwayRelationshipModel);
+    expect(result instanceof RunwayRelationshipModel).toBe(true);
 });
 
-ava('.areRunwaysParallel() returns true given two runwayName strings for parallel runways', (t) => {
+test('.areRunwaysParallel() returns true given two runwayName strings for parallel runways', () => {
     const collection = new RunwayCollection(RUNWAY_LIST_MOCK, airportPositionFixtureKLAS);
 
-    t.true(collection.areRunwaysParallel('07l', '07r'));
+    expect(collection.areRunwaysParallel('07l', '07r')).toBe(true);
 });
 
-ava('.areRunwaysParallel() returns false given two runwayName strings for non-parallel runways', (t) => {
+test('.areRunwaysParallel() returns false given two runwayName strings for non-parallel runways', () => {
     const collection = new RunwayCollection(RUNWAY_LIST_MOCK, airportPositionFixtureKLAS);
 
-    t.false(collection.areRunwaysParallel('07l', '19l'));
+    expect(collection.areRunwaysParallel('07l', '19l')).toBe(false);
 });
 
-ava.skip('.findBestRunwayForWind()', (t) => {
+test.skip('.findBestRunwayForWind()', (t) => {
     const getWindMock = () => ({
         speed: 6,
-        angle: 3.839724354387525
+        angle: 3.839724354387525,
     });
     const collection = new RunwayCollection(RUNWAY_LIST_MOCK, airportPositionFixtureKLAS);
     const result = collection.findBestRunwayForWind(getWindMock);
 
     // TODO: this result varies and should be investigated as to why
-    t.true(result === '25L');
+    expect(result === '25L').toBe(true);
 });
 
-ava.todo('.removeAircraftFromAllRunwayQueues()');
+test.todo('.removeAircraftFromAllRunwayQueues()');
 
-ava('_buildRunwayRelationships() builds an object with a key for each runway name', (t) => {
+test('_buildRunwayRelationships() builds an object with a key for each runway name', () => {
     const expectedResult = ['07L', '25R', '07R', '25L', '01R', '19L', '01L', '19R'];
     const collection = new RunwayCollection(RUNWAY_LIST_MOCK, airportPositionFixtureKLAS);
     collection._runwayRelationships = {};
@@ -138,5 +137,5 @@ ava('_buildRunwayRelationships() builds an object with a key for each runway nam
 
     const result = Object.keys(collection._runwayRelationships);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });

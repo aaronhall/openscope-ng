@@ -3,11 +3,7 @@
     "name": "General Aviation Republic of Congo",
     "callsign": {
         "name": "Tango November",
-        "callsignFormats": [
-            "###@@",
-            "####@",
-            "#####"
-        ]
+        "callsignFormats": ["###@@", "####@", "#####"]
     },
     "fleets": {
         "default": [

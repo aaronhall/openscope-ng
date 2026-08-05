@@ -3,9 +3,7 @@
     "name": "General Aviation Peru",
     "callsign": {
         "name": "Oscar Bravo",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

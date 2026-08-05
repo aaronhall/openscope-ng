@@ -3,10 +3,7 @@
     "name": "Cubana de Aviación",
     "callsign": {
         "name": "Cubana",
-        "callsignFormats": [
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["###", "####"]
     },
     "fleets": {
         "default": [
@@ -18,8 +15,6 @@
             ["AT72", 2],
             ["T204", 3]
         ],
-        "long": [
-            ["IL96", 4]
-        ]
+        "long": [["IL96", 4]]
     }
 }

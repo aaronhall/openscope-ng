@@ -3,9 +3,7 @@
     "name": "General Aviation Nicaragua",
     "callsign": {
         "name": "Yankee November",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

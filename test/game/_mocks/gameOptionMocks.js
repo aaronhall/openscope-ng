@@ -8,13 +8,13 @@ export const GAME_OPTION_LIST_MOCK = [
         optionList: [
             {
                 displayLabel: 'Classic',
-                value: 'CLASSIC'
+                value: 'CLASSIC',
             },
             {
                 displayLabel: 'Default',
-                value: 'DEFAULT'
-            }
-        ]
+                value: 'DEFAULT',
+            },
+        ],
     },
     {
         name: 'number',
@@ -25,12 +25,12 @@ export const GAME_OPTION_LIST_MOCK = [
         optionList: [
             {
                 displayLabel: 'Classic',
-                value: 'classic'
+                value: 'classic',
             },
             {
                 displayLabel: 'Arrow Keys',
-                value: 'arrows'
-            }
-        ]
-    }
+                value: 'arrows',
+            },
+        ],
+    },
 ];

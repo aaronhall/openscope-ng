@@ -3,9 +3,7 @@
     "name": "General Aviation Palestine",
     "callsign": {
         "name": "Echo Four",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

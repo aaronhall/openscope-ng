@@ -1,67 +1,68 @@
 /* eslint-disable arrow-parens, max-len, import/no-extraneous-dependencies*/
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import _forEach from 'lodash/forEach';
 
 import AircraftTypeDefinitionCollection from '../../src/assets/scripts/client/aircraft/AircraftTypeDefinitionCollection';
 import AircraftTypeDefinitionModel from '../../src/assets/scripts/client/aircraft/AircraftTypeDefinitionModel';
 import { AIRCRAFT_DEFINITION_LIST_MOCK } from './_mocks/aircraftMocks';
 
-ava('should throw when passed invalid parameters', (t) => {
-    const expectedMessage = /Invalid aircraftTypeDefinitionList passed to AircraftTypeDefinitionCollection constructor\. Expected a non-empty array, but received .*/;
+test('should throw when passed invalid parameters', () => {
+    const expectedMessage =
+        /Invalid aircraftTypeDefinitionList passed to AircraftTypeDefinitionCollection constructor\. Expected a non-empty array, but received .*/;
 
-    t.throws(() => new AircraftTypeDefinitionCollection(), {
+    expect(() => new AircraftTypeDefinitionCollection(), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionCollection(null), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionCollection(null), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionCollection({}), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionCollection({}), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionCollection([]), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionCollection([]), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionCollection(42), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionCollection(42), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionCollection('threeve'), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionCollection('threeve'), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
-    t.throws(() => new AircraftTypeDefinitionCollection(false), {
+        message: expectedMessage,
+    }).toThrow();
+    expect(() => new AircraftTypeDefinitionCollection(false), {
         instanceOf: TypeError,
-        message: expectedMessage
-    });
+        message: expectedMessage,
+    }).toThrow();
 });
 
-ava('does not throw when passed valid parameters', (t) => {
-    t.notThrows(() => new AircraftTypeDefinitionCollection(AIRCRAFT_DEFINITION_LIST_MOCK));
+test('does not throw when passed valid parameters', () => {
+    expect(() => new AircraftTypeDefinitionCollection(AIRCRAFT_DEFINITION_LIST_MOCK)).not.toThrow();
 });
 
-ava('.findAircraftTypeDefinitionModelByIcao() returns an AircraftTypeDefinitionModel when provided a valid aircraft icao', (t) => {
+test('.findAircraftTypeDefinitionModelByIcao() returns an AircraftTypeDefinitionModel when provided a valid aircraft icao', () => {
     const expectedResult = 'B737';
     const collection = new AircraftTypeDefinitionCollection(AIRCRAFT_DEFINITION_LIST_MOCK);
     const result = collection.findAircraftTypeDefinitionModelByIcao('B737');
 
-    t.true(result instanceof AircraftTypeDefinitionModel);
-    t.true(result.icao === expectedResult);
+    expect(result instanceof AircraftTypeDefinitionModel).toBe(true);
+    expect(result.icao === expectedResult).toBe(true);
 });
 
-ava('._buildAircraftTypeDefinitionModelList() returns a list of AircraftTypeDefinitionModel objects', (t) => {
+test('._buildAircraftTypeDefinitionModelList() returns a list of AircraftTypeDefinitionModel objects', () => {
     const collection = new AircraftTypeDefinitionCollection(AIRCRAFT_DEFINITION_LIST_MOCK);
     const results = collection._buildAircraftTypeDefinitionModelList(AIRCRAFT_DEFINITION_LIST_MOCK);
 
     _forEach(results, (result, i) => {
-        t.true(result instanceof AircraftTypeDefinitionModel);
-        t.true(result.icao === AIRCRAFT_DEFINITION_LIST_MOCK[i].icao);
+        expect(result instanceof AircraftTypeDefinitionModel).toBe(true);
+        expect(result.icao === AIRCRAFT_DEFINITION_LIST_MOCK[i].icao).toBe(true);
     });
 });
 
-ava.skip('.getAircraftDefinitionForAirlineId()', (t) => {
-    t.true(true);
+test.skip('.getAircraftDefinitionForAirlineId()', (t) => {
+    expect(true).toBe(true);
 });

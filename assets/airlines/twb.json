@@ -3,16 +3,9 @@
     "name": "T'Way Airlines",
     "callsign": {
         "name": "Teeway",
-        "callsignFormats": [
-			"#",
-			"##",
-			"###",
-            "####"
-        ]
+        "callsignFormats": ["#", "##", "###", "####"]
     },
     "fleets": {
-        "default": [
-            ["B738", 20]
-        ]
+        "default": [["B738", 20]]
     }
 }

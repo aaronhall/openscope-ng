@@ -3,9 +3,7 @@
     "name": "Amaszonas Uruguay",
     "callsign": {
         "name": "Uruguaya",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

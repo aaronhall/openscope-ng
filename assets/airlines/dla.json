@@ -3,17 +3,10 @@
     "name": "Air Dolomiti",
     "callsign": {
         "name": "Dolomiti",
-        "callsignFormats": [
-            "##@@",
-            "#@@"
-        ]
+        "callsignFormats": ["##@@", "#@@"]
     },
     "fleets": {
-        "default": [
-            ["E190", 14]
-        ],
-        "e190": [
-            ["E190", 14]
-        ]
+        "default": [["E190", 14]],
+        "e190": [["E190", 14]]
     }
 }

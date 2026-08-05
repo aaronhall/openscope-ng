@@ -3,10 +3,7 @@
     "name": "Taban Airlines",
     "callsign": {
         "name": "Taban",
-        "callsignFormats": [
-            "####",
-            "###"
-        ]
+        "callsignFormats": ["####", "###"]
     },
     "fleets": {
         "default": [
@@ -17,8 +14,6 @@
             ["MD88", 5],
             ["RJ85", 1]
         ],
-        "a310": [
-            ["A310", 1]
-        ]
+        "a310": [["A310", 1]]
     }
 }

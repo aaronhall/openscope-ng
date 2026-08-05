@@ -54,7 +54,7 @@ export default class SimClockController {
      */
     get realWorldCurrentZuluTime() {
         const date = new Date();
-        const utc = date.getTime() + (date.getTimezoneOffset() * TIME.ONE_MINUTE_IN_MILLISECONDS);
+        const utc = date.getTime() + date.getTimezoneOffset() * TIME.ONE_MINUTE_IN_MILLISECONDS;
 
         return utc;
     }
@@ -78,7 +78,8 @@ export default class SimClockController {
      * @return clockTime {string} current game time formatted like '03:44:17'
      */
     buildClockReadout() {
-        const elapsedTimeInMilliseconds = TimeKeeper.accumulatedDeltaTime * TIME.ONE_SECOND_IN_MILLISECONDS;
+        const elapsedTimeInMilliseconds =
+            TimeKeeper.accumulatedDeltaTime * TIME.ONE_SECOND_IN_MILLISECONDS;
         const clockDate = new Date(this.startTime + elapsedTimeInMilliseconds);
         const hours = digits_integer(clockDate.getHours(), 2);
         const minutes = digits_integer(clockDate.getMinutes(), 2);

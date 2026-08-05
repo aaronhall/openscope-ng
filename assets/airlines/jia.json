@@ -3,9 +3,7 @@
     "name": "PSA Airlines",
     "callsign": {
         "name": "Blue Streak",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

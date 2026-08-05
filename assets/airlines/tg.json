@@ -3,9 +3,7 @@
     "name": "General Aviation Guatemala",
     "callsign": {
         "name": "Tango Golf",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

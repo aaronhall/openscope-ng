@@ -45,11 +45,11 @@
     "arrivalRunway": "30L",
     "departureRunway": "30R",
     "fixes": {
-        "KMSP" : ["N44.884188", "W93.215083"],
+        "KMSP": ["N44.884188", "W93.215083"],
         "NORTH": ["N45.604023", "W93.215083"],
-        "EAST" : ["N44.879707", "W92.202548"],
+        "EAST": ["N44.879707", "W92.202548"],
         "SOUTH": ["N44.164262", "W93.215083"],
-        "WEST" : ["N44.879707", "W94.227618"],
+        "WEST": ["N44.879707", "W94.227618"],
 
         "TWINZ": ["N45.048797", "W92.289344"],
         "ZASKY": ["N44.930300", "W93.030883"],
@@ -132,31 +132,55 @@
     },
     "runways": [
         {
-            "_reference":  "https://www.airnav.com/airport/KMSP",
-            "name":         ["30R", "12L"],
-            "name_offset":  [[1, 0], [0, 0.4]],
-            "end":          [["N44d52.88m0", "W093d11.64m0"], ["N44d53.58m0", "W093d13.26m0"]],
-            "ils":          [true, true]
+            "_reference": "https://www.airnav.com/airport/KMSP",
+            "name": ["30R", "12L"],
+            "name_offset": [
+                [1, 0],
+                [0, 0.4]
+            ],
+            "end": [
+                ["N44d52.88m0", "W093d11.64m0"],
+                ["N44d53.58m0", "W093d13.26m0"]
+            ],
+            "ils": [true, true]
         },
         {
-            "name":         ["30L", "12R"],
-            "name_offset":  [[0, -0.2], [0, 0.4]],
-            "end":          [["N44d52.41m0", "W093d12.07m0"], ["N44d53.27m0", "W093d14.05m0"]],
-            "ils":          [true, true]
+            "name": ["30L", "12R"],
+            "name_offset": [
+                [0, -0.2],
+                [0, 0.4]
+            ],
+            "end": [
+                ["N44d52.41m0", "W093d12.07m0"],
+                ["N44d53.27m0", "W093d14.05m0"]
+            ],
+            "ils": [true, true]
         },
         {
-            "name":         ["22", "4"],
-            "name_offset":  [[0, 0], [0, 0]],
-            "end":          [["N44d53.62m0", "W093d12.50m0"], ["N44d52.34m0", "W093d14.30m0"]],
-            "angle":        224.6,
-            "length":       3.355,
-            "ils":          [false, true]
+            "name": ["22", "4"],
+            "name_offset": [
+                [0, 0],
+                [0, 0]
+            ],
+            "end": [
+                ["N44d53.62m0", "W093d12.50m0"],
+                ["N44d52.34m0", "W093d14.30m0"]
+            ],
+            "angle": 224.6,
+            "length": 3.355,
+            "ils": [false, true]
         },
         {
-            "name":         ["35", "17"],
-            "name_offset":  [[0, 0], [-0.5, -0.8]],
-            "end":          [["N44d51.97m0", "W093d14.20m0"], ["N44d53.27m0", "W093d14.54m0"]],
-            "ils":          [true, true]
+            "name": ["35", "17"],
+            "name_offset": [
+                [0, 0],
+                [-0.5, -0.8]
+            ],
+            "end": [
+                ["N44d51.97m0", "W093d14.20m0"],
+                ["N44d53.27m0", "W093d14.54m0"]
+            ],
+            "ils": [true, true]
         }
     ],
     "sids": {
@@ -168,27 +192,27 @@
                 "30R": ["NORTH"],
                 "12L": ["NORTH"],
                 "12R": ["NORTH"],
-                "4"  : ["NORTH"],
-                "22" : ["NORTH"],
-                "17" : ["NORTH"],
-                "35" : ["NORTH"]
+                "4": ["NORTH"],
+                "22": ["NORTH"],
+                "17": ["NORTH"],
+                "35": ["NORTH"]
             },
-            "draw": [["KMSP","NORTH"]]
+            "draw": [["KMSP", "NORTH"]]
         },
         "EAST": {
-            "icao" : "EAST",
-            "name" : "EAST",
+            "icao": "EAST",
+            "name": "EAST",
             "rwy": {
                 "30L": ["EAST"],
                 "30R": ["EAST"],
                 "12L": ["EAST"],
                 "12R": ["EAST"],
-                "4"  : ["EAST"],
-                "22" : ["EAST"],
-                "17" : ["EAST"],
-                "35" : ["EAST"]
+                "4": ["EAST"],
+                "22": ["EAST"],
+                "17": ["EAST"],
+                "35": ["EAST"]
             },
-            "draw": [["KMSP","EAST"]]
+            "draw": [["KMSP", "EAST"]]
         },
         "SOUTH": {
             "icao": "SOUTH",
@@ -198,12 +222,12 @@
                 "30R": ["SOUTH"],
                 "12L": ["SOUTH"],
                 "12R": ["SOUTH"],
-                "4"  : ["SOUTH"],
-                "22" : ["SOUTH"],
-                "17" : ["SOUTH"],
-                "35" : ["SOUTH"]
+                "4": ["SOUTH"],
+                "22": ["SOUTH"],
+                "17": ["SOUTH"],
+                "35": ["SOUTH"]
             },
-            "draw": [["KMSP","SOUTH"]]
+            "draw": [["KMSP", "SOUTH"]]
         },
         "WEST": {
             "icao": "WEST",
@@ -213,18 +237,16 @@
                 "30R": ["WEST"],
                 "12L": ["WEST"],
                 "12R": ["WEST"],
-                "4"  : ["WEST"],
-                "22" : ["WEST"],
-                "17" : ["WEST"],
-                "35" : ["WEST"]
+                "4": ["WEST"],
+                "22": ["WEST"],
+                "17": ["WEST"],
+                "35": ["WEST"]
             },
-            "draw": [["KMSP","WEST"]]
+            "draw": [["KMSP", "WEST"]]
         }
     },
     "departures": {
-        "destinations": [
-            "NORTH", "EAST", "SOUTH", "WEST"
-        ],
+        "destinations": ["NORTH", "EAST", "SOUTH", "WEST"],
         "type": "random",
         "frequency": 2,
         "airlines": [
@@ -236,89 +258,87 @@
     },
     "arrivals": [
         {
-            "radial":    90,
-            "heading":   270,
-            "altitude":  [6000, 8000],
+            "radial": 90,
+            "heading": 270,
+            "altitude": [6000, 8000],
             "speed": 250,
             "type": "random",
             "frequency": 7.5,
-            "airlines":  [
+            "airlines": [
                 ["ual", 2],
                 ["baw", 5],
                 ["n/fastGA", 1]
             ]
         },
         {
-            "radial":    180,
-            "heading":   360,
-            "altitude":  [6000, 8000],
+            "radial": 180,
+            "heading": 360,
+            "altitude": [6000, 8000],
             "speed": 250,
             "type": "random",
             "frequency": 9,
-            "airlines":  [
+            "airlines": [
                 ["ual", 3],
                 ["baw", 1],
                 ["n/fastGA", 2]
             ]
         },
         {
-            "radial":    270,
-            "heading":   90,
-            "altitude":  [5000, 7000],
+            "radial": 270,
+            "heading": 90,
+            "altitude": [5000, 7000],
             "speed": 250,
             "type": "random",
             "frequency": 7.5,
-            "airlines":  [
+            "airlines": [
                 ["ual", 2],
                 ["baw", 5],
                 ["n/fastGA", 20]
             ]
         },
         {
-            "radial":    360,
-            "heading":   180,
-            "altitude":  [5000, 8000],
+            "radial": 360,
+            "heading": 180,
+            "altitude": [5000, 8000],
             "speed": 250,
             "type": "random",
             "frequency": 7.5,
-            "airlines":  [
+            "airlines": [
                 ["ual", 5],
                 ["baw", 1],
                 ["n/fastGA", 3]
             ]
         },
         {
-            "radial":    180,
-            "heading":   360,
-            "altitude":  [3000, 5000],
-            "speed":     120,
+            "radial": 180,
+            "heading": 360,
+            "altitude": [3000, 5000],
+            "speed": 120,
             "type": "random",
             "frequency": 15,
-            "airlines":  [
-                ["n/lightGA", 20]
-            ]
+            "airlines": [["n/lightGA", 20]]
         },
         {
-            "radial":    45,
-            "heading":   225,
-            "altitude":  [7000, 9000],
+            "radial": 45,
+            "heading": 225,
+            "altitude": [7000, 9000],
             "speed": 250,
             "type": "random",
             "frequency": 12.5,
-            "airlines":  [
+            "airlines": [
                 ["ual", 10],
                 ["baw", 1],
                 ["n/fastGA", 20]
             ]
         },
         {
-            "radial":    315,
-            "heading":   135,
-            "altitude":  [6000, 7000],
+            "radial": 315,
+            "heading": 135,
+            "altitude": [6000, 7000],
             "speed": 250,
             "type": "random",
             "frequency": 4,
-            "airlines":  [
+            "airlines": [
                 ["ual", 10],
                 ["baw", 10],
                 ["n/fastGA", 1]

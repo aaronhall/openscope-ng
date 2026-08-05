@@ -3,9 +3,7 @@
     "name": "Sriwijaya",
     "callsign": {
         "name": "Sriwijaya",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

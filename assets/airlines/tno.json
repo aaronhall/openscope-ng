@@ -3,10 +3,7 @@
     "name": "AeroUnion",
     "callsign": {
         "name": "AeroUnion",
-        "callsignFormats": [
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["###", "####"]
     },
     "fleets": {
         "default": [

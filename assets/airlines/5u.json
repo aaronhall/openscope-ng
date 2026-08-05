@@ -3,9 +3,7 @@
     "name": "General Aviation Niger",
     "callsign": {
         "name": "Five Uniform",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

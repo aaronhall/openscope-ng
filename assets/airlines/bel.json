@@ -3,12 +3,7 @@
     "name": "Brussels Airlines",
     "callsign": {
         "name": "Beeline",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##@",
-            "#@@"
-        ]
+        "callsignFormats": ["####", "###", "##@", "#@@"]
     },
     "fleets": {
         "default": [

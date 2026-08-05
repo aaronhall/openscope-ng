@@ -3,9 +3,7 @@
     "name": "General Aviation Antigua and Barbuda",
     "callsign": {
         "name": "Victor Two",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

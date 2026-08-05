@@ -14,14 +14,8 @@ import { spawnPatternModelJsonValidator } from './spawnPatternModelJsonValidator
 import { tau } from '../math/circle';
 import { FLIGHT_CATEGORY } from '../constants/aircraftConstants';
 import { AIRPORT_CONSTANTS } from '../constants/airportConstants';
-import {
-    INVALID_NUMBER,
-    TIME
-} from '../constants/globalConstants';
-import {
-    convertMinutesToSeconds,
-    DECIMAL_RADIX
-} from '../utilities/unitConverters';
+import { INVALID_NUMBER, TIME } from '../constants/globalConstants';
+import { convertMinutesToSeconds, DECIMAL_RADIX } from '../utilities/unitConverters';
 
 // TODO: this may need to live somewhere else
 /**
@@ -33,7 +27,7 @@ const SPAWN_METHOD = {
     RANDOM: 'random',
     CYCLIC: 'cyclic',
     SURGE: 'surge',
-    WAVE: 'wave'
+    WAVE: 'wave',
 };
 
 /**
@@ -437,9 +431,7 @@ export default class SpawnPatternModel extends BaseModel {
             return 'overflight';
         }
 
-        return this.isArrival()
-            ? this.destination
-            : this.origin;
+        return this.isArrival() ? this.destination : this.origin;
     }
 
     /**
@@ -707,7 +699,8 @@ export default class SpawnPatternModel extends BaseModel {
         this._aircraftPerHourDown = this.speed / this.entrail[1]; // to help the uptime calculation
 
         // TODO: move this calculation out to a helper function or class method
-        this.uptime = (this.period * this.rate - this.period * this._aircraftPerHourDown) /
+        this.uptime =
+            (this.period * this.rate - this.period * this._aircraftPerHourDown) /
             (this._aircraftPerHourUp - this._aircraftPerHourDown);
         this.uptime -= this.uptime % (TIME.ONE_HOUR_IN_SECONDS / this._aircraftPerHourUp);
 
@@ -717,23 +710,28 @@ export default class SpawnPatternModel extends BaseModel {
         const elevatedSpawnRate = this._aircraftPerHourUp * this.uptime * TIME.ONE_SECOND_IN_HOURS;
         const downTime = this.period - this.uptime;
         const hoursSpentAtReducedSpawnRate = downTime * TIME.ONE_SECOND_IN_HOURS;
-        const reducedSpawnRate = (averageSpawnRate - elevatedSpawnRate) * hoursSpentAtReducedSpawnRate;
+        const reducedSpawnRate =
+            (averageSpawnRate - elevatedSpawnRate) * hoursSpentAtReducedSpawnRate;
 
         this._aircraftPerHourDown = reducedSpawnRate;
 
         // TODO: abstract this if/else block to helper method
         // Verify we can comply with the requested arrival rate based on entrail spacing
         if (this.rate > this._aircraftPerHourUp) {
-            console.warn('TOO MANY ARRIVALS IN SURGE! Requested: ' +
-                `${this.rate} acph | Acceptable Range for requested entrail distance: ` +
-                `${Math.ceil(this._aircraftPerHourDown)} acph - ${Math.floor(this._aircraftPerHourUp)} acph`);
+            console.warn(
+                'TOO MANY ARRIVALS IN SURGE! Requested: ' +
+                    `${this.rate} acph | Acceptable Range for requested entrail distance: ` +
+                    `${Math.ceil(this._aircraftPerHourDown)} acph - ${Math.floor(this._aircraftPerHourUp)} acph`
+            );
 
             this.rate = this._aircraftPerHourUp;
             this._aircraftPerHourDown = this._aircraftPerHourUp;
         } else if (this.rate < this._aircraftPerHourDown) {
-            console.warn('TOO FEW ARRIVALS IN SURGE! Requested: ' +
-                `${this.rate} acph | Acceptable Range for requested entrail distance: ` +
-                `${Math.ceil(this._aircraftPerHourDown)} acph - ${Math.floor(this._aircraftPerHourUp)} acph`);
+            console.warn(
+                'TOO FEW ARRIVALS IN SURGE! Requested: ' +
+                    `${this.rate} acph | Acceptable Range for requested entrail distance: ` +
+                    `${Math.ceil(this._aircraftPerHourDown)} acph - ${Math.floor(this._aircraftPerHourUp)} acph`
+            );
 
             this.rate = this._aircraftPerHourDown;
             this._aircraftPerHourUp = this._aircraftPerHourDown;
@@ -753,9 +751,7 @@ export default class SpawnPatternModel extends BaseModel {
         const period = _get(spawnPatternJson, 'period', null);
 
         this.offset = convertMinutesToSeconds(offset);
-        this.period = period ?
-            convertMinutesToSeconds(period) :
-            this.period;
+        this.period = period ? convertMinutesToSeconds(period) : this.period;
         this.variation = _get(spawnPatternJson, 'variation', 0);
     }
 
@@ -820,7 +816,9 @@ export default class SpawnPatternModel extends BaseModel {
             return 0;
         }
 
-        return Math.floor(AIRPORT_CONSTANTS.MIN_ENTRAIL_DISTANCE_NM * (TIME.ONE_HOUR_IN_SECONDS / this.speed));
+        return Math.floor(
+            AIRPORT_CONSTANTS.MIN_ENTRAIL_DISTANCE_NM * (TIME.ONE_HOUR_IN_SECONDS / this.speed)
+        );
     }
 
     /**
@@ -857,7 +855,10 @@ export default class SpawnPatternModel extends BaseModel {
         }
 
         if (progressInPeriod <= 2) {
-            return TIME.ONE_HOUR_IN_SECONDS / (this.rate + (2 * (this.period - 2 * totalTime) / this.period) * this.variation);
+            return (
+                TIME.ONE_HOUR_IN_SECONDS /
+                (this.rate + ((2 * (this.period - 2 * totalTime)) / this.period) * this.variation)
+            );
         }
 
         if (progressInPeriod <= 3) {
@@ -865,7 +866,10 @@ export default class SpawnPatternModel extends BaseModel {
         }
 
         if (progressInPeriod < 4) {
-            return TIME.ONE_HOUR_IN_SECONDS / (this.rate - (4 * (this.period - totalTime) / this.period) * this.variation);
+            return (
+                TIME.ONE_HOUR_IN_SECONDS /
+                (this.rate - ((4 * (this.period - totalTime)) / this.period) * this.variation)
+            );
         }
     }
 
@@ -968,9 +972,11 @@ export default class SpawnPatternModel extends BaseModel {
      * @private
      */
     _isValidCategory(category) {
-        return category === FLIGHT_CATEGORY.ARRIVAL ||
+        return (
+            category === FLIGHT_CATEGORY.ARRIVAL ||
             category === FLIGHT_CATEGORY.DEPARTURE ||
-            category === FLIGHT_CATEGORY.OVERFLIGHT;
+            category === FLIGHT_CATEGORY.OVERFLIGHT
+        );
     }
 
     /**
@@ -1019,7 +1025,7 @@ export default class SpawnPatternModel extends BaseModel {
     _assembleAirlineNamesAndFrequencyForSpawn(spawnPatternAirlines) {
         const spawnPatternAirlineModels = _map(spawnPatternAirlines, (spawnPatternAirline) => ({
             name: spawnPatternAirline[0],
-            rate: spawnPatternAirline[1]
+            rate: spawnPatternAirline[1],
         }));
 
         return spawnPatternAirlineModels;
@@ -1059,9 +1065,11 @@ export default class SpawnPatternModel extends BaseModel {
     _buildPreSpawnAircraft(spawnPatternJson) {
         if (this.isDeparture()) {
             // TODO: this may be dead, please remove if it is
-            const preSpawnDepartureAircraft = [{
-                type: 'departure'
-            }];
+            const preSpawnDepartureAircraft = [
+                {
+                    type: 'departure',
+                },
+            ];
 
             return preSpawnDepartureAircraft;
         }

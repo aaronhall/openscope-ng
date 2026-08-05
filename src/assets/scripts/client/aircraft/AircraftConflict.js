@@ -30,8 +30,10 @@ export default class AircraftConflict {
         this.violations = {};
 
         if (this.isAlreadyKnown()) {
-            console.warn(`Duplicate conflict between ${this.aircraft[0].callsign} ` +
-                `and ${this.aircraft[1].callsign}! Scoring may be inaccurate!`);
+            console.warn(
+                `Duplicate conflict between ${this.aircraft[0].callsign} ` +
+                    `and ${this.aircraft[1].callsign}! Scoring may be inaccurate!`
+            );
             return;
         }
 
@@ -93,7 +95,9 @@ export default class AircraftConflict {
      */
     _recalculateLateralAndVerticalDistances() {
         const distanceAtLastUpdate = this.distance;
-        this.distance = vlen(vsub(this.aircraft[0].relativePosition, this.aircraft[1].relativePosition));
+        this.distance = vlen(
+            vsub(this.aircraft[0].relativePosition, this.aircraft[1].relativePosition)
+        );
         this.distance_delta = this.distance - distanceAtLastUpdate;
         this.altitude = abs(this.aircraft[0].altitude - this.aircraft[1].altitude);
     }
@@ -119,15 +123,19 @@ export default class AircraftConflict {
         // Ignore aircraft below about 1000 feet
         const airportElevation = AirportController.airport_get().elevation;
         const gameTime = TimeKeeper.accumulatedDeltaTime;
-        if (((this.aircraft[0].altitude - airportElevation) < 990) ||
-            ((this.aircraft[1].altitude - airportElevation) < 990)) {
+        if (
+            this.aircraft[0].altitude - airportElevation < 990 ||
+            this.aircraft[1].altitude - airportElevation < 990
+        ) {
             return;
         }
 
         // TODO: replace magic numbers with enum
         // Ignore aircraft in the first minute of their flight
-        if (gameTime - this.aircraft[0].takeoffTime < 90 ||
-            gameTime - this.aircraft[1].takeoffTime < 90) {
+        if (
+            gameTime - this.aircraft[0].takeoffTime < 90 ||
+            gameTime - this.aircraft[1].takeoffTime < 90
+        ) {
             return;
         }
 
@@ -147,8 +155,10 @@ export default class AircraftConflict {
         const airport = AirportController.airport_get();
 
         if (
-            ((this.distance < 0.05) && (this.altitude < 160)) &&
-            (this.aircraft[0].isInsideAirspace(airport) && this.aircraft[1].isInsideAirspace(airport))
+            this.distance < 0.05 &&
+            this.altitude < 160 &&
+            this.aircraft[0].isInsideAirspace(airport) &&
+            this.aircraft[1].isInsideAirspace(airport)
         ) {
             this.collided = true;
             const isWarning = true;
@@ -178,21 +188,24 @@ export default class AircraftConflict {
             return;
         }
 
-        let conflict = false;
-        let violation = false;
+        let conflict;
+        let violation;
         let disableNotices = false;
         const a1 = this.aircraft[0];
         const a2 = this.aircraft[1];
         let applicableLatSepMin = SEPARATION.STANDARD_LATERAL_KM;
 
-
         // Established on precision guided approaches && both are following different instrument approaches
-        if ((a1.isEstablishedOnCourse() && a2.isEstablishedOnCourse()) &&
-            (a1.fms.arrivalRunwayModel.name !== a2.fms.arrivalRunwayModel.name)) {
-            const runwayRelationship = AirportController.airport_get().getRunwayRelationshipForRunwayNames(
-                a1.fms.arrivalRunwayModel.name,
-                a2.fms.arrivalRunwayModel.name
-            );
+        if (
+            a1.isEstablishedOnCourse() &&
+            a2.isEstablishedOnCourse() &&
+            a1.fms.arrivalRunwayModel.name !== a2.fms.arrivalRunwayModel.name
+        ) {
+            const runwayRelationship =
+                AirportController.airport_get().getRunwayRelationshipForRunwayNames(
+                    a1.fms.arrivalRunwayModel.name,
+                    a2.fms.arrivalRunwayModel.name
+                );
 
             if (runwayRelationship.parallel) {
                 // hide notices for aircraft on adjacent final approach courses
@@ -239,7 +252,8 @@ export default class AircraftConflict {
                     const v = (dy * ad[0] - dx * ad[1]) / det; // a2's distance from point of convergence
 
                     // TODO: this should be a helper function that live in one of the math/ files
-                    if ((u < 0) || (v < 0)) { // check if either a/c has passed the point of convergence
+                    if (u < 0 || v < 0) {
+                        // check if either a/c has passed the point of convergence
                         conflict = false; // targets are diverging
                         violation = false; // targets are diverging
                     }
@@ -331,7 +345,10 @@ export default class AircraftConflict {
      */
     _findInstancesOfThisConflictInAircraftController() {
         return _filter(window.aircraftController.conflicts, (conflict) => {
-            return _includes(conflict.aircraft, this.aircraft[0]) && _includes(conflict.aircraft, this.aircraft[1]);
+            return (
+                _includes(conflict.aircraft, this.aircraft[0]) &&
+                _includes(conflict.aircraft, this.aircraft[1])
+            );
         });
     }
 }

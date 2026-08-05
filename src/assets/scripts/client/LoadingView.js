@@ -56,7 +56,7 @@ export default class LoadingView {
      * @method complete
      */
     complete() {
-        global.setTimeout(() => {
+        window.setTimeout(() => {
             this.$element.fadeOut(1000);
             this.$element.css('pointerEvents', 'none');
         }, 1500);

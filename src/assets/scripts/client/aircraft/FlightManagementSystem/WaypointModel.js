@@ -2,21 +2,18 @@ import _isArray from 'lodash/isArray';
 import _isEmpty from 'lodash/isEmpty';
 import _isNumber from 'lodash/isNumber';
 import FixCollection from '../../navigationLibrary/FixCollection';
-import {
-    INVALID_INDEX,
-    INVALID_NUMBER
-} from '../../constants/globalConstants';
+import { INVALID_INDEX, INVALID_NUMBER } from '../../constants/globalConstants';
 import {
     DEFAULT_HOLD_PARAMETERS,
     RNAV_WAYPOINT_DISPLAY_NAME,
-    RNAV_WAYPOINT_PREFIX
+    RNAV_WAYPOINT_PREFIX,
 } from '../../constants/waypointConstants';
 // import { extractHeadingFromVectorSegment } from '../../navigationLibrary/Route/routeStringFormatHelper';
-import { parseAltitudeRestriction, parseSpeedRestriction } from '../../utilities/navigationUtilities';
 import {
-    degreesToRadians,
-    DECIMAL_RADIX
-} from '../../utilities/unitConverters';
+    parseAltitudeRestriction,
+    parseSpeedRestriction,
+} from '../../utilities/navigationUtilities';
+import { degreesToRadians, DECIMAL_RADIX } from '../../utilities/unitConverters';
 
 /**
  * A navigation point within an aircraft's flight plan
@@ -141,7 +138,7 @@ export default class WaypointModel {
      */
     get holdParameters() {
         if (!this._isHoldWaypoint) {
-            return;
+            return undefined;
         }
 
         return this._holdParameters;
@@ -162,25 +159,25 @@ export default class WaypointModel {
     }
 
     /**
-    * Returns whether this waypoint includes an activated holding pattern
-    *
-    * @for WaypointModel
-    * @property isHoldWaypoint
-    * @type {boolean}
-    */
+     * Returns whether this waypoint includes an activated holding pattern
+     *
+     * @for WaypointModel
+     * @property isHoldWaypoint
+     * @type {boolean}
+     */
     get isHoldWaypoint() {
         return this._isHoldWaypoint;
     }
 
     /**
-    * Returns whether this waypoint is a vector waypoint
-    *
-    * Vector waypoints are simply an instruction to fly a particular heading
-    *
-    * @for WaypointModel
-    * @property isVector
-    * @return {boolean}
-    */
+     * Returns whether this waypoint is a vector waypoint
+     *
+     * Vector waypoints are simply an instruction to fly a particular heading
+     *
+     * @for WaypointModel
+     * @property isVector
+     * @return {boolean}
+     */
     get isVectorWaypoint() {
         return this._isVectorWaypoint;
     }
@@ -216,7 +213,7 @@ export default class WaypointModel {
      */
     get relativePosition() {
         if (this.isVectorWaypoint) {
-            return;
+            return undefined;
         }
 
         return this._positionModel.relativePosition;
@@ -260,7 +257,9 @@ export default class WaypointModel {
 
         if (_isArray(data)) {
             if (data.length !== 2) {
-                throw new TypeError(`Expected restricted fix to have restrictions, but received ${data}`);
+                throw new TypeError(
+                    `Expected restricted fix to have restrictions, but received ${data}`
+                );
             }
 
             [fixName, restrictions] = data;
@@ -521,8 +520,10 @@ export default class WaypointModel {
      */
     setSpeedMaximum(speedMaximum) {
         if (!_isNumber(speedMaximum)) {
-            console.warn(`Expected number to set as max speed of waypoint '${this.name}', ` +
-                `but received '${speedMaximum}'`);
+            console.warn(
+                `Expected number to set as max speed of waypoint '${this.name}', ` +
+                    `but received '${speedMaximum}'`
+            );
 
             return;
         }
@@ -539,8 +540,10 @@ export default class WaypointModel {
      */
     setSpeedMinimum(speedMinimum) {
         if (!_isNumber(speedMinimum)) {
-            console.warn(`Expected number to set as minimum speed of waypoint '${this.name}', ` +
-                `but received '${speedMinimum}'`);
+            console.warn(
+                `Expected number to set as minimum speed of waypoint '${this.name}', ` +
+                    `but received '${speedMinimum}'`
+            );
 
             return;
         }
@@ -569,15 +572,19 @@ export default class WaypointModel {
      */
     setAltitudeMaximum(altitudeMaximum) {
         if (!_isNumber(altitudeMaximum)) {
-            console.warn(`Expected number to set as max altitude of waypoint '${this._name}', ` +
-                `but received '${altitudeMaximum}'`);
+            console.warn(
+                `Expected number to set as max altitude of waypoint '${this._name}', ` +
+                    `but received '${altitudeMaximum}'`
+            );
 
             return;
         }
 
         if (altitudeMaximum < 0 || altitudeMaximum > 60000) {
-            console.warn(`Expected requested waypoint '${this._name}' max altitude to be reasonable, ` +
-                `but received altitude of '${altitudeMaximum}'`);
+            console.warn(
+                `Expected requested waypoint '${this._name}' max altitude to be reasonable, ` +
+                    `but received altitude of '${altitudeMaximum}'`
+            );
 
             return;
         }
@@ -594,15 +601,19 @@ export default class WaypointModel {
      */
     setAltitudeMinimum(altitudeMinimum) {
         if (!_isNumber(altitudeMinimum)) {
-            console.warn(`Expected number to set as max altitude of waypoint '${this._name}', ` +
-                `but received '${altitudeMinimum}'`);
+            console.warn(
+                `Expected number to set as max altitude of waypoint '${this._name}', ` +
+                    `but received '${altitudeMinimum}'`
+            );
 
             return;
         }
 
         if (altitudeMinimum < 0 || altitudeMinimum > 60000) {
-            console.warn(`Expected requested waypoint '${this._name}' max altitude to be reasonable, ` +
-                `but received altitude altitude of '${altitudeMinimum}'`);
+            console.warn(
+                `Expected requested waypoint '${this._name}' max altitude to be reasonable, ` +
+                    `but received altitude altitude of '${altitudeMinimum}'`
+            );
 
             return;
         }
@@ -684,8 +695,10 @@ export default class WaypointModel {
      */
     setHoldTimer(expirationTime) {
         if (typeof expirationTime !== 'number') {
-            throw new TypeError('Expected hold timer expiration time to be a ' +
-                `number, but received type ${typeof expirationTime}`);
+            throw new TypeError(
+                'Expected hold timer expiration time to be a ' +
+                    `number, but received type ${typeof expirationTime}`
+            );
         }
 
         this._holdParameters.timer = expirationTime;
@@ -746,8 +759,10 @@ export default class WaypointModel {
             } else if (restriction[0] === 'S') {
                 this._applySpeedRestriction(restriction);
             } else {
-                throw new TypeError('Expected "A" or "S" prefix on restriction, ' +
-                    `but received prefix '${restriction[0]}'`);
+                throw new TypeError(
+                    'Expected "A" or "S" prefix on restriction, ' +
+                        `but received prefix '${restriction[0]}'`
+                );
             }
         }
     }
@@ -800,11 +815,15 @@ export default class WaypointModel {
      */
     _ensureNonVectorWaypointsForThisAndWaypoint(waypointModel) {
         if (!(waypointModel instanceof WaypointModel)) {
-            throw new TypeError(`Expected a WaypointModel instance, but received type '${waypointModel}'`);
+            throw new TypeError(
+                `Expected a WaypointModel instance, but received type '${waypointModel}'`
+            );
         }
 
         if (this._isVectorWaypoint || waypointModel.isVectorWaypoint) {
-            throw new TypeError('Expected .calculateBearingToWaypoint() to never be called with vector waypoints!');
+            throw new TypeError(
+                'Expected .calculateBearingToWaypoint() to never be called with vector waypoints!'
+            );
         }
     }
 
@@ -822,7 +841,9 @@ export default class WaypointModel {
         const fixPosition = FixCollection.getPositionModelForFixName(this._name);
 
         if (!fixPosition) {
-            throw new TypeError(`Expected fix with known position, but cannot find fix '${this._name}'`);
+            throw new TypeError(
+                `Expected fix with known position, but cannot find fix '${this._name}'`
+            );
         }
 
         this._positionModel = fixPosition;

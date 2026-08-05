@@ -3,10 +3,7 @@
     "name": "AtlasGlobal",
     "callsign": {
         "name": "Atlas Jet",
-        "callsignFormats": [
-            "####",
-            "#@@"
-        ]
+        "callsignFormats": ["####", "#@@"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "General Aviation Uganda",
     "callsign": {
         "name": "Five Xray",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

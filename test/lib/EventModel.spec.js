@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import EventModel from '../../src/assets/scripts/client/lib/EventModel';
 
@@ -6,46 +6,46 @@ const eventNameMock = 'click';
 const observerMock = function doSomething() {
     return true;
 };
-const anonymousObserverMock = function() {
+const anonymousObserverMock = function () {
     return true;
 };
 
-ava('does not thow when called to instantiate', (t) => {
-    t.notThrows(() => new EventModel());
+test('does not thow when called to instantiate', () => {
+    expect(() => new EventModel()).not.toThrow();
 });
 
-ava('.addObserver() returns early when an observer exists in #observers', (t) => {
+test('.addObserver() returns early when an observer exists in #observers', () => {
     const model = new EventModel(eventNameMock);
     model.observers.push(observerMock);
 
     model.addObserver(observerMock);
 
-    t.true(model.observers.length === 1);
+    expect(model.observers.length === 1).toBe(true);
 });
 
-ava('.addObserver() adds an observer to #observers', (t) => {
+test('.addObserver() adds an observer to #observers', () => {
     const model = new EventModel(eventNameMock);
 
     model.addObserver(observerMock);
 
-    t.true(model.observers.length === 1);
+    expect(model.observers.length === 1).toBe(true);
 });
 
-ava('.removeObserver() returns early when an observer does not exist in #observers', (t) => {
+test('.removeObserver() returns early when an observer does not exist in #observers', () => {
     const model = new EventModel(eventNameMock);
     model.observers.push(anonymousObserverMock);
 
     model.removeObserver(observerMock);
 
-    t.true(model.observers.length === 1);
+    expect(model.observers.length === 1).toBe(true);
 });
 
-ava('.removeObserver() removes an observer from #observers', (t) => {
+test('.removeObserver() removes an observer from #observers', () => {
     const model = new EventModel(eventNameMock);
     model.observers.push(observerMock);
     model.observers.push(anonymousObserverMock);
 
     model.removeObserver(observerMock);
 
-    t.true(model.observers.length === 1);
+    expect(model.observers.length === 1).toBe(true);
 });

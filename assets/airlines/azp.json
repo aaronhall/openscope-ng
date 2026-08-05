@@ -3,13 +3,9 @@
     "name": "Paranair",
     "callsign": {
         "name": "Guaraní",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["CRJ2", 4]
-        ]
+        "default": [["CRJ2", 4]]
     }
 }

@@ -3,9 +3,7 @@
     "name": "General Aviation Singapore",
     "callsign": {
         "name": "Niner Victor",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

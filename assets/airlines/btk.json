@@ -3,9 +3,7 @@
     "name": "Batik Air",
     "callsign": {
         "name": "Batik",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

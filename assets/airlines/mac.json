@@ -3,16 +3,10 @@
     "name": "Air Arabia Maroc",
     "callsign": {
         "name": "Air Arabia Maroc",
-        "callsignFormats": [
-            "###"             
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 9]
-        ],
-        "short": [
-            ["A320", 9]
-        ]
+        "default": [["A320", 9]],
+        "short": [["A320", 9]]
     }
 }

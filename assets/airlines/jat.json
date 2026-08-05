@@ -3,11 +3,7 @@
     "name": "JetSMART Airlines",
     "callsign": {
         "name": "Rocksmart",
-        "callsignFormats": [
-            "##",
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["##", "###", "####"]
     },
     "fleets": {
         "default": [

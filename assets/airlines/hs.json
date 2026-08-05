@@ -3,9 +3,7 @@
     "name": "General Aviation Thailand",
     "callsign": {
         "name": "Hotel Sierra",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

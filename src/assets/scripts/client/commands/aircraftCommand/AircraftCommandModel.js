@@ -69,10 +69,7 @@ export default class AircraftCommandModel {
      * @return {array}
      */
     get nameAndArgs() {
-        return [
-            this.name,
-            ...this.args
-        ];
+        return [this.name, ...this.args];
     }
 
     /**

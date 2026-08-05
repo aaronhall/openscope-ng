@@ -3,9 +3,7 @@
     "name": "General Aviation Sierra Leone",
     "callsign": {
         "name": "Niner Lima",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

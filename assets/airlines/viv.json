@@ -3,10 +3,7 @@
     "name": "VivaAerobus",
     "callsign": {
         "name": "Aeroenlaces",
-        "callsignFormats": [
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["###", "####"]
     },
     "fleets": {
         "default": [

@@ -53,7 +53,6 @@ export const choose_weight = (l) => {
         }
     }
 
-
     return null;
 };
 

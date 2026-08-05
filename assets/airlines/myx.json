@@ -3,13 +3,9 @@
     "name": "SmartLynx Estonia",
     "callsign": {
         "name": "Tallinn Cat",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["A320", 7]
-        ]
+        "default": [["A320", 7]]
     }
 }

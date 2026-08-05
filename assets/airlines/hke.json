@@ -3,9 +3,7 @@
     "name": "Hong Kong Express",
     "callsign": {
         "name": "Hong Kong Shuttle",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

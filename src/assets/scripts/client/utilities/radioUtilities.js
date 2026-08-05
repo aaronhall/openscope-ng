@@ -9,17 +9,7 @@ import { tau, radians_normalize } from '../math/circle';
  * @type {Array}
  * @final
  */
-const CARDINAL_DIRECTION = [
-    'N',
-    'NE',
-    'E',
-    'SE',
-    'S',
-    'SW',
-    'W',
-    'NW',
-    'N'
-];
+const CARDINAL_DIRECTION = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'N'];
 
 /**
  * @property radio_names
@@ -82,7 +72,7 @@ export const radio_names = {
     y: 'yankee',
     z: 'zulu',
     '-': 'dash',
-    '.': 'point'
+    '.': 'point',
 };
 
 // TODO: this and CARDINAL_DIRECTION seem to be duplicating logic. look into smoothing that out by using
@@ -100,7 +90,7 @@ export const radio_cardinalDir_names = {
     s: 'south',
     se: 'southeast',
     e: 'east',
-    ne: 'northeast'
+    ne: 'northeast',
 };
 
 // TODO: probably do this with Object.assign
@@ -157,7 +147,7 @@ export const digits_integer = (number, digits, truncate = false) => {
  * @return {string}         if force
  */
 export const digits_decimal = (number, digits, force, truncate) => {
-    const shorten = (truncate) ? Math.floor : Math.round;
+    const shorten = truncate ? Math.floor : Math.round;
 
     if (!force) {
         return shorten(number * Math.pow(10, digits)) / Math.pow(10, digits);
@@ -186,9 +176,10 @@ export const digits_decimal = (number, digits, force, truncate) => {
 
                 const len = number.length - (trailingDigits - digits + 1);
                 const part1 = number.substr(0, len);
-                const part2 = (digits === 0)
-                    ? ''
-                    : shorten(parseInt(number.substr(len, 2), 10) / 10).toString();
+                const part2 =
+                    digits === 0
+                        ? ''
+                        : shorten(parseInt(number.substr(len, 2), 10) / 10).toString();
 
                 return part1 + part2;
             }
@@ -297,10 +288,14 @@ export const groupNumbers = (callsign, airline) => {
                         s.push(getGrouping(sections[i]));
                         break;
                     case 3:
-                        s.push(`${radio_names[sections[i][0]]} ${getGrouping(sections[i].substr(1))}`);
+                        s.push(
+                            `${radio_names[sections[i][0]]} ${getGrouping(sections[i].substr(1))}`
+                        );
                         break;
                     case 4:
-                        s.push(`${getGrouping(sections[i].substr(0, 2))} ${getGrouping(sections[i].substr(2))}`);
+                        s.push(
+                            `${getGrouping(sections[i].substr(0, 2))} ${getGrouping(sections[i].substr(2))}`
+                        );
                         break;
                     default:
                         s.push(radio_spellOut(sections[i]));
@@ -311,24 +306,22 @@ export const groupNumbers = (callsign, airline) => {
 
         return s.join(' ');
     } else {
-        // TODO: this block is unreachable
+        // Legacy numeric callsign handling
         switch (callsign.length) {
             case 0:
-                return callsign; break;
+                return callsign;
             case 1:
-                return radio_names[callsign]; break;
+                return radio_names[callsign];
             case 2:
-                return getGrouping(callsign); break;
+                return getGrouping(callsign);
             case 3:
                 return `${radio_names[callsign[0]]} ${getGrouping(callsign.substr(1))}`;
-                break;
             case 4:
                 if (callsign[1] === '0' && callsign[2] === '0' && callsign[3] === '0') {
                     return `${radio_names[callsign[0]]} thousand`;
                 }
 
                 return `${getGrouping(callsign.substr(0, 2))} ${getGrouping(callsign.substr(2))}`;
-                break;
             default:
                 return callsign;
         }
@@ -365,8 +358,6 @@ export const radio_heading = (heading) => {
         default:
             return `${radio_names[str[0]]} ${radio_names[str[1]]} ${radio_names[str[2]]}`;
     }
-
-    return heading;
 };
 
 /**
@@ -438,7 +429,7 @@ export const radio_altitude = (altitude) => {
 export const radio_trend = (category, currentValue, nextValue) => {
     const CATEGORIES = {
         altitude: ['descend and maintain', 'climb and maintain', 'maintain'],
-        speed: ['reduce speed to', 'increase speed to', 'maintain present speed of']
+        speed: ['reduce speed to', 'increase speed to', 'maintain present speed of'],
     };
 
     if (currentValue > nextValue) {
@@ -459,7 +450,7 @@ export const radio_trend = (category, currentValue, nextValue) => {
  * @return {string}
  */
 export const getCardinalDirection = (angle) => {
-    return CARDINAL_DIRECTION[round(angle / tau() * 8)];
+    return CARDINAL_DIRECTION[round((angle / tau()) * 8)];
 };
 
 /**
@@ -470,7 +461,9 @@ export const getCardinalDirection = (angle) => {
  * @return {string}
  */
 export const getRadioCardinalDirectionNameForHeading = (heading) => {
-    const cardinalDirection = getCardinalDirection(radians_normalize(heading + Math.PI)).toLowerCase();
+    const cardinalDirection = getCardinalDirection(
+        radians_normalize(heading + Math.PI)
+    ).toLowerCase();
 
     return radio_cardinalDir_names[cardinalDirection];
 };

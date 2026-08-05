@@ -5,14 +5,11 @@ import _map from 'lodash/map';
 import _without from 'lodash/without';
 import NavigationLibrary from '../../navigationLibrary/NavigationLibrary';
 import WaypointModel from './WaypointModel';
-import {
-    INVALID_INDEX,
-    INVALID_NUMBER
-} from '../../constants/globalConstants';
+import { INVALID_INDEX, INVALID_NUMBER } from '../../constants/globalConstants';
 import {
     LEG_TYPE,
     PROCEDURE_TYPE,
-    PROCEDURE_OR_AIRWAY_SEGMENT_DIVIDER
+    PROCEDURE_OR_AIRWAY_SEGMENT_DIVIDER,
 } from '../../constants/routeConstants';
 
 /**
@@ -238,7 +235,9 @@ export default class LegModel {
     init(routeString) {
         this._routeString = routeString;
 
-        const [entryOrFixName, airwayOrProcedureName, exit] = routeString.split(PROCEDURE_OR_AIRWAY_SEGMENT_DIVIDER);
+        const [entryOrFixName, airwayOrProcedureName, exit] = routeString.split(
+            PROCEDURE_OR_AIRWAY_SEGMENT_DIVIDER
+        );
 
         this._ensureRouteStringIsSingleSegment(routeString);
         this._legType = this._determineLegType(airwayOrProcedureName);
@@ -305,11 +304,15 @@ export default class LegModel {
      */
     _ensureRouteStringIsSingleSegment(routeString) {
         if (routeString.indexOf('..') !== INVALID_INDEX) {
-            throw new TypeError(`Expected single fix or single procedure route string, but received '${routeString}'`);
+            throw new TypeError(
+                `Expected single fix or single procedure route string, but received '${routeString}'`
+            );
         }
 
         if (routeString.split('.').length > 3) {
-            throw new TypeError(`Expected single procedure route string, but received '${routeString}'`);
+            throw new TypeError(
+                `Expected single procedure route string, but received '${routeString}'`
+            );
         }
     }
 
@@ -379,7 +382,10 @@ export default class LegModel {
         const waypointIndex = this._findIndexOfWaypointName(waypointName);
         const waypointModel = this._waypointCollection[waypointIndex];
 
-        return waypointModel.setHoldParametersAndActivateHold(holdParameters, fallbackInboundHeading);
+        return waypointModel.setHoldParametersAndActivateHold(
+            holdParameters,
+            fallbackInboundHeading
+        );
     }
 
     /**
@@ -465,18 +471,21 @@ export default class LegModel {
     }
 
     /**
-    * Returns the lowest `#altitudeMinimum` of all `WaypointModel`s in this leg
-    *
-    * @for LegModel
-    * @method getBottomAltitude
-    * @return {number}
-    */
+     * Returns the lowest `#altitudeMinimum` of all `WaypointModel`s in this leg
+     *
+     * @for LegModel
+     * @method getBottomAltitude
+     * @return {number}
+     */
     getBottomAltitude() {
         if (!this.isProcedureLeg) {
             return INVALID_NUMBER;
         }
 
-        const minimumAltitudes = _map(this._waypointCollection, (waypoint) => waypoint.altitudeMinimum);
+        const minimumAltitudes = _map(
+            this._waypointCollection,
+            (waypoint) => waypoint.altitudeMinimum
+        );
         const positiveValueRestrictionList = _without(minimumAltitudes, INVALID_NUMBER);
         const bottomAltitude = Math.min(...positiveValueRestrictionList);
 
@@ -488,13 +497,13 @@ export default class LegModel {
     }
 
     /**
-    * Return the ICAO identifier for the airport at which this leg originates (if
-    * it is in fact a SID leg, of course).
-    *
-    * @for LegModel
-    * @method getDepartureRunwayAirportIcao
-    * @return {string}
-    */
+     * Return the ICAO identifier for the airport at which this leg originates (if
+     * it is in fact a SID leg, of course).
+     *
+     * @for LegModel
+     * @method getDepartureRunwayAirportIcao
+     * @return {string}
+     */
     getDepartureRunwayAirportIcao() {
         if (!this.isSidLeg) {
             return null;
@@ -507,13 +516,13 @@ export default class LegModel {
     }
 
     /**
-    * Return the name of the runway at which this leg begins (if it is in fact
-    * a SID leg, of course).
-    *
-    * @for LegModel
-    * @method getDepartureRunwayName
-    * @return {string}
-    */
+     * Return the name of the runway at which this leg begins (if it is in fact
+     * a SID leg, of course).
+     *
+     * @for LegModel
+     * @method getDepartureRunwayName
+     * @return {string}
+     */
     getDepartureRunwayName() {
         if (!this.isSidLeg) {
             return null;
@@ -637,7 +646,10 @@ export default class LegModel {
             return INVALID_NUMBER;
         }
 
-        const maximumAltitudes = _map(this._waypointCollection, (waypoint) => waypoint.altitudeMaximum);
+        const maximumAltitudes = _map(
+            this._waypointCollection,
+            (waypoint) => waypoint.altitudeMaximum
+        );
         const positiveValueRestrictionList = _without(maximumAltitudes, INVALID_NUMBER);
         const topAltitude = Math.max(...positiveValueRestrictionList);
 
@@ -649,27 +661,27 @@ export default class LegModel {
     }
 
     /**
-    * Whether there are any `WaypointModel`s in this leg beyond the `#currentWaypoint`
-    *
-    * @for LegModel
-    * @method hasNextWaypoint
-    * @return {boolean}
-    */
+     * Whether there are any `WaypointModel`s in this leg beyond the `#currentWaypoint`
+     *
+     * @for LegModel
+     * @method hasNextWaypoint
+     * @return {boolean}
+     */
     hasNextWaypoint() {
         return this._waypointCollection.length > 1;
     }
 
     /**
-    * Whether a `WaypointModel` with the specified name exists within the `#_waypointCollection`
-    *
-    * Note that this will return false even if the specified fix name IS included
-    * in the `#_previousWaypointCollection`.
-    *
-    * @for LegModel
-    * @method hasWaypointName
-    * @param waypointName {string}
-    * @return {boolean}
-    */
+     * Whether a `WaypointModel` with the specified name exists within the `#_waypointCollection`
+     *
+     * Note that this will return false even if the specified fix name IS included
+     * in the `#_previousWaypointCollection`.
+     *
+     * @for LegModel
+     * @method hasWaypointName
+     * @param waypointName {string}
+     * @return {boolean}
+     */
     hasWaypointName(waypointName) {
         if (_isEmpty(waypointName)) {
             throw new TypeError(`Expected valid fix name but received '${waypointName}'`);
@@ -689,14 +701,14 @@ export default class LegModel {
     }
 
     /**
-    * Move the `#currentWaypoint` to the `#_previousWaypointCollection`
-    *
-    * This also results in the `WaypointModel` previously at index `1` becoming
-    * index `0`, thus making it the new `#currentWaypoint`.
-    *
-    * @for LegModel
-    * @method moveToNextWaypoint
-    */
+     * Move the `#currentWaypoint` to the `#_previousWaypointCollection`
+     *
+     * This also results in the `WaypointModel` previously at index `1` becoming
+     * index `0`, thus making it the new `#currentWaypoint`.
+     *
+     * @for LegModel
+     * @method moveToNextWaypoint
+     */
     moveToNextWaypoint() {
         const waypointModelToMove = this._waypointCollection.shift();
 
@@ -757,12 +769,12 @@ export default class LegModel {
     }
 
     /**
-    * If applicable, make the SID entry match the specified departure runway
-    *
-    * @for LegModel
-    * @method updateSidLegForDepartureRunwayModel
-    * @param runwayModel {RunwayModel}
-    */
+     * If applicable, make the SID entry match the specified departure runway
+     *
+     * @for LegModel
+     * @method updateSidLegForDepartureRunwayModel
+     * @param runwayModel {RunwayModel}
+     */
     updateSidLegForDepartureRunwayModel(runwayModel) {
         if (!this.isSidLeg) {
             return;
@@ -779,7 +791,6 @@ export default class LegModel {
         if (runwayModel.name === currentRunwayName) {
             return;
         }
-
 
         if (!this._procedureModel.hasEntry(nextEntryName)) {
             return;
@@ -856,7 +867,9 @@ export default class LegModel {
      */
     _verifyAirwayAndEntryAndExitAreValid(entryName, exitName) {
         if (_isNil(this._airwayModel)) {
-            throw new TypeError('Unable to generate waypoints because the requested airway does not exist');
+            throw new TypeError(
+                'Unable to generate waypoints because the requested airway does not exist'
+            );
         }
 
         const airwayIcao = this._airwayModel.icao;
@@ -881,17 +894,23 @@ export default class LegModel {
      */
     _verifyProcedureAndEntryAndExitAreValid(entryName, exitName) {
         if (_isNil(this._procedureModel)) {
-            throw new TypeError('Unable to generate waypoints because the requested procedure does not exist');
+            throw new TypeError(
+                'Unable to generate waypoints because the requested procedure does not exist'
+            );
         }
 
         const procedureIcao = this._procedureModel.icao;
 
         if (!this._procedureModel.hasEntry(entryName)) {
-            throw new TypeError(`Expected valid entry of ${procedureIcao}, but received ${entryName}`);
+            throw new TypeError(
+                `Expected valid entry of ${procedureIcao}, but received ${entryName}`
+            );
         }
 
         if (!this._procedureModel.hasExit(exitName)) {
-            throw new TypeError(`Expected valid exit of ${procedureIcao}, but received ${exitName}`);
+            throw new TypeError(
+                `Expected valid exit of ${procedureIcao}, but received ${exitName}`
+            );
         }
     }
 }

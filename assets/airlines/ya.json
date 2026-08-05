@@ -3,9 +3,7 @@
     "name": "General Aviation Afghanistan",
     "callsign": {
         "name": "Yankee Alpha",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

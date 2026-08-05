@@ -3,13 +3,9 @@
     "name": "People's",
     "callsign": {
         "name": "Peoples",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["E170", 2]
-        ]
+        "default": [["E170", 2]]
     }
 }

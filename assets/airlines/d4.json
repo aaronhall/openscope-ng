@@ -3,9 +3,7 @@
     "name": "General Aviation Cape Verde",
     "callsign": {
         "name": "Delta Four",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

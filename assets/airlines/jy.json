@@ -3,9 +3,7 @@
     "name": "General Aviation Jordan",
     "callsign": {
         "name": "Juliet Yankee",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

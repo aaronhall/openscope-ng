@@ -191,27 +191,39 @@
     ],
     "runways": [
         {
-            "name":        ["14L", "32R"],
-            "name_offset": [[1.0, 0], [1.0, 0]],
-            "end": [["N55.42305278", "E37.90800833", "550.52ft"], ["N55.39492778", "E37.94180556", "519.36ft"]],
-            "length":      3.793,
-            "delay":       [10, 30],
-            "ils":         [true, true]
+            "name": ["14L", "32R"],
+            "name_offset": [
+                [1.0, 0],
+                [1.0, 0]
+            ],
+            "end": [
+                ["N55.42305278", "E37.90800833", "550.52ft"],
+                ["N55.39492778", "E37.94180556", "519.36ft"]
+            ],
+            "length": 3.793,
+            "delay": [10, 30],
+            "ils": [true, true]
         },
         {
-            "name":        ["14R", "32L"],
-            "name_offset": [[-1.0, 0], [-1.0, 0]],
-            "end": [["N55.42106111", "E37.87213889", "592.52ft"], ["N55.39511667", "E37.90334444", "530.84ft"]],
-            "length":      3.500,
-            "delay":       [10, 30],
-            "ils":         [true, true]
+            "name": ["14R", "32L"],
+            "name_offset": [
+                [-1.0, 0],
+                [-1.0, 0]
+            ],
+            "end": [
+                ["N55.42106111", "E37.87213889", "592.52ft"],
+                ["N55.39511667", "E37.90334444", "530.84ft"]
+            ],
+            "length": 3.5,
+            "delay": [10, 30],
+            "ils": [true, true]
         }
     ],
     "sids": {
         "SF": {
             "icao": "SF",
             "name": "Cherusti",
-            "suffix": {"14R":"14W", "32L":"32G", "32R":"32E"},
+            "suffix": { "14R": "14W", "32L": "32G", "32R": "32E" },
             "rwy": {
                 "14R": ["RAMEK", ["SF", "A159+"]],
                 "32L": ["RAMEK", ["SF", "A159+"]],
@@ -222,7 +234,7 @@
         "DK": {
             "icao": "DK",
             "name": "Glotayevo",
-            "suffix": {"14L":"14D", "14R":"14W", "32L":"32W", "32R":"32D"},
+            "suffix": { "14L": "14D", "14R": "14W", "32L": "32W", "32R": "32D" },
             "rwy": {
                 "14L": ["DK"],
                 "14R": ["DK"],
@@ -234,7 +246,7 @@
         "WZ": {
             "icao": "WZ",
             "name": "Kamenka",
-            "suffix": {"14L":"14D", "14R":"14W"},
+            "suffix": { "14L": "14D", "14R": "14W" },
             "rwy": {
                 "14L": ["WZ"],
                 "14R": ["WZ"]
@@ -244,7 +256,7 @@
         "WT": {
             "icao": "WT",
             "name": "Kartino",
-            "suffix": {"14L":"14E", "14R":"14W", "32L":"32W", "32R":"32D"},
+            "suffix": { "14L": "14E", "14R": "14W", "32L": "32W", "32R": "32D" },
             "rwy": {
                 "14L": ["WT"],
                 "14R": ["WT"],
@@ -256,7 +268,7 @@
         "LO": {
             "icao": "LO",
             "name": "Klimovsk",
-            "suffix": {"14L":"14D", "14R":"14W", "32L":"32W", "32R":"32D"},
+            "suffix": { "14L": "14D", "14R": "14W", "32L": "32W", "32R": "32D" },
             "rwy": {
                 "14L": ["LO"],
                 "14R": ["LO"],
@@ -268,14 +280,14 @@
         "OKR": {
             "icao": "OKR",
             "name": "Okrem",
-            "suffix": {"14L":"14E", "14R":"14G", "32L":"32G", "32R":"32E"},
+            "suffix": { "14L": "14E", "14R": "14G", "32L": "32G", "32R": "32E" },
             "rwy": {
                 "14L": ["OKREM"],
                 "14R": ["OKREM"],
-                "32L": ["RAMEK","OKREM"],
-                "32R": ["RAMEK","OKREM"]
+                "32L": ["RAMEK", "OKREM"],
+                "32R": ["RAMEK", "OKREM"]
             },
-            "draw": [["RAMEK","OKREM"]]
+            "draw": [["RAMEK", "OKREM"]]
         }
     },
     "spawnPatterns": [
@@ -303,12 +315,12 @@
             "origin": "",
             "destination": "uudd",
             "category": "arrival",
-            "route":   "RELTO..NEMOR..AO..OKMEL",
-            "altitude":  [8000, 10000],
+            "route": "RELTO..NEMOR..AO..OKMEL",
+            "altitude": [8000, 10000],
             "speed": 240,
             "method": "random",
             "rate": 6,
-            "airlines":  [
+            "airlines": [
                 ["sbi", 96],
                 ["svr", 38],
                 ["afl", 15],
@@ -322,11 +334,11 @@
             "destination": "uudd",
             "category": "arrival",
             "route": "IN..KUPAR..DMD..RAPAG",
-            "altitude":  [8000, 10000],
+            "altitude": [8000, 10000],
             "speed": 240,
             "method": "random",
             "rate": 9.5,
-            "airlines":  [
+            "airlines": [
                 ["sbi", 96],
                 ["svr", 38],
                 ["afl", 27],
@@ -339,11 +351,11 @@
             "destination": "uudd",
             "category": "arrival",
             "route": "KN..BESTA..RUGEL..GEKLA..ABMAS..RAPAG",
-            "altitude":  [8000, 10000],
+            "altitude": [8000, 10000],
             "speed": 240,
             "method": "random",
             "rate": 7,
-            "airlines":  [
+            "airlines": [
                 ["sbi", 30],
                 ["svr", 30],
                 ["afl", 27],

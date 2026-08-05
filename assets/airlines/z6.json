@@ -3,9 +3,7 @@
     "name": "General Aviation Kosovo",
     "callsign": {
         "name": "Zulu Six",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

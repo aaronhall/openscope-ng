@@ -23,5 +23,5 @@ export const DATA_BLOCK_POSITION_MAP = {
     1: 225,
     4: 270,
     7: 315,
-    5: 'ctr'
+    5: 'ctr',
 };

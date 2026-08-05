@@ -3,9 +3,7 @@
     "name": "General Aviation Sao Tome and Principe",
     "callsign": {
         "name": "Sierra Niner",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

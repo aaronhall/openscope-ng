@@ -15,5 +15,5 @@ export const EXPECTED_HOLD_PARAMETERS = {
     inboundHeading: 4.625122517784973,
     turnDirection: 'right',
     legLength: '3nm',
-    speedMaximum: 220
+    speedMaximum: 220,
 };

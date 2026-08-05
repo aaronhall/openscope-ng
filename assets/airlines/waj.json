@@ -3,15 +3,9 @@
     "name": "Air Asia Japan",
     "callsign": {
         "name": "Wing Asia",
-        "callsignFormats": [
-            "#",
-            "##",
-            "###"
-        ]
+        "callsignFormats": ["#", "##", "###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 3]
-        ]
+        "default": [["A320", 3]]
     }
 }

@@ -3,10 +3,7 @@ import _has from 'lodash/has';
 import _isNil from 'lodash/isNil';
 import _without from 'lodash/without';
 import BaseCollection from '../BaseCollection';
-import {
-    CLASS_MAP,
-    CLASS_MAP_LENGTH
-} from './modelSourceClassMap';
+import { CLASS_MAP, CLASS_MAP_LENGTH } from './modelSourceClassMap';
 
 /**
  * @property MAX_POOL_SIZE_PER_MODEL
@@ -72,7 +69,9 @@ class ModelSourcePool extends BaseCollection {
      */
     returnReusable(modelToAdd) {
         if (!_has(CLASS_MAP, modelToAdd.constructor.name)) {
-            throw new TypeError(`Unsupported constructor passed to ModelSourcePool: ${modelToAdd.constructor.name}`);
+            throw new TypeError(
+                `Unsupported constructor passed to ModelSourcePool: ${modelToAdd.constructor.name}`
+            );
         }
 
         this._items.push(modelToAdd);

@@ -3,9 +3,7 @@
     "name": "General Aviation Ireland",
     "callsign": {
         "name": "Echo India",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

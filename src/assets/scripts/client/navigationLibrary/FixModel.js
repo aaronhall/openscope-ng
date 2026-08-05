@@ -105,13 +105,19 @@ export default class FixModel extends BaseModel {
      */
     init(fixName, fixData, referencePosition) {
         if (!fixName || !fixData || !referencePosition) {
-            throw new TypeError(`Expected FixModel ${fixName} to receive name, data, and referencePosition, but ` +
-                `received ${typeof fixName}, ${typeof fixData}, ${typeof referencePosition}`);
+            throw new TypeError(
+                `Expected FixModel ${fixName} to receive name, data, and referencePosition, but ` +
+                    `received ${typeof fixName}, ${typeof fixData}, ${typeof referencePosition}`
+            );
         }
 
         const [lat, lon, spoken] = fixData;
         this.name = fixName.toUpperCase();
-        this._positionModel = new StaticPositionModel([lat, lon], referencePosition, referencePosition.magneticNorth);
+        this._positionModel = new StaticPositionModel(
+            [lat, lon],
+            referencePosition,
+            referencePosition.magneticNorth
+        );
 
         if (typeof spoken === 'undefined') {
             this._spoken = fixName.toLowerCase();

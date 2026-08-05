@@ -3,9 +3,7 @@
     "name": "General Aviation Brazil",
     "callsign": {
         "name": "Papa Sierra",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

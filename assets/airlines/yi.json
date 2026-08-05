@@ -3,9 +3,7 @@
     "name": "General Aviation Iraq",
     "callsign": {
         "name": "Yankee India",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

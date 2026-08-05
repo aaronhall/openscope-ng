@@ -3,9 +3,7 @@
     "name": "General Aviation Maldives",
     "callsign": {
         "name": "Eight Quebec",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

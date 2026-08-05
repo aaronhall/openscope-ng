@@ -36,7 +36,9 @@ class SpawnScheduler {
      */
     init(aircraftController) {
         if (typeof aircraftController === 'undefined') {
-            throw new TypeError('Invalid parameter. SpawnScheduler requires aircraftController to be defined.');
+            throw new TypeError(
+                'Invalid parameter. SpawnScheduler requires aircraftController to be defined.'
+            );
         }
 
         this._aircraftController = aircraftController;
@@ -84,11 +86,13 @@ class SpawnScheduler {
      * @method resetAirborneTraffic
      */
     resetAirborneTraffic() {
-        SpawnPatternCollection.spawnPatternModels.filter((s) => s.isAirborneAtSpawn()).forEach((spawnPatternModel) => {
-            spawnPatternModel.preSpawnAircraftList = [];
-            spawnPatternModel.createPreSpawnAircraft(this._aircraftController);
-            this.resetTimer(spawnPatternModel);
-        });
+        SpawnPatternCollection.spawnPatternModels
+            .filter((s) => s.isAirborneAtSpawn())
+            .forEach((spawnPatternModel) => {
+                spawnPatternModel.preSpawnAircraftList = [];
+                spawnPatternModel.createPreSpawnAircraft(this._aircraftController);
+                this.resetTimer(spawnPatternModel);
+            });
     }
 
     /**
@@ -204,6 +208,5 @@ class SpawnScheduler {
         spawnPatternModel.scheduleId = this.createNextSchedule(spawnPatternModel);
     };
 }
-
 
 export default new SpawnScheduler();

@@ -3,13 +3,9 @@
     "name": "Sunwing Airlines",
     "callsign": {
         "name": "Sunwing",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["B738", 34]
-        ]
+        "default": [["B738", 34]]
     }
 }

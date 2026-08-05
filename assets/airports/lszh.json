@@ -109,7 +109,7 @@
         "BERSU": ["N47d8m8.00", "E7d56m29.00"],
         "BILDU": ["N47d10.23", "E10d39.71"],
         "BIKBI": ["N47d58m17.03", "E9d27m43.97"],
-        "BLM"  : ["N47d37m58.00", "E7d29m58.00"],
+        "BLM": ["N47d37m58.00", "E7d29m58.00"],
         "BODAN": ["N47d35m15.02", "E9d27m4.98"],
         "BOMBI": ["N50d3.40", "E8d48.02"],
         "BREGO": ["N47d23m23.00", "E8d20m46.00"],
@@ -124,28 +124,28 @@
         "EDUMI": ["N47d45.68", "E8d27.52"],
         "EKRIT": ["N47d40.69", "E8d35.79"],
         "ELMEM": ["N47d17.14", "E10d34.19"],
-        "EPL"  : ["N48d19.07", "E6d3.57"],
+        "EPL": ["N48d19.07", "E6d3.57"],
         "ERKIR": ["N47d32.27", "E12d0.53"],
         "ERMUS": ["N47d13m56.00", "E8d14m41.00"],
         "ETAGO": ["N48d43m39.25", "E9d27m36.19"],
         "ETOXU": ["N47d43m32.89", "E9d33m1.94"],
-        "FRI"  : ["N46d46m39.00", "E7d13m24.00"],
+        "FRI": ["N46d46m39.00", "E7d13m24.00"],
         "GAMSA": ["N47d24.59", "E9d39.03"],
         "GAPTO": ["N47d28.11", "E10d45.57"],
         "GERSA": ["N47d2.36", "E8d31.92"],
         "GIPOL": ["N47d30m19.00", "E8d2m27.00"],
         "GUDAX": ["N46d47m5.00", "E7d29m25.00"],
-        "HOC"  : ["N47d27m59.00", "E7d39m55.00"],
+        "HOC": ["N47d27m59.00", "E7d39m55.00"],
         "IBINI": ["N48d10m8.83", "E8d34m51.33"],
         "KELIP": ["N46d57m22.00", "E8d45m42.00"],
         "KESEX": ["N47d14.08", "E8d43.00"],
-        "KLO"  : ["N47d27m25.00", "E8d32m44.00"],
+        "KLO": ["N47d27m25.00", "E8d32m44.00"],
         "KOGOL": ["N47d37m20.16", "E11d23m59.46"],
         "KOLUL": ["N47.467222", "E8.822778"],
         "KONIN": ["N47d51m21.44", "E11d22m5.03"],
         "KONOL": ["N46d59m43.00", "E7d40m51.00"],
         "KORED": ["N46d51m2.00", "E7d24m51.00"],
-        "KPT"  : ["N47d44m44.00", "E10d20m59.00"],
+        "KPT": ["N47d44m44.00", "E10d20m59.00"],
         "KUBOM": ["N47d26.17", "E6d56.74"],
         "KUDES": ["N47d31m15.00", "E8d51m26.00"],
         "KUDIS": ["N47d26.47", "E8d58.01"],
@@ -154,10 +154,10 @@
         "LAMGO": ["N48d53m8.80", "E8d46m45.49"],
         "LAMUR": ["N46d34m47.00", "E7d13m53.00"],
         "LASUN": ["N47d24.85", "E7d32.25"],
-        "LUL"  : ["N47d41m17.00", "E6d17m44.00"],
+        "LUL": ["N47d41m17.00", "E6d17m44.00"],
         "LUMEL": ["N47d24m26.00", "E7d9m14.00"],
         "MADEB": ["N47d19m27.75", "E10d17m19.99"],
-        "MAH"  : ["N48d15m48.00", "E11d18m42.00"],
+        "MAH": ["N48d15m48.00", "E11d18m42.00"],
         "MANAL": ["N47d53.97", "E11d48.00"],
         "MANEG": ["N47d12.24", "E8d43.34"],
         "MATIV": ["N47d35m35.00", "E9d11m32.00"],
@@ -184,22 +184,22 @@
         "RILAX": ["N47d56m34.02", "E8d30m48.99"],
         "RINLI": ["N47d37m21.61", "E7d52m50.82"],
         "RIPUS": ["N47d15.62", "E8d30.00"],
-        "RLP"  : ["N47d54.38", "E5d14.95"],
+        "RLP": ["N47d54.38", "E5d14.95"],
         "ROMGA": ["N47d29m26.00", "E9d24m13.00"],
         "ROMIR": ["N47d42.78", "E9d6.47"],
         "ROREM": ["N47d53m30.00", "E9d50m27.00"],
         "ROTOS": ["N47d11m24.00", "E7d43m31.00"],
         "SONGI": ["N47d46m39.99", "E8d43m55.03"],
         "SOSON": ["N46d36.40", "E8d35.65"],
-        "SPR"  : ["N46d28m7.00", "E6d26m53.00"],
+        "SPR": ["N46d28m7.00", "E6d26m53.00"],
         "SUDEN": ["N48d31m44.57", "E9d27m43.90"],
-        "SUL"  : ["N48d22m53.00", "E8d38m41.00"],
+        "SUL": ["N48d22m53.00", "E8d38m41.00"],
         "SUNEG": ["N49d11m54.69", "E8d51m51.22"],
         "TADOB": ["N47d10m59.00", "E8d5m23.00"],
         "TEDGO": ["N48d37.10", "E9d15.55"],
         "TELNO": ["N46d46.32", "E7d16.25"],
         "TORPA": ["N47d28m46.00", "E6d39m31.00"],
-        "TRA"  : ["N47d41m22.00", "E8d26m13.00"],
+        "TRA": ["N47d41m22.00", "E8d26m13.00"],
         "TUNUM": ["N47d15.37", "E11d30.46"],
         "ULMES": ["N46d57m18.00", "E7d17m33.00"],
         "UMTEX": ["N47d50.40", "E9d37.36"],
@@ -208,7 +208,7 @@
         "UTIXO": ["N47d15m9.00", "E8d41m20.00"],
         "VADAR": ["N46d39.43", "E6d45.21"],
         "VEBIT": ["N47d16m7.00", "E8d0m21.00"],
-        "WIL"  : ["N47d10m41.00", "E7d54m21.00"],
+        "WIL": ["N47d10m41.00", "E7d54m21.00"],
         "XEBIX": ["N47d24m0.04", "E10d28m47.55"],
         "ZH005": ["N47.701158", "E8.543450"],
         "ZH006": ["N47.763022", "E8.500600"],
@@ -288,7 +288,7 @@
         "ZH726": ["N47.247222", "E8.624472"],
         "ZH751": ["N47.556583", "E8.742889"],
         "ZH775": ["N47.588333", "E8.128889"],
-        "ZUE"  : ["N47d35m31.00", "E8d49m3.00"]
+        "ZUE": ["N47d35m31.00", "E8d49m3.00"]
     },
     "restricted": [
         {
@@ -341,7 +341,18 @@
         "T721": ["BOMBI", "OMOGI", "SUNEG", "LAMGO", "SUL", "IBINI", "RILAX", "EDUMI", "TRA"],
         "UL608": ["ERKIR", "KOGOL", "KPT", "KUNOD", "TEDGO"],
         "UL613": ["LUL", "NATLI", "HOC", "DITON"],
-        "UL856": ["MANAL", "KONIN", "KPT", "RAVED", "NEGRA", "AKABI", "ROMIR", "TRA", "HOC", "ABARI"],
+        "UL856": [
+            "MANAL",
+            "KONIN",
+            "KPT",
+            "RAVED",
+            "NEGRA",
+            "AKABI",
+            "ROMIR",
+            "TRA",
+            "HOC",
+            "ABARI"
+        ],
         "UM624": ["TORPA", "LUL", "EPL"],
         "UN606": ["MADEB", "ELMEM", "BILDU", "OTRES"],
         "UN850": ["TRA", "RIPUS", "GERSA", "SOSON", "DEGAD"],
@@ -361,15 +372,19 @@
             "icao": "ALBIX1C",
             "name": "Albix One Charlie",
             "rwy": {
-                "LSZH10": ["^_RWY10KLO02.1DME", "_KLO085005", ["^ZH502", "A40+|S210-"], "_(TRA167024)049005", "_TRA167024"]
+                "LSZH10": [
+                    "^_RWY10KLO02.1DME",
+                    "_KLO085005",
+                    ["^ZH502", "A40+|S210-"],
+                    "_(TRA167024)049005",
+                    "_TRA167024"
+                ]
             },
             "body": [],
             "exitPoints": {
                 "ALBIX": [["ALBIX", "A100+"]]
             },
-            "draw": [
-                ["ZH502", "_(TRA167024)049011.5", "_TRA167024", "ALBIX*"]
-            ]
+            "draw": [["ZH502", "_(TRA167024)049011.5", "_TRA167024", "ALBIX*"]]
         },
         "DEGES1D": {
             "icao": "DEGES1D",
@@ -381,9 +396,7 @@
             "exitPoints": {
                 "DEGES": [["DEGES", "A80+"]]
             },
-            "draw": [
-                ["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]
-            ]
+            "draw": [["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]]
         },
         "DEGES1E": {
             "icao": "DEGES1E",
@@ -395,9 +408,7 @@
             "exitPoints": {
                 "DEGES": [["DEGES", "A80+"]]
             },
-            "draw": [
-                ["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]
-            ]
+            "draw": [["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]]
         },
         "DEGES2H": {
             "icao": "DEGES2H",
@@ -409,23 +420,24 @@
             "exitPoints": {
                 "DEGES": [["DEGES", "A80+"]]
             },
-            "draw": [
-                ["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]
-            ]
+            "draw": [["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]]
         },
         "DEGES2N": {
             "icao": "DEGES2N",
             "name": "Deges Two November",
             "rwy": {
-                "LSZH32": ["^_RWY34KLO02DME", ["^_RWY34KLO04DME", "A35+|S210-"], ["ZH503", "A50+"], "ZH506"]
+                "LSZH32": [
+                    "^_RWY34KLO02DME",
+                    ["^_RWY34KLO04DME", "A35+|S210-"],
+                    ["ZH503", "A50+"],
+                    "ZH506"
+                ]
             },
             "body": ["KOLUL", "ZH504", "ZH525"],
             "exitPoints": {
                 "DEGES": [["DEGES", "A80+"]]
             },
-            "draw": [
-                ["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]
-            ]
+            "draw": [["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]]
         },
         "DEGES2R": {
             "icao": "DEGES2R",
@@ -437,9 +449,7 @@
             "exitPoints": {
                 "DEGES": [["DEGES", "A80+"]]
             },
-            "draw": [
-                ["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]
-            ]
+            "draw": [["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]]
         },
         "DEGES2S": {
             "icao": "DEGES2S",
@@ -451,51 +461,65 @@
             "exitPoints": {
                 "DEGES": [["DEGES", "A80+"]]
             },
-            "draw": [
-                ["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]
-            ]
+            "draw": [["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]]
         },
         "DEGES2W": {
             "icao": "DEGES2W",
             "name": "Deges Two Whiskey",
             "rwy": {
-                "LSZH28": [["^_RWY28KLO03DME", "S210-"], ["_KLO253005", "S210-"], ["^ZH552", "S210-"], "_KLO232005", "KLO", ["MOMOL","A80+"]]
+                "LSZH28": [
+                    ["^_RWY28KLO03DME", "S210-"],
+                    ["_KLO253005", "S210-"],
+                    ["^ZH552", "S210-"],
+                    "_KLO232005",
+                    "KLO",
+                    ["MOMOL", "A80+"]
+                ]
             },
             "body": ["KOLUL", "ZH504", "ZH525"],
             "exitPoints": {
                 "DEGES": ["DEGES"]
             },
-            "draw": [
-                ["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]
-            ]
+            "draw": [["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]]
         },
         "DEGES3F": {
             "icao": "DEGES3F",
             "name": "Deges Three Foxtrot",
             "rwy": {
-                "LSZH34": [["^_RWY34KLO04DME", "A35+|S210-"], "_TRA190011", ["^_TRA190012.5", "A45+"], "_KLO269005.5", ["KLO", "A50+"], ["MOMOL", "A80+"]]
+                "LSZH34": [
+                    ["^_RWY34KLO04DME", "A35+|S210-"],
+                    "_TRA190011",
+                    ["^_TRA190012.5", "A45+"],
+                    "_KLO269005.5",
+                    ["KLO", "A50+"],
+                    ["MOMOL", "A80+"]
+                ]
             },
             "body": ["KOLUL", "ZH504", "ZH525"],
             "exitPoints": {
                 "DEGES": ["DEGES"]
             },
-            "draw": [
-                ["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]
-            ]
+            "draw": [["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]]
         },
         "DEGES3L": {
             "icao": "DEGES3L",
             "name": "Deges Three Lima",
             "rwy": {
-                "LSZH32": ["^_RWY34KLO02DME", ["^_RWY34KLO04DME", "A35+|S210-"], "_TRA190011", ["^_TRA190012.5", "A45+"], "_KLO269005.5", ["KLO", "A50+"], ["MOMOL", "A80+"]]
+                "LSZH32": [
+                    "^_RWY34KLO02DME",
+                    ["^_RWY34KLO04DME", "A35+|S210-"],
+                    "_TRA190011",
+                    ["^_TRA190012.5", "A45+"],
+                    "_KLO269005.5",
+                    ["KLO", "A50+"],
+                    ["MOMOL", "A80+"]
+                ]
             },
             "body": ["KOLUL", "ZH504", "ZH525"],
             "exitPoints": {
                 "DEGES": ["DEGES"]
             },
-            "draw": [
-                ["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]
-            ]
+            "draw": [["_KLO085005", "ZH502", "KOLUL", "ZH504", "ZH525", "DEGES*"]]
         },
         "VEBIT1K": {
             "icao": "VEBIT1K",
@@ -503,13 +527,14 @@
             "rwy": {
                 "LSZH34": [["ZH570", "A35+|S210-"], ["ZH573", "S210-"], "ZH559", ["BREGO", "A50+"]]
             },
-            "body": [["ZH554", "A60+"], ["ZH558", "A70+"]],
+            "body": [
+                ["ZH554", "A60+"],
+                ["ZH558", "A70+"]
+            ],
             "exitPoints": {
                 "VEBIT": ["VEBIT"]
             },
-            "draw": [
-                ["BREGO", "ZH554", "ZH558", "VEBIT*"]
-            ]
+            "draw": [["BREGO", "ZH554", "ZH558", "VEBIT*"]]
         },
         "VEBIT2E": {
             "icao": "VEBIT2E",
@@ -517,55 +542,74 @@
             "rwy": {
                 "LSZH10": ["^_RWY10KLO02.1DME", ["^_KLO360001.5", "A40+"], ["BREGO", "A50+"]]
             },
-            "body": [["ZH554", "A60+"], ["ZH558", "A70+"]],
+            "body": [
+                ["ZH554", "A60+"],
+                ["ZH558", "A70+"]
+            ],
             "exitPoints": {
                 "VEBIT": ["VEBIT"]
             },
-            "draw": [
-                ["BREGO", "ZH554", "ZH558", "VEBIT*"]
-            ]
+            "draw": [["BREGO", "ZH554", "ZH558", "VEBIT*"]]
         },
         "VEBIT2H": {
             "icao": "VEBIT2H",
             "name": "Vebit Two Hotel",
             "rwy": {
-                "LSZH34": ["^_RWY34KLO02DME", ["^_RWY34KLO04DME", "A35+"], "_TRA190011", ["BREGO", "A50+"]]
+                "LSZH34": [
+                    "^_RWY34KLO02DME",
+                    ["^_RWY34KLO04DME", "A35+"],
+                    "_TRA190011",
+                    ["BREGO", "A50+"]
+                ]
             },
-            "body": [["ZH554", "A60+"], ["ZH558", "A70+"]],
+            "body": [
+                ["ZH554", "A60+"],
+                ["ZH558", "A70+"]
+            ],
             "exitPoints": {
                 "VEBIT": ["VEBIT"]
             },
-            "draw": [
-                ["BREGO", "ZH554", "ZH558", "VEBIT*"]
-            ]
+            "draw": [["BREGO", "ZH554", "ZH558", "VEBIT*"]]
         },
         "VEBIT2N": {
             "icao": "VEBIT2N",
             "name": "Vebit Two November",
             "rwy": {
-                "LSZH32": ["^_RWY34KLO02DME", ["^_RWY34KLO04DME", "A35+"], "_TRA190011", ["BREGO", "A50+"]]
+                "LSZH32": [
+                    "^_RWY34KLO02DME",
+                    ["^_RWY34KLO04DME", "A35+"],
+                    "_TRA190011",
+                    ["BREGO", "A50+"]
+                ]
             },
-            "body": [["ZH554", "A60+"], ["ZH558", "A70+"]],
+            "body": [
+                ["ZH554", "A60+"],
+                ["ZH558", "A70+"]
+            ],
             "exitPoints": {
                 "VEBIT": ["VEBIT"]
             },
-            "draw": [
-                ["BREGO", "ZH554", "ZH558", "VEBIT*"]
-            ]
+            "draw": [["BREGO", "ZH554", "ZH558", "VEBIT*"]]
         },
         "VEBIT3S": {
             "icao": "VEBIT3S",
             "name": "Vebit Three Sierra",
             "rwy": {
-                "LSZH16": [["^_RWY16KLO01DME", "S210-"], ["^_KLO360001.5", "S210-|A40+"], "_WIL053027", ["^BREGO", "A50+"]]
+                "LSZH16": [
+                    ["^_RWY16KLO01DME", "S210-"],
+                    ["^_KLO360001.5", "S210-|A40+"],
+                    "_WIL053027",
+                    ["^BREGO", "A50+"]
+                ]
             },
-            "body": [["ZH554", "A60+"], ["ZH558", "A70+"]],
+            "body": [
+                ["ZH554", "A60+"],
+                ["ZH558", "A70+"]
+            ],
             "exitPoints": {
                 "VEBIT": ["VEBIT"]
             },
-            "draw": [
-                ["BREGO", "ZH554", "ZH558", "VEBIT*"]
-            ]
+            "draw": [["BREGO", "ZH554", "ZH558", "VEBIT*"]]
         },
         "VEBIT3W": {
             "icao": "VEBIT3W",
@@ -573,69 +617,93 @@
             "rwy": {
                 "LSZH28": ["^_RWY28KLO03DME", "_BREGO053004", ["^BREGO", "A50+"]]
             },
-            "body": [["ZH554", "A60+"], ["ZH558", "A70+"]],
+            "body": [
+                ["ZH554", "A60+"],
+                ["ZH558", "A70+"]
+            ],
             "exitPoints": {
                 "VEBIT": ["VEBIT"]
             },
-            "draw": [
-                ["BREGO", "ZH554", "ZH558", "VEBIT*"]
-            ]
+            "draw": [["BREGO", "ZH554", "ZH558", "VEBIT*"]]
         },
         "WIL2D": {
             "icao": "WIL2D",
             "name": "Willisau Two Delta",
             "rwy": {
-                "LSZH10": [["^_RWY10KLO02.1DME", "S210-"], ["^_KLO360001.5", "A40+|S210-"], ["BREGO", "A50+"]]
+                "LSZH10": [
+                    ["^_RWY10KLO02.1DME", "S210-"],
+                    ["^_KLO360001.5", "A40+|S210-"],
+                    ["BREGO", "A50+"]
+                ]
             },
-            "body": [["ZH555", "A60+"], ["ZH551", "A70+"]],
+            "body": [
+                ["ZH555", "A60+"],
+                ["ZH551", "A70+"]
+            ],
             "exitPoints": {
                 "WIL": [["WIL", "A70+"]]
             },
-            "draw": [
-                ["BREGO", "ZH555", "ZH551", "WIL*"]
-            ]
+            "draw": [["BREGO", "ZH555", "ZH551", "WIL*"]]
         },
         "WIL2G": {
             "icao": "WIL2G",
             "name": "Willisau Two Golf",
             "rwy": {
-                "LSZH34": ["^_RWY34KLO02DME", ["^_RWY34KLO04DME", "A35+"], "_TRA190011", ["BREGO", "A50+"]]
+                "LSZH34": [
+                    "^_RWY34KLO02DME",
+                    ["^_RWY34KLO04DME", "A35+"],
+                    "_TRA190011",
+                    ["BREGO", "A50+"]
+                ]
             },
-            "body": [["ZH555", "A60+"], ["ZH551", "A70+"]],
+            "body": [
+                ["ZH555", "A60+"],
+                ["ZH551", "A70+"]
+            ],
             "exitPoints": {
                 "WIL": [["WIL", "A70+"]]
             },
-            "draw": [
-                ["BREGO", "ZH555", "ZH551", "WIL*"]
-            ]
+            "draw": [["BREGO", "ZH555", "ZH551", "WIL*"]]
         },
         "WIL2M": {
             "icao": "WIL2M",
             "name": "Willisau Two Mike",
             "rwy": {
-                "LSZH32": ["^_RWY34KLO02DME", ["^_RWY34KLO04DME", "A35+"], "_TRA190011", ["BREGO", "A50+"]]
+                "LSZH32": [
+                    "^_RWY34KLO02DME",
+                    ["^_RWY34KLO04DME", "A35+"],
+                    "_TRA190011",
+                    ["BREGO", "A50+"]
+                ]
             },
-            "body": [["ZH555", "A60+"], ["ZH551", "A70+"]],
+            "body": [
+                ["ZH555", "A60+"],
+                ["ZH551", "A70+"]
+            ],
             "exitPoints": {
                 "WIL": [["WIL", "A70+"]]
             },
-            "draw": [
-                ["BREGO", "ZH555", "ZH551", "WIL*"]
-            ]
+            "draw": [["BREGO", "ZH555", "ZH551", "WIL*"]]
         },
         "WIL3R": {
             "icao": "WIL3R",
             "name": "Willisau Three Romeo",
             "rwy": {
-                "LSZH16": [["^_RWY16KLO01DME", "S210-"], ["^_KLO360001.5", "S210-|A40+"], "_WIL053027", ["BREGO", "A50+"]]
+                "LSZH16": [
+                    ["^_RWY16KLO01DME", "S210-"],
+                    ["^_KLO360001.5", "S210-|A40+"],
+                    "_WIL053027",
+                    ["BREGO", "A50+"]
+                ]
             },
-            "body": [["ZH555", "A60+"], ["ZH551", "A70+"]],
+            "body": [
+                ["ZH555", "A60+"],
+                ["ZH551", "A70+"]
+            ],
             "exitPoints": {
                 "WIL": [["WIL", "A70+"]]
             },
-            "draw": [
-                ["BREGO", "ZH555", "ZH551", "WIL*"]
-            ]
+            "draw": [["BREGO", "ZH555", "ZH551", "WIL*"]]
         },
         "WIL3V": {
             "icao": "WIL3V",
@@ -643,83 +711,100 @@
             "rwy": {
                 "LSZH28": ["^_RWY28KLO03DME", "_BREGO053004", ["BREGO", "A50+"]]
             },
-            "body": [["ZH555", "A60+"], ["ZH551", "A70+"]],
+            "body": [
+                ["ZH555", "A60+"],
+                ["ZH551", "A70+"]
+            ],
             "exitPoints": {
                 "WIL": [["WIL", "A70+"]]
             },
-            "draw": [
-                ["BREGO", "ZH555", "ZH551", "WIL*"]
-            ]
+            "draw": [["BREGO", "ZH555", "ZH551", "WIL*"]]
         },
         "ZUE1D": {
             "icao": "ZUE1D",
             "name": "Zurich East One Delta",
             "rwy": {
-                "LSZH10": [["^_RWY10KLO02.1DME", "S210-"], ["_ZUE232007", "S210-"]]
+                "LSZH10": [
+                    ["^_RWY10KLO02.1DME", "S210-"],
+                    ["_ZUE232007", "S210-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "ZUE": [["^ZUE", "A60+"]]
             },
-            "draw": [
-                ["_ZUE232007", "ZUE*"]
-            ]
+            "draw": [["_ZUE232007", "ZUE*"]]
         },
         "ZUE2R": {
             "icao": "ZUE2R",
             "name": "Zurich East Two Romeo",
             "rwy": {
-                "LSZH16": [["^_RWY16KLO01DME", "S210-"], ["_ZUE232007", "S210-"]]
+                "LSZH16": [
+                    ["^_RWY16KLO01DME", "S210-"],
+                    ["_ZUE232007", "S210-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "ZUE": [["^ZUE", "A60+"]]
             },
-            "draw": [
-                ["_ZUE232007", "ZUE*"]
-            ]
+            "draw": [["_ZUE232007", "ZUE*"]]
         },
         "ZUE2V": {
             "icao": "ZUE2V",
             "name": "Zurich East Two Victor",
             "rwy": {
-                "LSZH28": [["^_RWY28KLO03DME", "S210-"], ["_KLO253005", "S210-"], ["^ZH552", "S210-"], "_KLO232005", "KLO"]
+                "LSZH28": [
+                    ["^_RWY28KLO03DME", "S210-"],
+                    ["_KLO253005", "S210-"],
+                    ["^ZH552", "S210-"],
+                    "_KLO232005",
+                    "KLO"
+                ]
             },
             "body": [],
             "exitPoints": {
                 "ZUE": [["^ZUE", "A60+"]]
             },
-            "draw": [
-                ["_ZUE232007", "ZUE*"]
-            ]
+            "draw": [["_ZUE232007", "ZUE*"]]
         },
         "ZUE3F": {
             "icao": "ZUE3F",
             "name": "Zurich East Three Foxtrot",
             "rwy": {
-                "LSZH34": ["^_RWY34KLO02DME", ["^_RWY34KLO04DME", "A35+|S210-"], "_TRA190011", ["^_TRA190012.5", "A45+"], "_KLO269005.5", ["KLO", "A50+"]]
+                "LSZH34": [
+                    "^_RWY34KLO02DME",
+                    ["^_RWY34KLO04DME", "A35+|S210-"],
+                    "_TRA190011",
+                    ["^_TRA190012.5", "A45+"],
+                    "_KLO269005.5",
+                    ["KLO", "A50+"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "ZUE": [["^ZUE", "A60+"]]
             },
-            "draw": [
-                ["_ZUE232007", "ZUE*"]
-            ]
+            "draw": [["_ZUE232007", "ZUE*"]]
         },
         "ZUE3L": {
             "icao": "ZUE3L",
             "name": "Zurich East Three Lima",
             "rwy": {
-                "LSZH32": ["^_RWY34KLO02DME", ["^_RWY34KLO04DME", "A35+|S210-"], "_TRA190011", ["^_TRA190012.5", "A45+"], "_KLO269005.5", ["KLO", "A50+"]]
+                "LSZH32": [
+                    "^_RWY34KLO02DME",
+                    ["^_RWY34KLO04DME", "A35+|S210-"],
+                    "_TRA190011",
+                    ["^_TRA190012.5", "A45+"],
+                    "_KLO269005.5",
+                    ["KLO", "A50+"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "ZUE": [["^ZUE", "A60+"]]
             },
-            "draw": [
-                ["_ZUE232007", "ZUE*"]
-            ]
+            "draw": [["_ZUE232007", "ZUE*"]]
         }
     },
     "stars": {
@@ -734,13 +819,33 @@
                 "LSZH10": [],
                 "LSZH14": [],
                 "LSZH16": [],
-                "LSZH28": ["ZH203", "ZH204", "ZH205", "ZH206", "ZH207", "ZH208", "ZH209", "ZH210", ["ZH280", "A70+"], "ZH281", ["RAMEM", "A50+"]],
+                "LSZH28": [
+                    "ZH203",
+                    "ZH204",
+                    "ZH205",
+                    "ZH206",
+                    "ZH207",
+                    "ZH208",
+                    "ZH209",
+                    "ZH210",
+                    ["ZH280", "A70+"],
+                    "ZH281",
+                    ["RAMEM", "A50+"]
+                ],
                 "LSZH32": [],
-                "LSZH34": [["ZH305", "A70+"], "ZH306", "ZH307", "ZH308", "ZH309", "ZH310", ["ZH340", "S200-"], ["UTIXO", "A60+"], ["MILNI", "A50+"]]
+                "LSZH34": [
+                    ["ZH305", "A70+"],
+                    "ZH306",
+                    "ZH307",
+                    "ZH308",
+                    "ZH309",
+                    "ZH310",
+                    ["ZH340", "S200-"],
+                    ["UTIXO", "A60+"],
+                    ["MILNI", "A50+"]
+                ]
             },
-            "draw": [
-                ["BERSU", "TADOB", "ERMUS", "GIPOL"]
-            ]
+            "draw": [["BERSU", "TADOB", "ERMUS", "GIPOL"]]
         },
         "BLM2G": {
             "icao": "BLM2G",
@@ -748,18 +853,41 @@
             "entryPoints": {
                 "BLM": [["BLM", "A200-"]]
             },
-            "body": [["ZH677", "A120+|A130-"], ["@GIPOL", "A70+"]],
+            "body": [
+                ["ZH677", "A120+|A130-"],
+                ["@GIPOL", "A70+"]
+            ],
             "rwy": {
                 "LSZH10": [],
                 "LSZH14": [],
                 "LSZH16": [],
-                "LSZH28": ["ZH203", "ZH204", "ZH205", "ZH206", "ZH207", "ZH208", "ZH209", "ZH210", ["ZH280", "A70+"], "ZH281", ["RAMEM", "A50+"]],
+                "LSZH28": [
+                    "ZH203",
+                    "ZH204",
+                    "ZH205",
+                    "ZH206",
+                    "ZH207",
+                    "ZH208",
+                    "ZH209",
+                    "ZH210",
+                    ["ZH280", "A70+"],
+                    "ZH281",
+                    ["RAMEM", "A50+"]
+                ],
                 "LSZH32": [],
-                "LSZH34": [["ZH305", "A70+"], "ZH306", "ZH307", "ZH308", "ZH309", "ZH310", ["ZH340", "S200-"], ["UTIXO", "A60+"], ["MILNI", "A50+"]]
+                "LSZH34": [
+                    ["ZH305", "A70+"],
+                    "ZH306",
+                    "ZH307",
+                    "ZH308",
+                    "ZH309",
+                    "ZH310",
+                    ["ZH340", "S200-"],
+                    ["UTIXO", "A60+"],
+                    ["MILNI", "A50+"]
+                ]
             },
-            "draw": [
-                ["BLM", "ZH677", "GIPOL"]
-            ]
+            "draw": [["BLM", "ZH677", "GIPOL"]]
         },
         "DOPIL1G": {
             "icao": "DOPIL1G",
@@ -772,13 +900,33 @@
                 "LSZH10": [],
                 "LSZH14": [],
                 "LSZH16": [],
-                "LSZH28": ["ZH203", "ZH204", "ZH205", "ZH206", "ZH207", "ZH208", "ZH209", "ZH210", ["ZH280", "A70+"], "ZH281", ["RAMEM", "A50+"]],
+                "LSZH28": [
+                    "ZH203",
+                    "ZH204",
+                    "ZH205",
+                    "ZH206",
+                    "ZH207",
+                    "ZH208",
+                    "ZH209",
+                    "ZH210",
+                    ["ZH280", "A70+"],
+                    "ZH281",
+                    ["RAMEM", "A50+"]
+                ],
                 "LSZH32": [],
-                "LSZH34": [["ZH305", "A70+"], "ZH306", "ZH307", "ZH308", "ZH309", "ZH310", ["ZH340", "S200-"], ["UTIXO", "A60+"], ["MILNI", "A50+"]]
+                "LSZH34": [
+                    ["ZH305", "A70+"],
+                    "ZH306",
+                    "ZH307",
+                    "ZH308",
+                    "ZH309",
+                    "ZH310",
+                    ["ZH340", "S200-"],
+                    ["UTIXO", "A60+"],
+                    ["MILNI", "A50+"]
+                ]
             },
-            "draw": [
-                ["DOPIL", "NOLKA", "ERMUS", "GIPOL"]
-            ]
+            "draw": [["DOPIL", "NOLKA", "ERMUS", "GIPOL"]]
         },
         "HOC1G": {
             "icao": "HOC1G",
@@ -791,13 +939,33 @@
                 "LSZH10": [],
                 "LSZH14": [],
                 "LSZH16": [],
-                "LSZH28": ["ZH203", "ZH204", "ZH205", "ZH206", "ZH207", "ZH208", "ZH209", "ZH210", ["ZH280", "A70+"], "ZH281", ["RAMEM", "A50+"]],
+                "LSZH28": [
+                    "ZH203",
+                    "ZH204",
+                    "ZH205",
+                    "ZH206",
+                    "ZH207",
+                    "ZH208",
+                    "ZH209",
+                    "ZH210",
+                    ["ZH280", "A70+"],
+                    "ZH281",
+                    ["RAMEM", "A50+"]
+                ],
                 "LSZH32": [],
-                "LSZH34": [["ZH305", "A70+"], "ZH306", "ZH307", "ZH308", "ZH309", "ZH310", ["ZH340", "S200-"], ["UTIXO", "A60+"], ["MILNI", "A50+"]]
+                "LSZH34": [
+                    ["ZH305", "A70+"],
+                    "ZH306",
+                    "ZH307",
+                    "ZH308",
+                    "ZH309",
+                    "ZH310",
+                    ["ZH340", "S200-"],
+                    ["UTIXO", "A60+"],
+                    ["MILNI", "A50+"]
+                ]
             },
-            "draw": [
-                ["HOC", "GIPOL"]
-            ]
+            "draw": [["HOC", "GIPOL"]]
         },
         "KELIP2G": {
             "icao": "KELIP2G",
@@ -810,13 +978,33 @@
                 "LSZH10": [],
                 "LSZH14": [],
                 "LSZH16": [],
-                "LSZH28": ["ZH203", "ZH204", "ZH205", "ZH206", "ZH207", "ZH208", "ZH209", "ZH210", ["ZH280", "A70+"], "ZH281", ["RAMEM", "A50+"]],
+                "LSZH28": [
+                    "ZH203",
+                    "ZH204",
+                    "ZH205",
+                    "ZH206",
+                    "ZH207",
+                    "ZH208",
+                    "ZH209",
+                    "ZH210",
+                    ["ZH280", "A70+"],
+                    "ZH281",
+                    ["RAMEM", "A50+"]
+                ],
                 "LSZH32": [],
-                "LSZH34": [["ZH305", "A70+"], "ZH306", "ZH307", "ZH308", "ZH309", "ZH310", ["ZH340", "S200-"], ["UTIXO", "A60+"], ["MILNI", "A50+"]]
+                "LSZH34": [
+                    ["ZH305", "A70+"],
+                    "ZH306",
+                    "ZH307",
+                    "ZH308",
+                    "ZH309",
+                    "ZH310",
+                    ["ZH340", "S200-"],
+                    ["UTIXO", "A60+"],
+                    ["MILNI", "A50+"]
+                ]
             },
-            "draw": [
-                ["KELIP", "MOSIT", "ZH628", "ZH627", "KLO", "GIPOL"]
-            ]
+            "draw": [["KELIP", "MOSIT", "ZH628", "ZH627", "KLO", "GIPOL"]]
         },
         "NEGRA1A": {
             "icao": "NEGRA1A",
@@ -830,13 +1018,32 @@
                 "LSZH10": [],
                 "LSZH14": [],
                 "LSZH16": [],
-                "LSZH28": ["SONGI", "ZH266", "EKRIT", "ZH268", "ZH269", "ZH270", ["ZH280", "A70+"], "ZH281", ["RAMEM", "A50+"]],
+                "LSZH28": [
+                    "SONGI",
+                    "ZH266",
+                    "EKRIT",
+                    "ZH268",
+                    "ZH269",
+                    "ZH270",
+                    ["ZH280", "A70+"],
+                    "ZH281",
+                    ["RAMEM", "A50+"]
+                ],
                 "LSZH32": [],
-                "LSZH34": ["SONGI", ["ZH365", "A80+"], ["ZH366", "A70+"], "ZH367", "ZH368", "ZH369", "ZH370", ["ZH340", "S200-"], ["UTIXO", "A60+"], ["MILNI", "A50+"]]
+                "LSZH34": [
+                    "SONGI",
+                    ["ZH365", "A80+"],
+                    ["ZH366", "A70+"],
+                    "ZH367",
+                    "ZH368",
+                    "ZH369",
+                    "ZH370",
+                    ["ZH340", "S200-"],
+                    ["UTIXO", "A60+"],
+                    ["MILNI", "A50+"]
+                ]
             },
-            "draw": [
-                ["RAVED", "ETOXU", "NEGRA", "MATIV", "AMIKI"]
-            ]
+            "draw": [["RAVED", "ETOXU", "NEGRA", "MATIV", "AMIKI"]]
         },
         "RILAX1A": {
             "icao": "RILAX1A",
@@ -849,13 +1056,34 @@
                 "LSZH10": ["LAMAX", ["@AMIKI", "A70+"]],
                 "LSZH14": ["LAMAX", ["@AMIKI", "A70+"]],
                 "LSZH16": ["LAMAX", ["@AMIKI", "A70+"]],
-                "LSZH28": [["ZH264", "A100+"], ["ZH265", "A80+"], "ZH266", "EKRIT", "ZH268", "ZH269", "ZH270", ["ZH280", "A70+"], "ZH281", ["RAMEM", "A50+"]],
+                "LSZH28": [
+                    ["ZH264", "A100+"],
+                    ["ZH265", "A80+"],
+                    "ZH266",
+                    "EKRIT",
+                    "ZH268",
+                    "ZH269",
+                    "ZH270",
+                    ["ZH280", "A70+"],
+                    "ZH281",
+                    ["RAMEM", "A50+"]
+                ],
                 "LSZH32": ["LAMAX", ["@AMIKI", "A70+"]],
-                "LSZH34": [["ZH363", "A100+"], "ZH364", ["ZH365", "A80+"], ["ZH366", "A70+"], "ZH367", "ZH368", "ZH369", "ZH370", ["ZH340", "S200-"], ["UTIXO", "A60+"], ["MILNI", "A50+"]]
+                "LSZH34": [
+                    ["ZH363", "A100+"],
+                    "ZH364",
+                    ["ZH365", "A80+"],
+                    ["ZH366", "A70+"],
+                    "ZH367",
+                    "ZH368",
+                    "ZH369",
+                    "ZH370",
+                    ["ZH340", "S200-"],
+                    ["UTIXO", "A60+"],
+                    ["MILNI", "A50+"]
+                ]
             },
-            "draw": [
-                ["RILAX", "LAMAX", "AMIKI"]
-            ]
+            "draw": [["RILAX", "LAMAX", "AMIKI"]]
         },
         "TRA1Z": {
             "icao": "TRA1Z",
@@ -868,13 +1096,32 @@
                 "LSZH10": [],
                 "LSZH14": [],
                 "LSZH16": [],
-                "LSZH28": ["SONGI", "ZH266", "EKRIT", "ZH268", "ZH269", "ZH270", ["ZH280", "A70+"], "ZH281", ["RAMEM", "A50+"]],
+                "LSZH28": [
+                    "SONGI",
+                    "ZH266",
+                    "EKRIT",
+                    "ZH268",
+                    "ZH269",
+                    "ZH270",
+                    ["ZH280", "A70+"],
+                    "ZH281",
+                    ["RAMEM", "A50+"]
+                ],
                 "LSZH32": [],
-                "LSZH34": ["SONGI", ["ZH365", "A80+"], ["ZH366", "A70+"], "ZH367", "ZH368", "ZH369", "ZH370", ["ZH340", "S200-"], ["UTIXO", "A60+"], ["MILNI", "A50+"]]
+                "LSZH34": [
+                    "SONGI",
+                    ["ZH365", "A80+"],
+                    ["ZH366", "A70+"],
+                    "ZH367",
+                    "ZH368",
+                    "ZH369",
+                    "ZH370",
+                    ["ZH340", "S200-"],
+                    ["UTIXO", "A60+"],
+                    ["MILNI", "A50+"]
+                ]
             },
-            "draw": [
-                ["TRA", "AMIKI"]
-            ]
+            "draw": [["TRA", "AMIKI"]]
         },
         "URNAS2Z": {
             "icao": "URNAS2Z",
@@ -887,13 +1134,33 @@
                 "LSZH10": [],
                 "LSZH14": [],
                 "LSZH16": [],
-                "LSZH28": ["ZH203", "ZH204", "ZH205", "ZH206", "ZH207", "ZH208", "ZH209", "ZH210", ["ZH280", "A70+"], "ZH281", ["RAMEM", "A50+"]],
+                "LSZH28": [
+                    "ZH203",
+                    "ZH204",
+                    "ZH205",
+                    "ZH206",
+                    "ZH207",
+                    "ZH208",
+                    "ZH209",
+                    "ZH210",
+                    ["ZH280", "A70+"],
+                    "ZH281",
+                    ["RAMEM", "A50+"]
+                ],
                 "LSZH32": [],
-                "LSZH34": [["ZH305", "A70+"], "ZH306", "ZH307", "ZH308", "ZH309", "ZH310", ["ZH340", "S200-"], ["UTIXO", "A60+"], ["MILNI", "A50+"]]
+                "LSZH34": [
+                    ["ZH305", "A70+"],
+                    "ZH306",
+                    "ZH307",
+                    "ZH308",
+                    "ZH309",
+                    "ZH310",
+                    ["ZH340", "S200-"],
+                    ["UTIXO", "A60+"],
+                    ["MILNI", "A50+"]
+                ]
             },
-            "draw": [
-                ["URNAS", "ALBIX", "ZH650", "ZH676", "GIPOL"]
-            ]
+            "draw": [["URNAS", "ALBIX", "ZH650", "ZH676", "GIPOL"]]
         },
         "WIL2Z": {
             "icao": "WIL2Z",
@@ -906,13 +1173,33 @@
                 "LSZH10": [],
                 "LSZH14": [],
                 "LSZH16": [],
-                "LSZH28": ["ZH203", "ZH204", "ZH205", "ZH206", "ZH207", "ZH208", "ZH209", "ZH210", ["ZH280", "A70+"], "ZH281", ["RAMEM", "A50+"]],
+                "LSZH28": [
+                    "ZH203",
+                    "ZH204",
+                    "ZH205",
+                    "ZH206",
+                    "ZH207",
+                    "ZH208",
+                    "ZH209",
+                    "ZH210",
+                    ["ZH280", "A70+"],
+                    "ZH281",
+                    ["RAMEM", "A50+"]
+                ],
                 "LSZH32": [],
-                "LSZH34": [["ZH305", "A70+"], "ZH306", "ZH307", "ZH308", "ZH309", "ZH310", ["ZH340", "S200-"], ["UTIXO", "A60+"], ["MILNI", "A50+"]]
+                "LSZH34": [
+                    ["ZH305", "A70+"],
+                    "ZH306",
+                    "ZH307",
+                    "ZH308",
+                    "ZH309",
+                    "ZH310",
+                    ["ZH340", "S200-"],
+                    ["UTIXO", "A60+"],
+                    ["MILNI", "A50+"]
+                ]
             },
-            "draw": [
-                ["WIL", "GIPOL"]
-            ]
+            "draw": [["WIL", "GIPOL"]]
         }
     },
     "spawnPatterns": [
@@ -1104,7 +1391,7 @@
                 ["tra", 4]
             ]
         },
-                {
+        {
             "origin": "LSZH",
             "destination": "",
             "category": "departure",
@@ -1192,9 +1479,7 @@
             "speed": "",
             "method": "random",
             "rate": 0.36,
-            "airlines": [
-                ["swr/long", 15]
-            ]
+            "airlines": [["swr/long", 15]]
         },
         {
             "origin": "LSZH",
@@ -1204,7 +1489,7 @@
             "altitude": "",
             "speed": "",
             "method": "random",
-            "rate": 1.00,
+            "rate": 1.0,
             "airlines": [
                 ["aza", 15],
                 ["edw/short", 25],
@@ -1243,7 +1528,6 @@
                 ["swr/short", 52],
                 ["tra", 5],
                 ["ual/long", 10]
-
             ]
         },
         {
@@ -1415,9 +1699,7 @@
             "speed": 290,
             "method": "random",
             "rate": 0.23,
-            "airlines": [
-                ["swr/short", 1]
-            ]
+            "airlines": [["swr/short", 1]]
         }
     ],
     "maps": [

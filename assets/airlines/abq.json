@@ -3,17 +3,13 @@
     "name": "AirBlue",
     "callsign": {
         "name": "Air Blue",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
             ["A320", 3],
             ["A321", 5]
         ],
-        "a320": [
-            ["A320", 3]
-        ]
+        "a320": [["A320", 3]]
     }
 }

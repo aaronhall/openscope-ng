@@ -3,9 +3,7 @@
     "name": "General Aviation Sweden",
     "callsign": {
         "name": "Sierra Echo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

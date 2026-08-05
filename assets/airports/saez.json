@@ -158,15 +158,15 @@
         "BIVAM": ["S33d58.27", "W58d56.73"],
         "BIXIM": ["S37d20.83", "W63d00.97"],
         "BODIR": ["S35d09.22", "W60d20.92"],
-        "CRR"  : ["S34d49.96", "W56d01.51"],
+        "CRR": ["S34d49.96", "W56d01.51"],
         "DAGUS": ["S35d02.28", "W56d07.42"],
         "DALAB": ["S32d20.00", "W58d40.25"],
-        "DIL"  : ["S37d13.50", "W59d13.77"],
+        "DIL": ["S37d13.50", "W59d13.77"],
         "DORVO": ["S34d42.97", "W57d31.03"],
-        "DUR"  : ["S33d21.38", "W56d29.76"],
+        "DUR": ["S33d21.38", "W56d29.76"],
         "EGANI": ["S36d30.97", "W60d13.53"],
         "EKEMO": ["S36d16.87", "W57d23.97"],
-        "ENO"  : ["S34d33.77", "W58d47.43"],
+        "ENO": ["S34d33.77", "W58d47.43"],
         "ENSAS": ["S31d54.67", "W57d08.82"],
         "ESKON": ["S33d14.00", "W60d20.00"],
         "ESLAN": ["S34d58.92", "W57d05.08"],
@@ -175,7 +175,7 @@
         "EZ177": ["S34.7287468854564", "W58.5727844222190"],
         "EZ179": ["S34.7533478069590", "W58.6969299300332"],
         "EZ684": ["S34.8004978872951", "W58.5365295394059"],
-        "EZE"  : ["S34d49.44", "W58d32.12"],
+        "EZE": ["S34d49.44", "W58d32.12"],
         "EZE10": ["S34.7750086058400", "W58.5450439437029"],
         "EZE11": ["S34.8117738161782", "W58.5950317366724"],
         "EZE12": ["S34.8575382377687", "W58.4651184065924"],
@@ -187,14 +187,14 @@
         "EZE26": ["S34.1711356084760", "W58.9916381819905"],
         "EZE50": ["S34.9348065009574", "W58.9924621565998"],
         "EZE66": ["S35.4282250386439", "W58.4549560530767"],
-        "FDO"  : ["S34d27.09", "W58d35.04"],
+        "FDO": ["S34d27.09", "W58d35.04"],
         "GATOS": ["S35d39.98", "W56d35.03"],
-        "GBE"  : ["S35d45.05", "W58d27.88"],
+        "GBE": ["S35d45.05", "W58d27.88"],
         "GEBEM": ["S35d12.02", "W59d09.53"],
-        "GES"  : ["S37d14.08", "W57d01.43"],
+        "GES": ["S37d14.08", "W57d01.43"],
         "GESTA": ["S35d04.87", "W58d26.73"],
-        "GPI"  : ["S35d41.57", "W63d45.05"],
-        "GUA"  : ["S33d00.58", "W58d36.85"],
+        "GPI": ["S35d41.57", "W63d45.05"],
+        "GUA": ["S33d00.58", "W58d36.85"],
         "IMBOD": ["S34d47.01", "W58d45.03"],
         "IRASU": ["S35d23.23", "W61d44.62"],
         "KALIM": ["S36d18.17", "W58d44.80"],
@@ -202,38 +202,38 @@
         "KOVUK": ["S35d11.97", "W57d31.23"],
         "KUKEN": ["S34d10.97", "W58d13.03"],
         "LANDA": ["S33d54.48", "W58d34.52"],
-        "LDS"  : ["S34d51.50", "W55d05.50"],
+        "LDS": ["S34d51.50", "W55d05.50"],
         "LOGAM": ["S34d57.95", "W62d18.18"],
         "LOMID": ["S33d53.13", "W56d19.75"],
         "LUCIO": ["S35d03.30", "W55d52.30"],
-        "LYE"  : ["S34d08.48", "W63d21.65"],
-        "MDP"  : ["S37d55.79", "W57d34.59"],
+        "LYE": ["S34d08.48", "W63d21.65"],
+        "MDP": ["S37d55.79", "W57d34.59"],
         "MOSGI": ["S34d59.70", "W58d28.14"],
         "MUDNO": ["S36d45.48", "W57d12.77"],
         "MULTA": ["S33d50.40", "W60d07.78"],
         "NEVLO": ["S34d58.02", "W58d20.18"],
-        "NIN"  : ["S34d32.47", "W60d56.03"],
+        "NIN": ["S34d32.47", "W60d56.03"],
         "NUXIM": ["S34d26.77", "W61d32.57"],
         "OPLOM": ["S34d50.60", "W58d25.09"],
         "PABAS": ["S34d59.30", "W61d34.88"],
         "PABOT": ["S34d15.60", "W56d51.57"],
         "PADAS": ["S32d19.03", "W58d21.75"],
         "PAGON": ["S33d55.27", "W58d43.23"],
-        "PAL"  : ["S34d36.70", "W58d36.83"],
+        "PAL": ["S34d36.70", "W58d36.83"],
         "PAPAP": ["S34d51.65", "W58d19.15"],
         "PAPIX": ["S34d24.97", "W58d00.03"],
-        "PAR"  : ["S31d48.50", "W60d29.08"],
-        "PDI"  : ["S35d21.17", "W57d18.43"],
+        "PAR": ["S31d48.50", "W60d29.08"],
+        "PDI": ["S35d21.17", "W57d18.43"],
         "PEDRO": ["S33d42.07", "W59d40.02"],
         "PONPA": ["S33d56.42", "W57d18.98"],
         "POSRA": ["S34d54.89", "W58d29.81"],
-        "PTA"  : ["S34d58.00", "W57d53.87"],
+        "PTA": ["S34d58.00", "W57d53.87"],
         "PULAS": ["S37d58.25", "W61d29.10"],
         "PULPA": ["S36d59.72", "W57d40.85"],
         "PUMIL": ["S32d32.45", "W56d48.33"],
-        "ROS"  : ["S32d54.30", "W60d46.88"],
+        "ROS": ["S32d54.30", "W60d46.88"],
         "SIKAR": ["S36d07.62", "W60d46.10"],
-        "SNT"  : ["S34d13.33", "W59d26.48"],
+        "SNT": ["S34d13.33", "W59d26.48"],
         "SURLI": ["S34.7585378910962", "W58.5510864241718"],
         "TEDAR": ["S35d26.97", "W57d43.03"],
         "TENIL": ["S35d32.47", "W57d50.03"],
@@ -1238,7 +1238,7 @@
             ]
         }
     ],
-    "runways":[
+    "runways": [
         {
             "name": ["11", "29"],
             "end": [
@@ -1263,11 +1263,35 @@
         "B688": ["EZE", "LANDA", "GUA", "PADAS"],
         "M424": ["LOGAM", "PABAS", "ASADA", "EZE"],
         "T654": ["EZE", "GEBEM", "TORUL", "SIKAR", "BIXIM"],
-        "UA306": ["LDS", "LUCIO", "DAGUS", "UGIMI", "PTA", "EZE", "URINO", "NIN", "NUXIM", "ARMUP", "LYE"],
+        "UA306": [
+            "LDS",
+            "LUCIO",
+            "DAGUS",
+            "UGIMI",
+            "PTA",
+            "EZE",
+            "URINO",
+            "NIN",
+            "NUXIM",
+            "ARMUP",
+            "LYE"
+        ],
         "UA570": ["PTA", "GBE", "DIL", "ATITO"],
         "UL211": ["GATOS", "ESLAN", "PTA"],
         "UL324": ["ENSAS", "TOGAL", "KUKEN", "EZE"],
-        "UL405": ["LDS", "LUCIO", "DAGUS", "UGIMI", "PTA", "EZE", "URINO", "NIN", "NUXIM", "ARMUP", "LYE"],
+        "UL405": [
+            "LDS",
+            "LUCIO",
+            "DAGUS",
+            "UGIMI",
+            "PTA",
+            "EZE",
+            "URINO",
+            "NIN",
+            "NUXIM",
+            "ARMUP",
+            "LYE"
+        ],
         "UL793": ["DALAB", "GUA"],
         "UM424": ["LOGAM", "PABAS", "ASADA", "EZE", "DORVO", "TOKAM", "CRR", "LDS"],
         "UM654": ["PUMIL", "TILDA", "KUKEN"],
@@ -1305,10 +1329,26 @@
             "name": "Atovo Two Alpha",
             "altitude": 5000,
             "rwy": {
-                "SAEZ11": ["EZE12", "_EZE126010", "_EZE141010", "_EZE156010", "_EZE171010", "_EZE186010", "_EZE201010"],
+                "SAEZ11": [
+                    "EZE12",
+                    "_EZE126010",
+                    "_EZE141010",
+                    "_EZE156010",
+                    "_EZE171010",
+                    "_EZE186010",
+                    "_EZE201010"
+                ],
                 "SAEZ17": ["_EZE183004", "_EZE183010", "_EZE198010"],
                 "SAEZ29": ["EZE11", "_EZE251010", "_EZE236010", "_EZE221010"],
-                "SAEZ35": ["EZE10", "_EZE291010", "_EZE275010", "_EZE260010", "_EZE251010", "_EZE236010", "_EZE221010"]
+                "SAEZ35": [
+                    "EZE10",
+                    "_EZE291010",
+                    "_EZE275010",
+                    "_EZE260010",
+                    "_EZE251010",
+                    "_EZE236010",
+                    "_EZE221010"
+                ]
             },
             "body": ["_EZE210008", "EZE", "EZE19", "EZE20", "EZE26"],
             "exitPoints": {
@@ -1318,7 +1358,21 @@
                 ["EZE10", "_EZE291010", "_EZE275010", "_EZE260010", "_EZE251010"],
                 ["EZE11", "_EZE251010", "_EZE236010", "_EZE221010", "_EZE210008"],
                 ["_EZE183004", "_EZE183010", "_EZE210008"],
-                ["EZE12", "_EZE126010", "_EZE141010", "_EZE156010", "_EZE171010", "_EZE186010", "_EZE201010", "_EZE210008", "EZE", "EZE19", "EZE20", "EZE26", "ATOVO"]
+                [
+                    "EZE12",
+                    "_EZE126010",
+                    "_EZE141010",
+                    "_EZE156010",
+                    "_EZE171010",
+                    "_EZE186010",
+                    "_EZE201010",
+                    "_EZE210008",
+                    "EZE",
+                    "EZE19",
+                    "EZE20",
+                    "EZE26",
+                    "ATOVO"
+                ]
             ]
         },
         "BIVAM2A": {
@@ -1326,18 +1380,32 @@
             "name": "Bivam Two Alpha",
             "altitude": 5000,
             "rwy": {
-                "SAEZ11": ["EZE12", "_EZE126010", "_EZE141010", "_EZE156010", "_EZE171010", "_EZE186010", "_EZE201010"],
+                "SAEZ11": [
+                    "EZE12",
+                    "_EZE126010",
+                    "_EZE141010",
+                    "_EZE156010",
+                    "_EZE171010",
+                    "_EZE186010",
+                    "_EZE201010"
+                ],
                 "SAEZ17": ["_EZE183004", "_EZE183010", "_EZE198010"],
                 "SAEZ29": ["EZE11", "_EZE251010", "_EZE236010", "_EZE221010"],
-                "SAEZ35": ["EZE10", "_EZE291010", "_EZE275010", "_EZE260010", "_EZE251010", "_EZE236010", "_EZE221010"]
+                "SAEZ35": [
+                    "EZE10",
+                    "_EZE291010",
+                    "_EZE275010",
+                    "_EZE260010",
+                    "_EZE251010",
+                    "_EZE236010",
+                    "_EZE221010"
+                ]
             },
             "body": ["_EZE210008", "EZE", "EZE19", "EZE20"],
             "exitPoints": {
                 "BIVAM": ["BIVAM"]
             },
-            "draw": [
-                ["EZE20", "BIVAM"]
-            ]
+            "draw": [["EZE20", "BIVAM"]]
         },
         "GBE6": {
             "icao": "GBE6",
@@ -1346,34 +1414,63 @@
             "rwy": {
                 "SAEZ11": ["EZE12", "_EZE126010", "_EZE141010", "_EZE156010", "_EZE171010"],
                 "SAEZ17": ["_EZE183004"],
-                "SAEZ29": ["EZE11", "_EZE251010", "_EZE236010", "_EZE221010", "_EZE207010", "_EZE192010"],
-                "SAEZ35": ["EZE10", "_EZE291010", "_EZE275010", "_EZE260010", "_EZE251010", "_EZE236010", "_EZE221010", "_EZE207010", "_EZE192010"]
+                "SAEZ29": [
+                    "EZE11",
+                    "_EZE251010",
+                    "_EZE236010",
+                    "_EZE221010",
+                    "_EZE207010",
+                    "_EZE192010"
+                ],
+                "SAEZ35": [
+                    "EZE10",
+                    "_EZE291010",
+                    "_EZE275010",
+                    "_EZE260010",
+                    "_EZE251010",
+                    "_EZE236010",
+                    "_EZE221010",
+                    "_EZE207010",
+                    "_EZE192010"
+                ]
             },
             "body": ["_EZE183010"],
             "exitPoints": {
                 "GBE": ["GBE"]
             },
-            "draw": [
-                ["_EZE171010", "_EZE183010", "GBE"]
-            ]
+            "draw": [["_EZE171010", "_EZE183010", "GBE"]]
         },
         "LANDA2A": {
             "icao": "LANDA2A",
             "name": "Landa Two Alpha",
             "altitude": 5000,
             "rwy": {
-                "SAEZ11": ["EZE12", "_EZE126010", "_EZE141010", "_EZE156010", "_EZE171010", "_EZE186010", "_EZE201010"],
+                "SAEZ11": [
+                    "EZE12",
+                    "_EZE126010",
+                    "_EZE141010",
+                    "_EZE156010",
+                    "_EZE171010",
+                    "_EZE186010",
+                    "_EZE201010"
+                ],
                 "SAEZ17": ["_EZE183004", "_EZE183010", "_EZE198010"],
                 "SAEZ29": ["EZE11", "_EZE251010", "_EZE236010", "_EZE221010"],
-                "SAEZ35": ["EZE10", "_EZE291010", "_EZE275010", "_EZE260010", "_EZE251010", "_EZE236010", "_EZE221010"]
+                "SAEZ35": [
+                    "EZE10",
+                    "_EZE291010",
+                    "_EZE275010",
+                    "_EZE260010",
+                    "_EZE251010",
+                    "_EZE236010",
+                    "_EZE221010"
+                ]
             },
             "body": ["_EZE210008", "EZE", "EZE19"],
             "exitPoints": {
                 "LANDA": ["LANDA"]
             },
-            "draw": [
-                ["EZE19", "LANDA"]
-            ]
+            "draw": [["EZE19", "LANDA"]]
         },
         "PTA6A": {
             "icao": "PTA6A",
@@ -1381,8 +1478,25 @@
             "altitude": 5000,
             "rwy": {
                 "SAEZ17": ["_EZE183004"],
-                "SAEZ29": ["EZE11", "_EZE251010", "_EZE236010", "_EZE221010", "_EZE207010", "_EZE192010"],
-                "SAEZ35": ["EZE10", "_EZE291010", "_EZE275010", "_EZE260010", "_EZE251010", "_EZE236010", "_EZE221010", "_EZE207010", "_EZE192010"]
+                "SAEZ29": [
+                    "EZE11",
+                    "_EZE251010",
+                    "_EZE236010",
+                    "_EZE221010",
+                    "_EZE207010",
+                    "_EZE192010"
+                ],
+                "SAEZ35": [
+                    "EZE10",
+                    "_EZE291010",
+                    "_EZE275010",
+                    "_EZE260010",
+                    "_EZE251010",
+                    "_EZE236010",
+                    "_EZE221010",
+                    "_EZE207010",
+                    "_EZE192010"
+                ]
             },
             "body": ["_EZE183010", "PTA"],
             "exitPoints": {
@@ -1434,10 +1548,24 @@
             "name": "Torul One",
             "altitude": 5000,
             "rwy": {
-                "SAEZ11": ["EZE12", "_EZE126010", "_EZE141010", "_EZE156010", "_EZE171010", "_EZE183010"],
+                "SAEZ11": [
+                    "EZE12",
+                    "_EZE126010",
+                    "_EZE141010",
+                    "_EZE156010",
+                    "_EZE171010",
+                    "_EZE183010"
+                ],
                 "SAEZ17": ["_EZE183004", "_EZE183010"],
                 "SAEZ29": ["EZE11", "_EZE251010", "_EZE241010"],
-                "SAEZ35": ["EZE10", "_EZE291010", "_EZE275010", "_EZE260010", "_EZE251010", "_EZE241010"]
+                "SAEZ35": [
+                    "EZE10",
+                    "_EZE291010",
+                    "_EZE275010",
+                    "_EZE260010",
+                    "_EZE251010",
+                    "_EZE241010"
+                ]
             },
             "body": ["EZE24"],
             "exitPoints": {
@@ -1465,9 +1593,7 @@
             "rwy": {
                 "SAEZ11": ["AER52", "ARSOT"]
             },
-            "draw": [
-                ["ASADA*", "AER52", "ARSOT"]
-            ]
+            "draw": [["ASADA*", "AER52", "ARSOT"]]
         },
         "ASAD6B": {
             "icao": "ASAD6B",
@@ -1479,9 +1605,7 @@
             "rwy": {
                 "SAEZ35": ["AER60", "EZE66", "GESTA"]
             },
-            "draw": [
-                ["ASADA*", "AER60", "EZE66", "GESTA"]
-            ]
+            "draw": [["ASADA*", "AER60", "EZE66", "GESTA"]]
         },
         "GBE6A": {
             "icao": "GBE6A",
@@ -1493,9 +1617,7 @@
             "rwy": {
                 "SAEZ11": ["EZE50", "AER52", "ARSOT"]
             },
-            "draw": [
-                ["GBE*", "EZE50", "AER52"]
-            ]
+            "draw": [["GBE*", "EZE50", "AER52"]]
         },
         "GBE6B": {
             "icao": "GBE6B",
@@ -1507,9 +1629,7 @@
             "rwy": {
                 "SAEZ35": ["EZE66", "GESTA"]
             },
-            "draw": [
-                ["GBE*", "EZE66"]
-            ]
+            "draw": [["GBE*", "EZE66"]]
         },
         "KOVU6A": {
             "icao": "KOVU6A",
@@ -1521,9 +1641,7 @@
             "rwy": {
                 "SAEZ11": ["PTA", "EZE"]
             },
-            "draw": [
-                ["KOVUK*", "PTA", "EZE"]
-            ]
+            "draw": [["KOVUK*", "PTA", "EZE"]]
         },
         "KOVU6B": {
             "icao": "KOVU6B",
@@ -1535,10 +1653,7 @@
             "rwy": {
                 "SAEZ35": ["GESTA"]
             },
-            "draw": [
-                ["KOVUK*"],
-                ["PTA", "GESTA"]
-            ]
+            "draw": [["KOVUK*"], ["PTA", "GESTA"]]
         },
         "KUKE6A": {
             "icao": "KUKE6A",
@@ -1550,9 +1665,7 @@
             "rwy": {
                 "SAEZ11": ["EZE"]
             },
-            "draw": [
-                ["KUKEN*", "EZE"]
-            ]
+            "draw": [["KUKEN*", "EZE"]]
         },
         "KUKE6B": {
             "icao": "KUKE6B",
@@ -1564,9 +1677,7 @@
             "rwy": {
                 "SAEZ35": ["EZE"]
             },
-            "draw": [
-                ["KUKEN*"]
-            ]
+            "draw": [["KUKEN*"]]
         },
         "PAGO6A": {
             "icao": "PAGO6A",
@@ -1578,9 +1689,7 @@
             "rwy": {
                 "SAEZ11": ["ENO", "ARSOT"]
             },
-            "draw": [
-                ["PAGON*", "VANAR", "ENO", "ARSOT"]
-            ]
+            "draw": [["PAGON*", "VANAR", "ENO", "ARSOT"]]
         },
         "PAGO6B": {
             "icao": "PAGO6B",
@@ -1592,10 +1701,7 @@
             "rwy": {
                 "SAEZ35": ["EZE"]
             },
-            "draw": [
-                ["PAGON*"],
-                ["VANAR", "EZE"]
-            ]
+            "draw": [["PAGON*"], ["VANAR", "EZE"]]
         },
         "PAPI6A": {
             "icao": "PAPI6A",
@@ -1607,9 +1713,7 @@
             "rwy": {
                 "SAEZ11": []
             },
-            "draw": [
-                ["PAPIX*", "EZE"]
-            ]
+            "draw": [["PAPIX*", "EZE"]]
         },
         "PAPI6B": {
             "icao": "PAPI6B",
@@ -1621,9 +1725,7 @@
             "rwy": {
                 "SAEZ35": []
             },
-            "draw": [
-                ["PAPIX*"]
-            ]
+            "draw": [["PAPIX*"]]
         },
         "SNT6A": {
             "icao": "SNT6A",
@@ -1635,9 +1737,7 @@
             "rwy": {
                 "SAEZ11": ["ARSOT"]
             },
-            "draw": [
-                ["SNT*", "ARSOT"]
-            ]
+            "draw": [["SNT*", "ARSOT"]]
         },
         "SNT6B": {
             "icao": "SNT6B",
@@ -1649,9 +1749,7 @@
             "rwy": {
                 "SAEZ35": ["VANAR", "EZE"]
             },
-            "draw": [
-                ["SNT*", "VANAR"]
-            ]
+            "draw": [["SNT*", "VANAR"]]
         },
         "TENI6A": {
             "icao": "TENI6A",
@@ -1663,9 +1761,7 @@
             "rwy": {
                 "SAEZ11": ["PTA", "EZE"]
             },
-            "draw": [
-                ["TENIL*", "PTA"]
-            ]
+            "draw": [["TENIL*", "PTA"]]
         },
         "TENI6B": {
             "icao": "TENI6B",
@@ -1677,9 +1773,7 @@
             "rwy": {
                 "SAEZ35": ["PTA", "GESTA"]
             },
-            "draw": [
-                ["TENIL*"]
-            ]
+            "draw": [["TENIL*"]]
         },
         "UGIM6A": {
             "icao": "UGIM6A",
@@ -1692,11 +1786,7 @@
             "rwy": {
                 "SAEZ11": ["EZE"]
             },
-            "draw": [
-                ["ESLAN*"],
-                ["UGIMI", "ESLAN", "PTA"],
-                ["GATOS", "ESLAN"]
-            ]
+            "draw": [["ESLAN*"], ["UGIMI", "ESLAN", "PTA"], ["GATOS", "ESLAN"]]
         },
         "UGIM6B": {
             "icao": "UGIM6B",
@@ -1709,9 +1799,7 @@
             "rwy": {
                 "SAEZ35": ["GESTA"]
             },
-            "draw": [
-                ["ESLAN*"]
-            ]
+            "draw": [["ESLAN*"]]
         },
         "VALO7A": {
             "icao": "VALO7A",
@@ -1723,9 +1811,7 @@
             "rwy": {
                 "SAEZ11": ["GEBEM", "EZE50", "AER52", "ARSOT"]
             },
-            "draw": [
-                ["VALOS*", "GEBEM", "EZE50"]
-            ]
+            "draw": [["VALOS*", "GEBEM", "EZE50"]]
         },
         "VALO6B": {
             "icao": "VALO6B",
@@ -1737,9 +1823,7 @@
             "rwy": {
                 "SAEZ35": ["AER61", "AER60", "EZE66", "GESTA"]
             },
-            "draw": [
-                ["VALOS*", "AER61", "AER60"]
-            ]
+            "draw": [["VALOS*", "AER61", "AER60"]]
         }
     },
     "spawnPatterns": [
@@ -1959,7 +2043,6 @@
                 ["dsm/short", 2],
                 ["etr/long", 1],
                 ["lap", 2]
-
             ]
         },
         {

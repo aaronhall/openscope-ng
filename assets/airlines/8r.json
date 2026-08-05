@@ -3,9 +3,7 @@
     "name": "General Aviation Guyana",
     "callsign": {
         "name": "Eight Romeo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

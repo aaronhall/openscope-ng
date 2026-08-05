@@ -3,9 +3,7 @@
     "name": "General Aviation Bangladesh",
     "callsign": {
         "name": "Sierra Two",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

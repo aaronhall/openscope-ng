@@ -3,10 +3,7 @@
     "name": "Southern Air",
     "callsign": {
         "name": "Southern Air",
-        "callsignFormats": [
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["###", "####"]
     },
     "fleets": {
         "default": [
@@ -14,8 +11,6 @@
             ["B738", 5],
             ["B77L", 9]
         ],
-        "long": [
-            ["B77L", 9]
-        ]
+        "long": [["B77L", 9]]
     }
 }

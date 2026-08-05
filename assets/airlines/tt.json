@@ -3,9 +3,7 @@
     "name": "General Aviation Chad",
     "callsign": {
         "name": "Tango Tango",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

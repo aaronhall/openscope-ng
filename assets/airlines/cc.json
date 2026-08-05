@@ -3,9 +3,7 @@
     "name": "General Aviation Chile",
     "callsign": {
         "name": "Charlie Charlie",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

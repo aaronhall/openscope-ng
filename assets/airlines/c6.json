@@ -3,9 +3,7 @@
     "name": "General Aviation Bahamas",
     "callsign": {
         "name": "Charlie Six",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

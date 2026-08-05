@@ -3,10 +3,7 @@
     "name": "Hainan Airlines",
     "callsign": {
         "name": "Hainan",
-        "callsignFormats": [
-            "####",
-            "###"
-        ]
+        "callsignFormats": ["####", "###"]
     },
     "fleets": {
         "default": [
@@ -26,11 +23,7 @@
             ["B788", 10],
             ["B789", 28]
         ],
-        "b788": [
-                ["B788", 10]
-        ],
-        "b789": [
-                ["B789", 28]
-        ]
+        "b788": [["B788", 10]],
+        "b789": [["B789", 28]]
     }
 }

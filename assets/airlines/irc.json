@@ -3,9 +3,7 @@
     "name": "Iran Aseman Airlines",
     "callsign": {
         "name": "Aseman",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -17,8 +15,6 @@
             ["B734", 3],
             ["F100", 7]
         ],
-        "a320": [
-            ["A320", 6]
-        ]
+        "a320": [["A320", 6]]
     }
 }

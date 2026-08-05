@@ -3,9 +3,7 @@
     "name": "Helvetic Airways",
     "callsign": {
         "name": "Helvetic",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

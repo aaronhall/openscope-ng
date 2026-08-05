@@ -3,13 +3,9 @@
     "name": "LATAM Airlines Paraguay",
     "callsign": {
         "name": "Paraguaya",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["A320", 5]
-        ]
+        "default": [["A320", 5]]
     }
 }

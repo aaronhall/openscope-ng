@@ -3,9 +3,7 @@
     "name": "Insel Air",
     "callsign": {
         "name": "Inselair",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

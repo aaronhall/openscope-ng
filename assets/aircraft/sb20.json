@@ -13,22 +13,22 @@
     },
     "ceiling": 31000,
     "rate": {
-        "climb":      2300,
-        "descent":    1500,
+        "climb": 2300,
+        "descent": 1500,
         "accelerate": 3,
         "decelerate": 2
     },
     "runway": {
-        "takeoff": 1.360,
-        "landing": 1.250
+        "takeoff": 1.36,
+        "landing": 1.25
     },
-    "speed":{
-        "min":     77,
+    "speed": {
+        "min": 77,
         "landing": 88,
-        "cruise":  330,
+        "cruise": 330,
         "cruiseM": null,
-        "max":     366,
-        "maxM":    null
+        "max": 366,
+        "maxM": null
     },
     "capability": {
         "ils": true,

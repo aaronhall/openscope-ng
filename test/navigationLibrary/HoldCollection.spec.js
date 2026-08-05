@@ -1,67 +1,67 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import HoldCollection from '../../src/assets/scripts/client/navigationLibrary/HoldCollection';
 
 import {
     FIX_NAME_WITHOUT_HOLD,
     FIX_NAME_WITH_HOLD,
-    HOLD_COLLECTION_MOCK
+    HOLD_COLLECTION_MOCK,
 } from './_mocks/holdCollectionMocks';
 
-ava('throws if called with invalid parameters', (t) => {
-    t.throws(() => new HoldCollection(''));
+test('throws if called with invalid parameters', () => {
+    expect(() => new HoldCollection('')).toThrow();
 });
 
-ava('accepts a null that is used to initialize the collection', (t) => {
+test('accepts a null that is used to initialize the collection', () => {
     const collection = new HoldCollection(null);
 
-    t.is(collection.length, 0);
+    expect(collection.length).toBe(0);
 });
 
-ava('accepts an empty object that is used to initialize the collection', (t) => {
+test('accepts an empty object that is used to initialize the collection', () => {
     const collection = new HoldCollection({});
 
-    t.is(collection.length, 0);
+    expect(collection.length).toBe(0);
 });
 
-ava('accepts a valid object that is used to initialize the collection', (t) => {
+test('accepts a valid object that is used to initialize the collection', () => {
     const collection = new HoldCollection(HOLD_COLLECTION_MOCK);
     const expectedLength = Object.keys(HOLD_COLLECTION_MOCK).length;
 
-    t.is(collection.length, expectedLength);
-    t.is(collection.holds.length, expectedLength);
+    expect(collection.length).toBe(expectedLength);
+    expect(collection.holds.length).toBe(expectedLength);
 });
 
-ava('.containsHoldForFix() returns expected value', (t) => {
+test('.containsHoldForFix() returns expected value', () => {
     const collection = new HoldCollection(HOLD_COLLECTION_MOCK);
 
-    t.true(collection.containsHoldForFix('ABBOT'));
-    t.false(collection.containsHoldForFix('THREEVE'));
-    t.false(collection.containsHoldForFix());
-    t.false(collection.containsHoldForFix(null));
-    t.false(collection.containsHoldForFix(''));
+    expect(collection.containsHoldForFix('ABBOT')).toBe(true);
+    expect(collection.containsHoldForFix('THREEVE')).toBe(false);
+    expect(collection.containsHoldForFix()).toBe(false);
+    expect(collection.containsHoldForFix(null)).toBe(false);
+    expect(collection.containsHoldForFix('')).toBe(false);
 });
 
-ava('.findHoldParametersByFix() returns expected value', (t) => {
+test('.findHoldParametersByFix() returns expected value', () => {
     const collection = new HoldCollection(HOLD_COLLECTION_MOCK);
     const validFix = collection.findHoldParametersByFix(FIX_NAME_WITH_HOLD);
 
-    t.is(collection.findHoldParametersByFix(''), null);
-    t.is(collection.findHoldParametersByFix(FIX_NAME_WITHOUT_HOLD), null);
-    t.not(validFix, null);
+    expect(collection.findHoldParametersByFix('')).toBe(null);
+    expect(collection.findHoldParametersByFix(FIX_NAME_WITHOUT_HOLD)).toBe(null);
+    expect(validFix).not.toBe(null);
 });
 
-ava('.populateHolds() doesn\'t add duplicate holds', (t) => {
+test(".populateHolds() doesn't add duplicate holds", () => {
     const collection = new HoldCollection(HOLD_COLLECTION_MOCK);
     const expectedLength = Object.keys(HOLD_COLLECTION_MOCK).length;
 
     collection.populateHolds(HOLD_COLLECTION_MOCK);
 
-    t.is(collection.length, expectedLength);
+    expect(collection.length).toBe(expectedLength);
 });
 
-ava('.reset() clears the instance properties', (t) => {
+test('.reset() clears the instance properties', () => {
     const collection = new HoldCollection(HOLD_COLLECTION_MOCK);
     collection.reset();
 
-    t.is(collection.length, 0);
+    expect(collection.length).toBe(0);
 });

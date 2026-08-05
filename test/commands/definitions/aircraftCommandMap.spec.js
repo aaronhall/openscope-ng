@@ -1,6 +1,5 @@
-import ava from 'ava';
-import AircraftCommandModel
-    from '../../../src/assets/scripts/client/commands/aircraftCommand/AircraftCommandModel';
+import { test, expect, vi } from 'vitest';
+import AircraftCommandModel from '../../../src/assets/scripts/client/commands/aircraftCommand/AircraftCommandModel';
 
 import {
     altitudeValidator,
@@ -9,7 +8,7 @@ import {
     headingValidator,
     holdValidator,
     squawkValidator,
-    optionalAltitudeValidator
+    optionalAltitudeValidator,
 } from '../../../src/assets/scripts/client/commands/parsers/argumentValidators';
 import {
     altitudeParser,
@@ -17,7 +16,7 @@ import {
     crossingParser,
     headingParser,
     holdParser,
-    optionalAltitudeParser
+    optionalAltitudeParser,
 } from '../../../src/assets/scripts/client/commands/parsers/argumentParsers';
 import { AIRCRAFT_COMMAND_MAP } from '../../../src/assets/scripts/client/commands/aircraftCommand/aircraftCommandMap';
 
@@ -28,232 +27,232 @@ import {
     strToNumArrayParse,
     zeroOrOneArgumentVal,
     self_alias,
-    test_aliases
+    test_aliases,
 } from './testUtils';
 
-const extractParseAndValidate = (t, cmd) => {
+const extractParseAndValidate = (cmd) => {
     const model = new AircraftCommandModel(cmd);
     const parse = model._commandDefinition.parse.toString();
     const validate = model._commandDefinition.validate.toString();
-    t.false(AIRCRAFT_COMMAND_MAP[cmd].isSystemCommand);
+    expect(AIRCRAFT_COMMAND_MAP[cmd].isSystemCommand).toBe(false);
     return [parse, validate];
 };
 
-
-ava('aliases, noop parser and zeroArgumentsValidator used by abort', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'abort');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    self_alias(t, AIRCRAFT_COMMAND_MAP, 'abort');
+test('aliases, noop parser and zeroArgumentsValidator used by abort', () => {
+    const [parse, validate] = extractParseAndValidate('abort');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    self_alias(AIRCRAFT_COMMAND_MAP, 'abort');
 });
 
-
-ava('aliases, noop parser and zeroArgumentsValidator used by clearedAsFiled', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'clearedAsFiled');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'clearedAsFiled', ['caf', 'clearedAsFiled']);
+test('aliases, noop parser and zeroArgumentsValidator used by clearedAsFiled', () => {
+    const [parse, validate] = extractParseAndValidate('clearedAsFiled');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'clearedAsFiled', ['caf', 'clearedAsFiled']);
 });
 
-
-ava('aliases, noop parser and zeroArgumentsValidator used by delete', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'delete');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'delete', ['del', 'delete', 'kill']);
+test('aliases, noop parser and zeroArgumentsValidator used by delete', () => {
+    const [parse, validate] = extractParseAndValidate('delete');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'delete', ['del', 'delete', 'kill']);
 });
 
-
-ava('aliases, noop parser and zeroArgumentsValidator used by flyPresentHeading', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'flyPresentHeading');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'flyPresentHeading', ['fph']);
+test('aliases, noop parser and zeroArgumentsValidator used by flyPresentHeading', () => {
+    const [parse, validate] = extractParseAndValidate('flyPresentHeading');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'flyPresentHeading', ['fph']);
 });
 
-
-ava('aliases, noop parser and zeroArgumentsValidator used by takeoff', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'takeoff');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'takeoff', ['/', 'cto', 'to', 'takeoff']);
+test('aliases, noop parser and zeroArgumentsValidator used by takeoff', () => {
+    const [parse, validate] = extractParseAndValidate('takeoff');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'takeoff', ['/', 'cto', 'to', 'takeoff']);
 });
 
-ava('aliases, noop parser and zeroArgumentsValidator used by sayAltitude', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'sayAltitude');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'sayAltitude', ['sa']);
+test('aliases, noop parser and zeroArgumentsValidator used by sayAltitude', () => {
+    const [parse, validate] = extractParseAndValidate('sayAltitude');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'sayAltitude', ['sa']);
 });
 
-ava('aliases, noop parser and zeroArgumentsValidator used by sayAssignedAltitude', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'sayAssignedAltitude');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'sayAssignedAltitude', ['saa']);
+test('aliases, noop parser and zeroArgumentsValidator used by sayAssignedAltitude', () => {
+    const [parse, validate] = extractParseAndValidate('sayAssignedAltitude');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'sayAssignedAltitude', ['saa']);
 });
 
-ava('aliases, noop parser and zeroArgumentsValidator used by sayHeading', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'sayHeading');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'sayHeading', ['sh']);
+test('aliases, noop parser and zeroArgumentsValidator used by sayHeading', () => {
+    const [parse, validate] = extractParseAndValidate('sayHeading');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'sayHeading', ['sh']);
 });
 
-ava('aliases, noop parser and zeroArgumentsValidator used by sayAssignedHeading', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'sayAssignedHeading');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'sayAssignedHeading', ['sah']);
+test('aliases, noop parser and zeroArgumentsValidator used by sayAssignedHeading', () => {
+    const [parse, validate] = extractParseAndValidate('sayAssignedHeading');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'sayAssignedHeading', ['sah']);
 });
 
-ava('aliases, noop parser and zeroArgumentsValidator used by sayIndicatedAirspeed', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'sayIndicatedAirspeed');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'sayIndicatedAirspeed', ['si']);
+test('aliases, noop parser and zeroArgumentsValidator used by sayIndicatedAirspeed', () => {
+    const [parse, validate] = extractParseAndValidate('sayIndicatedAirspeed');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'sayIndicatedAirspeed', ['si']);
 });
 
-ava('aliases, noop parser and zeroArgumentsValidator used by sayAssignedSpeed', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'sayAssignedSpeed');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'sayAssignedSpeed', ['sas']);
+test('aliases, noop parser and zeroArgumentsValidator used by sayAssignedSpeed', () => {
+    const [parse, validate] = extractParseAndValidate('sayAssignedSpeed');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'sayAssignedSpeed', ['sas']);
 });
 
-ava('aliases, noop parser and zeroArgumentsValidator used by sayRoute', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'sayRoute');
-    t.true(parse === noopParse() && validate === zeroArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'sayRoute', ['sr']);
+test('aliases, noop parser and zeroArgumentsValidator used by sayRoute', () => {
+    const [parse, validate] = extractParseAndValidate('sayRoute');
+    expect(parse === noopParse() && validate === zeroArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'sayRoute', ['sr']);
 });
 
-ava('aliases, noop parser and singleArgumentValidator used by direct', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'direct');
-    t.true(parse === noopParse() && validate === singleArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'direct', ['dct', 'direct', 'pd']);
+test('aliases, noop parser and singleArgumentValidator used by direct', () => {
+    const [parse, validate] = extractParseAndValidate('direct');
+    expect(parse === noopParse() && validate === singleArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'direct', ['dct', 'direct', 'pd']);
 });
 
-ava('aliases, noop parser and singleArgumentValidator used by expectArrivalRunway', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'expectArrivalRunway');
-    t.true(parse === noopParse() && validate === singleArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'expectArrivalRunway', ['e']);
+test('aliases, noop parser and singleArgumentValidator used by expectArrivalRunway', () => {
+    const [parse, validate] = extractParseAndValidate('expectArrivalRunway');
+    expect(parse === noopParse() && validate === singleArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'expectArrivalRunway', ['e']);
 });
 
-ava('aliases, ilsParser and singleArgumentValidator used by ils', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'ils');
+test('aliases, ilsParser and singleArgumentValidator used by ils', () => {
+    const [parse, validate] = extractParseAndValidate('ils');
     const tmp = ilsParser;
-    t.true(parse === tmp.toString() && validate === singleArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'ils', ['*', 'i', 'ils']);
+    expect(parse === tmp.toString() && validate === singleArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'ils', ['*', 'i', 'ils']);
 });
 
-ava('aliases, noop parser and zeroOrOneArgumentValidator used by land', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'land');
-    t.true(parse === noopParse() && validate === zeroOrOneArgumentVal());
-    self_alias(t, AIRCRAFT_COMMAND_MAP, 'land');
+test('aliases, noop parser and zeroOrOneArgumentValidator used by land', () => {
+    const [parse, validate] = extractParseAndValidate('land');
+    expect(parse === noopParse() && validate === zeroOrOneArgumentVal()).toBe(true);
+    self_alias(AIRCRAFT_COMMAND_MAP, 'land');
 });
 
-ava('aliases, noop parser and singleArgumentValidator used by moveDataBlock', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'moveDataBlock');
-    t.true(parse === noopParse() && validate === singleArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'moveDataBlock', ['`']);
+test('aliases, noop parser and singleArgumentValidator used by moveDataBlock', () => {
+    const [parse, validate] = extractParseAndValidate('moveDataBlock');
+    expect(parse === noopParse() && validate === singleArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'moveDataBlock', ['`']);
 });
 
-
-ava('aliases, noop parser and singleArgumentValidator used by reroute', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'reroute');
-    t.true(parse === noopParse() && validate === singleArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'reroute', ['reroute', 'rr']);
+test('aliases, noop parser and singleArgumentValidator used by reroute', () => {
+    const [parse, validate] = extractParseAndValidate('reroute');
+    expect(parse === noopParse() && validate === singleArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'reroute', ['reroute', 'rr']);
 });
 
-ava('aliases, noop parser and singleArgumentValidator used by route', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'route');
-    t.true(parse === noopParse() && validate === singleArgVal());
-    self_alias(t, AIRCRAFT_COMMAND_MAP, 'route');
+test('aliases, noop parser and singleArgumentValidator used by route', () => {
+    const [parse, validate] = extractParseAndValidate('route');
+    expect(parse === noopParse() && validate === singleArgVal()).toBe(true);
+    self_alias(AIRCRAFT_COMMAND_MAP, 'route');
 });
 
-ava('aliases, noop parser and singleArgumentValidator used by sid', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'sid');
-    t.true(parse === noopParse() && validate === singleArgVal());
-    self_alias(t, AIRCRAFT_COMMAND_MAP, 'sid');
+test('aliases, noop parser and singleArgumentValidator used by sid', () => {
+    const [parse, validate] = extractParseAndValidate('sid');
+    expect(parse === noopParse() && validate === singleArgVal()).toBe(true);
+    self_alias(AIRCRAFT_COMMAND_MAP, 'sid');
 });
 
-ava('aliases, strToNumArray parser and singleArgumentValidator used by speed', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'speed');
-    t.true(parse === strToNumArrayParse() && validate === singleArgVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'speed', ['-', '+', 'slow', 'sp', 'speed']);
+test('aliases, strToNumArray parser and singleArgumentValidator used by speed', () => {
+    const [parse, validate] = extractParseAndValidate('speed');
+    expect(parse === strToNumArrayParse() && validate === singleArgVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'speed', ['-', '+', 'slow', 'sp', 'speed']);
 });
 
-ava('aliases, noop parser and singleArgumentValidator used by star', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'star');
-    t.true(parse === noopParse() && validate === singleArgVal());
-    self_alias(t, AIRCRAFT_COMMAND_MAP, 'star');
+test('aliases, noop parser and singleArgumentValidator used by star', () => {
+    const [parse, validate] = extractParseAndValidate('star');
+    expect(parse === noopParse() && validate === singleArgVal()).toBe(true);
+    self_alias(AIRCRAFT_COMMAND_MAP, 'star');
 });
 
-ava('aliases, noop parser and zeroOrOneArgumentValidator used by taxi', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'taxi');
-    t.true(parse === noopParse() && validate === zeroOrOneArgumentVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'taxi', ['taxi', 'w', 'wait']);
+test('aliases, noop parser and zeroOrOneArgumentValidator used by taxi', () => {
+    const [parse, validate] = extractParseAndValidate('taxi');
+    expect(parse === noopParse() && validate === zeroOrOneArgumentVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'taxi', ['taxi', 'w', 'wait']);
 });
 
-ava('aliases, noop parser and zeroOrOneArgumentValidator used by cancelHold', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'cancelHold');
-    t.true(parse === noopParse() && validate === zeroOrOneArgumentVal());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'cancelHold', ['exithold', 'cancelhold', 'continue', 'nohold', 'xh']);
+test('aliases, noop parser and zeroOrOneArgumentValidator used by cancelHold', () => {
+    const [parse, validate] = extractParseAndValidate('cancelHold');
+    expect(parse === noopParse() && validate === zeroOrOneArgumentVal()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'cancelHold', [
+        'exithold',
+        'cancelhold',
+        'continue',
+        'nohold',
+        'xh',
+    ]);
 });
 
-ava('aliases, altitude parser and altitude validator used by altitude', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'altitude');
+test('aliases, altitude parser and altitude validator used by altitude', () => {
+    const [parse, validate] = extractParseAndValidate('altitude');
     const p = altitudeParser;
     const v = altitudeValidator;
-    t.true(parse === p.toString() && validate === v.toString());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'altitude', ['a', 'altitude', 'c', 'climb', 'd', 'descend']);
+    expect(parse === p.toString() && validate === v.toString()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'altitude', ['a', 'altitude', 'c', 'climb', 'd', 'descend']);
 });
 
-ava('aliases, crossing parser and crossing validator used by cross', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'cross');
+test('aliases, crossing parser and crossing validator used by cross', () => {
+    const [parse, validate] = extractParseAndValidate('cross');
     const p = crossingParser;
     const v = crossingValidator;
-    t.true(parse === p.toString() && validate === v.toString());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'cross', ['cross', 'cr', 'x']);
+    expect(parse === p.toString() && validate === v.toString()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'cross', ['cross', 'cr', 'x']);
 });
 
-ava('aliases, noop parser and fix validator used by fix', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'fix');
+test('aliases, noop parser and fix validator used by fix', () => {
+    const [parse, validate] = extractParseAndValidate('fix');
     const v = fixValidator;
-    t.true(parse === noopParse() && validate === v.toString());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'fix', ['f', 'fix', 'track']);
+    expect(parse === noopParse() && validate === v.toString()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'fix', ['f', 'fix', 'track']);
 });
 
-ava('aliases, heading parser and heading validator used by heading', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'heading');
+test('aliases, heading parser and heading validator used by heading', () => {
+    const [parse, validate] = extractParseAndValidate('heading');
     const p = headingParser;
     const v = headingValidator;
-    t.true(parse === p.toString() && validate === v.toString());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'heading', ['fh', 'h', 'heading', 't', 'turn']);
+    expect(parse === p.toString() && validate === v.toString()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'heading', ['fh', 'h', 'heading', 't', 'turn']);
 });
 
-ava('aliases, hold parser and hold validator used by hold', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'hold');
+test('aliases, hold parser and hold validator used by hold', () => {
+    const [parse, validate] = extractParseAndValidate('hold');
     const p = holdParser;
     const v = holdValidator;
-    t.true(parse === p.toString() && validate === v.toString());
-    self_alias(t, AIRCRAFT_COMMAND_MAP, 'hold');
+    expect(parse === p.toString() && validate === v.toString()).toBe(true);
+    self_alias(AIRCRAFT_COMMAND_MAP, 'hold');
 });
 
-ava('aliases, noop parser and squawk validator used by squawk', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'squawk');
+test('aliases, noop parser and squawk validator used by squawk', () => {
+    const [parse, validate] = extractParseAndValidate('squawk');
     const v = squawkValidator;
-    t.true(parse === noopParse() && validate === v.toString());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'squawk', ['sq', 'squawk']);
+    expect(parse === noopParse() && validate === v.toString()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'squawk', ['sq', 'squawk']);
 });
 
-
-ava('aliases, optionalAltitudeParser and optionalAltitudeValidator used by descendViaStar', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'descendViaStar');
+test('aliases, optionalAltitudeParser and optionalAltitudeValidator used by descendViaStar', () => {
+    const [parse, validate] = extractParseAndValidate('descendViaStar');
     const p = optionalAltitudeParser;
     const v = optionalAltitudeValidator;
-    t.true(parse === p.toString() && validate === v.toString());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'descendViaStar', ['descendViaStar', 'dvs']);
+    expect(parse === p.toString() && validate === v.toString()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'descendViaStar', ['descendViaStar', 'dvs']);
 });
 
-ava('aliases, optionalAltitudeParser and optionalAltitudeValidator used by climbViaSid', t => {
-    const [parse, validate] = extractParseAndValidate(t, 'climbViaSid');
+test('aliases, optionalAltitudeParser and optionalAltitudeValidator used by climbViaSid', () => {
+    const [parse, validate] = extractParseAndValidate('climbViaSid');
     const p = optionalAltitudeParser;
     const v = optionalAltitudeValidator;
-    t.true(parse === p.toString() && validate === v.toString());
-    test_aliases(t, AIRCRAFT_COMMAND_MAP, 'climbViaSid', ['climbViaSid', 'cvs']);
+    expect(parse === p.toString() && validate === v.toString()).toBe(true);
+    test_aliases(AIRCRAFT_COMMAND_MAP, 'climbViaSid', ['climbViaSid', 'cvs']);
 });
 
-ava('make sure we test all 32 aircraft commands', t => {
-    t.true(Object.values(AIRCRAFT_COMMAND_MAP)
-        .filter(val => !val.isSystemCommand).length === 32);
+test('make sure we test all 32 aircraft commands', () => {
+    expect(
+        Object.values(AIRCRAFT_COMMAND_MAP).filter((val) => !val.isSystemCommand).length === 32
+    ).toBe(true);
 });

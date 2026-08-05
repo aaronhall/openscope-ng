@@ -3,14 +3,9 @@
     "name": "Ukraine Air Alliance",
     "callsign": {
         "name": "Ukraine Alliance",
-        "callsignFormats": [
-            "####",
-            "###"
-        ]
+        "callsignFormats": ["####", "###"]
     },
     "fleets": {
-        "default": [
-            ["AN12", 7]
-        ]
+        "default": [["AN12", 7]]
     }
 }

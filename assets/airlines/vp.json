@@ -3,9 +3,7 @@
     "name": "General Aviation British Overseas Territories",
     "callsign": {
         "name": "Victor Papa",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

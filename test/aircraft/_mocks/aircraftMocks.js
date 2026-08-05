@@ -12,24 +12,24 @@ export const AIRCRAFT_DEFINITION_MOCK = {
     icao: 'B737',
     engines: {
         number: 2,
-        type: 'J'
+        type: 'J',
     },
     weightClass: 'L',
     category: {
         srs: 3,
         lahso: 8,
-        recat: 'D'
+        recat: 'D',
     },
     ceiling: 41000,
     rate: {
         climb: 3000,
         descent: 3000,
         accelerate: 7,
-        decelerate: 3
+        decelerate: 3,
     },
     runway: {
         takeoff: 2.042,
-        landing: 1.372
+        landing: 1.372,
     },
     speed: {
         min: 110,
@@ -37,12 +37,12 @@ export const AIRCRAFT_DEFINITION_MOCK = {
         cruise: 460,
         cruiseM: null,
         max: 525,
-        maxM: null
+        maxM: null,
     },
     capability: {
         ils: true,
-        fix: true
-    }
+        fix: true,
+    },
 };
 
 export const AIRCRAFT_DEFINITION_MOCK_HEAVY = {
@@ -50,24 +50,24 @@ export const AIRCRAFT_DEFINITION_MOCK_HEAVY = {
     icao: 'B789',
     engines: {
         number: 2,
-        type: 'J'
+        type: 'J',
     },
     weightClass: 'H',
     category: {
         srs: 3,
         lahso: 7,
-        recat: 'B'
+        recat: 'B',
     },
     ceiling: 43000,
     rate: {
         climb: 2700,
         descent: 2800,
         accelerate: 7,
-        decelerate: 4
+        decelerate: 4,
     },
     runway: {
-        takeoff: 2.900,
-        landing: 1.738
+        takeoff: 2.9,
+        landing: 1.738,
     },
     speed: {
         min: 120,
@@ -75,12 +75,12 @@ export const AIRCRAFT_DEFINITION_MOCK_HEAVY = {
         cruise: 487,
         cruiseM: 0.85,
         max: 516,
-        maxM: 0.90
+        maxM: 0.9,
     },
     capability: {
         ils: true,
-        fix: true
-    }
+        fix: true,
+    },
 };
 
 export const AIRCRAFT_DEFINITION_MOCK_SUPER = {
@@ -88,37 +88,37 @@ export const AIRCRAFT_DEFINITION_MOCK_SUPER = {
     icao: 'A388',
     engines: {
         number: 4,
-        type: 'J'
+        type: 'J',
     },
     weightClass: 'J',
     category: {
         srs: 3,
         lahso: 10,
-        recat: 'A'
+        recat: 'A',
     },
     ceiling: 43000,
     rate: {
-        climb:      2500,
-        descent:    2000,
+        climb: 2500,
+        descent: 2000,
         accelerate: 6,
-        decelerate: 4
+        decelerate: 4,
     },
     runway: {
-        takeoff: 3.000,
-        landing: 3.000
+        takeoff: 3.0,
+        landing: 3.0,
     },
-    speed:{
-        min:     125,
+    speed: {
+        min: 125,
         landing: 135,
         cruiseM: 0.85,
-        cruise:  560,
-        max:     595,
-        maxM:    0.89
+        cruise: 560,
+        max: 595,
+        maxM: 0.89,
     },
     capability: {
         ils: true,
-        fix: true
-    }
+        fix: true,
+    },
 };
 
 export const AIRCRAFT_DEFINITION_LIST_MOCK = [
@@ -128,24 +128,24 @@ export const AIRCRAFT_DEFINITION_LIST_MOCK = [
         icao: 'A320',
         engines: {
             number: 2,
-            type: 'J'
+            type: 'J',
         },
         weightClass: 'L',
         category: {
             srs: 3,
             lahso: 7,
-            recat: 'D'
+            recat: 'D',
         },
         ceiling: 39000,
         rate: {
             climb: 3500,
             descent: 3000,
             accelerate: 7,
-            decelerate: 4
+            decelerate: 4,
         },
         runway: {
-            takeoff: 1.900,
-            landing: 1.400
+            takeoff: 1.9,
+            landing: 1.4,
         },
         speed: {
             min: 115,
@@ -153,21 +153,27 @@ export const AIRCRAFT_DEFINITION_LIST_MOCK = [
             cruise: 454,
             cruiseM: null,
             max: 487,
-            maxM: 0.83
+            maxM: 0.83,
         },
         capability: {
             ils: true,
-            fix: true
-        }
-    }
+            fix: true,
+        },
+    },
 ];
 
 // more fixtures, must be declared after the mocks that they ingest
 // moving to aircraftFixtures.js breaks stuff; not used anywhere else, so they can live here
 // aircraft type data never modified, so no concern regarding mutation
-const aircraftTypeDefinitionModelFixture = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK);
-const aircraftTypeDefinitionModelHeavyFixture = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK_HEAVY);
-const aircraftTypeDefinitionModelSuperFixture = new AircraftTypeDefinitionModel(AIRCRAFT_DEFINITION_MOCK_SUPER);
+const aircraftTypeDefinitionModelFixture = new AircraftTypeDefinitionModel(
+    AIRCRAFT_DEFINITION_MOCK
+);
+const aircraftTypeDefinitionModelHeavyFixture = new AircraftTypeDefinitionModel(
+    AIRCRAFT_DEFINITION_MOCK_HEAVY
+);
+const aircraftTypeDefinitionModelSuperFixture = new AircraftTypeDefinitionModel(
+    AIRCRAFT_DEFINITION_MOCK_SUPER
+);
 
 export const DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK = {
     transponderCode: 3377,
@@ -183,7 +189,7 @@ export const DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK = {
     icao: 'b737',
     model: aircraftTypeDefinitionModelFixture,
     positionModel: POSITION_MODEL_MOCK,
-    routeString: 'KLAS07R.COWBY6.GUP'
+    routeString: 'KLAS07R.COWBY6.GUP',
 };
 
 // export const DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_DIRECT_ROUTE_STRING_MOCK = Object.assign(
@@ -194,13 +200,16 @@ export const DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK = {
 //     }
 // );
 
-export const DEPARTURE_AIRCRAFT_MODEL_MOCK = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK, navigationLibraryFixture);
+export const DEPARTURE_AIRCRAFT_MODEL_MOCK = new AircraftModel(
+    DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
+    navigationLibraryFixture
+);
 
 export const DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK = Object.assign(
     {},
     DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
     {
-        routeString: 'KLAS25R.TRALR6.MLF'
+        routeString: 'KLAS25R.TRALR6.MLF',
     }
 );
 
@@ -218,7 +227,7 @@ export const ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK = {
     icao: 'b737',
     model: aircraftTypeDefinitionModelFixture,
     positionModel: POSITION_MODEL_MOCK,
-    routeString: 'DAG.KEPEC3.KLAS07R'
+    routeString: 'DAG.KEPEC3.KLAS07R',
 };
 
 export const ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK_HEAVY = {
@@ -235,7 +244,7 @@ export const ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK_HEAVY = {
     icao: 'b789',
     model: aircraftTypeDefinitionModelHeavyFixture,
     positionModel: POSITION_MODEL_MOCK,
-    routeString: 'DAG.KEPEC3.KLAS07R'  //TODO: this is an invalid route for KATL, but I used it because valid routes weren't working
+    routeString: 'DAG.KEPEC3.KLAS07R', //TODO: this is an invalid route for KATL, but I used it because valid routes weren't working
 };
 
 export const ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK_SUPER = {
@@ -252,14 +261,14 @@ export const ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK_SUPER = {
     icao: 'a388',
     model: aircraftTypeDefinitionModelSuperFixture,
     positionModel: POSITION_MODEL_MOCK,
-    routeString: 'DAG.KEPEC3.KLAS07R'  //TODO: this is an invalid route for KATL, but I used it because valid routes weren't working
+    routeString: 'DAG.KEPEC3.KLAS07R', //TODO: this is an invalid route for KATL, but I used it because valid routes weren't working
 };
 
 export const ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK = Object.assign(
     {},
     ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
     {
-        routeString: 'MLF.GRNPA2.KLAS07R'
+        routeString: 'MLF.GRNPA2.KLAS07R',
     }
 );
 
@@ -279,9 +288,18 @@ export const ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK = 
 //     waypoints: []
 // };
 
-export const ARRIVAL_AIRCRAFT_MODEL_MOCK = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK, navigationLibraryFixture);
-export const ARRIVAL_AIRCRAFT_MODEL_MOCK_HEAVY = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK_HEAVY, navigationLibraryFixture);
-export const ARRIVAL_AIRCRAFT_MODEL_MOCK_SUPER = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK_SUPER, navigationLibraryFixture);
+export const ARRIVAL_AIRCRAFT_MODEL_MOCK = new AircraftModel(
+    ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
+    navigationLibraryFixture
+);
+export const ARRIVAL_AIRCRAFT_MODEL_MOCK_HEAVY = new AircraftModel(
+    ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK_HEAVY,
+    navigationLibraryFixture
+);
+export const ARRIVAL_AIRCRAFT_MODEL_MOCK_SUPER = new AircraftModel(
+    ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK_SUPER,
+    navigationLibraryFixture
+);
 
 // export const HOLD_WAYPOINT_MOCK = {
 //     turnDirection: 'left',

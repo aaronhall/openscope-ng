@@ -1,57 +1,59 @@
-import ava from 'ava';
+import { test, expect } from 'vitest';
 import {
-    generateTransponderCode, isDiscreteTransponderCode, isValidTransponderCode
+    generateTransponderCode,
+    isDiscreteTransponderCode,
+    isValidTransponderCode,
 } from '../../src/assets/scripts/client/utilities/transponderUtilities';
 
 const USA_ICAO = 'klax';
 const UK_ICAO = 'egll';
 
-ava('isDiscreteTransponderCode returns false for all non-discrete codes', (t) => {
+test('isDiscreteTransponderCode returns false for all non-discrete codes', () => {
     // Loops are not ideal, but it saves writing 64 identical tests!
     for (let i = 0; i < 8; i++) {
         for (let j = 0; j < 8; j++) {
             const squawk = `${i}${j}00`;
-            t.false(isDiscreteTransponderCode(squawk));
+            expect(isDiscreteTransponderCode(squawk)).toBe(false);
         }
     }
 });
 
-ava('generateTransponderCode returns a valid transponder code', (t) => {
+test('generateTransponderCode returns a valid transponder code', () => {
     // This is basically pointless, as we're testing random output...
     const code = generateTransponderCode();
-    t.true(isValidTransponderCode(code));
+    expect(isValidTransponderCode(code)).toBe(true);
 });
 
-ava('isDiscreteTransponderCode returns false for invalid squawk code', (t) => {
-    t.false(isDiscreteTransponderCode(USA_ICAO, '1239'));
+test('isDiscreteTransponderCode returns false for invalid squawk code', () => {
+    expect(isDiscreteTransponderCode(USA_ICAO, '1239')).toBe(false);
 });
 
-ava('isDiscreteTransponderCode returns false when given a non-discrete squawk', (t) => {
-    t.false(isDiscreteTransponderCode(UK_ICAO, '3600'));
+test('isDiscreteTransponderCode returns false when given a non-discrete squawk', () => {
+    expect(isDiscreteTransponderCode(UK_ICAO, '3600')).toBe(false);
 });
 
-ava('isDiscreteTransponderCode returns false when given restricted squawks for the USA', (t) => {
-    t.false(isDiscreteTransponderCode(USA_ICAO, '7500'));
-    t.false(isDiscreteTransponderCode(USA_ICAO, '7600'));
-    t.false(isDiscreteTransponderCode(USA_ICAO, '7700'));
-    t.false(isDiscreteTransponderCode(USA_ICAO, '7777'));
+test('isDiscreteTransponderCode returns false when given restricted squawks for the USA', () => {
+    expect(isDiscreteTransponderCode(USA_ICAO, '7500')).toBe(false);
+    expect(isDiscreteTransponderCode(USA_ICAO, '7600')).toBe(false);
+    expect(isDiscreteTransponderCode(USA_ICAO, '7700')).toBe(false);
+    expect(isDiscreteTransponderCode(USA_ICAO, '7777')).toBe(false);
 });
 
-ava('isDiscreteTransponderCode returns false when given VFR codes', (t) => {
-    t.false(isDiscreteTransponderCode(USA_ICAO, '1200'));
-    t.false(isDiscreteTransponderCode(USA_ICAO, '1202'));
-    t.false(isDiscreteTransponderCode(USA_ICAO, '1277'));
+test('isDiscreteTransponderCode returns false when given VFR codes', () => {
+    expect(isDiscreteTransponderCode(USA_ICAO, '1200')).toBe(false);
+    expect(isDiscreteTransponderCode(USA_ICAO, '1202')).toBe(false);
+    expect(isDiscreteTransponderCode(USA_ICAO, '1277')).toBe(false);
 
-    t.true(isDiscreteTransponderCode(UK_ICAO, '1201')); // 1201 is allowed in the UK
-    t.false(isDiscreteTransponderCode(UK_ICAO, '7000'));
+    expect(isDiscreteTransponderCode(UK_ICAO, '1201')).toBe(true); // 1201 is allowed in the UK
+    expect(isDiscreteTransponderCode(UK_ICAO, '7000')).toBe(false);
 });
 
-ava('isValidTransponderCode returns true when given a valid transponder code', (t) => {
-    t.true(isValidTransponderCode('0000'));
-    t.true(isValidTransponderCode('7777'));
+test('isValidTransponderCode returns true when given a valid transponder code', () => {
+    expect(isValidTransponderCode('0000')).toBe(true);
+    expect(isValidTransponderCode('7777')).toBe(true);
 });
 
-ava('isValidTransponderCode returns false when given a invalid transponder code', (t) => {
-    t.false(isValidTransponderCode('777'));
-    t.false(isValidTransponderCode('7778'));
+test('isValidTransponderCode returns false when given a invalid transponder code', () => {
+    expect(isValidTransponderCode('777')).toBe(false);
+    expect(isValidTransponderCode('7778')).toBe(false);
 });

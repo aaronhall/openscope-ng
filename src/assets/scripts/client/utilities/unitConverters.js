@@ -19,12 +19,12 @@ export const DECIMAL_RADIX = 10;
  */
 export const UNIT_CONVERSION_CONSTANTS = {
     /**
-    * nautical miles to feet
-    *
-    * @property NM_FT
-    * @type {Number}
-    * @final
-    */
+     * nautical miles to feet
+     *
+     * @property NM_FT
+     * @type {Number}
+     * @final
+     */
     NM_FT: 6076.115485564,
     /**
      * nautical mile per kilometer ratio
@@ -73,7 +73,7 @@ export const UNIT_CONVERSION_CONSTANTS = {
      * @type {number}
      * @final
      */
-    FT_FL: 0.01
+    FT_FL: 0.01,
 };
 
 // TODO: This should be moved to its own file once it has been filled in a little more
@@ -90,7 +90,7 @@ export const NUMBER_CONSTANTS = {
      * @type {number}
      * @final
      */
-    FULL_CIRCLE_DEGREES: 360
+    FULL_CIRCLE_DEGREES: 360,
 };
 
 /**
@@ -178,7 +178,7 @@ export const nm_ft = (nm) => {
  * @return {number}
  */
 export const radiansToDegrees = (radians) => {
-    return (radians / (tau())) * NUMBER_CONSTANTS.FULL_CIRCLE_DEGREES;
+    return (radians / tau()) * NUMBER_CONSTANTS.FULL_CIRCLE_DEGREES;
 };
 
 /**
@@ -189,7 +189,7 @@ export const radiansToDegrees = (radians) => {
  * @return {number}
  */
 export const degreesToRadians = (degrees) => {
-    return (degrees / NUMBER_CONSTANTS.FULL_CIRCLE_DEGREES) * (tau());
+    return (degrees / NUMBER_CONSTANTS.FULL_CIRCLE_DEGREES) * tau();
 };
 
 /**
@@ -208,7 +208,8 @@ export const convertMinutesToSeconds = (minutes) => minutes * 60;
  * @param  {number} value
  * @return {number}
  */
-export const convertToThousands = (value) => parseInt(value, DECIMAL_RADIX) * UNIT_CONVERSION_CONSTANTS.FL_FT;
+export const convertToThousands = (value) =>
+    parseInt(value, DECIMAL_RADIX) * UNIT_CONVERSION_CONSTANTS.FL_FT;
 
 /**
  * Attempt to convert a string to a number
@@ -272,10 +273,10 @@ export const parseCoordinate = (coordinate) => {
 
     // Gather minutes/seconds as decimal of a degree, if available
     if (match[5] != null) {
-        minutes = (parseFloat(match[5]) * TIME.ONE_MINUTE_IN_HOURS);
+        minutes = parseFloat(match[5]) * TIME.ONE_MINUTE_IN_HOURS;
 
         if (match[8] != null) {
-            seconds = (parseFloat(match[8]) * TIME.ONE_SECOND_IN_HOURS);
+            seconds = parseFloat(match[8]) * TIME.ONE_SECOND_IN_HOURS;
         }
     }
 

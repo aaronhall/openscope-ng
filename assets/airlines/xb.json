@@ -3,9 +3,7 @@
     "name": "General Aviation Mexico",
     "callsign": {
         "name": "Xray Bravo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

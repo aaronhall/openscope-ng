@@ -27,8 +27,8 @@ export const DEPARTURE_PATTERN_MOCK = {
         ['ual', 10],
         ['vrd', 7],
         ['vir', 4],
-        ['wja', 7]
-    ]
+        ['wja', 7],
+    ],
 };
 
 export const DEPARTURE_PATTERN_ROUTE_STRING_MOCK = {
@@ -60,8 +60,8 @@ export const DEPARTURE_PATTERN_ROUTE_STRING_MOCK = {
         ['ual', 10],
         ['vrd', 7],
         ['vir', 4],
-        ['wja', 7]
-    ]
+        ['wja', 7],
+    ],
 };
 
 export const ARRIVAL_PATTERN_MOCK = {
@@ -89,8 +89,8 @@ export const ARRIVAL_PATTERN_MOCK = {
         ['ual', 10],
         ['vrd', 7],
         ['vir', 4],
-        ['wja', 7]
-    ]
+        ['wja', 7],
+    ],
 };
 
 export const ARRIVAL_PATTERN_MOCK_ALL_STRINGS = {
@@ -102,9 +102,7 @@ export const ARRIVAL_PATTERN_MOCK_ALL_STRINGS = {
     speed: '320',
     method: 'random',
     rate: '10',
-    airlines: [
-        ['wja', 7]
-    ]
+    airlines: [['wja', 7]],
 };
 
 export const ARRIVAL_PATTERN_FLOAT_RATE_MOCK = {
@@ -116,50 +114,29 @@ export const ARRIVAL_PATTERN_FLOAT_RATE_MOCK = {
     speed: '320',
     method: 'random',
     rate: 3.3,
-    airlines: [
-        ['wja', 7]
-    ]
+    airlines: [['wja', 7]],
 };
 
-export const ARRIVAL_PATTERN_ROUTE_STRING_MOCK = Object.assign(
-    {},
-    ARRIVAL_PATTERN_MOCK,
-    {
-        route: 'COWBY..TRALR..GRNPA..PRINO'
-    }
-);
+export const ARRIVAL_PATTERN_ROUTE_STRING_MOCK = Object.assign({}, ARRIVAL_PATTERN_MOCK, {
+    route: 'COWBY..TRALR..GRNPA..PRINO',
+});
 
-export const ARRIVAL_PATTERN_CYCLIC_MOCK = Object.assign(
-    {},
-    ARRIVAL_PATTERN_MOCK,
-    {
-        method: 'cyclic'
-    }
-);
+export const ARRIVAL_PATTERN_CYCLIC_MOCK = Object.assign({}, ARRIVAL_PATTERN_MOCK, {
+    method: 'cyclic',
+});
 
-export const ARRIVAL_PATTERN_WAVE_MOCK = Object.assign(
-    {},
-    ARRIVAL_PATTERN_MOCK,
-    {
-        method: 'wave'
-    }
-);
+export const ARRIVAL_PATTERN_WAVE_MOCK = Object.assign({}, ARRIVAL_PATTERN_MOCK, {
+    method: 'wave',
+});
 
-export const ARRIVAL_PATTERN_SINGLE_ENTRY_AND_RWY_MOCK = Object.assign(
-    {},
-    ARRIVAL_PATTERN_MOCK,
-    {
-        route: 'MLF.GRNPA9.KLAS07R'
-    }
-);
+export const ARRIVAL_PATTERN_SINGLE_ENTRY_AND_RWY_MOCK = Object.assign({}, ARRIVAL_PATTERN_MOCK, {
+    route: 'MLF.GRNPA9.KLAS07R',
+});
 
-export const SPAWN_PATTERN_LIST = [
-    DEPARTURE_PATTERN_MOCK,
-    ARRIVAL_PATTERN_MOCK
-];
+export const SPAWN_PATTERN_LIST = [DEPARTURE_PATTERN_MOCK, ARRIVAL_PATTERN_MOCK];
 
 export const AIRPORT_JSON_FOR_SPAWN_MOCK = {
-    spawnPatterns: SPAWN_PATTERN_LIST
+    spawnPatterns: SPAWN_PATTERN_LIST,
 };
 
 // Data here needs to be congruent with data in `airlineCollectionFixture` used in `AircraftTypeDefinitionCollection.spec`
@@ -174,8 +151,8 @@ export const SPAWN_PATTERN_MODEL_FOR_ARRIVAL_FIXTURE = {
     rate: 5,
     airlines: [
         ['aal', 5],
-        ['ual', 2]
-    ]
+        ['ual', 2],
+    ],
 };
 
 // Data here needs to be congruent with data in `airlineCollectionFixture` used in `AircraftTypeDefinitionCollection.spec`
@@ -190,6 +167,6 @@ export const SPAWN_PATTERN_MODEL_FOR_DEPARTURE_FIXTURE = {
     rate: 5,
     airlines: [
         ['aal', 5],
-        ['ual', 2]
-    ]
+        ['ual', 2],
+    ],
 };

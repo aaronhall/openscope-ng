@@ -3,11 +3,7 @@
     "name": "General Aviation Brunei",
     "callsign": {
         "name": "Victor Eight",
-        "callsignFormats": [
-            "@@@",
-            "@@#",
-            "###"
-        ]
+        "callsignFormats": ["@@@", "@@#", "###"]
     },
     "fleets": {
         "default": [

@@ -1,10 +1,7 @@
 import _defaultTo from 'lodash/defaultTo';
 import { isValidCourseString, isValidDirectionString } from './argumentValidators';
 import { REGEX } from '../../constants/globalConstants';
-import {
-    convertToThousands,
-    convertStringToNumber
-} from '../../utilities/unitConverters';
+import { convertToThousands, convertStringToNumber } from '../../utilities/unitConverters';
 
 /**
  * Enumeration of possible the hold command argument names.
@@ -20,7 +17,7 @@ const HOLD_COMMAND_ARG_NAMES = {
     TURN_DIRECTION: 'turnDirection',
     LEG_LENGTH: 'legLength',
     FIX_NAME: 'fixName',
-    RADIAL: 'radial'
+    RADIAL: 'radial',
 };
 
 /**
@@ -200,10 +197,7 @@ export const holdParser = (args) => {
         findHoldCommandByType(HOLD_COMMAND_ARG_NAMES.LEG_LENGTH, args),
         null
     );
-    const radial = _defaultTo(
-        findHoldCommandByType(HOLD_COMMAND_ARG_NAMES.RADIAL, args),
-        null
-    );
+    const radial = _defaultTo(findHoldCommandByType(HOLD_COMMAND_ARG_NAMES.RADIAL, args), null);
 
     return [turnDirection, legLength, fixName, radial];
 };
@@ -225,9 +219,7 @@ export const timewarpParser = (args = []) => {
 
     // calling method is expecting an array with values that will get spread later, thus we purposly
     // return an array here
-    return [
-        convertStringToNumber(args[0])
-    ];
+    return [convertStringToNumber(args[0])];
 };
 
 /**
@@ -246,11 +238,9 @@ export const crossingParser = (args = []) => {
     // Set i to 1 to skip fixName
     for (let i = 1; i < args.length; i++) {
         if (args[i][0].toLowerCase() === 'a') {
-            altitude = convertToThousands(args[i].toString()
-                .substr(1));
+            altitude = convertToThousands(args[i].toString().substr(1));
         } else if (args[i][0].toLowerCase() === 's') {
-            speed = convertStringToNumber(args[i].toString()
-                .substr(1));
+            speed = convertStringToNumber(args[i].toString().substr(1));
         }
     }
 

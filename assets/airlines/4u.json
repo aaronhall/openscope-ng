@@ -3,9 +3,7 @@
     "name": "General Aviation United Nations",
     "callsign": {
         "name": "Four Uniform",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "General Aviation Venezuela",
     "callsign": {
         "name": "Yankee Viktor",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

@@ -1,115 +1,120 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import sinon from 'sinon';
 import CanvasStageModel from '../../src/assets/scripts/client/canvas/CanvasStageModel';
 import { SCALE } from '../../src/assets/scripts/client/constants/canvasConstants';
 
-ava.beforeEach(() => {
+beforeEach(() => {
     CanvasStageModel._init();
 });
 
-ava.afterEach(() => {
+afterEach(() => {
     CanvasStageModel.reset();
 });
 
-ava('throws when called to instantiate', (t) => {
-    t.throws(() => new CanvasStageModel());
+test('throws when called to instantiate', () => {
+    expect(() => new CanvasStageModel()).toThrow();
 });
 
-ava('.translatePixelsToKilometers() divides pixels by scale', (t) => {
+test('.translatePixelsToKilometers() divides pixels by scale', () => {
     const expectedResult = 12.5;
     const pixelValueMock = 100;
     const result = CanvasStageModel.translatePixelsToKilometers(pixelValueMock);
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.calculateCanvasPositionFromPagePosition() returns an [x, y] array with precise canvas coordinate values', (t) => {
+test('.calculateCanvasPositionFromPagePosition() returns an [x, y] array with precise canvas coordinate values', () => {
     const pagePositionMock = [533.6571116862411, 529.6559736409592];
     const expectedCanvasPosition = [213.65711168624114, -289.65597364095925];
-    const canvasPosition = CanvasStageModel.calculateCanvasPositionFromPagePosition(...pagePositionMock);
+    const canvasPosition = CanvasStageModel.calculateCanvasPositionFromPagePosition(
+        ...pagePositionMock
+    );
 
-    t.deepEqual(canvasPosition, expectedCanvasPosition);
+    expect(canvasPosition).toEqual(expectedCanvasPosition);
 });
 
-ava('.calculateRelativePositionFromCanvasPosition() returns an [x, y] array of kilometers offset from the airport', (t) => {
+test('.calculateRelativePositionFromCanvasPosition() returns an [x, y] array of kilometers offset from the airport', () => {
     const canvasPositionMock = [533.6571116862411, -529.6559736409592];
     const expectedResult = [66.70713896078014, -66.2069967051199];
-    const result = CanvasStageModel.calculateRelativePositionFromCanvasPosition(...canvasPositionMock);
+    const result = CanvasStageModel.calculateRelativePositionFromCanvasPosition(
+        ...canvasPositionMock
+    );
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.calculatePreciseCanvasPositionFromRelativePosition() returns an [x, y] array with precise canvas coordinate values', (t) => {
+test('.calculatePreciseCanvasPositionFromRelativePosition() returns an [x, y] array with precise canvas coordinate values', () => {
     const expectedResult = [533.6571116862411, -529.6559736409592];
     const positionMock = [66.70713896078014, 66.2069967051199];
-    const result = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(positionMock);
+    const result =
+        CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(positionMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.calculateRoundedCanvasPositionFromRelativePosition() returns an [x, y] array and rounded canvas coordinate values', (t) => {
+test('.calculateRoundedCanvasPositionFromRelativePosition() returns an [x, y] array and rounded canvas coordinate values', () => {
     const expectedResult = [534, -530];
     const positionMock = [66.70713896078014, 66.2069967051199];
-    const result = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(positionMock);
+    const result =
+        CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(positionMock);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('._translateKilometersToPixels() multiplies kilometers by scale', (t) => {
+test('._translateKilometersToPixels() multiplies kilometers by scale', () => {
     const expectedResult = 100;
     const kilometerValueMock = 12.5;
     const result = CanvasStageModel._translateKilometersToPixels(kilometerValueMock);
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.updatePan() calls _eventBus.trigger()', (t) => {
+test('.updatePan() calls _eventBus.trigger()', () => {
     const updatePanSpy = sinon.spy(CanvasStageModel, 'updatePan');
 
     CanvasStageModel.updatePan(1, 1);
 
-    t.true(updatePanSpy.calledOnce);
+    expect(updatePanSpy.calledOnce).toBe(true);
 });
 
-ava('.zoomOut() increases #_scale by SCALE.CHANGE_FACTOR', (t) => {
+test('.zoomOut() increases #_scale by SCALE.CHANGE_FACTOR', () => {
     const previousScale = CanvasStageModel._scale;
 
     CanvasStageModel.zoomOut();
 
     const result = CanvasStageModel._scale / previousScale;
 
-    t.true(result === SCALE.CHANGE_FACTOR);
+    expect(result === SCALE.CHANGE_FACTOR).toBe(true);
 });
 
-ava('.zoomOut() resets #_scale to #_scaleMin when #_scale is < #scaleMin', (t) => {
+test('.zoomOut() resets #_scale to #_scaleMin when #_scale is < #scaleMin', () => {
     CanvasStageModel._scale = 0.5;
     CanvasStageModel.zoomOut();
 
-
-    t.true(CanvasStageModel._scale === CanvasStageModel._scaleMin);
+    expect(CanvasStageModel._scale === CanvasStageModel._scaleMin).toBe(true);
 });
 
-ava('.zoomOut() calls ._storeZoomLevel()', (t) => {
+test('.zoomOut() calls ._storeZoomLevel()', () => {
     const _storeZoomLevelSpy = sinon.spy(CanvasStageModel, '_storeZoomLevel');
 
     CanvasStageModel.zoomOut();
 
-    t.true(_storeZoomLevelSpy.calledOnce);
+    expect(_storeZoomLevelSpy.calledOnce).toBe(true);
 
     _storeZoomLevelSpy.restore();
 });
 
-ava('.zoomOut() calls ._eventBus.trigger()', (t) => {
+test('.zoomOut() calls ._eventBus.trigger()', () => {
     const _eventBusTrigger = sinon.spy(CanvasStageModel._eventBus, 'trigger');
 
     CanvasStageModel.zoomOut();
 
-    t.true(_eventBusTrigger.callCount === 2);
+    expect(_eventBusTrigger.callCount === 2).toBe(true);
 
     _eventBusTrigger.restore();
 });
 
-ava('.zoomIn() increases #_scale by SCALE.CHANGE_FACTOR', (t) => {
+test('.zoomIn() increases #_scale by SCALE.CHANGE_FACTOR', () => {
     CanvasStageModel._scale = 50;
     const previousScale = CanvasStageModel._scale;
 
@@ -117,32 +122,32 @@ ava('.zoomIn() increases #_scale by SCALE.CHANGE_FACTOR', (t) => {
 
     const result = previousScale / CanvasStageModel._scale;
 
-    t.true(result === SCALE.CHANGE_FACTOR);
+    expect(result === SCALE.CHANGE_FACTOR).toBe(true);
 });
 
-ava('.zoomIn() resets #_scale to #_scaleMax when #_scale is > #scaleMax', (t) => {
+test('.zoomIn() resets #_scale to #_scaleMax when #_scale is > #scaleMax', () => {
     CanvasStageModel._scale = 999999;
     CanvasStageModel.zoomIn();
 
-    t.true(CanvasStageModel._scale === CanvasStageModel._scaleMax);
+    expect(CanvasStageModel._scale === CanvasStageModel._scaleMax).toBe(true);
 });
 
-ava('.zoomIn() calls ._storeZoomLevel()', (t) => {
+test('.zoomIn() calls ._storeZoomLevel()', () => {
     const _storeZoomLevelSpy = sinon.spy(CanvasStageModel, '_storeZoomLevel');
 
     CanvasStageModel.zoomIn();
 
-    t.true(_storeZoomLevelSpy.calledOnce);
+    expect(_storeZoomLevelSpy.calledOnce).toBe(true);
 
     _storeZoomLevelSpy.restore();
 });
 
-ava('.zoomIn() calls ._eventBus.trigger()', (t) => {
+test('.zoomIn() calls ._eventBus.trigger()', () => {
     const _eventBusTrigger = sinon.spy(CanvasStageModel._eventBus, 'trigger');
 
     CanvasStageModel.zoomIn();
 
-    t.true(_eventBusTrigger.callCount === 2);
+    expect(_eventBusTrigger.callCount === 2).toBe(true);
 
     _eventBusTrigger.restore();
 });

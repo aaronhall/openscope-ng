@@ -3,16 +3,9 @@
     "name": "Japan Transocean Air",
     "callsign": {
         "name": "Jay Ocean",
-        "callsignFormats": [
-            "#",
-            "##",
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["#", "##", "###", "####"]
     },
     "fleets": {
-        "default": [
-            ["B738", 13]
-        ]
+        "default": [["B738", 13]]
     }
 }

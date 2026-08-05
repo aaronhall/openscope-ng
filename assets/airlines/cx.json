@@ -3,9 +3,7 @@
     "name": "General Aviation Uruguay",
     "callsign": {
         "name": "Charlie Xray",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

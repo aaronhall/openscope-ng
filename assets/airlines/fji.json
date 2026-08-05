@@ -3,10 +3,7 @@
     "name": "Fiji Airways",
     "callsign": {
         "name": "Fiji",
-        "callsignFormats": [
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["###", "####"]
     },
     "fleets": {
         "default": [
@@ -27,8 +24,6 @@
             ["A333", 1],
             ["A359", 2]
         ],
-        "a359": [
-            ["A359", 2]
-        ]
+        "a359": [["A359", 2]]
     }
 }

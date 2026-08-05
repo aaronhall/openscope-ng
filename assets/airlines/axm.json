@@ -3,13 +3,9 @@
     "name": "AirAsia",
     "callsign": {
         "name": "Red Cap",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 81 ]
-        ]
+        "default": [["A320", 81]]
     }
 }

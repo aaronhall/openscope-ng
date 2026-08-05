@@ -3,9 +3,7 @@
     "name": "Boutique Air",
     "callsign": {
         "name": "Boutique",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

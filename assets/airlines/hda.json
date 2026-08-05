@@ -3,9 +3,7 @@
     "name": "Cathay Dragon",
     "callsign": {
         "name": "Dragon",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "SriLankan Airlines",
     "callsign": {
         "name": "Srilankan",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -16,11 +14,7 @@
             ["A332", 6],
             ["A333", 7]
         ],
-        "a21n": [
-            ["A21N", 3]
-        ],
-        "a333": [
-            ["A333", 7]
-        ]
+        "a21n": [["A21N", 3]],
+        "a333": [["A333", 7]]
     }
 }

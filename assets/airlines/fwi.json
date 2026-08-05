@@ -3,10 +3,7 @@
     "name": "Air Caraïbes",
     "callsign": {
         "name": "French West",
-        "callsignFormats": [
-            "##@",
-            "##@@"
-        ]
+        "callsignFormats": ["##@", "##@@"]
     },
     "fleets": {
         "default": [

@@ -1505,7 +1505,7 @@ export default class AircraftModel {
                 break;
             }
 
-            case FLIGHT_PHASE.WAITING:
+            case FLIGHT_PHASE.WAITING: {
                 const iAmTheNextDeparture = this.fms.departureRunwayModel.isAircraftNextInQueue(this.id);
 
                 if (this.shouldTakeOffWhenRunwayIsClear && iAmTheNextDeparture) {
@@ -1528,6 +1528,7 @@ export default class AircraftModel {
 
                 break;
 
+            }
             case FLIGHT_PHASE.TAKEOFF:
                 if ((this.altitude - runwayModel.elevation) > PERFORMANCE.TAKEOFF_TURN_ALTITUDE) {
                     this.pilot.raiseLandingGearAndActivateAutopilot();

@@ -65,7 +65,9 @@ export default class BaseCollection {
      * @method destroy
      */
     destroy() {
-        throw new TypeError('BaseCollection#destroy has not been implemented by the extending class');
+        throw new TypeError(
+            'BaseCollection#destroy has not been implemented by the extending class'
+        );
     }
 
     // TODO: add additional common collection method

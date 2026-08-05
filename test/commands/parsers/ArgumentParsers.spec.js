@@ -1,5 +1,5 @@
 /* eslint-disable arrow-parens, max-len, import/no-extraneous-dependencies */
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import {
     altitudeParser,
@@ -9,248 +9,247 @@ import {
     isLegLengthArg,
     timewarpParser,
     optionalAltitudeParser,
-    crossingParser
+    crossingParser,
 } from '../../../src/assets/scripts/client/commands/parsers/argumentParsers';
 
-ava('.altitudeParser() converts a string flight level altitude to a number altitude in thousands', t => {
+test('.altitudeParser() converts a string flight level altitude to a number altitude in thousands', () => {
     const result = altitudeParser(['080']);
 
-    t.true(result[0] === 8000);
+    expect(result[0] === 8000).toBe(true);
 });
 
-ava('.altitudeParser() returns true if the second argument is not undefined', t => {
+test('.altitudeParser() returns true if the second argument is not undefined', () => {
     const result = altitudeParser(['080', 'ex']);
 
-    t.true(result[1]);
+    expect(result[1]).toBe(true);
 });
 
-ava('.altitudeParser() returns an array of length two when passed a single argument', t => {
+test('.altitudeParser() returns an array of length two when passed a single argument', () => {
     const result = altitudeParser(['080']);
 
-    t.true(result.length === 2);
-    t.true(result[0] === 8000);
-    t.false(result[1]);
+    expect(result.length === 2).toBe(true);
+    expect(result[0] === 8000).toBe(true);
+    expect(result[1]).toBe(false);
 });
 
-ava('.optionalAltitudeParser() converts a string flight level altitude to a number altitude in thousands', t => {
+test('.optionalAltitudeParser() converts a string flight level altitude to a number altitude in thousands', () => {
     const result = optionalAltitudeParser(['080']);
 
-    t.true(result[0] === 8000);
+    expect(result[0] === 8000).toBe(true);
 });
 
-ava('.optionalAltitudeParser() returns true if there is no argument', t => {
+test('.optionalAltitudeParser() returns true if there is no argument', () => {
     const result = optionalAltitudeParser([]);
 
-    t.true(result.length === 0);
+    expect(result.length === 0).toBe(true);
 });
 
-ava('.headingParser() throws if it does not receive 1 or 2 arguments', t => {
-    t.throws(() => headingParser([]));
-    t.throws(() => headingParser(['l', '042', 'threeve']));
+test('.headingParser() throws if it does not receive 1 or 2 arguments', () => {
+    expect(() => headingParser([])).toThrow();
+    expect(() => headingParser(['l', '042', 'threeve'])).toThrow();
 });
 
-ava('.headingParser() returns an array of length 3 when passed new heading as the second argument', t => {
+test('.headingParser() returns an array of length 3 when passed new heading as the second argument', () => {
     const result = headingParser(['042']);
 
-    t.true(result.length === 3);
-    t.true(!result[0]);
-    t.true(result[1] === 42);
-    t.false(result[2]);
+    expect(result.length === 3).toBe(true);
+    expect(!result[0]).toBe(true);
+    expect(result[1] === 42).toBe(true);
+    expect(result[2]).toBe(false);
 });
 
-ava('.headingParser() returns an array of length 3 when passed direction and heading as arguments', t => {
+test('.headingParser() returns an array of length 3 when passed direction and heading as arguments', () => {
     const result = headingParser(['left', '42']);
 
-    t.true(result.length === 3);
-    t.true(result[0] === 'left');
-    t.true(result[1] === 42);
-    t.true(result[2]);
+    expect(result.length === 3).toBe(true);
+    expect(result[0] === 'left').toBe(true);
+    expect(result[1] === 42).toBe(true);
+    expect(result[2]).toBe(true);
 });
 
-ava('.headingParser() translates l to left as the first value', t => {
+test('.headingParser() translates l to left as the first value', () => {
     const result = headingParser(['l', '042']);
 
-    t.true(result[0] === 'left');
+    expect(result[0] === 'left').toBe(true);
 });
 
-ava('.headingParser() translates r to right as the first value', t => {
+test('.headingParser() translates r to right as the first value', () => {
     const result = headingParser(['r', '042']);
 
-    t.true(result[0] === 'right');
+    expect(result[0] === 'right').toBe(true);
 });
 
 // specfic use cases for headingParser
-ava('.headingParser() parses two digit heading as an incremental heading', t => {
+test('.headingParser() parses two digit heading as an incremental heading', () => {
     const result = headingParser(['r', '42']);
 
-    t.true(result[0] === 'right');
-    t.true(result[1] === 42);
-    t.true(result[2]);
+    expect(result[0] === 'right').toBe(true);
+    expect(result[1] === 42).toBe(true);
+    expect(result[2]).toBe(true);
 });
 
-ava('.headingParser() parses three digit heading as a generic heading', t => {
+test('.headingParser() parses three digit heading as a generic heading', () => {
     const result = headingParser(['r', '042']);
 
-    t.true(result[0] === 'right');
-    t.true(result[1] === 42);
-    t.false(result[2]);
+    expect(result[0] === 'right').toBe(true);
+    expect(result[1] === 42).toBe(true);
+    expect(result[2]).toBe(false);
 });
 
-ava('.findHoldCommandByType() returns a turnDirection when passed a variation of left or right', (t) => {
+test('.findHoldCommandByType() returns a turnDirection when passed a variation of left or right', () => {
     const argsMock = ['dumba', 'l', '3nm'];
-    t.is(findHoldCommandByType('turnDirection', argsMock), 'left');
+    expect(findHoldCommandByType('turnDirection', argsMock)).toBe('left');
 });
 
-ava('.findHoldCommandByType() returns a legLength when passed a valid legLength in min', (t) => {
+test('.findHoldCommandByType() returns a legLength when passed a valid legLength in min', () => {
     const argsMock = ['dumba', 'l', '3min'];
-    t.is(findHoldCommandByType('legLength', argsMock), '3min');
+    expect(findHoldCommandByType('legLength', argsMock)).toBe('3min');
 });
 
-ava('.findHoldCommandByType() returns a legLength when passed a valid legLength in nm', (t) => {
+test('.findHoldCommandByType() returns a legLength when passed a valid legLength in nm', () => {
     const argsMock = ['dumba', 'l', '3nm'];
-    t.is(findHoldCommandByType('legLength', argsMock), '3nm');
+    expect(findHoldCommandByType('legLength', argsMock)).toBe('3nm');
 });
 
-ava('.findHoldCommandByType() returns a fixName when passed a valid fixName', (t) => {
+test('.findHoldCommandByType() returns a fixName when passed a valid fixName', () => {
     const argsMock = ['dumba', 'l', '3nm'];
-    t.is(findHoldCommandByType('fixName', argsMock), 'dumba');
+    expect(findHoldCommandByType('fixName', argsMock)).toBe('dumba');
 });
 
-ava('.isLegLengthArg() returns false when passed an invalid integer leg length', (t) => {
-    t.false(isLegLengthArg('1'));
-    t.false(isLegLengthArg('0min'));
-    t.false(isLegLengthArg('0nm'));
-    t.false(isLegLengthArg('50min'));
-    t.false(isLegLengthArg('50nm'));
-    t.false(isLegLengthArg('1km'));
-    t.false(isLegLengthArg('-1nm'));
+test('.isLegLengthArg() returns false when passed an invalid integer leg length', () => {
+    expect(isLegLengthArg('1')).toBe(false);
+    expect(isLegLengthArg('0min')).toBe(false);
+    expect(isLegLengthArg('0nm')).toBe(false);
+    expect(isLegLengthArg('50min')).toBe(false);
+    expect(isLegLengthArg('50nm')).toBe(false);
+    expect(isLegLengthArg('1km')).toBe(false);
+    expect(isLegLengthArg('-1nm')).toBe(false);
 });
 
-ava('.isLegLengthArg() returns false when passed an invalid decimal leg length', (t) => {
-    t.false(isLegLengthArg('1.0'));
-    t.false(isLegLengthArg('0.0min'));
-    t.false(isLegLengthArg('0.0nm'));
-    t.false(isLegLengthArg('50.0min'));
-    t.false(isLegLengthArg('50.0nm'));
-    t.false(isLegLengthArg('1.0km'));
-    t.false(isLegLengthArg('-1.0nm'));
-    t.false(isLegLengthArg('1.05min'));
-    t.false(isLegLengthArg('1.05nm'));
+test('.isLegLengthArg() returns false when passed an invalid decimal leg length', () => {
+    expect(isLegLengthArg('1.0')).toBe(false);
+    expect(isLegLengthArg('0.0min')).toBe(false);
+    expect(isLegLengthArg('0.0nm')).toBe(false);
+    expect(isLegLengthArg('50.0min')).toBe(false);
+    expect(isLegLengthArg('50.0nm')).toBe(false);
+    expect(isLegLengthArg('1.0km')).toBe(false);
+    expect(isLegLengthArg('-1.0nm')).toBe(false);
+    expect(isLegLengthArg('1.05min')).toBe(false);
+    expect(isLegLengthArg('1.05nm')).toBe(false);
 });
 
-ava('.isLegLengthArg() returns true when passed a valid integer leg length', (t) => {
-    t.true(isLegLengthArg('1min'));
-    t.true(isLegLengthArg('2min'));
-    t.true(isLegLengthArg('10min'));
-    t.true(isLegLengthArg('49min'));
-    t.true(isLegLengthArg('1nm'));
-    t.true(isLegLengthArg('2nm'));
-    t.true(isLegLengthArg('10nm'));
-    t.true(isLegLengthArg('49nm'));
+test('.isLegLengthArg() returns true when passed a valid integer leg length', () => {
+    expect(isLegLengthArg('1min')).toBe(true);
+    expect(isLegLengthArg('2min')).toBe(true);
+    expect(isLegLengthArg('10min')).toBe(true);
+    expect(isLegLengthArg('49min')).toBe(true);
+    expect(isLegLengthArg('1nm')).toBe(true);
+    expect(isLegLengthArg('2nm')).toBe(true);
+    expect(isLegLengthArg('10nm')).toBe(true);
+    expect(isLegLengthArg('49nm')).toBe(true);
 });
 
-ava('.isLegLengthArg() returns true when passed a valid decimal leg length', (t) => {
-    t.true(isLegLengthArg('0.1min'));
-    t.true(isLegLengthArg('1.0min'));
-    t.true(isLegLengthArg('2.0min'));
-    t.true(isLegLengthArg('10.0min'));
-    t.true(isLegLengthArg('49.9min'));
-    t.true(isLegLengthArg('0.1nm'));
-    t.true(isLegLengthArg('1.0nm'));
-    t.true(isLegLengthArg('2.0nm'));
-    t.true(isLegLengthArg('10.0nm'));
-    t.true(isLegLengthArg('49.9nm'));
+test('.isLegLengthArg() returns true when passed a valid decimal leg length', () => {
+    expect(isLegLengthArg('0.1min')).toBe(true);
+    expect(isLegLengthArg('1.0min')).toBe(true);
+    expect(isLegLengthArg('2.0min')).toBe(true);
+    expect(isLegLengthArg('10.0min')).toBe(true);
+    expect(isLegLengthArg('49.9min')).toBe(true);
+    expect(isLegLengthArg('0.1nm')).toBe(true);
+    expect(isLegLengthArg('1.0nm')).toBe(true);
+    expect(isLegLengthArg('2.0nm')).toBe(true);
+    expect(isLegLengthArg('10.0nm')).toBe(true);
+    expect(isLegLengthArg('49.9nm')).toBe(true);
 });
 
-ava('.holdParser() returns an array of length 4 when passed a fixname as the only argument', t => {
+test('.holdParser() returns an array of length 4 when passed a fixname as the only argument', () => {
     const expectedResult = [null, null, 'dumba', null];
     const result = holdParser(['dumba']);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.holdParser() returns an array of length 4 when passed a direction and fixname as arguments', t => {
+test('.holdParser() returns an array of length 4 when passed a direction and fixname as arguments', () => {
     const expectedResult = ['left', null, 'dumba', null];
     let result = holdParser(['dumba', 'left']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 
     result = holdParser(['left', 'dumba']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.holdParser() returns an array of length 4 when passed a legLength and fixname as arguments', t => {
+test('.holdParser() returns an array of length 4 when passed a legLength and fixname as arguments', () => {
     const expectedResult = [null, '1min', 'dumba', null];
     let result = holdParser(['dumba', '1min']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 
     result = holdParser(['1min', 'dumba']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.holdParser() returns an array of length 4 when passed a direction, legLength and fixname as arguments', t => {
+test('.holdParser() returns an array of length 4 when passed a direction, legLength and fixname as arguments', () => {
     const expectedResult = ['left', '1min', 'dumba', null];
     let result = holdParser(['dumba', 'left', '1min']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 
     result = holdParser(['left', '1min', 'dumba']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 
     result = holdParser(['1min', 'left', 'dumba']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 
     result = holdParser(['left', 'dumba', '1min']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.holdParser() returns an array of length 4 when passed a direction, legLength, fixname and radial as arguments', t => {
+test('.holdParser() returns an array of length 4 when passed a direction, legLength, fixname and radial as arguments', () => {
     const expectedResult = ['left', '1min', 'dumba', 7];
     let result = holdParser(['dumba', 'left', '1min', '007']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 
     result = holdParser(['left', '1min', 'dumba', '007']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 
     result = holdParser(['1min', 'left', 'dumba', '007']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 
     result = holdParser(['left', 'dumba', '1min', '007']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 
     result = holdParser(['left', 'dumba', '007', '1min']);
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.timewarpParser() returns an array with 0 as a value when provided no args', (t) => {
+test('.timewarpParser() returns an array with 0 as a value when provided no args', () => {
     const result = timewarpParser([]);
 
-    t.true(result[0] === 1);
+    expect(result[0] === 1).toBe(true);
 });
 
-ava('.timewarpParser() returns an array with 50 as a value when provided as an arg', (t) => {
+test('.timewarpParser() returns an array with 50 as a value when provided as an arg', () => {
     const result = timewarpParser([50]);
 
-    t.true(result[0] === 50);
+    expect(result[0] === 50).toBe(true);
 });
 
-
-ava('.crossingParser() returns an array with the correct values when provided all args', (t) => {
+test('.crossingParser() returns an array with the correct values when provided all args', () => {
     const result = crossingParser(['LEMDY', 'a50', 's210']);
 
-    t.true(result[0] === 'LEMDY');
-    t.true(result[1] === 5000);
-    t.true(result[2] === 210);
+    expect(result[0] === 'LEMDY').toBe(true);
+    expect(result[1] === 5000).toBe(true);
+    expect(result[2] === 210).toBe(true);
 });
 
-ava('.crossingParser() returns an array with the correct values when provided altitude as an arg', (t) => {
+test('.crossingParser() returns an array with the correct values when provided altitude as an arg', () => {
     const result = crossingParser(['LEMDY', 'a50']);
 
-    t.true(result[0] === 'LEMDY');
-    t.true(result[1] === 5000);
+    expect(result[0] === 'LEMDY').toBe(true);
+    expect(result[1] === 5000).toBe(true);
 });
 
-ava('.crossingParser() returns an array with the correct values when provided speed as an arg', (t) => {
+test('.crossingParser() returns an array with the correct values when provided speed as an arg', () => {
     const result = crossingParser(['LEMDY', 's210']);
 
-    t.true(result[0] === 'LEMDY');
-    t.true(result[2] === 210);
+    expect(result[0] === 'LEMDY').toBe(true);
+    expect(result[2] === 210).toBe(true);
 });

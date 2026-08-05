@@ -1,91 +1,89 @@
 /* eslint-disable import/no-extraneous-dependencies, arrow-parens */
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import {
     airlineNameAndFleetHelper,
-    randomAirlineSelectionHelper
+    randomAirlineSelectionHelper,
 } from '../../src/assets/scripts/client/airline/airlineHelpers';
 
-const AIRLINE_LIST_WITH_SEPERATOR_MOCK = [
-    ['a7/fastGA', 4]
-];
+const AIRLINE_LIST_WITH_SEPERATOR_MOCK = [['a7/fastGA', 4]];
 
 const AIRLINE_LIST_WITHOUT_SEPERATOR_MOCK = [
     ['aay', 15],
-    ['aay', 15]
+    ['aay', 15],
 ];
 
-ava('.airlineNameAndFleetHelper() throws when called with an invalid parameter', t => {
-    t.throws(() => airlineNameAndFleetHelper());
-    t.throws(() => airlineNameAndFleetHelper({}));
-    t.throws(() => airlineNameAndFleetHelper(''));
-    t.throws(() => airlineNameAndFleetHelper(42));
-    t.throws(() => airlineNameAndFleetHelper(false));
+test('.airlineNameAndFleetHelper() throws when called with an invalid parameter', () => {
+    expect(() => airlineNameAndFleetHelper()).toThrow();
+    expect(() => airlineNameAndFleetHelper({})).toThrow();
+    expect(() => airlineNameAndFleetHelper('')).toThrow();
+    expect(() => airlineNameAndFleetHelper(42)).toThrow();
+    expect(() => airlineNameAndFleetHelper(false)).toThrow();
 });
 
-ava('.airlineNameAndFleetHelper() returns an object with two keys: name and fleet when an empty string is passed', t => {
+test('.airlineNameAndFleetHelper() returns an object with two keys: name and fleet when an empty string is passed', () => {
     const result = airlineNameAndFleetHelper([]);
 
-    t.true(typeof result === 'object');
-    t.true(result.name === '');
-    t.true(result.fleet === 'default');
+    expect(typeof result === 'object').toBe(true);
+    expect(result.name === '').toBe(true);
+    expect(result.fleet === 'default').toBe(true);
 });
 
-ava('.airlineNameAndFleetHelper() returns default as the fleet when fleet is not present in original string', t => {
+test('.airlineNameAndFleetHelper() returns default as the fleet when fleet is not present in original string', () => {
     const result = airlineNameAndFleetHelper(AIRLINE_LIST_WITHOUT_SEPERATOR_MOCK[0]);
 
-    t.true(typeof result === 'object');
-    t.true(result.name === 'aay');
-    t.true(result.fleet === 'default');
+    expect(typeof result === 'object').toBe(true);
+    expect(result.name === 'aay').toBe(true);
+    expect(result.fleet === 'default').toBe(true);
 });
 
-ava('.airlineNameAndFleetHelper() returns an object with two keys: name and fleet when a string is passed', t => {
+test('.airlineNameAndFleetHelper() returns an object with two keys: name and fleet when a string is passed', () => {
     const result = airlineNameAndFleetHelper(AIRLINE_LIST_WITH_SEPERATOR_MOCK[0]);
 
-    t.true(typeof result === 'object');
-    t.true(result.name === 'a7');
-    t.true(result.fleet === 'fastGA');
+    expect(typeof result === 'object').toBe(true);
+    expect(result.name === 'a7').toBe(true);
+    expect(result.fleet === 'fastGA').toBe(true);
 });
 
-ava('.airlineNameAndFleetHelper() returns name lowercase when it receives uppercase', t => {
+test('.airlineNameAndFleetHelper() returns name lowercase when it receives uppercase', () => {
     const airlineListMock = ['AAL', 14];
     const result = airlineNameAndFleetHelper(airlineListMock);
 
-    t.true(typeof result === 'object');
-    t.true(result.name === 'aal');
-    t.true(result.fleet === 'default');
+    expect(typeof result === 'object').toBe(true);
+    expect(result.name === 'aal').toBe(true);
+    expect(result.fleet === 'default').toBe(true);
 });
 
-ava('.randomAirlineSelectionHelper() throws when called with an invalid parameter', t => {
-    t.throws(() => randomAirlineSelectionHelper());
-    t.throws(() => randomAirlineSelectionHelper({}));
-    t.throws(() => randomAirlineSelectionHelper(''));
-    t.throws(() => randomAirlineSelectionHelper(42));
-    t.throws(() => randomAirlineSelectionHelper(false));
+test('.randomAirlineSelectionHelper() throws when called with an invalid parameter', () => {
+    expect(() => randomAirlineSelectionHelper()).toThrow();
+    expect(() => randomAirlineSelectionHelper({})).toThrow();
+    expect(() => randomAirlineSelectionHelper('')).toThrow();
+    expect(() => randomAirlineSelectionHelper(42)).toThrow();
+    expect(() => randomAirlineSelectionHelper(false)).toThrow();
 
-    t.notThrows(() => randomAirlineSelectionHelper([]));
+    expect(() => randomAirlineSelectionHelper([])).not.toThrow();
 });
 
-ava('.randomAirlineSelectionHelper() returns an object with two keys: name and fleet when an empty array is passed', t => {
+test('.randomAirlineSelectionHelper() returns an object with two keys: name and fleet when an empty array is passed', () => {
     const result = randomAirlineSelectionHelper([]);
 
-    t.true(typeof result === 'object');
-    t.true(result.name === '');
-    t.true(result.fleet === '');
+    expect(typeof result === 'object').toBe(true);
+    expect(result.name === '').toBe(true);
+    expect(result.fleet === '').toBe(true);
 });
 
-ava('.randomAirlineSelectionHelper() returns an object with two keys: name and fleet when passed aline with separator', t => {
+test('.randomAirlineSelectionHelper() returns an object with two keys: name and fleet when passed aline with separator', () => {
     const result = randomAirlineSelectionHelper(AIRLINE_LIST_WITHOUT_SEPERATOR_MOCK);
 
-    t.true(typeof result === 'object');
-    t.true(result.name === 'aay');
-    t.true(result.fleet === '');
+    expect(typeof result === 'object').toBe(true);
+    expect(result.name === 'aay').toBe(true);
+    expect(result.fleet === '').toBe(true);
 });
 
-ava('.randomAirlineSelectionHelper() returns an object with two keys: name and fleet', t => {
+test('.randomAirlineSelectionHelper() returns an object with two keys: name and fleet', () => {
     const result = randomAirlineSelectionHelper(AIRLINE_LIST_WITH_SEPERATOR_MOCK);
 
-    t.true(typeof result === 'object');
-    t.true(result.name === 'a7');
-    t.true(result.fleet === 'fastGA');
+    expect(typeof result === 'object').toBe(true);
+    expect(result.name === 'a7').toBe(true);
+    expect(result.fleet === 'fastGA').toBe(true);
 });

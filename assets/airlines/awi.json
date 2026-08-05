@@ -3,13 +3,9 @@
     "name": "Air Wisconsin",
     "callsign": {
         "name": "Wisconsin",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["CRJ2", 63]
-        ]
+        "default": [["CRJ2", 63]]
     }
 }
