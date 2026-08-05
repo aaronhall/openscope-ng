@@ -1,0 +1,3 @@
+- Rename: openscope NG - 0.0.0
+- Remove all analytics/tracking
+- Address heroku/nginx stuff
