@@ -60,9 +60,13 @@ function handlebarsMarkupPlugin() {
 
 export default defineConfig({
     plugins: [handlebarsMarkupPlugin()],
-    root: ROOT,
-    base: './',
     publicDir: `${ROOT}.vite-public`,
+    server: {
+        strictPort: true,
+    },
+    preview: {
+        strictPort: true,
+    },
     build: {
         outDir: `${ROOT}public`,
         emptyOutDir: true,
