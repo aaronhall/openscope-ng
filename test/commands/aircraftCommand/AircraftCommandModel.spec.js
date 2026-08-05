@@ -1,30 +1,30 @@
 /* eslint-disable arrow-parens, max-len, import/no-extraneous-dependencies */
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import AircraftCommandModel from '../../../src/assets/scripts/client/commands/aircraftCommand/AircraftCommandModel';
 
 
-ava('does not thow when instantiated without parameters', t => {
-    t.notThrows(() => new AircraftCommandModel());
+test('does not thow when instantiated without parameters', () => {
+    expect(() => new AircraftCommandModel()).not.toThrow();
 });
 
-// ava('#parsedArgs returns a string if the arg is a string', t => {
+// test('#parsedArgs returns a string if the arg is a string', () => {
 //     const model = new AircraftCommandModel('heading');
 //     model.args.push('right');
 //
-//     t.true(typeof model.parsedArgs[0] === 'string');
+//     expect(typeof model.parsedArgs[0] === 'string').toBe(true);
 // });
 //
-// ava('#parsedArgs returns a number if the arg is a number', t => {
+// test('#parsedArgs returns a number if the arg is a number', () => {
 //     const model = new AircraftCommandModel('heading');
 //     model.args.push('180');
 //
-//     t.true(typeof model.parsedArgs[0] === 'number');
+//     expect(typeof model.parsedArgs[0] === 'number').toBe(true);
 // });
 //
-// ava('#parsedArgs returns a string padded by 0 if original arg is padded by 0', t => {
+// test('#parsedArgs returns a string padded by 0 if original arg is padded by 0', () => {
 //     const model = new AircraftCommandModel('heading');
 //     model.args.push('090');
 //
-//     t.true(model.parsedArgs[0] === '090');
+//     expect(model.parsedArgs[0] === '090').toBe(true);
 // });

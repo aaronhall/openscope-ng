@@ -1,29 +1,29 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import TimeKeeper from '../../src/assets/scripts/client/engine/TimeKeeper';
 
-ava.afterEach(() => {
+afterEach(() => {
     TimeKeeper.reset();
 });
 
-ava.serial('throws when attempting to instantiate', (t) => {
-    t.throws(() => new TimeKeeper());
+test('throws when attempting to instantiate', (t) => {
+    expect(() => new TimeKeeper()).toThrow();
 });
 
-ava.serial('#deltaTime is the product of #_frameDeltaTime and #_simulationRate', (t) => {
+test('#deltaTime is the product of #_frameDeltaTime and #_simulationRate', (t) => {
     TimeKeeper._frameDeltaTime = 33;
     TimeKeeper._simulationRate = 1;
 
-    t.true(TimeKeeper.deltaTime === 33);
+    expect(TimeKeeper.deltaTime === 33).toBe(true);
 });
 
-ava.serial('#deltaTime returns a max value of 100', (t) => {
+test('#deltaTime returns a max value of 100', (t) => {
     TimeKeeper._frameDeltaTime = 33;
     TimeKeeper._simulationRate = 10;
 
-    t.true(TimeKeeper.deltaTime === 100);
+    expect(TimeKeeper.deltaTime === 100).toBe(true);
 });
 
-ava.skip('#accumulatedDeltaTime is the sum of each deltaTime value from instantiation to now', (t) => {
+test.skip('#accumulatedDeltaTime is the sum of each deltaTime value from instantiation to now', (t) => {
     const deltaValues = [];
 
     deltaValues.push(TimeKeeper.deltaTime);
@@ -39,10 +39,10 @@ ava.skip('#accumulatedDeltaTime is the sum of each deltaTime value from instanti
 
     const sum = deltaValues.reduce((accumulator, item) => accumulator + item, 0);
 
-    t.true(sum === TimeKeeper.accumulatedDeltaTime);
+    expect(sum === TimeKeeper.accumulatedDeltaTime).toBe(true);
 });
 
-ava.skip('#accumulatedDeltaTime is the sum of each deltaTime value from instantiation to now offset by timewarp', (t) => {
+test.skip('#accumulatedDeltaTime is the sum of each deltaTime value from instantiation to now offset by timewarp', (t) => {
     const deltaValues = [];
 
     deltaValues.push(TimeKeeper.deltaTime);
@@ -60,149 +60,149 @@ ava.skip('#accumulatedDeltaTime is the sum of each deltaTime value from instanti
 
     const sum = deltaValues.reduce((accumulator, item) => accumulator + item, 0);
 
-    t.true(sum === TimeKeeper.accumulatedDeltaTime);
+    expect(sum === TimeKeeper.accumulatedDeltaTime).toBe(true);
 });
 
-ava.serial('.getDeltaTimeForGameStateAndTimewarp() returns 0 when #isPaused is true', (t) => {
+test('.getDeltaTimeForGameStateAndTimewarp() returns 0 when #isPaused is true', (t) => {
     const result = TimeKeeper.getDeltaTimeForGameStateAndTimewarp(true);
 
-    t.true(result === 0);
+    expect(result === 0).toBe(true);
 });
 
-ava.serial('.getDeltaTimeForGameStateAndTimewarp() returns 0 when #deltaTime > 1 and #timewarp is 1', (t) => {
+test('.getDeltaTimeForGameStateAndTimewarp() returns 0 when #deltaTime > 1 and #timewarp is 1', (t) => {
     TimeKeeper._frameDeltaTime = 2;
     TimeKeeper._simulationRate = 1;
 
     const result = TimeKeeper.getDeltaTimeForGameStateAndTimewarp(false);
 
-    t.true(result === 0);
+    expect(result === 0).toBe(true);
 });
 
-ava.serial('.getDeltaTimeForGameStateAndTimewarp() returns #deltaTime when if conditions are not met', (t) => {
+test('.getDeltaTimeForGameStateAndTimewarp() returns #deltaTime when if conditions are not met', (t) => {
     const result = TimeKeeper.getDeltaTimeForGameStateAndTimewarp(false);
 
-    t.true(result === TimeKeeper.deltaTime);
+    expect(result === TimeKeeper.deltaTime).toBe(true);
 });
 
-ava.serial('.saveDeltaTimeBeforeFutureTrackCalculation() ', (t) => {
+test('.saveDeltaTimeBeforeFutureTrackCalculation() ', (t) => {
     TimeKeeper._frameDeltaTime = 3;
 
     TimeKeeper.saveDeltaTimeBeforeFutureTrackCalculation();
 
-    t.true(TimeKeeper._futureTrackDeltaTimeCache === 3);
-    t.true(TimeKeeper._frameDeltaTime === 5);
+    expect(TimeKeeper._futureTrackDeltaTimeCache === 3).toBe(true);
+    expect(TimeKeeper._frameDeltaTime === 5).toBe(true);
 });
 
-ava.serial('.restoreDeltaTimeAfterFutureTrackCalculation() ', (t) => {
+test('.restoreDeltaTimeAfterFutureTrackCalculation() ', (t) => {
     TimeKeeper._frameDeltaTime = 5;
     TimeKeeper._futureTrackDeltaTimeCache = 3;
 
     TimeKeeper.restoreDeltaTimeAfterFutureTrackCalculation();
 
-    t.true(TimeKeeper._futureTrackDeltaTimeCache === -1);
-    t.true(TimeKeeper._frameDeltaTime === 3);
+    expect(TimeKeeper._futureTrackDeltaTimeCache === -1).toBe(true);
+    expect(TimeKeeper._frameDeltaTime === 3).toBe(true);
 });
 
-ava.serial('.setPause() does not update #_isPaused when nextPause is the same value', (t) => {
+test('.setPause() does not update #_isPaused when nextPause is the same value', (t) => {
     TimeKeeper._isPaused = false;
     TimeKeeper.setPause(false);
 
-    t.false(TimeKeeper._isPaused);
+    expect(TimeKeeper._isPaused).toBe(false);
 });
 
-ava.serial('.setPause() updates #_isPaused when nextPause is a different value', (t) => {
+test('.setPause() updates #_isPaused when nextPause is a different value', (t) => {
     TimeKeeper._isPaused = false;
     TimeKeeper.setPause(true);
 
-    t.true(TimeKeeper._isPaused);
+    expect(TimeKeeper._isPaused).toBe(true);
 });
 
-ava.serial('.update() increments #_elapsedFrameCount by 1', (t) => {
-    t.true(TimeKeeper._elapsedFrameCount === 0);
+test('.update() increments #_elapsedFrameCount by 1', (t) => {
+    expect(TimeKeeper._elapsedFrameCount === 0).toBe(true);
 
     TimeKeeper.update();
 
-    t.true(TimeKeeper._elapsedFrameCount === 1);
+    expect(TimeKeeper._elapsedFrameCount === 1).toBe(true);
 });
 
-ava.serial('.update() resets #_frameStartTimestamp to #currentTime when elapsed time is > frameDelay', (t) => {
+test('.update() resets #_frameStartTimestamp to #currentTime when elapsed time is > frameDelay', (t) => {
     TimeKeeper._frameStartTimestamp = 10;
     TimeKeeper.update();
 
-    t.true(TimeKeeper._frameStartTimestamp === TimeKeeper._previousFrameTimestamp);
+    expect(TimeKeeper._frameStartTimestamp === TimeKeeper._previousFrameTimestamp).toBe(true);
 });
 
-ava.serial('.update() recalculates the #_frameStep value based on the current #_simulationRate value', (t) => {
+test('.update() recalculates the #_frameStep value based on the current #_simulationRate value', (t) => {
     TimeKeeper._simulationRate = 1;
     TimeKeeper.update();
 
-    t.true(TimeKeeper._frameStep === 30);
+    expect(TimeKeeper._frameStep === 30).toBe(true);
 
     TimeKeeper._simulationRate = 2;
     TimeKeeper.update();
 
-    t.true(TimeKeeper._frameStep === 27);
+    expect(TimeKeeper._frameStep === 27).toBe(true);
 
     TimeKeeper._simulationRate = 5;
     TimeKeeper.update();
 
-    t.true(TimeKeeper._frameStep === 17);
+    expect(TimeKeeper._frameStep === 17).toBe(true);
 
     TimeKeeper._simulationRate = 25;
     TimeKeeper.update();
 
-    t.true(TimeKeeper._frameStep === 1);
+    expect(TimeKeeper._frameStep === 1).toBe(true);
 
     TimeKeeper._simulationRate = 50;
     TimeKeeper.update();
 
-    t.true(TimeKeeper._frameStep === 1);
+    expect(TimeKeeper._frameStep === 1).toBe(true);
 });
 
-ava.serial('.updateTimescale() only accepts positive numbers', (t) => {
+test('.updateTimescale() only accepts positive numbers', (t) => {
     TimeKeeper._simulationRate = 1;
 
     TimeKeeper.updateSimulationRate(-3);
 
-    t.true(TimeKeeper._simulationRate === 1);
+    expect(TimeKeeper._simulationRate === 1).toBe(true);
 });
 
-ava.serial('.updateTimescale() updates #timescale value', (t) => {
+test('.updateTimescale() updates #timescale value', (t) => {
     TimeKeeper._simulationRate = 1;
 
     TimeKeeper.updateSimulationRate(3);
 
-    t.true(TimeKeeper._simulationRate === 3);
+    expect(TimeKeeper._simulationRate === 3).toBe(true);
 });
 
-ava.serial('._isReturningFromPauseAndNotFutureTrack() returns false when #_frameDeltaTime is > than 1 and #_simulationRate is 1', (t) => {
+test('._isReturningFromPauseAndNotFutureTrack() returns false when #_frameDeltaTime is > than 1 and #_simulationRate is 1', (t) => {
     TimeKeeper._frameDeltaTime = 0.5;
     TimeKeeper._simulationRate = 1;
     TimeKeeper._futureTrackDeltaTimeCache = -1;
 
-    t.false(TimeKeeper._isReturningFromPauseAndNotFutureTrack());
+    expect(TimeKeeper._isReturningFromPauseAndNotFutureTrack()).toBe(false);
 });
 
-ava.serial('._isReturningFromPauseAndNotFutureTrack() returns false #_simulationRate is not === 1', (t) => {
+test('._isReturningFromPauseAndNotFutureTrack() returns false #_simulationRate is not === 1', (t) => {
     TimeKeeper._frameDeltaTime = 0.5;
     TimeKeeper._simulationRate = 2;
     TimeKeeper._futureTrackDeltaTimeCache = -1;
 
-    t.false(TimeKeeper._isReturningFromPauseAndNotFutureTrack());
+    expect(TimeKeeper._isReturningFromPauseAndNotFutureTrack()).toBe(false);
 });
 
-ava.serial('._isReturningFromPauseAndNotFutureTrack() returns false #_futureTrackDeltaTimeCache is not === -1', (t) => {
+test('._isReturningFromPauseAndNotFutureTrack() returns false #_futureTrackDeltaTimeCache is not === -1', (t) => {
     TimeKeeper._frameDeltaTime = 0.5;
     TimeKeeper._simulationRate = 1;
     TimeKeeper._futureTrackDeltaTimeCache = 5;
 
-    t.false(TimeKeeper._isReturningFromPauseAndNotFutureTrack());
+    expect(TimeKeeper._isReturningFromPauseAndNotFutureTrack()).toBe(false);
 });
 
-ava.serial('._isReturningFromPauseAndNotFutureTrack() returns true only when all three conditions are met', (t) => {
+test('._isReturningFromPauseAndNotFutureTrack() returns true only when all three conditions are met', (t) => {
     TimeKeeper._frameDeltaTime = 2;
     TimeKeeper._simulationRate = 1;
     TimeKeeper._futureTrackDeltaTimeCache = -1;
 
-    t.true(TimeKeeper._isReturningFromPauseAndNotFutureTrack());
+    expect(TimeKeeper._isReturningFromPauseAndNotFutureTrack()).toBe(true);
 });

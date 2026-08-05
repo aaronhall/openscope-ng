@@ -1,30 +1,30 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import sinon from 'sinon';
 
 import AirlineController from '../../src/assets/scripts/client/airline/AirlineController';
 import { AIRLINE_DEFINITION_LIST_FOR_FIXTURE } from './_mocks/airlineMocks';
 
-ava('does not throw when called with valid parameters', (t) => {
-    t.notThrows(() => new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE));
+test('does not throw when called with valid parameters', () => {
+    expect(() => new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE)).not.toThrow();
 });
 
-ava('.generateFlightNumberWithAirlineModel() throws when it receives anything other than an AirlineModel', (t) => {
+test('.generateFlightNumberWithAirlineModel() throws when it receives anything other than an AirlineModel', () => {
     const controller = new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE);
 
-    t.throws(() => controller.generateFlightNumberWithAirlineModel({}));
+    expect(() => controller.generateFlightNumberWithAirlineModel({})).toThrow();
 });
 
-ava('.generateFlightNumberWithAirlineModel() returns a new flightNumber', (t) => {
+test('.generateFlightNumberWithAirlineModel() returns a new flightNumber', () => {
     const controller = new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE);
     const airlineModel = controller.airlineCollection._items[0];
     const generateFlightNumberSpy = sinon.spy(airlineModel, 'generateFlightNumber');
 
     controller.generateFlightNumberWithAirlineModel(airlineModel);
 
-    t.true(generateFlightNumberSpy.called);
+    expect(generateFlightNumberSpy.called).toBe(true);
 });
 
-ava('.generateFlightNumberWithAirlineModel() calls airlineModel.generateFlightNumber() twice if the first return exists in flightNumbers', (t) => {
+test('.generateFlightNumberWithAirlineModel() calls airlineModel.generateFlightNumber() twice if the first return exists in flightNumbers', () => {
     const controller = new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE);
     const airlineModel = controller.airlineCollection._items[0];
     airlineModel.activeFlightNumbers = ['42'];
@@ -35,12 +35,12 @@ ava('.generateFlightNumberWithAirlineModel() calls airlineModel.generateFlightNu
 
     controller.generateFlightNumberWithAirlineModel(airlineModel);
 
-    t.true(generateFlightNumberStub.calledTwice);
+    expect(generateFlightNumberStub.calledTwice).toBe(true);
 
     generateFlightNumberStub.restore();
 });
 
-ava('.generateFlightNumberWithAirlineModel() does not set a duplicate flightNumber to the list', (t) => {
+test('.generateFlightNumberWithAirlineModel() does not set a duplicate flightNumber to the list', () => {
     const controller = new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE);
     const airlineModel = controller.airlineCollection._items[0];
     airlineModel.activeFlightNumbers = ['42'];
@@ -51,39 +51,39 @@ ava('.generateFlightNumberWithAirlineModel() does not set a duplicate flightNumb
 
     controller.generateFlightNumberWithAirlineModel(airlineModel);
 
-    t.true(controller.flightNumbers.length === 2);
-    t.true(controller.flightNumbers.indexOf('42') !== -1);
-    t.true(controller.flightNumbers.indexOf('3') !== -1);
+    expect(controller.flightNumbers.length === 2).toBe(true);
+    expect(controller.flightNumbers.indexOf('42') !== -1).toBe(true);
+    expect(controller.flightNumbers.indexOf('3') !== -1).toBe(true);
 
     generateFlightNumberStub.restore();
 });
 
-ava('.generateFlightNumberWithAirlineModel() calls airlineModel.addFlightNumberToInUse() when a unique flightNumber is generated', (t) => {
+test('.generateFlightNumberWithAirlineModel() calls airlineModel.addFlightNumberToInUse() when a unique flightNumber is generated', () => {
     const controller = new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE);
     const airlineModel = controller.airlineCollection._items[0];
     const addFlightNumberToInUseSpy = sinon.spy(airlineModel, 'addFlightNumberToInUse');
     const result = controller.generateFlightNumberWithAirlineModel(airlineModel);
 
-    t.true(addFlightNumberToInUseSpy.calledWithExactly(result));
+    expect(addFlightNumberToInUseSpy.calledWithExactly(result)).toBe(true);
 });
 
-ava('.generateFlightNumberWithAirlineModel() returns a string', (t) => {
+test('.generateFlightNumberWithAirlineModel() returns a string', () => {
     const controller = new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE);
     const airlineModel = controller.airlineCollection._items[0];
     const result = controller.generateFlightNumberWithAirlineModel(airlineModel);
 
-    t.true(typeof result === 'string');
+    expect(typeof result === 'string').toBe(true);
 });
 
-ava('.removeFlightNumberFromList() does not throw if an airlineModel is not found', (t) => {
+test('.removeFlightNumberFromList() does not throw if an airlineModel is not found', () => {
     const airlineMock = 'aal';
     const callsignMock = '123';
     const controller = new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE);
 
-    t.notThrows(() => controller.removeFlightNumberFromList(airlineMock, callsignMock));
+    expect(() => controller.removeFlightNumberFromList(airlineMock, callsignMock)).not.toThrow();
 });
 
-ava('.removeFlightNumberFromList() calls .removeFlightNumber() on the found AirlineModel', (t) => {
+test('.removeFlightNumberFromList() calls .removeFlightNumber() on the found AirlineModel', () => {
     const airlineMock = 'aal';
     const callsignMock = '123';
     const controller = new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE);
@@ -92,15 +92,15 @@ ava('.removeFlightNumberFromList() calls .removeFlightNumber() on the found Airl
 
     controller.removeFlightNumberFromList(airlineMock, callsignMock);
 
-    t.true(removeFlightNumberSpy.calledWithExactly(callsignMock));
+    expect(removeFlightNumberSpy.calledWithExactly(callsignMock)).toBe(true);
 });
 
-ava('._isActiveFlightNumber() returns true if a given flightNumber exists within any AirlineModel.activeFlightNumbers list', (t) => {
+test('._isActiveFlightNumber() returns true if a given flightNumber exists within any AirlineModel.activeFlightNumbers list', () => {
     const invalidFlightNumberMock = 'threeve';
     const validFlightNumberMock = '42';
     const controller = new AirlineController(AIRLINE_DEFINITION_LIST_FOR_FIXTURE);
     controller.airlineCollection._items[0].activeFlightNumbers = [validFlightNumberMock];
 
-    t.false(controller._isActiveFlightNumber(invalidFlightNumberMock));
-    t.true(controller._isActiveFlightNumber(validFlightNumberMock));
+    expect(controller._isActiveFlightNumber(invalidFlightNumberMock)).toBe(false);
+    expect(controller._isActiveFlightNumber(validFlightNumberMock)).toBe(true);
 });

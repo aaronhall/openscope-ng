@@ -1,15 +1,15 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import sinon from 'sinon';
 import _isNil from 'lodash/isNil';
 import GameOptions from '../../src/assets/scripts/client/game/GameOptions';
 import EventBus from '../../src/assets/scripts/client/lib/EventBus';
 import { GAME_OPTION_LIST_MOCK } from './_mocks/gameOptionMocks';
 
-ava('does not throw on instantiation', (t) => {
-    t.notThrows(() => new GameOptions());
+test('does not throw on instantiation', () => {
+    expect(() => new GameOptions()).not.toThrow();
 });
 
-ava('sets #_options on instantiation', (t) => {
+test('sets #_options on instantiation', () => {
     const expectedResult = [
         'theme',
         'towerController',
@@ -27,42 +27,42 @@ ava('sets #_options on instantiation', (t) => {
     const model = new GameOptions();
     const result = Object.keys(model._options);
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('.addGameOptions() calls .addOption() for each available option', (t) => {
+test('.addGameOptions() calls .addOption() for each available option', () => {
     const model = new GameOptions();
     const expectedResult = Object.keys(model._options).length;
     const addOptionSpy = sinon.spy(model, 'addOption');
 
     model.addGameOptions();
 
-    t.true(addOptionSpy.callCount === expectedResult);
+    expect(addOptionSpy.callCount === expectedResult).toBe(true);
 });
 
-ava('.addOption() calls .buildStorageName()', (t) => {
+test('.addOption() calls .buildStorageName()', () => {
     const storageNameMock = 'threeve';
     const model = new GameOptions();
     const buildStorageNameSpy = sinon.spy(model, 'buildStorageName');
 
     model.buildStorageName(storageNameMock);
 
-    t.true(buildStorageNameSpy.calledWithExactly(storageNameMock));
+    expect(buildStorageNameSpy.calledWithExactly(storageNameMock)).toBe(true);
 });
 
-ava('.addOption() adds option to #_options and creates new property from option.name', (t) => {
+test('.addOption() adds option to #_options and creates new property from option.name', () => {
     const optionKeyMock = 'threeve';
     const optionValueMock = '$texas';
     const model = new GameOptions();
     model._options = {};
     model.addOption(GAME_OPTION_LIST_MOCK[0]);
 
-    t.false(_isNil(model._options[optionKeyMock]));
-    t.false(_isNil(model[optionKeyMock]));
-    t.true(model[optionKeyMock] === optionValueMock);
+    expect(_isNil(model._options[optionKeyMock])).toBe(false);
+    expect(_isNil(model[optionKeyMock])).toBe(false);
+    expect(model[optionKeyMock] === optionValueMock).toBe(true);
 });
 
-ava('.addOption() populates this[OPTION_KEY] with stored value when one exists in localStorage', (t) => {
+test('.addOption() populates this[OPTION_KEY] with stored value when one exists in localStorage', () => {
     const expectedResult = 'ruff';
     const optionKeyMock = 'threeve';
     const optionStorageKeyMock = 'zlsa.atc.option.threeve';
@@ -73,10 +73,10 @@ ava('.addOption() populates this[OPTION_KEY] with stored value when one exists i
 
     model.addOption(GAME_OPTION_LIST_MOCK[0]);
 
-    t.true(model[optionKeyMock] === expectedResult);
+    expect(model[optionKeyMock] === expectedResult).toBe(true);
 });
 
-ava('.setOptionByName() creates a localStorage item with the correct value', (t) => {
+test('.setOptionByName() creates a localStorage item with the correct value', () => {
     const expectedResult = 'bow wow';
     const optionNameMock = 'threeve';
     const storageKeyMock = 'zlsa.atc.option.threeve';
@@ -85,11 +85,11 @@ ava('.setOptionByName() creates a localStorage item with the correct value', (t)
     model.addOption(GAME_OPTION_LIST_MOCK[0]);
     model.setOptionByName(optionNameMock, expectedResult);
 
-    t.false(typeof global.localStorage.getItem(storageKeyMock) === 'undefined');
-    t.true(global.localStorage.getItem(storageKeyMock) === expectedResult);
+    expect(typeof global.localStorage.getItem(storageKeyMock) === 'undefined').toBe(false);
+    expect(global.localStorage.getItem(storageKeyMock) === expectedResult).toBe(true);
 });
 
-ava('.setOptionByName() calls EventBus.trigger() when #onChangeEventHandler() is not null', (t) => {
+test('.setOptionByName() calls EventBus.trigger() when #onChangeEventHandler() is not null', () => {
     EventBus.trigger = sinon.stub();
     const optionValueMock = 'bow wow';
     const optionNameMock = 'threeve';
@@ -98,16 +98,16 @@ ava('.setOptionByName() calls EventBus.trigger() when #onChangeEventHandler() is
     model.addOption(GAME_OPTION_LIST_MOCK[0]);
     model.setOptionByName(optionNameMock, optionValueMock);
 
-    t.true(EventBus.trigger.callCount === 1);
-    t.true(EventBus.trigger.calledWithExactly(
+    expect(EventBus.trigger.callCount === 1).toBe(true);
+    expect(EventBus.trigger.calledWithExactly(
         GAME_OPTION_LIST_MOCK[0].onChangeEventHandler,
         optionValueMock
-    ));
+    )).toBe(true);
 
     EventBus.trigger = sinon.restore();
 });
 
-ava('.setOptionByName() does not call EventBus.trigger() when #onChangeEventHandler() is null', (t) => {
+test('.setOptionByName() does not call EventBus.trigger() when #onChangeEventHandler() is null', () => {
     EventBus.trigger = sinon.stub();
     const optionValueMock = 'bow wow';
     const optionNameMock = 'number';
@@ -116,15 +116,15 @@ ava('.setOptionByName() does not call EventBus.trigger() when #onChangeEventHand
     model.addOption(GAME_OPTION_LIST_MOCK[1]);
     model.setOptionByName(optionNameMock, optionValueMock);
 
-    t.true(EventBus.trigger.callCount === 0);
+    expect(EventBus.trigger.callCount === 0).toBe(true);
 
     EventBus.trigger = sinon.restore();
 });
 
-ava('.buildStorageName() returns a string used for localStorage', (t) => {
+test('.buildStorageName() returns a string used for localStorage', () => {
     const expectedResult = 'zlsa.atc.option.threeve';
     const model = new GameOptions();
     const result = model.buildStorageName('threeve');
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });

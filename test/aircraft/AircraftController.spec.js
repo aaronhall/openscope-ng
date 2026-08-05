@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 // import sinon from 'sinon';
 
 import AircraftController from '../../src/assets/scripts/client/aircraft/AircraftController';
@@ -7,150 +7,150 @@ import { airlineControllerFixture } from '../fixtures/airlineFixtures';
 import { scopeModelFixture } from '../fixtures/scopeFixtures';
 // import { spawnPatternModelArrivalFixture } from '../fixtures/trafficGeneratorFixtures';
 
-ava('throws when called with missing parameters', (t) => {
+test('throws when called with missing parameters', () => {
     const expectedMessage = /Invalid parameter\(s\) passed to AircraftController constructor\. Expected aircraftTypeDefinitionList, airlineController and scopeModel to be defined, but received .*/;
 
-    t.throws(() => new AircraftController(), {
+    expect(() => new AircraftController(), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
+    }).toThrow();
 
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK), {
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(airlineControllerFixture), {
+    }).toThrow();
+    expect(() => new AircraftController(airlineControllerFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(scopeModelFixture), {
+    }).toThrow();
+    expect(() => new AircraftController(scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
+    }).toThrow();
 
-    t.throws(() => new AircraftController(airlineControllerFixture, scopeModelFixture), {
+    expect(() => new AircraftController(airlineControllerFixture, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, scopeModelFixture), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
+    }).toThrow();
 
-    t.throws(() => new AircraftController(null, airlineControllerFixture, scopeModelFixture), {
+    expect(() => new AircraftController(null, airlineControllerFixture, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, null, scopeModelFixture), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, null, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, null), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, null), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
+    }).toThrow();
 });
 
-ava('throws when called with invalid aircraftTypeDefinitionList', (t) => {
+test('throws when called with invalid aircraftTypeDefinitionList', () => {
     const expectedMessage = /Invalid aircraftTypeDefinitionList passed to AircraftController constructor\. Expected a non-empty array, but received .*/;
 
-    t.throws(() => new AircraftController({}, airlineControllerFixture, scopeModelFixture), {
+    expect(() => new AircraftController({}, airlineControllerFixture, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController([], airlineControllerFixture, scopeModelFixture), {
+    }).toThrow();
+    expect(() => new AircraftController([], airlineControllerFixture, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(42, airlineControllerFixture, scopeModelFixture), {
+    }).toThrow();
+    expect(() => new AircraftController(42, airlineControllerFixture, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController('threeve', airlineControllerFixture, scopeModelFixture), {
+    }).toThrow();
+    expect(() => new AircraftController('threeve', airlineControllerFixture, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(false, airlineControllerFixture, scopeModelFixture), {
+    }).toThrow();
+    expect(() => new AircraftController(false, airlineControllerFixture, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
+    }).toThrow();
 });
 
-ava('throws when called with invalid airlineController', (t) => {
+test('throws when called with invalid airlineController', () => {
     const expectedMessage = /Invalid airlineController passed to AircraftController constructor\. Expected instance of AirlineController, but received .*/;
 
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, {}, scopeModelFixture), {
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, {}, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, [], scopeModelFixture), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, [], scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, 42, scopeModelFixture), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, 42, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, 'threeve', scopeModelFixture), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, 'threeve', scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, false, scopeModelFixture), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, false, scopeModelFixture), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
+    }).toThrow();
 });
 
-ava('throws when called with invalid scopeModel', (t) => {
+test('throws when called with invalid scopeModel', () => {
     const expectedMessage = /Invalid scopeModel passed to AircraftController constructor\. Expected instance of ScopeModel, but received .*/;
 
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, {}), {
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, {}), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, []), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, []), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, 42), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, 42), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, 'threeve'), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, 'threeve'), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, false), {
+    }).toThrow();
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, false), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
+    }).toThrow();
 });
 
-ava('does not throw when passed valid parameters', (t) => {
-    t.notThrows(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, scopeModelFixture));
+test('does not throw when passed valid parameters', () => {
+    expect(() => new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, scopeModelFixture)).not.toThrow();
 });
 
-// ava('.createAircraftWithSpawnPatternModel() calls ._buildAircraftProps()', (t) => {
+// test('.createAircraftWithSpawnPatternModel() calls ._buildAircraftProps()', () => {
 //     const controller = new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, scopeModelFixture);
 //     const _buildAircraftPropsSpy = sinon.spy(controller, '_buildAircraftProps');
 //     const _createAircraftWithInitializationPropsStub = sinon.stub(controller, '_createAircraftWithInitializationProps');
 //
 //     controller.createAircraftWithSpawnPatternModel(spawnPatternModelArrivalFixture);
 //
-//     t.true(_buildAircraftPropsSpy.calledWithExactly(spawnPatternModelArrivalFixture));
+//     expect(_buildAircraftPropsSpy.calledWithExactly(spawnPatternModelArrivalFixture)).toBe(true);
 //
 //     _createAircraftWithInitializationPropsStub.restore();
 // });
 //
-// ava('.removeFlightNumberFromList() calls _airlineController.removeFlightNumberFromList() with an airlineId and a flightNumber', (t) => {
+// test('.removeFlightNumberFromList() calls _airlineController.removeFlightNumberFromList() with an airlineId and a flightNumber', () => {
 //     const controller = new AircraftController(AIRCRAFT_DEFINITION_LIST_MOCK, airlineControllerFixture, scopeModelFixture);
 //     const removeFlightNumberFromListSpy = sinon.spy(controller._airlineController, 'removeFlightNumberFromList');
 //
 //     controller.removeFlightNumberFromList({ airlineId: 'aal', callsign: '123' });
 //
-//     t.true(removeFlightNumberFromListSpy.calledOnce);
+//     expect(removeFlightNumberFromListSpy.calledOnce).toBe(true);
 // });

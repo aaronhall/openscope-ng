@@ -1,5 +1,5 @@
 /* eslint-disable arrow-parens, import/no-extraneous-dependencies, new-cap */
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import ModelSourceFactory from '../../../src/assets/scripts/client/base/ModelSource/ModelSourceFactory';
 import FixModel from '../../../src/assets/scripts/client/navigationLibrary/FixModel';
@@ -16,48 +16,48 @@ import {
 const SOURCE_NAME_MOCK = 'FixModel';
 const FIX_ARGS_MOCK = [FIXNAME_MOCK, FIX_COORDINATE_MOCK, airportPositionFixtureKSFO];
 
-ava.beforeEach(() => {
+beforeEach(() => {
     createNavigationLibraryFixture();
 });
 
-ava.afterEach(() => {
+afterEach(() => {
     resetNavigationLibraryFixture();
 });
 
-ava('throws when attempting to instantiate', t => {
-    t.throws(() => new ModelSourceFactory());
+test('throws when attempting to instantiate', () => {
+    expect(() => new ModelSourceFactory()).toThrow();
 });
 
-ava('.getModelSourceForType() throws when provided an unsupported type', t => {
-    t.throws(() => ModelSourceFactory.getModelSourceForType('abc'));
+test('.getModelSourceForType() throws when provided an unsupported type', () => {
+    expect(() => ModelSourceFactory.getModelSourceForType('abc')).toThrow();
 });
 
-ava('.getModelSourceForType() does not throw when provided a supported type', t => {
-    t.notThrows(() => ModelSourceFactory.getModelSourceForType(SOURCE_NAME_MOCK, ...FIX_ARGS_MOCK));
+test('.getModelSourceForType() does not throw when provided a supported type', () => {
+    expect(() => ModelSourceFactory.getModelSourceForType(SOURCE_NAME_MOCK, ...FIX_ARGS_MOCK)).not.toThrow();
 });
 
-ava('.getModelSourceForType() returns a constructor when one doesnt exist in the pool', t => {
+test('.getModelSourceForType() returns a constructor when one doesnt exist in the pool', () => {
     const result = ModelSourceFactory.getModelSourceForType(SOURCE_NAME_MOCK, ...FIX_ARGS_MOCK);
 
-    t.true(result instanceof FixModel);
+    expect(result instanceof FixModel).toBe(true);
 });
 
-ava('.getModelSourceForType() returns a constructor that exists in the pool', t => {
+test('.getModelSourceForType() returns a constructor that exists in the pool', () => {
     const model = new FixModel(...FIX_ARGS_MOCK);
     ModelSourceFactory.returnModelToPool(model);
     const result = ModelSourceFactory.getModelSourceForType(SOURCE_NAME_MOCK, ...FIX_ARGS_MOCK);
 
-    t.true(result instanceof FixModel);
+    expect(result instanceof FixModel).toBe(true);
 });
 
-ava('.returnModelToPool() throws when provided an unsupported type', t => {
+test('.returnModelToPool() throws when provided an unsupported type', () => {
     const model = new Date();
 
-    t.throws(() => ModelSourceFactory.returnModelToPool(model));
+    expect(() => ModelSourceFactory.returnModelToPool(model)).toThrow();
 });
 
-ava('.returnModelToPool() accepts a class instance', t => {
+test('.returnModelToPool() accepts a class instance', () => {
     const model = new FixModel(...FIX_ARGS_MOCK);
 
-    t.notThrows(() => ModelSourceFactory.returnModelToPool(model));
+    expect(() => ModelSourceFactory.returnModelToPool(model)).not.toThrow();
 });

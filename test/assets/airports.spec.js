@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import _forEach from 'lodash/forEach';
@@ -7,7 +7,7 @@ const airportAssetsPath = path.join(__dirname, '..', '..', 'assets', 'airports')
 const erroringFileNames = [];
 const fileNames = fs.readdirSync(airportAssetsPath);
 
-ava('All airport JSON files contain valid JSON data', (t) => {
+test('All airport JSON files contain valid JSON data', () => {
     _forEach(fileNames, (fileName) => {
         if (fileName.indexOf('.json') === -1) {
             return;
@@ -23,6 +23,6 @@ ava('All airport JSON files contain valid JSON data', (t) => {
             console.error(e);
         }
 
-        t.deepEqual(erroringFileNames, []);
+        expect(erroringFileNames).toEqual([]);
     });
 });

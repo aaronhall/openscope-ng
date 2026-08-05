@@ -1,53 +1,53 @@
 /* eslint-disable arrow-parens, max-len, import/no-extraneous-dependencies*/
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import {
     isEmptyOrNotObject,
     isEmptyOrNotArray
 } from '../../src/assets/scripts/client/utilities/validatorUtilities';
 
-ava('.isEmptyOrNotObject() returns true when passed a non object', (t) => {
-    t.true(isEmptyOrNotObject());
-    t.true(isEmptyOrNotObject(null));
-    t.true(isEmptyOrNotObject(42));
-    t.true(isEmptyOrNotObject('threeve'));
-    t.true(isEmptyOrNotObject(false));
+test('.isEmptyOrNotObject() returns true when passed a non object', () => {
+    expect(isEmptyOrNotObject()).toBe(true);
+    expect(isEmptyOrNotObject(null)).toBe(true);
+    expect(isEmptyOrNotObject(42)).toBe(true);
+    expect(isEmptyOrNotObject('threeve')).toBe(true);
+    expect(isEmptyOrNotObject(false)).toBe(true);
 });
 
-ava('.isEmptyOrNotObject returns true when passed an empty object', (t) => {
-    t.true(isEmptyOrNotObject({}));
-    t.true(isEmptyOrNotObject([]));
+test('.isEmptyOrNotObject returns true when passed an empty object', () => {
+    expect(isEmptyOrNotObject({})).toBe(true);
+    expect(isEmptyOrNotObject([])).toBe(true);
 });
 
-ava('.isEmptyOrNotObject() returns false when passed a non-empty object', (t) => {
-    t.false(isEmptyOrNotObject([1, 2, 3]));
-    t.false(isEmptyOrNotObject({
+test('.isEmptyOrNotObject() returns false when passed a non-empty object', () => {
+    expect(isEmptyOrNotObject([1, 2, 3])).toBe(false);
+    expect(isEmptyOrNotObject({
         a: 'threeve',
         b: 42,
         c: false
-    }));
+    })).toBe(false);
 });
 
-ava('.isEmptyOrNotArray() returns true when passed a non array', (t) => {
-    t.true(isEmptyOrNotArray());
-    t.true(isEmptyOrNotArray(null));
-    t.true(isEmptyOrNotArray({}));
-    t.true(isEmptyOrNotArray(42));
-    t.true(isEmptyOrNotArray('threeve'));
-    t.true(isEmptyOrNotArray(false));
+test('.isEmptyOrNotArray() returns true when passed a non array', () => {
+    expect(isEmptyOrNotArray()).toBe(true);
+    expect(isEmptyOrNotArray(null)).toBe(true);
+    expect(isEmptyOrNotArray({})).toBe(true);
+    expect(isEmptyOrNotArray(42)).toBe(true);
+    expect(isEmptyOrNotArray('threeve')).toBe(true);
+    expect(isEmptyOrNotArray(false)).toBe(true);
 });
 
-ava('.isEmptyOrNotArray returns true when passed an empty array', (t) => {
-    t.true(isEmptyOrNotArray([]));
+test('.isEmptyOrNotArray returns true when passed an empty array', () => {
+    expect(isEmptyOrNotArray([])).toBe(true);
 });
 
-ava('.isEmptyOrNotArray return false when passed an array with values', (t) => {
-    t.false(isEmptyOrNotArray([1, 2, 3]));
+test('.isEmptyOrNotArray return false when passed an array with values', () => {
+    expect(isEmptyOrNotArray([1, 2, 3])).toBe(false);
 });
 
-ava('.isEmptyOrNotArray() returns true when passed an object with properties', (t) => {
-    t.true(isEmptyOrNotArray({
+test('.isEmptyOrNotArray() returns true when passed an object with properties', () => {
+    expect(isEmptyOrNotArray({
         a: 'threeve',
         b: 42,
         c: false
-    }));
+    })).toBe(true);
 });

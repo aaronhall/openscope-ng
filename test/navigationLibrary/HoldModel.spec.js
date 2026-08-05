@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import HoldModel from '../../src/assets/scripts/client/navigationLibrary/HoldModel';
 
 import {
@@ -16,33 +16,33 @@ import {
     EXPECTED_HOLD_PARAMETERS
 } from './_mocks/holdModelMocks';
 
-ava('throws if called with invalid parameters', (t) => {
-    t.throws(() => new HoldModel(FIX_NAME_MOCK_EMPTY, null));
-    t.throws(() => new HoldModel(FIX_NAME_MOCK_EMPTY, HOLD_STRING_MOCK_VALID));
-    t.throws(() => new HoldModel(FIX_NAME_MOCK_VALID, null));
+test('throws if called with invalid parameters', () => {
+    expect(() => new HoldModel(FIX_NAME_MOCK_EMPTY, null)).toThrow();
+    expect(() => new HoldModel(FIX_NAME_MOCK_EMPTY, HOLD_STRING_MOCK_VALID)).toThrow();
+    expect(() => new HoldModel(FIX_NAME_MOCK_VALID, null)).toThrow();
 
-    t.throws(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_COURSE));
-    t.throws(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_LENGTH));
-    t.throws(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_SPEED));
-    t.throws(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_SPEED_RESTRICTION));
-    t.throws(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_TURN));
+    expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_COURSE)).toThrow();
+    expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_LENGTH)).toThrow();
+    expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_SPEED)).toThrow();
+    expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_SPEED_RESTRICTION)).toThrow();
+    expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_TURN)).toThrow();
 
-    t.throws(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_MISSING_LENGTH));
-    t.throws(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_MISSING_RADIAL));
-    t.throws(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_MISSING_TURN));
+    expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_MISSING_LENGTH)).toThrow();
+    expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_MISSING_RADIAL)).toThrow();
+    expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_MISSING_TURN)).toThrow();
 });
 
-ava('accepts a hold string that is used to set the instance properties', (t) => {
+test('accepts a hold string that is used to set the instance properties', () => {
     const model = new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_VALID);
 
-    t.is(model.fixName, FIX_NAME_MOCK_VALID);
-    t.deepEqual(model.holdParameters, EXPECTED_HOLD_PARAMETERS);
+    expect(model.fixName).toBe(FIX_NAME_MOCK_VALID);
+    expect(model.holdParameters).toEqual(EXPECTED_HOLD_PARAMETERS);
 });
 
-ava('.reset() clears the instance properties', (t) => {
+test('.reset() clears the instance properties', () => {
     const model = new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_VALID);
     model.reset();
 
-    t.is(model.fixName, '');
-    t.is(model.holdParameters, null);
+    expect(model.fixName).toBe('');
+    expect(model.holdParameters).toBe(null);
 });

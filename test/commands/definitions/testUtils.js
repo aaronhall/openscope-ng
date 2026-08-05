@@ -1,3 +1,4 @@
+import { expect } from 'vitest';
 import { noop, strToNumArray } from '../../../src/assets/scripts/client/commands/aircraftCommand/aircraftCommandDefinitions';
 import {
     singleArgumentValidator,
@@ -30,14 +31,15 @@ export const zeroOrOneArgumentVal = () => {
     return tmp.toString();
 };
 
-export const test_aliases = (t, map, cmd, t_aliases) => {
+export const test_aliases = (map, cmd, t_aliases) => {
     const a = map[cmd].aliases;
-    t.true(a.length === t_aliases.length);
+    expect(a.length === t_aliases.length).toBe(true);
     for (const alias in t_aliases.values()) {
-        t.true(a.includes(alias));
+        expect(a.includes(alias)).toBe(true);
     }
 };
-export const self_alias = (t, map, cmd) => {
+
+export const self_alias = (map, cmd) => {
     const a = map[cmd].aliases;
-    t.true(a.includes(cmd) && a.length === 1);
+    expect(a.includes(cmd) && a.length === 1).toBe(true);
 };
