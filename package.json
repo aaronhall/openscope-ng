@@ -99,6 +99,7 @@
         "sinon": "7.3.2",
         "vinyl-buffer": "1.0.1",
         "vinyl-source-stream": "2.0.0",
+        "vite": "8.2.0",
         "vitest": "4.1.10",
         "yargs": "13.2.2"
     }
