@@ -17,7 +17,7 @@
         "lint:fix": "eslint . --fix",
         "prepare-assets": "node tools/prepare-assets.js",
         "server": "npm run start",
-        "start": "node public/assets/scripts/server/index.js",
+        "start": "node src/assets/scripts/server/index.js",
         "test": "vitest run",
         "validator": "validator -a"
     },
