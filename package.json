@@ -58,19 +58,22 @@
         "@eslint/js": "9.39.0",
         "@openscope/validator": "latest",
         "autoprefixer": "10.5.4",
-        "browser-env": "3.3.0",
         "eslint": "9.39.5",
         "eslint-config-prettier": "10.1.8",
         "eslint-plugin-jsdoc": "63.3.3",
         "globals": "17.9.0",
-        "handlebars-helpers": "0.10.0",
         "handlebars-layouts": "3.1.4",
+        "jsdom": "30.0.1",
         "less": "4.8.1",
+        "marked": "15.0.12",
         "postcss": "8.5.25",
         "prettier": "3.9.6",
-        "showdown": "1.9.1",
-        "sinon": "7.3.2",
+        "sinon": "22.1.0",
         "vite": "8.2.0",
         "vitest": "4.1.10"
+    },
+    "overrides": {
+        "ansi-regex": "3.0.1",
+        "brace-expansion": "1.1.18"
     }
 }

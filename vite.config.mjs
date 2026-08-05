@@ -2,7 +2,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Handlebars from 'handlebars';
-import handlebarsHelpers from 'handlebars-helpers';
 import handlebarsLayouts from 'handlebars-layouts';
 import { defineConfig } from 'vite';
 
@@ -14,7 +13,6 @@ function compileMarkup() {
     const handlebars = Handlebars.create();
     const packageJson = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
 
-    handlebarsHelpers({ handlebars });
     handlebarsLayouts.register(handlebars);
 
     for (const filename of fs.readdirSync(TEMPLATE_ROOT)) {
