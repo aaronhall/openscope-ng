@@ -3,9 +3,7 @@
     "name": "General Aviation Saint Kitts and Nevis",
     "callsign": {
         "name": "Victor Four",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

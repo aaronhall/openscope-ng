@@ -1,5 +1,3 @@
- 
-
 const gulp = require('gulp');
 const OPTIONS = require('./tools/options');
 
@@ -25,14 +23,20 @@ const buildAndMarkup = gulp.parallel(
     OPTIONS.TASKS.MARKUP
 );
 
-gulp.task(OPTIONS.TASKS.BUILD.DEFAULT, gulp.series(
-    OPTIONS.TASKS.CLEAN.DEFAULT,
-    buildAndMarkup,
-    jsonAssembler,
-    markdownAssembler,
-    copyChangelog,
-    OPTIONS.TASKS.COPY.DIST
-));
+gulp.task(
+    OPTIONS.TASKS.BUILD.DEFAULT,
+    gulp.series(
+        OPTIONS.TASKS.CLEAN.DEFAULT,
+        buildAndMarkup,
+        jsonAssembler,
+        markdownAssembler,
+        copyChangelog,
+        OPTIONS.TASKS.COPY.DIST
+    )
+);
 
-gulp.task(OPTIONS.TASKS.WATCH.DEFAULT, gulp.parallel(OPTIONS.TASKS.WATCH.SCRIPTS, OPTIONS.TASKS.WATCH.STYLES));
+gulp.task(
+    OPTIONS.TASKS.WATCH.DEFAULT,
+    gulp.parallel(OPTIONS.TASKS.WATCH.SCRIPTS, OPTIONS.TASKS.WATCH.STYLES)
+);
 gulp.task(OPTIONS.TASKS.DEFAULT, gulp.series(OPTIONS.TASKS.BUILD.DEFAULT));

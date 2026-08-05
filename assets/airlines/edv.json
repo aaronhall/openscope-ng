@@ -3,9 +3,7 @@
     "name": "Endeavor Air",
     "callsign": {
         "name": "Endeavor",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

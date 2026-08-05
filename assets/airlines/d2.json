@@ -3,9 +3,7 @@
     "name": "General Aviation Angola",
     "callsign": {
         "name": "Delta Two",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

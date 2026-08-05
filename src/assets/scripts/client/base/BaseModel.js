@@ -33,7 +33,9 @@ export default class BaseModel {
      * @private
      */
     _init() {
-        throw new TypeError('BaseModel#_init method must be implemented by the class extending BaseModel');
+        throw new TypeError(
+            'BaseModel#_init method must be implemented by the class extending BaseModel'
+        );
     }
 
     /**
@@ -46,7 +48,9 @@ export default class BaseModel {
      * @method reset
      */
     reset() {
-        throw new TypeError('BaseModel#reset method must be implemented by the class extending BaseModel');
+        throw new TypeError(
+            'BaseModel#reset method must be implemented by the class extending BaseModel'
+        );
     }
 
     /**
@@ -59,7 +63,9 @@ export default class BaseModel {
      */
     _buildIdPrefix(modelName) {
         if (!_isString(modelName)) {
-            throw new TypeError('BaseModel#constructor expects a string for its first parameter but a string was not given');
+            throw new TypeError(
+                'BaseModel#constructor expects a string for its first parameter but a string was not given'
+            );
         }
 
         // Default option since it is an optional parameter

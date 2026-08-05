@@ -3,9 +3,7 @@
     "name": "Mountain Air Cargo",
     "callsign": {
         "name": "Mountain",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

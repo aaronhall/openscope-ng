@@ -153,7 +153,6 @@ export default class ChangelogController {
         return this;
     }
 
-
     /**
      * Sets up the event handlers
      *
@@ -181,7 +180,7 @@ export default class ChangelogController {
     loadChangelogContent() {
         const options = {
             url: 'assets/changelog.json',
-            immediate: true
+            immediate: true,
         };
         const changelogPromise = this.contentQueue.add(options);
 

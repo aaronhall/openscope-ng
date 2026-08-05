@@ -75,7 +75,7 @@ export function randint(low, high) {
  * @return {number}
  */
 export function s(i) {
-    return (i === 1) ? '' : 's';
+    return i === 1 ? '' : 's';
 }
 
 /**
@@ -228,7 +228,10 @@ export function spread(value, lowerLimit, upperLimit) {
  * @return {number}            target value wihtin range 2
  */
 function extrapolate_range(range1_min, target_val, range1_max, range2_min, range2_max) {
-    return range2_min + (range2_max - range2_min) * (target_val - range1_min) / (range1_max - range1_min);
+    return (
+        range2_min +
+        ((range2_max - range2_min) * (target_val - range1_min)) / (range1_max - range1_min)
+    );
 }
 
 /**
@@ -246,7 +249,13 @@ function extrapolate_range(range1_min, target_val, range1_max, range2_min, range
  * @return {number}                 target value within range2
  */
 export function extrapolate_range_clamp(range1Min, targetValue, range1Max, range2Min, range2Max) {
-    const extrapolationResult = extrapolate_range(range1Min, targetValue, range1Max, range2Min, range2Max);
+    const extrapolationResult = extrapolate_range(
+        range1Min,
+        targetValue,
+        range1Max,
+        range2Min,
+        range2Max
+    );
 
     return clamp(extrapolationResult, range2Min, range2Max);
 }

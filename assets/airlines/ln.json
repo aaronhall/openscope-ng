@@ -3,9 +3,7 @@
     "name": "General Aviation Norway",
     "callsign": {
         "name": "Lima November",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

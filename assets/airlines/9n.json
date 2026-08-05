@@ -3,9 +3,7 @@
     "name": "General Aviation Nepal",
     "callsign": {
         "name": "Niner November",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

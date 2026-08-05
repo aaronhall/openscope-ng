@@ -3,9 +3,7 @@
     "name": "Air Algerie",
     "callsign": {
         "name": "Air Algerie",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
@@ -17,11 +15,7 @@
             ["B738", 25],
             ["B763", 3]
         ],
-        "b738": [
-            ["B738", 25]
-        ],
-        "a332": [
-            ["A332", 8]
-        ]
+        "b738": [["B738", 25]],
+        "a332": [["A332", 8]]
     }
 }

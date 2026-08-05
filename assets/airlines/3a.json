@@ -3,9 +3,7 @@
     "name": "General Aviation Monaco",
     "callsign": {
         "name": "Three Alpha",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

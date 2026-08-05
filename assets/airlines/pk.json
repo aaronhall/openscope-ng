@@ -3,9 +3,7 @@
     "name": "General Aviation Indonesia",
     "callsign": {
         "name": "Papa Kilo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

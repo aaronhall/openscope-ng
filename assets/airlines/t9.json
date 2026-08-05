@@ -3,9 +3,7 @@
     "name": "General Aviation Bosnia and Herzegovina",
     "callsign": {
         "name": "Tango Niner",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

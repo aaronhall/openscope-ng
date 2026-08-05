@@ -6,8 +6,8 @@ export default defineConfig({
         setupFiles: [
             './test/testHelpers/globalProps.js',
             './test/testHelpers/localStorage.js',
-            './test/testHelpers/setupBrowserEnv.js'
+            './test/testHelpers/setupBrowserEnv.js',
         ],
-        globals: true
-    }
+        globals: true,
+    },
 });

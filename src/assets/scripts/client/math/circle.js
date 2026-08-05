@@ -97,9 +97,11 @@ export const distanceToPoint = (startLatitude, startLongitude, endLatitude, endL
     const distanceLongitude = degreesToRadians(startLongitude - endLongitude);
 
     // the square of half the chord length between points
-    const a = Math.pow(Math.sin(distanceLatitude / 2), 2) +
-        (Math.cos(startLatitudeRadians) * Math.cos(endLatitudeRadians) * Math.pow(Math.sin(distanceLongitude / 2), 2));
-
+    const a =
+        Math.pow(Math.sin(distanceLatitude / 2), 2) +
+        Math.cos(startLatitudeRadians) *
+            Math.cos(endLatitudeRadians) *
+            Math.pow(Math.sin(distanceLongitude / 2), 2);
 
     const angularDistanceInRadians = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 

@@ -140,9 +140,7 @@ class NavigationLibrary {
      * @method init
      */
     init(airportJson) {
-        const {
-            airways, fixes, holds, sids, stars
-        } = airportJson;
+        const { airways, fixes, holds, sids, stars } = airportJson;
 
         this._initializeReferencePosition(airportJson);
         this._initializeFixCollection(fixes);
@@ -163,7 +161,9 @@ class NavigationLibrary {
     _initializeAirwayCollection(airways) {
         _forEach(airways, (fixNames, airwayName) => {
             if (airwayName in this._airwayCollection) {
-                throw new TypeError(`Expected single definition for "${airwayName}" airway, but received multiple`);
+                throw new TypeError(
+                    `Expected single definition for "${airwayName}" airway, but received multiple`
+                );
             }
 
             this._airwayCollection[airwayName] = new AirwayModel(airwayName, fixNames, this);
@@ -200,7 +200,9 @@ class NavigationLibrary {
     _initializeProcedureCollection(sids, stars) {
         _forEach(sids, (sid, sidId) => {
             if (sidId in this._procedureCollection) {
-                throw new TypeError(`Expected single definition for '${sidId}' procedure, but received multiple`);
+                throw new TypeError(
+                    `Expected single definition for '${sidId}' procedure, but received multiple`
+                );
             }
 
             this._procedureCollection[sidId] = new ProcedureModel(PROCEDURE_TYPE.SID, sid);
@@ -208,7 +210,9 @@ class NavigationLibrary {
 
         _forEach(stars, (star, starId) => {
             if (starId in this._procedureCollection) {
-                throw new TypeError(`Expected single definition for '${starId}' procedure, but received multiple`);
+                throw new TypeError(
+                    `Expected single definition for '${starId}' procedure, but received multiple`
+                );
             }
 
             this._procedureCollection[starId] = new ProcedureModel(PROCEDURE_TYPE.STAR, star);
@@ -286,7 +290,9 @@ class NavigationLibrary {
                     const fixPosition = this.getFixRelativePosition(mostRecentFixName);
 
                     if (!fixPosition) {
-                        console.warn(`Unable to draw line to '${fixName}' because its position is not defined!`);
+                        console.warn(
+                            `Unable to draw line to '${fixName}' because its position is not defined!`
+                        );
                         continue;
                     }
 
@@ -307,7 +313,7 @@ class NavigationLibrary {
                 lines: lines,
                 firstFixName: firstFixName,
                 lastFixName: mostRecentFixName,
-                exits: exits
+                exits: exits,
             });
         }
 
@@ -472,13 +478,13 @@ class NavigationLibrary {
     }
 
     /**
-    * Return a list of ProcedureModel with the specified procedure type
-    *
-    * @for NavigationLibrary
-    * @method getProceduresByType
-    * @param procedureType {string}
-    * @return {array<ProcedureModel>}
-    */
+     * Return a list of ProcedureModel with the specified procedure type
+     *
+     * @for NavigationLibrary
+     * @method getProceduresByType
+     * @param procedureType {string}
+     * @return {array<ProcedureModel>}
+     */
     getProceduresByType(procedureType) {
         return _filter(this._procedureCollection, (procedureModel) => {
             return !_isEmpty(procedureModel) && procedureModel.procedureType === procedureType;
@@ -534,14 +540,14 @@ class NavigationLibrary {
     }
 
     /**
-    * Provides a way to check the `FixCollection` for the existence
-    * of a specific `fixName`.
-    *
-    * @for NavigationLibrary
-    * @method hasFixName
-    * @param fixName {string}
-    * @return {boolean}
-    */
+     * Provides a way to check the `FixCollection` for the existence
+     * of a specific `fixName`.
+     *
+     * @for NavigationLibrary
+     * @method hasFixName
+     * @param fixName {string}
+     * @return {boolean}
+     */
     hasFixName(fixName) {
         const fixOrNull = this.findFixByName(fixName);
 
@@ -549,14 +555,14 @@ class NavigationLibrary {
     }
 
     /**
-    * Provides a way to check for the existence
-    * of a specific `procedureId`.
-    *
-    * @for NavigationLibrary
-    * @method hasProcedure
-    * @param procedureId {string}
-    * @return {boolean}
-    */
+     * Provides a way to check for the existence
+     * of a specific `procedureId`.
+     *
+     * @for NavigationLibrary
+     * @method hasProcedure
+     * @param procedureId {string}
+     * @return {boolean}
+     */
     hasProcedure(procedureId) {
         return procedureId in this._procedureCollection;
     }
@@ -577,7 +583,9 @@ class NavigationLibrary {
             return;
         }
 
-        console.warn(`The following fixes have yet to be defined in the "fixes" section: \n${missingFixes}`);
+        console.warn(
+            `The following fixes have yet to be defined in the "fixes" section: \n${missingFixes}`
+        );
     }
 
     /**
@@ -589,8 +597,13 @@ class NavigationLibrary {
      * @private
      */
     _getAllFixNamesInUse() {
-        const airwayFixes = _map(this._airwayCollection, (airwayModel) => airwayModel.fixNameCollection);
-        const fixGroups = _map(this._procedureCollection, (procedureModel) => procedureModel.getAllFixNamesInUse());
+        const airwayFixes = _map(
+            this._airwayCollection,
+            (airwayModel) => airwayModel.fixNameCollection
+        );
+        const fixGroups = _map(this._procedureCollection, (procedureModel) =>
+            procedureModel.getAllFixNamesInUse()
+        );
         const uniqueFixNames = _without(_uniq(_flatten([...airwayFixes, ...fixGroups])), undefined);
 
         return uniqueFixNames.sort();

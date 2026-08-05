@@ -3,10 +3,7 @@
     "name": "Uzbekistan Airways",
     "callsign": {
         "name": "Uzbekistan",
-        "callsignFormats": [
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["###", "##"]
     },
     "fleets": {
         "default": [
@@ -15,13 +12,11 @@
             ["B763", 9],
             ["B788", 2]
         ],
-        "b788": [
-            ["B788", 2]
-        ],
+        "b788": [["B788", 2]],
         "long": [
-            ["B752",  6],
-            ["B763",  7],
-            ["B788",  2]
+            ["B752", 6],
+            ["B763", 7],
+            ["B788", 2]
         ]
     }
 }

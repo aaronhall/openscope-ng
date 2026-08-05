@@ -3,9 +3,7 @@
     "name": "General Aviation Egypt",
     "callsign": {
         "name": "Sierra Uniform",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

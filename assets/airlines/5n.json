@@ -3,9 +3,7 @@
     "name": "General Aviation Nigeria",
     "callsign": {
         "name": "Five November",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

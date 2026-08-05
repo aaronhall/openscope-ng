@@ -3,19 +3,10 @@
     "name": "Portugália",
     "callsign": {
         "name": "Portugalia",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##@",
-            "#@@"
-        ]
+        "callsignFormats": ["####", "###", "##@", "#@@"]
     },
     "fleets": {
-        "default": [
-            ["E190", 13]
-        ],
-        "e190": [
-            ["E190", 13]
-        ]
+        "default": [["E190", 13]],
+        "e190": [["E190", 13]]
     }
 }

@@ -3,9 +3,7 @@
     "name": "General Aviation Paraguay",
     "callsign": {
         "name": "Zulu Papa",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

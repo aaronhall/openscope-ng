@@ -3,9 +3,7 @@
     "name": "General Aviation Kazakhstan",
     "callsign": {
         "name": "Uniform Papa",
-        "callsignFormats": [
-            "@@@##"
-        ]
+        "callsignFormats": ["@@@##"]
     },
     "fleets": {
         "default": [

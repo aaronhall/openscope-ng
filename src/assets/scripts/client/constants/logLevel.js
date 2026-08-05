@@ -8,5 +8,5 @@ export const LOG = {
     INFO: 1,
     WARNING: 2,
     ERROR: 3,
-    FATAL: 4
+    FATAL: 4,
 };

@@ -3,13 +3,9 @@
     "name": "NetJets Europe",
     "callsign": {
         "name": "Fraction",
-        "callsignFormats": [
-            "###@"
-        ]
+        "callsignFormats": ["###@"]
     },
     "fleets": {
-        "default": [
-            ["GLF5", 8]
-        ]
+        "default": [["GLF5", 8]]
     }
 }

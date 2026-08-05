@@ -11,7 +11,7 @@ import { INVALID_NUMBER } from '../constants/globalConstants';
 import { DECIMAL_RADIX } from '../utilities/unitConverters';
 import {
     DATA_BLOCK_DIRECTION_LENGTH_SEPARATOR,
-    DATA_BLOCK_POSITION_MAP
+    DATA_BLOCK_POSITION_MAP,
 } from '../constants/scopeConstants';
 import { THEME } from '../constants/themes';
 import { WAKE_TURBULENCE_CATEGORY } from '../constants/aircraftConstants';
@@ -168,8 +168,7 @@ export default class RadarTargetModel {
          */
         this._theme = theme;
 
-        this._init(aircraftModel)
-            .enable();
+        this._init(aircraftModel).enable();
     }
 
     /**
@@ -270,12 +269,12 @@ export default class RadarTargetModel {
     }
 
     /**
-    * Disable handlers
-    *
-    * @for RadarTargetModel
-    * @method enable
-    * @chainable
-    */
+     * Disable handlers
+     *
+     * @for RadarTargetModel
+     * @method enable
+     * @chainable
+     */
     enable() {
         this._eventBus.on(EVENT.SET_THEME, this._setTheme);
 
@@ -283,12 +282,12 @@ export default class RadarTargetModel {
     }
 
     /**
-    * Enable handlers
-    *
-    * @for RadarTargetModel
-    * @method disable
-    * @chainable
-    */
+     * Enable handlers
+     *
+     * @for RadarTargetModel
+     * @method disable
+     * @chainable
+     */
     disable() {
         this._eventBus.off(EVENT.SET_THEME, this._setTheme);
 
@@ -296,12 +295,12 @@ export default class RadarTargetModel {
     }
 
     /**
-    * Reset all properties to their default state
-    *
-    * @for RadarTargetModel
-    * @method reset
-    * @chainable
-    */
+     * Reset all properties to their default state
+     *
+     * @for RadarTargetModel
+     * @method reset
+     * @chainable
+     */
     reset() {
         this.aircraftModel = null;
         this._cruiseAltitude = INVALID_NUMBER;
@@ -340,8 +339,9 @@ export default class RadarTargetModel {
     buildDataBlockRowOne() {
         let dataBlockRowOne = this.aircraftModel.callsign;
 
-        const wtc = Object.values(WAKE_TURBULENCE_CATEGORY).find((WTC) => WTC.LETTER === this.aircraftModel.model.weightClass) ??
-            { APPEND: false };
+        const wtc = Object.values(WAKE_TURBULENCE_CATEGORY).find(
+            (WTC) => WTC.LETTER === this.aircraftModel.model.weightClass
+        ) ?? { APPEND: false };
 
         if (wtc.APPEND) {
             // NOTE: using empty space before the letter on purpose so this gets rendered appropriately within a canvas
@@ -384,8 +384,14 @@ export default class RadarTargetModel {
             this._theme.DATA_BLOCK.AIRCRAFT_MODEL_ICAO_CHARACTER_LIMIT,
             ' '
         );
-        const scratchPadText = paddedScratchPadText.slice(0, this._theme.DATA_BLOCK.SCRATCHPAD_CHARACTER_LIMIT);
-        const aircraftModelIcao = paddedAircraftModelIcao.slice(0, this._theme.DATA_BLOCK.AIRCRAFT_MODEL_ICAO_CHARACTER_LIMIT);
+        const scratchPadText = paddedScratchPadText.slice(
+            0,
+            this._theme.DATA_BLOCK.SCRATCHPAD_CHARACTER_LIMIT
+        );
+        const aircraftModelIcao = paddedAircraftModelIcao.slice(
+            0,
+            this._theme.DATA_BLOCK.AIRCRAFT_MODEL_ICAO_CHARACTER_LIMIT
+        );
 
         return `${scratchPadText} ${aircraftModelIcao}`;
     }
@@ -406,7 +412,7 @@ export default class RadarTargetModel {
             180: [0, this._theme.DATA_BLOCK.HALF_HEIGHT],
             225: [-this._theme.DATA_BLOCK.HALF_WIDTH, this._theme.DATA_BLOCK.HALF_HEIGHT],
             270: [-this._theme.DATA_BLOCK.HALF_WIDTH, 0],
-            315: [-this._theme.DATA_BLOCK.HALF_WIDTH, -this._theme.DATA_BLOCK.HALF_HEIGHT]
+            315: [-this._theme.DATA_BLOCK.HALF_WIDTH, -this._theme.DATA_BLOCK.HALF_HEIGHT],
         };
         const leaderEndToBlockCenter = blockCenterOffset[this.dataBlockLeaderDirection];
 
@@ -414,13 +420,13 @@ export default class RadarTargetModel {
     }
 
     /**
-    * Mark this radar target as NOT being controlled by "our" ScopeModel
-    * Note that this will eventually be reworked so we can specify which
-    * scope has control, not just whether or not "we" do.
-    *
-    * @for RadarTargetModel
-    * @method markAsNotOurControl
-    */
+     * Mark this radar target as NOT being controlled by "our" ScopeModel
+     * Note that this will eventually be reworked so we can specify which
+     * scope has control, not just whether or not "we" do.
+     *
+     * @for RadarTargetModel
+     * @method markAsNotOurControl
+     */
     markAsNotOurControl() {
         this._isUnderOurControl = false;
     }

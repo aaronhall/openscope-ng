@@ -14,7 +14,9 @@ class EventTracker {
      */
     constructor() {
         if (!this._isEnabled()) {
-            console.error('Event tracking is disabled because we couldn\'t find `gtag` on the window');
+            console.error(
+                "Event tracking is disabled because we couldn't find `gtag` on the window"
+            );
 
             return;
         }
@@ -36,7 +38,9 @@ class EventTracker {
      */
     recordEvent(category, action, label, value = null) {
         if (!this._isEnabled()) {
-            console.error('Event tracking is disabled because we couldn\'t find `gtag` on the window');
+            console.error(
+                "Event tracking is disabled because we couldn't find `gtag` on the window"
+            );
 
             return;
         }
@@ -45,7 +49,7 @@ class EventTracker {
         const event = {
             event_category: category,
             event_action: action,
-            event_label: label
+            event_label: label,
         };
 
         if (value) {
@@ -64,7 +68,9 @@ class EventTracker {
      */
     recordClickOnOutboundLink(url) {
         if (!this._isEnabled()) {
-            console.error('Event tracking is disabled because we couldn\'t find `gtag` on the window');
+            console.error(
+                "Event tracking is disabled because we couldn't find `gtag` on the window"
+            );
 
             return;
         }
@@ -73,7 +79,7 @@ class EventTracker {
         const event = {
             event_category: TRACKABLE_EVENT.OUTBOUND,
             event_label: url,
-            transport_type: 'beacon'
+            transport_type: 'beacon',
         };
 
         return this._gtag('event', 'click', event);

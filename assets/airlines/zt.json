@@ -3,9 +3,7 @@
     "name": "General Aviation South Africa",
     "callsign": {
         "name": "Zulu Tango",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "Polar Air Cargo",
     "callsign": {
         "name": "Polar",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

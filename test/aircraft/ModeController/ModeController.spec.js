@@ -4,7 +4,7 @@ import ModeController from '../../../src/assets/scripts/client/aircraft/ModeCont
 import {
     MCP_MODE,
     MCP_MODE_NAME,
-    MCP_FIELD_NAME
+    MCP_FIELD_NAME,
 } from '../../../src/assets/scripts/client/aircraft/ModeControl/modeControlConstants';
 
 const headingOrCourseMock = 3.141592653589793;

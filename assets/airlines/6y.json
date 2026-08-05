@@ -3,9 +3,7 @@
     "name": "General Aviation Jamaica",
     "callsign": {
         "name": "Six Yankee",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

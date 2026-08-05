@@ -3,15 +3,9 @@
     "name": "Solaseed Air",
     "callsign": {
         "name": "New Sky",
-        "callsignFormats": [
-            "#",
-            "##",
-            "###"
-        ]
+        "callsignFormats": ["#", "##", "###"]
     },
     "fleets": {
-        "default": [
-            ["B738", 14]
-        ]
+        "default": [["B738", 14]]
     }
 }

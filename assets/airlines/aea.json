@@ -3,11 +3,7 @@
     "name": "Air Europa",
     "callsign": {
         "name": "Europa",
-        "callsignFormats": [
-            "###",
-            "####",
-            "##@@"
-        ]
+        "callsignFormats": ["###", "####", "##@@"]
     },
     "fleets": {
         "default": [
@@ -30,8 +26,6 @@
             ["A332", 6],
             ["A333", 2]
         ],
-        "b738": [
-            ["B738", 20]
-        ]
+        "b738": [["B738", 20]]
     }
 }

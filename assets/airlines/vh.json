@@ -3,9 +3,7 @@
     "name": "General Aviation Australia",
     "callsign": {
         "name": "Victor Hotel",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

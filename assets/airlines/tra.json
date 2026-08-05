@@ -3,13 +3,7 @@
     "name": "Transavia Holland",
     "callsign": {
         "name": "Transavia",
-        "callsignFormats": [
-            "####",
-            "###@",
-            "###",
-            "##@",
-            "#@"
-        ]
+        "callsignFormats": ["####", "###@", "###", "##@", "#@"]
     },
     "fleets": {
         "default": [

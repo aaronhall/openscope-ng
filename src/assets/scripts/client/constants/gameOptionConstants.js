@@ -1,7 +1,6 @@
 import { EVENT } from './eventNames';
 import { MEASURE_TOOL_STYLE } from './inputConstants';
 
-/* eslint-disable max-len, import/prefer-default-export */
 /**
  * Name enumeration of available game options
  *
@@ -19,7 +18,7 @@ export const GAME_OPTION_NAMES = {
     RANGE_RINGS: 'rangeRings',
     SOFT_CEILING: 'softCeiling',
     THEME: 'theme',
-    TOWER_CONTROLLER: 'towerController'
+    TOWER_CONTROLLER: 'towerController',
 };
 
 /**
@@ -41,17 +40,17 @@ export const GAME_OPTION_VALUES = [
         optionList: [
             {
                 displayLabel: 'Classic',
-                value: 'CLASSIC'
+                value: 'CLASSIC',
             },
             {
                 displayLabel: 'Default',
-                value: 'DEFAULT'
+                value: 'DEFAULT',
             },
             {
                 displayLabel: 'Celestial',
-                value: 'CELESTIAL'
-            }
-        ]
+                value: 'CELESTIAL',
+            },
+        ],
     },
     {
         name: GAME_OPTION_NAMES.TOWER_CONTROLLER,
@@ -62,13 +61,13 @@ export const GAME_OPTION_VALUES = [
         optionList: [
             {
                 displayLabel: 'System Controlled',
-                value: 'SYSTEM'
+                value: 'SYSTEM',
             },
             {
                 displayLabel: 'User Controlled',
-                value: 'USER'
-            }
-        ]
+                value: 'USER',
+            },
+        ],
     },
     {
         name: GAME_OPTION_NAMES.CONTROL_METHOD,
@@ -79,13 +78,13 @@ export const GAME_OPTION_VALUES = [
         optionList: [
             {
                 displayLabel: 'Classic',
-                value: 'classic'
+                value: 'classic',
             },
             {
                 displayLabel: 'Arrow Keys',
-                value: 'arrows'
-            }
-        ]
+                value: 'arrows',
+            },
+        ],
     },
     {
         name: GAME_OPTION_NAMES.DRAW_ILS_DISTANCE_SEPARATOR,
@@ -97,17 +96,17 @@ export const GAME_OPTION_VALUES = [
         optionList: [
             {
                 displayLabel: 'From Theme',
-                value: 'from-theme'
+                value: 'from-theme',
             },
             {
                 displayLabel: 'Yes',
-                value: 'yes'
+                value: 'yes',
             },
             {
                 displayLabel: 'No',
-                value: 'no'
-            }
-        ]
+                value: 'no',
+            },
+        ],
     },
     {
         name: GAME_OPTION_NAMES.PROJECTED_TRACK_LINE_LENGTHS,
@@ -118,25 +117,25 @@ export const GAME_OPTION_VALUES = [
         optionList: [
             {
                 displayLabel: '0.5 x n ... 8',
-                value: '0.5-1-1.5-2-2.5-3-3.5-4-4.5-5-5.5-6-6.5-7-7.5-8'
+                value: '0.5-1-1.5-2-2.5-3-3.5-4-4.5-5-5.5-6-6.5-7-7.5-8',
             },
             {
                 displayLabel: '1.0 x n ... 8',
-                value: '1-2-3-4-5-6-7-8'
+                value: '1-2-3-4-5-6-7-8',
             },
             {
                 displayLabel: '1-2-4-6-8-10-12-14-16',
-                value: '1-2-4-6-8-10-12-14-16'
+                value: '1-2-4-6-8-10-12-14-16',
             },
             {
                 displayLabel: '0.5-1-2-4-8',
-                value: '0.5-1-2-4-8'
+                value: '0.5-1-2-4-8',
             },
             {
                 displayLabel: '1-2-4-8',
-                value: '1-2-4-8'
-            }
-        ]
+                value: '1-2-4-8',
+            },
+        ],
     },
     {
         name: GAME_OPTION_NAMES.DRAW_PROJECTED_PATHS,
@@ -147,17 +146,17 @@ export const GAME_OPTION_VALUES = [
         optionList: [
             {
                 displayLabel: 'Always',
-                value: 'always'
+                value: 'always',
             },
             {
                 displayLabel: 'Selected',
-                value: 'selected'
+                value: 'selected',
             },
             {
                 displayLabel: 'Never',
-                value: 'never'
-            }
-        ]
+                value: 'never',
+            },
+        ],
     },
     {
         name: GAME_OPTION_NAMES.SOFT_CEILING,
@@ -169,13 +168,13 @@ export const GAME_OPTION_VALUES = [
         optionList: [
             {
                 displayLabel: 'Yes',
-                value: 'yes'
+                value: 'yes',
             },
             {
                 displayLabel: 'No',
-                value: 'no'
-            }
-        ]
+                value: 'no',
+            },
+        ],
     },
     {
         name: GAME_OPTION_NAMES.MOUSE_CLICK_DRAG,
@@ -187,13 +186,13 @@ export const GAME_OPTION_VALUES = [
         optionList: [
             {
                 displayLabel: 'Left Click',
-                value: 'left'
+                value: 'left',
             },
             {
                 displayLabel: 'Right Click',
-                value: 'right'
-            }
-        ]
+                value: 'right',
+            },
+        ],
     },
     {
         name: GAME_OPTION_NAMES.RANGE_RINGS,
@@ -205,37 +204,37 @@ export const GAME_OPTION_VALUES = [
         optionList: [
             {
                 displayLabel: 'Default',
-                value: 'default'
+                value: 'default',
             },
             {
                 displayLabel: 'Off',
-                value: 'off'
+                value: 'off',
             },
             {
                 displayLabel: '1 nm',
-                value: 1
+                value: 1,
             },
             {
                 displayLabel: '2 nm',
-                value: 2
+                value: 2,
             },
             {
                 displayLabel: '5 nm',
-                value: 5
+                value: 5,
             },
             {
                 displayLabel: '10 nm',
-                value: 10
+                value: 10,
             },
             {
                 displayLabel: '15 nm',
-                value: 15
+                value: 15,
             },
             {
                 displayLabel: '20 nm',
-                value: 20
-            }
-        ]
+                value: 20,
+            },
+        ],
     },
     {
         name: GAME_OPTION_NAMES.MEASURE_TOOL_PATH,
@@ -247,16 +246,16 @@ export const GAME_OPTION_VALUES = [
         optionList: [
             {
                 displayLabel: 'Straight lines only',
-                value: MEASURE_TOOL_STYLE.STRAIGHT
+                value: MEASURE_TOOL_STYLE.STRAIGHT,
             },
             {
                 displayLabel: 'Arc to next fix, then straight',
-                value: MEASURE_TOOL_STYLE.ARC_TO_NEXT
+                value: MEASURE_TOOL_STYLE.ARC_TO_NEXT,
             },
             {
                 displayLabel: 'All lines arced',
-                value: MEASURE_TOOL_STYLE.ALL_ARCED
-            }
-        ]
-    }
+                value: MEASURE_TOOL_STYLE.ALL_ARCED,
+            },
+        ],
+    },
 ];

@@ -3,9 +3,7 @@
     "name": "General Aviation Zambia",
     "callsign": {
         "name": "Niner Juliet",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

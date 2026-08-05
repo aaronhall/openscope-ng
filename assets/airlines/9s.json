@@ -3,9 +3,7 @@
     "name": "General Aviation Democratic Republic of Congo",
     "callsign": {
         "name": "Niner Sierra",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

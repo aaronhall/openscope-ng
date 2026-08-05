@@ -310,7 +310,7 @@ export const EVENT = {
      * @property ZOOM_VIEWPORT
      * @type {string}
      */
-    ZOOM_VIEWPORT: 'zoom-viewport'
+    ZOOM_VIEWPORT: 'zoom-viewport',
 };
 
 export const AIRCRAFT_EVENT = {
@@ -366,5 +366,5 @@ export const AIRCRAFT_EVENT = {
      * @property AIRSPACE_EXIT
      * @type {string}
      */
-    AIRSPACE_EXIT: 'airspace-exit'
+    AIRSPACE_EXIT: 'airspace-exit',
 };

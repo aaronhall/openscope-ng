@@ -3,9 +3,7 @@
     "name": "General Aviation Somalia",
     "callsign": {
         "name": "Six Oscar",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

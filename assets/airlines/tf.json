@@ -3,9 +3,7 @@
     "name": "General Aviation Iceland",
     "callsign": {
         "name": "Tango Foxtrot",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

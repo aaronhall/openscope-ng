@@ -3,9 +3,7 @@
     "name": "General Aviation Malta",
     "callsign": {
         "name": "Niner Hotel",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

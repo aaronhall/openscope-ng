@@ -3,17 +3,13 @@
     "name": "Piedmont Airlines",
     "callsign": {
         "name": "Piedmont",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
             ["DH8C", 5],
             ["E145", 46]
         ],
-        "e145": [
-            ["E145", 46]
-        ]
+        "e145": [["E145", 46]]
     }
 }

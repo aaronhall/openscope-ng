@@ -7,7 +7,6 @@ import { COLOR } from '../color';
  * @type {object}
  */
 export const SCOPE_THEME = {
-
     /**
      * Color to fill the airspace area
      *
@@ -187,5 +186,5 @@ export const SCOPE_THEME = {
      * @memberof SCOPE_THEME
      * @property VIDEO_MAP
      */
-    VIDEO_MAP: COLOR.GRAY_DIM
+    VIDEO_MAP: COLOR.GRAY_DIM,
 };

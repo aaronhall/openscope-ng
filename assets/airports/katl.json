@@ -74,10 +74,10 @@
         "AATAT": ["N33d10.03", "W83d26.23"],
         "ADEIN": ["N36d14.98", "W82d46.98"],
         "ALADY": ["N35d26.20", "W83d15.44"],
-        "AMG"  : ["N31d32.19", "W82d30.49"],
+        "AMG": ["N31d32.19", "W82d30.49"],
         "ANDIY": ["N33d37.86", "W84d51.78"],
         "ANVAL": ["N33d54.91", "W84d02.92"],
-        "ATL"  : ["N33d37.74", "W84d26.10"],
+        "ATL": ["N33d37.74", "W84d26.10"],
         "AVERY": ["N35d49.06", "W81d53.46"],
         "AZZOG": ["N32d47.15", "W85d15.01"],
         "BANNG": ["N32d57.67", "W84d25.28"],
@@ -93,12 +93,12 @@
         "BGGNS": ["N32d34.53", "W86d00.53"],
         "BLLBO": ["N32d25.72", "W86d15.82"],
         "BLUFF": ["N33d43.25", "W83d57.34"],
-        "BNA"  : ["N36d08.22", "W86d41.09"],
+        "BNA": ["N36d08.22", "W86d41.09"],
         "BOBBD": ["N35d47.96", "W83d51.57"],
         "BOYKN": ["N33d38.79", "W84d07.96"],
         "BSHOP": ["N33d50.63", "W84d51.37"],
         "BTTIS": ["N34d38.27", "W83d01.50"],
-        "BWG"  : ["N36d55.72", "W86d26.61"],
+        "BWG": ["N36d55.72", "W86d26.61"],
         "CACEE": ["N32d26.29", "W88d17.67"],
         "CALCO": ["N34d20.72", "W86d01.16"],
         "CALLA": ["N33d55.37", "W83d57.97"],
@@ -114,14 +114,14 @@
         "COLVN": ["N34d46.29", "W84d17.19"],
         "COOUP": ["N31d51.31", "W88d16.26"],
         "CPARK": ["N33d38.08", "W84d30.77"],
-        "CRG"  : ["N30d20.33", "W81d30.60"],
-        "CTY"  : ["N29d35.94", "W83d02.93"],
+        "CRG": ["N30d20.33", "W81d30.60"],
+        "CTY": ["N29d35.94", "W83d02.93"],
         "CUMON": ["N33d56.31", "W84d12.45"],
         "CUTTN": ["N33d49.12", "W85d12.11"],
         "DACTL": ["N33d32.19", "W84d42.97"],
         "DAFII": ["N33d17.61", "W83d56.74"],
         "DALAS": ["N33d57.14", "W84d50.88"],
-        "DBN"  : ["N32d33.81", "W82d49.80"],
+        "DBN": ["N32d33.81", "W82d49.80"],
         "DDUBB": ["N33d34.02", "W84d04.92"],
         "DENST": ["N34d46.31", "W85d43.97"],
         "DEVAC": ["N34d37.08", "W87d26.11"],
@@ -154,7 +154,7 @@
         "GAASS": ["N33d43.98", "W84d16.78"],
         "GAIRY": ["N33d30.60", "W83d38.30"],
         "GBAKE": ["N34d33.46", "W83d19.26"],
-        "GCV"  : ["N31d05.88", "W88d29.17"],
+        "GCV": ["N31d05.88", "W88d29.17"],
         "GGOLF": ["N33d27.35", "W84d20.17"],
         "GIMLY": ["N32d30.23", "W85d06.79"],
         "GLAVN": ["N34d03.00", "W85d03.08"],
@@ -165,7 +165,7 @@
         "GOONS": ["N31d52.02", "W84d48.35"],
         "GPEAT": ["N33d38.75", "W84d51.46"],
         "GRABA": ["N33d56.55", "W84d13.91"],
-        "GRD"  : ["N34d15.09", "W82d09.25"],
+        "GRD": ["N34d15.09", "W82d09.25"],
         "GRGIA": ["N33d04.62", "W86d34.07"],
         "GRHAM": ["N33d21.78", "W84d01.72"],
         "GRITZ": ["N33d36.13", "W84d16.58"],
@@ -188,7 +188,7 @@
         "HUSKY": ["N33d19.83", "W83d58.81"],
         "HYZMN": ["N33d27.42", "W84d16.58"],
         "IGEBE": ["N33d43.98", "W84d02.23"],
-        "IRQ"  : ["N33d42.44", "W82d09.72"],
+        "IRQ": ["N33d42.44", "W82d09.72"],
         "IVLUH": ["N31d58.69", "W87d02.48"],
         "JAACE": ["N35d32.78", "W85d44.92"],
         "JAAJJ": ["N33d38.95", "W84d42.61"],
@@ -217,22 +217,22 @@
         "LEAVI": ["N35d01.03", "W82d18.79"],
         "LEDRR": ["N35d06.89", "W85d04.79"],
         "LEMKE": ["N34d21.61", "W85d10.20"],
-        "LGC"  : ["N33d02.95", "W85d12.37"],
+        "LGC": ["N33d02.95", "W85d12.37"],
         "LIDAS": ["N33d38.02", "W84d16.15"],
         "LLNDO": ["N33d07.50", "W82d48.19"],
         "LUCKK": ["N32d18.02", "W84d24.49"],
         "MADDX": ["N34d08.40", "W85d23.87"],
         "MCKLS": ["N33d35.04", "W83d49.65"],
-        "MCN"  : ["N32d41.47", "W83d38.83"],
-        "MEI"  : ["N32d22.71", "W88d48.26"],
+        "MCN": ["N32d41.47", "W83d38.83"],
+        "MEI": ["N32d22.71", "W88d48.26"],
         "MELNM": ["N33d58.19", "W82d05.37"],
-        "MEM"  : ["N35d00.91", "W89d58.99"],
-        "MGM"  : ["N32d13.34", "W86d19.18"],
+        "MEM": ["N35d00.91", "W89d58.99"],
+        "MGM": ["N32d13.34", "W86d19.18"],
         "MGRIF": ["N35d16.17", "W86d01.84"],
         "MHONY": ["N34d56.28", "W82d52.96"],
         "MMCAP": ["N33d38.05", "W84d03.60"],
         "MOBEE": ["N32d35.85", "W86d50.00"],
-        "MOL"  : ["N37d54.03", "W79d06.41"],
+        "MOL": ["N37d54.03", "W79d06.41"],
         "MORDR": ["N32d45.15", "W86d47.93"],
         "MPASS": ["N33d41.58", "W84d34.92"],
         "MRCHH": ["N34d00.75", "W84d50.67"],
@@ -247,7 +247,7 @@
         "NWANT": ["N34d39.86", "W82d33.57"],
         "NZGUL": ["N32d51.96", "W86d09.24"],
         "OBXAY": ["N32d45.33", "W85d43.10"],
-        "ODF"  : ["N34d41.75", "W83d17.86"],
+        "ODF": ["N34d41.75", "W83d17.86"],
         "ONDRE": ["N34d11.65", "W83d58.41"],
         "ORRKK": ["N32d32.38", "W87d57.42"],
         "OWNNS": ["N34d14.32", "W85d18.73"],
@@ -275,7 +275,7 @@
         "RINZY": ["N33d23.09", "W84d13.42"],
         "RIPPI": ["N32d54.34", "W83d20.33"],
         "RIVTT": ["N33d25.20", "W84d40.08"],
-        "RMG"  : ["N34d09.75", "W85d07.16"],
+        "RMG": ["N34d09.75", "W85d07.16"],
         "RMOON": ["N34d52.30", "W82d36.91"],
         "ROHUN": ["N32d13.62", "W85d19.51"],
         "ROMMM": ["N33d37.88", "W84d04.20"],
@@ -305,10 +305,10 @@
         "SNEVE": ["N33d43.94", "W84d48.97"],
         "SNUFY": ["N33d40.20", "W84d34.99"],
         "SOONE": ["N33d04.64", "W84d12.31"],
-        "SOT"  : ["N35d47.41", "W83d03.14"],
+        "SOT": ["N35d47.41", "W83d03.14"],
         "SOTRE": ["N33d32.75", "W84d44.98"],
         "SOTWO": ["N33d02.68", "W84d25.39"],
-        "SPA"  : ["N35d02.02", "W81d55.62"],
+        "SPA": ["N35d02.02", "W81d55.62"],
         "STEIT": ["N32d44.03", "W87d51.77"],
         "STHRN": ["N33d55.34", "W84d55.12"],
         "STNGA": ["N33d07.06", "W87d27.21"],
@@ -316,7 +316,7 @@
         "STRWY": ["N34d19.76", "W83d53.28"],
         "STUMP": ["N33d32.19", "W84d48.97"],
         "SWEPT": ["N33d43.98", "W84d18.32"],
-        "SZW"  : ["N30d33.37", "W84d22.44"],
+        "SZW": ["N30d33.37", "W84d22.44"],
         "TDUNN": ["N35d25.53", "W82d17.42"],
         "TEDGE": ["N34d45.04", "W83d05.96"],
         "TENSE": ["N34d18.52", "W83d08.67"],
@@ -332,9 +332,9 @@
         "VARNM": ["N34d17.02", "W84d35.65"],
         "VICTU": ["N33d57.51", "W84d00.61"],
         "VOLTS": ["N33d55.06", "W84d04.71"],
-        "VQQ"  : ["N30d12.78", "W81d53.45"],
+        "VQQ": ["N30d12.78", "W81d53.45"],
         "VRSTY": ["N33d05.05", "W83d58.49"],
-        "VUZ"  : ["N33d40.21", "W86d53.99"],
+        "VUZ": ["N33d40.21", "W86d53.99"],
         "WALET": ["N32d21.93", "W83d54.78"],
         "WEALL": ["N35d04.27", "W83d27.81"],
         "WEONE": ["N33d31.54", "W85d07.33"],
@@ -360,7 +360,7 @@
         "ZELOW": ["N33d38.94", "W84d00.68"],
         "ZPPLN": ["N34d59.79", "W83d49.63"]
     },
-    "runways":[
+    "runways": [
         {
             "name": ["8L", "26R"],
             "end": [
@@ -935,14 +935,85 @@
             "rwy": {
                 "KATL8L": [["CHPPR", "A130"], "MRCHH", ["^JAGRR", "A90"], "#180"],
                 "KATL8R": [["CHPPR", "A130"], "MRCHH", ["^JAGRR", "A90"], "#180"],
-                "KATL9L": [["CHPPR", "A130"], "MRCHH", ["BSHOP", "A90"], ["NAVVY", "A80+"], ["RYENN", "A70+"], ["AAKAY", "A60+"]],
-                "KATL9R": [["CHPPR", "A130"], "MRCHH", ["BSHOP", "A90"], ["NAVVY", "A80+"], ["ANDIY", "A70+"], ["DFINS", "A60+"]],
-                "KATL10": [["CHPPR", "A130"], "MRCHH", ["BSHOP", "A90"], ["NAVVY", "A80+"], ["^DROYD", "A80"], "#180"],
-                "KATL26L": [["CHPPR", "A130"], "MRCHH", "HIDRO", "RAIIN", "KLOWD", "SWEPT", "KYMMY", "^KEAVY", "#095"],
-                "KATL26R": [["CHPPR", "A130"], "MRCHH", "HIDRO", "RAIIN", "KLOWD", "SWEPT", "KYMMY", "^KEAVY", "#095"],
-                "KATL27L": [["CHPPR", "A130"], "MRCHH", "HIDRO", "EAGYL", "SHURT", "FOGER", "HITTT", "^YURII", "#095"],
-                "KATL27R": [["CHPPR", "A130"], "MRCHH", "HIDRO", "EAGYL", "SHURT", "FOGER", "HITTT", "^YURII", "#095"],
-                "KATL28": [["CHPPR", "A130"], "MRCHH", "HIDRO", "EAGYL", "SHURT", "FOGER", "HITTT", "^YURII", "#095"]
+                "KATL9L": [
+                    ["CHPPR", "A130"],
+                    "MRCHH",
+                    ["BSHOP", "A90"],
+                    ["NAVVY", "A80+"],
+                    ["RYENN", "A70+"],
+                    ["AAKAY", "A60+"]
+                ],
+                "KATL9R": [
+                    ["CHPPR", "A130"],
+                    "MRCHH",
+                    ["BSHOP", "A90"],
+                    ["NAVVY", "A80+"],
+                    ["ANDIY", "A70+"],
+                    ["DFINS", "A60+"]
+                ],
+                "KATL10": [
+                    ["CHPPR", "A130"],
+                    "MRCHH",
+                    ["BSHOP", "A90"],
+                    ["NAVVY", "A80+"],
+                    ["^DROYD", "A80"],
+                    "#180"
+                ],
+                "KATL26L": [
+                    ["CHPPR", "A130"],
+                    "MRCHH",
+                    "HIDRO",
+                    "RAIIN",
+                    "KLOWD",
+                    "SWEPT",
+                    "KYMMY",
+                    "^KEAVY",
+                    "#095"
+                ],
+                "KATL26R": [
+                    ["CHPPR", "A130"],
+                    "MRCHH",
+                    "HIDRO",
+                    "RAIIN",
+                    "KLOWD",
+                    "SWEPT",
+                    "KYMMY",
+                    "^KEAVY",
+                    "#095"
+                ],
+                "KATL27L": [
+                    ["CHPPR", "A130"],
+                    "MRCHH",
+                    "HIDRO",
+                    "EAGYL",
+                    "SHURT",
+                    "FOGER",
+                    "HITTT",
+                    "^YURII",
+                    "#095"
+                ],
+                "KATL27R": [
+                    ["CHPPR", "A130"],
+                    "MRCHH",
+                    "HIDRO",
+                    "EAGYL",
+                    "SHURT",
+                    "FOGER",
+                    "HITTT",
+                    "^YURII",
+                    "#095"
+                ],
+                "KATL28": [
+                    ["CHPPR", "A130"],
+                    "MRCHH",
+                    "HIDRO",
+                    "EAGYL",
+                    "SHURT",
+                    "FOGER",
+                    "HITTT",
+                    "^YURII",
+                    "#095"
+                ]
             },
             "draw": [
                 ["LEMKE*", "CHPPR", "MRCHH", "HIDRO", "RAIIN", "KLOWD", "SWEPT", "KYMMY", "KEAVY"],
@@ -966,10 +1037,30 @@
             },
             "body": ["GLAVN", "STHRN"],
             "rwy": {
-                "KATL8L": [["YABBA", "A90"], ["NAVVY", "A80+"], ["LARII", "A50+"], ["JAAJJ", "A50+"]],
-                "KATL8R": [["YABBA", "A90"], ["NAVVY", "A80+"], ["GPEAT", "A50+"], ["PEARI", "A50+"]],
-                "KATL9L": [["YABBA", "A90"], ["NAVVY", "A80+"], ["RYENN", "A70+"], ["AAKAY", "A60+"]],
-                "KATL9R": [["YABBA", "A90"], ["NAVVY", "A80+"], ["ANDIY", "A70+"], ["DFINS", "A60+"]],
+                "KATL8L": [
+                    ["YABBA", "A90"],
+                    ["NAVVY", "A80+"],
+                    ["LARII", "A50+"],
+                    ["JAAJJ", "A50+"]
+                ],
+                "KATL8R": [
+                    ["YABBA", "A90"],
+                    ["NAVVY", "A80+"],
+                    ["GPEAT", "A50+"],
+                    ["PEARI", "A50+"]
+                ],
+                "KATL9L": [
+                    ["YABBA", "A90"],
+                    ["NAVVY", "A80+"],
+                    ["RYENN", "A70+"],
+                    ["AAKAY", "A60+"]
+                ],
+                "KATL9R": [
+                    ["YABBA", "A90"],
+                    ["NAVVY", "A80+"],
+                    ["ANDIY", "A70+"],
+                    ["DFINS", "A60+"]
+                ],
                 "KATL10": [["YABBA", "A90"], ["NAVVY", "A80+"], ["^DROYD", "A80"], "#180"],
                 "KATL26L": ["HOGGG", "RAIIN", "KLOWD", "SWEPT", "KYMMY", "^KEAVY", "#095"],
                 "KATL26R": ["HOGGG", "RAIIN", "KLOWD", "SWEPT", "KYMMY", "^KEAVY", "#095"],
@@ -1001,7 +1092,15 @@
                 "SHYRE": ["SHYRE", "FRDDO", "BLLBO", ["BGGNS", "A240+"]],
                 "STRDR": [["STRDR", "A240+"], "GIMLY", "AZZOG"]
             },
-            "body": ["SMAWG", ["GNDLF", "A110+|S250"], ["HALRR", "A100+|S250"], ["SHULR", "A80"], "JNGLE", "^QUBIT", "#005"],
+            "body": [
+                "SMAWG",
+                ["GNDLF", "A110+|S250"],
+                ["HALRR", "A100+|S250"],
+                ["SHULR", "A80"],
+                "JNGLE",
+                "^QUBIT",
+                "#005"
+            ],
             "rwy": {
                 "KATL8L": [],
                 "KATL8R": [],
@@ -1037,7 +1136,11 @@
                 "SHYRE": ["SHYRE", "FRDDO", "BLLBO", ["BGGNS", "A240+"]],
                 "STRDR": [["STRDR", "A240+"], "GIMLY", "AZZOG"]
             },
-            "body": [["SMAWG", "A170+"], ["HOBTT", "A140+"], ["ENSLL", "A120"]],
+            "body": [
+                ["SMAWG", "A170+"],
+                ["HOBTT", "A140+"],
+                ["ENSLL", "A120"]
+            ],
             "rwy": {
                 "KATL26L": ["RAIIN", "KLOWD", "SWEPT", "KYMMY", "^KEAVY", "#095"],
                 "KATL26R": ["RAIIN", "KLOWD", "SWEPT", "KYMMY", "^KEAVY", "#095"],
@@ -1066,7 +1169,12 @@
             "entryPoints": {
                 "EEWOK": ["EEWOK", "LAYUH", ["FLKNN", "A140+|S280"], ["CHWEE", "A110+|S250"]],
                 "HOTHH": ["HOTHH", "LLNDO", ["XWNNG", "A140+|S280"], ["BBFET", "A110+|S250"]],
-                "LARZZ": [["LARZZ", "A240+"], "NEWHP", ["DTSTR", "A140+|S280"], ["WOKIE", "A110+|S250"]],
+                "LARZZ": [
+                    ["LARZZ", "A240+"],
+                    "NEWHP",
+                    ["DTSTR", "A140+|S280"],
+                    ["WOKIE", "A110+|S250"]
+                ],
                 "LAYUH": ["LAYUH", ["FLKNN", "A140+|S280"], ["CHWEE", "A110+|S250"]],
                 "MELNM": ["MELNM", "LAYUH", ["FLKNN", "A140+|S280"], ["CHWEE", "A110+|S250"]],
                 "SKWKR": ["SKWKR", "LAYUH", ["FLKNN", "A140+|S280"], ["CHWEE", "A110+|S250"]],
@@ -1133,16 +1241,82 @@
             },
             "body": ["STRWY"],
             "rwy": {
-                "KATL8L": [["ONDRE", "A130"], "SMELY", "GAASS", "KLOWD", "KUNFU", "TRAPE", "^SNEVE", "#275"],
-                "KATL8R": [["ONDRE", "A130"], "SMELY", "GAASS", "KLOWD", "KUNFU", "TRAPE", "^SNEVE", "#275"],
-                "KATL9L": [["ONDRE", "A130"], "SMELY", "FRYES", "SHURT", "REMAC", "DACTL", "^STUMP", "#275"],
-                "KATL9R": [["ONDRE", "A130"], "SMELY", "FRYES", "SHURT", "REMAC", "DACTL", "^STUMP", "#275"],
-                "KATL10": [["ONDRE", "A130"], "SMELY", "FRYES", "SHURT", "REMAC", "DACTL", "^STUMP", "#275"],
+                "KATL8L": [
+                    ["ONDRE", "A130"],
+                    "SMELY",
+                    "GAASS",
+                    "KLOWD",
+                    "KUNFU",
+                    "TRAPE",
+                    "^SNEVE",
+                    "#275"
+                ],
+                "KATL8R": [
+                    ["ONDRE", "A130"],
+                    "SMELY",
+                    "GAASS",
+                    "KLOWD",
+                    "KUNFU",
+                    "TRAPE",
+                    "^SNEVE",
+                    "#275"
+                ],
+                "KATL9L": [
+                    ["ONDRE", "A130"],
+                    "SMELY",
+                    "FRYES",
+                    "SHURT",
+                    "REMAC",
+                    "DACTL",
+                    "^STUMP",
+                    "#275"
+                ],
+                "KATL9R": [
+                    ["ONDRE", "A130"],
+                    "SMELY",
+                    "FRYES",
+                    "SHURT",
+                    "REMAC",
+                    "DACTL",
+                    "^STUMP",
+                    "#275"
+                ],
+                "KATL10": [
+                    ["ONDRE", "A130"],
+                    "SMELY",
+                    "FRYES",
+                    "SHURT",
+                    "REMAC",
+                    "DACTL",
+                    "^STUMP",
+                    "#275"
+                ],
                 "KATL26L": [["ONDRE", "A130"], "SMELY", ["^VOLTS", "A90"], "#175"],
                 "KATL26R": [["ONDRE", "A130"], "SMELY", ["^VOLTS", "A90"], "#175"],
-                "KATL27L": [["ONDRE", "A130"], "SMELY", ["ANVAL", "A90"], ["POSEY", "A80+"], ["SLVAA", "A70+"], ["ROMMM", "A60+"]],
-                "KATL27R": [["ONDRE", "A130"], "SMELY", ["ANVAL", "A90"], ["POSEY", "A80+"], ["YOUYU", "A70+"], ["MMCAP", "A60+"]],
-                "KATL28": [["ONDRE", "A130"], "SMELY", ["ANVAL", "A90"], ["POSEY", "A80+"], ["^BLUFF", "A80"], "#180"]
+                "KATL27L": [
+                    ["ONDRE", "A130"],
+                    "SMELY",
+                    ["ANVAL", "A90"],
+                    ["POSEY", "A80+"],
+                    ["SLVAA", "A70+"],
+                    ["ROMMM", "A60+"]
+                ],
+                "KATL27R": [
+                    ["ONDRE", "A130"],
+                    "SMELY",
+                    ["ANVAL", "A90"],
+                    ["POSEY", "A80+"],
+                    ["YOUYU", "A70+"],
+                    ["MMCAP", "A60+"]
+                ],
+                "KATL28": [
+                    ["ONDRE", "A130"],
+                    "SMELY",
+                    ["ANVAL", "A90"],
+                    ["POSEY", "A80+"],
+                    ["^BLUFF", "A80"],
+                    "#180"
+                ]
             },
             "draw": [
                 ["STRWY*", "ONDRE", "SMELY", "ANVAL", "POSEY", "BLUFF"],
@@ -1174,10 +1348,30 @@
                 "KATL9L": ["KILRR", "FRYES", "SHURT", "REMAC", "DACTL", "^STUMP", "#275"],
                 "KATL9R": ["KILRR", "FRYES", "SHURT", "REMAC", "DACTL", "^STUMP", "#275"],
                 "KATL10": ["KILRR", "FRYES", "SHURT", "REMAC", "DACTL", "^STUMP", "#275"],
-                "KATL26L": [["CALLA", "A90"], ["POSEY", "A80+"], ["JIRRI", "A50+"], ["BOYKN", "A50+"]],
-                "KATL26R": [["CALLA", "A90"], ["POSEY", "A80+"], ["ZELOW", "A50+"], ["HAINZ", "A50+"]],
-                "KATL27L": [["CALLA", "A90"], ["POSEY", "A80+"], ["SLVAA", "A70+"], ["ROMMM", "A60+"]],
-                "KATL27R": [["CALLA", "A90"], ["POSEY", "A80+"], ["YOUYU", "A70+"], ["MMCAP", "A60+"]],
+                "KATL26L": [
+                    ["CALLA", "A90"],
+                    ["POSEY", "A80+"],
+                    ["JIRRI", "A50+"],
+                    ["BOYKN", "A50+"]
+                ],
+                "KATL26R": [
+                    ["CALLA", "A90"],
+                    ["POSEY", "A80+"],
+                    ["ZELOW", "A50+"],
+                    ["HAINZ", "A50+"]
+                ],
+                "KATL27L": [
+                    ["CALLA", "A90"],
+                    ["POSEY", "A80+"],
+                    ["SLVAA", "A70+"],
+                    ["ROMMM", "A60+"]
+                ],
+                "KATL27R": [
+                    ["CALLA", "A90"],
+                    ["POSEY", "A80+"],
+                    ["YOUYU", "A70+"],
+                    ["MMCAP", "A60+"]
+                ],
                 "KATL28": [["CALLA", "A90"], ["POSEY", "A80+"], ["^BLUFF", "A80"], "#180"]
             },
             "draw": [
@@ -1261,7 +1455,10 @@
                 "SKWKR": ["SKWKR", "LAYUH"],
                 "TYFTR": ["TYFTR", "NEWHP", "FORCC"]
             },
-            "body": [["SITTH", "A140+"], ["TIZZY", "A120"]],
+            "body": [
+                ["SITTH", "A140+"],
+                ["TIZZY", "A120"]
+            ],
             "rwy": {
                 "KATL8L": ["GAASS", "KLOWD", "KUNFU", "TRAPE", "^SNEVE", "#275"],
                 "KATL8R": ["GAASS", "KLOWD", "KUNFU", "TRAPE", "^SNEVE", "#275"],

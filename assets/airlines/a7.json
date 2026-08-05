@@ -3,9 +3,7 @@
     "name": "General Aviation Qatar",
     "callsign": {
         "name": "Alpha Seven",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

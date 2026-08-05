@@ -3,9 +3,7 @@
     "name": "General Aviation Switzerland",
     "callsign": {
         "name": "Hotel Bravo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

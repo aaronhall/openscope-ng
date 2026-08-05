@@ -198,7 +198,7 @@ class TimeKeeper {
      * @return {number}
      */
     get gameTimeMilliseconds() {
-        return (new Date()).getTime();
+        return new Date().getTime();
     }
 
     /**
@@ -208,7 +208,7 @@ class TimeKeeper {
      * @return {number}
      */
     get gameTimeSeconds() {
-        return (new Date()).getTime() * TIME.ONE_MILLISECOND_IN_SECONDS;
+        return new Date().getTime() * TIME.ONE_MILLISECOND_IN_SECONDS;
     }
 
     /**
@@ -468,7 +468,6 @@ class TimeKeeper {
         this._frameStep = Math.round(extrapolate_range_clamp(1, this._simulationRate, 10, 30, 1));
     }
 
-
     /**
      * Boolean abstraction used to determine if this frame is being calculated after returning
      * from pause, which is assumed when `#_frameDeltaTime` is greater than `1` and
@@ -480,7 +479,11 @@ class TimeKeeper {
      * @return {boolean}
      */
     _isReturningFromPauseAndNotFutureTrack() {
-        return this.deltaTime >= 1 && this._simulationRate === 1 && this._futureTrackDeltaTimeCache === -1;
+        return (
+            this.deltaTime >= 1 &&
+            this._simulationRate === 1 &&
+            this._futureTrackDeltaTimeCache === -1
+        );
     }
 }
 

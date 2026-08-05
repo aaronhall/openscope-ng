@@ -7,7 +7,7 @@ canvas {
 #canvases {
     width: 100%;
     // LESS itself tries to evaluate calc(), using ~"" here to prevent that
-    height: ~"calc(100% - " @command-bar-height ~")";
+    height: ~'calc(100% - ' @command-bar-height ~')';
     overflow: hidden;
     position: relative;
 }
@@ -16,11 +16,14 @@ canvas {
     opacity: 0.5;
 }
 
-
 // following properties are ordered top-down
 // z-index is very important here as we are layering canvases on top of each other
-#static-canvas { z-index: @static-canvas-z }
-#dynamic-canvas { z-index: @dynamic-canvas-z }
+#static-canvas {
+    z-index: @static-canvas-z;
+}
+#dynamic-canvas {
+    z-index: @dynamic-canvas-z;
+}
 
 .canvas-theme-default {
     background-color: @blue-very-dark;

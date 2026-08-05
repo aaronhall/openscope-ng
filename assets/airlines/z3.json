@@ -3,9 +3,7 @@
     "name": "General Aviation Macedonia",
     "callsign": {
         "name": "Zulu Three",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

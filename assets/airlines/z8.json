@@ -3,9 +3,7 @@
     "name": "General Aviation South Sudan",
     "callsign": {
         "name": "Zulu Eight",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

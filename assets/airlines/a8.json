@@ -3,9 +3,7 @@
     "name": "General Aviation Liberia",
     "callsign": {
         "name": "Alpha Eight",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "General Aviation Portugal",
     "callsign": {
         "name": "Charlie Sierra",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -7,35 +7,36 @@ import AircraftTypeDefinitionModel from '../../src/assets/scripts/client/aircraf
 import { AIRCRAFT_DEFINITION_LIST_MOCK } from './_mocks/aircraftMocks';
 
 test('should throw when passed invalid parameters', () => {
-    const expectedMessage = /Invalid aircraftTypeDefinitionList passed to AircraftTypeDefinitionCollection constructor\. Expected a non-empty array, but received .*/;
+    const expectedMessage =
+        /Invalid aircraftTypeDefinitionList passed to AircraftTypeDefinitionCollection constructor\. Expected a non-empty array, but received .*/;
 
     expect(() => new AircraftTypeDefinitionCollection(), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionCollection(null), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionCollection({}), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionCollection([]), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionCollection(42), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionCollection('threeve'), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionCollection(false), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
 });
 

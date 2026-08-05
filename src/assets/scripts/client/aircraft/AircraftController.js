@@ -1,4 +1,3 @@
-/* eslint-disable no-continue */
 import _find from 'lodash/find';
 import _get from 'lodash/get';
 import _isNil from 'lodash/isNil';
@@ -20,7 +19,11 @@ import { convertStaticPositionToDynamic } from '../base/staticPositionToDynamicP
 import { abs } from '../math/core';
 import { distance2d } from '../math/distance';
 import { speech_say } from '../speech';
-import { generateTransponderCode, isDiscreteTransponderCode, isValidTransponderCode } from '../utilities/transponderUtilities';
+import {
+    generateTransponderCode,
+    isDiscreteTransponderCode,
+    isValidTransponderCode,
+} from '../utilities/transponderUtilities';
 import { km } from '../utilities/unitConverters';
 import { isEmptyOrNotArray } from '../utilities/validatorUtilities';
 import { FLIGHT_CATEGORY, FLIGHT_PHASE } from '../constants/aircraftConstants';
@@ -47,24 +50,32 @@ export default class AircraftController {
      */
     constructor(aircraftTypeDefinitionList, airlineController, scopeModel) {
         if (_isNil(aircraftTypeDefinitionList) || _isNil(airlineController) || _isNil(scopeModel)) {
-            throw new TypeError('Invalid parameter(s) passed to AircraftController constructor. ' +
-                'Expected aircraftTypeDefinitionList, airlineController and scopeModel to be defined, ' +
-                `but received ${typeof aircraftTypeDefinitionList}, ${typeof airlineController} and ${typeof scopeModel}`);
+            throw new TypeError(
+                'Invalid parameter(s) passed to AircraftController constructor. ' +
+                    'Expected aircraftTypeDefinitionList, airlineController and scopeModel to be defined, ' +
+                    `but received ${typeof aircraftTypeDefinitionList}, ${typeof airlineController} and ${typeof scopeModel}`
+            );
         }
 
         if (isEmptyOrNotArray(aircraftTypeDefinitionList)) {
-            throw new TypeError('Invalid aircraftTypeDefinitionList passed to AircraftController constructor. ' +
-                `Expected a non-empty array, but received ${typeof aircraftTypeDefinitionList}`);
+            throw new TypeError(
+                'Invalid aircraftTypeDefinitionList passed to AircraftController constructor. ' +
+                    `Expected a non-empty array, but received ${typeof aircraftTypeDefinitionList}`
+            );
         }
 
         if (!(airlineController instanceof AirlineController)) {
-            throw new TypeError('Invalid airlineController passed to AircraftController constructor. ' +
-                `Expected instance of AirlineController, but received ${typeof airlineController}`);
+            throw new TypeError(
+                'Invalid airlineController passed to AircraftController constructor. ' +
+                    `Expected instance of AirlineController, but received ${typeof airlineController}`
+            );
         }
 
         if (!(scopeModel instanceof ScopeModel)) {
-            throw new TypeError('Invalid scopeModel passed to AircraftController constructor. ' +
-                `Expected instance of ScopeModel, but received ${typeof scopeModel}`);
+            throw new TypeError(
+                'Invalid scopeModel passed to AircraftController constructor. ' +
+                    `Expected instance of ScopeModel, but received ${typeof scopeModel}`
+            );
         }
 
         /**
@@ -108,7 +119,9 @@ export default class AircraftController {
          * @property AircraftTypeDefinitionCollection
          * @type {AircraftTypeDefinitionCollection}
          */
-        this.aircraftTypeDefinitionCollection = new AircraftTypeDefinitionCollection(aircraftTypeDefinitionList);
+        this.aircraftTypeDefinitionCollection = new AircraftTypeDefinitionCollection(
+            aircraftTypeDefinitionList
+        );
 
         /**
          * Local reference to the scope model
@@ -149,9 +162,7 @@ export default class AircraftController {
          */
         this._stripViewController = new StripViewController();
 
-        return this.init()
-            ._setupHandlers()
-            .enable();
+        return this.init()._setupHandlers().enable();
     }
 
     /**
@@ -246,7 +257,7 @@ export default class AircraftController {
         const initializationProps = this._buildAircraftProps(spawnPatternModel);
 
         this._createAircraftWithInitializationProps(initializationProps);
-    }
+    };
 
     /**
      * Build aircraft props for `spawnPatternModel` and add
@@ -271,7 +282,11 @@ export default class AircraftController {
         for (let i = 0; i < spawnPatternModel.preSpawnAircraftList.length; i++) {
             const preSpawnHeadingAndPosition = spawnPatternModel.preSpawnAircraftList[i];
             const baseAircraftProps = this._buildAircraftProps(spawnPatternModel, isPreSpawn);
-            const initializationProps = Object.assign({}, baseAircraftProps, preSpawnHeadingAndPosition);
+            const initializationProps = Object.assign(
+                {},
+                baseAircraftProps,
+                preSpawnHeadingAndPosition
+            );
 
             this._createAircraftWithInitializationProps(initializationProps);
         }
@@ -350,7 +365,9 @@ export default class AircraftController {
             this.removeStripView(aircraftModel);
         }
 
-        this._scopeModel.radarTargetCollection.removeRadarTargetModelForAircraftModel(aircraftModel);
+        this._scopeModel.radarTargetCollection.removeRadarTargetModelForAircraftModel(
+            aircraftModel
+        );
     }
 
     /**
@@ -385,7 +402,10 @@ export default class AircraftController {
 
             // `#isFlightStripRemovable` will be true even when there is no corresponding
             // `StripView` for and `aircraftModel`
-            if (aircraftModel.isFlightStripRemovable && this._stripViewController.hasStripViewModel(aircraftModel)) {
+            if (
+                aircraftModel.isFlightStripRemovable &&
+                this._stripViewController.hasStripViewModel(aircraftModel)
+            ) {
                 this._stripViewController.removeStripView(aircraftModel);
             }
         }
@@ -544,7 +564,10 @@ export default class AircraftController {
      * @return {boolean}
      */
     onRequestToChangeTransponderCode = (transponderCode, aircraftModel) => {
-        if (!isValidTransponderCode(transponderCode) || this._isTransponderCodeInUse(transponderCode)) {
+        if (
+            !isValidTransponderCode(transponderCode) ||
+            this._isTransponderCodeInUse(transponderCode)
+        ) {
             return false;
         }
 
@@ -574,7 +597,8 @@ export default class AircraftController {
         const aircraftModel = new AircraftModel(initializationProps);
         const isDeparture = initializationProps.category === 'departure';
         const isArrival = initializationProps.category === 'arrival';
-        const isAutoTower = GameController.getGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER) === 'SYSTEM';
+        const isAutoTower =
+            GameController.getGameOption(GAME_OPTION_NAMES.TOWER_CONTROLLER) === 'SYSTEM';
         const runwayCommands = initializationProps.commands;
 
         // triggering event bus rather than calling locally because multiple classes
@@ -582,7 +606,11 @@ export default class AircraftController {
         this._eventBus.trigger(EVENT.ADD_AIRCRAFT, aircraftModel);
 
         if (isArrival) {
-            this._runCommandOnPreSpawnAircraft(aircraftModel, runwayCommands, aircraftModel.fms.arrivalRunwayModel.name);
+            this._runCommandOnPreSpawnAircraft(
+                aircraftModel,
+                runwayCommands,
+                aircraftModel.fms.arrivalRunwayModel.name
+            );
         }
 
         if (isDeparture && isAutoTower) {
@@ -595,7 +623,11 @@ export default class AircraftController {
 
             aircraftModel.shouldTakeOffWhenRunwayIsClear = true;
 
-            this._runCommandOnPreSpawnAircraft(aircraftModel, runwayCommands, aircraftModel.fms.departureRunwayModel.name);
+            this._runCommandOnPreSpawnAircraft(
+                aircraftModel,
+                runwayCommands,
+                aircraftModel.fms.departureRunwayModel.name
+            );
         }
     }
 
@@ -616,7 +648,9 @@ export default class AircraftController {
         let airlineModel = this._airlineController.findAirlineById(name);
 
         if (typeof airlineModel === 'undefined') {
-            console.warn(`Expected airline "${name}" to be defined, but it is not! Using AAL instead.`);
+            console.warn(
+                `Expected airline "${name}" to be defined, but it is not! Using AAL instead.`
+            );
 
             airlineModel = this._airlineController.findAirlineById('aal');
         }
@@ -624,8 +658,12 @@ export default class AircraftController {
         // TODO: impove the `airlineModel` logic here
         // this seems inefficient to find the model here and then pass it back to the controller but
         // since we already have it, it makes little sense to look for it again in the controller
-        const flightNumber = this._airlineController.generateFlightNumberWithAirlineModel(airlineModel);
-        const aircraftTypeDefinition = this._getRandomAircraftTypeDefinitionForAirlineId(airlineId, airlineModel);
+        const flightNumber =
+            this._airlineController.generateFlightNumberWithAirlineModel(airlineModel);
+        const aircraftTypeDefinition = this._getRandomAircraftTypeDefinitionForAirlineId(
+            airlineId,
+            airlineModel
+        );
         // TODO: this may need to be reworked.
         // if we are building a preSpawn aircraft, cap the altitude at 18000 so aircraft that spawn closer to
         // airspace can safely enter controlled airspace properly
@@ -635,8 +673,12 @@ export default class AircraftController {
             altitude = Math.min(18000, altitude);
         }
 
-        const dynamicPositionModel = convertStaticPositionToDynamic(spawnPatternModel.positionModel);
-        const transponderCode = this._generateUniqueTransponderCode(AirportController.airport_get().icao);
+        const dynamicPositionModel = convertStaticPositionToDynamic(
+            spawnPatternModel.positionModel
+        );
+        const transponderCode = this._generateUniqueTransponderCode(
+            AirportController.airport_get().icao
+        );
 
         return {
             fleet,
@@ -656,7 +698,7 @@ export default class AircraftController {
             routeString: spawnPatternModel.routeString,
             commands: spawnPatternModel.commands,
             // TODO: this may not be needed anymore
-            waypoints: _get(spawnPatternModel, 'waypoints', [])
+            waypoints: _get(spawnPatternModel, 'waypoints', []),
         };
     }
 
@@ -695,7 +737,10 @@ export default class AircraftController {
      * @private
      */
     _getRandomAircraftTypeDefinitionForAirlineId(airlineId, airlineModel) {
-        return this.aircraftTypeDefinitionCollection.getAircraftDefinitionForAirlineId(airlineId, airlineModel);
+        return this.aircraftTypeDefinitionCollection.getAircraftDefinitionForAirlineId(
+            airlineId,
+            airlineModel
+        );
     }
 
     /**
@@ -714,7 +759,10 @@ export default class AircraftController {
     _generateUniqueTransponderCode(icao) {
         const transponderCode = generateTransponderCode();
 
-        if (!isDiscreteTransponderCode(icao, transponderCode) || this._isTransponderCodeInUse(transponderCode)) {
+        if (
+            !isDiscreteTransponderCode(icao, transponderCode) ||
+            this._isTransponderCodeInUse(transponderCode)
+        ) {
             // the value generated isn't valid or is already in use, recurse back through this method and try again
             return this._generateUniqueTransponderCode(icao);
         }
@@ -842,8 +890,12 @@ export default class AircraftController {
      */
     _shouldAddNewConflict(aircraftModel, comparisonAircraftModel) {
         const boundingBoxLength = km(8);
-        const dx = abs(aircraftModel.relativePosition[0] - comparisonAircraftModel.relativePosition[0]);
-        const dy = abs(aircraftModel.relativePosition[1] - comparisonAircraftModel.relativePosition[1]);
+        const dx = abs(
+            aircraftModel.relativePosition[0] - comparisonAircraftModel.relativePosition[0]
+        );
+        const dy = abs(
+            aircraftModel.relativePosition[1] - comparisonAircraftModel.relativePosition[1]
+        );
 
         return dx < boundingBoxLength && dy < boundingBoxLength;
     }
@@ -892,13 +944,17 @@ export default class AircraftController {
     _updateAircraftVisibility(aircraftModel) {
         // TODO: these next 3 logic blocks could use some cleaning/abstraction
         if (aircraftModel.isArrival() && aircraftModel.isStopped() && !aircraftModel.hit) {
-            EventBus.trigger(AIRCRAFT_EVENT.FULLSTOP, aircraftModel, aircraftModel.fms.arrivalRunwayModel);
+            EventBus.trigger(
+                AIRCRAFT_EVENT.FULLSTOP,
+                aircraftModel,
+                aircraftModel.fms.arrivalRunwayModel
+            );
 
             UiController.ui_log(`${aircraftModel.callsign} switching to ground, good day`);
             speech_say(
                 [
                     { type: 'callsign', content: aircraftModel },
-                    { type: 'text', content: ', switching to ground, good day' }
+                    { type: 'text', content: ', switching to ground, good day' },
                 ],
                 aircraftModel.pilotVoice
             );
@@ -920,14 +976,18 @@ export default class AircraftController {
             speech_say(
                 [
                     { type: 'callsign', content: aircraftModel },
-                    { type: 'text', content: ', radar contact lost' }
+                    { type: 'text', content: ', radar contact lost' },
                 ],
                 aircraftModel.pilotVoice
             );
         }
 
         // Clean up the screen from aircraft that are too far
-        if (!this.isAircraftVisible(aircraftModel, 2) && !aircraftModel.isControllable && aircraftModel.isRemovable) {
+        if (
+            !this.isAircraftVisible(aircraftModel, 2) &&
+            !aircraftModel.isControllable &&
+            aircraftModel.isRemovable
+        ) {
             this.aircraft_remove(aircraftModel);
         }
     }

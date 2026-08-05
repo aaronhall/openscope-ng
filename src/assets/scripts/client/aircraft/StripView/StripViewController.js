@@ -76,8 +76,7 @@ export default class StripViewController {
          */
         this._cidNumbersInUse = [];
 
-        return this._init()
-            .enable();
+        return this._init().enable();
     }
 
     /**
@@ -216,8 +215,10 @@ export default class StripViewController {
      */
     deselectStripView(stripViewModel) {
         if (!(stripViewModel instanceof StripViewModel)) {
-            throw new TypeError('Expected stripViewModel to be an instance of ' +
-                `StripViewModel but instead found ${typeof stripViewModel}`);
+            throw new TypeError(
+                'Expected stripViewModel to be an instance of ' +
+                    `StripViewModel but instead found ${typeof stripViewModel}`
+            );
         }
 
         stripViewModel.removeActiveState();
@@ -275,7 +276,7 @@ export default class StripViewController {
         if (!stripViewModel) {
             console.warn(
                 `Attempted to remove a StripViewModel for ${aircraftModel.callsign} that does not exist.` +
-                'This is likely not a fatal problem, but if you are seeing this, please let somebody know.'
+                    'This is likely not a fatal problem, but if you are seeing this, please let somebody know.'
             );
 
             return;
@@ -299,10 +300,14 @@ export default class StripViewController {
      */
     _addViewToStripList(stripViewModel) {
         if (!(stripViewModel instanceof StripViewModel)) {
-            throw new TypeError(`Expected an instance of StripViewModel but received ${typeof stripViewModel}`);
+            throw new TypeError(
+                `Expected an instance of StripViewModel but received ${typeof stripViewModel}`
+            );
         }
 
-        const listView = stripViewModel.isDeparture ? this.$stripViewListDepartures : this.$stripViewListArrivals;
+        const listView = stripViewModel.isDeparture
+            ? this.$stripViewListDepartures
+            : this.$stripViewListArrivals;
         const scrollPosition = listView.scrollTop();
 
         listView.prepend(stripViewModel.$element);

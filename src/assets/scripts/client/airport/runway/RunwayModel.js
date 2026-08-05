@@ -5,25 +5,11 @@ import StaticPositionModel from '../../base/StaticPositionModel';
 import { PERFORMANCE } from '../../constants/aircraftConstants';
 import { AIRPORT_CONSTANTS } from '../../constants/airportConstants';
 import { INVALID_NUMBER } from '../../constants/globalConstants';
-import {
-    angle_offset,
-    radians_normalize
-} from '../../math/circle';
-import {
-    abs,
-    tan
-} from '../../math/core';
-import {
-    calculateCrosswindAngle,
-    getOffset
-} from '../../math/flightMath';
+import { angle_offset, radians_normalize } from '../../math/circle';
+import { abs, tan } from '../../math/core';
+import { calculateCrosswindAngle, getOffset } from '../../math/flightMath';
 import { radio_runway } from '../../utilities/radioUtilities';
-import {
-    km,
-    km_ft,
-    nm,
-    degreesToRadians
-} from '../../utilities/unitConverters';
+import { km, km_ft, nm, degreesToRadians } from '../../utilities/unitConverters';
 
 /**
  * Describes a single runway at an airport
@@ -91,7 +77,7 @@ export default class RunwayModel extends BaseModel {
             enabled: true,
             loc_maxDist: km(25),
             // gs_maxHeight: 9999,
-            glideslopeGradient: degreesToRadians(3)
+            glideslopeGradient: degreesToRadians(3),
         };
 
         /**
@@ -213,9 +199,7 @@ export default class RunwayModel extends BaseModel {
         }
 
         if (data.end) {
-            const farSideIndex = end === 0 ?
-                1 :
-                0;
+            const farSideIndex = end === 0 ? 1 : 0;
 
             const thisSide = new StaticPositionModel(
                 data.end[end],
@@ -257,15 +241,15 @@ export default class RunwayModel extends BaseModel {
     }
 
     /**
-    * Calculate the height of the glideslope for a runway's ILS at a given distance on final
-    *
-    * @for RunwayModel
-    * @method getGlideslopeAltitude
-    * @param distance {number}                       distance from the runway threshold, in kilometers
-    * @param glideslopeGradient {number} [optional]  gradient of the glideslope in radians
-    *                                                (typically equivalent to 3.0 degrees)
-    * @return {number}
-    */
+     * Calculate the height of the glideslope for a runway's ILS at a given distance on final
+     *
+     * @for RunwayModel
+     * @method getGlideslopeAltitude
+     * @param distance {number}                       distance from the runway threshold, in kilometers
+     * @param glideslopeGradient {number} [optional]  gradient of the glideslope in radians
+     *                                                (typically equivalent to 3.0 degrees)
+     * @return {number}
+     */
     getGlideslopeAltitude(distance, glideslopeGradient) {
         if (!glideslopeGradient) {
             glideslopeGradient = this.ils.glideslopeGradient;
@@ -275,7 +259,7 @@ export default class RunwayModel extends BaseModel {
         const rise = tan(abs(glideslopeGradient));
 
         // TODO: this logic could be abstracted to a helper.
-        return this.elevation + (rise * km_ft(distance));
+        return this.elevation + rise * km_ft(distance);
     }
 
     /**
@@ -397,7 +381,9 @@ export default class RunwayModel extends BaseModel {
     isOnApproachCourse(aircraftModel) {
         const approachOffset = getOffset(aircraftModel, this.relativePosition, this.angle);
         const lateralDistanceFromCourse_nm = abs(nm(approachOffset[0]));
-        const isAlignedWithCourse = lateralDistanceFromCourse_nm <= PERFORMANCE.MAXIMUM_DISTANCE_CONSIDERED_ESTABLISHED_ON_APPROACH_COURSE_NM;
+        const isAlignedWithCourse =
+            lateralDistanceFromCourse_nm <=
+            PERFORMANCE.MAXIMUM_DISTANCE_CONSIDERED_ESTABLISHED_ON_APPROACH_COURSE_NM;
         const isNotPastRunwayThreshold = approachOffset[1] > 0;
 
         return isAlignedWithCourse && isNotPastRunwayThreshold;

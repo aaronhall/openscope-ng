@@ -127,9 +127,9 @@ export default class SettingsController {
     }
 
     /**
-    * @for SettingsController
-    * @method toggleDialog
-    */
+     * @for SettingsController
+     * @method toggleDialog
+     */
     toggleDialog() {
         this.$dialog.toggleClass(SELECTORS.CLASSNAMES.OPEN);
     }
@@ -155,7 +155,10 @@ export default class SettingsController {
 
         // this could me done with a _map(), but verbosity here makes the code easier to read
         for (let i = 0; i < option.optionList.length; i++) {
-            const $optionSelectTempalate = this._buildOptionSelectTemplate(option.optionList[i], selectedOption);
+            const $optionSelectTempalate = this._buildOptionSelectTemplate(
+                option.optionList[i],
+                selectedOption
+            );
 
             $selector.append($optionSelectTempalate);
         }
@@ -164,7 +167,10 @@ export default class SettingsController {
         $selector.change((event) => {
             const $currentTarget = $(event.currentTarget);
 
-            GameController.game.option.setOptionByName($currentTarget.attr('name'), $currentTarget.val());
+            GameController.game.option.setOptionByName(
+                $currentTarget.attr('name'),
+                $currentTarget.val()
+            );
         });
 
         $optionSelector.append($selector);

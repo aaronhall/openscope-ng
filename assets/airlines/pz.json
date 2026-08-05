@@ -3,9 +3,7 @@
     "name": "General Aviation Surinam",
     "callsign": {
         "name": "Papa Zulu",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

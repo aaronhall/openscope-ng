@@ -3,13 +3,9 @@
     "name": "Sky Regional Airlines",
     "callsign": {
         "name": "Maple",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["E170", 25]
-        ]
+        "default": [["E170", 25]]
     }
 }

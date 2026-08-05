@@ -3,11 +3,7 @@
     "name": "Rwandair",
     "callsign": {
         "name": "Rwandair",
-        "callsignFormats": [
-            "#",
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["#", "###", "####"]
     },
     "fleets": {
         "default": [
@@ -19,8 +15,6 @@
             ["DH8A", 1],
             ["DH8D", 2]
         ],
-        "a333": [
-            ["A333", 1]
-        ]
+        "a333": [["A333", 1]]
     }
 }

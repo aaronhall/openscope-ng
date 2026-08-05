@@ -3,10 +3,7 @@
     "name": "Volotea",
     "callsign": {
         "name": "Volotea",
-        "callsignFormats": [
-            "####",
-            "##@@"
-        ]
+        "callsignFormats": ["####", "##@@"]
     },
     "fleets": {
         "default": [
@@ -17,8 +14,6 @@
             ["A319", 20],
             ["B712", 16]
         ],
-        "a319": [
-            ["A319", 20]
-        ]
+        "a319": [["A319", 20]]
     }
 }

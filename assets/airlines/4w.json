@@ -3,9 +3,7 @@
     "name": "General Aviation East Timor",
     "callsign": {
         "name": "Four Whiskey",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

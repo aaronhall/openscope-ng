@@ -44,7 +44,6 @@ test('does not throw when called without parameters', () => {
     expect(() => new CommandParser()).not.toThrow();
 });
 
-
 test('sets #command with the correct name when provided a system command', () => {
     const model = new CommandParser(TIMEWARP_50_MOCK);
 

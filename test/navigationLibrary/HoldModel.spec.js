@@ -13,7 +13,7 @@ import {
     HOLD_STRING_MOCK_MISSING_RADIAL,
     HOLD_STRING_MOCK_MISSING_TURN,
     HOLD_STRING_MOCK_VALID,
-    EXPECTED_HOLD_PARAMETERS
+    EXPECTED_HOLD_PARAMETERS,
 } from './_mocks/holdModelMocks';
 
 test('throws if called with invalid parameters', () => {
@@ -24,7 +24,9 @@ test('throws if called with invalid parameters', () => {
     expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_COURSE)).toThrow();
     expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_LENGTH)).toThrow();
     expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_SPEED)).toThrow();
-    expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_SPEED_RESTRICTION)).toThrow();
+    expect(
+        () => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_SPEED_RESTRICTION)
+    ).toThrow();
     expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_INVALID_TURN)).toThrow();
 
     expect(() => new HoldModel(FIX_NAME_MOCK_VALID, HOLD_STRING_MOCK_MISSING_LENGTH)).toThrow();

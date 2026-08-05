@@ -3,9 +3,7 @@
     "name": "General Aviation Micronesia",
     "callsign": {
         "name": "Victor Six",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

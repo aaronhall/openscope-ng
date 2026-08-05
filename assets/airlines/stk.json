@@ -3,12 +3,7 @@
     "name": "Stobart Air",
     "callsign": {
         "name": "Stobart",
-        "callsignFormats": [
-            "##@@",
-            "###@",
-            "##@",
-            "#@@"
-        ]
+        "callsignFormats": ["##@@", "###@", "##@", "#@@"]
     },
     "fleets": {
         "default": [

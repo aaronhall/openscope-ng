@@ -63,7 +63,9 @@ export default class AirlineController {
      */
     generateFlightNumberWithAirlineModel(airlineModel) {
         if (!(airlineModel instanceof AirlineModel)) {
-            throw new TypeError('Invalid parameter. Expected airlineModel to be an instance of AirlineModel');
+            throw new TypeError(
+                'Invalid parameter. Expected airlineModel to be an instance of AirlineModel'
+            );
         }
 
         const flightNumber = airlineModel.generateFlightNumber();
@@ -93,7 +95,9 @@ export default class AirlineController {
         const airlineModel = this.findAirlineById(airlineId);
 
         if (_isNil(airlineModel)) {
-            throw new TypeError('Invalid airline passed to removeFlightNumberFromList, no AirlineModel found');
+            throw new TypeError(
+                'Invalid airline passed to removeFlightNumberFromList, no AirlineModel found'
+            );
         }
 
         airlineModel.removeFlightNumber(flightNumber);

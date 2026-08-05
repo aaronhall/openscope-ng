@@ -3,17 +3,13 @@
     "name": "Cobalt Air",
     "callsign": {
         "name": "Apollo",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
             ["A319", 2],
             ["A320", 4]
         ],
-        "a320": [
-            ["A320", 4]
-        ]
+        "a320": [["A320", 4]]
     }
 }

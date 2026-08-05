@@ -3,14 +3,11 @@
     "name": "Aeroméxico",
     "callsign": {
         "name": "AeroMexico",
-        "callsignFormats": [
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["###", "##"]
     },
     "fleets": {
         "default": [
-            ["B38M",  2],
+            ["B38M", 2],
             ["B737", 16],
             ["B738", 38],
             ["B772", 1],
@@ -29,7 +26,7 @@
             ["E190", 47]
         ],
         "b73x": [
-            ["B38M",  2],
+            ["B38M", 2],
             ["B737", 16],
             ["B738", 38]
         ]

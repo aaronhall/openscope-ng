@@ -3,9 +3,7 @@
     "name": "General Aviation Mauritania",
     "callsign": {
         "name": "Five Tango",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

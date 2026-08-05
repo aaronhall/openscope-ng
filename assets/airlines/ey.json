@@ -3,9 +3,7 @@
     "name": "General Aviation Tajikistan",
     "callsign": {
         "name": "Echo Yankee",
-        "callsignFormats": [
-            "#####"
-        ]
+        "callsignFormats": ["#####"]
     },
     "fleets": {
         "default": [

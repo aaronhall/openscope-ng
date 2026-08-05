@@ -3,12 +3,7 @@
     "name": "TAP Portugal",
     "callsign": {
         "name": "Air Portugal",
-        "callsignFormats": [
-            "####",
-            "###@",
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["####", "###@", "###", "##"]
     },
     "fleets": {
         "default": [
@@ -41,9 +36,7 @@
             ["A332", 7],
             ["A339", 17]
         ],
-        "e190": [
-            ["E190", 13]
-        ],
+        "e190": [["E190", 13]],
         "airbusShort": [
             ["A20N", 7],
             ["A21N", 6],

@@ -3,13 +3,9 @@
     "name": "RusLine",
     "callsign": {
         "name": "Rusline",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["CRJ2", 21]
-        ]
+        "default": [["CRJ2", 21]]
     }
 }

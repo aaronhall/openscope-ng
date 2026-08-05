@@ -3,9 +3,7 @@
     "name": "General Aviation Lesotho",
     "callsign": {
         "name": "Seven Papa",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -5,12 +5,9 @@ import _isArray from 'lodash/isArray';
 import ProcedureModel from '../../../src/assets/scripts/client/navigationLibrary/ProcedureModel';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../../fixtures/navigationLibraryFixtures';
-import {
-    SID_MOCK,
-    STAR_MOCK
-} from './_mocks/procedureMocks';
+import { SID_MOCK, STAR_MOCK } from './_mocks/procedureMocks';
 import { PROCEDURE_TYPE } from '../../../src/assets/scripts/client/constants/routeConstants';
 
 // mocks
@@ -41,7 +38,16 @@ test('throws when instantiated with unknown procedure type', () => {
 
 test('instantiates correctly when given valid SID data', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
-    const expectedEntries = ['KLAS01L', 'KLAS01R', 'KLAS07L', 'KLAS07R', 'KLAS19L', 'KLAS19R', 'KLAS25L', 'KLAS25R'];
+    const expectedEntries = [
+        'KLAS01L',
+        'KLAS01R',
+        'KLAS07L',
+        'KLAS07R',
+        'KLAS19L',
+        'KLAS19R',
+        'KLAS25L',
+        'KLAS25R',
+    ];
     const expectedExits = ['HEC', 'TNP'];
 
     expect(model._body[0]).toEqual(['BOACH', 'A130+']);
@@ -58,8 +64,16 @@ test('instantiates correctly when given valid SID data', () => {
 test('instantiates correctly when given valid STAR data', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.STAR, STAR_MOCK.KEPEC1);
     const expectedEntries = ['DAG', 'TNP'];
-    const expectedExits = ['KLAS01L', 'KLAS01R', 'KLAS07L', 'KLAS07R', 'KLAS19L', 'KLAS19R', 'KLAS25L', 'KLAS25R'];
-
+    const expectedExits = [
+        'KLAS01L',
+        'KLAS01R',
+        'KLAS07L',
+        'KLAS07R',
+        'KLAS19L',
+        'KLAS19R',
+        'KLAS25L',
+        'KLAS25R',
+    ];
 
     expect(model._body[0]).toEqual(['CLARR', 'A130|S250']);
     expect(model._body.length === 4).toBe(true);
@@ -115,8 +129,25 @@ test('.getAllFixNamesInUse() throws when #_draw is not a 2D array', () => {
 test('.getAllFixNamesInUse() returns all fix names that exist in any portion of the procedure', () => {
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const expectedResult = [
-        'BESSY', 'WITLA', 'JEBBB', 'WASTE', 'BAKRR', 'MINEY', 'HITME', 'JESJI', 'FIXIX',
-        'ROPPR', 'RODDD', 'JAKER', 'PIRMD', 'RBELL', 'BOACH', 'HEC', 'ZELMA', 'JOTNU', 'TNP'
+        'BESSY',
+        'WITLA',
+        'JEBBB',
+        'WASTE',
+        'BAKRR',
+        'MINEY',
+        'HITME',
+        'JESJI',
+        'FIXIX',
+        'ROPPR',
+        'RODDD',
+        'JAKER',
+        'PIRMD',
+        'RBELL',
+        'BOACH',
+        'HEC',
+        'ZELMA',
+        'JOTNU',
+        'TNP',
     ];
     const result = model.getAllFixNamesInUse();
 
@@ -134,7 +165,10 @@ test('.getRandomExitPoint() returns different exit point names on successive cal
         randomlySelectedExitNames.push(model.getRandomExitPoint());
     }
 
-    const allExitsAreEqual = _every(randomlySelectedExitNames, (name) => name === randomlySelectedExitNames[0]);
+    const allExitsAreEqual = _every(
+        randomlySelectedExitNames,
+        (name) => name === randomlySelectedExitNames[0]
+    );
 
     expect(allExitsAreEqual).toBe(false);
 });
@@ -157,7 +191,16 @@ test('.getWaypointModelsForEntryAndExit() returns correct waypoints when specifi
     const model = new ProcedureModel(PROCEDURE_TYPE.SID, SID_MOCK.BOACH6);
     const result = model.getWaypointModelsForEntryAndExit(validBoachEntryMock, validBoachExitMock);
     const resultingWaypointNames = _map(result, (waypointModel) => waypointModel._name);
-    const expectedWaypointNames = ['JESJI', 'BAKRR', 'MINEY', 'HITME', 'BOACH', 'ZELMA', 'JOTNU', 'TNP'];
+    const expectedWaypointNames = [
+        'JESJI',
+        'BAKRR',
+        'MINEY',
+        'HITME',
+        'BOACH',
+        'ZELMA',
+        'JOTNU',
+        'TNP',
+    ];
 
     expect(_isArray(result)).toBe(true);
     expect(result.length === 8).toBe(true);

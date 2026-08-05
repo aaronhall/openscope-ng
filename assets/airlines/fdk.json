@@ -3,13 +3,9 @@
     "name": "FlyDamas",
     "callsign": {
         "name": "Damavia",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["B735",  1]
-        ]
+        "default": [["B735", 1]]
     }
 }

@@ -3,9 +3,7 @@
     "name": "General Aviation Oman",
     "callsign": {
         "name": "Alpha Four Oscar",
-        "callsignFormats": [
-            "@@"
-        ]
+        "callsignFormats": ["@@"]
     },
     "fleets": {
         "default": [

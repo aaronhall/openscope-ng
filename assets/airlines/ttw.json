@@ -3,12 +3,9 @@
     "name": "Tigerair Taiwan",
     "callsign": {
         "name": "Smart Cat",
-        "callsignFormats":
-            "###"
+        "callsignFormats": "###"
     },
     "fleets": {
-        "default": [
-            ["a320", 11]
-        ]
+        "default": [["a320", 11]]
     }
 }

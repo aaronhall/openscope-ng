@@ -3,9 +3,7 @@
     "name": "PAWA Dominica",
     "callsign": {
         "name": "Pawa",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

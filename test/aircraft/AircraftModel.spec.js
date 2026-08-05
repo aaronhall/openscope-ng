@@ -7,22 +7,22 @@ import TimeKeeper from '../../src/assets/scripts/client/engine/TimeKeeper';
 import {
     createAirportControllerFixture,
     resetAirportControllerFixture,
-    airportModelFixture
+    airportModelFixture,
 } from '../fixtures/airportFixtures';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../fixtures/navigationLibraryFixtures';
 import {
     ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
     ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK,
     DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
-    DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK,
 } from './_mocks/aircraftMocks';
 import { MCP_MODE } from '../../src/assets/scripts/client/aircraft/ModeControl/modeControlConstants';
 import {
     FLIGHT_PHASE,
-    PERFORMANCE
+    PERFORMANCE,
 } from '../../src/assets/scripts/client/constants/aircraftConstants';
 import { AIRPORT_CONSTANTS } from '../../src/assets/scripts/client/constants/airportConstants';
 import { DEFAULT_HOLD_PARAMETERS } from '../../src/assets/scripts/client/constants/waypointConstants';
@@ -77,7 +77,9 @@ test('#targetHeading calls and returns ._calculateCrabHeadingForGroundTrack() wh
     model._targetHeading = null;
     model._targetGroundTrack = groundTrackMock;
     const expectedResult = 2.157;
-    const calculateCrabHeadingForGroundTrackStub = sinon.stub(model, '_calculateCrabHeadingForGroundTrack').returns(expectedResult);
+    const calculateCrabHeadingForGroundTrackStub = sinon
+        .stub(model, '_calculateCrabHeadingForGroundTrack')
+        .returns(expectedResult);
     const result = model.targetHeading;
 
     expect(result === expectedResult).toBe(true);
@@ -118,7 +120,9 @@ test('#targetGroundTrack calls and returns ._calculateGroundTrackForHeading() wh
     model._targetHeading = headingMock;
     model._targetGroundTrack = null;
     const expectedResult = 2.157;
-    const calculateGroundTrackForHeadingStub = sinon.stub(model, '_calculateGroundTrackForHeading').returns(expectedResult);
+    const calculateGroundTrackForHeadingStub = sinon
+        .stub(model, '_calculateGroundTrackForHeading')
+        .returns(expectedResult);
     const result = model.targetGroundTrack;
 
     expect(result === expectedResult).toBe(true);
@@ -257,8 +261,12 @@ test('.isEstablishedOnCourse() returns false when no arrival runway has been ass
 // in time for the next assertion that is also stubbing the same methods
 test('.isEstablishedOnCourse() returns false when neither aligned with approach course nor on approach heading', () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
-    const isOnApproachCourseStub = sinon.stub(model.fms.arrivalRunwayModel, 'isOnApproachCourse').returns(false);
-    const isOnCorrectApproachGroundTrackStub = sinon.stub(model.fms.arrivalRunwayModel, 'isOnCorrectApproachGroundTrack').returns(false);
+    const isOnApproachCourseStub = sinon
+        .stub(model.fms.arrivalRunwayModel, 'isOnApproachCourse')
+        .returns(false);
+    const isOnCorrectApproachGroundTrackStub = sinon
+        .stub(model.fms.arrivalRunwayModel, 'isOnCorrectApproachGroundTrack')
+        .returns(false);
     const result = model.isEstablishedOnCourse();
 
     expect(result).toBe(false);
@@ -269,8 +277,12 @@ test('.isEstablishedOnCourse() returns false when neither aligned with approach 
 
 test('.isEstablishedOnCourse() returns false when aligned with approach course but not on approach heading', () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
-    const isOnApproachCourseStub = sinon.stub(model.fms.arrivalRunwayModel, 'isOnApproachCourse').returns(true);
-    const isOnCorrectApproachGroundTrackStub = sinon.stub(model.fms.arrivalRunwayModel, 'isOnCorrectApproachGroundTrack').returns(false);
+    const isOnApproachCourseStub = sinon
+        .stub(model.fms.arrivalRunwayModel, 'isOnApproachCourse')
+        .returns(true);
+    const isOnCorrectApproachGroundTrackStub = sinon
+        .stub(model.fms.arrivalRunwayModel, 'isOnCorrectApproachGroundTrack')
+        .returns(false);
     const result = model.isEstablishedOnCourse();
 
     expect(result).toBe(false);
@@ -281,8 +293,12 @@ test('.isEstablishedOnCourse() returns false when aligned with approach course b
 
 test('.isEstablishedOnCourse() returns false when on approach heading but not aligned with approach course', () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
-    const isOnApproachCourseStub = sinon.stub(model.fms.arrivalRunwayModel, 'isOnApproachCourse').returns(false);
-    const isOnCorrectApproachGroundTrackStub = sinon.stub(model.fms.arrivalRunwayModel, 'isOnCorrectApproachGroundTrack').returns(true);
+    const isOnApproachCourseStub = sinon
+        .stub(model.fms.arrivalRunwayModel, 'isOnApproachCourse')
+        .returns(false);
+    const isOnCorrectApproachGroundTrackStub = sinon
+        .stub(model.fms.arrivalRunwayModel, 'isOnCorrectApproachGroundTrack')
+        .returns(true);
     const result = model.isEstablishedOnCourse();
 
     expect(result).toBe(false);
@@ -293,8 +309,12 @@ test('.isEstablishedOnCourse() returns false when on approach heading but not al
 
 test('.isEstablishedOnCourse() returns true when aligned with approach course and on approach heading', () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
-    const isOnApproachCourseStub = sinon.stub(model.fms.arrivalRunwayModel, 'isOnApproachCourse').returns(true);
-    const isOnCorrectApproachGroundTrackStub = sinon.stub(model.fms.arrivalRunwayModel, 'isOnCorrectApproachGroundTrack').returns(true);
+    const isOnApproachCourseStub = sinon
+        .stub(model.fms.arrivalRunwayModel, 'isOnApproachCourse')
+        .returns(true);
+    const isOnCorrectApproachGroundTrackStub = sinon
+        .stub(model.fms.arrivalRunwayModel, 'isOnCorrectApproachGroundTrack')
+        .returns(true);
     const result = model.isEstablishedOnCourse();
 
     expect(result).toBe(true);
@@ -306,9 +326,14 @@ test('.isEstablishedOnCourse() returns true when aligned with approach course an
 test('.isEstablishedOnGlidepath() returns false when too far above glideslope', () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const glideslopeAltitude = 4000;
-    model.altitude = glideslopeAltitude + PERFORMANCE.MAXIMUM_ALTITUDE_DIFFERENCE_CONSIDERED_ESTABLISHED_ON_GLIDEPATH + 1;
+    model.altitude =
+        glideslopeAltitude +
+        PERFORMANCE.MAXIMUM_ALTITUDE_DIFFERENCE_CONSIDERED_ESTABLISHED_ON_GLIDEPATH +
+        1;
 
-    sandbox.stub(model, '_calculateArrivalRunwayModelGlideslopeAltitude').returns(glideslopeAltitude);
+    sandbox
+        .stub(model, '_calculateArrivalRunwayModelGlideslopeAltitude')
+        .returns(glideslopeAltitude);
 
     const result = model.isEstablishedOnGlidepath();
 
@@ -318,9 +343,14 @@ test('.isEstablishedOnGlidepath() returns false when too far above glideslope', 
 test('.isEstablishedOnGlidepath() returns false when too far below glideslope', () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const glideslopeAltitude = 4000;
-    model.altitude = glideslopeAltitude - PERFORMANCE.MAXIMUM_ALTITUDE_DIFFERENCE_CONSIDERED_ESTABLISHED_ON_GLIDEPATH - 1;
+    model.altitude =
+        glideslopeAltitude -
+        PERFORMANCE.MAXIMUM_ALTITUDE_DIFFERENCE_CONSIDERED_ESTABLISHED_ON_GLIDEPATH -
+        1;
 
-    sandbox.stub(model, '_calculateArrivalRunwayModelGlideslopeAltitude').returns(glideslopeAltitude);
+    sandbox
+        .stub(model, '_calculateArrivalRunwayModelGlideslopeAltitude')
+        .returns(glideslopeAltitude);
 
     const result = model.isEstablishedOnGlidepath();
 
@@ -330,9 +360,13 @@ test('.isEstablishedOnGlidepath() returns false when too far below glideslope', 
 test('.isEstablishedOnGlidepath() returns true when an acceptable distance above glideslope', () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const glideslopeAltitude = 4000;
-    model.altitude = glideslopeAltitude + PERFORMANCE.MAXIMUM_ALTITUDE_DIFFERENCE_CONSIDERED_ESTABLISHED_ON_GLIDEPATH;
+    model.altitude =
+        glideslopeAltitude +
+        PERFORMANCE.MAXIMUM_ALTITUDE_DIFFERENCE_CONSIDERED_ESTABLISHED_ON_GLIDEPATH;
 
-    sandbox.stub(model, '_calculateArrivalRunwayModelGlideslopeAltitude').returns(glideslopeAltitude);
+    sandbox
+        .stub(model, '_calculateArrivalRunwayModelGlideslopeAltitude')
+        .returns(glideslopeAltitude);
 
     const result = model.isEstablishedOnGlidepath();
 
@@ -342,9 +376,13 @@ test('.isEstablishedOnGlidepath() returns true when an acceptable distance above
 test('.isEstablishedOnGlidepath() returns true when an acceptable distance below glideslope', () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const glideslopeAltitude = 4000;
-    model.altitude = glideslopeAltitude - PERFORMANCE.MAXIMUM_ALTITUDE_DIFFERENCE_CONSIDERED_ESTABLISHED_ON_GLIDEPATH;
+    model.altitude =
+        glideslopeAltitude -
+        PERFORMANCE.MAXIMUM_ALTITUDE_DIFFERENCE_CONSIDERED_ESTABLISHED_ON_GLIDEPATH;
 
-    sandbox.stub(model, '_calculateArrivalRunwayModelGlideslopeAltitude').returns(glideslopeAltitude);
+    sandbox
+        .stub(model, '_calculateArrivalRunwayModelGlideslopeAltitude')
+        .returns(glideslopeAltitude);
 
     const result = model.isEstablishedOnGlidepath();
 
@@ -354,10 +392,17 @@ test('.isEstablishedOnGlidepath() returns true when an acceptable distance below
 test('.isInsideAirspace() returns the value of Airport.isPointWithinAirspace as called upon the provided AirportModel', () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const expectedResult = 'this is some output from Airport.isPointWithinAirspace()';
-    const airportModelIsPointWithinAirspaceStub = sandbox.stub(airportModelFixture, 'isPointWithinAirspace').returns(expectedResult);
+    const airportModelIsPointWithinAirspaceStub = sandbox
+        .stub(airportModelFixture, 'isPointWithinAirspace')
+        .returns(expectedResult);
     const result = model.isInsideAirspace(airportModelFixture);
 
-    expect(airportModelIsPointWithinAirspaceStub.calledWithExactly(model.relativePosition, model.altitude)).toBe(true);
+    expect(
+        airportModelIsPointWithinAirspaceStub.calledWithExactly(
+            model.relativePosition,
+            model.altitude
+        )
+    ).toBe(true);
     expect(result === expectedResult).toBe(true);
 });
 
@@ -367,8 +412,12 @@ test('.isOnFinal() returns false when neither on the selected course nor within 
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const isEstablishedOnCourse = false;
     const distanceToDatum = AIRPORT_CONSTANTS.FINAL_APPROACH_FIX_DISTANCE_NM + 1;
-    const isEstablishedOnCourseStub = sinon.stub(model, 'isEstablishedOnCourse').returns(isEstablishedOnCourse);
-    const distanceToPositionStub = sinon.stub(model.positionModel, 'distanceToPosition').returns(distanceToDatum);
+    const isEstablishedOnCourseStub = sinon
+        .stub(model, 'isEstablishedOnCourse')
+        .returns(isEstablishedOnCourse);
+    const distanceToPositionStub = sinon
+        .stub(model.positionModel, 'distanceToPosition')
+        .returns(distanceToDatum);
     const result = model.isOnFinal();
 
     expect(result).toBe(false);
@@ -381,8 +430,12 @@ test('.isOnFinal() returns false when on the selected course but not within the 
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const isEstablishedOnCourse = true;
     const distanceToDatum = AIRPORT_CONSTANTS.FINAL_APPROACH_FIX_DISTANCE_NM + 1;
-    const isEstablishedOnCourseStub = sinon.stub(model, 'isEstablishedOnCourse').returns(isEstablishedOnCourse);
-    const distanceToPositionStub = sinon.stub(model.positionModel, 'distanceToPosition').returns(distanceToDatum);
+    const isEstablishedOnCourseStub = sinon
+        .stub(model, 'isEstablishedOnCourse')
+        .returns(isEstablishedOnCourse);
+    const distanceToPositionStub = sinon
+        .stub(model.positionModel, 'distanceToPosition')
+        .returns(distanceToDatum);
     const result = model.isOnFinal();
 
     expect(result).toBe(false);
@@ -395,8 +448,12 @@ test('.isOnFinal() returns false when within the final approach fix distance but
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const isEstablishedOnCourse = false;
     const distanceToDatum = AIRPORT_CONSTANTS.FINAL_APPROACH_FIX_DISTANCE_NM;
-    const isEstablishedOnCourseStub = sinon.stub(model, 'isEstablishedOnCourse').returns(isEstablishedOnCourse);
-    const distanceToPositionStub = sinon.stub(model.positionModel, 'distanceToPosition').returns(distanceToDatum);
+    const isEstablishedOnCourseStub = sinon
+        .stub(model, 'isEstablishedOnCourse')
+        .returns(isEstablishedOnCourse);
+    const distanceToPositionStub = sinon
+        .stub(model.positionModel, 'distanceToPosition')
+        .returns(distanceToDatum);
     const result = model.isOnFinal();
 
     expect(result).toBe(false);
@@ -409,8 +466,12 @@ test('.isOnFinal() returns true when both on the selected course and within the 
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const isEstablishedOnCourse = true;
     const distanceToDatum = AIRPORT_CONSTANTS.FINAL_APPROACH_FIX_DISTANCE_NM;
-    const isEstablishedOnCourseStub = sinon.stub(model, 'isEstablishedOnCourse').returns(isEstablishedOnCourse);
-    const distanceToPositionStub = sinon.stub(model.positionModel, 'distanceToPosition').returns(distanceToDatum);
+    const isEstablishedOnCourseStub = sinon
+        .stub(model, 'isEstablishedOnCourse')
+        .returns(isEstablishedOnCourse);
+    const distanceToPositionStub = sinon
+        .stub(model.positionModel, 'distanceToPosition')
+        .returns(distanceToDatum);
     const result = model.isOnFinal();
 
     expect(result).toBe(true);
@@ -419,7 +480,7 @@ test('.isOnFinal() returns true when both on the selected course and within the 
     distanceToPositionStub.restore();
 });
 
-test('._calculateArrivalRunwayModelGlideslopeAltitude() returns arrival runway\'s glideslope altitude abeam the specified position', () => {
+test("._calculateArrivalRunwayModelGlideslopeAltitude() returns arrival runway's glideslope altitude abeam the specified position", () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const runwayElevationMock = 2157;
     const expectedResult = 2261.980164261595 + runwayElevationMock;
@@ -433,7 +494,10 @@ test('._calculateArrivalRunwayModelGlideslopeAltitude() returns arrival runway\'
     const magneticBearingFromRunway = arrivalRunwayModel.oppositeAngle;
 
     model.positionModel.setCoordinates(runwayPositionModel.gps);
-    model.positionModel.setCoordinatesByBearingAndDistance(magneticBearingFromRunway, distanceOnFinalNm);
+    model.positionModel.setCoordinatesByBearingAndDistance(
+        magneticBearingFromRunway,
+        distanceOnFinalNm
+    );
 
     const result = model._calculateArrivalRunwayModelGlideslopeAltitude();
 
@@ -471,7 +535,9 @@ test('.matchCallsign() returns true when passed a mixed case callsign that match
 });
 
 test('.updateTarget() causes arrivals to comply with AT altitude restriction', () => {
-    const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.groundSpeed = 320;
     model.targetGroundTrack = 1.5;
 
@@ -482,7 +548,9 @@ test('.updateTarget() causes arrivals to comply with AT altitude restriction', (
 });
 
 test('.updateTarget() causes arrivals to comply with ABOVE altitude restriction', () => {
-    const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.groundSpeed = 320;
     model.targetGroundTrack = 1.5;
 
@@ -493,7 +561,9 @@ test('.updateTarget() causes arrivals to comply with ABOVE altitude restriction'
 });
 
 test('.updateTarget() causes arrivals to comply with BELOW altitude restriction', () => {
-    const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.groundSpeed = 320;
     model.targetGroundTrack = 1.5;
 
@@ -504,7 +574,9 @@ test('.updateTarget() causes arrivals to comply with BELOW altitude restriction'
 });
 
 test('.updateTarget() causes departures to comply with AT altitude restriction', () => {
-    const model = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.speed = 320;
     model.altitude = 3000;
 
@@ -520,7 +592,9 @@ test('.updateTarget() causes departures to comply with AT altitude restriction',
 });
 
 test('.updateTarget() causes departures to comply with ABOVE altitude restriction', () => {
-    const model = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.speed = 320;
     model.altitude = 3000;
 
@@ -537,7 +611,9 @@ test('.updateTarget() causes departures to comply with ABOVE altitude restrictio
 });
 
 test('.updateTarget() causes departures to comply with BELOW altitude restriction', () => {
-    const model = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.speed = 320;
     model.altitude = 3000;
 
@@ -553,7 +629,9 @@ test('.updateTarget() causes departures to comply with BELOW altitude restrictio
 });
 
 test('.updateTarget() causes arrivals to descend to the assigned altitude if there is no restriction', () => {
-    const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.groundSpeed = 320;
 
     moveAircraftToFix(model, 'LEMNZ');
@@ -564,7 +642,9 @@ test('.updateTarget() causes arrivals to descend to the assigned altitude if the
 });
 
 test('.updateTarget() causes departures to climb to cruise altitude if there is no restriction', () => {
-    const model = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.speed = 320;
     model.altitude = 3000;
 
@@ -580,7 +660,9 @@ test('.updateTarget() causes departures to climb to cruise altitude if there is 
 });
 
 test('.updateTarget() causes arrivals to descend to the assigned altitude if the minimal altitude restriction is above the assigned altitude', () => {
-    const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.groundSpeed = 320;
     model.targetGroundTrack = 1.5;
 
@@ -592,7 +674,9 @@ test('.updateTarget() causes arrivals to descend to the assigned altitude if the
 });
 
 test('.updateTarget() causes departures to climb to cruise altitude if the maximum altitude restriction is below the cruise altitude', () => {
-    const model = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.speed = 320;
     model.altitude = 3000;
 
@@ -608,7 +692,9 @@ test('.updateTarget() causes departures to climb to cruise altitude if the maxim
 });
 
 test('.updateTarget() causes arrivals to climb to comply with minimal altitude restriction', () => {
-    const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.groundSpeed = 320;
     model.targetGroundTrack = 1.5;
     model.altitude = 7000;
@@ -621,7 +707,9 @@ test('.updateTarget() causes arrivals to climb to comply with minimal altitude r
 });
 
 test('.updateTarget() causes departures to descend to comply with maximum altitude restriction', () => {
-    const model = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.speed = 320;
     model.groundSpeed = 320;
     model.altitude = 15000;
@@ -638,7 +726,9 @@ test('.updateTarget() causes departures to descend to comply with maximum altitu
 });
 
 test('.updateTarget() causes arrivals to prioritize clearance over restriction', () => {
-    const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        ARRIVAL_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.groundSpeed = 320;
     model.targetGroundTrack = 1.5;
 
@@ -650,7 +740,9 @@ test('.updateTarget() causes arrivals to prioritize clearance over restriction',
 });
 
 test('.updateTarget() causes departures to prioritize clearance over restriction', () => {
-    const model = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK);
+    const model = new AircraftModel(
+        DEPARTURE_AIRCRAFT_INIT_PROPS_WITH_SOFT_ALTITUDE_RESTRICTIONS_MOCK
+    );
     model.speed = 320;
     model.altitude = 3000;
 
@@ -666,7 +758,7 @@ test('.updateTarget() causes departures to prioritize clearance over restriction
 });
 
 test('.taxiToRunway() returns an error when the aircraft is airborne', () => {
-    const expectedResult = [false, 'unable to taxi, we\'re already airborne'];
+    const expectedResult = [false, "unable to taxi, we're already airborne"];
     const arrival = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const arrivalResult = arrival.taxiToRunway(runwayModelMock);
 
@@ -684,7 +776,7 @@ test('.taxiToRunway() returns an error when the aircraft is taking off', () => {
 
     aircraftModel.fms.currentPhase = FLIGHT_PHASE.TAKEOFF;
 
-    const expectedResult = [false, 'unable to taxi, we\'re already taking off'];
+    const expectedResult = [false, "unable to taxi, we're already taking off"];
     const result = aircraftModel.taxiToRunway(runwayModelMock);
 
     expect(result).toEqual(expectedResult);
@@ -702,10 +794,13 @@ test('.taxiToRunway() returns an error when the aircraft has landed', () => {
 });
 
 test('.taxiToRunway() returns an error when the aircraft is already taxiing to the specified runway', () => {
-    const expectedResult = [false, {
-        log: 'we\'re already taxiing to Runway 19L',
-        say: 'we\'re already taxiing to Runway one niner left'
-    }];
+    const expectedResult = [
+        false,
+        {
+            log: "we're already taxiing to Runway 19L",
+            say: "we're already taxiing to Runway one niner left",
+        },
+    ];
     const arrival = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
     arrival.fms.departureRunwayModel = runwayModelMock;
     arrival.fms.currentPhase = FLIGHT_PHASE.TAXI;
@@ -715,10 +810,13 @@ test('.taxiToRunway() returns an error when the aircraft is already taxiing to t
 });
 
 test('.taxiToRunway() returns an error when the aircraft is already holding short of the specified runway', () => {
-    const expectedResult = [false, {
-        log: 'we\'re already holding short of Runway 19L',
-        say: 'we\'re already holding short of Runway one niner left'
-    }];
+    const expectedResult = [
+        false,
+        {
+            log: "we're already holding short of Runway 19L",
+            say: "we're already holding short of Runway one niner left",
+        },
+    ];
     const arrival = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
     arrival.fms.departureRunwayModel = runwayModelMock;
     arrival.fms.currentPhase = FLIGHT_PHASE.WAITING;
@@ -732,8 +830,8 @@ test('.taxiToRunway() returns a success message when finished', () => {
         true,
         {
             log: 'taxi to and hold short of Runway 19L',
-            say: 'taxi to and hold short of Runway one niner left'
-        }
+            say: 'taxi to and hold short of Runway one niner left',
+        },
     ];
     const model = new AircraftModel(DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK);
     const result = model.taxiToRunway(runwayModelMock);
@@ -757,7 +855,7 @@ test('._calculateCrabHeadingForGroundTrack() returns the heading to face in orde
     sinon.restore();
 });
 
-test('._calculateGroundTrackForHeading() returns the ground track which results from the aircraft\'s heading and the current winds aloft at their altitude', () => {
+test("._calculateGroundTrackForHeading() returns the ground track which results from the aircraft's heading and the current winds aloft at their altitude", () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const headingMock = Math.PI / 2; // 090 heading
     model.trueAirspeed = 40;
@@ -779,7 +877,7 @@ test('._calculateTargetedHeadingHold() sets hold timer when !#_isEstablishedOnHo
     const outboundHeadingMock = inboundHeadingMock + Math.PI;
     const legLengthMinutesMock = '2.5min';
     const legLengthSecondsMock = 150;
-    const maxAcceptableHeadingMock = outboundHeadingMock;// + PERFORMANCE.MAXIMUM_ANGLE_CONSIDERED_ESTABLISHED_ON_HOLD_COURSE - 0.00000001;
+    const maxAcceptableHeadingMock = outboundHeadingMock; // + PERFORMANCE.MAXIMUM_ANGLE_CONSIDERED_ESTABLISHED_ON_HOLD_COURSE - 0.00000001;
     currentWaypointModel._holdParameters = DEFAULT_HOLD_PARAMETERS;
     currentWaypointModel._holdParameters.inboundHeading = inboundHeadingMock;
     currentWaypointModel._holdParameters.legLength = legLengthMinutesMock;
@@ -839,7 +937,7 @@ test('._updateTargetedDirectionality() sets target ground track with value from 
     sinon.restore();
 });
 
-test('._updateTargetedDirectionality() sets target heading to the aircraft\'s present heading when the MCP heading mode is off', () => {
+test("._updateTargetedDirectionality() sets target heading to the aircraft's present heading when the MCP heading mode is off", () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const headingMock = 2.15;
     model.heading = headingMock;
@@ -852,7 +950,7 @@ test('._updateTargetedDirectionality() sets target heading to the aircraft\'s pr
     sinon.restore();
 });
 
-test('._updateTargetedDirectionality() sets target heading to the aircraft\'s MCP heading when the MCP heading mode is HOLD', () => {
+test("._updateTargetedDirectionality() sets target heading to the aircraft's MCP heading when the MCP heading mode is HOLD", () => {
     const model = new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
     const headingMock = 2.15;
     model.mcp.heading = headingMock;

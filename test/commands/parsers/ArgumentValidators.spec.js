@@ -15,7 +15,7 @@ import {
     isValidCourseString,
     squawkValidator,
     optionalAltitudeValidator,
-    crossingValidator
+    crossingValidator,
 } from '../../../src/assets/scripts/client/commands/parsers/argumentValidators';
 
 // TODO: import ERROR_MESSAGE and use actual values to test against
@@ -134,7 +134,9 @@ test('.altitudeValidator() returns a string when passed anything other than expe
     expect(typeof result === 'undefined').toBe(true);
 
     result = altitudeValidator(['100', '']);
-    expect(result === 'Invalid argument. Altitude accepts only "expedite" or "ex" as a second argument').toBe(true);
+    expect(
+        result === 'Invalid argument. Altitude accepts only "expedite" or "ex" as a second argument'
+    ).toBe(true);
 });
 
 test('.optionalAltitudeValidator() returns undefined when no value is passed', () => {
@@ -168,7 +170,9 @@ test('.fixValidator() returns undefined when it receives at least one valid argu
     result = fixValidator(['one', 'two', 'th33', '4F1o']);
     expect(typeof result === 'undefined').toBe(true);
 
-    expect(fixValidator([]) === 'Invalid argument length. Expected one or more arguments').toBe(true);
+    expect(fixValidator([]) === 'Invalid argument length. Expected one or more arguments').toBe(
+        true
+    );
 });
 
 test('.fixValidator() returns a string when passed anything other than a string', () => {
@@ -195,17 +199,31 @@ test('.headingValidator() returns a string when passed the wrong number of argum
 });
 
 test('.headingValidator() returns a string when passed the wrong type of arguments', () => {
-    expect(headingValidator(['threeve'])).toBe('Invalid argument. Heading must be between 001 and 360');
-    expect(headingValidator(['42', '42'])).toBe('Invalid argument. Expected one of \'left / l / right / r\' as the first argument when passed three arguments');
+    expect(headingValidator(['threeve'])).toBe(
+        'Invalid argument. Heading must be between 001 and 360'
+    );
+    expect(headingValidator(['42', '42'])).toBe(
+        "Invalid argument. Expected one of 'left / l / right / r' as the first argument when passed three arguments"
+    );
     expect(headingValidator(['l', 'threeve'])).toBe('Invalid argument. Heading must be a number');
-    expect(headingValidator(['42', '42'])).toBe('Invalid argument. Expected one of \'left / l / right / r\' as the first argument when passed three arguments');
+    expect(headingValidator(['42', '42'])).toBe(
+        "Invalid argument. Expected one of 'left / l / right / r' as the first argument when passed three arguments"
+    );
     expect(headingValidator(['l', 'threeve'])).toBe('Invalid argument. Heading must be a number');
     expect(headingValidator(['000'])).toBe('Invalid argument. Heading must be between 001 and 360');
     expect(headingValidator(['361'])).toBe('Invalid argument. Heading must be between 001 and 360');
-    expect(headingValidator(['l', '000'])).toBe('Invalid argument. Heading must be between 001 and 360');
-    expect(headingValidator(['l', '361'])).toBe('Invalid argument. Heading must be between 001 and 360');
-    expect(headingValidator(['l', '0'])).toBe('Invalid argument. Incremental heading must be positive');
-    expect(headingValidator(['l', '-9'])).toBe('Invalid argument. Incremental heading must be positive');
+    expect(headingValidator(['l', '000'])).toBe(
+        'Invalid argument. Heading must be between 001 and 360'
+    );
+    expect(headingValidator(['l', '361'])).toBe(
+        'Invalid argument. Heading must be between 001 and 360'
+    );
+    expect(headingValidator(['l', '0'])).toBe(
+        'Invalid argument. Incremental heading must be positive'
+    );
+    expect(headingValidator(['l', '-9'])).toBe(
+        'Invalid argument. Incremental heading must be positive'
+    );
 });
 
 test('.headingValidator() returns undefined when passed a number as a single argument', () => {
@@ -234,10 +252,18 @@ test('.holdValidator() returns undefined when passed zero arguments', () => {
 
 test('.holdValidator() returns a string when passed the wrong type of arguments', () => {
     expect(holdValidator([false]) === 'Invalid argument. Must be a string').toBe(true);
-    expect(holdValidator([false, '42', '1min', '090']) === 'Invalid argument. Must be a string').toBe(true);
-    expect(holdValidator(['42', false, '1min', '090']) === 'Invalid argument. Must be a string').toBe(true);
-    expect(holdValidator(['42', 'left', false, '090']) === 'Invalid argument. Must be a string').toBe(true);
-    expect(holdValidator(['42', 'left', '1min', false]) === 'Invalid argument. Must be a string').toBe(true);
+    expect(
+        holdValidator([false, '42', '1min', '090']) === 'Invalid argument. Must be a string'
+    ).toBe(true);
+    expect(
+        holdValidator(['42', false, '1min', '090']) === 'Invalid argument. Must be a string'
+    ).toBe(true);
+    expect(
+        holdValidator(['42', 'left', false, '090']) === 'Invalid argument. Must be a string'
+    ).toBe(true);
+    expect(
+        holdValidator(['42', 'left', '1min', false]) === 'Invalid argument. Must be a string'
+    ).toBe(true);
 });
 
 test('.holdValidator() returns undefined when passed a string as an argument', () => {
@@ -333,19 +359,29 @@ test('.squawkValidator() returns a string when passed the wrong number of argume
 
 test('.squawkValidator() returns string when passed invalid squawk', () => {
     let result = squawkValidator(['8888']);
-    expect(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.').toBe(true);
+    expect(result === "Invalid argument. Expected '0000'-'7777' for the transponder code.").toBe(
+        true
+    );
 
     result = squawkValidator(['111']);
-    expect(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.').toBe(true);
+    expect(result === "Invalid argument. Expected '0000'-'7777' for the transponder code.").toBe(
+        true
+    );
 
     result = squawkValidator(['1181']);
-    expect(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.').toBe(true);
+    expect(result === "Invalid argument. Expected '0000'-'7777' for the transponder code.").toBe(
+        true
+    );
 
     result = squawkValidator(['11711']);
-    expect(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.').toBe(true);
+    expect(result === "Invalid argument. Expected '0000'-'7777' for the transponder code.").toBe(
+        true
+    );
 
     result = squawkValidator(['1a11']);
-    expect(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.').toBe(true);
+    expect(result === "Invalid argument. Expected '0000'-'7777' for the transponder code.").toBe(
+        true
+    );
 });
 
 test('.crossingValidator() returns a string when passed the wrong number of arguments', () => {

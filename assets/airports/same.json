@@ -460,26 +460,26 @@
         "_RWY18": ["S32.81918", "W68.79269"],
         "_RWY36": ["S32.84432", "W68.79306"],
         "ALDEX": ["S31d39.62", "W65d11.78"],
-        "AMB"  : ["S33d25.18", "W70d47.07"],
+        "AMB": ["S33d25.18", "W70d47.07"],
         "ANDUD": ["S35d34.63", "W62d57.82"],
         "ANLIS": ["S33d31.88", "W67d21.25"],
         "ARMUP": ["S34d21.27", "W62d06.50"],
         "ARVET": ["S37d25.47", "W68d14.52"],
         "ASOLO": ["S33d19.77", "W67d47.30"],
         "ASOTA": ["S31d08.67", "W68d06.15"],
-        "BAR"  : ["S41d08.42", "W71d08.90"],
-        "CBA"  : ["S31d18.79", "W64d12.22"],
+        "BAR": ["S41d08.42", "W71d08.90"],
+        "CBA": ["S31d18.79", "W64d12.22"],
         "CHATO": ["S40d34.32", "W71d00.88"],
         "DAMAP": ["S29d48.67", "W67d06.67"],
-        "DIL"  : ["S37d13.50", "W59d13.77"],
+        "DIL": ["S37d13.50", "W59d13.77"],
         "DONTI": ["S32d57.00", "W71d11.40"],
         "DOSLO": ["S33d17.60", "W67d50.87"],
-        "DOZ"  : ["S32.83183", "W68.79076"],
+        "DOZ": ["S32.83183", "W68.79076"],
         "EDRIS": ["S33d25.32", "W66d35.77"],
         "EKERO": ["S35d01.05", "W69d21.93"],
         "ENTIB": ["S33d55.28", "W61d42.33"],
         "ESITO": ["S33.89950", "W68.86750"],
-        "EZE"  : ["S34d49.44", "W58d32.12"],
+        "EZE": ["S34d49.44", "W58d32.12"],
         "FRAGA": ["S33d34.97", "W66d01.05"],
         "GEDUN": ["S33d29.38", "W66d22.93"],
         "GEGAT": ["S35d55.82", "W68d19.43"],
@@ -488,7 +488,7 @@
         "ILSUR": ["S31d02.33", "W69d41.57"],
         "ILTUH": ["S33.05126", "W68.79611"],
         "ISORO": ["S35d58.50", "W69d42.48"],
-        "JUA"  : ["S31d33.83", "W68d25.28"],
+        "JUA": ["S31d33.83", "W68d25.28"],
         "KABAK": ["S33d18.97", "W67d03.05"],
         "KAMUV": ["S32.90967", "W67.70333"],
         "KEXEV": ["S33.12450", "W68.79733"],
@@ -496,11 +496,11 @@
         "KOTES": ["S32.40339", "W68.27756"],
         "KOTNI": ["S34d17.33", "W69d02.37"],
         "KOVUN": ["S33d29.30", "W64d32.87"],
-        "LAR"  : ["S29d23.32", "W66d48.22"],
+        "LAR": ["S29d23.32", "W66d48.22"],
         "LIXOR": ["S36d43.60", "W60d24.25"],
         "LOLIV": ["S33d41.97", "W67d00.30"],
         "LOMAD": ["S32.65221", "W68.79021"],
-        "LYE"  : ["S34d08.48", "W63d21.65"],
+        "LYE": ["S34d08.48", "W63d21.65"],
         "ME525": ["S32.78867", "W68.32683"],
         "ME528": ["S32.89750", "W68.79383"],
         "ME530": ["S32.91900", "W68.19133"],
@@ -535,14 +535,14 @@
         "MEBRA": ["S32.05867", "W68.33700"],
         "MIBAS": ["S30d47.00", "W70d17.50"],
         "MILAX": ["S36d06.90", "W61d47.45"],
-        "MLG"  : ["S35d29.17", "W69d34.72"],
+        "MLG": ["S35d29.17", "W69d34.72"],
         "MOCHO": ["S38d17.27", "W70d20.67"],
         "MUBEN": ["S33.05300", "W68.61800"],
         "MULBO": ["S33d51.48", "W66d39.98"],
         "MUMSA": ["S34d02.48", "W63d51.95"],
         "NEBEG": ["S33.80000", "W69.90000"],
-        "NEU"  : ["S38d57.02", "W68d09.28"],
-        "NIN"  : ["S34d33.07", "W60d56.03"],
+        "NEU": ["S38d57.02", "W68d09.28"],
+        "NIN": ["S34d33.07", "W60d56.03"],
         "NIRNU": ["S30d35.55", "W70d44.37"],
         "NIRTA": ["S32d39.53", "W68d13.98"],
         "NUXIM": ["S34d26.77", "W61d32.57"],
@@ -556,22 +556,22 @@
         "REPEV": ["S31d11.08", "W69d18.80"],
         "RIBLA": ["S32d54.40", "W70d32.38"],
         "ROREX": ["S32.72917", "W68.62733"],
-        "RYD"  : ["S33d43.72", "W65d22.87"],
+        "RYD": ["S33d43.72", "W65d22.87"],
         "SAFEL": ["S32d49.08", "W70d41.97"],
         "SALBO": ["S32.51250", "W67.77000"],
         "SINAL": ["S34d46.37", "W64d38.77"],
         "SIPOM": ["S33d04.72", "W66d49.43"],
         "SIPUG": ["S39d36.95", "W70d43.72"],
         "SIREK": ["S32.60367", "W68.65517"],
-        "SNT"  : ["S34d13.33", "W59d26.48"],
+        "SNT": ["S34d13.33", "W59d26.48"],
         "SOLER": ["S32d06.27", "W66d30.73"],
         "SOVSU": ["S30d44.33", "W70d23.63"],
-        "SRA"  : ["S34d35.37", "W68d23.68"],
+        "SRA": ["S34d35.37", "W68d23.68"],
         "SUCUA": ["S32.92500", "W68.58950"],
         "TITKI": ["S30d25.50", "W71d07.78"],
         "TODAR": ["S32.93032", "W68.79446"],
         "TOSOR": ["S33d54.72", "W64d30.35"],
-        "TOY"  : ["S30d16.58", "W71d28.42"],
+        "TOY": ["S30d16.58", "W71d28.42"],
         "UDUPA": ["S33d47.07", "W62d38.30"],
         "UGOLA": ["S32d55.15", "W70d48.67"],
         "UKLIK": ["S32.63567", "W68.49933"],
@@ -582,7 +582,7 @@
         "VADON": ["S32d55.50", "W67d23.67"],
         "VAROR": ["S32.73739", "W68.79144"],
         "VISEK": ["S33d43.70", "W70d45.90"],
-        "VTN"  : ["S32d44.32", "W71d29.77"],
+        "VTN": ["S32d44.32", "W71d29.77"],
         "VUGMA": ["S33d12.13", "W66d09.75"],
         "VUMUD": ["S35d04.38", "W64d01.67"],
         "VUNIK": ["S30d32.97", "W70d50.52"],
@@ -1739,398 +1739,613 @@
         }
     ],
     "airways": {
-        "A307": ["AMB", "VISEK", "YESOS", "NEBEG", "ESITO", "DOZ", "NIRTA", "SALBO", "SOLER", "ALDEX", "CBA"],
+        "A307": [
+            "AMB",
+            "VISEK",
+            "YESOS",
+            "NEBEG",
+            "ESITO",
+            "DOZ",
+            "NIRTA",
+            "SALBO",
+            "SOLER",
+            "ALDEX",
+            "CBA"
+        ],
         "L405": ["DOZ", "UMKAL", "RIBLA", "UGOLA", "DONTI", "VTN"],
-        "UA307": ["AMB", "VISEK", "YESOS", "NEBEG", "ESITO", "DOZ", "NIRTA", "SALBO", "SOLER", "KOPSI", "ALDEX", "CBA"],
-        "UL405": ["VTN", "DONTI", "UGOLA", "RIBLA", "UMKAL", "DOZ", "PAPIR", "USVET", "EDRIS", "GEDUN", "RYD", "POPLU", "TOSOR", "MUMSA", "LYE", "ARMUP", "NUXIM", "NIN", "URINO", "EZE"],
+        "UA307": [
+            "AMB",
+            "VISEK",
+            "YESOS",
+            "NEBEG",
+            "ESITO",
+            "DOZ",
+            "NIRTA",
+            "SALBO",
+            "SOLER",
+            "KOPSI",
+            "ALDEX",
+            "CBA"
+        ],
+        "UL405": [
+            "VTN",
+            "DONTI",
+            "UGOLA",
+            "RIBLA",
+            "UMKAL",
+            "DOZ",
+            "PAPIR",
+            "USVET",
+            "EDRIS",
+            "GEDUN",
+            "RYD",
+            "POPLU",
+            "TOSOR",
+            "MUMSA",
+            "LYE",
+            "ARMUP",
+            "NUXIM",
+            "NIN",
+            "URINO",
+            "EZE"
+        ],
         "UL416": ["JUA", "REPEV", "ILSUR", "MIBAS", "SOVSU", "NIRNU", "VUNIK", "TITKI", "TOY"],
-        "UT670": ["DOZ", "KAMUV", "OPSIS", "SIPOM", "VUGMA", "KOVUN", "RAXUR", "UDUPA", "ENTIB", "PULGA", "SNT"],
-        "UT688": ["DOZ", "ASOLO", "ANLIS", "LOLIV", "MULBO", "SINAL", "VUMUD", "ANDUD", "MILAX", "VUSAP", "LIXOR", "DIL"],
+        "UT670": [
+            "DOZ",
+            "KAMUV",
+            "OPSIS",
+            "SIPOM",
+            "VUGMA",
+            "KOVUN",
+            "RAXUR",
+            "UDUPA",
+            "ENTIB",
+            "PULGA",
+            "SNT"
+        ],
+        "UT688": [
+            "DOZ",
+            "ASOLO",
+            "ANLIS",
+            "LOLIV",
+            "MULBO",
+            "SINAL",
+            "VUMUD",
+            "ANDUD",
+            "MILAX",
+            "VUSAP",
+            "LIXOR",
+            "DIL"
+        ],
         "UW3": ["DOZ", "MEBRA", "JUA", "GILSA", "LAR"],
         "UW37": ["ESITO", "SRA", "GEGAT", "ARVET", "NEU"],
         "UW44": ["BAR", "CHATO", "MOCHO", "MLG", "KOTNI", "ESITO", "DOZ", "NIRTA", "MEBRA", "JUA"],
         "W3": ["DOZ", "MEBRA", "JUA", "ASOTA", "XONOM", "GILSA", "DAMAP", "LAR"],
-        "W44": ["BAR", "CHATO", "SIPUG", "MOCHO", "ISORO", "MLG", "EKERO", "KOTNI", "ESITO", "DOZ", "NIRTA", "MEBRA", "JUA"],
+        "W44": [
+            "BAR",
+            "CHATO",
+            "SIPUG",
+            "MOCHO",
+            "ISORO",
+            "MLG",
+            "EKERO",
+            "KOTNI",
+            "ESITO",
+            "DOZ",
+            "NIRTA",
+            "MEBRA",
+            "JUA"
+        ],
         "W64": ["DOZ", "KAMUV", "VADON"],
         "W71": ["DOZ", "DOSLO", "ANLIS", "LOLIV"],
-        "W9": ["DOZ", "PAPIR", "KABAK", "FRAGA", "RYD", "TOSOR", "LYE", "ARMUP", "NUXIM", "NIN", "URINO", "EZE"]
+        "W9": [
+            "DOZ",
+            "PAPIR",
+            "KABAK",
+            "FRAGA",
+            "RYD",
+            "TOSOR",
+            "LYE",
+            "ARMUP",
+            "NUXIM",
+            "NIN",
+            "URINO",
+            "EZE"
+        ]
     },
     "sids": {
         "DOSL1A": {
             "icao": "DOSL1A",
             "name": "Doslo One Alpha",
             "rwy": {
-                "SAME36" : [["_DOZ001001", "A30+"], "_DOZ046003"]
+                "SAME36": [["_DOZ001001", "A30+"], "_DOZ046003"]
             },
-            "body": ["ME556", "_DOZ055015", "_DOZ064015", "ME555", "_DOZ079015", "_DOZ088015", "ME554", "_DOZ103015", "_DOZ109015", "_DOZ115015", "ME553"],
+            "body": [
+                "ME556",
+                "_DOZ055015",
+                "_DOZ064015",
+                "ME555",
+                "_DOZ079015",
+                "_DOZ088015",
+                "ME554",
+                "_DOZ103015",
+                "_DOZ109015",
+                "_DOZ115015",
+                "ME553"
+            ],
             "exitPoints": {
                 "DOSLO": ["DOSLO"]
             },
             "draw": [
                 ["_DOZ001001", "_DOZ046003"],
-                ["ME556", "_DOZ055015", "_DOZ064015", "ME555", "_DOZ079015", "_DOZ088015", "ME554", "_DOZ103015", "_DOZ109015", "_DOZ115015", "ME553", "DOSLO"]
+                [
+                    "ME556",
+                    "_DOZ055015",
+                    "_DOZ064015",
+                    "ME555",
+                    "_DOZ079015",
+                    "_DOZ088015",
+                    "ME554",
+                    "_DOZ103015",
+                    "_DOZ109015",
+                    "_DOZ115015",
+                    "ME553",
+                    "DOSLO"
+                ]
             ]
         },
-       "DOSL1C": {
+        "DOSL1C": {
             "icao": "DOSL1C",
             "name": "Doslo One Charlie",
             "rwy": {
-                "SAME36" : [["^ME902", "S240-"], ["ROREX", "S240-"]]
+                "SAME36": [
+                    ["^ME902", "S240-"],
+                    ["ROREX", "S240-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "DOSLO": ["DOSLO"]
             },
-            "draw": [
-                ["ME902", "ROREX", "DOSLO"]
-            ]
+            "draw": [["ME902", "ROREX", "DOSLO"]]
         },
         "DOSL1E": {
             "icao": "DOSL1E",
             "name": "Doslo One Echo",
             "rwy": {
-                "SAME18" : [["_RWY36", "A30+"], "_DOZ121004"]
+                "SAME18": [["_RWY36", "A30+"], "_DOZ121004"]
             },
             "body": ["ME553"],
             "exitPoints": {
                 "DOSLO": ["DOSLO"]
             },
-            "draw": [
-                ["DOSLO"]
-            ]
+            "draw": [["DOSLO"]]
         },
         "DOSL1G": {
             "icao": "DOSL1G",
             "name": "Doslo One Golf",
             "rwy": {
-                "SAME18" : [["^ME528", "S250-"], ["SUCUA", "S250-"]]
+                "SAME18": [
+                    ["^ME528", "S250-"],
+                    ["SUCUA", "S250-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "DOSLO": ["DOSLO"]
             },
-            "draw": [
-                ["ME528", "SUCUA", "DOSLO"]
-            ]
+            "draw": [["ME528", "SUCUA", "DOSLO"]]
         },
         "ESIT1A": {
             "icao": "ESIT1A",
             "name": "Esito One Alpha",
             "rwy": {
-                "SAME36" : ["^_RWY18", "_DOZ015003", "ME788"]
+                "SAME36": ["^_RWY18", "_DOZ015003", "ME788"]
             },
-            "body": ["_DOZ025010", "_DOZ034010", "_DOZ043010", "_DOZ052010", "_DOZ061010", "_DOZ070010", "_DOZ079010", "_DOZ088010", "_DOZ097010", "_DOZ106010", "_DOZ115010", "_DOZ124010", "_DOZ133010", "_DOZ142010", "_DOZ151010", "_DOZ160010", "^_DOZ169010", "XOGIV", "ME789"],
+            "body": [
+                "_DOZ025010",
+                "_DOZ034010",
+                "_DOZ043010",
+                "_DOZ052010",
+                "_DOZ061010",
+                "_DOZ070010",
+                "_DOZ079010",
+                "_DOZ088010",
+                "_DOZ097010",
+                "_DOZ106010",
+                "_DOZ115010",
+                "_DOZ124010",
+                "_DOZ133010",
+                "_DOZ142010",
+                "_DOZ151010",
+                "_DOZ160010",
+                "^_DOZ169010",
+                "XOGIV",
+                "ME789"
+            ],
             "exitPoints": {
                 "ESITO": ["ESITO"]
             },
             "draw": [
-                ["_RWY18", "_DOZ015003", "ME788", "_DOZ025010", "_DOZ034010", "_DOZ043010", "_DOZ052010", "_DOZ061010", "_DOZ070010", "_DOZ079010", "_DOZ088010", "_DOZ097010", "_DOZ106010", "_DOZ115010", "_DOZ124010", "_DOZ133010", "_DOZ142010", "_DOZ151010", "_DOZ160010", "_DOZ169010", "_DOZ178010", "XOGIV", "ME789", "ESITO"]
+                [
+                    "_RWY18",
+                    "_DOZ015003",
+                    "ME788",
+                    "_DOZ025010",
+                    "_DOZ034010",
+                    "_DOZ043010",
+                    "_DOZ052010",
+                    "_DOZ061010",
+                    "_DOZ070010",
+                    "_DOZ079010",
+                    "_DOZ088010",
+                    "_DOZ097010",
+                    "_DOZ106010",
+                    "_DOZ115010",
+                    "_DOZ124010",
+                    "_DOZ133010",
+                    "_DOZ142010",
+                    "_DOZ151010",
+                    "_DOZ160010",
+                    "_DOZ169010",
+                    "_DOZ178010",
+                    "XOGIV",
+                    "ME789",
+                    "ESITO"
+                ]
             ]
         },
         "ESIT1C": {
             "icao": "ESIT1C",
             "name": "Esito One Charlie",
             "rwy": {
-                "SAME36" : ["^ME902", "^ME533", ["ME999", "S280-"]]
+                "SAME36": ["^ME902", "^ME533", ["ME999", "S280-"]]
             },
             "body": [["URERI", "A90+"]],
             "exitPoints": {
                 "ESITO": ["ESITO"]
             },
-            "draw": [
-                ["ME902", "ME533", "ME999", "URERI", "ESITO"]
-            ]
+            "draw": [["ME902", "ME533", "ME999", "URERI", "ESITO"]]
         },
         "ESIT1E": {
             "icao": "ESIT1E",
             "name": "Esito One Echo",
             "rwy": {
-                "SAME18" : ["^_RWY36"]
+                "SAME18": ["^_RWY36"]
             },
             "body": ["XOGIV", "ME789"],
             "exitPoints": {
                 "ESITO": ["ESITO"]
             },
-            "draw": [
-                ["_RWY36", "XOGIV"],
-                ["ESITO"]
-            ]
+            "draw": [["_RWY36", "XOGIV"], ["ESITO"]]
         },
         "ESIT1G": {
             "icao": "ESIT1G",
             "name": "Esito One Golf",
             "rwy": {
-                "SAME18" : ["^ME528"]
+                "SAME18": ["^ME528"]
             },
             "body": [],
             "exitPoints": {
                 "ESITO": ["ESITO"]
             },
-            "draw": [
-                ["ME528", "ESITO"]
-            ]
+            "draw": [["ME528", "ESITO"]]
         },
         "KAMU1A": {
             "icao": "KAMU1A",
             "name": "Kamuv One Alpha",
             "rwy": {
-                "SAME36" : [["_DOZ001001", "A30+"], "_DOZ046003"]
+                "SAME36": [["_DOZ001001", "A30+"], "_DOZ046003"]
             },
-            "body": ["ME556", "_DOZ055015", "_DOZ064015", "ME555", "_DOZ079015", "_DOZ088015", "ME554"],
+            "body": [
+                "ME556",
+                "_DOZ055015",
+                "_DOZ064015",
+                "ME555",
+                "_DOZ079015",
+                "_DOZ088015",
+                "ME554"
+            ],
             "exitPoints": {
                 "KAMUV": ["KAMUV"]
             },
-            "draw": [
-                ["ME554", "KAMUV"]
-            ]
+            "draw": [["ME554", "KAMUV"]]
         },
         "KAMU1C": {
             "icao": "KAMU1C",
             "name": "Kamuv One Charlie",
             "rwy": {
-                "SAME36" : [["^ME902", "S240-"], ["ROREX", "S240-"]]
+                "SAME36": [
+                    ["^ME902", "S240-"],
+                    ["ROREX", "S240-"]
+                ]
             },
             "body": [["ME525", "A110+"]],
             "exitPoints": {
                 "KAMUV": ["KAMUV"]
             },
-            "draw": [
-                ["ROREX", "ME525", "KAMUV"]
-            ]
+            "draw": [["ROREX", "ME525", "KAMUV"]]
         },
         "KAMU1E": {
             "icao": "KAMU1E",
             "name": "Kamuv One Echo",
             "rwy": {
-                "SAME18" : [["_RWY36", "A30+"], "_DOZ121004"]
+                "SAME18": [["_RWY36", "A30+"], "_DOZ121004"]
             },
             "body": ["ME553", "_DOZ115015", "_DOZ109015", "_DOZ103015", "ME554"],
             "exitPoints": {
                 "KAMUV": ["KAMUV"]
             },
-            "draw": [
-                ["KAMUV"]
-            ]
+            "draw": [["KAMUV"]]
         },
         "KAMU1G": {
             "icao": "KAMU1G",
             "name": "Kamuv One Golf",
             "rwy": {
-                "SAME18" : [["^ME528", "S250-"], ["SUCUA", "S250-"]]
+                "SAME18": [
+                    ["^ME528", "S250-"],
+                    ["SUCUA", "S250-"]
+                ]
             },
             "body": [["ME530", "A130+"]],
             "exitPoints": {
                 "KAMUV": ["KAMUV"]
             },
-            "draw": [
-                ["SUCUA", "ME530", "KAMUV"]
-            ]
+            "draw": [["SUCUA", "ME530", "KAMUV"]]
         },
         "MEBR1A": {
             "icao": "MEBR1A",
             "name": "Mebra One Alpha",
             "rwy": {
-                "SAME36" : [["_DOZ001001", "A30+"], "_DOZ046003"]
+                "SAME36": [["_DOZ001001", "A30+"], "_DOZ046003"]
             },
             "body": ["ME556", "KOTES"],
             "exitPoints": {
                 "MEBRA": ["MEBRA"]
             },
-            "draw": [
-                ["_DOZ046003", "ME556", "KOTES", "MEBRA"]
-            ]
+            "draw": [["_DOZ046003", "ME556", "KOTES", "MEBRA"]]
         },
         "MEBR1C": {
             "icao": "MEBR1C",
             "name": "Mebra One Charlie",
             "rwy": {
-                "SAME36" : [["^ME902", "S240-"], ["ROREX", "S240-"]]
+                "SAME36": [
+                    ["^ME902", "S240-"],
+                    ["ROREX", "S240-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "MEBRA": ["MEBRA"]
             },
-            "draw": [
-                ["ROREX", "MEBRA"]
-            ]
+            "draw": [["ROREX", "MEBRA"]]
         },
         "MEBR1E": {
             "icao": "MEBR1E",
             "name": "Mebra One Echo",
             "rwy": {
-                "SAME18" : [["_RWY36", "A30+"], "_DOZ121004"]
+                "SAME18": [["_RWY36", "A30+"], "_DOZ121004"]
             },
-            "body": ["ME553", "_DOZ115015", "_DOZ109015", "_DOZ103015", "ME554", "_DOZ088015", "_DOZ079015", "ME555", "_DOZ064015", "_DOZ055015", "ME556"],
+            "body": [
+                "ME553",
+                "_DOZ115015",
+                "_DOZ109015",
+                "_DOZ103015",
+                "ME554",
+                "_DOZ088015",
+                "_DOZ079015",
+                "ME555",
+                "_DOZ064015",
+                "_DOZ055015",
+                "ME556"
+            ],
             "exitPoints": {
                 "MEBRA": ["KOTES", "MEBRA"]
             },
-            "draw": [
-                ["_RWY36", "_DOZ121004", "ME553"],
-                ["MEBRA"]
-            ]
+            "draw": [["_RWY36", "_DOZ121004", "ME553"], ["MEBRA"]]
         },
         "MEBR1G": {
             "icao": "MEBR1G",
             "name": "Mebra One Golf",
             "rwy": {
-                "SAME18" : [["^ME528", "S250-"], ["SUCUA", "S250-"]]
+                "SAME18": [
+                    ["^ME528", "S250-"],
+                    ["SUCUA", "S250-"]
+                ]
             },
             "body": [["VURSI", "A100+"]],
             "exitPoints": {
                 "KAMUV": ["KAMUV"]
             },
-            "draw": [
-                ["SUCUA", "VURSI", "MEBRA"]
-            ]
+            "draw": [["SUCUA", "VURSI", "MEBRA"]]
         },
         "PAPI1A": {
             "icao": "PAPI1A",
             "name": "Papir One Alpha",
             "rwy": {
-                "SAME36" : [["_DOZ001001", "A30+"], "_DOZ046003"]
+                "SAME36": [["_DOZ001001", "A30+"], "_DOZ046003"]
             },
-            "body": ["ME556", "_DOZ055015", "_DOZ064015", "ME555", "_DOZ079015", "_DOZ088015", "ME554", "_DOZ103015", "_DOZ109015"],
+            "body": [
+                "ME556",
+                "_DOZ055015",
+                "_DOZ064015",
+                "ME555",
+                "_DOZ079015",
+                "_DOZ088015",
+                "ME554",
+                "_DOZ103015",
+                "_DOZ109015"
+            ],
             "exitPoints": {
                 "PAPIR": ["PAPIR"]
             },
-            "draw": [
-                ["_DOZ109015", "PAPIR"]
-            ]
+            "draw": [["_DOZ109015", "PAPIR"]]
         },
         "PAPI1C": {
             "icao": "PAPI1C",
             "name": "Papir One Charlie",
             "rwy": {
-                "SAME36" : [["^ME902", "S240-"], ["ROREX", "S240-"]]
+                "SAME36": [
+                    ["^ME902", "S240-"],
+                    ["ROREX", "S240-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "PAPIR": ["PAPIR"]
             },
-            "draw": [
-                ["ROREX", "PAPIR"]
-            ]
+            "draw": [["ROREX", "PAPIR"]]
         },
         "PAPI1E": {
             "icao": "PAPI1E",
             "name": "Papir One Echo",
             "rwy": {
-                "SAME18" : [["_RWY36", "A30+"], "_DOZ121004"]
+                "SAME18": [["_RWY36", "A30+"], "_DOZ121004"]
             },
             "body": ["ME553", "_DOZ109020"],
             "exitPoints": {
                 "PAPIR": ["PAPIR"]
             },
-            "draw": [
-                ["ME553", "_DOZ109020"],
-                ["PAPIR"]
-            ]
+            "draw": [["ME553", "_DOZ109020"], ["PAPIR"]]
         },
         "PAPI1G": {
             "icao": "PAPI1G",
             "name": "Papir One Golf",
             "rwy": {
-                "SAME18" : [["^ME528", "S250-"], ["SUCUA", "S250-"]]
+                "SAME18": [
+                    ["^ME528", "S250-"],
+                    ["SUCUA", "S250-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "PAPIR": ["PAPIR"]
             },
-            "draw": [
-                ["SUCUA", "PAPIR"]
-            ]
+            "draw": [["SUCUA", "PAPIR"]]
         },
         "SALB1A": {
             "icao": "SALB1A",
             "name": "Salbo One Alpha",
             "rwy": {
-                "SAME36" : [["_DOZ001001", "A30+"], "_DOZ046003"]
+                "SAME36": [["_DOZ001001", "A30+"], "_DOZ046003"]
             },
             "body": ["ME556", "_DOZ055015", "_DOZ064015", "ME555"],
             "exitPoints": {
                 "SALBO": ["SALBO"]
             },
-            "draw": [
-                ["ME555", "SALBO"]
-            ]
+            "draw": [["ME555", "SALBO"]]
         },
         "SALB1C": {
             "icao": "SALB1C",
             "name": "Salbo One Charlie",
             "rwy": {
-                "SAME36" : [["^ME902", "S240-"], ["ROREX", "S240-"]]
+                "SAME36": [
+                    ["^ME902", "S240-"],
+                    ["ROREX", "S240-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "SALBO": ["SALBO"]
             },
-            "draw": [
-                ["ROREX", "SALBO"]
-            ]
+            "draw": [["ROREX", "SALBO"]]
         },
         "SALB1E": {
             "icao": "SALB1E",
             "name": "Salbo One Echo",
             "rwy": {
-                "SAME18" : [["_RWY36", "A30+"], "_DOZ121004"]
+                "SAME18": [["_RWY36", "A30+"], "_DOZ121004"]
             },
-            "body": ["ME553", "_DOZ115015", "_DOZ109015", "_DOZ103015", "ME554", "_DOZ088015", "_DOZ079015", "ME555"],
+            "body": [
+                "ME553",
+                "_DOZ115015",
+                "_DOZ109015",
+                "_DOZ103015",
+                "ME554",
+                "_DOZ088015",
+                "_DOZ079015",
+                "ME555"
+            ],
             "exitPoints": {
                 "SALBO": ["SALBO"]
             },
-            "draw": [
-                ["SALBO"]
-            ]
+            "draw": [["SALBO"]]
         },
         "SALB1G": {
             "icao": "SALB1G",
             "name": "Salbo One Golf",
             "rwy": {
-                "SAME18" : [["^ME528", "S250-"], ["SUCUA", "S250-"]]
+                "SAME18": [
+                    ["^ME528", "S250-"],
+                    ["SUCUA", "S250-"]
+                ]
             },
             "body": [["VURSI", "A100+"]],
             "exitPoints": {
                 "SALBO": ["SALBO"]
             },
-            "draw": [
-                ["VURSI", "SALBO"]
-            ]
+            "draw": [["VURSI", "SALBO"]]
         },
         "UMKA1A": {
             "icao": "UMKA1A",
             "name": "Umkal One Alpha",
             "rwy": {
-                "SAME36" : [["^_RWY18", "A30+"], "_DOZ046003"]
+                "SAME36": [["^_RWY18", "A30+"], "_DOZ046003"]
             },
-            "body": ["ME795", "_DOZ052020", "_DOZ061020", "_DOZ070020", "_DOZ079020", "ME799", "DOZ", ["ME797", "A240+"]],
+            "body": [
+                "ME795",
+                "_DOZ052020",
+                "_DOZ061020",
+                "_DOZ070020",
+                "_DOZ079020",
+                "ME799",
+                "DOZ",
+                ["ME797", "A240+"]
+            ],
             "exitPoints": {
                 "UMKAL": ["UMKAL"]
             },
             "draw": [
-                ["ME795", "_DOZ052020", "_DOZ061020", "_DOZ070020", "_DOZ079020", "ME799", "DOZ", "ME797", "UMKAL"]
+                [
+                    "ME795",
+                    "_DOZ052020",
+                    "_DOZ061020",
+                    "_DOZ070020",
+                    "_DOZ079020",
+                    "ME799",
+                    "DOZ",
+                    "ME797",
+                    "UMKAL"
+                ]
             ]
         },
         "UMKA1C": {
             "icao": "UMKA1C",
             "name": "Umkal One Charlie",
             "rwy": {
-                "SAME36" : ["^ME902", "^ME533", ["ME999", "S280-"]]
+                "SAME36": ["^ME902", "^ME533", ["ME999", "S280-"]]
             },
             "body": ["QUEZA", ["ME535", "A240+"]],
             "exitPoints": {
                 "UMKAL": ["UMKAL"]
             },
-            "draw": [
-                ["ME999", "QUEZA", "ME535", "UMKAL"]
-            ]
+            "draw": [["ME999", "QUEZA", "ME535", "UMKAL"]]
         },
         "UMKA1E": {
             "icao": "UMKA1E",
             "name": "Umkal One Echo",
             "rwy": {
-                "SAME18" : [["_RWY36", "A30+"], "_DOZ121004"]
+                "SAME18": [["_RWY36", "A30+"], "_DOZ121004"]
             },
-            "body": ["ME798", "_DOZ115020", "_DOZ106020", "_DOZ097020", "ME799", "DOZ", ["ME797", "A240+"]],
+            "body": [
+                "ME798",
+                "_DOZ115020",
+                "_DOZ106020",
+                "_DOZ097020",
+                "ME799",
+                "DOZ",
+                ["ME797", "A240+"]
+            ],
             "exitPoints": {
                 "UMKAL": ["UMKAL"]
             },
@@ -2143,16 +2358,13 @@
             "icao": "UMKA1G",
             "name": "Umkal One Golf",
             "rwy": {
-                "SAME18" : ["^ME528", "^ME898", ["ME999", "S280-"]]
+                "SAME18": ["^ME528", "^ME898", ["ME999", "S280-"]]
             },
             "body": ["QUEZA", ["ME535", "A240+"]],
             "exitPoints": {
                 "UMKAL": ["UMKAL"]
             },
-            "draw": [
-                ["ME528", "ME898", "ME999"],
-                ["UMKAL"]
-            ]
+            "draw": [["ME528", "ME898", "ME999"], ["UMKAL"]]
         }
     },
     "stars": {
@@ -2166,9 +2378,7 @@
             "rwy": {
                 "SAME18": []
             },
-            "draw": [
-                ["ANLIS*", "PAPIR", "ME542", "ME543", "SIREK"]
-            ]
+            "draw": [["ANLIS*", "PAPIR", "ME542", "ME543", "SIREK"]]
         },
         "DOSL2Q": {
             "icao": "DOSL2Q",
@@ -2180,9 +2390,7 @@
             "rwy": {
                 "SAME36": []
             },
-            "draw": [
-                ["DOSLO*", "MUBEN"]
-            ]
+            "draw": [["DOSLO*", "MUBEN"]]
         },
         "ESIT1Q": {
             "icao": "ESIT1Q",
@@ -2190,13 +2398,14 @@
             "entryPoints": {
                 "ESITO": [["ESITO", "A130+"]]
             },
-            "body": [["ME540", "A80+"], ["KEXEV", "A60+"]],
+            "body": [
+                ["ME540", "A80+"],
+                ["KEXEV", "A60+"]
+            ],
             "rwy": {
                 "SAME36": []
             },
-            "draw": [
-                ["ESITO*", "ME540", "KEXEV"]
-            ]
+            "draw": [["ESITO*", "ME540", "KEXEV"]]
         },
         "ESIT1U": {
             "icao": "ESIT1U",
@@ -2204,13 +2413,15 @@
             "entryPoints": {
                 "ESITO": [["ESITO", "A130+"]]
             },
-            "body": [["XOGIV", "A130+"], ["ME548", "A90+"], ["SIREK", "A60+"]],
+            "body": [
+                ["XOGIV", "A130+"],
+                ["ME548", "A90+"],
+                ["SIREK", "A60+"]
+            ],
             "rwy": {
                 "SAME18": []
             },
-            "draw": [
-                ["ESITO*", "XOGIV", "ME548", "SIREK"]
-            ]
+            "draw": [["ESITO*", "XOGIV", "ME548", "SIREK"]]
         },
         "MEBR1U": {
             "icao": "MEBR1U",
@@ -2222,9 +2433,7 @@
             "rwy": {
                 "SAME18": []
             },
-            "draw": [
-                ["MEBRA*", "GUVAD"]
-            ]
+            "draw": [["MEBRA*", "GUVAD"]]
         },
         "MEBR2Q": {
             "icao": "MEBR2Q",
@@ -2236,37 +2445,46 @@
             "rwy": {
                 "SAME36": []
             },
-            "draw": [
-                ["MEBRA*", "UKLIK", "ME680", "MUBEN"]
-            ]
+            "draw": [["MEBRA*", "UKLIK", "ME680", "MUBEN"]]
         },
         "NEBE1Q": {
             "icao": "NEBE1Q",
             "name": "Nebeg One Quebec",
             "entryPoints": {
-                "NEBEG": [["NEBEG", "A230+"], ["ME536", "A220+"]]
+                "NEBEG": [
+                    ["NEBEG", "A230+"],
+                    ["ME536", "A220+"]
+                ]
             },
-            "body": [["ESITO", "A130+"], ["ME540", "A80+"], ["KEXEV", "A60+"]],
+            "body": [
+                ["ESITO", "A130+"],
+                ["ME540", "A80+"],
+                ["KEXEV", "A60+"]
+            ],
             "rwy": {
                 "SAME36": []
             },
-            "draw": [
-                ["NEBEG*"]
-            ]
+            "draw": [["NEBEG*"]]
         },
         "NEBE1U": {
             "icao": "NEBE1U",
             "name": "Nebeg One Uniform",
             "entryPoints": {
-                "NEBEG": [["NEBEG", "A230+"], ["ME536", "A220+"]]
+                "NEBEG": [
+                    ["NEBEG", "A230+"],
+                    ["ME536", "A220+"]
+                ]
             },
-            "body": [["ESITO", "A130+"], ["XOGIV", "A130+"], ["ME548", "A90+"], ["SIREK", "A60+"]],
+            "body": [
+                ["ESITO", "A130+"],
+                ["XOGIV", "A130+"],
+                ["ME548", "A90+"],
+                ["SIREK", "A60+"]
+            ],
             "rwy": {
                 "SAME18": []
             },
-            "draw": [
-                ["NEBEG*", "ME536", "ESITO"]
-            ]
+            "draw": [["NEBEG*", "ME536", "ESITO"]]
         },
         "PAPI1U": {
             "icao": "PAPI1U",
@@ -2274,13 +2492,15 @@
             "entryPoints": {
                 "PAPIR": ["PAPIR"]
             },
-            "body": [["ME542", "A120-"], ["ME543", "A80-"], ["SIREK", "A60+"]],
+            "body": [
+                ["ME542", "A120-"],
+                ["ME543", "A80-"],
+                ["SIREK", "A60+"]
+            ],
             "rwy": {
                 "SAME18": []
             },
-            "draw": [
-                ["PAPIR*"]
-            ]
+            "draw": [["PAPIR*"]]
         },
         "PAPI2Q": {
             "icao": "PAPI2Q",
@@ -2292,9 +2512,7 @@
             "rwy": {
                 "SAME36": []
             },
-            "draw": [
-                ["PAPIR*", "MUBEN"]
-            ]
+            "draw": [["PAPIR*", "MUBEN"]]
         },
         "SALB1U": {
             "icao": "SALB1U",
@@ -2306,9 +2524,7 @@
             "rwy": {
                 "SAME18": []
             },
-            "draw": [
-                ["SALBO*", "ME544", "GUVAD", "SIREK"]
-            ]
+            "draw": [["SALBO*", "ME544", "GUVAD", "SIREK"]]
         },
         "SALB2Q": {
             "icao": "SALB2Q",
@@ -2320,12 +2536,10 @@
             "rwy": {
                 "SAME36": []
             },
-            "draw": [
-                ["SALBO*", "ME538", "MUBEN"]
-            ]
+            "draw": [["SALBO*", "ME538", "MUBEN"]]
         }
     },
-    "spawnPatterns":[
+    "spawnPatterns": [
         {
             "origin": "SAME",
             "destination": "SPJC",
@@ -2350,9 +2564,7 @@
             "speed": "",
             "method": "random",
             "rate": 0.17,
-            "airlines": [
-                ["cmp/b738", 5]
-            ]
+            "airlines": [["cmp/b738", 5]]
         },
         {
             "origin": "SAME",

@@ -11,41 +11,23 @@ import MeasureTool from '../measurement/MeasureTool';
 import NavigationLibrary from '../navigationLibrary/NavigationLibrary';
 import TimeKeeper from '../engine/TimeKeeper';
 import { tau } from '../math/circle';
-import {
-    round,
-    clamp
-} from '../math/core';
+import { round, clamp } from '../math/core';
 import {
     positive_intersection_with_rect,
     vectorize2dFromRadians,
     vectorize2dFromDegrees,
     vadd,
-    vscale
+    vscale,
 } from '../math/vector';
-import {
-    FLIGHT_PHASE,
-    FLIGHT_CATEGORY
-} from '../constants/aircraftConstants';
-import {
-    BASE_CANVAS_FONT,
-    CANVAS_NAME
-} from '../constants/canvasConstants';
+import { FLIGHT_PHASE, FLIGHT_CATEGORY } from '../constants/aircraftConstants';
+import { BASE_CANVAS_FONT, CANVAS_NAME } from '../constants/canvasConstants';
 import { THEME } from '../constants/themes';
 import { EVENT } from '../constants/eventNames';
-import {
-    INVALID_INDEX,
-    INVALID_NUMBER,
-    TIME
-} from '../constants/globalConstants';
+import { INVALID_INDEX, INVALID_NUMBER, TIME } from '../constants/globalConstants';
 import { GAME_OPTION_NAMES } from '../constants/gameOptionConstants';
 import { PROCEDURE_TYPE } from '../constants/routeConstants';
 import { leftPad } from '../utilities/generalUtilities';
-import {
-    DECIMAL_RADIX,
-    degreesToRadians,
-    km,
-    nm
-} from '../utilities/unitConverters';
+import { DECIMAL_RADIX, degreesToRadians, km, nm } from '../utilities/unitConverters';
 
 /**
  * @class CanvasController
@@ -211,9 +193,7 @@ export default class CanvasController {
          */
         this.theme = null;
 
-        return this._init()
-            ._setupHandlers()
-            .enable();
+        return this._init()._setupHandlers().enable();
     }
 
     /**
@@ -368,10 +348,7 @@ export default class CanvasController {
      */
     canvas_resize() {
         if (this._shouldResize) {
-            CanvasStageModel.updateHeightAndWidth(
-                this.$window.height(),
-                this.$window.width()
-            );
+            CanvasStageModel.updateHeightAndWidth(this.$window.height(), this.$window.width());
         }
 
         for (const canvasName in this._context) {
@@ -514,9 +491,11 @@ export default class CanvasController {
      * @private
      */
     _drawSingleRunway(cc, runwayModel, mode) {
-        const runwayLength = round(CanvasStageModel._translateKilometersToPixels(runwayModel.length / 2)) * -2;
+        const runwayLength =
+            round(CanvasStageModel._translateKilometersToPixels(runwayModel.length / 2)) * -2;
         const { angle, relativePosition } = runwayModel;
-        const runwayCanvasPosition = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
+        const runwayCanvasPosition =
+            CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
 
         cc.save();
         cc.translate(...runwayCanvasPosition);
@@ -531,7 +510,8 @@ export default class CanvasController {
             cc.moveTo(0, 0);
             cc.lineTo(0, runwayLength);
             cc.stroke();
-        } else { // extended centerlines
+        } else {
+            // extended centerlines
             if (!runwayModel.ils.enabled) {
                 cc.restore();
 
@@ -543,7 +523,10 @@ export default class CanvasController {
 
             cc.beginPath();
             cc.moveTo(0, 0);
-            cc.lineTo(0, CanvasStageModel._translateKilometersToPixels(runwayModel.ils.loc_maxDist));
+            cc.lineTo(
+                0,
+                CanvasStageModel._translateKilometersToPixels(runwayModel.ils.loc_maxDist)
+            );
             cc.stroke();
         }
 
@@ -563,9 +546,11 @@ export default class CanvasController {
      * @private
      */
     _drawRunwayLabel(cc, runwayModel) {
-        const length2 = round(CanvasStageModel._translateKilometersToPixels(runwayModel.length / 2)) + 0.5;
+        const length2 =
+            round(CanvasStageModel._translateKilometersToPixels(runwayModel.length / 2)) + 0.5;
         const { angle, relativePosition } = runwayModel;
-        const runwayCanvasPosition = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
+        const runwayCanvasPosition =
+            CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
         const textHeight = 14;
 
         cc.save();
@@ -666,7 +651,7 @@ export default class CanvasController {
         const offsetX = 35;
         const offsetY = 10;
         const height = 5;
-        const lengthNm = round(nm(1 / CanvasStageModel.scale * 50));
+        const lengthNm = round(nm((1 / CanvasStageModel.scale) * 50));
         const lengthKm = km(lengthNm);
         const px_length = round(CanvasStageModel._translateKilometersToPixels(lengthKm));
         const widthLessOffset = CanvasStageModel.width - offsetX;
@@ -682,11 +667,7 @@ export default class CanvasController {
         cc.lineTo(widthLessOffset - px_length, offsetY + height);
         cc.lineTo(widthLessOffset - px_length, offsetY);
         cc.stroke();
-        cc.fillText(
-            `${lengthNm} nm`,
-            widthLessOffset - px_length * 0.5,
-            offsetY + height + 17
-        );
+        cc.fillText(`${lengthNm} nm`, widthLessOffset - px_length * 0.5, offsetY + height + 17);
         cc.restore();
     }
 
@@ -703,7 +684,10 @@ export default class CanvasController {
      * @private
      */
     _drawSingleFixAndLabel(cc, fixModel) {
-        const fixCanvasPosition = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(fixModel.relativePosition);
+        const fixCanvasPosition =
+            CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(
+                fixModel.relativePosition
+            );
 
         cc.save();
         cc.translate(...fixCanvasPosition);
@@ -894,14 +878,20 @@ export default class CanvasController {
             return;
         }
 
-        const lineStartPosition = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(relativePositions[0]);
+        const lineStartPosition =
+            CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(
+                relativePositions[0]
+            );
 
         cc.beginPath();
         cc.moveTo(...lineStartPosition);
 
         for (let k = 0; k < relativePositions.length; k++) {
             const relativePosition = relativePositions[k];
-            const canvasPosition = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
+            const canvasPosition =
+                CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(
+                    relativePosition
+                );
 
             cc.lineTo(...canvasPosition);
         }
@@ -924,7 +914,8 @@ export default class CanvasController {
      * @private
      */
     _drawText(cc, relativePosition, labels, lineHeight = 15) {
-        const canvasPosition = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
+        const canvasPosition =
+            CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
         let dx = cc.textAlign === 'right' ? -10 : 10;
 
         if (cc.textAlign === 'center') {
@@ -934,7 +925,7 @@ export default class CanvasController {
         for (let k = 0; k < labels.length; k++) {
             const textItem = labels[k];
             const drawCanvasPositionX = canvasPosition[0] + dx;
-            const drawCanvasPositionY = canvasPosition[1] + (lineHeight * k);
+            const drawCanvasPositionY = canvasPosition[1] + lineHeight * k;
 
             cc.fillText(textItem, drawCanvasPositionX, drawCanvasPositionY);
         }
@@ -961,7 +952,8 @@ export default class CanvasController {
 
         const { fms, relativePosition } = aircraftModel;
         const oppositeOfRunwayHeading = fms.arrivalRunwayModel.oppositeAngle;
-        const aircraftCanvasPosition = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
+        const aircraftCanvasPosition =
+            CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(relativePosition);
         cc.strokeStyle = this.theme.RADAR_TARGET.TRAILING_SEPARATION_INDICATOR;
         cc.lineWidth = 3;
 
@@ -1063,7 +1055,8 @@ export default class CanvasController {
         cc.save();
 
         // TODO: death to the `prop`!!!
-        const match = prop.input.callsign.length > 0 && aircraftModel.matchCallsign(prop.input.callsign);
+        const match =
+            prop.input.callsign.length > 0 && aircraftModel.matchCallsign(prop.input.callsign);
         let fillStyle = this.theme.RADAR_TARGET.HISTORY_DOT_OUTSIDE_RANGE;
 
         if (aircraftModel.isControllable) {
@@ -1076,12 +1069,15 @@ export default class CanvasController {
 
         for (let i = 0; i < positionHistory.length; i++) {
             const position = aircraftModel.relativePositionHistory[i];
-            const canvasPosition = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(position);
+            const canvasPosition =
+                CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(position);
 
             cc.beginPath();
             cc.arc(
                 ...canvasPosition,
-                CanvasStageModel._translateKilometersToPixels(this.theme.RADAR_TARGET.HISTORY_DOT_RADIUS_KM),
+                CanvasStageModel._translateKilometersToPixels(
+                    this.theme.RADAR_TARGET.HISTORY_DOT_RADIUS_KM
+                ),
                 0,
                 tau()
             );
@@ -1121,9 +1117,10 @@ export default class CanvasController {
                 break;
         }
 
-        const aircraftCanvasPosition = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(
-            aircraftModel.relativePosition
-        );
+        const aircraftCanvasPosition =
+            CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(
+                aircraftModel.relativePosition
+            );
 
         cc.translate(...aircraftCanvasPosition);
 
@@ -1175,8 +1172,12 @@ export default class CanvasController {
         const lineLength_km = km(aircraftModel.groundSpeed * lineLengthInHours);
         const groundTrackVector = vectorize2dFromRadians(aircraftModel.groundTrack);
         const scaledGroundTrackVector = vscale(groundTrackVector, lineLength_km);
-        const screenPositionOffsetX = CanvasStageModel._translateKilometersToPixels(scaledGroundTrackVector[0]);
-        const screenPositionOffsetY = CanvasStageModel._translateKilometersToPixels(scaledGroundTrackVector[1]);
+        const screenPositionOffsetX = CanvasStageModel._translateKilometersToPixels(
+            scaledGroundTrackVector[0]
+        );
+        const screenPositionOffsetY = CanvasStageModel._translateKilometersToPixels(
+            scaledGroundTrackVector[1]
+        );
 
         cc.beginPath();
         cc.moveTo(0, 0);
@@ -1201,26 +1202,20 @@ export default class CanvasController {
      */
     canvas_draw_future_track_fixes(/* cc, aircraft, future_track */) {
         // const waypointList = aircraft.fms.waypoints;
-
         // if (waypointList.length <= 1) {
         //     return;
         // }
-
         // const start = future_track.length - 1;
         // const [x, y] = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(future_track[start]);
-
         // cc.beginPath();
         // cc.moveTo(x, y);
         // cc.setLineDash([3, 10]);
-
         // for (let i = 0; i < waypointList.length; i++) {
         //     const [fx, fy] = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(
         //         waypointList[i].relativePosition
         //     );
-
         //     cc.lineTo(fx, fy);
         // }
-
         // cc.stroke();
     }
 
@@ -1253,7 +1248,8 @@ export default class CanvasController {
         for (let i = 0; i < 60; i++) {
             twin.update();
 
-            const ils_locked = twin.isEstablishedOnCourse() && twin.fms.currentPhase === FLIGHT_PHASE.APPROACH;
+            const ils_locked =
+                twin.isEstablishedOnCourse() && twin.fms.currentPhase === FLIGHT_PHASE.APPROACH;
 
             future_track.push([...twin.relativePosition, ils_locked]);
 
@@ -1287,7 +1283,8 @@ export default class CanvasController {
         for (let i = 0; i < future_track.length; i++) {
             const track = future_track[i];
             const ils_locked = track[2];
-            const trackPosition = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(track);
+            const trackPosition =
+                CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(track);
 
             if (ils_locked && !was_locked) {
                 cc.lineTo(trackPosition[0], trackPosition[1]);
@@ -1368,12 +1365,15 @@ export default class CanvasController {
         while (leg != null) {
             // Ignore empty labels
             if (leg.labels !== null && leg.labels.length !== 0) {
-                const position = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(leg.midPoint);
+                const position =
+                    CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(
+                        leg.midPoint
+                    );
 
                 values.push({
                     x: position[0],
                     y: position[1],
-                    labels: leg.labels
+                    labels: leg.labels,
                 });
             }
 
@@ -1393,13 +1393,13 @@ export default class CanvasController {
 
         values.forEach((item) => {
             const { x, y, labels } = item;
-            const height = (2 * labelPadding) + (12 * labels.length);
+            const height = 2 * labelPadding + 12 * labels.length;
             const maxLabelWidth = labels.reduce((lastWidth, label) => {
                 const newWidth = cc.measureText(label).width;
 
                 return Math.max(lastWidth, newWidth);
             }, 0);
-            const width = (2 * labelPadding) + maxLabelWidth;
+            const width = 2 * labelPadding + maxLabelWidth;
 
             cc.fillRect(x, y, width, height);
         });
@@ -1413,7 +1413,7 @@ export default class CanvasController {
             const y = item.y + 15;
 
             labels.forEach((line, index) => {
-                cc.fillText(line, x, y + (12 * index));
+                cc.fillText(line, x, y + 12 * index);
             });
         });
 
@@ -1435,8 +1435,12 @@ export default class CanvasController {
     _drawMeasureToolPath(cc, pathInfo) {
         const { initialTurn } = pathInfo;
         let leg = pathInfo.firstLeg;
-        const firstPoint = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(leg.startPoint);
-        const firstMidPoint = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(leg.midPoint);
+        const firstPoint = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(
+            leg.startPoint
+        );
+        const firstMidPoint = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(
+            leg.midPoint
+        );
 
         cc.save();
 
@@ -1447,14 +1451,20 @@ export default class CanvasController {
         // If available, this draws the arc the a/c will fly to intercept the course to the
         // first fix
         if (initialTurn !== null) {
-            const {
-                isRHT, center, entryAngle, exitAngle, turnRadius
-            } = initialTurn;
-            const position = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(center);
+            const { isRHT, center, entryAngle, exitAngle, turnRadius } = initialTurn;
+            const position =
+                CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(center);
             const radius = CanvasStageModel._translateKilometersToPixels(turnRadius);
 
             // The angles calculated in the `MeasureTool` are magnetic, and have to be shifted CCW 90°
-            cc.arc(position[0], position[1], radius, entryAngle - Math.PI / 2, exitAngle - Math.PI / 2, !isRHT);
+            cc.arc(
+                position[0],
+                position[1],
+                radius,
+                entryAngle - Math.PI / 2,
+                exitAngle - Math.PI / 2,
+                !isRHT
+            );
         }
 
         // Draw up to the first midpoint
@@ -1465,14 +1475,19 @@ export default class CanvasController {
         while (leg != null) {
             const { next } = leg;
             const radius = CanvasStageModel._translateKilometersToPixels(leg.radius);
-            const position1 = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(leg.endPoint);
+            const position1 = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(
+                leg.endPoint
+            );
 
             if (next === null) {
                 // This is the last leg, so simply draw to the end point
                 cc.lineTo(position1[0], position1[1]);
             } else {
                 // Draw an arc'd line to the next midpoint
-                const position2 = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(next.midPoint);
+                const position2 =
+                    CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(
+                        next.midPoint
+                    );
 
                 cc.arcTo(position1[0], position1[1], position2[0], position2[1], radius);
                 cc.lineTo(position2[0], position2[1]);
@@ -1542,9 +1557,9 @@ export default class CanvasController {
             match = true;
         }
 
-        let white = aircraftModel.isControllable ?
-            this.theme.DATA_BLOCK.TEXT_IN_RANGE :
-            this.theme.DATA_BLOCK.TEXT_OUT_OF_RANGE;
+        let white = aircraftModel.isControllable
+            ? this.theme.DATA_BLOCK.TEXT_IN_RANGE
+            : this.theme.DATA_BLOCK.TEXT_OUT_OF_RANGE;
 
         if (match) {
             white = this.theme.DATA_BLOCK.TEXT_SELECTED;
@@ -1560,7 +1575,7 @@ export default class CanvasController {
 
         let offsetComponent = [
             Math.sin(degreesToRadians(dataBlockLeaderDirection)),
-            -Math.cos(degreesToRadians(dataBlockLeaderDirection))
+            -Math.cos(degreesToRadians(dataBlockLeaderDirection)),
         ];
 
         // `degreesToRadians('ctr')` above will yield NaN, so we override that here
@@ -1569,21 +1584,28 @@ export default class CanvasController {
         }
 
         // Move to center of where the data block is to be drawn
-        const radarTargetPosition = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(
-            aircraftModel.relativePosition
-        );
+        const radarTargetPosition =
+            CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(
+                aircraftModel.relativePosition
+            );
         const leaderLength = this._calculateLeaderLength(radarTargetModel.dataBlockLeaderLength);
         const leaderStart = [
-            radarTargetPosition[0] + (offsetComponent[0] * this.theme.DATA_BLOCK.LEADER_PADDING_FROM_TARGET_PX),
-            radarTargetPosition[1] + (offsetComponent[1] * this.theme.DATA_BLOCK.LEADER_PADDING_FROM_TARGET_PX)
+            radarTargetPosition[0] +
+                offsetComponent[0] * this.theme.DATA_BLOCK.LEADER_PADDING_FROM_TARGET_PX,
+            radarTargetPosition[1] +
+                offsetComponent[1] * this.theme.DATA_BLOCK.LEADER_PADDING_FROM_TARGET_PX,
         ];
         const leaderEnd = [
-            radarTargetPosition[0] + offsetComponent[0] * (leaderLength - this.theme.DATA_BLOCK.LEADER_PADDING_FROM_BLOCK_PX),
-            radarTargetPosition[1] + offsetComponent[1] * (leaderLength - this.theme.DATA_BLOCK.LEADER_PADDING_FROM_BLOCK_PX)
+            radarTargetPosition[0] +
+                offsetComponent[0] *
+                    (leaderLength - this.theme.DATA_BLOCK.LEADER_PADDING_FROM_BLOCK_PX),
+            radarTargetPosition[1] +
+                offsetComponent[1] *
+                    (leaderLength - this.theme.DATA_BLOCK.LEADER_PADDING_FROM_BLOCK_PX),
         ];
         const leaderIntersectionWithBlock = [
             radarTargetPosition[0] + offsetComponent[0] * leaderLength,
-            radarTargetPosition[1] + offsetComponent[1] * leaderLength
+            radarTargetPosition[1] + offsetComponent[1] * leaderLength,
         ];
 
         cc.beginPath();
@@ -1592,7 +1614,9 @@ export default class CanvasController {
         cc.strokeStyle = white;
         cc.stroke();
 
-        const dataBlockCenterCanvasPosition = radarTargetModel.calculateDataBlockCenter(leaderIntersectionWithBlock);
+        const dataBlockCenterCanvasPosition = radarTargetModel.calculateDataBlockCenter(
+            leaderIntersectionWithBlock
+        );
 
         cc.translate(...dataBlockCenterCanvasPosition);
 
@@ -1608,9 +1632,9 @@ export default class CanvasController {
             row2text = radarTargetModel.buildDataBlockRowTwoSecondaryInfo();
         }
 
-        const fillStyle = aircraftModel.isControllable ?
-            this.theme.DATA_BLOCK.TEXT_IN_RANGE :
-            this.theme.DATA_BLOCK.TEXT_OUT_OF_RANGE;
+        const fillStyle = aircraftModel.isControllable
+            ? this.theme.DATA_BLOCK.TEXT_IN_RANGE
+            : this.theme.DATA_BLOCK.TEXT_OUT_OF_RANGE;
 
         cc.fillStyle = fillStyle;
 
@@ -1694,7 +1718,7 @@ export default class CanvasController {
             cc.fillRect(-halfWidth, -halfHeight, width, height);
 
             // Draw colored bar
-            cc.fillStyle = (aircraftModel.category === FLIGHT_CATEGORY.DEPARTURE) ? blue : red;
+            cc.fillStyle = aircraftModel.category === FLIGHT_CATEGORY.DEPARTURE ? blue : red;
             cc.fillRect(-halfWidth - barWidth, -halfHeight, barWidth, height);
 
             return;
@@ -1711,16 +1735,21 @@ export default class CanvasController {
         cc.lineTo(halfWidth, -halfHeight); // top-right corner
         cc.lineTo(-halfWidth, -halfHeight); // top-left corner
         cc.lineTo(-halfWidth, -point1); // begin side cutout
-        cc.arc(-halfWidth - barHalfWidth,
-            -lock_offset, lock_size / 2 + barHalfWidth,
+        cc.arc(
+            -halfWidth - barHalfWidth,
+            -lock_offset,
+            lock_size / 2 + barHalfWidth,
             clipping_mask_angle - Math.PI / 2,
-            0);
+            0
+        );
         cc.lineTo(-halfWidth + lock_size / 2, lock_offset);
-        cc.arc(-halfWidth - barHalfWidth,
+        cc.arc(
+            -halfWidth - barHalfWidth,
             lock_offset,
             lock_size / 2 + barHalfWidth,
             0,
-            Math.PI / 2 - clipping_mask_angle);
+            Math.PI / 2 - clipping_mask_angle
+        );
         cc.closePath();
         cc.fill();
 
@@ -1812,10 +1841,7 @@ export default class CanvasController {
      * @private
      */
     _ccTranslateFromCanvasOriginToAirportCenter(cc) {
-        cc.translate(
-            round(CanvasStageModel.halfWidth),
-            round(CanvasStageModel.halfHeight)
-        );
+        cc.translate(round(CanvasStageModel.halfWidth), round(CanvasStageModel.halfHeight));
     }
 
     // TODO: To round, or not to round?
@@ -1829,10 +1855,7 @@ export default class CanvasController {
      * @private
      */
     _ccTranslateFromAirportCenterToCanvasOrigin(cc) {
-        cc.translate(
-            -round(CanvasStageModel.halfWidth),
-            -round(CanvasStageModel.halfHeight)
-        );
+        cc.translate(-round(CanvasStageModel.halfWidth), -round(CanvasStageModel.halfHeight));
     }
 
     /**
@@ -1848,12 +1871,14 @@ export default class CanvasController {
      */
     _drawRangeRings(cc) {
         const airportModel = AirportController.airport_get();
-        const centerCanvasPosition = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(
-            airportModel.rangeRings.center.relativePosition
-        );
+        const centerCanvasPosition =
+            CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(
+                airportModel.rangeRings.center.relativePosition
+            );
         const ringRadiusKm = this._calculateRangeRingRadiusKm(airportModel);
 
-        if (ringRadiusKm === 0) { // prevent infinite loop
+        if (ringRadiusKm === 0) {
+            // prevent infinite loop
             return;
         }
 
@@ -2005,7 +2030,10 @@ export default class CanvasController {
 
         for (let i = 0; i < relativePoly.length; i++) {
             const pointRelativePos = relativePoly[i];
-            const pointCanvasPos = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(pointRelativePos);
+            const pointCanvasPos =
+                CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(
+                    pointRelativePos
+                );
 
             cc.lineTo(...pointCanvasPos);
         }
@@ -2051,15 +2079,20 @@ export default class CanvasController {
                 const terrainItem = terrainGroup[j];
 
                 for (let k = 0; k < terrainItem.length; k++) {
-                    const canvasPosition = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(terrainItem[k]);
+                    const canvasPosition =
+                        CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(
+                            terrainItem[k]
+                        );
 
-                    if (k === 0) { // .moveTo() to start the line
+                    if (k === 0) {
+                        // .moveTo() to start the line
                         cc.moveTo(...canvasPosition);
                         // cc.moveTo(
                         //     CanvasStageModel._translateKilometersToPixels(terrainItem[k][0]),
                         //     -CanvasStageModel._translateKilometersToPixels(terrainItem[k][1])
                         // );
-                    } else { // .lineTo() to draw a line segment
+                    } else {
+                        // .lineTo() to draw a line segment
                         cc.lineTo(...canvasPosition);
                         // cc.lineTo(
                         //     CanvasStageModel._translateKilometersToPixels(terrainItem[k][0]),
@@ -2107,7 +2140,7 @@ export default class CanvasController {
             // .5 in X and Y coordinates are used to make 1px rectangle fit exactly into 1 px
             // and not be blurred
             cc.translate(
-                width / 2 - 170 - (max_elevation - i) / 1000 * (box_width + 1),
+                width / 2 - 170 - ((max_elevation - i) / 1000) * (box_width + 1),
                 -height / 2 + offset + 0.5
             );
             cc.beginPath();
@@ -2172,7 +2205,7 @@ export default class CanvasController {
         // Somehow used to tint the terrain key rectangles' fill color
         // Also determines color of terrain fill at '0ft'
         cc.fillStyle = this.theme.SCOPE.FIX_FILL;
-        cc.lineWidth = clamp(0.5, (CanvasStageModel.scale / 10), 2);
+        cc.lineWidth = clamp(0.5, CanvasStageModel.scale / 10, 2);
         cc.lineJoin = 'round';
 
         for (const elevation in airportTerrain) {
@@ -2184,8 +2217,10 @@ export default class CanvasController {
             const terrainLevel = airportTerrain[elevation];
 
             if (elevation < 0 && !this._hasSeenTerrainWarning) {
-                console.warn(`${airport.icao}.geojson contains 'terrain' ` +
-                    ' below sea level, which is not supported!');
+                console.warn(
+                    `${airport.icao}.geojson contains 'terrain' ` +
+                        ' below sea level, which is not supported!'
+                );
 
                 this._hasSeenTerrainWarning = true;
 
@@ -2239,22 +2274,30 @@ export default class CanvasController {
 
             this._drawRelativePoly(cc, areaRelativePositions, false);
 
-            const height = area.height === Infinity ? 'UNL' : `FL ${Math.ceil(area.height / 1000) * 10}`;
+            const height =
+                area.height === Infinity ? 'UNL' : `FL ${Math.ceil(area.height / 1000) * 10}`;
 
             for (let j = 0; j < area.labelRelativePositions.length; j++) {
-                const canvasPosition = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(
-                    area.labelRelativePositions[j]
-                );
+                const canvasPosition =
+                    CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(
+                        area.labelRelativePositions[j]
+                    );
                 let linePaddingPx = 0;
 
                 if (area.name) {
                     linePaddingPx = 6;
-                    const nameLineCanvasPosition = [canvasPosition[0], canvasPosition[1] - linePaddingPx];
+                    const nameLineCanvasPosition = [
+                        canvasPosition[0],
+                        canvasPosition[1] - linePaddingPx,
+                    ];
 
                     cc.fillText(area.name, ...nameLineCanvasPosition);
                 }
 
-                const altLineCanvasPosition = [canvasPosition[0], canvasPosition[1] + linePaddingPx];
+                const altLineCanvasPosition = [
+                    canvasPosition[0],
+                    canvasPosition[1] + linePaddingPx,
+                ];
 
                 cc.fillText(height, ...altLineCanvasPosition);
             }
@@ -2296,9 +2339,13 @@ export default class CanvasController {
 
         lines.forEach((mapItem) => {
             const startRelativePos = [mapItem[0], mapItem[1]];
-            const startCanvasPos = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(startRelativePos);
+            const startCanvasPos =
+                CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(
+                    startRelativePos
+                );
             const endRelativePos = [mapItem[2], mapItem[3]];
-            const endCanvasPos = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(endRelativePos);
+            const endCanvasPos =
+                CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(endRelativePos);
 
             cc.moveTo(...startCanvasPos);
             cc.lineTo(...endCanvasPos);
@@ -2407,9 +2454,7 @@ export default class CanvasController {
             }
 
             // set label font heavier every 3 major marks
-            cc.font = heading % 30 === 0 ?
-                'bold 10px monoOne, monospace' :
-                BASE_CANVAS_FONT;
+            cc.font = heading % 30 === 0 ? 'bold 10px monoOne, monospace' : BASE_CANVAS_FONT;
 
             const text = `${String(heading).padStart(3, '0')}`;
             const textWidth = cc.measureText(text).width;
@@ -2475,12 +2520,18 @@ export default class CanvasController {
         // scope (aircraft) frame of reference versus the canvas frame of reference
         positionFromScope = [
             CanvasStageModel._translateKilometersToPixels(positionFromScope[0]),
-            -CanvasStageModel._translateKilometersToPixels(positionFromScope[1])
+            -CanvasStageModel._translateKilometersToPixels(positionFromScope[1]),
         ];
 
         const scopePositionRelativeToView = [CanvasStageModel._panX, CanvasStageModel._panY];
-        const viewPositionRelativeToCanvasOrigin = [CanvasStageModel.halfWidth, CanvasStageModel.halfHeight];
-        const scopePositionRelativeToCanvasOrigin = vadd(viewPositionRelativeToCanvasOrigin, scopePositionRelativeToView);
+        const viewPositionRelativeToCanvasOrigin = [
+            CanvasStageModel.halfWidth,
+            CanvasStageModel.halfHeight,
+        ];
+        const scopePositionRelativeToCanvasOrigin = vadd(
+            viewPositionRelativeToCanvasOrigin,
+            scopePositionRelativeToView
+        );
 
         return vadd(scopePositionRelativeToCanvasOrigin, positionFromScope);
     }
@@ -2495,11 +2546,12 @@ export default class CanvasController {
      * @private
      */
     _calculateLeaderLength(dataBlockLeaderLength) {
-        return dataBlockLeaderLength *
-            this.theme.DATA_BLOCK.LEADER_LENGTH_INCREMENT_PIXELS +
+        return (
+            dataBlockLeaderLength * this.theme.DATA_BLOCK.LEADER_LENGTH_INCREMENT_PIXELS +
             this.theme.DATA_BLOCK.LEADER_LENGTH_ADJUSTMENT_PIXELS -
             this.theme.DATA_BLOCK.LEADER_PADDING_FROM_BLOCK_PX -
-            this.theme.DATA_BLOCK.LEADER_PADDING_FROM_TARGET_PX;
+            this.theme.DATA_BLOCK.LEADER_PADDING_FROM_TARGET_PX
+        );
     }
 
     /**

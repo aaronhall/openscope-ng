@@ -3,9 +3,7 @@
     "name": "General Aviation Croatia",
     "callsign": {
         "name": "Niner Alpha",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

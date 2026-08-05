@@ -21,9 +21,7 @@ export default class ScoreController {
          */
         this._aircraftController = aircraftController;
 
-        this.init()
-            .setupHandlers()
-            .enable();
+        this.init().setupHandlers().enable();
     }
 
     init() {
@@ -124,7 +122,11 @@ export default class ScoreController {
      * @private
      */
     _onAirspaceExitForArrival(aircraftModel) {
-        aircraftModel.radioCall('leaving radar coverage as arrival', AIRPORT_CONTROL_POSITION_NAME.APPROACH, true);
+        aircraftModel.radioCall(
+            'leaving radar coverage as arrival',
+            AIRPORT_CONTROL_POSITION_NAME.APPROACH,
+            true
+        );
         GameController.events_recordNew(GAME_EVENTS.AIRSPACE_BUST);
     }
 
@@ -135,7 +137,10 @@ export default class ScoreController {
      * @private
      */
     _onAirspaceExitWithClearance(aircraftModel) {
-        aircraftModel.radioCall('switching to center, good day', AIRPORT_CONTROL_POSITION_NAME.DEPARTURE);
+        aircraftModel.radioCall(
+            'switching to center, good day',
+            AIRPORT_CONTROL_POSITION_NAME.DEPARTURE
+        );
         GameController.events_recordNew(GAME_EVENTS.DEPARTURE);
     }
 
@@ -146,7 +151,11 @@ export default class ScoreController {
      * @private
      */
     _onAirspaceExitWithoutClearance(aircraftModel) {
-        aircraftModel.radioCall('leaving airspace without being on our route', AIRPORT_CONTROL_POSITION_NAME.DEPARTURE, true);
+        aircraftModel.radioCall(
+            'leaving airspace without being on our route',
+            AIRPORT_CONTROL_POSITION_NAME.DEPARTURE,
+            true
+        );
         GameController.events_recordNew(GAME_EVENTS.NOT_CLEARED_ON_ROUTE);
     }
 
@@ -163,7 +172,10 @@ export default class ScoreController {
         // TODO: these two if blocks could be done in a single switch statement
         if (wind.cross >= 20) {
             GameController.events_recordNew(GAME_EVENTS.EXTREME_CROSSWIND_OPERATION);
-            UiController.ui_log(`${aircraftModel.callsign} ${action} with major crosswind`, isWarning);
+            UiController.ui_log(
+                `${aircraftModel.callsign} ${action} with major crosswind`,
+                isWarning
+            );
         } else if (wind.cross >= 10) {
             GameController.events_recordNew(GAME_EVENTS.HIGH_CROSSWIND_OPERATION);
             UiController.ui_log(`${aircraftModel.callsign} ${action} with crosswind`, isWarning);
@@ -171,7 +183,10 @@ export default class ScoreController {
 
         if (wind.head <= -10) {
             GameController.events_recordNew(GAME_EVENTS.EXTREME_TAILWIND_OPERATION);
-            UiController.ui_log(`${aircraftModel.callsign} ${action} with major tailwind`, isWarning);
+            UiController.ui_log(
+                `${aircraftModel.callsign} ${action} with major tailwind`,
+                isWarning
+            );
         } else if (wind.head <= -5) {
             GameController.events_recordNew(GAME_EVENTS.HIGH_TAILWIND_OPERATION);
             UiController.ui_log(`${aircraftModel.callsign} ${action} with tailwind`, isWarning);
@@ -194,14 +209,19 @@ export default class ScoreController {
         }
 
         const actualDistance = nm_ft(aircraftModel.distanceToAircraft(previousAircraft));
-        const requiredDistance = aircraftModel.model.calculateSameRunwaySeparationDistanceInFeet(previousAircraft.model);
+        const requiredDistance = aircraftModel.model.calculateSameRunwaySeparationDistanceInFeet(
+            previousAircraft.model
+        );
 
         if (actualDistance < requiredDistance || previousAircraft.isOnGround()) {
             const isWarning = true;
 
             GameController.events_recordNew(GAME_EVENTS.NO_TAKEOFF_SEPARATION);
-            UiController.ui_log(`${aircraftModel.callsign} ${action} without adequate separation from another ` +
-                'aircraft using the same runway', isWarning);
+            UiController.ui_log(
+                `${aircraftModel.callsign} ${action} without adequate separation from another ` +
+                    'aircraft using the same runway',
+                isWarning
+            );
         }
     }
 
@@ -219,7 +239,10 @@ export default class ScoreController {
 
         const isWarning = true;
 
-        UiController.ui_log(`${aircraftModel.callsign} intercepted localizer above glideslope`, isWarning);
+        UiController.ui_log(
+            `${aircraftModel.callsign} intercepted localizer above glideslope`,
+            isWarning
+        );
         GameController.events_recordNew(GAME_EVENTS.LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE);
     }
 
@@ -233,7 +256,10 @@ export default class ScoreController {
     _penalizeLocalizerInterceptAngle(aircraftModel) {
         const isWarning = true;
 
-        UiController.ui_log(`${aircraftModel.callsign} approach course intercept angle was greater than 30 degrees`, isWarning);
+        UiController.ui_log(
+            `${aircraftModel.callsign} approach course intercept angle was greater than 30 degrees`,
+            isWarning
+        );
         GameController.events_recordNew(GAME_EVENTS.ILLEGAL_APPROACH_CLEARANCE);
     }
 }

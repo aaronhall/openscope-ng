@@ -3,10 +3,7 @@
     "name": "IranAir",
     "callsign": {
         "name": "Iran Air",
-        "callsignFormats": [
-            "####",
-            "###"
-        ]
+        "callsignFormats": ["####", "###"]
     },
     "fleets": {
         "default": [
@@ -20,11 +17,7 @@
             ["F100", 3],
             ["MD82", 2]
         ],
-        "a320": [
-            ["A320", 6]
-        ],
-        "a321": [
-            ["A321", 1]
-        ]
+        "a320": [["A320", 6]],
+        "a321": [["A321", 1]]
     }
 }

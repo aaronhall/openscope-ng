@@ -3,9 +3,7 @@
     "name": "Libyan Airlines",
     "callsign": {
         "name": "Libyan",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -13,8 +11,6 @@
             ["A332", 3],
             ["CRJ9", 2]
         ],
-        "a332": [
-            ["A332", 3]
-        ]
+        "a332": [["A332", 3]]
     }
 }

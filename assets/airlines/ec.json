@@ -3,9 +3,7 @@
     "name": "General Aviation Spain",
     "callsign": {
         "name": "Echo Charlie",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

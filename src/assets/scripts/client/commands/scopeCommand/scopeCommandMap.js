@@ -8,7 +8,7 @@ export const EXPLICIT_COMMANDS = {
     QP: 'propogateDataBlock',
     QP_J: 'setHalo',
     QU: 'route',
-    QZ: 'amendAltitude'
+    QZ: 'amendAltitude',
 };
 
 /**
@@ -22,7 +22,7 @@ export const IMPLIED_COMMANDS = {
     ACCEPT_HANDOFF: 'acceptHandoff',
     INITIATE_HANDOFF: 'initiateHandoff',
     MOVE_DATA_BLOCK: 'moveDataBlock',
-    SCRATCHPAD: 'setScratchpad'
+    SCRATCHPAD: 'setScratchpad',
 };
 
 /**
@@ -32,5 +32,5 @@ export const IMPLIED_COMMANDS = {
  */
 export const COMMAND_FUNCTIONS = {
     ...IMPLIED_COMMANDS,
-    ...EXPLICIT_COMMANDS
+    ...EXPLICIT_COMMANDS,
 };

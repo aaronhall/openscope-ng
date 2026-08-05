@@ -1,8 +1,5 @@
 import _isNil from 'lodash/isNil';
-import {
-    INVALID_INDEX,
-    REGEX
-} from '../constants/globalConstants';
+import { INVALID_INDEX, REGEX } from '../constants/globalConstants';
 import { distanceToPoint } from '../math/circle';
 
 /**
@@ -10,7 +7,8 @@ import { distanceToPoint } from '../math/circle';
  * @param coordinate {string}
  * @return {boolean}
  */
-export const hasCardinalDirectionInCoordinate = (coordinate) => REGEX.COMPASS_DIRECTION.test(coordinate);
+export const hasCardinalDirectionInCoordinate = (coordinate) =>
+    REGEX.COMPASS_DIRECTION.test(coordinate);
 
 // TODO: Are these two functions really needed to be separate?
 /**
@@ -53,7 +51,6 @@ export const calculateDistanceToPointForY = (referencePosition, latitude, longit
         longitude
     );
 
-
     if (referencePosition.latitude > latitude) {
         y *= -1;
     }
@@ -72,14 +69,14 @@ export const calculateDistanceToPointForY = (referencePosition, latitude, longit
  */
 export const adjustForMagneticNorth = (originalX, originalY, magneticNorth) => {
     const t = Math.atan2(originalY, originalX) + magneticNorth;
-    const r = Math.sqrt((originalX * originalX) + (originalY * originalY));
+    const r = Math.sqrt(originalX * originalX + originalY * originalY);
 
     const x = r * Math.cos(t);
     const y = r * Math.sin(t);
 
     return {
         x,
-        y
+        y,
     };
 };
 
@@ -105,8 +102,10 @@ export const isValidGpsCoordinatePair = (gpsCoordinates) => {
     if (typeof latitude === 'number') {
         return true;
     } else if (typeof latitude === 'string') {
-        const latFirstCharIsNorthOrSouth = ['N', 'S'].indexOf(latitude[0].toUpperCase()) !== INVALID_INDEX;
-        const lonFirstCharIsEastOrWest = ['E', 'W'].indexOf(longitude[0].toUpperCase()) !== INVALID_INDEX;
+        const latFirstCharIsNorthOrSouth =
+            ['N', 'S'].indexOf(latitude[0].toUpperCase()) !== INVALID_INDEX;
+        const lonFirstCharIsEastOrWest =
+            ['E', 'W'].indexOf(longitude[0].toUpperCase()) !== INVALID_INDEX;
 
         return latFirstCharIsNorthOrSouth && lonFirstCharIsEastOrWest;
     }

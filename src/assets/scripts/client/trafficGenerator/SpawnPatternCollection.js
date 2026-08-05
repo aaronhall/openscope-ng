@@ -47,8 +47,10 @@ class SpawnPatternCollection extends BaseCollection {
      */
     init(airportJson) {
         if (isEmptyOrNotObject(airportJson)) {
-            throw new TypeError('Invalid airportJson passed to SpawnPatternCollection.init. ' +
-                `Expected a non-empty object, but received ${typeof airportJson}`);
+            throw new TypeError(
+                'Invalid airportJson passed to SpawnPatternCollection.init. ' +
+                    `Expected a non-empty object, but received ${typeof airportJson}`
+            );
         }
 
         this._buildSpawnPatternModels(airportJson.spawnPatterns);
@@ -110,7 +112,9 @@ class SpawnPatternCollection extends BaseCollection {
      */
     addItem(item) {
         if (!(item instanceof SpawnPatternModel)) {
-            throw new TypeError('Only SpawnPatternModel objects can be added to the SpawnPatternCollection.');
+            throw new TypeError(
+                'Only SpawnPatternModel objects can be added to the SpawnPatternCollection.'
+            );
         }
 
         this._items.push(item);

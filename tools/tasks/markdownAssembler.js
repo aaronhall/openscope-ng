@@ -16,7 +16,7 @@ const options = require('../options');
 function _generateHtmlFromMarkdown(markdown) {
     const converterOptions = {
         tables: true,
-        simpleLineBreaks: true
+        simpleLineBreaks: true,
     };
     const converter = new showdown.Converter(converterOptions);
 
@@ -34,7 +34,9 @@ function _generateAirportGuideDict() {
 
     fs.readdirSync(options.DIR.SRC_GUIDES).forEach((filename) => {
         if (filename.includes('airport-guide-directory')) {
-            fancyLog(colors.yellow('--- skipping airport-guide-directory, its not an airport file'));
+            fancyLog(
+                colors.yellow('--- skipping airport-guide-directory, its not an airport file')
+            );
 
             return;
         }
@@ -45,7 +47,11 @@ function _generateAirportGuideDict() {
 
         // If the file is empty, there is no guide, so we do not need to write it
         if (!fileData) {
-            fancyLog(colors.yellow(`--- skipping airport: ${icao.toUpperCase()}, no airport guide found `));
+            fancyLog(
+                colors.yellow(
+                    `--- skipping airport: ${icao.toUpperCase()}, no airport guide found `
+                )
+            );
 
             return;
         }

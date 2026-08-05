@@ -3,9 +3,7 @@
     "name": "Sun Country Airlines",
     "callsign": {
         "name": "Sun Country",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

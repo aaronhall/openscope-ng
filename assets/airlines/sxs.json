@@ -3,19 +3,13 @@
     "name": "SunExpress",
     "callsign": {
         "name": "Sunexpress",
-        "callsignFormats": [
-            "#@@",
-            "##@",
-            "#@"
-        ]
+        "callsignFormats": ["#@@", "##@", "#@"]
     },
     "fleets": {
         "default": [
             ["A320", 4],
             ["B738", 47]
         ],
-        "b738": [
-            ["B738", 47]
-        ]
+        "b738": [["B738", 47]]
     }
 }

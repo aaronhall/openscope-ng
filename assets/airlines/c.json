@@ -3,9 +3,7 @@
     "name": "General Aviation Canada",
     "callsign": {
         "name": "Charlie",
-        "callsignFormats": [
-            "@@@@"
-        ]
+        "callsignFormats": ["@@@@"]
     },
     "fleets": {
         "default": [

@@ -28,8 +28,10 @@ export default class AirlineCollection extends BaseCollection {
         super(airlineList);
 
         if (isEmptyOrNotArray(airlineList)) {
-            throw new TypeError('Invalid airlineList passed to AirlineCollection constructor. ' +
-                `Expected a non-empty array, but received ${typeof airlineList}`);
+            throw new TypeError(
+                'Invalid airlineList passed to AirlineCollection constructor. ' +
+                    `Expected a non-empty array, but received ${typeof airlineList}`
+            );
         }
 
         this.init(airlineList);
@@ -102,9 +104,9 @@ export default class AirlineCollection extends BaseCollection {
             // and `AirlineModel` object and not a list of aircraft from a fleet
             console.warn(
                 `Found a specific fleet with airline id ${id}. This method should be used to find an ` +
-                'AirlineModel instance and not a fleet within an AirlineModel. If you need to find a ' +
-                'specific fleet from an airline, you can use the AirlineModel method: ' +
-                'airlineModel._getRandomAircraftTypeFromFleet(fleetName)'
+                    'AirlineModel instance and not a fleet within an AirlineModel. If you need to find a ' +
+                    'specific fleet from an airline, you can use the AirlineModel method: ' +
+                    'airlineModel._getRandomAircraftTypeFromFleet(fleetName)'
             );
             airlineId = id.split(AIRLINE_NAME_FLEET_SEPARATOR)[0];
         }

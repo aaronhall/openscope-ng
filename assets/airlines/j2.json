@@ -3,9 +3,7 @@
     "name": "General Aviation Djibouti",
     "callsign": {
         "name": "Juliet Two",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

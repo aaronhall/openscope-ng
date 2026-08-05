@@ -3,13 +3,9 @@
     "name": "Compass Airlines",
     "callsign": {
         "name": "Compass",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["E170", 32]
-        ]
+        "default": [["E170", 32]]
     }
 }

@@ -3,13 +3,9 @@
     "name": "Ibex Airlines",
     "callsign": {
         "name": "Ibex",
-        "callsignFormats": [
-            "##"
-        ]
+        "callsignFormats": ["##"]
     },
     "fleets": {
-        "default": [
-            ["CRJ7", 10]
-        ]
+        "default": [["CRJ7", 10]]
     }
 }

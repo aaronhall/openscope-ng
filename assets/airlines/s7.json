@@ -3,9 +3,7 @@
     "name": "General Aviation Seychelles",
     "callsign": {
         "name": "Sierra Seven",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,16 +3,10 @@
     "name": "Jazeera Airways",
     "callsign": {
         "name": "Jazeera",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 8]
-        ],
-        "a320": [
-            ["A320", 8]
-        ]
+        "default": [["A320", 8]],
+        "a320": [["A320", 8]]
     }
 }

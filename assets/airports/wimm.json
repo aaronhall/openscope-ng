@@ -24,7 +24,6 @@
     "arrivalRunway": "23",
     "departureRunway": "23",
     "fixes": {
-
         "DKI": ["S5d57.7m0", "E107d2.1m0"],
         "DKIR": ["S6d1m24.44", "E106d39m11.46"],
         "CKG": ["S6d11.3m0", "E106d31.8m0"],
@@ -65,15 +64,20 @@
         "IDANO": ["N3d59m53.81", "E98d18m4.08"],
 
         "MEDIA": ["N1d56m41.77", "E100d2m44.4"],
-        "ATARO": ["N4d15m33","E99d2m28.77"],
+        "ATARO": ["N4d15m33", "E99d2m28.77"],
         "DUAMO": ["N5d15m57.69", "E97d30m40.56"]
-
     },
     "runways": [
         {
             "name": ["05", "23"],
-            "name_offset": [[0, 0], [0, 0]],
-            "end":    [["N3d37m33.24", "E98d51m30.96"], ["N3d38m59.44", "E98d52m56.86"]],
+            "name_offset": [
+                [0, 0],
+                [0, 0]
+            ],
+            "end": [
+                ["N3d37m33.24", "E98d51m30.96"],
+                ["N3d38m59.44", "E98d52m56.86"]
+            ],
             "length": 3.7,
             "ils": [true, true]
         }
@@ -83,49 +87,61 @@
             "icao": "DALEM1",
             "name": "Dalem One",
             "rwy": {
-                "23": ["BONAR","DALEM"],
-                "05": ["NAGAH","DALEM"]
+                "23": ["BONAR", "DALEM"],
+                "05": ["NAGAH", "DALEM"]
             },
             "exitPoints": {
                 "MEDIA": ["MEDIA"]
             },
-            "draw": [["BONAR","DALEM","MEDIA*"],["NAGAH","DALEM","MEDIA*"]]
+            "draw": [
+                ["BONAR", "DALEM", "MEDIA*"],
+                ["NAGAH", "DALEM", "MEDIA*"]
+            ]
         },
         "GOTLA1": {
             "icao": "GOTLA1",
             "name": "Gotla One",
             "rwy": {
-                "23": ["BONAR","ATARO"],
-                "05": ["NAGAH","ATARO"]
+                "23": ["BONAR", "ATARO"],
+                "05": ["NAGAH", "ATARO"]
             },
             "exitPoints": {
                 "GOTLA": ["GOTLA"]
             },
-            "draw": [["BONAR","ATARO","GOTLA*"],["NAGAH","ATARO","GOTLA*"]]
+            "draw": [
+                ["BONAR", "ATARO", "GOTLA*"],
+                ["NAGAH", "ATARO", "GOTLA*"]
+            ]
         },
         "IDANO1": {
             "icao": "IDANO1",
             "name": "IDANO One",
             "rwy": {
-                "23": ["BONAR","IDANO"],
-                "05": ["NAGAH","IDANO"]
+                "23": ["BONAR", "IDANO"],
+                "05": ["NAGAH", "IDANO"]
             },
             "exitPoints": {
                 "DUAMO": ["DUAMO"]
             },
-            "draw": [["BONAR","IDANO","DUAMO*"],["NAGAH","IDANO","DUAMO*"]]
+            "draw": [
+                ["BONAR", "IDANO", "DUAMO*"],
+                ["NAGAH", "IDANO", "DUAMO*"]
+            ]
         },
         "BANVA1": {
             "icao": "BANVA1",
             "name": "Banva One",
             "rwy": {
-                "23": ["BONAR","BANVA"],
-                "05": ["NAGAH","BANVA"]
+                "23": ["BONAR", "BANVA"],
+                "05": ["NAGAH", "BANVA"]
             },
             "exitPoints": {
                 "PUGER": ["PUGER"]
             },
-            "draw": [["BONAR","BANVA","PUGER*"],["NAGAH","BANVA","PUGER*"]]
+            "draw": [
+                ["BONAR", "BANVA", "PUGER*"],
+                ["NAGAH", "BANVA", "PUGER*"]
+            ]
         }
     },
     "spawnPatterns": [
@@ -142,11 +158,11 @@
             "offset": 0,
             "airlines": [
                 ["gia", 35],
-                ["lni",35],
-                ["ctv",20],
+                ["lni", 35],
+                ["ctv", 20],
                 ["sjy", 35],
-                ["btk",35],
-                ["awq",20],
+                ["btk", 35],
+                ["awq", 20],
                 ["slk", 35]
             ]
         },
@@ -165,11 +181,11 @@
             "period": 23,
             "airlines": [
                 ["gia", 35],
-                ["lni",35],
-                ["ctv",20],
+                ["lni", 35],
+                ["ctv", 20],
                 ["sjy", 35],
-                ["btk",35],
-                ["awq",20],
+                ["btk", 35],
+                ["awq", 20],
                 ["slk", 35]
             ]
         },
@@ -188,8 +204,8 @@
             "period": 21,
             "airlines": [
                 ["gia", 35],
-                ["lni",35],
-                ["ctv",20]
+                ["lni", 35],
+                ["ctv", 20]
             ]
         },
         {
@@ -208,11 +224,11 @@
             "period": 18,
             "airlines": [
                 ["gia", 35],
-                ["lni",35],
-                ["ctv",20],
+                ["lni", 35],
+                ["ctv", 20],
                 ["sjy", 35],
-                ["btk",35],
-                ["awq",20]
+                ["btk", 35],
+                ["awq", 20]
             ]
         },
         {
@@ -230,8 +246,8 @@
             "period": 15,
             "airlines": [
                 ["gia", 35],
-                ["lni",35],
-                ["ctv",20]
+                ["lni", 35],
+                ["ctv", 20]
             ]
         }
     ]

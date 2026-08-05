@@ -3,9 +3,7 @@
     "name": "Air Malta",
     "callsign": {
         "name": "Air Malta",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

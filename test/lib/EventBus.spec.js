@@ -6,7 +6,7 @@ const eventNameMock = 'click';
 const callbackMock = function doSomething(v) {
     return v + 1;
 };
-const anonymousCallbackMock = function(v) {
+const anonymousCallbackMock = function (v) {
     return v + 1;
 };
 
@@ -60,7 +60,6 @@ test('.off() removes the event from #_events when no other observers exist', (t)
 test('.trigger() does not throw when an event does not exist', (t) => {
     expect(() => EventBus.trigger(eventNameMock, 11, 3)).not.toThrow();
 });
-
 
 test('.trigger() calls each observer with #args', (t) => {
     let val = 0;

@@ -1,10 +1,13 @@
 import { expect } from 'vitest';
-import { noop, strToNumArray } from '../../../src/assets/scripts/client/commands/aircraftCommand/aircraftCommandDefinitions';
+import {
+    noop,
+    strToNumArray,
+} from '../../../src/assets/scripts/client/commands/aircraftCommand/aircraftCommandDefinitions';
 import {
     singleArgumentValidator,
-    zeroArgumentsValidator, zeroOrOneArgumentValidator
+    zeroArgumentsValidator,
+    zeroOrOneArgumentValidator,
 } from '../../../src/assets/scripts/client/commands/parsers/argumentValidators';
-
 
 export const noopParse = () => {
     const tmp = noop;

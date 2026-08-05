@@ -3,9 +3,7 @@
     "name": "Avion Express",
     "callsign": {
         "name": "Nordvind",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -13,8 +11,6 @@
             ["A320", 12],
             ["A321", 5]
         ],
-        "a320": [
-            ["A320", 12]
-        ]
+        "a320": [["A320", 12]]
     }
 }

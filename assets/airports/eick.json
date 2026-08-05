@@ -30,9 +30,7 @@
             "floor": 0,
             "ceiling": 245,
             "airspace_class": "C",
-            "labelPositions": [
-                [51.845, -8.599]
-            ],
+            "labelPositions": [[51.845, -8.599]],
             "poly": [
                 ["N52.09071", "W8.46984"],
                 ["N52.08968", "W8.44864"],
@@ -626,9 +624,7 @@
             "floor": 35,
             "ceiling": 245,
             "airspace_class": "C",
-            "labelPositions": [
-                [52.00248370421, -8.9468253737]
-            ],
+            "labelPositions": [[52.00248370421, -8.9468253737]],
             "poly": [
                 ["N51.94704", "W9.14165"],
                 ["N51.92528", "W9.01167"],
@@ -678,8 +674,8 @@
         "CK005": ["N51.70450", "W8.76667"],
         "CK006": ["N51.49717", "W8.63917"],
         "CK007": ["N52.14700", "W8.67333"],
-        "CML"  : ["N52.45378", "W7.48004"],
-        "CRK"  : ["N51.84067", "W8.49433"],
+        "CML": ["N52.45378", "W7.48004"],
+        "CRK": ["N51.84067", "W8.49433"],
         "DIGID": ["N51.74350", "W8.80050"],
         "DIRUM": ["N53.00269", "W6.66111"],
         "EBABO": ["N51.64000", "W8.71433"],
@@ -693,7 +689,7 @@
         "GOTEM": ["N51.82383", "W7.82000"],
         "IDBAN": ["N51.84700", "W8.88717"],
         "INSAL": ["N51.60467", "W8.55117"],
-        "KLY"  : ["N53.26954", "W6.10647"],
+        "KLY": ["N53.26954", "W6.10647"],
         "KOMAG": ["N51.72633", "W8.61533"],
         "KOTEX": ["N51.89883", "W8.31717"],
         "KURUM": ["N52.22867", "W8.66467"],
@@ -712,7 +708,7 @@
         "ROBVO": ["N51.68450", "W8.19917"],
         "ROVAL": ["N51.97367", "W8.56967"],
         "SAMON": ["N51.32250", "W7.41783"],
-        "SHA"  : ["N52.72099", "W8.88519"],
+        "SHA": ["N52.72099", "W8.88519"],
         "SOVIX": ["N51.42750", "W8.56283"],
         "SUTEX": ["N52.82444", "W6.93028"],
         "TIRUK": ["N51.99733", "W8.78500"],
@@ -903,9 +899,7 @@
             "exitPoints": {
                 "ELTIG": ["ELTIG"]
             },
-            "draw": [
-                ["ELTIG"]
-            ]
+            "draw": [["ELTIG"]]
         },
         "ELTI1L": {
             "icao": "ELTI1L",
@@ -918,9 +912,7 @@
             "exitPoints": {
                 "ELTIG": ["ELTIG"]
             },
-            "draw": [
-                ["ELTIG"]
-            ]
+            "draw": [["ELTIG"]]
         },
         "ELTI1M": {
             "icao": "ELTI1M",
@@ -933,9 +925,7 @@
             "exitPoints": {
                 "ELTIG": ["ELTIG"]
             },
-            "draw": [
-                ["ELTIG"]
-            ]
+            "draw": [["ELTIG"]]
         },
         "ELTI1N": {
             "icao": "ELTI1N",
@@ -948,9 +938,7 @@
             "exitPoints": {
                 "ELTIG": ["ELTIG"]
             },
-            "draw": [
-                ["ELTIG"]
-            ]
+            "draw": [["ELTIG"]]
         },
         "ELTI1P": {
             "icao": "ELTI1P",
@@ -963,9 +951,7 @@
             "exitPoints": {
                 "ELTIG": ["ELTIG"]
             },
-            "draw": [
-                ["ELTIG"]
-            ]
+            "draw": [["ELTIG"]]
         },
         "ELTI1Q": {
             "icao": "ELTI1Q",
@@ -978,9 +964,7 @@
             "exitPoints": {
                 "ELTIG": ["ELTIG"]
             },
-            "draw": [
-                ["ELTIG"]
-            ]
+            "draw": [["ELTIG"]]
         },
         "ELTI1S": {
             "icao": "ELTI1S",
@@ -993,9 +977,7 @@
             "exitPoints": {
                 "ELTIG": ["ELTIG"]
             },
-            "draw": [
-                ["ELTIG"]
-            ]
+            "draw": [["ELTIG"]]
         },
         "ELTI1T": {
             "icao": "ELTI1T",
@@ -1008,9 +990,7 @@
             "exitPoints": {
                 "ELTIG": ["ELTIG"]
             },
-            "draw": [
-                ["ELTIG"]
-            ]
+            "draw": [["ELTIG"]]
         },
         "ERTE1K": {
             "icao": "ERTE1K",
@@ -1023,9 +1003,7 @@
             "exitPoints": {
                 "ERTER": ["ERTER"]
             },
-            "draw": [
-                ["ERTER"]
-            ]
+            "draw": [["ERTER"]]
         },
         "ERTE1L": {
             "icao": "ERTE1L",
@@ -1038,9 +1016,7 @@
             "exitPoints": {
                 "ERTER": ["ERTER"]
             },
-            "draw": [
-                ["ERTER"]
-            ]
+            "draw": [["ERTER"]]
         },
         "ERTE1M": {
             "icao": "ERTE1M",
@@ -1053,9 +1029,7 @@
             "exitPoints": {
                 "ERTER": ["ERTER"]
             },
-            "draw": [
-                ["CK004", "ERTER"]
-            ]
+            "draw": [["CK004", "ERTER"]]
         },
         "ERTE1N": {
             "icao": "ERTE1N",
@@ -1068,9 +1042,7 @@
             "exitPoints": {
                 "ERTER": ["ERTER"]
             },
-            "draw": [
-                ["ERTER"]
-            ]
+            "draw": [["ERTER"]]
         },
         "ERTE1P": {
             "icao": "ERTE1P",
@@ -1083,9 +1055,7 @@
             "exitPoints": {
                 "ERTER": ["ERTER"]
             },
-            "draw": [
-                ["ERTER"]
-            ]
+            "draw": [["ERTER"]]
         },
         "ERTE1Q": {
             "icao": "ERTE1Q",
@@ -1098,9 +1068,7 @@
             "exitPoints": {
                 "ERTER": ["ERTER"]
             },
-            "draw": [
-                ["ERTER"]
-            ]
+            "draw": [["ERTER"]]
         },
         "ERTE1S": {
             "icao": "ERTE1S",
@@ -1113,9 +1081,7 @@
             "exitPoints": {
                 "ERTER": ["ERTER"]
             },
-            "draw": [
-                ["ERTER"]
-            ]
+            "draw": [["ERTER"]]
         },
         "ERTE1T": {
             "icao": "ERTE1T",
@@ -1128,9 +1094,7 @@
             "exitPoints": {
                 "ERTER": ["ERTER"]
             },
-            "draw": [
-                ["ERTER"]
-            ]
+            "draw": [["ERTER"]]
         },
         "GOTE1K": {
             "icao": "GOTEM1K",
@@ -1143,9 +1107,7 @@
             "exitPoints": {
                 "GOTEM": ["GOTEM"]
             },
-            "draw": [
-                ["GOTEM"]
-            ]
+            "draw": [["GOTEM"]]
         },
         "GOTE1L": {
             "icao": "GOTEM1L",
@@ -1158,9 +1120,7 @@
             "exitPoints": {
                 "GOTEM": ["GOTEM"]
             },
-            "draw": [
-                ["GOTEM"]
-            ]
+            "draw": [["GOTEM"]]
         },
         "GOTE1M": {
             "icao": "GOTEM1M",
@@ -1173,9 +1133,7 @@
             "exitPoints": {
                 "GOTEM": ["GOTEM"]
             },
-            "draw": [
-                ["GOTEM"]
-            ]
+            "draw": [["GOTEM"]]
         },
         "GOTE1N": {
             "icao": "GOTEM1N",
@@ -1188,9 +1146,7 @@
             "exitPoints": {
                 "GOTEM": ["GOTEM"]
             },
-            "draw": [
-                ["GOTEM"]
-            ]
+            "draw": [["GOTEM"]]
         },
         "GOTE1P": {
             "icao": "GOTEM1P",
@@ -1203,9 +1159,7 @@
             "exitPoints": {
                 "GOTEM": ["GOTEM"]
             },
-            "draw": [
-                ["GOTEM"]
-            ]
+            "draw": [["GOTEM"]]
         },
         "GOTE1Q": {
             "icao": "GOTEM1Q",
@@ -1218,9 +1172,7 @@
             "exitPoints": {
                 "GOTEM": ["GOTEM"]
             },
-            "draw": [
-                ["GOTEM"]
-            ]
+            "draw": [["GOTEM"]]
         },
         "GOTE1S": {
             "icao": "GOTEM1S",
@@ -1233,9 +1185,7 @@
             "exitPoints": {
                 "GOTEM": ["GOTEM"]
             },
-            "draw": [
-                ["GOTEM"]
-            ]
+            "draw": [["GOTEM"]]
         },
         "GOTE1T": {
             "icao": "GOTEM1T",
@@ -1248,9 +1198,7 @@
             "exitPoints": {
                 "GOTEM": ["GOTEM"]
             },
-            "draw": [
-                ["GOTEM"]
-            ]
+            "draw": [["GOTEM"]]
         },
         "KURU1K": {
             "icao": "KURU1K",
@@ -1263,9 +1211,7 @@
             "exitPoints": {
                 "KURUM": ["KURUM"]
             },
-            "draw": [
-                ["KURUM"]
-            ]
+            "draw": [["KURUM"]]
         },
         "KURU1L": {
             "icao": "KURU1L",
@@ -1278,9 +1224,7 @@
             "exitPoints": {
                 "KURUM": ["KURUM"]
             },
-            "draw": [
-                ["KURUM"]
-            ]
+            "draw": [["KURUM"]]
         },
         "KURU1M": {
             "icao": "KURU1M",
@@ -1293,9 +1237,7 @@
             "exitPoints": {
                 "KURUM": ["KURUM"]
             },
-            "draw": [
-                ["KURUM"]
-            ]
+            "draw": [["KURUM"]]
         },
         "KURU1N": {
             "icao": "KURU1N",
@@ -1308,9 +1250,7 @@
             "exitPoints": {
                 "KURUM": ["KURUM"]
             },
-            "draw": [
-                ["KURUM"]
-            ]
+            "draw": [["KURUM"]]
         },
         "KURU1P": {
             "icao": "KURU1P",
@@ -1323,9 +1263,7 @@
             "exitPoints": {
                 "KURUM": ["KURUM"]
             },
-            "draw": [
-                ["KURUM"]
-            ]
+            "draw": [["KURUM"]]
         },
         "KURU1Q": {
             "icao": "KURU1Q",
@@ -1338,9 +1276,7 @@
             "exitPoints": {
                 "KURUM": ["KURUM"]
             },
-            "draw": [
-                ["LANRO", "CK001", "CK002", "CK003", "KURUM"]
-            ]
+            "draw": [["LANRO", "CK001", "CK002", "CK003", "KURUM"]]
         },
         "KURU1S": {
             "icao": "KURU1S",
@@ -1353,9 +1289,7 @@
             "exitPoints": {
                 "KURUM": ["KURUM"]
             },
-            "draw": [
-                ["KURUM"]
-            ]
+            "draw": [["KURUM"]]
         },
         "ORTO1K": {
             "icao": "ORTO1K",
@@ -1368,9 +1302,7 @@
             "exitPoints": {
                 "ORTOM": ["ORTOM"]
             },
-            "draw": [
-                ["ORTOM"]
-            ]
+            "draw": [["ORTOM"]]
         },
         "ORTO1L": {
             "icao": "ORTO1L",
@@ -1383,9 +1315,7 @@
             "exitPoints": {
                 "ORTOM": ["ORTOM"]
             },
-            "draw": [
-                ["ORTOM"]
-            ]
+            "draw": [["ORTOM"]]
         },
         "ORTO1M": {
             "icao": "ORTO1M",
@@ -1398,9 +1328,7 @@
             "exitPoints": {
                 "ORTOM": ["ORTOM"]
             },
-            "draw": [
-                ["ORTOM"]
-            ]
+            "draw": [["ORTOM"]]
         },
         "ORTO1N": {
             "icao": "ORTO1N",
@@ -1413,9 +1341,7 @@
             "exitPoints": {
                 "ORTOM": ["ORTOM"]
             },
-            "draw": [
-                ["CK005", "CK006", "SOVIX", "ORTOM"]
-            ]
+            "draw": [["CK005", "CK006", "SOVIX", "ORTOM"]]
         },
         "ORTO1P": {
             "icao": "ORTO1P",
@@ -1428,9 +1354,7 @@
             "exitPoints": {
                 "ORTOM": ["ORTOM"]
             },
-            "draw": [
-                ["ORTOM"]
-            ]
+            "draw": [["ORTOM"]]
         },
         "ORTO1S": {
             "icao": "ORTO1S",
@@ -1443,9 +1367,7 @@
             "exitPoints": {
                 "ORTOM": ["ORTOM"]
             },
-            "draw": [
-                ["ORTOM"]
-            ]
+            "draw": [["ORTOM"]]
         },
         "SOVI1K": {
             "icao": "SOVI1K",
@@ -1458,9 +1380,7 @@
             "exitPoints": {
                 "SOVIX": ["SOVIX"]
             },
-            "draw": [
-                ["SOVIX"]
-            ]
+            "draw": [["SOVIX"]]
         },
         "SOVI1L": {
             "icao": "SOVI1L",
@@ -1473,9 +1393,7 @@
             "exitPoints": {
                 "SOVIX": ["SOVIX"]
             },
-            "draw": [
-                ["SOVIX"]
-            ]
+            "draw": [["SOVIX"]]
         },
         "SOVI1M": {
             "icao": "SOVI1M",
@@ -1488,9 +1406,7 @@
             "exitPoints": {
                 "SOVIX": ["SOVIX"]
             },
-            "draw": [
-                ["SOVIX"]
-            ]
+            "draw": [["SOVIX"]]
         },
         "SOVI1N": {
             "icao": "SOVI1N",
@@ -1503,9 +1419,7 @@
             "exitPoints": {
                 "SOVIX": ["SOVIX"]
             },
-            "draw": [
-                ["SOVIX"]
-            ]
+            "draw": [["SOVIX"]]
         },
         "SOVI1P": {
             "icao": "SOVI1P",
@@ -1518,9 +1432,7 @@
             "exitPoints": {
                 "SOVIX": ["SOVIX"]
             },
-            "draw": [
-                ["SOVIX"]
-            ]
+            "draw": [["SOVIX"]]
         },
         "SOVI1S": {
             "icao": "SOVI1S",
@@ -1533,9 +1445,7 @@
             "exitPoints": {
                 "SOVIX": ["SOVIX"]
             },
-            "draw": [
-                ["SOVIX"]
-            ]
+            "draw": [["SOVIX"]]
         },
         "TISM1K": {
             "icao": "TISM1K",
@@ -1548,9 +1458,7 @@
             "exitPoints": {
                 "TISMO": ["TISMO"]
             },
-            "draw": [
-                ["TISMO"]
-            ]
+            "draw": [["TISMO"]]
         },
         "TISM1L": {
             "icao": "TISM1L",
@@ -1563,9 +1471,7 @@
             "exitPoints": {
                 "TISMO": ["TISMO"]
             },
-            "draw": [
-                ["TISMO"]
-            ]
+            "draw": [["TISMO"]]
         },
         "TISM1M": {
             "icao": "TISM1M",
@@ -1578,9 +1484,7 @@
             "exitPoints": {
                 "TISMO": ["TISMO"]
             },
-            "draw": [
-                ["TISMO"]
-            ]
+            "draw": [["TISMO"]]
         },
         "TISM1N": {
             "icao": "TISM1N",
@@ -1593,9 +1497,7 @@
             "exitPoints": {
                 "TISMO": ["TISMO"]
             },
-            "draw": [
-                ["TISMO"]
-            ]
+            "draw": [["TISMO"]]
         },
         "TISM1P": {
             "icao": "TISM1P",
@@ -1608,9 +1510,7 @@
             "exitPoints": {
                 "TISMO": ["TISMO"]
             },
-            "draw": [
-                ["TISMO"]
-            ]
+            "draw": [["TISMO"]]
         },
         "TISM1Q": {
             "icao": "TISM1Q",
@@ -1623,9 +1523,7 @@
             "exitPoints": {
                 "TISMO": ["TISMO"]
             },
-            "draw": [
-                ["TISMO"]
-            ]
+            "draw": [["TISMO"]]
         },
         "TISM1S": {
             "icao": "TISM1S",
@@ -1638,9 +1536,7 @@
             "exitPoints": {
                 "TISMO": ["TISMO"]
             },
-            "draw": [
-                ["TISMO"]
-            ]
+            "draw": [["TISMO"]]
         },
         "TISM1T": {
             "icao": "TISM1T",
@@ -1653,9 +1549,7 @@
             "exitPoints": {
                 "TISMO": ["TISMO"]
             },
-            "draw": [
-                ["TISMO"]
-            ]
+            "draw": [["TISMO"]]
         },
         "VAPA1K": {
             "icao": "VAPA1K",
@@ -1668,9 +1562,7 @@
             "exitPoints": {
                 "VAPAL": ["VAPAL"]
             },
-            "draw": [
-                ["VAPAL"]
-            ]
+            "draw": [["VAPAL"]]
         },
         "VAPA1L": {
             "icao": "VAPA1L",
@@ -1683,9 +1575,7 @@
             "exitPoints": {
                 "VAPAL": ["VAPAL"]
             },
-            "draw": [
-                ["VAPAL"]
-            ]
+            "draw": [["VAPAL"]]
         },
         "VAPA1M": {
             "icao": "VAPA1M",
@@ -1698,9 +1588,7 @@
             "exitPoints": {
                 "VAPAL": ["VAPAL"]
             },
-            "draw": [
-                ["VAPAL"]
-            ]
+            "draw": [["VAPAL"]]
         },
         "VAPA1N": {
             "icao": "VAPA1N",
@@ -1713,9 +1601,7 @@
             "exitPoints": {
                 "VAPAL": ["VAPAL"]
             },
-            "draw": [
-                ["VAPAL"]
-            ]
+            "draw": [["VAPAL"]]
         },
         "VAPA1P": {
             "icao": "VAPA1P",
@@ -1728,9 +1614,7 @@
             "exitPoints": {
                 "VAPAL": ["VAPAL"]
             },
-            "draw": [
-                ["VAPAL"]
-            ]
+            "draw": [["VAPAL"]]
         },
         "VAPA1Q": {
             "icao": "VAPA1Q",
@@ -1743,9 +1627,7 @@
             "exitPoints": {
                 "VAPAL": ["VAPAL"]
             },
-            "draw": [
-                ["VAPAL"]
-            ]
+            "draw": [["VAPAL"]]
         },
         "VAPA1S": {
             "icao": "VAPA1S",
@@ -1758,9 +1640,7 @@
             "exitPoints": {
                 "VAPAL": ["VAPAL"]
             },
-            "draw": [
-                ["VAPAL"]
-            ]
+            "draw": [["VAPAL"]]
         },
         "VAPA1T": {
             "icao": "VAPA1T",
@@ -1773,9 +1653,7 @@
             "exitPoints": {
                 "VAPAL": ["VAPAL"]
             },
-            "draw": [
-                ["VAPAL"]
-            ]
+            "draw": [["VAPAL"]]
         }
     },
     "stars": {
@@ -1792,9 +1670,7 @@
             "holds": {
                 "BADEN": "246|right|1min"
             },
-            "draw": [
-                ["ELTIG", "EBABO", "DIGID", "BADEN"]
-            ]
+            "draw": [["ELTIG", "EBABO", "DIGID", "BADEN"]]
         },
         "ELTI1G": {
             "icao": "ELTI1G",
@@ -1804,14 +1680,15 @@
             },
             "body": [["ROBVO", "A60+"]],
             "rwy": {
-                "EICK34": [["ATLAM", "S220-"], ["GOSDA", "A30"]]
+                "EICK34": [
+                    ["ATLAM", "S220-"],
+                    ["GOSDA", "A30"]
+                ]
             },
             "holds": {
                 "GOSDA": "164|left|1min|S220-"
             },
-            "draw": [
-                ["ELTIG", "ROBVO", "ATLAM", "GOSDA"]
-            ]
+            "draw": [["ELTIG", "ROBVO", "ATLAM", "GOSDA"]]
         },
         "ELTI1H": {
             "icao": "ELTI1H",
@@ -1826,9 +1703,7 @@
             "holds": {
                 "KOTEX": "066|left|1min"
             },
-            "draw": [
-                ["ELTIG", "LORLA", "KOTEX"]
-            ]
+            "draw": [["ELTIG", "LORLA", "KOTEX"]]
         },
         "ELTI1R": {
             "icao": "ELTI1R",
@@ -1838,14 +1713,15 @@
             },
             "body": [["GIVOL", "A60+"]],
             "rwy": {
-                "EICK16": [["BARNU", "S220-"], ["ROVAL", "A30"]]
+                "EICK16": [
+                    ["BARNU", "S220-"],
+                    ["ROVAL", "A30"]
+                ]
             },
             "holds": {
                 "KOTEX": "344|right|1min|S220-"
             },
-            "draw": [
-                ["ELTIG", "GIVOL", "BARNU", "ROVAL"]
-            ]
+            "draw": [["ELTIG", "GIVOL", "BARNU", "ROVAL"]]
         },
         "ERTE1F": {
             "icao": "ERTE1F",
@@ -1860,9 +1736,7 @@
             "holds": {
                 "BADEN": "246|right|1min"
             },
-            "draw": [
-                ["ERTER", "EBABO"]
-            ]
+            "draw": [["ERTER", "EBABO"]]
         },
         "ERTE1G": {
             "icao": "ERTE1G",
@@ -1872,14 +1746,15 @@
             },
             "body": [],
             "rwy": {
-                "EICK34": [["ATLAM", "S220-"], ["GOSDA", "A30"]]
+                "EICK34": [
+                    ["ATLAM", "S220-"],
+                    ["GOSDA", "A30"]
+                ]
             },
             "holds": {
                 "GOSDA": "164|left|1min|S220-"
             },
-            "draw": [
-                ["ERTER", "ATLAM"]
-            ]
+            "draw": [["ERTER", "ATLAM"]]
         },
         "ERTE1H": {
             "icao": "ERTE1H",
@@ -1894,9 +1769,7 @@
             "holds": {
                 "KOTEX": "066|left|1min"
             },
-            "draw": [
-                ["ERTER", "NONSI", "LORLA"]
-            ]
+            "draw": [["ERTER", "NONSI", "LORLA"]]
         },
         "ERTE1R": {
             "icao": "ERTE1R",
@@ -1904,16 +1777,20 @@
             "entryPoints": {
                 "ERTER": [["ERTER", "A80+"]]
             },
-            "body": [["EPERO", "A80+"], ["GIVOL", "A60+"]],
+            "body": [
+                ["EPERO", "A80+"],
+                ["GIVOL", "A60+"]
+            ],
             "rwy": {
-                "EICK16": [["BARNU", "S220-"], ["ROVAL", "A30"]]
+                "EICK16": [
+                    ["BARNU", "S220-"],
+                    ["ROVAL", "A30"]
+                ]
             },
             "holds": {
                 "KOTEX": "344|right|1min|S220-"
             },
-            "draw": [
-                ["ERTER", "EPERO", "GIVOL"]
-            ]
+            "draw": [["ERTER", "EPERO", "GIVOL"]]
         },
         "GOTE1F": {
             "icao": "GOTE1F",
@@ -1928,9 +1805,7 @@
             "holds": {
                 "BADEN": "246|right|1min"
             },
-            "draw": [
-                ["GOTEM", "EBABO"]
-            ]
+            "draw": [["GOTEM", "EBABO"]]
         },
         "GOTE1G": {
             "icao": "GOTE1G",
@@ -1940,14 +1815,15 @@
             },
             "body": [["ROBVO", "A60+"]],
             "rwy": {
-                "EICK34": [["ATLAM", "S220-"], ["GOSDA", "A30"]]
+                "EICK34": [
+                    ["ATLAM", "S220-"],
+                    ["GOSDA", "A30"]
+                ]
             },
             "holds": {
                 "GOSDA": "164|left|1min|S220-"
             },
-            "draw": [
-                ["GOTEM", "ROBVO"]
-            ]
+            "draw": [["GOTEM", "ROBVO"]]
         },
         "GOTE1H": {
             "icao": "GOTE1H",
@@ -1962,9 +1838,7 @@
             "holds": {
                 "KOTEX": "066|left|1min"
             },
-            "draw": [
-                ["GOTEM", "LORLA"]
-            ]
+            "draw": [["GOTEM", "LORLA"]]
         },
         "GOTE1R": {
             "icao": "GOTE1R",
@@ -1974,14 +1848,15 @@
             },
             "body": [["GIVOL", "A60+"]],
             "rwy": {
-                "EICK16": [["BARNU", "S220-"], ["ROVAL", "A30"]]
+                "EICK16": [
+                    ["BARNU", "S220-"],
+                    ["ROVAL", "A30"]
+                ]
             },
             "holds": {
                 "KOTEX": "344|right|1min|S220-"
             },
-            "draw": [
-                ["GOTEM", "GIVOL"]
-            ]
+            "draw": [["GOTEM", "GIVOL"]]
         },
         "KURU1F": {
             "icao": "KURU1F",
@@ -1996,9 +1871,7 @@
             "holds": {
                 "BADEN": "246|right|1min"
             },
-            "draw": [
-                ["KURUM", "IDBAN", "DIGID"]
-            ]
+            "draw": [["KURUM", "IDBAN", "DIGID"]]
         },
         "KURU1G": {
             "icao": "KURU1G",
@@ -2008,14 +1881,15 @@
             },
             "body": ["TIRUK", "LANRO", ["INSAL", "A60+"]],
             "rwy": {
-                "EICK34": [["ATLAM", "S220-"], ["GOSDA", "A30"]]
+                "EICK34": [
+                    ["ATLAM", "S220-"],
+                    ["GOSDA", "A30"]
+                ]
             },
             "holds": {
                 "GOSDA": "164|left|1min|S220-"
             },
-            "draw": [
-                ["KURUM", "TIRUK", "LANRO", "INSAL", "ATLAM"]
-            ]
+            "draw": [["KURUM", "TIRUK", "LANRO", "INSAL", "ATLAM"]]
         },
         "KURU1H": {
             "icao": "KURU1H",
@@ -2030,9 +1904,7 @@
             "holds": {
                 "KOTEX": "066|left|1min"
             },
-            "draw": [
-                ["KURUM", "MAZAN", "LORLA"]
-            ]
+            "draw": [["KURUM", "MAZAN", "LORLA"]]
         },
         "KURU1R": {
             "icao": "KURU1R",
@@ -2042,14 +1914,15 @@
             },
             "body": [["CK007", "A60+"]],
             "rwy": {
-                "EICK16": [["BARNU", "S220-"], ["ROVAL", "A30"]]
+                "EICK16": [
+                    ["BARNU", "S220-"],
+                    ["ROVAL", "A30"]
+                ]
             },
             "holds": {
                 "KOTEX": "344|right|1min|S220-"
             },
-            "draw": [
-                ["KURUM", "CK007", "BARNU"]
-            ]
+            "draw": [["KURUM", "CK007", "BARNU"]]
         },
         "ORTO1F": {
             "icao": "ORTO1F",
@@ -2057,16 +1930,17 @@
             "entryPoints": {
                 "ORTOM": [["ORTOM", "A80+"]]
             },
-            "body": [["SOVIX", "A80"], ["EBABO", "A60+"]],
+            "body": [
+                ["SOVIX", "A80"],
+                ["EBABO", "A60+"]
+            ],
             "rwy": {
                 "EICK07": ["DIGID", ["BADEN", "A30"]]
             },
             "holds": {
                 "BADEN": "246|right|1min"
             },
-            "draw": [
-                ["ORTOM"]
-            ]
+            "draw": [["ORTOM"]]
         },
         "ORTO1G": {
             "icao": "ORTO1G",
@@ -2076,14 +1950,15 @@
             },
             "body": [],
             "rwy": {
-                "EICK34": [["ATLAM", "S220-"], ["GOSDA", "A30"]]
+                "EICK34": [
+                    ["ATLAM", "S220-"],
+                    ["GOSDA", "A30"]
+                ]
             },
             "holds": {
                 "GOSDA": "164|left|1min|S220-"
             },
-            "draw": [
-                ["ORTOM", "ATLAM"]
-            ]
+            "draw": [["ORTOM", "ATLAM"]]
         },
         "ORTO1H": {
             "icao": "ORTO1H",
@@ -2098,9 +1973,7 @@
             "holds": {
                 "KOTEX": "066|left|1min"
             },
-            "draw": [
-                ["ORTOM", "NONSI"]
-            ]
+            "draw": [["ORTOM", "NONSI"]]
         },
         "ORTO1R": {
             "icao": "ORTO1R",
@@ -2108,9 +1981,16 @@
             "entryPoints": {
                 "ORTOM": [["ORTOM", "A80+"]]
             },
-            "body": [["SOVIX", "A80+"], ["LANRO", "A80+"], ["TIRUK", "A60+"]],
+            "body": [
+                ["SOVIX", "A80+"],
+                ["LANRO", "A80+"],
+                ["TIRUK", "A60+"]
+            ],
             "rwy": {
-                "EICK16": [["BARNU", "S220-"], ["ROVAL", "A30"]]
+                "EICK16": [
+                    ["BARNU", "S220-"],
+                    ["ROVAL", "A30"]
+                ]
             },
             "holds": {
                 "KOTEX": "344|right|1min|S220-"
@@ -2133,9 +2013,7 @@
             "holds": {
                 "BADEN": "246|right|1min"
             },
-            "draw": [
-                ["SOVIX", "EBABO"]
-            ]
+            "draw": [["SOVIX", "EBABO"]]
         },
         "SOVI1G": {
             "icao": "SOVI1G",
@@ -2145,14 +2023,15 @@
             },
             "body": [],
             "rwy": {
-                "EICK34": [["ATLAM", "S220-"], ["GOSDA", "A30"]]
+                "EICK34": [
+                    ["ATLAM", "S220-"],
+                    ["GOSDA", "A30"]
+                ]
             },
             "holds": {
                 "GOSDA": "164|left|1min|S220-"
             },
-            "draw": [
-                ["SOVIX", "ATLAM"]
-            ]
+            "draw": [["SOVIX", "ATLAM"]]
         },
         "SOVI1H": {
             "icao": "SOVI1H",
@@ -2167,9 +2046,7 @@
             "holds": {
                 "KOTEX": "066|left|1min"
             },
-            "draw": [
-                ["SOVIX", "NONSI"]
-            ]
+            "draw": [["SOVIX", "NONSI"]]
         },
         "SOVI1R": {
             "icao": "SOVI1R",
@@ -2177,16 +2054,20 @@
             "entryPoints": {
                 "SOVIX": [["SOVIX", "A80+"]]
             },
-            "body": [["LANRO", "A80+"], ["TIRUK", "A60+"]],
+            "body": [
+                ["LANRO", "A80+"],
+                ["TIRUK", "A60+"]
+            ],
             "rwy": {
-                "EICK16": [["BARNU", "S220-"], ["ROVAL", "A30"]]
+                "EICK16": [
+                    ["BARNU", "S220-"],
+                    ["ROVAL", "A30"]
+                ]
             },
             "holds": {
                 "KOTEX": "344|right|1min|S220-"
             },
-            "draw": [
-                ["SOVIX"]
-            ]
+            "draw": [["SOVIX"]]
         },
         "TISM1F": {
             "icao": "TISM1F",
@@ -2201,9 +2082,7 @@
             "holds": {
                 "BADEN": "246|right|1min"
             },
-            "draw": [
-                ["TISMO", "IDBAN"]
-            ]
+            "draw": [["TISMO", "IDBAN"]]
         },
         "TISM1G": {
             "icao": "TISM1G",
@@ -2213,14 +2092,15 @@
             },
             "body": [["ROBVO", "A60+"]],
             "rwy": {
-                "EICK34": [["ATLAM", "S220-"], ["GOSDA", "A30"]]
+                "EICK34": [
+                    ["ATLAM", "S220-"],
+                    ["GOSDA", "A30"]
+                ]
             },
             "holds": {
                 "GOSDA": "164|left|1min|S220-"
             },
-            "draw": [
-                ["TISMO", "ROBVO"]
-            ]
+            "draw": [["TISMO", "ROBVO"]]
         },
         "TISM1H": {
             "icao": "TISM1H",
@@ -2235,9 +2115,7 @@
             "holds": {
                 "KOTEX": "066|left|1min"
             },
-            "draw": [
-                ["TISMO", "LORLA"]
-            ]
+            "draw": [["TISMO", "LORLA"]]
         },
         "TISM1R": {
             "icao": "TISM1R",
@@ -2247,14 +2125,15 @@
             },
             "body": [["GIVOL", "A60+"]],
             "rwy": {
-                "EICK16": [["BARNU", "S220-"], ["ROVAL", "A30"]]
+                "EICK16": [
+                    ["BARNU", "S220-"],
+                    ["ROVAL", "A30"]
+                ]
             },
             "holds": {
                 "KOTEX": "344|right|1min|S220-"
             },
-            "draw": [
-                ["TISMO", "GIVOL"]
-            ]
+            "draw": [["TISMO", "GIVOL"]]
         },
         "VAPA1F": {
             "icao": "VAPA1F",
@@ -2269,9 +2148,7 @@
             "holds": {
                 "BADEN": "246|right|1min"
             },
-            "draw": [
-                ["VAPAL", "EBABO"]
-            ]
+            "draw": [["VAPAL", "EBABO"]]
         },
         "VAPA1G": {
             "icao": "VAPA1G",
@@ -2281,14 +2158,15 @@
             },
             "body": [["ROBVO", "A60+"]],
             "rwy": {
-                "EICK34": [["ATLAM", "S220-"], ["GOSDA", "A30"]]
+                "EICK34": [
+                    ["ATLAM", "S220-"],
+                    ["GOSDA", "A30"]
+                ]
             },
             "holds": {
                 "GOSDA": "164|left|1min|S220-"
             },
-            "draw": [
-                ["VAPAL", "ROBVO"]
-            ]
+            "draw": [["VAPAL", "ROBVO"]]
         },
         "VAPA1H": {
             "icao": "VAPA1H",
@@ -2303,9 +2181,7 @@
             "holds": {
                 "KOTEX": "066|left|1min"
             },
-            "draw": [
-                ["VAPAL", "LORLA"]
-            ]
+            "draw": [["VAPAL", "LORLA"]]
         },
         "VAPA1R": {
             "icao": "VAPA1R",
@@ -2315,14 +2191,15 @@
             },
             "body": [["GIVOL", "A60+"]],
             "rwy": {
-                "EICK16": [["BARNU", "S220-"], ["ROVAL", "A30"]]
+                "EICK16": [
+                    ["BARNU", "S220-"],
+                    ["ROVAL", "A30"]
+                ]
             },
             "holds": {
                 "KOTEX": "344|right|1min|S220-"
             },
-            "draw": [
-                ["VAPAL", "GIVOL"]
-            ]
+            "draw": [["VAPAL", "GIVOL"]]
         }
     },
     "spawnPatterns": [
@@ -2383,9 +2260,7 @@
             "speed": "",
             "method": "random",
             "rate": 0.51,
-            "airlines": [
-                ["stk/einRegional", 42]
-            ]
+            "airlines": [["stk/einRegional", 42]]
         },
         {
             "origin": "EICK",
@@ -2442,9 +2317,7 @@
             "speed": "",
             "method": "random",
             "rate": 0.16,
-            "airlines": [
-                ["stk/einRegional", 13]
-            ]
+            "airlines": [["stk/einRegional", 13]]
         },
         {
             "origin": "",

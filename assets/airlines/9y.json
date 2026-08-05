@@ -3,9 +3,7 @@
     "name": "General Aviation Trinidad and Tobago",
     "callsign": {
         "name": "Niner Yankee",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

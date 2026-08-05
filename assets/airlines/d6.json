@@ -3,9 +3,7 @@
     "name": "General Aviation Comoros",
     "callsign": {
         "name": "Delta Six",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

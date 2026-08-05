@@ -3,9 +3,7 @@
     "name": "General Aviation Senegal",
     "callsign": {
         "name": "Six Victor",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

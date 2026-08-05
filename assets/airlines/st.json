@@ -3,9 +3,7 @@
     "name": "General Aviation Sudan",
     "callsign": {
         "name": "Sierra Tango",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -7,7 +7,6 @@ import { COLOR } from '../color';
  * @type {object}
  */
 export const RADAR_TARGET_THEME = {
-
     /**
      * Color of the dots behind the aircraft, showing where it has been
      * Opacity used for when the aircraft is within the airspace
@@ -159,5 +158,5 @@ export const RADAR_TARGET_THEME = {
      * @memberof RADAR_TARGET_THEME
      * @property TRAILING_SEPARATION_INDICATOR
      */
-    TRAILING_SEPARATION_INDICATOR: COLOR.RED
+    TRAILING_SEPARATION_INDICATOR: COLOR.RED,
 };

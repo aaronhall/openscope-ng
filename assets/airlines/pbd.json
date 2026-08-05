@@ -3,13 +3,9 @@
     "name": "Pobeda",
     "callsign": {
         "name": "Pobeda",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["B738", 19]
-        ]
+        "default": [["B738", 19]]
     }
 }

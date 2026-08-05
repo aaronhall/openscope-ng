@@ -20,7 +20,7 @@ test('sets #_options on instantiation', () => {
         'softCeiling',
         'mouseClickDrag',
         'rangeRings',
-        'measureToolPath'
+        'measureToolPath',
     ];
 
     const model = new GameOptions();
@@ -98,10 +98,12 @@ test('.setOptionByName() calls EventBus.trigger() when #onChangeEventHandler() i
     model.setOptionByName(optionNameMock, optionValueMock);
 
     expect(EventBus.trigger.callCount === 1).toBe(true);
-    expect(EventBus.trigger.calledWithExactly(
-        GAME_OPTION_LIST_MOCK[0].onChangeEventHandler,
-        optionValueMock
-    )).toBe(true);
+    expect(
+        EventBus.trigger.calledWithExactly(
+            GAME_OPTION_LIST_MOCK[0].onChangeEventHandler,
+            optionValueMock
+        )
+    ).toBe(true);
 
     EventBus.trigger = sinon.restore();
 });

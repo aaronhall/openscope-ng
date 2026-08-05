@@ -3,11 +3,7 @@
     "name": "Loganair",
     "callsign": {
         "name": "Logan",
-        "callsignFormats": [
-            "###@",
-            "##@@",
-            "#@@"
-        ]
+        "callsignFormats": ["###@", "##@@", "#@@"]
     },
     "fleets": {
         "default": [
@@ -18,7 +14,6 @@
             ["E145", 13],
             ["SB20", 4],
             ["SF34", 13]
-
         ],
         "eidw": [
             ["E145", 13],

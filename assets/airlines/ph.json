@@ -3,9 +3,7 @@
     "name": "General Aviation Netherlands",
     "callsign": {
         "name": "Papa Hotel",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

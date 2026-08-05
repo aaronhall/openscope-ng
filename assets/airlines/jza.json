@@ -3,9 +3,7 @@
     "name": "Jazz Aviation",
     "callsign": {
         "name": "Jazz",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

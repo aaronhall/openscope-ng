@@ -17,7 +17,7 @@ export const TIME = {
     ONE_SECOND_IN_MILLISECONDS: 1000,
     ONE_MILLISECOND_IN_HOURS: 1 / 3600000,
     ONE_MILLISECOND_IN_MINUTES: 1 / 60000,
-    ONE_MILLISECOND_IN_SECONDS: 1 / 1000
+    ONE_MILLISECOND_IN_SECONDS: 1 / 1000,
 };
 
 /**
@@ -38,8 +38,8 @@ export const REGEX = {
     SINGLE_DOT: /\./g,
     THREE_DIGIT_NUMBER: /^[0-9]{3}$/,
     TRANSPONDER_CODE: /^[0-7][0-7][0-7][0-7]$/,
-    UNICODE: /[^\u0000-\u00ff]/,
-    WHITESPACE: /\s/g
+    UNICODE: /[^\u0000-\u00ff]/, // eslint-disable-line no-control-regex
+    WHITESPACE: /\s/g,
 };
 
 /**
@@ -76,7 +76,7 @@ export const PHYSICS_CONSTANTS = {
      * @type {number}
      * @final
      */
-    GRAVITATIONAL_MAGNITUDE: 9.81
+    GRAVITATIONAL_MAGNITUDE: 9.81,
 };
 
 /**

@@ -3,9 +3,7 @@
     "name": "General Aviation Romania",
     "callsign": {
         "name": "Yankee Romeo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

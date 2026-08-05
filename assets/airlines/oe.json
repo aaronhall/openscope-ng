@@ -3,9 +3,7 @@
     "name": "General Aviation Austria",
     "callsign": {
         "name": "Oscar Echo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

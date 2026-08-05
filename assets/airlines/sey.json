@@ -3,16 +3,10 @@
     "name": "Air Seychelles",
     "callsign": {
         "name": "Seychelles",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 2]
-        ],
-        "a320": [
-            ["A320", 2]
-        ]
+        "default": [["A320", 2]],
+        "a320": [["A320", 2]]
     }
 }

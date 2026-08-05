@@ -3,9 +3,7 @@
     "name": "General Aviation Mozambique",
     "callsign": {
         "name": "Charlie Niner",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

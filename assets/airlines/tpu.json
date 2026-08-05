@@ -3,9 +3,7 @@
     "name": "Avianca Perú",
     "callsign": {
         "name": "Avianca Perú",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -17,8 +15,6 @@
             ["A319", 1],
             ["A320", 2]
         ],
-        "long": [
-            ["A332", 1]
-        ]
+        "long": [["A332", 1]]
     }
 }

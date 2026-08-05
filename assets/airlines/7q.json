@@ -3,9 +3,7 @@
     "name": "General Aviation Malawi",
     "callsign": {
         "name": "Seven Quebec",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

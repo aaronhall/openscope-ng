@@ -3,11 +3,7 @@
     "name": "AZAL Azerbaijan Airlines",
     "callsign": {
         "name": "Azal",
-        "callsignFormats": [
-            "#",
-            "##",
-            "###"
-        ]
+        "callsignFormats": ["#", "##", "###"]
     },
     "fleets": {
         "default": [
@@ -19,15 +15,11 @@
             ["B763", 3],
             ["B788", 2]
         ],
-        "b763": [
+        "b763": [["B763", 3]],
+        "long": [
+            ["B788", 2],
             ["B763", 3]
         ],
-        "long": [
-            ["B788",  2],
-            ["B763",  3]
-        ],
-        "jfk": [
-            ["B788",  2]
-        ]
+        "jfk": [["B788", 2]]
     }
 }

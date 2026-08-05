@@ -3,9 +3,7 @@
     "name": "General Aviation Estonia",
     "callsign": {
         "name": "Echo Sierra",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

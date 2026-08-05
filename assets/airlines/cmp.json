@@ -3,9 +3,7 @@
     "name": "Copa Airlines",
     "callsign": {
         "name": "Copa",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -13,8 +11,6 @@
             ["B738", 68],
             ["E190", 12]
         ],
-        "b738": [
-            ["B738", 68]
-        ]
+        "b738": [["B738", 68]]
     }
 }

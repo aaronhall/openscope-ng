@@ -3,9 +3,7 @@
     "name": "Cebu Pacific",
     "callsign": {
         "name": "Cebu Air",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -14,8 +12,6 @@
             ["A333", 8],
             ["AT72", 17]
         ],
-        "a333": [
-            ["A333", 8]
-        ]
+        "a333": [["A333", 8]]
     }
 }

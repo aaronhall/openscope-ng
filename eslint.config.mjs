@@ -10,15 +10,17 @@ export default [
             sourceType: 'module',
             globals: {
                 ...globals.browser,
-                ...globals.node
-            }
+                ...globals.node,
+                prop: 'readonly',
+                zlsa: 'readonly',
+            },
         },
         rules: {
-            'no-unused-vars': 'warn'
-        }
+            'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+        },
     },
     {
-        ignores: ['public/**', 'coverage/**', 'test/**', '*.config.js']
+        ignores: ['public/**', 'coverage/**', 'test/**', '*.config.js'],
     },
-    prettier
+    prettier,
 ];

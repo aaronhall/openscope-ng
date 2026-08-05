@@ -1,7 +1,7 @@
 import DynamicPositionModel from './DynamicPositionModel';
 import {
     DEFAULT_SCREEN_POSITION,
-    RELATIVE_POSITION_OFFSET_INDEX
+    RELATIVE_POSITION_OFFSET_INDEX,
 } from '../constants/positionConstants';
 
 /**
@@ -96,7 +96,9 @@ export default class StaticPositionModel extends DynamicPositionModel {
      * @method setCoordinates
      */
     setCoordinates(...args) {
-        console.warn(`Unexpected attempt to modify a StaticPositionModel, via .setCoordinates(${args});`);
+        console.warn(
+            `Unexpected attempt to modify a StaticPositionModel, via .setCoordinates(${args});`
+        );
         // do nothing, because `StaticPositionModel`s cannot be changed
     }
 

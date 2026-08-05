@@ -3,13 +3,9 @@
     "name": "AeroLogic",
     "callsign": {
         "name": "German Cargo",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["B772", 10]
-        ]
+        "default": [["B772", 10]]
     }
 }

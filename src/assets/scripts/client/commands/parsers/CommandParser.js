@@ -6,7 +6,7 @@ import _tail from 'lodash/tail';
 import AircraftCommandModel from '../aircraftCommand/AircraftCommandModel';
 import {
     AIRCRAFT_COMMAND_MAP,
-    findCommandNameWithAlias
+    findCommandNameWithAlias,
 } from '../aircraftCommand/aircraftCommandMap';
 import { PARSED_COMMAND_NAME } from '../../constants/inputConstants';
 import ParsedCommand from '../ParsedCommand';
@@ -67,8 +67,10 @@ export default class CommandParser {
     constructor(rawCommandWithArgs = '') {
         if (!_isString(rawCommandWithArgs)) {
             // istanbul ignore next
-            // eslint-disable-next-line max-len
-            throw new TypeError(`Invalid parameter. AircraftCommandParser expects a string but received ${typeof rawCommandWithArgs}`);
+
+            throw new TypeError(
+                `Invalid parameter. AircraftCommandParser expects a string but received ${typeof rawCommandWithArgs}`
+            );
         }
 
         /**
@@ -300,6 +302,8 @@ export default class CommandParser {
             return false;
         }
 
-        return command.isSystemCommand && callsignOrSystemCommandName !== PARSED_COMMAND_NAME.TRANSMIT;
+        return (
+            command.isSystemCommand && callsignOrSystemCommandName !== PARSED_COMMAND_NAME.TRANSMIT
+        );
     }
 }

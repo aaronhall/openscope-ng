@@ -3,9 +3,7 @@
     "name": "General Aviation Poland",
     "callsign": {
         "name": "Sierra Papa",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

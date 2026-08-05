@@ -3,9 +3,7 @@
     "name": "ASL Airlines Ireland",
     "callsign": {
         "name": "Contract",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
@@ -18,15 +16,9 @@
             ["B734", 7],
             ["B752", 7]
         ],
-        "dhl": [
-            ["A306", 4]
-        ],
-        "hongKong": [
-            ["A333", 2]
-        ],
-        "fedEx": [
-            ["A306", 4]
-        ],
+        "dhl": [["A306", 4]],
+        "hongKong": [["A333", 2]],
+        "fedEx": [["A306", 4]],
         "aerLingus": [
             ["B733", 1],
             ["B752", 7]

@@ -3,11 +3,7 @@
     "name": "WestJet",
     "callsign": {
         "name": "WestJet",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["####", "###", "##"]
     },
     "fleets": {
         "default": [
@@ -23,8 +19,8 @@
             ["B789", 3]
         ],
         "jfk": [
-            ["B737",  1],
-            ["B738",  1]
+            ["B737", 1],
+            ["B738", 1]
         ],
         "b73x": [
             ["B736", 13],

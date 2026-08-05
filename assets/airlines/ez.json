@@ -3,9 +3,7 @@
     "name": "General Aviation Turkmenistan",
     "callsign": {
         "name": "Echo Zulu",
-        "callsignFormats": [
-            "@###"
-        ]
+        "callsignFormats": ["@###"]
     },
     "fleets": {
         "default": [

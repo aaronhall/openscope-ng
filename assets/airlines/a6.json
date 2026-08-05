@@ -3,9 +3,7 @@
     "name": "General Aviation United Arab Emirates",
     "callsign": {
         "name": "Alpha Six",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

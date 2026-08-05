@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-module.exports = function(gulp, config) {
+module.exports = function (gulp, config) {
     const path = require('path');
     const browserify = require('browserify');
     const babelify = require('babelify');
@@ -18,23 +18,31 @@ module.exports = function(gulp, config) {
             entries: OPTIONS.FILE.JS_ENTRY_CLIENT,
             extensions: ['.js'],
             debug: true,
-            transform: [babelify]
+            transform: [babelify],
         });
 
-        return b.bundle()
+        return b
+            .bundle()
             .pipe(source('bundle.js'))
             .pipe(buffer())
             .pipe(sourcemaps.init({ loadMaps: true }))
-            .pipe(gulpif(cli.argv.isProd, uglify({
-                mangle: false
-            })))
+            .pipe(
+                gulpif(
+                    cli.argv.isProd,
+                    uglify({
+                        mangle: false,
+                    })
+                )
+            )
             .pipe(rename({ suffix: '.min' }))
             .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(OPTIONS.DIR.DIST_SCRIPTS_CLIENT));
-    }
+    };
 
-    const buildServer = () => gulp.src('**/*.js', {cwd: OPTIONS.DIR.SRC_SCRIPTS_SERVER})
-        .pipe(gulp.dest(OPTIONS.DIR.DIST_SCRIPTS_SERVER));
+    const buildServer = () =>
+        gulp
+            .src('**/*.js', { cwd: OPTIONS.DIR.SRC_SCRIPTS_SERVER })
+            .pipe(gulp.dest(OPTIONS.DIR.DIST_SCRIPTS_SERVER));
 
     gulp.task(OPTIONS.TASKS.BUILD.SCRIPTS, gulp.series(buildScripts));
     gulp.task(OPTIONS.TASKS.BUILD.SERVER, gulp.series(buildServer));

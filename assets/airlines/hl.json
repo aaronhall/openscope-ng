@@ -3,9 +3,7 @@
     "name": "General Aviation South Korea",
     "callsign": {
         "name": "Hotel Lima",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

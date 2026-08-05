@@ -3,9 +3,7 @@
     "name": "EgyptAir",
     "callsign": {
         "name": "Egyptair",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -30,14 +28,8 @@
             ["B77W", 6],
             ["B789", 6]
         ],
-        "a333": [
-            ["A333", 4]
-        ],
-        "b738": [
-            ["B738", 29]
-        ],
-        "jfk": [
-            ["B77W", 6 ]
-        ]
+        "a333": [["A333", 4]],
+        "b738": [["B738", 29]],
+        "jfk": [["B77W", 6]]
     }
 }

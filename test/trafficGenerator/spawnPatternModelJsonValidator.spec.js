@@ -1,9 +1,6 @@
 import { test, expect, vi } from 'vitest';
 import { spawnPatternModelJsonValidator } from '../../src/assets/scripts/client/trafficGenerator/spawnPatternModelJsonValidator';
-import {
-    ARRIVAL_PATTERN_MOCK,
-    DEPARTURE_PATTERN_MOCK
-} from './_mocks/spawnPatternMocks';
+import { ARRIVAL_PATTERN_MOCK, DEPARTURE_PATTERN_MOCK } from './_mocks/spawnPatternMocks';
 
 const invalidSpawnPattern = {
     route: 'KLAS.BOACH6.HEC',
@@ -12,7 +9,7 @@ const invalidSpawnPattern = {
     rate: 5,
     speed: null,
     threeve: 42,
-    42: 'threeve'
+    42: 'threeve',
 };
 
 test('spawnPatternModelJsonValidator() retruns true when passed a valid arrival spawnPattern ', () => {

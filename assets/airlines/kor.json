@@ -3,9 +3,7 @@
     "name": "Air Koryo",
     "callsign": {
         "name": "Air Koryo",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

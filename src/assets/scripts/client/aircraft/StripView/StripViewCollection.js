@@ -41,9 +41,7 @@ export default class StripViewCollection extends BaseCollection {
      * @for StripViewCollection
      * @method _init
      */
-    _init() {
-
-    }
+    _init() {}
 
     /**
      * Reset the instance

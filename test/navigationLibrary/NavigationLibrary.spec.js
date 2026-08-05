@@ -24,7 +24,7 @@ test('._holdCollection() is populated correctly', () => {
         inboundHeading: Math.PI,
         turnDirection: 'right',
         legLength: '4nm',
-        speedMaximum: 230
+        speedMaximum: 230,
     };
 
     expect(bakkrHold).toEqual(expectedResult);

@@ -5,7 +5,7 @@ import {
     isWithinEpsilon,
     calculateMiddle,
     clamp,
-    generateRandomOctalWithLength
+    generateRandomOctalWithLength,
 } from '../../src/assets/scripts/client/math/core';
 
 test('.isWithin() returns true if value is within (inclusive) two given values', () => {
@@ -22,20 +22,38 @@ test('.isWithin() returns true if value is within (inclusive) two given values',
         // should pass
         limit1 = number - Number.EPSILON;
         limit2 = number + Number.EPSILON;
-        expect(isWithin(number, limit1, limit2), `${number} should be within ${limit1} and ${limit2}`).toBe(true);
-        expect(isWithin(number, limit2, limit1), `${number} should be within ${limit2} and ${limit1}`).toBe(true);
+        expect(
+            isWithin(number, limit1, limit2),
+            `${number} should be within ${limit1} and ${limit2}`
+        ).toBe(true);
+        expect(
+            isWithin(number, limit2, limit1),
+            `${number} should be within ${limit2} and ${limit1}`
+        ).toBe(true);
 
         // should fail
         limit1 = number - Number.EPSILON;
         limit2 = number - 2 * Number.EPSILON;
-        expect(isWithin(number, limit1, limit2), `${number} should NOT be within ${limit1} and ${limit2}`).toBe(false);
-        expect(isWithin(number, limit2, limit1), `${number} should NOT be within ${limit2} and ${limit1}`).toBe(false);
+        expect(
+            isWithin(number, limit1, limit2),
+            `${number} should NOT be within ${limit1} and ${limit2}`
+        ).toBe(false);
+        expect(
+            isWithin(number, limit2, limit1),
+            `${number} should NOT be within ${limit2} and ${limit1}`
+        ).toBe(false);
 
         // should fail too
         limit1 = number + Number.EPSILON;
         limit2 = number + 2 * Number.EPSILON;
-        expect(isWithin(number, limit1, limit2), `${number} should NOT be within ${limit1} and ${limit2}`).toBe(false);
-        expect(isWithin(number, limit2, limit1), `${number} should NOT be within ${limit2} and ${limit1}`).toBe(false);
+        expect(
+            isWithin(number, limit1, limit2),
+            `${number} should NOT be within ${limit1} and ${limit2}`
+        ).toBe(false);
+        expect(
+            isWithin(number, limit2, limit1),
+            `${number} should NOT be within ${limit2} and ${limit1}`
+        ).toBe(false);
     }
 });
 
@@ -52,16 +70,31 @@ test('.isWithinEpsilon() returns true if value is within EPSILON of an expected 
         // should pass
         numberVariant1 = number - Number.EPSILON;
         numberVariant2 = number + Number.EPSILON;
-        expect(isWithinEpsilon(number, number), `${number} should be within EPSILON of ${number}`).toBe(true);
-        expect(isWithinEpsilon(numberVariant1, number), `${numberVariant1} should be within EPSILON of ${number}`).toBe(true);
-        expect(isWithinEpsilon(numberVariant2, number), `${numberVariant2} should be within EPSILON of ${number}`).toBe(true);
+        expect(
+            isWithinEpsilon(number, number),
+            `${number} should be within EPSILON of ${number}`
+        ).toBe(true);
+        expect(
+            isWithinEpsilon(numberVariant1, number),
+            `${numberVariant1} should be within EPSILON of ${number}`
+        ).toBe(true);
+        expect(
+            isWithinEpsilon(numberVariant2, number),
+            `${numberVariant2} should be within EPSILON of ${number}`
+        ).toBe(true);
 
         // test the numbers plus and minus *2 times* EPSILON
         // should fail
         numberVariant1 = number - 2 * Number.EPSILON;
         numberVariant2 = number + 2 * Number.EPSILON;
-        expect(isWithinEpsilon(numberVariant1, number), `${numberVariant1} should NOT be within EPSILON of ${number}`).toBe(false);
-        expect(isWithinEpsilon(numberVariant2, number), `${numberVariant2} should NOT be within EPSILON of ${number}`).toBe(false);
+        expect(
+            isWithinEpsilon(numberVariant1, number),
+            `${numberVariant1} should NOT be within EPSILON of ${number}`
+        ).toBe(false);
+        expect(
+            isWithinEpsilon(numberVariant2, number),
+            `${numberVariant2} should NOT be within EPSILON of ${number}`
+        ).toBe(false);
     }
 });
 
@@ -96,7 +129,6 @@ test('.generateRandomOctalWithLength() returns a single digit number when called
 
     expect(result.toString().length === 1).toBe(true);
 });
-
 
 test('.generateRandomOctalWithLength() returns a number of a desired length', () => {
     const result = generateRandomOctalWithLength(4);

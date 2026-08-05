@@ -34,5 +34,5 @@ export const COLOR = {
     WHITE_07: 'rgba(255, 255, 255, 0.7)',
     WHITE_08: 'rgba(255, 255, 255, 0.8)',
     WHITE_09: 'rgba(255, 255, 255, 0.9)',
-    WHITE: 'rgba(255, 255, 255, 1.0)'
+    WHITE: 'rgba(255, 255, 255, 1.0)',
 };

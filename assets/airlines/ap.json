@@ -3,9 +3,7 @@
     "name": "General Aviation Pakistan",
     "callsign": {
         "name": "Alpha Papa",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

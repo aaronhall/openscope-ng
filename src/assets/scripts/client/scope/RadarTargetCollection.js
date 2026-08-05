@@ -38,8 +38,7 @@ export default class RadarTargetCollection extends BaseCollection {
          */
         this._theme = theme;
 
-        this._init()
-            .enable();
+        this._init().enable();
     }
 
     /**
@@ -66,22 +65,22 @@ export default class RadarTargetCollection extends BaseCollection {
     }
 
     /**
-    * Activate event handlers
-    *
-    * @for RadarTargetModel
-    * @method enable
-    */
+     * Activate event handlers
+     *
+     * @for RadarTargetModel
+     * @method enable
+     */
     enable() {
         this._eventBus.on(EVENT.ADD_AIRCRAFT, this.addRadarTargetModelForAircraftModel);
         this._eventBus.on(EVENT.SET_THEME, this._setTheme);
     }
 
     /**
-    * Deactivate event handlers
-    *
-    * @for RadarTargetModel
-    * @method disable
-    */
+     * Deactivate event handlers
+     *
+     * @for RadarTargetModel
+     * @method disable
+     */
     disable() {
         this._eventBus.off(EVENT.ADD_AIRCRAFT, this.addRadarTargetModelForAircraftModel);
         this._eventBus.off(EVENT.SET_THEME, this._setTheme);
@@ -96,7 +95,9 @@ export default class RadarTargetCollection extends BaseCollection {
      */
     addRadarTargetModel(radarTargetModel) {
         if (!(radarTargetModel instanceof RadarTargetModel)) {
-            throw new TypeError(`Expected instance of RadarTargetModel but received '${radarTargetModel}'`);
+            throw new TypeError(
+                `Expected instance of RadarTargetModel but received '${radarTargetModel}'`
+            );
         }
 
         this._items.push(radarTargetModel);
@@ -132,7 +133,9 @@ export default class RadarTargetCollection extends BaseCollection {
         );
 
         if (results.length > 1) {
-            throw new Error(`Unable to get radar target because ${results.length} matching aircraft were found`);
+            throw new Error(
+                `Unable to get radar target because ${results.length} matching aircraft were found`
+            );
         }
 
         const radarTargetModel = results[0];
@@ -153,8 +156,10 @@ export default class RadarTargetCollection extends BaseCollection {
         // Store variable because `this` within lodash `_filter` has different scope
         const radarTargetModels = this._items;
         const results = _filter(radarTargetModels, ({ aircraftModel }) => {
-            return aircraftModel.transponderCode === aircraftReference ||
-                aircraftModel.callsign === aircraftReference;
+            return (
+                aircraftModel.transponderCode === aircraftReference ||
+                aircraftModel.callsign === aircraftReference
+            );
         });
 
         if (results.length > 1) {
@@ -182,11 +187,11 @@ export default class RadarTargetCollection extends BaseCollection {
     };
 
     /**
-    * Reset all properties to their default values
-    *
-    * @for RadarTargetCollection
-    * @method reset
-    */
+     * Reset all properties to their default values
+     *
+     * @for RadarTargetCollection
+     * @method reset
+     */
     reset() {
         this._items = [];
     }
@@ -227,5 +232,5 @@ export default class RadarTargetCollection extends BaseCollection {
         }
 
         this._theme = THEME[themeName];
-    }
+    };
 }

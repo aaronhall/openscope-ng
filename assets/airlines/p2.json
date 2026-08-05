@@ -3,9 +3,7 @@
     "name": "General Aviation Papua New Guinea",
     "callsign": {
         "name": "Papa Two",
-        "callsignFormats": [
-            "####@@"
-        ]
+        "callsignFormats": ["####@@"]
     },
     "fleets": {
         "default": [

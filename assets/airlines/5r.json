@@ -3,9 +3,7 @@
     "name": "General Aviation Madagascar",
     "callsign": {
         "name": "Five Romeo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

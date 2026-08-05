@@ -3,14 +3,9 @@
     "name": "CAL Cargo Airlines",
     "callsign": {
         "name": "Cal",
-        "callsignFormats": [
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["###", "####"]
     },
     "fleets": {
-        "default": [
-            ["B744", 2]
-        ]
+        "default": [["B744", 2]]
     }
 }

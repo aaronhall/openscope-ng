@@ -3,9 +3,7 @@
     "name": "S7 Airlines",
     "callsign": {
         "name": "Siberian Airlines",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
@@ -18,11 +16,7 @@
             ["B738", 21],
             ["E170", 17]
         ],
-        "a320": [
-            ["A320", 18]
-        ],
-        "b738": [
-            ["B738", 21]
-        ]
+        "a320": [["A320", 18]],
+        "b738": [["B738", 21]]
     }
 }

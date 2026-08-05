@@ -3,20 +3,14 @@
     "name": "Lufthansa Cargo",
     "callsign": {
         "name": "Lufthansa Cargo",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
             ["B772", 5],
             ["MD11", 12]
         ],
-        "eddf25L": [
-            ["MD11", 12]
-        ],
-        "eddf25R": [
-            ["B772", 5]
-        ]
+        "eddf25L": [["MD11", 12]],
+        "eddf25R": [["B772", 5]]
     }
 }

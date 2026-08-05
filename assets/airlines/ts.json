@@ -3,9 +3,7 @@
     "name": "General Aviation Tunisia",
     "callsign": {
         "name": "Tango Sierra",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

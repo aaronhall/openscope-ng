@@ -13,8 +13,8 @@
     },
     "ceiling": 15000,
     "rate": {
-        "climb":      600,
-        "descent":    500,
+        "climb": 600,
+        "descent": 500,
         "accelerate": 4,
         "decelerate": 1
     },
@@ -22,13 +22,13 @@
         "takeoff": 0.505,
         "landing": 0.425
     },
-    "speed":{
-        "min":     53,
+    "speed": {
+        "min": 53,
         "landing": 59,
-        "cruise":  116,
+        "cruise": 116,
         "cruiseM": null,
-        "max":     132,
-        "maxM":    null
+        "max": 132,
+        "maxM": null
     },
     "capability": {
         "ils": true,

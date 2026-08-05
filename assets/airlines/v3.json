@@ -3,9 +3,7 @@
     "name": "General Aviation Belize",
     "callsign": {
         "name": "Victor Three",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

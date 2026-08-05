@@ -11,10 +11,10 @@
     "ctr_radius": 100,
     "ctr_ceiling": 24500,
     "initial_alt": 5000,
-    "position": [-34.832742948940826,-56.02519225301508, "105.0ft"],
+    "position": [-34.832742948940826, -56.02519225301508, "105.0ft"],
     "rangeRings": {
         "enabled": true,
-        "center": [-34.832742948940826,-56.02519225301508],
+        "center": [-34.832742948940826, -56.02519225301508],
         "radius_nm": 5.0
     },
     "has_terrain": true,
@@ -118,16 +118,16 @@
         "ARAPE": ["S31.01667", "W57.37033"],
         "AROMO": ["S33.50050", "W55.04550"],
         "ARTOX": ["S30.70833", "W56.60133"],
-        "ASI"  : ["S34.78950", "W56.26300"],
+        "ASI": ["S34.78950", "W56.26300"],
         "ASIVA": ["S33.84050", "W56.34300"],
         "ASUMA": ["S31.86750", "W54.15533"],
         "ATAMO": ["S34.77800", "W55.93183"],
-        "BGE"  : ["S31.39067", "W54.10967"],
+        "BGE": ["S31.39067", "W54.10967"],
         "BISOK": ["S32.87950", "W56.67800"],
         "BITUS": ["S28.20117", "W57.59033"],
         "BOLAT": ["S33.66367", "W54.01083"],
-        "CA"   : ["S34.78467", "W55.94350"],
-        "CRR"  : ["S34.83267", "W56.02517"],
+        "CA": ["S34.78467", "W55.94350"],
+        "CRR": ["S34.83267", "W56.02517"],
         "CUARA": ["S30.36967", "W56.44967"],
         "DADUT": ["S30.98450", "W54.15000"],
         "DAGUS": ["S35.03800", "W56.12367"],
@@ -138,15 +138,15 @@
         "DEVOT": ["S31.22900", "W52.74050"],
         "DORVO": ["S34.71617", "W57.51717"],
         "DRACA": ["S34.42333", "W56.37417"],
-        "DUR"  : ["S33.35633", "W56.49600"],
+        "DUR": ["S33.35633", "W56.49600"],
         "ELARU": ["S34.75485", "W55.89386"],
         "ENSAS": ["S31.91117", "W57.14700"],
-        "EZE"  : ["S34.82400", "W58.53533"],
+        "EZE": ["S34.82400", "W58.53533"],
         "GAMOT": ["S30.94450", "W55.49367"],
         "GATUS": ["S34.79117", "W56.03133"],
         "GAVOG": ["S34.75917", "W55.10867"],
         "GORIO": ["S33.12967", "W57.02750"],
-        "GUA"  : ["S33.00967", "W58.61417"],
+        "GUA": ["S33.00967", "W58.61417"],
         "ILMUL": ["S32.14550", "W56.47550"],
         "ILPOX": ["S34.72833", "W55.85050"],
         "ILSIM": ["S31.73333", "W56.54217"],
@@ -162,7 +162,7 @@
         "KOVIT": ["S34.84150", "W55.04167"],
         "KUDOG": ["S34.74383", "W57.04450"],
         "KUKEN": ["S34.18283", "W58.21717"],
-        "LDS"  : ["S34.85833", "W55.09167"],
+        "LDS": ["S34.85833", "W55.09167"],
         "LITOS": ["S34.45883", "W54.72617"],
         "LIVUR": ["S34.83900", "W55.03200"],
         "LOBIX": ["S34.80933", "W54.91917"],
@@ -172,13 +172,13 @@
         "LOMUX": ["S34.38383", "W56.29367"],
         "LUCIO": ["S35.05500", "W55.87167"],
         "MASOL": ["S31.11833", "W56.19000"],
-        "MCS"  : ["S30.26667", "W57.63833"],
-        "MDP"  : ["S37.92983", "W57.57650"],
+        "MCS": ["S30.26667", "W57.63833"],
+        "MDP": ["S37.92983", "W57.57650"],
         "MEVIV": ["S31.31083", "W57.26283"],
         "MIDUN": ["S34.81183", "W56.03117"],
         "MIGOT": ["S30.88000", "W56.67833"],
         "MIKIK": ["S34.89167", "W56.11850"],
-        "MLO"  : ["S32.34250", "W54.22200"],
+        "MLO": ["S32.34250", "W54.22200"],
         "MOLBI": ["S34.34717", "W55.50500"],
         "MONSA": ["S34.34883", "W56.18133"],
         "MUDIR": ["S34.75583", "W56.03183"],
@@ -201,12 +201,12 @@
         "PAMUG": ["S30.38633", "W51.96717"],
         "PANUR": ["S34.82883", "W54.99350"],
         "PAPIX": ["S34.41617", "W58.00050"],
-        "PAR"  : ["S31.80833", "W60.48467"],
+        "PAR": ["S31.80833", "W60.48467"],
         "PONPA": ["S33.94033", "W57.31633"],
         "POPKU": ["S28.55567", "W55.64783"],
         "PORLI": ["S31.57200", "W56.00033"],
-        "PTA"  : ["S34.96667", "W57.89783"],
-        "PTS"  : ["S31.71883", "W52.32750"],
+        "PTA": ["S34.96667", "W57.89783"],
+        "PTS": ["S31.71883", "W52.32750"],
         "PULEN": ["S29.24667", "W57.61500"],
         "PUMIL": ["S32.54083", "W56.80550"],
         "PUNKI": ["S34.87433", "W55.01933"],
@@ -227,18 +227,18 @@
         "SIDIT": ["S32.40967", "W52.68367"],
         "SIDUL": ["S30.54900", "W55.17600"],
         "SOLIS": ["S34.34917", "W55.42467"],
-        "STO"  : ["S31.43467", "W57.98417"],
-        "SUAG" : ["S30.39917", "W56.51083"],
-        "SUCA" : ["S34.45133", "W57.76700"],
+        "STO": ["S31.43467", "W57.98417"],
+        "SUAG": ["S30.39917", "W56.51083"],
+        "SUCA": ["S34.45133", "W57.76700"],
         "SUGRA": ["S32.20950", "W58.19000"],
         "SUNGA": ["S34.62417", "W56.03333"],
-        "SUPU" : ["S32.36300", "W58.06633"],
-        "SURV" : ["S30.96950", "W55.47333"],
+        "SUPU": ["S32.36300", "W58.06633"],
+        "SURV": ["S30.96950", "W55.47333"],
         "TELAK": ["S34.34283", "W55.66050"],
         "TESAD": ["S33.65867", "W57.01450"],
         "TILDA": ["S33.63883", "W57.74217"],
         "TINTA": ["S32.93783", "W60.18667"],
-        "TMB"  : ["S31.75033", "W55.92383"],
+        "TMB": ["S31.75033", "W55.92383"],
         "TOGAL": ["S33.52533", "W57.90167"],
         "TOKAM": ["S34.78133", "W56.71550"],
         "TOLEP": ["S32.72800", "W53.08617"],
@@ -2547,7 +2547,7 @@
             ]
         }
     ],
-    "runways":[
+    "runways": [
         {
             "name": ["01", "19"],
             "end": [
@@ -2577,17 +2577,50 @@
         "UL324": ["EZE", "KUKEN", "TOGAL", "ENSAS", "DAYMA", "MIGOT", "ARTOX", "CUARA", "POPKU"],
         "UL405": ["LDS", "LUCIO", "DAGUS", "UGIMI", "PTA", "EZE"],
         "UL417": ["CRR", "NIMBO", "PABOT", "PONPA", "TILDA", "TOGAL", "GUA", "ANRAL"],
-        "UM402": ["CRR", "VUKAS", "ANRUP", "OGLAP", "ILMUL", "ILSIM", "MIGOT", "MUKIB", "SEKLO", "KIMIK"],
+        "UM402": [
+            "CRR",
+            "VUKAS",
+            "ANRUP",
+            "OGLAP",
+            "ILMUL",
+            "ILSIM",
+            "MIGOT",
+            "MUKIB",
+            "SEKLO",
+            "KIMIK"
+        ],
         "UM418": ["IMBAK", "RODOV", "SASKU", "MUKIB", "ARTOX", "UBLAM", "SIDUL"],
         "UM424": ["EZE", "DORVO", "TOKAM", "CRR", "LDS", "RAVEL", "TOLEP", "PTS"],
         "UM534": ["DALAB", "SUGRA", "ENSAS", "LOLIL", "ILSIM", "PORLI", "URURI", "DADUT"],
         "UM540": ["CRR", "MOLBI", "AKPOD", "ILTOG"],
         "UM654": ["EZE", "KUKEN", "TILDA", "PUMIL", "ILMUL", "PORLI", "GAMOT", "SIDUL"],
         "UM661": ["CRR", "TOSIB", "TOLEP", "SIDIT"],
-        "UM792": ["DAMIR", "VUGNI", "MLO", "AROMO", "TELAK", "CRR", "DAGUS", "DARKA", "ROPIS", "MDP"],
+        "UM792": [
+            "DAMIR",
+            "VUGNI",
+            "MLO",
+            "AROMO",
+            "TELAK",
+            "CRR",
+            "DAGUS",
+            "DARKA",
+            "ROPIS",
+            "MDP"
+        ],
         "UN741": ["DADUT", "ISALA", "OGLAP", "DUR", "PONPA", "PAPIX", "EZE"],
         "UN857": ["PTA", "DORVO", "PABOT", "LOMID", "ANRUP", "MLO", "OGRUN", "DEVOT"],
-        "UP526": ["PULEN", "MCS", "SASKU", "DAYMA", "LOLIL", "PUMIL", "DUR", "LOMID", "MONSA", "CRR"],
+        "UP526": [
+            "PULEN",
+            "MCS",
+            "SASKU",
+            "DAYMA",
+            "LOLIL",
+            "PUMIL",
+            "DUR",
+            "LOMID",
+            "MONSA",
+            "CRR"
+        ],
         "W15": ["CRR", "REGOV", "SANDI", "KORBU", "TMB", "SURV"],
         "W16": ["TMB", "MASOL", "SUAG"],
         "W18": ["CRR", "TELAK", "AROMO", "MLO"],
@@ -2605,15 +2638,16 @@
             "name": "Akpod One Bravo",
             "altitude": 5000,
             "rwy": {
-                "SUMU06": [["AKRUT", "A10+"], ["KAMAM", "A80+"]]
+                "SUMU06": [
+                    ["AKRUT", "A10+"],
+                    ["KAMAM", "A80+"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "AKPOD": [["AKPOD", "A250+"]]
             },
-            "draw": [
-                ["AKRUT", "KAMAM", "AKPOD"]
-            ]
+            "draw": [["AKRUT", "KAMAM", "AKPOD"]]
         },
         "CRR1R": {
             "icao": "CRR1R",
@@ -2637,15 +2671,16 @@
             "name": "Dagus One Alpha",
             "altitude": 5000,
             "rwy": {
-                "SUMU06": [["AKRUT", "A10+"], ["RELUS", "A30+|A50-"]]
+                "SUMU06": [
+                    ["AKRUT", "A10+"],
+                    ["RELUS", "A30+|A50-"]
+                ]
             },
             "body": [["DAGUS", "A40+|A60-"]],
             "exitPoints": {
                 "UGIMI": [["UGIMI", "A60+"]]
             },
-            "draw": [
-                ["AKRUT", "RELUS", "DAGUS", "UGIMI"]
-            ]
+            "draw": [["AKRUT", "RELUS", "DAGUS", "UGIMI"]]
         },
         "DAGU1C": {
             "icao": "DAGU1C",
@@ -2659,10 +2694,7 @@
                 "DARKA": ["DARKA"],
                 "UGIMI": ["UGIMI"]
             },
-            "draw": [
-                ["_RWY24CRR03DME", "_CA215006", "DAGUS", "DARKA*"],
-                ["UGIMI*"]
-            ]
+            "draw": [["_RWY24CRR03DME", "_CA215006", "DAGUS", "DARKA*"], ["UGIMI*"]]
         },
         "DAGU1M": {
             "icao": "DAGU1M",
@@ -2676,11 +2708,7 @@
                 "DARKA": ["DARKA"],
                 "UGIMI": ["UGIMI"]
             },
-            "draw": [
-                ["_RWY06CRR03DME", "_CRR209007", "DAGUS"],
-                ["DARKA*"],
-                ["UGIMI*"]
-            ]
+            "draw": [["_RWY06CRR03DME", "_CRR209007", "DAGUS"], ["DARKA*"], ["UGIMI*"]]
         },
         "MONS2M": {
             "icao": "MONS2M",
@@ -2689,12 +2717,36 @@
             "rwy": {
                 "SUMU24": ["^_RWY06CRR03DME", "_RWY06ASI130", "^_ASI130CRR06DME", "_ASI130CRR07DME"]
             },
-            "body": ["_CRR286007", "_CRR295007", "_CRR304007", "_CRR313007", "_CRR317007", "_CRR328007", "_CRR337007", "_CRR346007", "_CRR353007"],
+            "body": [
+                "_CRR286007",
+                "_CRR295007",
+                "_CRR304007",
+                "_CRR313007",
+                "_CRR317007",
+                "_CRR328007",
+                "_CRR337007",
+                "_CRR346007",
+                "_CRR353007"
+            ],
             "exitPoints": {
                 "MONSA": ["MONSA"]
             },
             "draw": [
-                ["_RWY06CRR03DME", "_RWY06ASI130", "_ASI130CRR06DME", "_ASI130CRR07DME", "_CRR286007", "_CRR295007", "_CRR304007", "_CRR313007", "_CRR317007", "_CRR328007", "_CRR337007", "_CRR346007", "_CRR353007"],
+                [
+                    "_RWY06CRR03DME",
+                    "_RWY06ASI130",
+                    "_ASI130CRR06DME",
+                    "_ASI130CRR07DME",
+                    "_CRR286007",
+                    "_CRR295007",
+                    "_CRR304007",
+                    "_CRR313007",
+                    "_CRR317007",
+                    "_CRR328007",
+                    "_CRR337007",
+                    "_CRR346007",
+                    "_CRR353007"
+                ],
                 ["MONSA"]
             ]
         },
@@ -2709,9 +2761,7 @@
             "exitPoints": {
                 "NIMBO": ["NIMBO"]
             },
-            "draw": [
-                ["NIMBO"]
-            ]
+            "draw": [["NIMBO"]]
         }
     },
     "stars": {
@@ -2725,9 +2775,7 @@
             "rwy": {
                 "SUMU06": [["ALDIK", "A30+|S220-"]]
             },
-            "draw": [
-                ["DORVO", "PAFIM", "ALDIK"]
-            ]
+            "draw": [["DORVO", "PAFIM", "ALDIK"]]
         },
         "DARK1C": {
             "icao": "DARK1C",
@@ -2739,9 +2787,7 @@
             "rwy": {
                 "SUMU06": ["DAGUS"]
             },
-            "draw": [
-                ["DARKA", "DAGUS"]
-            ]
+            "draw": [["DARKA", "DAGUS"]]
         },
         "DARK1G": {
             "icao": "DARK1G",
@@ -2753,9 +2799,7 @@
             "rwy": {
                 "SUMU24": ["KEVIS"]
             },
-            "draw": [
-                ["DARKA", "DAGUS", "KEVIS"]
-            ]
+            "draw": [["DARKA", "DAGUS", "KEVIS"]]
         },
         "DRAC1C": {
             "icao": "DRAC1C",
@@ -2767,9 +2811,7 @@
             "rwy": {
                 "SUMU06": ["ASI"]
             },
-            "draw": [
-                ["DRACA", "ASI"]
-            ]
+            "draw": [["DRACA", "ASI"]]
         },
         "DRAC1G": {
             "icao": "DRAC1G",
@@ -2781,9 +2823,7 @@
             "rwy": {
                 "SUMU24": ["KONBI"]
             },
-            "draw": [
-                ["DRACA", "KONBI"]
-            ]
+            "draw": [["DRACA", "KONBI"]]
         },
         "KOSP1C": {
             "icao": "KOSP1C",
@@ -2795,9 +2835,7 @@
             "rwy": {
                 "SUMU06": ["ASI"]
             },
-            "draw": [
-                ["KOSPI", "ASI"]
-            ]
+            "draw": [["KOSPI", "ASI"]]
         },
         "KOSP1G": {
             "icao": "KOSP1G",
@@ -2809,9 +2847,7 @@
             "rwy": {
                 "SUMU24": ["KONBI"]
             },
-            "draw": [
-                ["KOSPI", "ASI", "KONBI"]
-            ]
+            "draw": [["KOSPI", "ASI", "KONBI"]]
         },
         "LDS1C": {
             "icao": "LDS1C",
@@ -2823,9 +2859,7 @@
             "rwy": {
                 "SUMU06": ["DAGUS"]
             },
-            "draw": [
-                ["LDS", "LUCIO", "DAGUS"]
-            ]
+            "draw": [["LDS", "LUCIO", "DAGUS"]]
         },
         "LDS1G": {
             "icao": "LDS1G",
@@ -2837,9 +2871,7 @@
             "rwy": {
                 "SUMU24": ["KEVIS"]
             },
-            "draw": [
-                ["LDS", "KEVIS"]
-            ]
+            "draw": [["LDS", "KEVIS"]]
         },
         "LOMU1C": {
             "icao": "LOMU1C",
@@ -2851,9 +2883,7 @@
             "rwy": {
                 "SUMU06": ["ASI"]
             },
-            "draw": [
-                ["LOMUX", "ASI"]
-            ]
+            "draw": [["LOMUX", "ASI"]]
         },
         "LOMU1G": {
             "icao": "LOMU1G",
@@ -2865,9 +2895,7 @@
             "rwy": {
                 "SUMU24": ["KONBI"]
             },
-            "draw": [
-                ["LOMUX", "KONBI"]
-            ]
+            "draw": [["LOMUX", "KONBI"]]
         },
         "MONS1C": {
             "icao": "MONS1C",
@@ -2879,9 +2907,7 @@
             "rwy": {
                 "SUMU06": ["ASI"]
             },
-            "draw": [
-                ["MONSA", "ASI"]
-            ]
+            "draw": [["MONSA", "ASI"]]
         },
         "MONS1G": {
             "icao": "MONS1G",
@@ -2893,9 +2919,7 @@
             "rwy": {
                 "SUMU24": ["KONBI"]
             },
-            "draw": [
-                ["MONSA", "KONBI"]
-            ]
+            "draw": [["MONSA", "KONBI"]]
         },
         "NIMB1C": {
             "icao": "NIMB1C",
@@ -2907,9 +2931,7 @@
             "rwy": {
                 "SUMU06": ["ASI"]
             },
-            "draw": [
-                ["NIMBO", "ASI"]
-            ]
+            "draw": [["NIMBO", "ASI"]]
         },
         "NIMB1G": {
             "icao": "NIMB1G",
@@ -2921,9 +2943,7 @@
             "rwy": {
                 "SUMU24": ["KONBI"]
             },
-            "draw": [
-                ["NIMBO", "KONBI"]
-            ]
+            "draw": [["NIMBO", "KONBI"]]
         },
         "REGO1C": {
             "icao": "REGO1C",
@@ -2935,9 +2955,7 @@
             "rwy": {
                 "SUMU06": ["ASI"]
             },
-            "draw": [
-                ["REGOV", "ASI"]
-            ]
+            "draw": [["REGOV", "ASI"]]
         },
         "REGO1G": {
             "icao": "REGO1G",
@@ -2949,9 +2967,7 @@
             "rwy": {
                 "SUMU24": ["KONBI"]
             },
-            "draw": [
-                ["REGOV", "KONBI"]
-            ]
+            "draw": [["REGOV", "KONBI"]]
         },
         "TELA1C": {
             "icao": "TELA1C",
@@ -2963,9 +2979,7 @@
             "rwy": {
                 "SUMU06": ["ASI"]
             },
-            "draw": [
-                ["TELAK", "ASI"]
-            ]
+            "draw": [["TELAK", "ASI"]]
         },
         "TELA1G": {
             "icao": "TELA1G",
@@ -2977,9 +2991,7 @@
             "rwy": {
                 "SUMU24": ["KONBI"]
             },
-            "draw": [
-                ["TELAK", "KONBI"]
-            ]
+            "draw": [["TELAK", "KONBI"]]
         },
         "TOKA1A": {
             "icao": "TOKA1A",
@@ -2991,9 +3003,7 @@
             "rwy": {
                 "SUMU06": ["ALDIK"]
             },
-            "draw": [
-                ["TOKAM", "ALDIK"]
-            ]
+            "draw": [["TOKAM", "ALDIK"]]
         },
         "TOKA1C": {
             "icao": "TOKA1C",
@@ -3005,9 +3015,7 @@
             "rwy": {
                 "SUMU06": ["ASI"]
             },
-            "draw": [
-                ["TOKAM", "ASI"]
-            ]
+            "draw": [["TOKAM", "ASI"]]
         },
         "TOKA1G": {
             "icao": "TOKA1G",
@@ -3019,9 +3027,7 @@
             "rwy": {
                 "SUMU24": ["KONBI"]
             },
-            "draw": [
-                ["TOKAM", "ASI", "KONBI"]
-            ]
+            "draw": [["TOKAM", "ASI", "KONBI"]]
         }
     },
     "spawnPatterns": [
@@ -3074,9 +3080,7 @@
             "speed": "",
             "method": "random",
             "rate": 0.23,
-            "airlines": [
-                ["lpe/short", 7]
-            ]
+            "airlines": [["lpe/short", 7]]
         },
         {
             "origin": "SUMU",

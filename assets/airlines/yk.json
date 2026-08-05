@@ -3,9 +3,7 @@
     "name": "General Aviation Syria",
     "callsign": {
         "name": "Yankee Kilo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

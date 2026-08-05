@@ -12,7 +12,7 @@ import {
     RUN_SAY_HEADING_RESULT_NORTH,
     RUN_SAY_HEADING_RESULT_SW,
     SQUAWK_RESPONSE_SUCCESS,
-    SQUAWK_RESPONSE_FAILURE
+    SQUAWK_RESPONSE_FAILURE,
 } from './_mocks/aircraftCommanderMocks';
 
 const sandbox = sinon.createSandbox();
@@ -29,7 +29,10 @@ afterEach(() => {
 });
 
 test('.runSayHeading() returns correct when heading north', () => {
-    const commander = new AircraftCommander(onChangeTransponderCodeFixture, findAircraftByIdFixture);
+    const commander = new AircraftCommander(
+        onChangeTransponderCodeFixture,
+        findAircraftByIdFixture
+    );
     const aircraft = new AircraftModel(AIRCRAFT_MOCK_WITH_NORTH_HEADING);
     const result = commander.runSayHeading(aircraft);
 
@@ -37,7 +40,10 @@ test('.runSayHeading() returns correct when heading north', () => {
 });
 
 test('.runSayHeading() returns correct when heading has two digits', () => {
-    const commander = new AircraftCommander(onChangeTransponderCodeFixture, findAircraftByIdFixture);
+    const commander = new AircraftCommander(
+        onChangeTransponderCodeFixture,
+        findAircraftByIdFixture
+    );
     const aircraft = new AircraftModel(AIRCRAFT_MOCK_WITH_NE_HEADING);
     const result = commander.runSayHeading(aircraft);
 
@@ -45,7 +51,10 @@ test('.runSayHeading() returns correct when heading has two digits', () => {
 });
 
 test('.runSayHeading() returns correct when heading is positive', () => {
-    const commander = new AircraftCommander(onChangeTransponderCodeFixture, findAircraftByIdFixture);
+    const commander = new AircraftCommander(
+        onChangeTransponderCodeFixture,
+        findAircraftByIdFixture
+    );
     const aircraft = new AircraftModel(AIRCRAFT_MOCK_WITH_POSITIVE_SW_HEADING);
     const result = commander.runSayHeading(aircraft);
 
@@ -53,7 +62,10 @@ test('.runSayHeading() returns correct when heading is positive', () => {
 });
 
 test('.runSayHeading() returns correct when heading is negative', () => {
-    const commander = new AircraftCommander(onChangeTransponderCodeFixture, findAircraftByIdFixture);
+    const commander = new AircraftCommander(
+        onChangeTransponderCodeFixture,
+        findAircraftByIdFixture
+    );
     const aircraft = new AircraftModel(AIRCRAFT_MOCK_WITH_NEGATIVE_SW_HEADING);
     const result = commander.runSayHeading(aircraft);
 
@@ -61,7 +73,10 @@ test('.runSayHeading() returns correct when heading is negative', () => {
 });
 
 test('.runSquawk() returns a success response when _onChangeTransponderCode() succeeds', () => {
-    const commander = new AircraftCommander(onChangeTransponderCodeFixture, findAircraftByIdFixture);
+    const commander = new AircraftCommander(
+        onChangeTransponderCodeFixture,
+        findAircraftByIdFixture
+    );
     const aircraft = new AircraftModel(AIRCRAFT_MOCK_BASE);
     const result = commander.runSquawk(aircraft, ['3377']);
 
@@ -69,7 +84,10 @@ test('.runSquawk() returns a success response when _onChangeTransponderCode() su
 });
 
 test('.runSquawk() returns a failure response when _onChangeTransponderCode() fails', () => {
-    const commander = new AircraftCommander(onChangeTransponderCodeFixture, findAircraftByIdFixture);
+    const commander = new AircraftCommander(
+        onChangeTransponderCodeFixture,
+        findAircraftByIdFixture
+    );
     const aircraft = new AircraftModel(AIRCRAFT_MOCK_BASE);
 
     sandbox.stub(commander, '_onChangeTransponderCode').returns(false);

@@ -3,9 +3,7 @@
     "name": "Star Air",
     "callsign": {
         "name": "White Star",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
@@ -16,8 +14,6 @@
             ["B762", 11],
             ["B763", 1]
         ],
-        "passenger": [
-            ["B763", 2]
-        ]
+        "passenger": [["B763", 2]]
     }
 }

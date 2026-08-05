@@ -3,9 +3,7 @@
     "name": "General Aviation British Overseas Territories",
     "callsign": {
         "name": "Victor Quebec",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

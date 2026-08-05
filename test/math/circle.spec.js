@@ -1,9 +1,6 @@
 import { test, expect, vi } from 'vitest';
 
-import {
-    tau,
-    distanceToPoint
-} from '../../src/assets/scripts/client/math/circle';
+import { tau, distanceToPoint } from '../../src/assets/scripts/client/math/circle';
 
 test('.tau() returns PI * 2', () => {
     const result = tau();

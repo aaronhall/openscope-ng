@@ -3,10 +3,7 @@
     "name": "China Southern Airlines",
     "callsign": {
         "name": "China Southern",
-        "callsignFormats": [
-            "####",
-            "###"
-        ]
+        "callsignFormats": ["####", "###"]
     },
     "fleets": {
         "default": [
@@ -42,11 +39,7 @@
             ["B744", 2],
             ["B77L", 12]
         ],
-        "a333": [
-            ["A333", 32]
-        ],
-        "jfk": [
-            ["B77W",  10]
-        ]
+        "a333": [["A333", 32]],
+        "jfk": [["B77W", 10]]
     }
 }

@@ -8,8 +8,11 @@ import StaticPositionModel from './StaticPositionModel';
  * @return {StaticPositionModel}
  */
 export const convertDynamicPositionToStatic = (dynamicPositionModel) => {
-    const staticPositionModel = new StaticPositionModel(dynamicPositionModel.gps,
-        dynamicPositionModel.referencePosition, dynamicPositionModel.magneticNorth);
+    const staticPositionModel = new StaticPositionModel(
+        dynamicPositionModel.gps,
+        dynamicPositionModel.referencePosition,
+        dynamicPositionModel.magneticNorth
+    );
 
     return staticPositionModel;
 };

@@ -24,14 +24,18 @@ export default class RunwayCollection extends BaseCollection {
         super();
 
         if (_isNil(runwayJson) || _isNil(airportPositionModel)) {
-            throw new TypeError('Invalid parameter(s) passed to RunwayCollection constructor. ' +
-                'Expected runwayJson and airportPositionModel to be defined, ' +
-                `but received ${typeof runwayJson} and ${typeof airportPositionModel}`);
+            throw new TypeError(
+                'Invalid parameter(s) passed to RunwayCollection constructor. ' +
+                    'Expected runwayJson and airportPositionModel to be defined, ' +
+                    `but received ${typeof runwayJson} and ${typeof airportPositionModel}`
+            );
         }
 
         if (isEmptyOrNotArray(runwayJson)) {
-            throw new TypeError('Invalid runwayJson passed to RunwayCollection constructor. ' +
-                `Expected a non-empty array, but received ${typeof runwayJson}`);
+            throw new TypeError(
+                'Invalid runwayJson passed to RunwayCollection constructor. ' +
+                    `Expected a non-empty array, but received ${typeof runwayJson}`
+            );
         }
 
         /**
@@ -178,7 +182,9 @@ export default class RunwayCollection extends BaseCollection {
      * @return {boolean}
      */
     getRunwayRelationshipForRunwayNames(primaryRunwayName, comparatorRunwayName) {
-        return this._runwayRelationships[primaryRunwayName.toUpperCase()][comparatorRunwayName.toUpperCase()];
+        return this._runwayRelationships[primaryRunwayName.toUpperCase()][
+            comparatorRunwayName.toUpperCase()
+        ];
     }
 
     /**
@@ -251,10 +257,8 @@ export default class RunwayCollection extends BaseCollection {
             const comparatorRunway = this._items[i];
 
             if (runwayModel.name !== comparatorRunway.name) {
-                this._runwayRelationships[runwayModel.name][comparatorRunway.name] = new RunwayRelationshipModel(
-                    runwayModel,
-                    comparatorRunway
-                );
+                this._runwayRelationships[runwayModel.name][comparatorRunway.name] =
+                    new RunwayRelationshipModel(runwayModel, comparatorRunway);
             }
         }
     }

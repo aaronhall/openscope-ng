@@ -3,9 +3,7 @@
     "name": "General Aviation Armenia",
     "callsign": {
         "name": "Echo Kilo",
-        "callsignFormats": [
-            "#####"
-        ]
+        "callsignFormats": ["#####"]
     },
     "fleets": {
         "default": [

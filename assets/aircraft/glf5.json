@@ -19,10 +19,10 @@
         "decelerate": 5
     },
     "runway": {
-        "takeoff": 1.570,
-        "landing": 0.880
+        "takeoff": 1.57,
+        "landing": 0.88
     },
-    "speed":{
+    "speed": {
         "min": 120,
         "landing": 140,
         "cruise": 459,

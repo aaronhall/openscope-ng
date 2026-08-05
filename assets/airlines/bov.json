@@ -3,14 +3,10 @@
     "name": "Boliviana de Aviación",
     "callsign": {
         "name": "Boliviana",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "long": [
-            ["B763", 3]
-        ],
+        "long": [["B763", 3]],
         "default": [
             ["B733", 13],
             ["B737", 4],

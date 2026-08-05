@@ -4,7 +4,7 @@ const ENV_NAME = {
     DEV: 'isDev',
     PROD: 'isProd',
     TEST: 'isTest',
-    STAGE: 'isStage'
+    STAGE: 'isStage',
 };
 
 // using aliases to map flags to expressive names for use in boolean logic
@@ -15,22 +15,22 @@ const cli = yargs
     .option('dev', {
         alias: 'isDev',
         default: true,
-        describe: 'Development mode.'
+        describe: 'Development mode.',
     })
     .option('stage', {
         alias: 'isStage',
         default: false,
-        describe: 'Staging mode.'
+        describe: 'Staging mode.',
     })
     .option('prod', {
         alias: 'isProd',
         default: false,
-        describe: 'Production mode.'
+        describe: 'Production mode.',
     })
     .option('test', {
         alias: 'isTest',
         default: false,
-        describe: 'Test mode.'
+        describe: 'Test mode.',
     })
 
     // CLI helpers
@@ -68,5 +68,5 @@ if (argv.isProd) {
 module.exports = {
     argv,
     ENV_NAME,
-    pkg: require('../package.json')
+    pkg: require('../package.json'),
 };

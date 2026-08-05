@@ -93,7 +93,7 @@ export const CLASSNAMES = {
     TOGGLE_TUTORIAL: 'toggle-tutorial',
     TOGGLE_VIDEO_MAP: 'toggle-video-map',
     WARN: 'warn',
-    WARNING_BUTTON: 'warning-button'
+    WARNING_BUTTON: 'warning-button',
 };
 
 /**
@@ -123,7 +123,7 @@ export const IDS = {
     TUTORIAL: 'tutorial',
     GITHUB_EXTERNAL_LINK: 'js-github-external-link',
     SCORE: 'score',
-    SIDEBAR: 'sidebar'
+    SIDEBAR: 'sidebar',
 };
 
 /**
@@ -160,7 +160,7 @@ const buildSelectorsFromIds = () => {
  */
 const DOM_SELECTORS = {
     ...buildSelectorsFromClassnames(),
-    ...buildSelectorsFromIds()
+    ...buildSelectorsFromIds(),
 };
 
 /**
@@ -175,5 +175,5 @@ const DOM_SELECTORS = {
 export const SELECTORS = {
     CLASSNAMES,
     IDS,
-    DOM_SELECTORS
+    DOM_SELECTORS,
 };

@@ -3,9 +3,7 @@
     "name": "General Aviation Colombia",
     "callsign": {
         "name": "Hotel Kilo",
-        "callsignFormats": [
-            "####@"
-        ]
+        "callsignFormats": ["####@"]
     },
     "fleets": {
         "default": [

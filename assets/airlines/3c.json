@@ -3,9 +3,7 @@
     "name": "General Aviation Equatorial Guinea",
     "callsign": {
         "name": "Three Charlie",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

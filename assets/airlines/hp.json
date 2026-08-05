@@ -3,9 +3,7 @@
     "name": "General Aviation Panama",
     "callsign": {
         "name": "Hotel Papa",
-        "callsignFormats": [
-            "####@@"
-        ]
+        "callsignFormats": ["####@@"]
     },
     "fleets": {
         "default": [

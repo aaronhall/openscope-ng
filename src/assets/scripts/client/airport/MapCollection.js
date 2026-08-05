@@ -26,25 +26,38 @@ export default class MapCollection extends BaseCollection {
     constructor(mapJson, defaultMaps, airportPositionModel, magneticNorth) {
         super();
 
-        if (_isNil(mapJson) || _isNil(defaultMaps) || _isNil(airportPositionModel) || !_isNumber(magneticNorth)) {
-            throw new TypeError('Invalid parameter(s) passed to MapCollection constructor. ' +
-                'Expected mapJson, defaultMaps, airportPositionModel and magneticNorth to be defined, but received ' +
-                `${typeof mapJson}, ${typeof defaultMaps}, ${typeof airportPositionModel} and ${typeof magneticNorth}`);
+        if (
+            _isNil(mapJson) ||
+            _isNil(defaultMaps) ||
+            _isNil(airportPositionModel) ||
+            !_isNumber(magneticNorth)
+        ) {
+            throw new TypeError(
+                'Invalid parameter(s) passed to MapCollection constructor. ' +
+                    'Expected mapJson, defaultMaps, airportPositionModel and magneticNorth to be defined, but received ' +
+                    `${typeof mapJson}, ${typeof defaultMaps}, ${typeof airportPositionModel} and ${typeof magneticNorth}`
+            );
         }
 
         if (isEmptyOrNotArray(mapJson)) {
-            throw new TypeError('Invalid mapJson passed to MapCollection constructor. ' +
-                `Expected a non-empty array, but received ${typeof mapJson}`);
+            throw new TypeError(
+                'Invalid mapJson passed to MapCollection constructor. ' +
+                    `Expected a non-empty array, but received ${typeof mapJson}`
+            );
         }
 
         if (isEmptyOrNotArray(defaultMaps)) {
-            throw new TypeError('Invalid defaultMaps passed to MapCollection constructor. ' +
-                `Expected a non-empty array, but received ${typeof defaultMaps}`);
+            throw new TypeError(
+                'Invalid defaultMaps passed to MapCollection constructor. ' +
+                    `Expected a non-empty array, but received ${typeof defaultMaps}`
+            );
         }
 
         if (!(airportPositionModel instanceof StaticPositionModel)) {
-            throw new TypeError('Invalid airportPositionModel passed to MapCollection constructor. ' +
-                `Expected instance of StaticPositionModel, but received ${typeof airportPositionModel}`);
+            throw new TypeError(
+                'Invalid airportPositionModel passed to MapCollection constructor. ' +
+                    `Expected instance of StaticPositionModel, but received ${typeof airportPositionModel}`
+            );
         }
 
         /**
@@ -101,7 +114,12 @@ export default class MapCollection extends BaseCollection {
      * @param magneticNorth {number}
      */
     _init(mapJson, defaultMaps, airportPositionModel, magneticNorth) {
-        this._items = this._buildMapModels(mapJson, defaultMaps, airportPositionModel, magneticNorth);
+        this._items = this._buildMapModels(
+            mapJson,
+            defaultMaps,
+            airportPositionModel,
+            magneticNorth
+        );
     }
 
     // ------------------------------ PUBLIC ------------------------------
@@ -119,10 +137,7 @@ export default class MapCollection extends BaseCollection {
                 return sum;
             }
 
-            return [
-                ...map.lines,
-                ...sum
-            ];
+            return [...map.lines, ...sum];
         }, []);
     }
 
@@ -139,10 +154,7 @@ export default class MapCollection extends BaseCollection {
                 return sum;
             }
 
-            return [
-                ...sum,
-                map.name
-            ];
+            return [...sum, map.name];
         }, []);
     }
 

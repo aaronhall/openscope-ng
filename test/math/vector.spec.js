@@ -7,7 +7,7 @@ import {
     vectorize2dFromDegrees,
     vlen,
     vradial,
-    vsub
+    vsub,
 } from '../../src/assets/scripts/client/math/vector';
 import { airportModelFixture } from '../fixtures/airportFixtures';
 
@@ -16,27 +16,33 @@ test('.vectorize2dFromRadians() returns the 2D unit vector for a heading in radi
     let message;
 
     // test the four cardinal points
-    const test_4_cardinal_points = [{
-        // north (0 degree)
-        angle: 0,
-        expectedResult: [0, 1]
-    }, {
-        // east
-        angle: 0.5 * Math.PI,
-        expectedResult: [1, 0]
-    }, {
-        // south
-        angle: Math.PI,
-        expectedResult: [0, -1]
-    }, {
-        // west
-        angle: 1.5 * Math.PI,
-        expectedResult: [-1, 0]
-    }, {
-        // north (360 degree)
-        angle: 2 * Math.PI,
-        expectedResult: [0, 1]
-    }];
+    const test_4_cardinal_points = [
+        {
+            // north (0 degree)
+            angle: 0,
+            expectedResult: [0, 1],
+        },
+        {
+            // east
+            angle: 0.5 * Math.PI,
+            expectedResult: [1, 0],
+        },
+        {
+            // south
+            angle: Math.PI,
+            expectedResult: [0, -1],
+        },
+        {
+            // west
+            angle: 1.5 * Math.PI,
+            expectedResult: [-1, 0],
+        },
+        {
+            // north (360 degree)
+            angle: 2 * Math.PI,
+            expectedResult: [0, 1],
+        },
+    ];
 
     for (const { angle, expectedResult } of test_4_cardinal_points) {
         const result = vectorize2dFromRadians(angle);
@@ -66,27 +72,33 @@ test('.vectorize2dFromDegrees() returns the 2D unit vector for a heading, in deg
     let message;
 
     // test the four cardinal points
-    const test_4_cardinal_points = [{
-        // north (0 degree)
-        angle: 0,
-        expectedResult: [0, 1]
-    }, {
-        // east
-        angle: 90,
-        expectedResult: [1, 0]
-    }, {
-        // south
-        angle: 180,
-        expectedResult: [0, -1]
-    }, {
-        // west
-        angle: 270,
-        expectedResult: [-1, 0]
-    }, {
-        // north (360 degree)
-        angle: 360,
-        expectedResult: [0, 1]
-    }];
+    const test_4_cardinal_points = [
+        {
+            // north (0 degree)
+            angle: 0,
+            expectedResult: [0, 1],
+        },
+        {
+            // east
+            angle: 90,
+            expectedResult: [1, 0],
+        },
+        {
+            // south
+            angle: 180,
+            expectedResult: [0, -1],
+        },
+        {
+            // west
+            angle: 270,
+            expectedResult: [-1, 0],
+        },
+        {
+            // north (360 degree)
+            angle: 360,
+            expectedResult: [0, 1],
+        },
+    ];
 
     for (const { angle, expectedResult } of test_4_cardinal_points) {
         const result = vectorize2dFromDegrees(angle);
@@ -151,7 +163,7 @@ test('.area_to_poly() returns an array of 2 index arrays that represent canvas p
         [-5.3007735621762935, 13.302187078361868],
         [-6.720597482088389, 14.107788420824814],
         [-49.64176067613016, 11.37605308808562],
-        [-67.81746809538494, 15.91078422023501]
+        [-67.81746809538494, 15.91078422023501],
     ];
 
     const result = _map(airportModelFixture.airspace[0].poly, (v) => v.relativePosition);

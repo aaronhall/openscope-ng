@@ -3,9 +3,7 @@
     "name": "General Aviation Belgium",
     "callsign": {
         "name": "Oscar Oscar",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

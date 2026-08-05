@@ -8,11 +8,15 @@ import { INVALID_INDEX } from '../constants/globalConstants';
 export default class AirwayModel {
     constructor(icao, fixNames) {
         if (_isEmpty(icao)) {
-            throw new TypeError('Expected airway to have a non-empty name, but no airway name was given');
+            throw new TypeError(
+                'Expected airway to have a non-empty name, but no airway name was given'
+            );
         }
 
         if (_isEmpty(fixNames)) {
-            throw new TypeError(`Expected a list of fix names for airway "${icao}", but received none`);
+            throw new TypeError(
+                `Expected a list of fix names for airway "${icao}", but received none`
+            );
         }
 
         this._fixNameCollection = [];
@@ -58,8 +62,10 @@ export default class AirwayModel {
     _verifyFixNamesExistInNavigationLibrary(fixNames) {
         _forEach(fixNames, (fixName) => {
             if (!NavigationLibrary.hasFixName(fixName)) {
-                throw new TypeError(`Expected to find fix "${fixName}" for ` +
-                    `airway "${this._icao}", but it is not a defined fix!`);
+                throw new TypeError(
+                    `Expected to find fix "${fixName}" for ` +
+                        `airway "${this._icao}", but it is not a defined fix!`
+                );
             }
         });
     }
@@ -77,13 +83,17 @@ export default class AirwayModel {
         const indexOfExitFix = this._fixNameCollection.indexOf(exitName);
 
         if (indexOfEntryFix === INVALID_INDEX) {
-            console.error(`Expected valid entry of "${this._icao}" airway, but received "${entryName}"`);
+            console.error(
+                `Expected valid entry of "${this._icao}" airway, but received "${entryName}"`
+            );
 
             return;
         }
 
         if (indexOfExitFix === INVALID_INDEX) {
-            console.error(`Expected valid exit of "${this._icao}" airway, but received "${exitName}"`);
+            console.error(
+                `Expected valid exit of "${this._icao}" airway, but received "${exitName}"`
+            );
 
             return;
         }

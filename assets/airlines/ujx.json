@@ -3,13 +3,9 @@
     "name": "AtlasGlobal Ukraine",
     "callsign": {
         "name": "Atlas Ukraine",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 2]
-        ]
+        "default": [["A320", 2]]
     }
 }

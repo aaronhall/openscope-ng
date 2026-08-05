@@ -3,9 +3,7 @@
     "name": "Empire Airlines",
     "callsign": {
         "name": "Empire",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

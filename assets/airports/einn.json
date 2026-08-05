@@ -308,9 +308,7 @@
             "floor": 10,
             "ceiling": 50,
             "airspace_class": "C",
-            "labelPositions": [
-                [52.65739880209, -8.63256147783]
-            ],
+            "labelPositions": [[52.65739880209, -8.63256147783]],
             "poly": [
                 ["N52.95127", "W8.90313"],
                 ["N52.95023", "W8.88151"],
@@ -439,9 +437,7 @@
             "floor": 50,
             "ceiling": 245,
             "airspace_class": "C",
-            "labelPositions": [
-                [52.57445310094, -8.74887395178]
-            ],
+            "labelPositions": [[52.57445310094, -8.74887395178]],
             "poly": [
                 ["N52.95127", "W8.90313"],
                 ["N52.95023", "W8.88151"],
@@ -627,9 +623,7 @@
             "floor": 0,
             "ceiling": 50,
             "airspace_class": "C",
-            "labelPositions": [
-                [52.86836815511, -8.92472219999]
-            ],
+            "labelPositions": [[52.86836815511, -8.92472219999]],
             "poly": [
                 ["N52.95127", "W8.90313"],
                 ["N52.95023", "W8.88151"],
@@ -828,14 +822,14 @@
         "BILTO": ["N56.50000", "W15.00000"],
         "BIMGO": ["N49.50000", "W14.00006"],
         "BUNON": ["N52.37498", "W9.54364"],
-        "CRK"  : ["N51.84064", "W8.49426"],
-        "CRN"  : ["N53.30083", "W8.94167"],
+        "CRK": ["N51.84064", "W8.49426"],
+        "CRN": ["N53.30083", "W8.94167"],
         "DERAG": ["N52.86288", "W8.58032"],
         "DIGAN": ["N52.93694", "W8.19754"],
         "DINIM": ["N51.00004", "W15.00000"],
         "DISUR": ["N52.72526", "W9.09888"],
         "DOGAL": ["N54.00002", "W15.00000"],
-        "DUB"  : ["N53.49937", "W6.30707"],
+        "DUB": ["N53.49937", "W6.30707"],
         "EKNIS": ["N52.90515", "W8.92786"],
         "ELPOM": ["N52.56032", "W9.22412"],
         "ELSOX": ["N51.00004", "W14.00006"],
@@ -850,7 +844,7 @@
         "GORTO": ["N52.95526", "W8.95908"],
         "GULTU": ["N52.80996", "W9.38818"],
         "INKUR": ["N53.59750", "W7.39142"],
-        "KER"  : ["N52.18217", "W9.52450"],
+        "KER": ["N52.18217", "W9.52450"],
         "KESIX": ["N56.94997", "W14.00006"],
         "KOGAD": ["N49.50000", "W15.00000"],
         "KOKIB": ["N54.50003", "W14.00006"],
@@ -870,7 +864,7 @@
         "NETKI": ["N54.99999", "W14.00006"],
         "NORLA": ["N51.61915", "W6.86975"],
         "OGONO": ["N52.92364", "W8.44931"],
-        "OL"   : ["N52.74898", "W8.82385"],
+        "OL": ["N52.74898", "W8.82385"],
         "OLAPO": ["N53.78032", "W7.29474"],
         "OLGON": ["N53.50003", "W14.00006"],
         "OSGAR": ["N53.04947", "W7.27029"],
@@ -883,7 +877,7 @@
         "RINUS": ["N53.64420", "W7.66223"],
         "RODEL": ["N50.50003", "W15.00000"],
         "ROSRO": ["N52.80531", "W8.70428"],
-        "SHA"  : ["N52.72099", "W8.88519"],
+        "SHA": ["N52.72099", "W8.88519"],
         "SLANY": ["N52.15866", "W5.84216"],
         "SOMAX": ["N49.99997", "W15.00000"],
         "SOVED": ["N56.00002", "W14.00006"],
@@ -1053,23 +1047,22 @@
             "exitPoints": {
                 "ABAGU": ["ABAGU"]
             },
-            "draw": [
-                ["_RWY0601DME", "ABAGU"]
-            ]
+            "draw": [["_RWY0601DME", "ABAGU"]]
         },
         "ABAG3B": {
             "icao": "ABAG3B",
             "name": "Abahgoo Three Bravo",
             "rwy": {
-                "EINN24": [["_RWY2401DME", "A6+|S185-"], ["ADARU", "A33+|S185-"]]
+                "EINN24": [
+                    ["_RWY2401DME", "A6+|S185-"],
+                    ["ADARU", "A33+|S185-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "ABAGU": [["ABAGU", "S250-"]]
             },
-            "draw": [
-                ["_RWY2401DME", "ADARU", "ABAGU"]
-            ]
+            "draw": [["_RWY2401DME", "ADARU", "ABAGU"]]
         },
         "AGIN3A": {
             "icao": "AGIN3A",
@@ -1081,23 +1074,23 @@
             "exitPoints": {
                 "AGINI": ["AGINI"]
             },
-            "draw": [
-                ["_RWY0601DME", "AGINI"]
-            ]
+            "draw": [["_RWY0601DME", "AGINI"]]
         },
         "AGIN3B": {
             "icao": "AGIN3B",
             "name": "Aginee Three Bravo",
             "rwy": {
-                "EINN24": [["_RWY2401DME", "A6+|S185-"], ["DISUR", "A33+|S185-"], ["GORTO", "S250-"]]
+                "EINN24": [
+                    ["_RWY2401DME", "A6+|S185-"],
+                    ["DISUR", "A33+|S185-"],
+                    ["GORTO", "S250-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "AGINI": [["AGINI", "S250-"]]
             },
-            "draw": [
-                ["_RWY2401DME", "DISUR", "GORTO", "AGINI"]
-            ]
+            "draw": [["_RWY2401DME", "DISUR", "GORTO", "AGINI"]]
         },
         "BUNO3B": {
             "icao": "BUNO3B",
@@ -1109,9 +1102,7 @@
             "exitPoints": {
                 "BUNON": ["BUNON"]
             },
-            "draw": [
-                ["_RWY2401DME", "BUNON"]
-            ]
+            "draw": [["_RWY2401DME", "BUNON"]]
         },
         "DIGA3A": {
             "icao": "DIGA3A",
@@ -1123,93 +1114,97 @@
             "exitPoints": {
                 "DIGAN": ["DIGAN"]
             },
-            "draw": [
-                ["_RWY0601DME", "DIGAN"]
-            ]
+            "draw": [["_RWY0601DME", "DIGAN"]]
         },
         "ERAB3A": {
             "icao": "ERAB3A",
             "name": "Ehrabee Three Alpha",
             "rwy": {
-                "EINN06": [["_RWY0601DME", "A6+|S185-"], ["NEPOG", "A34+|S185-"]]
+                "EINN06": [
+                    ["_RWY0601DME", "A6+|S185-"],
+                    ["NEPOG", "A34+|S185-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "ERABI": [["ERABI", "S250-"]]
             },
-            "draw": [
-                ["_RWY0601DME", "NEPOG", "ERABI"]
-            ]
+            "draw": [["_RWY0601DME", "NEPOG", "ERABI"]]
         },
         "ERAB3B": {
             "icao": "ERAB3B",
             "name": "Ehrabee Three Bravo",
             "rwy": {
-                "EINN24": [["_RWY2401DME", "A6+|S185-"], ["DISUR", "A33+|S185-"]]
+                "EINN24": [
+                    ["_RWY2401DME", "A6+|S185-"],
+                    ["DISUR", "A33+|S185-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "ERABI": [["ERABI", "S250-"]]
             },
-            "draw": [
-                ["DISUR", "ERABI"]
-            ]
+            "draw": [["DISUR", "ERABI"]]
         },
         "KURU3A": {
             "icao": "KURU3A",
             "name": "Kooroom Three Alpha",
             "rwy": {
-                "EINN06": [["_RWY0601DME", "A6+|S185-"], ["GATLO", "A34+|S185-"]]
+                "EINN06": [
+                    ["_RWY0601DME", "A6+|S185-"],
+                    ["GATLO", "A34+|S185-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "KURUM": [["KURUM", "S250-"]]
             },
-            "draw": [
-                ["_RWY0601DME", "GATLO", "KURUM"]
-            ]
+            "draw": [["_RWY0601DME", "GATLO", "KURUM"]]
         },
         "KURU3B": {
             "icao": "KURU3B",
             "name": "Kooroom Three Bravo",
             "rwy": {
-                "EINN24": [["_RWY2401DME", "A6+|S185-"], ["ADARU", "A33+|S185-"]]
+                "EINN24": [
+                    ["_RWY2401DME", "A6+|S185-"],
+                    ["ADARU", "A33+|S185-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "KURUM": [["KURUM", "S250-"]]
             },
-            "draw": [
-                ["ADARU", "KURUM"]
-            ]
+            "draw": [["ADARU", "KURUM"]]
         },
         "LUNI3A": {
             "icao": "LUNI3A",
             "name": "Lunig Three Alpha",
             "rwy": {
-                "EINN06": [["_RWY0601DME", "A6+|S185-"], ["GATLO", "A34+|S185-"]]
+                "EINN06": [
+                    ["_RWY0601DME", "A6+|S185-"],
+                    ["GATLO", "A34+|S185-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "LUNIG": [["LUNIG", "S250-"]]
             },
-            "draw": [
-                ["GATLO", "LUNIG"]
-            ]
+            "draw": [["GATLO", "LUNIG"]]
         },
         "LUNI3B": {
             "icao": "LUNI3B",
             "name": "Lunig Three Bravo",
             "rwy": {
-                "EINN24": [["_RWY2401DME", "A6+|S185-"], ["ADARU", "A33+|S185-"]]
+                "EINN24": [
+                    ["_RWY2401DME", "A6+|S185-"],
+                    ["ADARU", "A33+|S185-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "LUNIG": [["LUNIG", "S250-"]]
             },
-            "draw": [
-                ["ADARU", "LUNIG"]
-            ]
+            "draw": [["ADARU", "LUNIG"]]
         },
         "LUPO3B": {
             "icao": "LUPO3B",
@@ -1221,65 +1216,71 @@
             "exitPoints": {
                 "LUPOR": ["LUPOR"]
             },
-            "draw": [
-                ["_RWY2401DME", "LUPOR"]
-            ]
+            "draw": [["_RWY2401DME", "LUPOR"]]
         },
         "MOMI3A": {
             "icao": "MOMI3A",
             "name": "Momin Three Alpha",
             "rwy": {
-                "EINN06": [["_RWY0601DME", "A6+|S185-"], ["NEPOG", "A34+|S185-"]]
+                "EINN06": [
+                    ["_RWY0601DME", "A6+|S185-"],
+                    ["NEPOG", "A34+|S185-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "MOMIN": [["MOMIN", "S250-"]]
             },
-            "draw": [
-                ["NEPOG", "MOMIN"]
-            ]
+            "draw": [["NEPOG", "MOMIN"]]
         },
         "MOMI3B": {
             "icao": "MOMI3B",
             "name": "Momin Three Bravo",
             "rwy": {
-                "EINN24": [["_RWY2401DME", "A6+|S185-"], ["DISUR", "A33+|S185-"]]
+                "EINN24": [
+                    ["_RWY2401DME", "A6+|S185-"],
+                    ["DISUR", "A33+|S185-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "MOMIN": [["MOMIN", "S250-"]]
             },
-            "draw": [
-                ["DISUR", "MOMIN"]
-            ]
+            "draw": [["DISUR", "MOMIN"]]
         },
         "OSGA3B": {
             "icao": "OSGA3B",
             "name": "Osgar Three Bravo",
             "rwy": {
-                "EINN24": [["_RWY2401DME", "A6+|S185-"], ["DISUR", "A33+|S185-"], ["GORTO", "S250-"], ["AGINI", "S250-"]]
+                "EINN24": [
+                    ["_RWY2401DME", "A6+|S185-"],
+                    ["DISUR", "A33+|S185-"],
+                    ["GORTO", "S250-"],
+                    ["AGINI", "S250-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "OSGAR": [["OSGAR", "S250-"]]
             },
-            "draw": [
-                ["AGINI", "OSGAR"]
-            ]
+            "draw": [["AGINI", "OSGAR"]]
         },
         "PELI3B": {
             "icao": "PELI3B",
             "name": "Pelig Three Bravo",
             "rwy": {
-                "EINN24": [["_RWY2401DME", "A6+|S185-"], ["DISUR", "A33+|S185-"], ["GORTO", "S250-"], ["AGINI", "S250-"]]
+                "EINN24": [
+                    ["_RWY2401DME", "A6+|S185-"],
+                    ["DISUR", "A33+|S185-"],
+                    ["GORTO", "S250-"],
+                    ["AGINI", "S250-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "PELIG": [["PELIG", "S250-"]]
             },
-            "draw": [
-                ["AGINI", "PELIG"]
-            ]
+            "draw": [["AGINI", "PELIG"]]
         },
         "TOMT3A": {
             "icao": "TOMT3A",
@@ -1291,23 +1292,23 @@
             "exitPoints": {
                 "TOMTO": ["TOMTO"]
             },
-            "draw": [
-                ["_RWY0601DME", "TOMTO"]
-            ]
+            "draw": [["_RWY0601DME", "TOMTO"]]
         },
         "UNBE3A": {
             "icao": "UNBE3A",
             "name": "Unbeg Three Alpha",
             "rwy": {
-                "EINN06": [["_RWY0601DME", "A6+|S185-"], ["NEPOG", "A34+|S185-"], ["GULTU", "S250-"]]
+                "EINN06": [
+                    ["_RWY0601DME", "A6+|S185-"],
+                    ["NEPOG", "A34+|S185-"],
+                    ["GULTU", "S250-"]
+                ]
             },
             "body": [],
             "exitPoints": {
                 "UNBEG": [["UNBEG", "S250-"]]
             },
-            "draw": [
-                ["NEPOG", "GULTU", "UNBEG"]
-            ]
+            "draw": [["NEPOG", "GULTU", "UNBEG"]]
         },
         "UNBE3B": {
             "icao": "UNBE3B",
@@ -1319,9 +1320,7 @@
             "exitPoints": {
                 "UNBEG": ["UNBEG"]
             },
-            "draw": [
-                ["_RWY2401DME", "UNBEG"]
-            ]
+            "draw": [["_RWY2401DME", "UNBEG"]]
         }
     },
     "stars": {
@@ -1332,15 +1331,16 @@
                 "AGINI": [["AGINI", "A80+|S250-"]]
             },
             "rwy": {
-                "EINN24": [["OGONO", "A60+"], ["DERAG", "A30+|S220-"]]
+                "EINN24": [
+                    ["OGONO", "A60+"],
+                    ["DERAG", "A30+|S220-"]
+                ]
             },
             "body": [],
             "holds": {
                 "DERAG": "057|right|1min|S220-"
             },
-            "draw": [
-                ["AGINI", "OGONO", "DERAG"]
-            ]
+            "draw": [["AGINI", "OGONO", "DERAG"]]
         },
         "AGIN2E": {
             "icao": "AGIN2E",
@@ -1355,9 +1355,7 @@
             "holds": {
                 "ELPOM": "236|left|1min|S220-"
             },
-            "draw": [
-                ["AGINI", "ULSIT", "TERDU", "ELPOM"]
-            ]
+            "draw": [["AGINI", "ULSIT", "TERDU", "ELPOM"]]
         },
         "BUNO2E": {
             "icao": "BUNO2E",
@@ -1372,9 +1370,7 @@
             "holds": {
                 "ELPOM": "236|left|1min|S220-"
             },
-            "draw": [
-                ["BUNON", "ELPOM"]
-            ]
+            "draw": [["BUNON", "ELPOM"]]
         },
         "BUNO3D": {
             "icao": "BUNO3D",
@@ -1390,9 +1386,7 @@
                 "DERAG": "057|right|1min|S220-",
                 "EKNIS": "254|left|1min"
             },
-            "draw": [
-                ["BUNON", "EKNIS", "TOBRI", "DERAG"]
-            ]
+            "draw": [["BUNON", "EKNIS", "TOBRI", "DERAG"]]
         },
         "DIGA2D": {
             "icao": "DIGA2D",
@@ -1402,14 +1396,15 @@
             },
             "body": [],
             "rwy": {
-                "EINN24": [["OGONO", "A60+"], ["DERAG", "A30+|S220-"]]
+                "EINN24": [
+                    ["OGONO", "A60+"],
+                    ["DERAG", "A30+|S220-"]
+                ]
             },
             "holds": {
                 "DERAG": "057|right|1min|S220-"
             },
-            "draw": [
-                ["DIGAN", "OGONO"]
-            ]
+            "draw": [["DIGAN", "OGONO"]]
         },
         "DIGA2E": {
             "icao": "DIGA2E",
@@ -1424,9 +1419,7 @@
             "holds": {
                 "ELPOM": "236|left|1min|S220-"
             },
-            "draw": [
-                ["DIGAN", "ULSIT"]
-            ]
+            "draw": [["DIGAN", "ULSIT"]]
         },
         "ERAB2E": {
             "icao": "ERAB2E",
@@ -1436,14 +1429,15 @@
             },
             "body": [],
             "rwy": {
-                "EINN06": [["TERDU", "A60+"], ["ELPOM", "A30+|S220-"]]
+                "EINN06": [
+                    ["TERDU", "A60+"],
+                    ["ELPOM", "A30+|S220-"]
+                ]
             },
             "holds": {
                 "ELPOM": "236|left|1min|S220-"
             },
-            "draw": [
-                ["ERABI", "TERDU"]
-            ]
+            "draw": [["ERABI", "TERDU"]]
         },
         "ERAB3D": {
             "icao": "ERAB3D",
@@ -1459,9 +1453,7 @@
                 "DERAG": "057|right|1min|S220-",
                 "EKNIS": "254|left|1min"
             },
-            "draw": [
-                ["ERABI", "EKNIS"]
-            ]
+            "draw": [["ERABI", "EKNIS"]]
         },
         "KURU2D": {
             "icao": "KURU2D",
@@ -1471,14 +1463,15 @@
             },
             "body": [],
             "rwy": {
-                "EINN24": [["GILOG", "A60+"], ["DERAG", "A30+|S220-"]]
+                "EINN24": [
+                    ["GILOG", "A60+"],
+                    ["DERAG", "A30+|S220-"]
+                ]
             },
             "holds": {
                 "DERAG": "057|right|1min|S220-"
             },
-            "draw": [
-                ["KURUM", "GILOG", "DERAG"]
-            ]
+            "draw": [["KURUM", "GILOG", "DERAG"]]
         },
         "KURU2E": {
             "icao": "KURU2E",
@@ -1488,14 +1481,15 @@
             },
             "body": [],
             "rwy": {
-                "EINN06": [["RERKA", "A60+"], ["ELPOM", "A30+|S220-"]]
+                "EINN06": [
+                    ["RERKA", "A60+"],
+                    ["ELPOM", "A30+|S220-"]
+                ]
             },
             "holds": {
                 "ELPOM": "236|left|1min|S220-"
             },
-            "draw": [
-                ["KURUM", "RERKA", "ELPOM"]
-            ]
+            "draw": [["KURUM", "RERKA", "ELPOM"]]
         },
         "LUPO2E": {
             "icao": "LUPO2E",
@@ -1510,9 +1504,7 @@
             "holds": {
                 "ELPOM": "236|left|1min|S220-"
             },
-            "draw": [
-                ["LUPOR", "ELPOM"]
-            ]
+            "draw": [["LUPOR", "ELPOM"]]
         },
         "LUPO3D": {
             "icao": "LUPO3D",
@@ -1528,9 +1520,7 @@
                 "DERAG": "057|right|1min|S220-",
                 "EKNIS": "254|left|1min"
             },
-            "draw": [
-                ["LUPOR", "EKNIS"]
-            ]
+            "draw": [["LUPOR", "EKNIS"]]
         },
         "MOMI2E": {
             "icao": "MOMI2E",
@@ -1540,14 +1530,15 @@
             },
             "body": [],
             "rwy": {
-                "EINN06": [["TERDU", "A60+"], ["ELPOM", "A30+|S220-"]]
+                "EINN06": [
+                    ["TERDU", "A60+"],
+                    ["ELPOM", "A30+|S220-"]
+                ]
             },
             "holds": {
                 "ELPOM": "236|left|1min|S220-"
             },
-            "draw": [
-                ["MOMIN", "TERDU"]
-            ]
+            "draw": [["MOMIN", "TERDU"]]
         },
         "MOMI3D": {
             "icao": "MOMI3D",
@@ -1563,9 +1554,7 @@
                 "DERAG": "057|right|1min|S220-",
                 "EKNIS": "254|left|1min"
             },
-            "draw": [
-                ["MOMIN", "EKNIS"]
-            ]
+            "draw": [["MOMIN", "EKNIS"]]
         },
         "RIKU2D": {
             "icao": "RIKU2D",
@@ -1575,14 +1564,15 @@
             },
             "body": [],
             "rwy": {
-                "EINN24": [["OGONO", "A60+"], ["DERAG", "A30+|S220-"]]
+                "EINN24": [
+                    ["OGONO", "A60+"],
+                    ["DERAG", "A30+|S220-"]
+                ]
             },
             "holds": {
                 "DERAG": "057|right|1min|S220-"
             },
-            "draw": [
-                ["RIKUL", "OGONO"]
-            ]
+            "draw": [["RIKUL", "OGONO"]]
         },
         "RIKU2E": {
             "icao": "RIKU2E",
@@ -1597,9 +1587,7 @@
             "holds": {
                 "ELPOM": "236|left|1min|S220-"
             },
-            "draw": [
-                ["RIKUL", "ULSIT"]
-            ]
+            "draw": [["RIKUL", "ULSIT"]]
         },
         "TIPU2D": {
             "icao": "TIPU2D",
@@ -1609,14 +1597,15 @@
             },
             "body": [],
             "rwy": {
-                "EINN24": [["GILOG", "A60+"], ["DERAG", "A30+|S220-"]]
+                "EINN24": [
+                    ["GILOG", "A60+"],
+                    ["DERAG", "A30+|S220-"]
+                ]
             },
             "holds": {
                 "DERAG": "057|right|1min|S220-"
             },
-            "draw": [
-                ["TIPUR", "GILOG"]
-            ]
+            "draw": [["TIPUR", "GILOG"]]
         },
         "TIPU2E": {
             "icao": "TIPU2E",
@@ -1626,14 +1615,15 @@
             },
             "body": [],
             "rwy": {
-                "EINN06": [["RERKA", "A60+"], ["ELPOM", "A30+|S220-"]]
+                "EINN06": [
+                    ["RERKA", "A60+"],
+                    ["ELPOM", "A30+|S220-"]
+                ]
             },
             "holds": {
                 "ELPOM": "236|left|1min|S220-"
             },
-            "draw": [
-                ["TIPUR", "RERKA"]
-            ]
+            "draw": [["TIPUR", "RERKA"]]
         },
         "UNBE2E": {
             "icao": "UNBE2E",
@@ -1648,9 +1638,7 @@
             "holds": {
                 "ELPOM": "236|left|1min|S220-"
             },
-            "draw": [
-                ["UNBEG", "ELPOM"]
-            ]
+            "draw": [["UNBEG", "ELPOM"]]
         },
         "UNBE3D": {
             "icao": "UNBE3D",
@@ -1666,9 +1654,7 @@
                 "DERAG": "057|right|1min|S220-",
                 "EKNIS": "254|left|1min"
             },
-            "draw": [
-                ["UNBEG", "EKNIS"]
-            ]
+            "draw": [["UNBEG", "EKNIS"]]
         }
     },
     "spawnPatterns": [

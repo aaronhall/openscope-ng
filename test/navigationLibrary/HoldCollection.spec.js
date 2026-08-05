@@ -4,7 +4,7 @@ import HoldCollection from '../../src/assets/scripts/client/navigationLibrary/Ho
 import {
     FIX_NAME_WITHOUT_HOLD,
     FIX_NAME_WITH_HOLD,
-    HOLD_COLLECTION_MOCK
+    HOLD_COLLECTION_MOCK,
 } from './_mocks/holdCollectionMocks';
 
 test('throws if called with invalid parameters', () => {
@@ -50,7 +50,7 @@ test('.findHoldParametersByFix() returns expected value', () => {
     expect(validFix).not.toBe(null);
 });
 
-test('.populateHolds() doesn\'t add duplicate holds', () => {
+test(".populateHolds() doesn't add duplicate holds", () => {
     const collection = new HoldCollection(HOLD_COLLECTION_MOCK);
     const expectedLength = Object.keys(HOLD_COLLECTION_MOCK).length;
 

@@ -3,17 +3,15 @@
     "name": "Avianca Brasil",
     "callsign": {
         "name": "Avianca",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
             ["A318", 15],
-            ["A319", 4 ],
+            ["A319", 4],
             ["A320", 22],
-            ["A332", 1 ],
-            ["F100", 9 ]
+            ["A332", 1],
+            ["F100", 9]
         ]
     }
 }

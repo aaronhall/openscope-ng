@@ -3,9 +3,7 @@
     "name": "General Aviation Zimbabwe",
     "callsign": {
         "name": "Zulu",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

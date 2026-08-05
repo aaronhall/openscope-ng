@@ -1,4 +1,3 @@
-/* eslint-disable max-len, indent, no-undef, prefer-destructuring */
 import $ from 'jquery';
 import _has from 'lodash/has';
 import _flow from 'lodash/flow';
@@ -15,7 +14,8 @@ import { TRACKABLE_EVENT } from '../constants/trackableEvents';
 
 const tutorial = {};
 
-const TUTORIAL_TEMPLATE = '' +
+const TUTORIAL_TEMPLATE =
+    '' +
     '<div id="tutorial" class="notSelectable">' +
     '   <h1></h1>' +
     '   <main></main>' +
@@ -82,7 +82,6 @@ export default class TutorialView {
          */
         this.$tutorialNext = null;
 
-
         /**
          * Command bar button to toggle the tutorial on/off
          *
@@ -92,10 +91,7 @@ export default class TutorialView {
          */
         this.$toggleTutorial = null;
 
-        this._init()
-            ._setupHandlers()
-            .layout()
-            .enable();
+        this._init()._setupHandlers().layout().enable();
     }
 
     /**
@@ -149,7 +145,9 @@ export default class TutorialView {
      */
     layout() {
         if (!this.$element) {
-            throw new Error('Expected $element to be defined. `body` tag does not exist in the DOM');
+            throw new Error(
+                'Expected $element to be defined. `body` tag does not exist in the DOM'
+            );
         }
 
         this.tutorial.html = this.$tutorialView;
@@ -244,15 +242,16 @@ export default class TutorialView {
 
         // these always get evaluated on-the-fly.
         this.tutorial.liverefs = {
-            airport: function() {
+            airport: function () {
                 return AirportController.airport_get();
             },
-            departureAircraft: function() {
+            departureAircraft: function () {
                 return prop.aircraft.list.filter((aircraftModel) => aircraftModel.isDeparture())[0];
-            }
+            },
         };
 
-        zlsa.atc.loadAsset({ url: 'assets/tutorial/tutorial.json', immediate: true })
+        zlsa.atc
+            .loadAsset({ url: 'assets/tutorial/tutorial.json', immediate: true })
             .done((response) => {
                 response.forEach((step) => {
                     this._loadTutorialStep(step);
@@ -260,7 +259,10 @@ export default class TutorialView {
             })
             .fail((jqxhr, textStatus, error) => {
                 console.error(`Failed to load tutorial data: ${textStatus}, ${error}`);
-                this.tutorial_step({ title: 'Error', text: `The tutorial failed to load: ${textStatus}, ${error}` });
+                this.tutorial_step({
+                    title: 'Error',
+                    text: `The tutorial failed to load: ${textStatus}, ${error}`,
+                });
             });
     }
 
@@ -277,14 +279,19 @@ export default class TutorialView {
                 const objFetcher = this.tutorial.liverefs[replacement.replaceWith.object];
                 if (!objFetcher) {
                     // don't create replace function if 'object' config is not one of valid options in liverefs
-                    console.error(`Tutorial: ${step.title}: ${replacement.replaceWith.object} is not valid.`);
+                    console.error(
+                        `Tutorial: ${step.title}: ${replacement.replaceWith.object} is not valid.`
+                    );
                     return;
                 }
                 const propFetcher = this._getPropFetcher(replacement.replaceWith.propPath);
                 const replaceFunc = (t) => {
                     const value = propFetcher(objFetcher());
-                    if (value == null) { // null or undefined; likely configured with incorrect property path
-                        console.warn(`Tutorial: ${step.title}: ${replacement.replaceWith.object}.${replacement.replaceWith.propPath} has ${value} value.`);
+                    if (value == null) {
+                        // null or undefined; likely configured with incorrect property path
+                        console.warn(
+                            `Tutorial: ${step.title}: ${replacement.replaceWith.object}.${replacement.replaceWith.propPath} has ${value} value.`
+                        );
                         return t;
                     }
                     return t.replace(replacement.findWhat, value);
@@ -317,17 +324,18 @@ export default class TutorialView {
      * @return [{function}] A function that will fetch a given descendent property of an object without using eval()
      */
     _getPropFetcher(desc) {
-        return ((obj) => {
+        return (obj) => {
             let result = obj;
             const arr = desc.split('.');
             while (arr.length) {
-                if (result == null) { // null or undefined, can drill down no further
+                if (result == null) {
+                    // null or undefined, can drill down no further
                     return result;
                 }
                 result = result[arr.shift()];
             }
             return result;
-        });
+        };
     }
 
     /**
@@ -365,16 +373,17 @@ export default class TutorialView {
     tutorial_move() {
         const step = this.tutorial_get();
         const padding = [30, 10];
-        const left = step.position[0] * ($(window).width() - this.$tutorialView.outerWidth() - padding[0]);
-        let top = step.position[1] * ($(window).height());
-        top -= (this.$tutorialView.outerHeight() - padding[1]);
+        const left =
+            step.position[0] * ($(window).width() - this.$tutorialView.outerWidth() - padding[0]);
+        let top = step.position[1] * $(window).height();
+        top -= this.$tutorialView.outerHeight() - padding[1];
 
-    //  left += step.padding[0];
-    //  top  += step.padding[1];
+        //  left += step.padding[0];
+        //  top  += step.padding[1];
 
         this.$tutorialView.offset({
             top: round(top),
-            left: round(left)
+            left: round(left),
         });
     }
 

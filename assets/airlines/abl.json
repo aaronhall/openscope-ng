@@ -3,12 +3,7 @@
     "name": "Air Busan",
     "callsign": {
         "name": "Air Busan",
-        "callsignFormats": [
-			"#",
-			"##",
-            "###",
-			"####"
-        ]
+        "callsignFormats": ["#", "##", "###", "####"]
     },
     "fleets": {
         "default": [

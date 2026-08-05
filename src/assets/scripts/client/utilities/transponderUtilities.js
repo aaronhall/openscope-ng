@@ -31,20 +31,17 @@ const TRANSPONDER_CODES = [
     {
         // ICAO
         prefix: null,
-        reserved: [
-        ]
+        reserved: [],
     },
     {
         // Europe
         prefix: /^([elb])/,
-        reserved: [
-        ]
+        reserved: [],
     },
     {
         // Canda
         prefix: /^c/,
-        reserved: [
-        ]
+        reserved: [],
     },
     {
         // Belgium
@@ -54,8 +51,8 @@ const TRANSPONDER_CODES = [
             // 0041–0057
             /^00(4[1-7]|5[0-7])$/,
             // For testing stations
-            '7777'
-        ]
+            '7777',
+        ],
     },
     {
         // Germany
@@ -64,16 +61,16 @@ const TRANSPONDER_CODES = [
             // Parachute dropping
             '0025',
             // For testing stations
-            '7777'
-        ]
+            '7777',
+        ],
     },
     {
         // Netherlands
         prefix: /^eh/,
         reserved: [
             // For testing stations
-            '7777'
-        ]
+            '7777',
+        ],
     },
     {
         // UK
@@ -84,8 +81,8 @@ const TRANSPONDER_CODES = [
             // Sudden military climb out from low-level operations
             '7001',
             // Aerobatic & displays
-            '7004'
-        ]
+            '7004',
+        ],
     },
     {
         // USA
@@ -109,8 +106,8 @@ const TRANSPONDER_CODES = [
             // 7610–7676, 7710–7776
             // /^7[67]([1-6][0-7]|7[1-6])$/,
             // Military & for testing stations
-            '7777'
-        ]
+            '7777',
+        ],
     },
     // {
     //     // Washington DC
@@ -126,17 +123,17 @@ const TRANSPONDER_CODES = [
         prefix: /^lf/,
         reserved: [
             // VFR
-            '7001'
-        ]
+            '7001',
+        ],
     },
     {
         // Australia
         prefix: /^y/,
         reserved: [
             // Civil flights engaged in littoral surveillance
-            '7615'
-        ]
-    }
+            '7615',
+        ],
+    },
 ];
 
 /**
@@ -149,8 +146,7 @@ const TRANSPONDER_CODES = [
  */
 function _getCodes(icao) {
     return TRANSPONDER_CODES.filter((item) => {
-        return (item.prefix === null || item.prefix.test(icao)) &&
-            item.reserved.length !== 0;
+        return (item.prefix === null || item.prefix.test(icao)) && item.reserved.length !== 0;
     });
 }
 

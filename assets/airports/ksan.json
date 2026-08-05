@@ -13,7 +13,7 @@
     "position": ["N32.734", "W117.190", "5m"],
     "rangeRings": {
         "enabled": true,
-        "center": [32.734, -117.190],
+        "center": [32.734, -117.19],
         "radius_nm": 5.0
     },
     "has_terrain": false,
@@ -28,14 +28,14 @@
         "_KSAN075060": ["N32d47.86m0", "W116d00.37m0"],
         "MELDY": ["N33d05.36", "W117d41.63"],
         "PEBLE": ["N33d10.92", "W117d50.17"],
-        "PGY":  ["N32d36.62", "W116d58.75"],
+        "PGY": ["N32d36.62", "W116d58.75"],
         "BROWS": ["N32d37.87", "W116d46.20"],
-        "JLI":   ["N33d08.43", "W116d35.16"],
-        "IPL":   ["N32d44.93", "W115d30.51"],
+        "JLI": ["N33d08.43", "W116d35.16"],
+        "IPL": ["N32d44.93", "W115d30.51"],
         "BOKNE": ["N32d58.41", "W117d21.71"],
         "MAFAN": ["N33d04.10", "W117d25.78"],
         "LNSAY": ["N33d08.77", "W117d29.17"],
-        "FALCC":  ["N33d15.68", "W117d34.11"],
+        "FALCC": ["N33d15.68", "W117d34.11"],
         "HARBR": ["N33d14.28", "W117d51.38"],
         "LOWMA": ["N32°39'16.71", "W117°16'5.79"],
         "PILLO": ["N32d46.22", "W116d28.11"],
@@ -46,14 +46,17 @@
     },
     "runways": [
         {
-            "name":        ["09", "27"],
-            "name_offset": [[0, 0], [0, 0]],
+            "name": ["09", "27"],
+            "name_offset": [
+                [0, 0],
+                [0, 0]
+            ],
             "end": [
                 ["N32.7371218", "W117.2043558"],
                 ["N32.7300016", "W117.1749719"]
             ],
-            "length":      2.865,
-            "ils":         [true, false]
+            "length": 2.865,
+            "ils": [true, false]
         }
     ],
     "sids": {
@@ -61,31 +64,31 @@
             "icao": "BRDR7",
             "name": "Border Seven",
             "rwy": {
-                "9" : ["BROWS"],
+                "9": ["BROWS"],
                 "27": ["PGY", "BROWS"]
             },
             "exitPoints": {
                 "JLI": ["JLI"]
             },
-            "draw": [["PGY","BROWS","JLI*"]]
+            "draw": [["PGY", "BROWS", "JLI*"]]
         },
         "LNSAY5": {
             "icao": "LNSAY5",
             "name": "Lindsay Five",
             "rwy": {
-                "9" : ["BOKNE", "MAFAN", "LNSAY"],
+                "9": ["BOKNE", "MAFAN", "LNSAY"],
                 "27": ["BOKNE", "MAFAN", "LNSAY"]
             },
             "exitPoints": {
                 "FALCC": ["FALCC"]
             },
-            "draw": [["BOKNE","MAFAN","FALCC*"]]
+            "draw": [["BOKNE", "MAFAN", "FALCC*"]]
         },
         "PEBLE6": {
             "icao": "PEBLE6",
             "name": "Peble Six",
             "rwy": {
-                "9" : ["SARGS", "MELDY"],
+                "9": ["SARGS", "MELDY"],
                 "27": ["SARGS", "MELDY"]
             },
             "exitPoints": {
@@ -97,13 +100,13 @@
             "icao": "POGGI5",
             "name": "Poggie Five",
             "rwy": {
-                "9" : ["LOWMA", "PGY"],
+                "9": ["LOWMA", "PGY"],
                 "27": ["LOWMA", "PGY"]
             },
             "exitPoints": {
                 "BROWS": ["BROWS"]
             },
-            "draw": [["LOWMA","PGY","BROWS*"]]
+            "draw": [["LOWMA", "PGY", "BROWS*"]]
         }
     },
     "departures": {
@@ -116,9 +119,7 @@
             ["airtaxi", 12],
             ["n/lightGA", 5]
         ],
-        "destinations": [
-            "BRDR7", "LNSAY5", "PEBLE6", "POGGI5"
-        ],
+        "destinations": ["BRDR7", "LNSAY5", "PEBLE6", "POGGI5"],
         "type": "cyclic",
         "offset": 0,
         "period": 30,

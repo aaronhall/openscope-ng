@@ -3,10 +3,7 @@ import sinon from 'sinon';
 import GameController from '../../src/assets/scripts/client/game/GameController';
 import ScopeModel from '../../src/assets/scripts/client/scope/ScopeModel';
 import RadarTargetCollection from '../../src/assets/scripts/client/scope/RadarTargetCollection';
-import {
-    createRadarTargetArrivalMock,
-    createRadarCollectionMock
-} from './_mocks/radarTargetMocks';
+import { createRadarTargetArrivalMock, createRadarCollectionMock } from './_mocks/radarTargetMocks';
 import { createScopeCommandMock } from './_mocks/scopeCommandMocks';
 import { THEME } from '../../src/assets/scripts/client/constants/themes';
 import { EVENT } from '../../src/assets/scripts/client/constants/eventNames';
@@ -269,7 +266,10 @@ test('.setScratchpad() calls and returns RadarTargetModel.setDefaultScratchpad()
     const model = new ScopeModel();
     const radarTargetModel = createRadarTargetArrivalMock();
     const radarTargetModelSetScratchpadSpy = sinon.spy(radarTargetModel, 'setScratchpad');
-    const radarTargetModelSetDefaultScratchpadSpy = sinon.spy(radarTargetModel, 'setDefaultScratchpad');
+    const radarTargetModelSetDefaultScratchpadSpy = sinon.spy(
+        radarTargetModel,
+        'setDefaultScratchpad'
+    );
     const resetScratchPadTrigger = '.';
     const expectedResponse = [true, 'RESET SCRATCHPAD'];
     const response = model.setScratchpad(radarTargetModel, resetScratchPadTrigger);

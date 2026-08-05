@@ -2,7 +2,7 @@ import { choose } from '../utilities/generalUtilities';
 import {
     DEFAULT_CALLSIGN_FORMAT,
     CALLSIGN_RANDOM_DIGIT_CHARACTER,
-    CALLSIGN_RANDOM_LETTER_CHARACTER
+    CALLSIGN_RANDOM_LETTER_CHARACTER,
 } from '../constants/airlineConstants';
 
 const ALPHA = 'abcdefghijklmnopqrstuvwxyz';
@@ -16,7 +16,7 @@ const defaultCallsignFormats = [DEFAULT_CALLSIGN_FORMAT];
  * @function _generateRandomDigit
  * @param i {number}
  * @return NUMERIC {string}
-*/
+ */
 function _generateRandomDigit(i) {
     if (i === 0) {
         return choose(NUMERIC.substr(1));
@@ -30,7 +30,7 @@ function _generateRandomDigit(i) {
  *
  * @function _generateRandomLetter
  * @return ALPHA {string}
-*/
+ */
 function _generateRandomLetter() {
     return choose(ALPHA);
 }
@@ -42,7 +42,7 @@ function _generateRandomLetter() {
  * @function _validateCallsignFormats
  * @param callsignFormat {array<string>}
  * @return validatedFormats {array<string>}
-*/
+ */
 function _validateCallsignFormats(callsignFormats) {
     const validatedFormats = [];
 
@@ -69,7 +69,7 @@ function _validateCallsignFormats(callsignFormats) {
  * @function buildFlightNumber
  * @param callsignFormats {array<string>}
  * @return {string}
-*/
+ */
 export function buildFlightNumber(callsignFormats) {
     let flightNumber = '';
 

@@ -8,13 +8,9 @@ import {
     AUTOCOMPLETE_COMMAND_STATES,
     AUTOCOMPLETE_INPUT_PLACEHOLDER,
     AUTOCOMPLETE_PARAMS_VALIDITY,
-    AUTOCOMPLETE_REGEXP
+    AUTOCOMPLETE_REGEXP,
 } from '../../constants/autocompleteConstants';
-import {
-    KEY_CODES,
-    LEGACY_KEY_CODES,
-    MOUSE_EVENT_CODE
-} from '../../constants/inputConstants';
+import { KEY_CODES, LEGACY_KEY_CODES, MOUSE_EVENT_CODE } from '../../constants/inputConstants';
 import { SELECTORS } from '../../constants/selectors';
 import { AUTOCOMPLETE_COMMAND_TEMPLATE } from './AutocompleteCommandTemplate';
 import { AUTOCOMPLETE_ARGUMENT_TEMPLATE } from './AutocompleteArgumentTemplate';
@@ -65,10 +61,18 @@ export default class AutocompleteController {
      */
     _init() {
         this.$autocomplete = this.$element.find(SELECTORS.DOM_SELECTORS.AUTOCOMPLETE);
-        this.$autocompleteInput = this.$autocomplete.find(SELECTORS.DOM_SELECTORS.AUTOCOMPLETE_INPUT);
-        this.$autocompleteOutput = this.$autocomplete.find(SELECTORS.DOM_SELECTORS.AUTOCOMPLETE_OUTPUT);
-        this.$autocompleteSpacer = this.$autocomplete.find(SELECTORS.DOM_SELECTORS.AUTOCOMPLETE_SPACER);
-        this.$autocompleteSuggests = this.$autocomplete.find(SELECTORS.DOM_SELECTORS.AUTOCOMPLETE_SUGGESTS);
+        this.$autocompleteInput = this.$autocomplete.find(
+            SELECTORS.DOM_SELECTORS.AUTOCOMPLETE_INPUT
+        );
+        this.$autocompleteOutput = this.$autocomplete.find(
+            SELECTORS.DOM_SELECTORS.AUTOCOMPLETE_OUTPUT
+        );
+        this.$autocompleteSpacer = this.$autocomplete.find(
+            SELECTORS.DOM_SELECTORS.AUTOCOMPLETE_SPACER
+        );
+        this.$autocompleteSuggests = this.$autocomplete.find(
+            SELECTORS.DOM_SELECTORS.AUTOCOMPLETE_SUGGESTS
+        );
 
         this.commandTemplate = Handlebars.compile(AUTOCOMPLETE_COMMAND_TEMPLATE);
         this.argumentTemplate = Handlebars.compile(AUTOCOMPLETE_ARGUMENT_TEMPLATE);
@@ -101,7 +105,11 @@ export default class AutocompleteController {
     _fetchConfig() {
         $.getJSON('assets/autocomplete/commandAutocompleteConfig.json')
             .done((response) => this.onConfigFetchedHandler(response))
-            .fail((jqXHR) => console.error(`Failed to load autocomplete configuration: ${jqXHR.status}: ${jqXHR.statusText}`));
+            .fail((jqXHR) =>
+                console.error(
+                    `Failed to load autocomplete configuration: ${jqXHR.status}: ${jqXHR.statusText}`
+                )
+            );
     }
 
     /**
@@ -248,7 +256,8 @@ export default class AutocompleteController {
      * @private
      */
     _growTargetRangeRight(cmdstr, targetRange) {
-        targetRange.end += AUTOCOMPLETE_REGEXP.TOKEN_END.exec(cmdstr.slice(targetRange.end)).index + 1;
+        targetRange.end +=
+            AUTOCOMPLETE_REGEXP.TOKEN_END.exec(cmdstr.slice(targetRange.end)).index + 1;
     }
 
     /**
@@ -267,24 +276,33 @@ export default class AutocompleteController {
         // remember initial selection/cursor state, in case of reset
         this.initialRange = {
             start: this._inputController.$commandInput.prop('selectionStart'),
-            end: this._inputController.$commandInput.prop('selectionEnd')
+            end: this._inputController.$commandInput.prop('selectionEnd'),
         };
         // target range of command input to ingest and replace
         this.targetRange = Object.assign({}, this.initialRange);
 
         // cursor/selection left boundary adjustment
-        if (this.targetRange.start > 0) { // guarantees index (start - 1) is valid
-            if (this.targetRange.start === this.targetRange.end) { // cursor
-                if (!AUTOCOMPLETE_REGEXP.WHITESPACE.test(cmdstr.charAt(this.targetRange.start - 1))) {
+        if (this.targetRange.start > 0) {
+            // guarantees index (start - 1) is valid
+            if (this.targetRange.start === this.targetRange.end) {
+                // cursor
+                if (
+                    !AUTOCOMPLETE_REGEXP.WHITESPACE.test(cmdstr.charAt(this.targetRange.start - 1))
+                ) {
                     // cursor at mid token or touching right edge of a token
                     this._growTargetRangeLeft(cmdstr, this.targetRange);
                 }
-            } else { // selection, guarantees index (start + 1) is valid
-                const leftBoundary = cmdstr.slice(this.targetRange.start - 1, this.targetRange.start + 1);
+            } else {
+                // selection, guarantees index (start + 1) is valid
+                const leftBoundary = cmdstr.slice(
+                    this.targetRange.start - 1,
+                    this.targetRange.start + 1
+                );
                 if (AUTOCOMPLETE_REGEXP.TOKEN_MID.test(leftBoundary)) {
                     // selection left boundary at mid token
                     this._growTargetRangeLeft(cmdstr, this.targetRange);
-                } else if (AUTOCOMPLETE_REGEXP.TOKEN_END.exec(leftBoundary)?.index === 0) { // using test() gives spurious match
+                } else if (AUTOCOMPLETE_REGEXP.TOKEN_END.exec(leftBoundary)?.index === 0) {
+                    // using test() gives spurious match
                     // selection left boundary touching right edge of a token
                     // exclude one space for UI aesthetics
                     this.targetRange.start += 1;
@@ -293,16 +311,20 @@ export default class AutocompleteController {
         }
 
         // cursor/selection right boundary adjustment
-        if (this.targetRange.end < cmdstr.length && // guarantees index (end + 1) is valid
+        if (
+            this.targetRange.end < cmdstr.length && // guarantees index (end + 1) is valid
             this.targetRange.start < this.targetRange.end && // guarantees index (end - 1) is valid; cursor start already moved
-            AUTOCOMPLETE_REGEXP.TOKEN_MID.test(cmdstr.slice(this.targetRange.end - 1, this.targetRange.end + 1))
+            AUTOCOMPLETE_REGEXP.TOKEN_MID.test(
+                cmdstr.slice(this.targetRange.end - 1, this.targetRange.end + 1)
+            )
         ) {
             // cursor/selection right boundary at mid token
             this._growTargetRangeRight(cmdstr, this.targetRange);
         }
 
         // find first token in whole command string, if any
-        const { index: firstChar, 1: firstToken } = AUTOCOMPLETE_REGEXP.FIRST_TOKEN.exec(cmdstr) ?? {};
+        const { index: firstChar, 1: firstToken } =
+            AUTOCOMPLETE_REGEXP.FIRST_TOKEN.exec(cmdstr) ?? {};
 
         // is the first token an aircraft callsign?
         const aircraft = this._aircraftController.findAircraftByCallsign(firstToken);
@@ -486,7 +508,7 @@ export default class AutocompleteController {
             paramstr = paramstr.replace(AUTOCOMPLETE_REGEXP.WHITESPACE, ' ').concat(' ');
         }
 
-        cmdstr = before.concat((before.length > 0) ? ' ' : '', this.params.command, ' ', paramstr);
+        cmdstr = before.concat(before.length > 0 ? ' ' : '', this.params.command, ' ', paramstr);
         this._inputController.$commandInput.val(cmdstr + after);
         this._inputController.onCommandInputChangeHandler();
         this._inputController.$commandInput.prop('selectionStart', cmdstr.length);
@@ -523,7 +545,10 @@ export default class AutocompleteController {
             case LEGACY_KEY_CODES.UP_ARROW:
                 event.preventDefault();
 
-                if (this.state === AUTOCOMPLETE_STATE.COMMANDS.HIGHLIGHT || this.state === AUTOCOMPLETE_STATE.COMMANDS.MATCHES) {
+                if (
+                    this.state === AUTOCOMPLETE_STATE.COMMANDS.HIGHLIGHT ||
+                    this.state === AUTOCOMPLETE_STATE.COMMANDS.MATCHES
+                ) {
                     this.highlightPrev();
                 }
 
@@ -532,7 +557,10 @@ export default class AutocompleteController {
             case LEGACY_KEY_CODES.DOWN_ARROW:
                 event.preventDefault();
 
-                if (this.state === AUTOCOMPLETE_STATE.COMMANDS.HIGHLIGHT || this.state === AUTOCOMPLETE_STATE.COMMANDS.MATCHES) {
+                if (
+                    this.state === AUTOCOMPLETE_STATE.COMMANDS.HIGHLIGHT ||
+                    this.state === AUTOCOMPLETE_STATE.COMMANDS.MATCHES
+                ) {
                     this.highlightNext();
                 }
 
@@ -599,8 +627,10 @@ export default class AutocompleteController {
     _onAutocompleteInputChange() {
         const currentAutocompleteInputValue = this.$autocompleteInput.val();
         const inputLength = currentAutocompleteInputValue.length;
-        this.$autocompleteInput.attr('size',
-            (inputLength === 0 ? this.$autocompleteInput.attr('placeholder').length : inputLength));
+        this.$autocompleteInput.attr(
+            'size',
+            inputLength === 0 ? this.$autocompleteInput.attr('placeholder').length : inputLength
+        );
 
         if (AUTOCOMPLETE_COMMAND_STATES.includes(this.state)) {
             this._matchCommands(currentAutocompleteInputValue.trim().toLowerCase());
@@ -642,7 +672,9 @@ export default class AutocompleteController {
             }
 
             if (findAndHighlight) {
-                const $highlight = this.$autocompleteSuggests.find(`tr[data-command="${this.highlighted}"]`);
+                const $highlight = this.$autocompleteSuggests.find(
+                    `tr[data-command="${this.highlighted}"]`
+                );
 
                 if ($highlight.length) {
                     $highlight.addClass('highlight');
@@ -670,28 +702,44 @@ export default class AutocompleteController {
         const matches = {};
         for (const command of this.commandDefs[this.commandType]) {
             for (const variant of command.variants) {
-                /* eslint-disable max-len, no-multi-spaces */
                 for (const alias of variant.aliases) {
-                    if (alias.startsWith(prefix) &&
-                        (typeof matches[command.id] === 'undefined' ||        // has not been matched yet
-                        matches[command.id].direct === false ||               // has only been matched indirectly (altkey match)
-                        alias.length < matches[command.id].command.length)) { // was matched directly for a longer variant of the command
-                        matches[command.id] = { direct: true, command: alias, explanation: variant.explain };
+                    if (
+                        alias.startsWith(prefix) &&
+                        (typeof matches[command.id] === 'undefined' || // has not been matched yet
+                            matches[command.id].direct === false || // has only been matched indirectly (altkey match)
+                            alias.length < matches[command.id].command.length)
+                    ) {
+                        // was matched directly for a longer variant of the command
+                        matches[command.id] = {
+                            direct: true,
+                            command: alias,
+                            explanation: variant.explain,
+                        };
                     }
                 }
 
                 // skip checking altkeys if there is already a direct hit for this commandDef
                 // includes direct hit on previously seen variants, even if the current one isn't one
-                if (typeof matches[command.id] !== 'undefined' && matches[command.id].direct === true) {
+                if (
+                    typeof matches[command.id] !== 'undefined' &&
+                    matches[command.id].direct === true
+                ) {
                     continue;
                 }
 
                 if (variant.altkeys.some((alt) => alt.startsWith(prefix))) {
                     const c = variant.aliases[0];
 
-                    if (typeof matches[command.id] === 'undefined' ||    // has not been matched yet
-                        c.length < matches[command.id].command.length) { // was matched indirectly for a longer variant of the command
-                        matches[command.id] = { direct: false, command: c, explanation: variant.explain };
+                    if (
+                        typeof matches[command.id] === 'undefined' || // has not been matched yet
+                        c.length < matches[command.id].command.length
+                    ) {
+                        // was matched indirectly for a longer variant of the command
+                        matches[command.id] = {
+                            direct: false,
+                            command: c,
+                            explanation: variant.explain,
+                        };
                     }
                 }
             }
@@ -699,7 +747,6 @@ export default class AutocompleteController {
 
         return matches;
     }
-
 
     /**
      * @for AutocompleteController
@@ -726,7 +773,11 @@ export default class AutocompleteController {
                     paramset.validity = AUTOCOMPLETE_PARAMS_VALIDITY.INVALID;
                 }
             });
-            if (this.params.paramsets.some((paramset) => paramset.validity === AUTOCOMPLETE_PARAMS_VALIDITY.VALID)) {
+            if (
+                this.params.paramsets.some(
+                    (paramset) => paramset.validity === AUTOCOMPLETE_PARAMS_VALIDITY.VALID
+                )
+            ) {
                 this._updateState(AUTOCOMPLETE_STATE.PARAMS.VALID);
             } else {
                 this._updateState(AUTOCOMPLETE_STATE.PARAMS.INVALID);

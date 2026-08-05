@@ -8,7 +8,7 @@ import { THEME } from '../../src/assets/scripts/client/constants/themes';
 import { RADAR_TARGET_ARRIVAL_MOCK } from './_mocks/radarTargetMocks';
 import {
     ARRIVAL_AIRCRAFT_MODEL_MOCK,
-    DEPARTURE_AIRCRAFT_MODEL_MOCK
+    DEPARTURE_AIRCRAFT_MODEL_MOCK,
 } from '../aircraft/_mocks/aircraftMocks';
 
 test('does not throw when instantiated without parameters', () => {
@@ -67,7 +67,9 @@ test('.findRadarTargetModelForAircraftModel() throws when multiple aircraft matc
     collection.addRadarTargetModelForAircraftModel(ARRIVAL_AIRCRAFT_MODEL_MOCK);
     collection.addRadarTargetModelForAircraftModel(ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
-    expect(() => collection.findRadarTargetModelForAircraftModel(ARRIVAL_AIRCRAFT_MODEL_MOCK)).toThrow();
+    expect(() =>
+        collection.findRadarTargetModelForAircraftModel(ARRIVAL_AIRCRAFT_MODEL_MOCK)
+    ).toThrow();
 });
 
 test('.findRadarTargetModelForAircraftModel() returns radar target for corresponding supplied aircraft model', () => {
@@ -130,7 +132,10 @@ test('.removeRadarTargetModelForAircraftModel() removes the corresponding radar 
     collection.addRadarTargetModelForAircraftModel(DEPARTURE_AIRCRAFT_MODEL_MOCK);
     collection.removeRadarTargetModelForAircraftModel(ARRIVAL_AIRCRAFT_MODEL_MOCK);
 
-    const aircraftInCollection = _map(collection._items, (radarTargetModel) => radarTargetModel.aircraftModel);
+    const aircraftInCollection = _map(
+        collection._items,
+        (radarTargetModel) => radarTargetModel.aircraftModel
+    );
 
     expect(_includes(aircraftInCollection, ARRIVAL_AIRCRAFT_MODEL_MOCK)).toBe(false);
     expect(_includes(aircraftInCollection, DEPARTURE_AIRCRAFT_MODEL_MOCK)).toBe(true);

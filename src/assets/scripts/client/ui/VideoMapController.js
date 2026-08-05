@@ -55,10 +55,7 @@ export default class VideoMapController {
          */
         this._selectedMaps = null;
 
-
-        this._setupHandlers()
-            .init()
-            .enable();
+        this._setupHandlers().init().enable();
     }
 
     /**
@@ -133,9 +130,9 @@ export default class VideoMapController {
     }
 
     /**
-    * @for VideoMapController
-    * @method toggleDialog
-    */
+     * @for VideoMapController
+     * @method toggleDialog
+     */
     toggleDialog() {
         this.$dialog.toggleClass(SELECTORS.CLASSNAMES.OPEN);
     }

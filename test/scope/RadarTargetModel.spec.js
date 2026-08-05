@@ -6,7 +6,7 @@ import {
     ARRIVAL_AIRCRAFT_MODEL_MOCK,
     ARRIVAL_AIRCRAFT_MODEL_MOCK_HEAVY,
     ARRIVAL_AIRCRAFT_MODEL_MOCK_SUPER,
-    DEPARTURE_AIRCRAFT_MODEL_MOCK
+    DEPARTURE_AIRCRAFT_MODEL_MOCK,
 } from '../aircraft/_mocks/aircraftMocks';
 import { INVALID_NUMBER } from '../../src/assets/scripts/client/constants/globalConstants';
 import { THEME } from '../../src/assets/scripts/client/constants/themes';
@@ -30,7 +30,9 @@ test('initializes correctly when called to instantiate with correct parameters',
 
     expect(model.aircraftModel).toEqual(ARRIVAL_AIRCRAFT_MODEL_MOCK);
     expect(model._cruiseAltitude === 28000).toBe(true);
-    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(true);
+    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(
+        true
+    );
     expect(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH).toBe(true);
     expect(model._eventBus).toEqual(EventBus);
     expect(model._hasFullDataBlock === true).toBe(true);
@@ -100,7 +102,9 @@ test('.moveDataBlock() returns syntax error when no arguments provided', () => {
     const response = model.moveDataBlock('');
 
     expect(response).toEqual(expectedResponse);
-    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(true);
+    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(
+        true
+    );
     expect(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH).toBe(true);
 });
 
@@ -110,7 +114,9 @@ test('.moveDataBlock() returns syntax error when invalid direction provided', ()
     const response = model.moveDataBlock('0');
 
     expect(response).toEqual(expectedResponse);
-    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(true);
+    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(
+        true
+    );
     expect(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH).toBe(true);
 });
 
@@ -120,7 +126,9 @@ test('.moveDataBlock() returns error when a leader length greater than 6 is requ
     const response = model.moveDataBlock('/7');
 
     expect(response).toEqual(expectedResponse);
-    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(true);
+    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(
+        true
+    );
     expect(model._dataBlockLeaderLength === THEME.DEFAULT.DATA_BLOCK.LEADER_LENGTH).toBe(true);
 });
 
@@ -140,7 +148,9 @@ test('.moveDataBlock() correctly sets properties when only a length is provided'
     const response = model.moveDataBlock('/3');
 
     expect(response).toEqual(expectedResponse);
-    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(true);
+    expect(model._dataBlockLeaderDirection === THEME.DEFAULT.DATA_BLOCK.LEADER_DIRECTION).toBe(
+        true
+    );
     expect(model._dataBlockLeaderLength === 3).toBe(true);
 });
 
@@ -199,7 +209,7 @@ test('.setHalo() calls .removeHalo() when a halo is requested of the same radius
     expect(removeHaloStub.calledWithExactly()).toBe(true);
 });
 
-test('.setDefaultScratchpad() sets #_scratchPadText to show aircraft\'s destination', () => {
+test(".setDefaultScratchpad() sets #_scratchPadText to show aircraft's destination", () => {
     const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
     const expectedValue = model.aircraftModel.destination.substr(1);
 

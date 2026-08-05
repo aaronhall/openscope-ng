@@ -3,9 +3,7 @@
     "name": "General Aviation Guinea Bissau",
     "callsign": {
         "name": "Juliet Five",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

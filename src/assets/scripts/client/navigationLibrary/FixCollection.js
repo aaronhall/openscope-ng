@@ -127,17 +127,20 @@ class FixCollection extends BaseCollection {
      * @param hiddenFixes {boolean} A flag indicating whether hidden fixes should be used
      */
     getNearestFix(position, hiddenFixes = false) {
-        return this._items.reduce((lastResult, fix) => {
-            let [nearest, distance] = lastResult;
-            const d = distance2d(fix.relativePosition, position);
+        return this._items.reduce(
+            (lastResult, fix) => {
+                let [nearest, distance] = lastResult;
+                const d = distance2d(fix.relativePosition, position);
 
-            if ((fix.isRealFix || hiddenFixes) && d < distance) {
-                nearest = fix;
-                distance = d;
-            }
+                if ((fix.isRealFix || hiddenFixes) && d < distance) {
+                    nearest = fix;
+                    distance = d;
+                }
 
-            return [nearest, distance];
-        }, [null, Infinity]);
+                return [nearest, distance];
+            },
+            [null, Infinity]
+        );
     }
 
     /**

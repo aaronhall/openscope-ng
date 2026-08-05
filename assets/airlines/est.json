@@ -3,9 +3,7 @@
     "name": "Xfly",
     "callsign": {
         "name": "Reval",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

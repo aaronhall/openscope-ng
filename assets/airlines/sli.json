@@ -3,9 +3,7 @@
     "name": "Aeromexico Connect",
     "callsign": {
         "name": "Costera",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
@@ -14,8 +12,8 @@
             ["E190", 40]
         ],
         "long": [
-            ["E170", 13 ],
-            ["E190", 40 ]
+            ["E170", 13],
+            ["E190", 40]
         ]
     }
 }

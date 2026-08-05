@@ -3,9 +3,7 @@
     "name": "SkyWest",
     "callsign": {
         "name": "SkyWest",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

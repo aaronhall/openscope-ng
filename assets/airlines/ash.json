@@ -3,9 +3,7 @@
     "name": "Mesa Airlines",
     "callsign": {
         "name": "Air Shuttle",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "Aero-Dienst",
     "callsign": {
         "name": "Aerodienst",
-        "callsignFormats": [
-            "##@"
-        ]
+        "callsignFormats": ["##@"]
     },
     "fleets": {
         "default": [

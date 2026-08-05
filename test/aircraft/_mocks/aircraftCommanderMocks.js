@@ -16,65 +16,65 @@ export const AIRCRAFT_MOCK_BASE = {
     // TODO: this may need to be a fixture for `AircraftTypeDefinitionModel`
     model: AIRCRAFT_DEFINITION_MOCK,
     positionModel: POSITION_MODEL_MOCK,
-    routeString: 'KLAS07R.COWBY6.GUP'
+    routeString: 'KLAS07R.COWBY6.GUP',
 };
 
 // Directly north
 export const AIRCRAFT_MOCK_WITH_NORTH_HEADING = Object.assign({}, AIRCRAFT_MOCK_BASE, {
-    heading: 0
+    heading: 0,
 });
 
 // North easterly (45)
 export const AIRCRAFT_MOCK_WITH_NE_HEADING = Object.assign({}, AIRCRAFT_MOCK_BASE, {
-    heading: 0.7854
+    heading: 0.7854,
 });
 
 // South westerly (225)
 export const AIRCRAFT_MOCK_WITH_POSITIVE_SW_HEADING = Object.assign({}, AIRCRAFT_MOCK_BASE, {
-    heading: 3.9270
+    heading: 3.927,
 });
 
 // South westerly (-135)
 export const AIRCRAFT_MOCK_WITH_NEGATIVE_SW_HEADING = Object.assign({}, AIRCRAFT_MOCK_BASE, {
-    heading: -2.3562
+    heading: -2.3562,
 });
 
 export const RUN_SAY_HEADING_RESULT_NORTH = [
     true,
     {
         log: 'heading 360',
-        say: 'heading three six zero'
-    }
+        say: 'heading three six zero',
+    },
 ];
 
 export const RUN_SAY_HEADING_RESULT_NE = [
     true,
     {
         log: 'heading 045',
-        say: 'heading zero four five'
-    }
+        say: 'heading zero four five',
+    },
 ];
 
 export const RUN_SAY_HEADING_RESULT_SW = [
     true,
     {
         log: 'heading 225',
-        say: 'heading two two five'
-    }
+        say: 'heading two two five',
+    },
 ];
 
 export const SQUAWK_RESPONSE_SUCCESS = [
     true,
     {
         log: 'squawk 3377',
-        say: 'squawk three three seven seven'
-    }
+        say: 'squawk three three seven seven',
+    },
 ];
 
 export const SQUAWK_RESPONSE_FAILURE = [
     false,
     {
         log: 'unable to squawk 3377',
-        say: 'unable to squawk three three seven seven'
-    }
+        say: 'unable to squawk three three seven seven',
+    },
 ];

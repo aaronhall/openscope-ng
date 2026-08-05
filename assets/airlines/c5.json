@@ -3,9 +3,7 @@
     "name": "General Aviation Gambia",
     "callsign": {
         "name": "Charlie Five",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

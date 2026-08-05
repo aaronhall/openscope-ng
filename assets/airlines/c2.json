@@ -3,9 +3,7 @@
     "name": "General Aviation Nauru",
     "callsign": {
         "name": "Charlie Two",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

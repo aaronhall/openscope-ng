@@ -3,9 +3,7 @@
     "name": "Silk Way Airlines",
     "callsign": {
         "name": "Silk Line",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

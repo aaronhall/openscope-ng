@@ -140,7 +140,7 @@
         "BRITE": ["N34d52m53.47", "E134d11m10.23"],
         "CAROL": ["N34d35m54.92", "E133d16m01.37"],
         "DEMIO": ["N34d32m48.47", "E132d55m12.50"],
-        "HGE"  : ["N34d26m01.59", "E132d55m26.29"],
+        "HGE": ["N34d26m01.59", "E132d55m26.29"],
         "IKUNO": ["N35d12m04.80", "E134d51m24.80"],
         "KAMMY": ["N34d59m27.62", "E134d41m18.72"],
         "KIJYY": ["N35d09m01.80", "E134d05m54.93"],
@@ -165,10 +165,9 @@
         "TOJYO": ["N34d52m55.51", "E133d16m48.60"],
         "TOZAN": ["N35d16m15.44", "E134d29m04.17"],
         "VISTA": ["N34d26m08.98", "E133d08m20.49"],
-        "YME"  : ["N35d28m50.49", "E135d08m13.28"]
+        "YME": ["N35d28m50.49", "E135d08m13.28"]
     },
-    "restricted": [
-    ],
+    "restricted": [],
     "runways": [
         {
             "name": ["10", "28"],
@@ -179,7 +178,7 @@
             "ils": [false, true],
             "ils_distance": [25, 25],
             "loc_maxDist": [25, 25],
-            "glideslope": [3.00, 3.00]
+            "glideslope": [3.0, 3.0]
         }
     ],
     "airways": {
@@ -297,7 +296,10 @@
                 "RJOA10": ["^_RWY28HGE03DME", "_HGE058003", "_HGE358004"],
                 "RJOA28": ["^_HGE273005", "_HGE308006", "_HGE358009"]
             },
-            "body": [["AKANA", "A110+"], ["OPERA", "A150+"]],
+            "body": [
+                ["AKANA", "A110+"],
+                ["OPERA", "A150+"]
+            ],
             "exitPoints": {
                 "OPERA": []
             },
@@ -351,13 +353,17 @@
             "entryPoints": {
                 "AMURO": [["AMURO", "A80+"]]
             },
-            "body": [["CAROL", "A60+|A80-"], ["TIIDA", "A40+"], "VISTA", "ATENZ", ["AXELA", "A33+"]],
+            "body": [
+                ["CAROL", "A60+|A80-"],
+                ["TIIDA", "A40+"],
+                "VISTA",
+                "ATENZ",
+                ["AXELA", "A33+"]
+            ],
             "rwy": {
                 "RJOA10": []
             },
-            "draw": [
-                ["AMURO*", "CAROL", "TIIDA", "VISTA", "ATENZ", "AXELA"]
-            ]
+            "draw": [["AMURO*", "CAROL", "TIIDA", "VISTA", "ATENZ", "AXELA"]]
         },
         "DEMIO": {
             "icao": "DEMIO",
@@ -365,13 +371,14 @@
             "entryPoints": {
                 "AMURO": [["AMURO", "A80+"]]
             },
-            "body": [["MIATA", "A70+"], ["DEMIO", "A55+"]],
+            "body": [
+                ["MIATA", "A70+"],
+                ["DEMIO", "A55+"]
+            ],
             "rwy": {
                 "RJOA10": []
             },
-            "draw": [
-                ["AMURO*", "MIATA", "DEMIO"]
-            ]
+            "draw": [["AMURO*", "MIATA", "DEMIO"]]
         },
         "HGE": {
             "icao": "HGE",
@@ -379,13 +386,30 @@
             "entryPoints": {
                 "HGE": ["HGE"]
             },
-            "body": ["_HGE248014", "_HGE252014", "_HGE257014", "_HGE262014", "_HGE267014", "_HGE272014", "MISEN"],
+            "body": [
+                "_HGE248014",
+                "_HGE252014",
+                "_HGE257014",
+                "_HGE262014",
+                "_HGE267014",
+                "_HGE272014",
+                "MISEN"
+            ],
             "rwy": {
                 "RJOA10": [],
                 "RJOA28": []
             },
             "draw": [
-                ["HGE*", "_HGE248014", "_HGE252014", "_HGE257014", "_HGE262014", "_HGE267014", "_HGE272014", "MISEN"]
+                [
+                    "HGE*",
+                    "_HGE248014",
+                    "_HGE252014",
+                    "_HGE257014",
+                    "_HGE262014",
+                    "_HGE267014",
+                    "_HGE272014",
+                    "MISEN"
+                ]
             ]
         },
         "MISEN": {
@@ -394,13 +418,15 @@
             "entryPoints": {
                 "AMURO": [["AMURO", "A80+"]]
             },
-            "body": [["SAILA", "A70+"], ["SEAWA", "A55+"], ["MISEN", "A41+"]],
+            "body": [
+                ["SAILA", "A70+"],
+                ["SEAWA", "A55+"],
+                ["MISEN", "A41+"]
+            ],
             "rwy": {
                 "RJOA10": []
             },
-            "draw": [
-                ["AMURO*", "SAILA", "SEAWA", "MISEN"]
-            ]
+            "draw": [["AMURO*", "SAILA", "SEAWA", "MISEN"]]
         },
         "VISTA": {
             "icao": "VISTA",
@@ -408,13 +434,15 @@
             "entryPoints": {
                 "AMURO": [["AMURO", "A80+"]]
             },
-            "body": [["CAROL", "A60+|A80-"], ["TIIDA", "A40+"], ["VISTA", "A33+"]],
+            "body": [
+                ["CAROL", "A60+|A80-"],
+                ["TIIDA", "A40+"],
+                ["VISTA", "A33+"]
+            ],
             "rwy": {
                 "RJOA28": []
             },
-            "draw": [
-                ["AMURO*", "CAROL", "TIIDA", "VISTA"]
-            ]
+            "draw": [["AMURO*", "CAROL", "TIIDA", "VISTA"]]
         }
     },
     "spawnPatterns": [
@@ -456,9 +484,7 @@
             "speed": "",
             "method": "random",
             "rate": 0.19,
-            "airlines": [
-                ["ana/short", 1]
-            ]
+            "airlines": [["ana/short", 1]]
         },
         {
             "origin": "",
@@ -469,9 +495,7 @@
             "speed": 230,
             "method": "random",
             "rate": 0.19,
-            "airlines": [
-                ["ana/short", 1]
-            ]
+            "airlines": [["ana/short", 1]]
         },
         {
             "origin": "",

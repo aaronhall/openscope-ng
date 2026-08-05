@@ -3,9 +3,7 @@
     "name": "General Aviation Guinea",
     "callsign": {
         "name": "Three Xray",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

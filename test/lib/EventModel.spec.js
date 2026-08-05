@@ -6,7 +6,7 @@ const eventNameMock = 'click';
 const observerMock = function doSomething() {
     return true;
 };
-const anonymousObserverMock = function() {
+const anonymousObserverMock = function () {
     return true;
 };
 

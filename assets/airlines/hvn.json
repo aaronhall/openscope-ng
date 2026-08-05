@@ -3,11 +3,7 @@
     "name": "Vietnam Airlines",
     "callsign": {
         "name": "Viet Nam Airlines",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["####", "###", "##"]
     },
     "fleets": {
         "default": [
