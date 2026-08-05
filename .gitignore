@@ -1,4 +1,4 @@
-﻿*~
+*~
 .DS_Store
 _atc-call-stack.js
 _site/
@@ -14,3 +14,8 @@ public/
 assets/style/
 assets/scripts/
 yarn.lock
+tmp/
+
+# vite
+.vite-public/
+
