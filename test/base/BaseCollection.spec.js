@@ -1,37 +1,37 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import _isArray from 'lodash/isArray';
 import _isString from 'lodash/isString';
 import BaseCollection from '../../src/assets/scripts/client/base/BaseCollection';
 import ExtendedBaseCollectionFixture from './_fixtures/ExtendedBaseCollectionFixture';
 
-ava('instantiates with a _id and _items properties', t => {
+test('instantiates with a _id and _items properties', () => {
     const result = new BaseCollection();
 
-    t.true(_isString(result._id));
-    t.true(_isArray(result._items));
-    t.true(result.length === 0);
+    expect(_isString(result._id)).toBe(true);
+    expect(_isArray(result._items)).toBe(true);
+    expect(result.length === 0).toBe(true);
 });
 
-ava('._init() throws when called from BaseCollection', t => {
+test('._init() throws when called from BaseCollection', () => {
     const collection = new BaseCollection();
 
-    t.throws(() => collection._init());
+    expect(() => collection._init()).toThrow();
 });
 
-ava('._init() does not throw when called by an extending class', t => {
+test('._init() does not throw when called by an extending class', () => {
     const collection = new ExtendedBaseCollectionFixture();
 
-    t.notThrows(() => collection._init());
+    expect(() => collection._init()).not.toThrow();
 });
 
-ava('.destroy() throws when called from BaseCollection', t => {
+test('.destroy() throws when called from BaseCollection', () => {
     const collection = new BaseCollection();
 
-    t.throws(() => collection.destroy());
+    expect(() => collection.destroy()).toThrow();
 });
 
-ava('.destroy() does not throw when called from and extending class', t => {
+test('.destroy() does not throw when called from and extending class', () => {
     const collection = new ExtendedBaseCollectionFixture();
 
-    t.notThrows(() => collection.destroy());
+    expect(() => collection.destroy()).not.toThrow();
 });

@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import sinon from 'sinon';
 import _map from 'lodash/map';
 import _tail from 'lodash/tail';
@@ -21,14 +21,14 @@ const buildCommandList = (...args) => {
     return commandString.split(' ');
 };
 
-ava('throws when called with an invalid command', (t) => {
-    t.throws(() => new CommandParser(['threeve']));
-    t.throws(() => new CommandParser(false));
-    t.throws(() => new CommandParser(42));
-    t.throws(() => new CommandParser({}));
+test('throws when called with an invalid command', () => {
+    expect(() => new CommandParser(['threeve'])).toThrow();
+    expect(() => new CommandParser(false)).toThrow();
+    expect(() => new CommandParser(42)).toThrow();
+    expect(() => new CommandParser({})).toThrow();
 });
 
-ava('throws when called with invalid arguments', (t) => {
+test('throws when called with invalid arguments', () => {
     const expectedResult = 'Invalid argument length. Expected exactly zero arguments';
     const commandStringMock = buildCommandString(TAKEOFF_MOCK, 'threeve');
 
@@ -36,47 +36,47 @@ ava('throws when called with invalid arguments', (t) => {
         // eslint-disable-next-line no-unused-vars
         const model = new CommandParser(commandStringMock);
     } catch (e) {
-        t.true(e === expectedResult);
+        expect(e === expectedResult).toBe(true);
     }
 });
 
-ava('does not throw when called without parameters', t => {
-    t.notThrows(() => new CommandParser());
+test('does not throw when called without parameters', () => {
+    expect(() => new CommandParser()).not.toThrow();
 });
 
 
-ava('sets #command with the correct name when provided a system command', t => {
+test('sets #command with the correct name when provided a system command', () => {
     const model = new CommandParser(TIMEWARP_50_MOCK);
 
-    t.true(model.command === 'timewarp');
+    expect(model.command === 'timewarp').toBe(true);
 });
 
-ava('sets #command with the correct name when provided a transmit command', t => {
+test('sets #command with the correct name when provided a transmit command', () => {
     const commandStringMock = buildCommandString(CAF_MOCK, CVS_MOCK, TAKEOFF_MOCK);
     const model = new CommandParser(commandStringMock);
 
-    t.true(model.command === PARSED_COMMAND_NAME.TRANSMIT);
+    expect(model.command === PARSED_COMMAND_NAME.TRANSMIT).toBe(true);
 });
 
-ava('sets #commandList with a AircraftCommandModel object when provided a system command', t => {
+test('sets #commandList with a AircraftCommandModel object when provided a system command', () => {
     const model = new CommandParser(TIMEWARP_50_MOCK);
 
-    t.true(model.commandList.length === 1);
-    t.true(model.commandList[0] instanceof AircraftCommandModel);
+    expect(model.commandList.length === 1).toBe(true);
+    expect(model.commandList[0] instanceof AircraftCommandModel).toBe(true);
 });
 
-ava('sets #commandList with AircraftCommandModel objects when it receives transmit commands', t => {
+test('sets #commandList with AircraftCommandModel objects when it receives transmit commands', () => {
     const commandStringMock = buildCommandString(CAF_MOCK, CVS_MOCK, TAKEOFF_MOCK);
     const model = new CommandParser(commandStringMock);
 
-    t.true(model.commandList.length === 3);
+    expect(model.commandList.length === 3).toBe(true);
 
     _map(model.commandList, (command) => {
-        t.true(command instanceof AircraftCommandModel);
+        expect(command instanceof AircraftCommandModel).toBe(true);
     });
 });
 
-ava('._extractCommandsAndArgs() calls _buildCommandList() when provided transmit commands', t => {
+test('._extractCommandsAndArgs() calls _buildCommandList() when provided transmit commands', () => {
     const commandStringMock = buildCommandString(CAF_MOCK, CVS_MOCK, TAKEOFF_MOCK);
     const expectedArgs = buildCommandList(CAF_MOCK, CVS_MOCK, TAKEOFF_MOCK);
     const model = new CommandParser(commandStringMock);
@@ -84,32 +84,32 @@ ava('._extractCommandsAndArgs() calls _buildCommandList() when provided transmit
 
     model._extractCommandsAndArgs(commandStringMock);
 
-    t.true(_buildCommandListSpy.calledWithExactly(_tail(expectedArgs)));
+    expect(_buildCommandListSpy.calledWithExactly(_tail(expectedArgs))).toBe(true);
 });
 
-ava('._buildCommandList() returns an empty array when adding args to an undefined AircraftCommandModel', t => {
+test('._buildCommandList() returns an empty array when adding args to an undefined AircraftCommandModel', () => {
     const model = new CommandParser('threeve');
 
-    t.notThrows(() => model._buildCommandList(['$texas']));
+    expect(() => model._buildCommandList(['$texas'])).not.toThrow();
 
     const result = model._buildCommandList(['$texas']);
 
-    t.deepEqual(result, []);
+    expect(result).toEqual([]);
 });
 
-ava('._validateAndParseCommandArguments() calls ._validateCommandArguments()', t => {
+test('._validateAndParseCommandArguments() calls ._validateCommandArguments()', () => {
     const commandStringMock = buildCommandString(CAF_MOCK, CVS_MOCK, TAKEOFF_MOCK);
     const model = new CommandParser(commandStringMock);
 
     const _validateCommandArgumentsSpy = sinon.spy(model, '_validateCommandArguments');
     model._validateCommandArguments();
 
-    t.true(_validateCommandArgumentsSpy.called);
+    expect(_validateCommandArgumentsSpy.called).toBe(true);
 });
 
-ava('._isSystemCommand() returns true if callsignOrTopLevelCommandName exists within SYSTEM_COMMANDS and is not transmit', t => {
+test('._isSystemCommand() returns true if callsignOrTopLevelCommandName exists within SYSTEM_COMMANDS and is not transmit', () => {
     const systemCommandMock = 'timewarp';
     const model = new CommandParser(systemCommandMock);
 
-    t.true(model._isSystemCommand(systemCommandMock));
+    expect(model._isSystemCommand(systemCommandMock)).toBe(true);
 });

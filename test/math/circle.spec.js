@@ -1,18 +1,18 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import {
     tau,
     distanceToPoint
 } from '../../src/assets/scripts/client/math/circle';
 
-ava('.tau() returns PI * 2', t => {
+test('.tau() returns PI * 2', () => {
     const result = tau();
     const expectedResult = Math.PI * 2;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.distanceToPoint() returns the distance between two lat/long coordinates in kilometers', t => {
+test('.distanceToPoint() returns the distance between two lat/long coordinates in kilometers', () => {
     const latitudeAMock = 36.080056;
     const longitudeAMock = -115.15225;
     const latitudeBMock = 36.080056;
@@ -20,5 +20,5 @@ ava('.distanceToPoint() returns the distance between two lat/long coordinates in
     const expectedResult = 0.5068508706893402;
     const result = distanceToPoint(latitudeAMock, longitudeAMock, latitudeBMock, longitudeBMock);
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });

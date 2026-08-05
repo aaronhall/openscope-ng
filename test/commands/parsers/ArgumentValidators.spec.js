@@ -1,5 +1,5 @@
 /* eslint-disable arrow-parens, max-len, import/no-extraneous-dependencies */
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import {
     zeroArgumentsValidator,
@@ -20,388 +20,388 @@ import {
 
 // TODO: import ERROR_MESSAGE and use actual values to test against
 
-ava('.zeroArgumentsValidator() returns a string when passed the wrong number of arguments', t => {
+test('.zeroArgumentsValidator() returns a string when passed the wrong number of arguments', () => {
     let result = zeroArgumentsValidator();
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = zeroArgumentsValidator([]);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = zeroArgumentsValidator(['', '']);
-    t.true(result === 'Invalid argument length. Expected exactly zero arguments');
+    expect(result === 'Invalid argument length. Expected exactly zero arguments').toBe(true);
 });
 
-ava('.singleArgumentValidator() returns a string when passed the wrong number of arguments', t => {
+test('.singleArgumentValidator() returns a string when passed the wrong number of arguments', () => {
     let result = singleArgumentValidator(['']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = singleArgumentValidator();
-    t.true(result === 'Invalid argument length. Expected exactly one argument');
+    expect(result === 'Invalid argument length. Expected exactly one argument').toBe(true);
 
     result = singleArgumentValidator([]);
-    t.true(result === 'Invalid argument length. Expected exactly one argument');
+    expect(result === 'Invalid argument length. Expected exactly one argument').toBe(true);
 
     result = singleArgumentValidator(['', '']);
-    t.true(result === 'Invalid argument length. Expected exactly one argument');
+    expect(result === 'Invalid argument length. Expected exactly one argument').toBe(true);
 });
 
-ava('.zeroOrOneArgumentValidator() returns a string when passed the wrong number of arguments', t => {
+test('.zeroOrOneArgumentValidator() returns a string when passed the wrong number of arguments', () => {
     let result = zeroOrOneArgumentValidator();
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = zeroOrOneArgumentValidator(['']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = zeroOrOneArgumentValidator(['', '']);
-    t.true(result === 'Invalid argument length. Expected zero or one argument');
+    expect(result === 'Invalid argument length. Expected zero or one argument').toBe(true);
 });
 
-ava('.oneOrTwoArgumentValidator() returns a string when passed the wrong number of arguments', t => {
+test('.oneOrTwoArgumentValidator() returns a string when passed the wrong number of arguments', () => {
     let result = oneOrTwoArgumentValidator(['']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = oneOrTwoArgumentValidator(['', '']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = oneOrTwoArgumentValidator();
-    t.true(result === 'Invalid argument length. Expected one or two arguments');
+    expect(result === 'Invalid argument length. Expected one or two arguments').toBe(true);
 
     result = oneOrTwoArgumentValidator(['', '', '']);
-    t.true(result === 'Invalid argument length. Expected one or two arguments');
+    expect(result === 'Invalid argument length. Expected one or two arguments').toBe(true);
 });
 
-ava('.oneToThreeArgumentsValidator() returns a string when passed the wrong number of arguments', t => {
+test('.oneToThreeArgumentsValidator() returns a string when passed the wrong number of arguments', () => {
     let result = oneToThreeArgumentsValidator(['']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = oneToThreeArgumentsValidator(['', '']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = oneToThreeArgumentsValidator(['', '', '']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = oneToThreeArgumentsValidator();
-    t.true(result === 'Invalid argument length. Expected one, two, or three arguments');
+    expect(result === 'Invalid argument length. Expected one, two, or three arguments').toBe(true);
 
     result = oneToThreeArgumentsValidator(['', '', '', '']);
-    t.true(result === 'Invalid argument length. Expected one, two, or three arguments');
+    expect(result === 'Invalid argument length. Expected one, two, or three arguments').toBe(true);
 });
 
-ava('.oneOrThreeArgumentValidator() returns a string when passed the wrong number of arguments', t => {
+test('.oneOrThreeArgumentValidator() returns a string when passed the wrong number of arguments', () => {
     let result = oneOrThreeArgumentsValidator(['']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = oneOrThreeArgumentsValidator(['', '', '']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = oneOrThreeArgumentsValidator();
-    t.true(result === 'Invalid argument length. Expected one or three arguments');
+    expect(result === 'Invalid argument length. Expected one or three arguments').toBe(true);
 
     result = oneOrThreeArgumentsValidator(['', '', '', '']);
-    t.true(result === 'Invalid argument length. Expected one or three arguments');
+    expect(result === 'Invalid argument length. Expected one or three arguments').toBe(true);
 });
 
-ava('.altitudeValidator() returns undefined when passed a valid altitude', t => {
+test('.altitudeValidator() returns undefined when passed a valid altitude', () => {
     let result = altitudeValidator(['100']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = altitudeValidator(['300']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = altitudeValidator(['aa']);
-    t.true(result === 'Invalid argument. Altitude must be a number');
+    expect(result === 'Invalid argument. Altitude must be a number').toBe(true);
 });
 
-ava('.altitudeValidator() returns a string when passed the wrong number of arguments', t => {
+test('.altitudeValidator() returns a string when passed the wrong number of arguments', () => {
     let result = altitudeValidator(['100', 'expedite']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = altitudeValidator();
-    t.true(result === 'Invalid argument length. Expected one or two arguments');
+    expect(result === 'Invalid argument length. Expected one or two arguments').toBe(true);
 
     result = altitudeValidator([]);
-    t.true(result === 'Invalid argument length. Expected one or two arguments');
+    expect(result === 'Invalid argument length. Expected one or two arguments').toBe(true);
 
     result = altitudeValidator(['', '', '']);
-    t.true(result === 'Invalid argument length. Expected one or two arguments');
+    expect(result === 'Invalid argument length. Expected one or two arguments').toBe(true);
 });
 
-ava('.altitudeValidator() returns a string when passed anything other than expedite or ex as the second argument', t => {
+test('.altitudeValidator() returns a string when passed anything other than expedite or ex as the second argument', () => {
     let result = altitudeValidator(['100', 'expedite']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = altitudeValidator(['100', 'ex']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = altitudeValidator(['100', '']);
-    t.true(result === 'Invalid argument. Altitude accepts only "expedite" or "ex" as a second argument');
+    expect(result === 'Invalid argument. Altitude accepts only "expedite" or "ex" as a second argument').toBe(true);
 });
 
-ava('.optionalAltitudeValidator() returns undefined when no value is passed', t => {
+test('.optionalAltitudeValidator() returns undefined when no value is passed', () => {
     const result = optionalAltitudeValidator([]);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.optionalAltitudeValidator() returns undefined when passed a valid altitude', t => {
+test('.optionalAltitudeValidator() returns undefined when passed a valid altitude', () => {
     let result = optionalAltitudeValidator(['100']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = optionalAltitudeValidator(['300']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = optionalAltitudeValidator(['aa']);
-    t.true(result === 'Invalid argument. Altitude must be a number');
+    expect(result === 'Invalid argument. Altitude must be a number').toBe(true);
 });
 
-ava('.optionalAltitudeValidator() returns a string when passed the wrong number of arguments', t => {
+test('.optionalAltitudeValidator() returns a string when passed the wrong number of arguments', () => {
     let result = optionalAltitudeValidator(['100', 'expedite']);
-    t.true(result === 'Invalid argument length. Expected zero or one argument');
+    expect(result === 'Invalid argument length. Expected zero or one argument').toBe(true);
 
     result = optionalAltitudeValidator(['', '', '']);
-    t.true(result === 'Invalid argument length. Expected zero or one argument');
+    expect(result === 'Invalid argument length. Expected zero or one argument').toBe(true);
 });
 
-ava('.fixValidator() returns undefined when it receives at least one valid argument', (t) => {
+test('.fixValidator() returns undefined when it receives at least one valid argument', () => {
     let result = fixValidator(['one']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = fixValidator(['one', 'two', 'th33', '4F1o']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
-    t.true(fixValidator([]) === 'Invalid argument length. Expected one or more arguments');
+    expect(fixValidator([]) === 'Invalid argument length. Expected one or more arguments').toBe(true);
 });
 
-ava('.fixValidator() returns a string when passed anything other than a string', (t) => {
-    t.true(fixValidator([42, '', '']) === 'Invalid argument. Must be a string');
-    t.true(fixValidator(['', false, '']) === 'Invalid argument. Must be a string');
-    t.true(fixValidator([42, false, '', {}]) === 'Invalid argument. Must be a string');
+test('.fixValidator() returns a string when passed anything other than a string', () => {
+    expect(fixValidator([42, '', '']) === 'Invalid argument. Must be a string').toBe(true);
+    expect(fixValidator(['', false, '']) === 'Invalid argument. Must be a string').toBe(true);
+    expect(fixValidator([42, false, '', {}]) === 'Invalid argument. Must be a string').toBe(true);
 });
 
-ava('.headingValidator() returns a string when passed the wrong number of arguments', t => {
+test('.headingValidator() returns a string when passed the wrong number of arguments', () => {
     let result = headingValidator(['042']);
-    t.is(result, undefined);
+    expect(result).toBe(undefined);
 
     result = headingValidator(['l', '42']);
-    t.is(result, undefined);
+    expect(result).toBe(undefined);
 
     result = headingValidator();
-    t.is(result, 'Invalid argument length. Expected one or two arguments');
+    expect(result).toBe('Invalid argument length. Expected one or two arguments');
 
     result = headingValidator([]);
-    t.is(result, 'Invalid argument length. Expected one or two arguments');
+    expect(result).toBe('Invalid argument length. Expected one or two arguments');
 
     result = headingValidator(['l', '42', 'threeve']);
-    t.is(result, 'Invalid argument length. Expected one or two arguments');
+    expect(result).toBe('Invalid argument length. Expected one or two arguments');
 });
 
-ava('.headingValidator() returns a string when passed the wrong type of arguments', t => {
-    t.is(headingValidator(['threeve']), 'Invalid argument. Heading must be between 001 and 360');
-    t.is(headingValidator(['42', '42']), 'Invalid argument. Expected one of \'left / l / right / r\' as the first argument when passed three arguments');
-    t.is(headingValidator(['l', 'threeve']), 'Invalid argument. Heading must be a number');
-    t.is(headingValidator(['42', '42']), 'Invalid argument. Expected one of \'left / l / right / r\' as the first argument when passed three arguments');
-    t.is(headingValidator(['l', 'threeve']), 'Invalid argument. Heading must be a number');
-    t.is(headingValidator(['000']), 'Invalid argument. Heading must be between 001 and 360');
-    t.is(headingValidator(['361']), 'Invalid argument. Heading must be between 001 and 360');
-    t.is(headingValidator(['l', '000']), 'Invalid argument. Heading must be between 001 and 360');
-    t.is(headingValidator(['l', '361']), 'Invalid argument. Heading must be between 001 and 360');
-    t.is(headingValidator(['l', '0']), 'Invalid argument. Incremental heading must be positive');
-    t.is(headingValidator(['l', '-9']), 'Invalid argument. Incremental heading must be positive');
+test('.headingValidator() returns a string when passed the wrong type of arguments', () => {
+    expect(headingValidator(['threeve'])).toBe('Invalid argument. Heading must be between 001 and 360');
+    expect(headingValidator(['42', '42'])).toBe('Invalid argument. Expected one of \'left / l / right / r\' as the first argument when passed three arguments');
+    expect(headingValidator(['l', 'threeve'])).toBe('Invalid argument. Heading must be a number');
+    expect(headingValidator(['42', '42'])).toBe('Invalid argument. Expected one of \'left / l / right / r\' as the first argument when passed three arguments');
+    expect(headingValidator(['l', 'threeve'])).toBe('Invalid argument. Heading must be a number');
+    expect(headingValidator(['000'])).toBe('Invalid argument. Heading must be between 001 and 360');
+    expect(headingValidator(['361'])).toBe('Invalid argument. Heading must be between 001 and 360');
+    expect(headingValidator(['l', '000'])).toBe('Invalid argument. Heading must be between 001 and 360');
+    expect(headingValidator(['l', '361'])).toBe('Invalid argument. Heading must be between 001 and 360');
+    expect(headingValidator(['l', '0'])).toBe('Invalid argument. Incremental heading must be positive');
+    expect(headingValidator(['l', '-9'])).toBe('Invalid argument. Incremental heading must be positive');
 });
 
-ava('.headingValidator() returns undefined when passed a number as a single argument', t => {
+test('.headingValidator() returns undefined when passed a number as a single argument', () => {
     const result = headingValidator(['042']);
-    t.is(result, undefined);
+    expect(result).toBe(undefined);
 });
 
-ava('.headingValidator() returns undefined when passed a string and a number as arguments', t => {
-    t.is(headingValidator(['l', '2']), undefined);
-    t.is(headingValidator(['l', '42']), undefined);
-    t.is(headingValidator(['l', '042']), undefined);
+test('.headingValidator() returns undefined when passed a string and a number as arguments', () => {
+    expect(headingValidator(['l', '2'])).toBe(undefined);
+    expect(headingValidator(['l', '42'])).toBe(undefined);
+    expect(headingValidator(['l', '042'])).toBe(undefined);
 });
 
-ava('.holdValidator() returns a string when passed the wrong number of arguments', t => {
+test('.holdValidator() returns a string when passed the wrong number of arguments', () => {
     const result = holdValidator(['', 'left', 1, '', '']);
-    t.true(result === 'Invalid argument length. Expected zero to four arguments');
+    expect(result === 'Invalid argument length. Expected zero to four arguments').toBe(true);
 });
 
-ava('.holdValidator() returns undefined when passed zero arguments', t => {
+test('.holdValidator() returns undefined when passed zero arguments', () => {
     let result = holdValidator();
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator([]);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.holdValidator() returns a string when passed the wrong type of arguments', t => {
-    t.true(holdValidator([false]) === 'Invalid argument. Must be a string');
-    t.true(holdValidator([false, '42', '1min', '090']) === 'Invalid argument. Must be a string');
-    t.true(holdValidator(['42', false, '1min', '090']) === 'Invalid argument. Must be a string');
-    t.true(holdValidator(['42', 'left', false, '090']) === 'Invalid argument. Must be a string');
-    t.true(holdValidator(['42', 'left', '1min', false]) === 'Invalid argument. Must be a string');
+test('.holdValidator() returns a string when passed the wrong type of arguments', () => {
+    expect(holdValidator([false]) === 'Invalid argument. Must be a string').toBe(true);
+    expect(holdValidator([false, '42', '1min', '090']) === 'Invalid argument. Must be a string').toBe(true);
+    expect(holdValidator(['42', false, '1min', '090']) === 'Invalid argument. Must be a string').toBe(true);
+    expect(holdValidator(['42', 'left', false, '090']) === 'Invalid argument. Must be a string').toBe(true);
+    expect(holdValidator(['42', 'left', '1min', false]) === 'Invalid argument. Must be a string').toBe(true);
 });
 
-ava('.holdValidator() returns undefined when passed a string as an argument', t => {
+test('.holdValidator() returns undefined when passed a string as an argument', () => {
     const result = holdValidator(['']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.holdValidator() returns undefined when two strings as arguments', t => {
+test('.holdValidator() returns undefined when two strings as arguments', () => {
     let result = holdValidator(['dumba', '1min']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['1nm', '1min']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['l', 'dumba']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['090', 'dumba']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.holdValidator() returns undefined when passed three strings as arguments', t => {
+test('.holdValidator() returns undefined when passed three strings as arguments', () => {
     let result = holdValidator(['dumba', 'left', '1min']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['dumba', 'right', '1nm']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['dumba', 'right', '1min']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['dumba', 'right', '1nm']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['dumba', 'right', '090']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['dumba', '1min', '090']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['dumba', '1nm', '090']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.holdValidator() returns undefined when passed four strings as arguments', t => {
+test('.holdValidator() returns undefined when passed four strings as arguments', () => {
     let result = holdValidator(['dumba', 'left', '1min', '090']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['dumba', 'right', '1nm', '090']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['dumba', 'right', '1min', '090']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = holdValidator(['dumba', 'right', '1nm', '090']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.isValidCourseString() returns true when passed a 3 digit course', (t) => {
-    t.true(isValidCourseString('001'));
-    t.true(isValidCourseString('090'));
-    t.true(isValidCourseString('360'));
+test('.isValidCourseString() returns true when passed a 3 digit course', () => {
+    expect(isValidCourseString('001')).toBe(true);
+    expect(isValidCourseString('090')).toBe(true);
+    expect(isValidCourseString('360')).toBe(true);
 });
 
-ava('.isValidCourseString() returns false when passed an invalid course', (t) => {
-    t.false(isValidCourseString('000'));
-    t.false(isValidCourseString('1min'));
-    t.false(isValidCourseString('5'));
-    t.false(isValidCourseString('50'));
-    t.false(isValidCourseString('370'));
-    t.false(isValidCourseString('-10'));
-    t.false(isValidCourseString('1000'));
+test('.isValidCourseString() returns false when passed an invalid course', () => {
+    expect(isValidCourseString('000')).toBe(false);
+    expect(isValidCourseString('1min')).toBe(false);
+    expect(isValidCourseString('5')).toBe(false);
+    expect(isValidCourseString('50')).toBe(false);
+    expect(isValidCourseString('370')).toBe(false);
+    expect(isValidCourseString('-10')).toBe(false);
+    expect(isValidCourseString('1000')).toBe(false);
 });
 
-ava('.squawkValidator() returns undefined when passed a valid squawk', t => {
+test('.squawkValidator() returns undefined when passed a valid squawk', () => {
     let result = squawkValidator(['1111']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = squawkValidator(['1234']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.squawkValidator() returns a string when passed the wrong number of arguments', t => {
+test('.squawkValidator() returns a string when passed the wrong number of arguments', () => {
     let result = squawkValidator();
-    t.true(result === 'Invalid argument length. Expected exactly one argument');
+    expect(result === 'Invalid argument length. Expected exactly one argument').toBe(true);
 
     result = squawkValidator([]);
-    t.true(result === 'Invalid argument length. Expected exactly one argument');
+    expect(result === 'Invalid argument length. Expected exactly one argument').toBe(true);
 
     result = squawkValidator(['', '']);
-    t.true(result === 'Invalid argument length. Expected exactly one argument');
+    expect(result === 'Invalid argument length. Expected exactly one argument').toBe(true);
 });
 
-ava('.squawkValidator() returns string when passed invalid squawk', t => {
+test('.squawkValidator() returns string when passed invalid squawk', () => {
     let result = squawkValidator(['8888']);
-    t.true(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.');
+    expect(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.').toBe(true);
 
     result = squawkValidator(['111']);
-    t.true(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.');
+    expect(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.').toBe(true);
 
     result = squawkValidator(['1181']);
-    t.true(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.');
+    expect(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.').toBe(true);
 
     result = squawkValidator(['11711']);
-    t.true(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.');
+    expect(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.').toBe(true);
 
     result = squawkValidator(['1a11']);
-    t.true(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.');
+    expect(result === 'Invalid argument. Expected \'0000\'-\'7777\' for the transponder code.').toBe(true);
 });
 
-ava('.crossingValidator() returns a string when passed the wrong number of arguments', t => {
+test('.crossingValidator() returns a string when passed the wrong number of arguments', () => {
     let result = crossingValidator();
-    t.true(result === 'Invalid argument length. Expected two or three arguments');
+    expect(result === 'Invalid argument length. Expected two or three arguments').toBe(true);
 
     result = crossingValidator([]);
-    t.true(result === 'Invalid argument length. Expected two or three arguments');
+    expect(result === 'Invalid argument length. Expected two or three arguments').toBe(true);
 
     result = crossingValidator(['', '', '', '', '']);
-    t.true(result === 'Invalid argument length. Expected two or three arguments');
+    expect(result === 'Invalid argument length. Expected two or three arguments').toBe(true);
 });
 
-ava('.crossingValidator() returns undefined when passed valid arguments', t => {
+test('.crossingValidator() returns undefined when passed valid arguments', () => {
     let result = crossingValidator(['LEMDY', 'a50', 's210']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 
     result = crossingValidator(['BLUB', 'a100', 's250']);
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.crossingValidator() returns an error when fixname is not a string', t => {
+test('.crossingValidator() returns an error when fixname is not a string', () => {
     let result = crossingValidator([50, 'a70', 's210']);
-    t.true(result === 'Invalid argument. Must be a string');
+    expect(result === 'Invalid argument. Must be a string').toBe(true);
 
     result = crossingValidator([{}, 'a70', 's210']);
-    t.true(result === 'Invalid argument. Must be a string');
+    expect(result === 'Invalid argument. Must be a string').toBe(true);
 
     result = crossingValidator([[], 'a70', 's210']);
-    t.true(result === 'Invalid argument. Must be a string');
+    expect(result === 'Invalid argument. Must be a string').toBe(true);
 });
 
-ava('.crossingValidator() returns an error when altitude is not a number', t => {
+test('.crossingValidator() returns an error when altitude is not a number', () => {
     let result = crossingValidator(['LEMDY', 'xx', 's210']);
-    t.true(result === 'Invalid argument. Altitude must be a number');
+    expect(result === 'Invalid argument. Altitude must be a number').toBe(true);
 
     result = crossingValidator(['LEMDY', '', 's210']);
-    t.true(result === 'Invalid argument. Altitude must be a number');
+    expect(result === 'Invalid argument. Altitude must be a number').toBe(true);
 
     result = crossingValidator(['LEMDY', [], 's210']);
-    t.true(result === 'Invalid argument. Altitude must be a number');
+    expect(result === 'Invalid argument. Altitude must be a number').toBe(true);
 
     result = crossingValidator(['LEMDY', {}, 's210']);
-    t.true(result === 'Invalid argument. Altitude must be a number');
+    expect(result === 'Invalid argument. Altitude must be a number').toBe(true);
 });
 
-ava('.crossingValidator() returns an error when speed is not a number', t => {
+test('.crossingValidator() returns an error when speed is not a number', () => {
     let result = crossingValidator(['LEMDY', 'a70', 'xx']);
-    t.true(result === 'Invalid argument. Speed must be a number');
+    expect(result === 'Invalid argument. Speed must be a number').toBe(true);
 
     result = crossingValidator(['LEMDY', 'a70', '']);
-    t.true(result === 'Invalid argument. Speed must be a number');
+    expect(result === 'Invalid argument. Speed must be a number').toBe(true);
 
     result = crossingValidator(['LEMDY', 'a70', []]);
-    t.true(result === 'Invalid argument. Speed must be a number');
+    expect(result === 'Invalid argument. Speed must be a number').toBe(true);
 
     result = crossingValidator(['LEMDY', 'a70', {}]);
-    t.true(result === 'Invalid argument. Speed must be a number');
+    expect(result === 'Invalid argument. Speed must be a number').toBe(true);
 });

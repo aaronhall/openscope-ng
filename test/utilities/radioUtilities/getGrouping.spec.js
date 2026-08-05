@@ -1,27 +1,27 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import { getGrouping } from '../../../src/assets/scripts/client/utilities/radioUtilities';
 
-ava('getGrouping() returns appropriate string for "00"', (t) => {
-    t.true(getGrouping('00') === 'hundred');
+test('getGrouping() returns appropriate string for "00"', () => {
+    expect(getGrouping('00') === 'hundred').toBe(true);
 });
 
-ava('getGrouping() returns appropriate string for "05"', (t) => {
-    t.true(getGrouping('05') === 'zero five');
+test('getGrouping() returns appropriate string for "05"', () => {
+    expect(getGrouping('05') === 'zero five').toBe(true);
 });
 
-ava('getGrouping() returns appropriate string for "10"', (t) => {
-    t.true(getGrouping('10') === 'ten');
+test('getGrouping() returns appropriate string for "10"', () => {
+    expect(getGrouping('10') === 'ten').toBe(true);
 });
 
-ava('getGrouping() returns appropriate string for "17"', (t) => {
-    t.true(getGrouping('17') === 'seventeen');
+test('getGrouping() returns appropriate string for "17"', () => {
+    expect(getGrouping('17') === 'seventeen').toBe(true);
 });
 
-ava('getGrouping() returns appropriate string for "30"', (t) => {
-    t.true(getGrouping('30') === 'thirty');
+test('getGrouping() returns appropriate string for "30"', () => {
+    expect(getGrouping('30') === 'thirty').toBe(true);
 });
 
-ava('getGrouping() returns appropriate string for "31"', (t) => {
-    t.true(getGrouping('31') === 'thirty one');
+test('getGrouping() returns appropriate string for "31"', () => {
+    expect(getGrouping('31') === 'thirty one').toBe(true);
 });

@@ -1,75 +1,75 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import { groupNumbers } from '../../../src/assets/scripts/client/utilities/radioUtilities';
 
-ava('groupNumbers() returns appropriate string for "5"', (t) => {
-    t.true(groupNumbers('5') === 'five');
+test('groupNumbers() returns appropriate string for "5"', () => {
+    expect(groupNumbers('5') === 'five').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "10"', (t) => {
-    t.true(groupNumbers('10') === 'ten');
+test('groupNumbers() returns appropriate string for "10"', () => {
+    expect(groupNumbers('10') === 'ten').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "17"', (t) => {
-    t.true(groupNumbers('17') === 'seventeen');
+test('groupNumbers() returns appropriate string for "17"', () => {
+    expect(groupNumbers('17') === 'seventeen').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "30"', (t) => {
-    t.true(groupNumbers('30') === 'thirty');
+test('groupNumbers() returns appropriate string for "30"', () => {
+    expect(groupNumbers('30') === 'thirty').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "31"', (t) => {
-    t.true(groupNumbers('31') === 'thirty one');
+test('groupNumbers() returns appropriate string for "31"', () => {
+    expect(groupNumbers('31') === 'thirty one').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "100"', (t) => {
-    t.true(groupNumbers('100') === 'one hundred');
+test('groupNumbers() returns appropriate string for "100"', () => {
+    expect(groupNumbers('100') === 'one hundred').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "107"', (t) => {
-    t.true(groupNumbers('107') === 'one zero seven');
+test('groupNumbers() returns appropriate string for "107"', () => {
+    expect(groupNumbers('107') === 'one zero seven').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "112"', (t) => {
-    t.true(groupNumbers('112') === 'one twelve');
+test('groupNumbers() returns appropriate string for "112"', () => {
+    expect(groupNumbers('112') === 'one twelve').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "589"', (t) => {
-    t.true(groupNumbers('589') === 'five eighty niner');
+test('groupNumbers() returns appropriate string for "589"', () => {
+    expect(groupNumbers('589') === 'five eighty niner').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "1000"', (t) => {
-    t.true(groupNumbers('1000') === 'one thousand');
+test('groupNumbers() returns appropriate string for "1000"', () => {
+    expect(groupNumbers('1000') === 'one thousand').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "1008"', (t) => {
-    t.true(groupNumbers('1008') === 'ten zero eight');
+test('groupNumbers() returns appropriate string for "1008"', () => {
+    expect(groupNumbers('1008') === 'ten zero eight').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "1018"', (t) => {
-    t.true(groupNumbers('1018') === 'ten eighteen');
+test('groupNumbers() returns appropriate string for "1018"', () => {
+    expect(groupNumbers('1018') === 'ten eighteen').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "1020"', (t) => {
-    t.true(groupNumbers('1020') === 'ten twenty');
+test('groupNumbers() returns appropriate string for "1020"', () => {
+    expect(groupNumbers('1020') === 'ten twenty').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "2216"', (t) => {
-    t.true(groupNumbers('2216') === 'twenty two sixteen');
+test('groupNumbers() returns appropriate string for "2216"', () => {
+    expect(groupNumbers('2216') === 'twenty two sixteen').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "3000"', (t) => {
-    t.true(groupNumbers('3000') === 'three thousand');
+test('groupNumbers() returns appropriate string for "3000"', () => {
+    expect(groupNumbers('3000') === 'three thousand').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "4000"', (t) => {
-    t.true(groupNumbers('4000') === 'four thousand');
+test('groupNumbers() returns appropriate string for "4000"', () => {
+    expect(groupNumbers('4000') === 'four thousand').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "5000"', (t) => {
-    t.true(groupNumbers('5000') === 'five thousand');
+test('groupNumbers() returns appropriate string for "5000"', () => {
+    expect(groupNumbers('5000') === 'five thousand').toBe(true);
 });
 
-ava('groupNumbers() returns appropriate string for "6641"', (t) => {
-    t.true(groupNumbers('6641') === 'sixty six fourty one');
+test('groupNumbers() returns appropriate string for "6641"', () => {
+    expect(groupNumbers('6641') === 'sixty six fourty one').toBe(true);
 });

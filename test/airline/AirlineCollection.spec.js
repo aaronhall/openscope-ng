@@ -1,83 +1,83 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import _isEqual from 'lodash/isEqual';
 
 import AirlineCollection from '../../src/assets/scripts/client/airline/AirlineCollection';
 import AirlineModel from '../../src/assets/scripts/client/airline/AirlineModel';
 import { AIRLINE_DEFINITION_LIST_MOCK } from './_mocks/airlineMocks';
 
-ava('throws when called with invalid data', (t) => {
+test('throws when called with invalid data', () => {
     const expectedMessage = /Invalid airlineList passed to AirlineCollection constructor\. Expected a non-empty array, but received .*/;
-    t.throws(() => new AirlineCollection(), {
+    expect(() => new AirlineCollection(), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AirlineCollection(null), {
+    }).toThrow();
+    expect(() => new AirlineCollection(null), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AirlineCollection({}), {
+    }).toThrow();
+    expect(() => new AirlineCollection({}), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AirlineCollection([]), {
+    }).toThrow();
+    expect(() => new AirlineCollection([]), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AirlineCollection(42), {
+    }).toThrow();
+    expect(() => new AirlineCollection(42), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AirlineCollection('threeve'), {
+    }).toThrow();
+    expect(() => new AirlineCollection('threeve'), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
-    t.throws(() => new AirlineCollection(false), {
+    }).toThrow();
+    expect(() => new AirlineCollection(false), {
         instanceOf: TypeError,
         message: expectedMessage
-    });
+    }).toThrow();
 });
 
-ava('does not throw when called with valid data', (t) => {
-    t.notThrows(() => new AirlineCollection(AIRLINE_DEFINITION_LIST_MOCK));
+test('does not throw when called with valid data', () => {
+    expect(() => new AirlineCollection(AIRLINE_DEFINITION_LIST_MOCK)).not.toThrow();
 });
 
-ava('flightNumbers returns a list of flightNumbers from all AirlineModels in the collection', (t) => {
+test('flightNumbers returns a list of flightNumbers from all AirlineModels in the collection', () => {
     const expectedResult = ['123', '321', '234', '432'];
     const collection = new AirlineCollection(AIRLINE_DEFINITION_LIST_MOCK);
     collection._items[0].activeFlightNumbers = ['123', '321'];
     collection._items[1].activeFlightNumbers = ['234', '432'];
 
-    t.true(_isEqual(collection.flightNumbers, expectedResult));
+    expect(_isEqual(collection.flightNumbers, expectedResult)).toBe(true);
 });
 
-ava('.findAirlineById() returns an AirlineModel when supplied an airlineId without fleet', (t) => {
+test('.findAirlineById() returns an AirlineModel when supplied an airlineId without fleet', () => {
     const collection = new AirlineCollection(AIRLINE_DEFINITION_LIST_MOCK);
     const result = collection.findAirlineById('aal');
 
-    t.true(result instanceof AirlineModel);
-    t.true(result.icao === 'aal');
+    expect(result instanceof AirlineModel).toBe(true);
+    expect(result.icao === 'aal').toBe(true);
 });
 
-ava('.findAirlineById() returns an AirlineModel when supplied an airlineId in uppercase without fleet', (t) => {
+test('.findAirlineById() returns an AirlineModel when supplied an airlineId in uppercase without fleet', () => {
     const collection = new AirlineCollection(AIRLINE_DEFINITION_LIST_MOCK);
     const result = collection.findAirlineById('AAL');
 
-    t.true(result instanceof AirlineModel);
-    t.true(result.icao === 'aal');
+    expect(result instanceof AirlineModel).toBe(true);
+    expect(result.icao === 'aal').toBe(true);
 });
 
-ava('.findAirlineById() returns an AirlineModel when supplied an airlineId mixed case', (t) => {
+test('.findAirlineById() returns an AirlineModel when supplied an airlineId mixed case', () => {
     const collection = new AirlineCollection(AIRLINE_DEFINITION_LIST_MOCK);
     const result = collection.findAirlineById('uAl');
 
-    t.true(result instanceof AirlineModel);
-    t.true(result.icao === 'ual');
+    expect(result instanceof AirlineModel).toBe(true);
+    expect(result.icao === 'ual').toBe(true);
 });
 
-ava('.findAirlineById() returns an AirlineModel when supplied an airlineId with fleet', (t) => {
+test('.findAirlineById() returns an AirlineModel when supplied an airlineId with fleet', () => {
     const collection = new AirlineCollection(AIRLINE_DEFINITION_LIST_MOCK);
     const result = collection.findAirlineById('ual/long');
 
-    t.true(result instanceof AirlineModel);
-    t.true(result.icao === 'ual');
+    expect(result instanceof AirlineModel).toBe(true);
+    expect(result.icao === 'ual').toBe(true);
 });

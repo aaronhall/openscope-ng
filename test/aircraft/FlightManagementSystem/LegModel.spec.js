@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import sinon from 'sinon';
 import _isArray from 'lodash/isArray';
 import _map from 'lodash/map';
@@ -32,517 +32,517 @@ const sidRouteStringMock = 'KLAS25R.BOACH6.TNP';
 const shortSidRouteStringMock = 'KLAS07R.TRALR6.MLF';
 const starRouteStringMock = 'DAG.KEPEC3.KLAS19R';
 
-ava.beforeEach(() => {
+beforeEach(() => {
     createNavigationLibraryFixture();
 });
 
-ava.afterEach(() => {
+afterEach(() => {
     resetNavigationLibraryFixture();
 });
 
-ava('throws when instantiated with invalid parameters', (t) => {
-    t.throws(() => new LegModel());
+test('throws when instantiated with invalid parameters', () => {
+    expect(() => new LegModel()).toThrow();
 });
 
-ava('throws when instantiated with route string that should be two separate legs', (t) => {
+test('throws when instantiated with route string that should be two separate legs', () => {
     const procedureThenDirectRouteString = 'KLAS25R.COWBY6.DRK..PXR';
     const doubleDirectRouteString = 'PGS..DRK';
     const doubleProcedureRouteString = 'KLAS25R.COWBY6.DRK.TYSSN4.KLAS25R';
     const directThenProcedureRouteString = 'PXR..DAG.KEPEC1.KLAS';
 
-    t.throws(() => new LegModel(procedureThenDirectRouteString));
-    t.throws(() => new LegModel(doubleDirectRouteString));
-    t.throws(() => new LegModel(doubleProcedureRouteString));
-    t.throws(() => new LegModel(directThenProcedureRouteString));
+    expect(() => new LegModel(procedureThenDirectRouteString)).toThrow();
+    expect(() => new LegModel(doubleDirectRouteString)).toThrow();
+    expect(() => new LegModel(doubleProcedureRouteString)).toThrow();
+    expect(() => new LegModel(directThenProcedureRouteString)).toThrow();
 });
 
-ava('throws when instantiated with airway route string with airway not defined in navigation library', (t) => {
+test('throws when instantiated with airway route string with airway not defined in navigation library', () => {
     const routeStringWithInvalidProcedure = 'KLAS25R.BOACH0.TNP';
 
-    t.throws(() => new LegModel(routeStringWithInvalidProcedure));
+    expect(() => new LegModel(routeStringWithInvalidProcedure)).toThrow();
 });
 
-ava('throws when instantiated with procedure route string with procedure not defined in navigation library', (t) => {
+test('throws when instantiated with procedure route string with procedure not defined in navigation library', () => {
     const routeStringWithInvalidProcedure = 'KLAS25R.BOACH0.TNP';
 
-    t.throws(() => new LegModel(routeStringWithInvalidProcedure));
+    expect(() => new LegModel(routeStringWithInvalidProcedure)).toThrow();
 });
 
-ava('instantiates correctly when given a single airway leg\'s route string', (t) => {
+test('instantiates correctly when given a single airway leg\'s route string', () => {
     const model = new LegModel(airwayRouteStringMock);
 
-    t.true(model._airwayModel instanceof AirwayModel);
-    t.true(model._legType === LEG_TYPE.AIRWAY);
-    t.true(!model._procedureModel);
-    t.true(model._routeString === airwayRouteStringMock);
-    t.true(model._waypointCollection.length === 4);
+    expect(model._airwayModel instanceof AirwayModel).toBe(true);
+    expect(model._legType === LEG_TYPE.AIRWAY).toBe(true);
+    expect(!model._procedureModel).toBe(true);
+    expect(model._routeString === airwayRouteStringMock).toBe(true);
+    expect(model._waypointCollection.length === 4).toBe(true);
 });
 
-ava('instantiates correctly when given a single direct leg\'s route string', (t) => {
+test('instantiates correctly when given a single direct leg\'s route string', () => {
     const model = new LegModel(directRouteStringMock);
 
-    t.true(!model._airwayModel);
-    t.true(model._legType === LEG_TYPE.DIRECT);
-    t.true(!model._procedureModel);
-    t.true(model._routeString === directRouteStringMock);
-    t.true(model._waypointCollection.length === 1);
+    expect(!model._airwayModel).toBe(true);
+    expect(model._legType === LEG_TYPE.DIRECT).toBe(true);
+    expect(!model._procedureModel).toBe(true);
+    expect(model._routeString === directRouteStringMock).toBe(true);
+    expect(model._waypointCollection.length === 1).toBe(true);
 });
 
-ava('instantiates correctly when given a single SID leg\'s route string', (t) => {
+test('instantiates correctly when given a single SID leg\'s route string', () => {
     const model = new LegModel(sidRouteStringMock);
 
-    t.true(!model._airwayModel);
-    t.true(model._legType === LEG_TYPE.PROCEDURE);
-    t.true(model._procedureModel instanceof ProcedureModel);
-    t.true(model._procedureModel.procedureType === PROCEDURE_TYPE.SID);
-    t.true(model._routeString === sidRouteStringMock);
-    t.true(model._waypointCollection.length === 7);
+    expect(!model._airwayModel).toBe(true);
+    expect(model._legType === LEG_TYPE.PROCEDURE).toBe(true);
+    expect(model._procedureModel instanceof ProcedureModel).toBe(true);
+    expect(model._procedureModel.procedureType === PROCEDURE_TYPE.SID).toBe(true);
+    expect(model._routeString === sidRouteStringMock).toBe(true);
+    expect(model._waypointCollection.length === 7).toBe(true);
 });
 
-ava('instantiates correctly when given a single STAR leg\'s route string', (t) => {
+test('instantiates correctly when given a single STAR leg\'s route string', () => {
     const model = new LegModel(starRouteStringMock);
 
-    t.true(!model._airwayModel);
-    t.true(model._legType === LEG_TYPE.PROCEDURE);
-    t.true(model._procedureModel instanceof ProcedureModel);
-    t.true(model._procedureModel.procedureType === PROCEDURE_TYPE.STAR);
-    t.true(model._routeString === starRouteStringMock);
-    t.true(model._waypointCollection.length === 13);
+    expect(!model._airwayModel).toBe(true);
+    expect(model._legType === LEG_TYPE.PROCEDURE).toBe(true);
+    expect(model._procedureModel instanceof ProcedureModel).toBe(true);
+    expect(model._procedureModel.procedureType === PROCEDURE_TYPE.STAR).toBe(true);
+    expect(model._routeString === starRouteStringMock).toBe(true);
+    expect(model._waypointCollection.length === 13).toBe(true);
 });
 
-ava('#currentWaypoint throws when #_waypointCollection is empty', (t) => {
+test('#currentWaypoint throws when #_waypointCollection is empty', () => {
     const model = new LegModel(sidRouteStringMock);
 
     model.skipAllWaypointsInLeg();
 
-    t.throws(() => model.currentWaypoint);
+    expect(() => model.currentWaypoint).toThrow();
 });
 
-ava('#currentWaypoint returns the first item in #waypointCollection', (t) => {
+test('#currentWaypoint returns the first item in #waypointCollection', () => {
     const model = new LegModel(sidRouteStringMock);
     const expectedResult = model._waypointCollection[0];
     const result = model.currentWaypoint;
 
-    t.deepEqual(result, expectedResult);
+    expect(result).toEqual(expectedResult);
 });
 
-ava('#isAirwayLeg returns false when this is not an airway leg', (t) => {
+test('#isAirwayLeg returns false when this is not an airway leg', () => {
     const model = new LegModel(sidRouteStringMock);
 
-    t.false(model.isAirwayLeg);
+    expect(model.isAirwayLeg).toBe(false);
 });
 
-ava('#isAirwayLeg returns true when this is an airway leg', (t) => {
+test('#isAirwayLeg returns true when this is an airway leg', () => {
     const model = new LegModel(airwayRouteStringMock);
 
-    t.true(model.isAirwayLeg);
+    expect(model.isAirwayLeg).toBe(true);
 });
 
-ava('#isDirectLeg returns false when this is not a direct leg', (t) => {
+test('#isDirectLeg returns false when this is not a direct leg', () => {
     const model = new LegModel(sidRouteStringMock);
 
-    t.false(model.isDirectLeg);
+    expect(model.isDirectLeg).toBe(false);
 });
 
-ava('#isDirectLeg returns true when this is a direct leg', (t) => {
+test('#isDirectLeg returns true when this is a direct leg', () => {
     const model = new LegModel(directRouteStringMock);
 
-    t.true(model.isDirectLeg);
+    expect(model.isDirectLeg).toBe(true);
 });
 
-ava('#isProcedureLeg returns false when this is not a procedure leg', (t) => {
+test('#isProcedureLeg returns false when this is not a procedure leg', () => {
     const model = new LegModel(directRouteStringMock);
 
-    t.false(model.isProcedureLeg);
+    expect(model.isProcedureLeg).toBe(false);
 });
 
-ava('#isProcedureLeg returns true when this is a procedure leg', (t) => {
+test('#isProcedureLeg returns true when this is a procedure leg', () => {
     const model = new LegModel(sidRouteStringMock);
 
-    t.true(model.isProcedureLeg);
+    expect(model.isProcedureLeg).toBe(true);
 });
 
-ava('#isSidLeg returns false when this is not a SID procedure leg', (t) => {
+test('#isSidLeg returns false when this is not a SID procedure leg', () => {
     const model = new LegModel(starRouteStringMock);
 
-    t.false(model.isSidLeg);
+    expect(model.isSidLeg).toBe(false);
 });
 
-ava('#isSidLeg returns true when this is a SID procedure leg', (t) => {
+test('#isSidLeg returns true when this is a SID procedure leg', () => {
     const model = new LegModel(sidRouteStringMock);
 
-    t.true(model.isSidLeg);
+    expect(model.isSidLeg).toBe(true);
 });
 
-ava('#isStarLeg returns false when this is not a SID procedure leg', (t) => {
+test('#isStarLeg returns false when this is not a SID procedure leg', () => {
     const model = new LegModel(sidRouteStringMock);
 
-    t.false(model.isStarLeg);
+    expect(model.isStarLeg).toBe(false);
 });
 
-ava('#isStarLeg returns true when this is a SID procedure leg', (t) => {
+test('#isStarLeg returns true when this is a SID procedure leg', () => {
     const model = new LegModel(starRouteStringMock);
 
-    t.true(model.isStarLeg);
+    expect(model.isStarLeg).toBe(true);
 });
 
-ava('#legType returns value of #_legType', (t) => {
+test('#legType returns value of #_legType', () => {
     const model = new LegModel(sidRouteStringMock);
     const legTypeMock = 'type-o-da-leg';
 
     model._legType = legTypeMock;
 
-    t.true(model.legType === legTypeMock);
+    expect(model.legType === legTypeMock).toBe(true);
 });
 
-ava('#nextWaypoint returns the second element of #_waypointCollection', (t) => {
+test('#nextWaypoint returns the second element of #_waypointCollection', () => {
     const model = new LegModel(sidRouteStringMock);
     const nextWaypointModel = model._waypointCollection[1];
     const result = model.nextWaypoint;
 
-    t.deepEqual(result, nextWaypointModel);
+    expect(result).toEqual(nextWaypointModel);
 });
 
-ava('#routeString returns the value of #_routeString', (t) => {
+test('#routeString returns the value of #_routeString', () => {
     const model = new LegModel(sidRouteStringMock);
     const result = model.routeString;
 
-    t.deepEqual(result, sidRouteStringMock);
+    expect(result).toEqual(sidRouteStringMock);
 });
 
-ava('#waypoints returns an array containing all `WaypointModel`s', (t) => {
+test('#waypoints returns an array containing all `WaypointModel`s', () => {
     const model = new LegModel(sidRouteStringMock);
     const result = model.waypoints;
     const expectedWaypointNames = ['RBELL', 'ROPPR', 'RODDD', 'BOACH', 'ZELMA', 'JOTNU', 'TNP'];
     const waypointNames = _map(result, (waypointModel) => waypointModel.name);
 
-    t.true(_isArray(result));
-    t.deepEqual(waypointNames, expectedWaypointNames);
+    expect(_isArray(result)).toBe(true);
+    expect(waypointNames).toEqual(expectedWaypointNames);
 });
 
-ava('.activateHoldForWaypointName() returns early when the specified waypoint does not exist in the route', (t) => {
+test('.activateHoldForWaypointName() returns early when the specified waypoint does not exist in the route', () => {
     const model = new LegModel('KEPEC');
     const waypointModel = model._waypointCollection[0];
     const setHoldParametersAndActivateHoldSpy = sinon.spy(waypointModel, 'setHoldParametersAndActivateHold');
     const holdParametersMock = { turnDirection: 'left' };
     const result = model.activateHoldForWaypointName('PRINO', holdParametersMock);
 
-    t.true(typeof result === 'undefined');
-    t.true(setHoldParametersAndActivateHoldSpy.notCalled);
+    expect(typeof result === 'undefined').toBe(true);
+    expect(setHoldParametersAndActivateHoldSpy.notCalled).toBe(true);
 });
 
-ava('.activateHoldForWaypointName() calls .setHoldParametersAndActivateHold() with the appropriate arguments', (t) => {
+test('.activateHoldForWaypointName() calls .setHoldParametersAndActivateHold() with the appropriate arguments', () => {
     const model = new LegModel('KEPEC');
     const waypointModel = model._waypointCollection[0];
     const setHoldParametersAndActivateHoldSpy = sinon.spy(waypointModel, 'setHoldParametersAndActivateHold');
     const holdParametersMock = { turnDirection: 'left' };
     const result = model.activateHoldForWaypointName('KEPEC', holdParametersMock);
 
-    t.not(typeof result, 'undefined');
-    t.true(setHoldParametersAndActivateHoldSpy.calledWith(holdParametersMock));
+    expect(typeof result).not.toBe('undefined');
+    expect(setHoldParametersAndActivateHoldSpy.calledWith(holdParametersMock)).toBe(true);
 });
 
-ava('.getAllWaypointModelsAfterWaypointName() returns an array of all waypoint models after and excluding the specified one', (t) => {
+test('.getAllWaypointModelsAfterWaypointName() returns an array of all waypoint models after and excluding the specified one', () => {
     const model = new LegModel(sidRouteStringMock);
     const lastExcludedWaypoint = 'BOACH';
     const result = model.getAllWaypointModelsAfterWaypointName(lastExcludedWaypoint);
     const expectedRemainingFixNames = ['ZELMA', 'JOTNU', 'TNP'];
     const remainingFixNames = result.map((wp) => wp.name);
 
-    t.deepEqual(remainingFixNames, expectedRemainingFixNames);
+    expect(remainingFixNames).toEqual(expectedRemainingFixNames);
 });
 
-ava('.getAllWaypointModelsBeforeWaypointName() returns an array of all waypoint models before and excluding the specified one', (t) => {
+test('.getAllWaypointModelsBeforeWaypointName() returns an array of all waypoint models before and excluding the specified one', () => {
     const model = new LegModel(sidRouteStringMock);
     const lastExcludedWaypoint = 'BOACH';
     const result = model.getAllWaypointModelsBeforeWaypointName(lastExcludedWaypoint);
     const expectedRemainingFixNames = ['RBELL', 'ROPPR', 'RODDD'];
     const remainingFixNames = result.map((wp) => wp.name);
 
-    t.deepEqual(remainingFixNames, expectedRemainingFixNames);
+    expect(remainingFixNames).toEqual(expectedRemainingFixNames);
 });
 
-ava('.getArrivalRunwayAirportIcao() returns null when this is not a STAR leg', (t) => {
+test('.getArrivalRunwayAirportIcao() returns null when this is not a STAR leg', () => {
     const model = new LegModel(sidRouteStringMock);
     const result = model.getArrivalRunwayAirportIcao();
 
-    t.true(!result);
+    expect(!result).toBe(true);
 });
 
-ava('.getArrivalRunwayAirportIcao() returns the first four characters of the STAR exit name', (t) => {
+test('.getArrivalRunwayAirportIcao() returns the first four characters of the STAR exit name', () => {
     const model = new LegModel('DAG.KEPEC3.KLAS19R');
     const result = model.getArrivalRunwayAirportIcao();
 
-    t.true(result === 'klas');
+    expect(result === 'klas').toBe(true);
 });
 
-ava('.getArrivalRunwayName() returns null when this is not a STAR leg', (t) => {
+test('.getArrivalRunwayName() returns null when this is not a STAR leg', () => {
     const model = new LegModel(sidRouteStringMock);
     const result = model.getArrivalRunwayName();
 
-    t.true(!result);
+    expect(!result).toBe(true);
 });
 
-ava('.getArrivalRunwayName() returns the all but first four characters of the STAR exit name', (t) => {
+test('.getArrivalRunwayName() returns the all but first four characters of the STAR exit name', () => {
     const model = new LegModel('DAG.KEPEC3.KLAS19R');
     const result = model.getArrivalRunwayName();
 
-    t.true(result === '19R');
+    expect(result === '19R').toBe(true);
 });
 
-ava('.getBottomAltitude() returns -1 when leg is not a procedure leg', (t) => {
+test('.getBottomAltitude() returns -1 when leg is not a procedure leg', () => {
     const model = new LegModel(directRouteStringMock);
     const expectedResult = -1;
     const result = model.getBottomAltitude();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getBottomAltitude() returns -1 when procedure leg does not have a bottom altitude', (t) => {
+test('.getBottomAltitude() returns -1 when procedure leg does not have a bottom altitude', () => {
     const model = new LegModel('KLAS19L.COWBY6.DRK');
     const expectedResult = -1;
     const result = model.getBottomAltitude();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getBottomAltitude() returns the correct bottom altitude when leg is a procedure leg', (t) => {
+test('.getBottomAltitude() returns the correct bottom altitude when leg is a procedure leg', () => {
     const model = new LegModel(starRouteStringMock);
     const expectedResult = 8000;
     const result = model.getBottomAltitude();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getDepartureRunwayAirportIcao() returns null when this is not a SID leg', (t) => {
+test('.getDepartureRunwayAirportIcao() returns null when this is not a SID leg', () => {
     const model = new LegModel(starRouteStringMock);
     const result = model.getDepartureRunwayAirportIcao();
 
-    t.true(!result);
+    expect(!result).toBe(true);
 });
 
-ava('.getDepartureRunwayAirportIcao() returns the first four characters of the SID entry name', (t) => {
+test('.getDepartureRunwayAirportIcao() returns the first four characters of the SID entry name', () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const result = model.getDepartureRunwayAirportIcao();
 
-    t.true(result === 'klas');
+    expect(result === 'klas').toBe(true);
 });
 
-ava('.getDepartureRunwayName() returns null when this is not a SID leg', (t) => {
+test('.getDepartureRunwayName() returns null when this is not a SID leg', () => {
     const model = new LegModel(starRouteStringMock);
     const result = model.getDepartureRunwayName();
 
-    t.true(!result);
+    expect(!result).toBe(true);
 });
 
-ava('.getDepartureRunwayName() returns the all but first four characters of the SID entry name', (t) => {
+test('.getDepartureRunwayName() returns the all but first four characters of the SID entry name', () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const result = model.getDepartureRunwayName();
 
-    t.true(result === '25R');
+    expect(result === '25R').toBe(true);
 });
 
-ava('.getEntryFixName() returns the name of the fix when this leg is a direct leg', (t) => {
+test('.getEntryFixName() returns the name of the fix when this leg is a direct leg', () => {
     const model = new LegModel('TNP');
     const expectedResult = 'TNP';
     const result = model.getEntryFixName();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getEntryFixName() returns route string before the first \'.\' when this leg is a SID leg', (t) => {
+test('.getEntryFixName() returns route string before the first \'.\' when this leg is a SID leg', () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const expectedResult = 'KLAS25R';
     const result = model.getEntryFixName();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getEntryFixName() returns route string before the first \'.\' when this leg is a STAR leg', (t) => {
+test('.getEntryFixName() returns route string before the first \'.\' when this leg is a STAR leg', () => {
     const model = new LegModel('DAG.KEPEC3.KLAS19R');
     const expectedResult = 'DAG';
     const result = model.getEntryFixName();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getExitFixName() returns the name of the fix when this leg is a direct leg', (t) => {
+test('.getExitFixName() returns the name of the fix when this leg is a direct leg', () => {
     const model = new LegModel('TNP');
     const expectedResult = 'TNP';
     const result = model.getExitFixName();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getExitFixName() returns route string after the last \'.\' when this leg is a SID leg', (t) => {
+test('.getExitFixName() returns route string after the last \'.\' when this leg is a SID leg', () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const expectedResult = 'TNP';
     const result = model.getExitFixName();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getExitFixName() returns route string after the last \'.\' when this leg is a STAR leg', (t) => {
+test('.getExitFixName() returns route string after the last \'.\' when this leg is a STAR leg', () => {
     const model = new LegModel('DAG.KEPEC3.KLAS19R');
     const expectedResult = 'KLAS19R';
     const result = model.getExitFixName();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getProcedureIcao() returns undefined when this is not a procedure leg', (t) => {
+test('.getProcedureIcao() returns undefined when this is not a procedure leg', () => {
     const model = new LegModel(directRouteStringMock);
     const result = model.getProcedureIcao();
 
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.getProcedureIcao() returns the ICAO identifier of the ProcedureModel in use by this leg', (t) => {
+test('.getProcedureIcao() returns the ICAO identifier of the ProcedureModel in use by this leg', () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const expectedResult = 'BOACH6';
     const result = model.getProcedureIcao();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getProcedureName() returns undefined when this is not a procedure leg', (t) => {
+test('.getProcedureName() returns undefined when this is not a procedure leg', () => {
     const model = new LegModel(directRouteStringMock);
     const result = model.getProcedureName();
 
-    t.true(typeof result === 'undefined');
+    expect(typeof result === 'undefined').toBe(true);
 });
 
-ava('.getProcedureName() returns the name of the ProcedureModel in use by this leg', (t) => {
+test('.getProcedureName() returns the name of the ProcedureModel in use by this leg', () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const expectedResult = 'Boach Six';
     const result = model.getProcedureName();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getRouteStringWithoutAirports() returns #_routeString when neither a SID or STAR leg', (t) => {
+test('.getRouteStringWithoutAirports() returns #_routeString when neither a SID or STAR leg', () => {
     const model = new LegModel('BOACH');
     const expectedResult = model._routeString;
     const result = model.getRouteStringWithoutAirports();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getRouteStringWithoutAirports() returns route string without airport for SID leg', (t) => {
+test('.getRouteStringWithoutAirports() returns route string without airport for SID leg', () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const expectedResult = 'BOACH6.TNP';
     const result = model.getRouteStringWithoutAirports();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getRouteStringWithoutAirports() returns route string without airport for STAR leg', (t) => {
+test('.getRouteStringWithoutAirports() returns route string without airport for STAR leg', () => {
     const model = new LegModel('DAG.KEPEC3.KLAS19R');
     const expectedResult = 'DAG.KEPEC3';
     const result = model.getRouteStringWithoutAirports();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.hasWaypointName() throws when the not provided with a waypoint name', (t) => {
+test('.hasWaypointName() throws when the not provided with a waypoint name', () => {
     const model = new LegModel(sidRouteStringMock);
 
-    t.throws(() => model.hasWaypointName());
-    t.throws(() => model.hasWaypointName(''));
+    expect(() => model.hasWaypointName()).toThrow();
+    expect(() => model.hasWaypointName('')).toThrow();
 });
 
-ava('.getTopAltitude() returns -1 when leg is not a procedure leg', (t) => {
+test('.getTopAltitude() returns -1 when leg is not a procedure leg', () => {
     const model = new LegModel(directRouteStringMock);
     const expectedResult = -1;
     const result = model.getTopAltitude();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getTopAltitude() returns -1 when procedure leg does not have a top altitude', (t) => {
+test('.getTopAltitude() returns -1 when procedure leg does not have a top altitude', () => {
     const model = new LegModel('KLAS19L.COWBY6.DRK');
     const expectedResult = -1;
     const result = model.getTopAltitude();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.getTopAltitude() returns the correct top altitude when leg is a procedure leg', (t) => {
+test('.getTopAltitude() returns the correct top altitude when leg is a procedure leg', () => {
     const model = new LegModel(sidRouteStringMock);
     const expectedResult = 7000;
     const result = model.getTopAltitude();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.hasNextWaypoint() returns false when #_waypointCollection has less than two elements', (t) => {
+test('.hasNextWaypoint() returns false when #_waypointCollection has less than two elements', () => {
     const model = new LegModel(sidRouteStringMock);
 
     model._waypointCollection = [model._waypointCollection[0]];
 
     const result = model.hasNextWaypoint();
 
-    t.true(model._waypointCollection.length === 1);
-    t.false(result);
+    expect(model._waypointCollection.length === 1).toBe(true);
+    expect(result).toBe(false);
 });
 
-ava('.hasNextWaypoint() returns true when #_waypointCollection has at least two elements', (t) => {
+test('.hasNextWaypoint() returns true when #_waypointCollection has at least two elements', () => {
     const model = new LegModel(sidRouteStringMock);
     const result = model.hasNextWaypoint();
 
-    t.true(model._waypointCollection.length > 1);
-    t.true(result);
+    expect(model._waypointCollection.length > 1).toBe(true);
+    expect(result).toBe(true);
 });
 
-ava('.hasWaypointName() returns false when the specified waypoint does not exist in the #waypointCollection', (t) => {
+test('.hasWaypointName() returns false when the specified waypoint does not exist in the #waypointCollection', () => {
     const model = new LegModel(sidRouteStringMock);
 
-    t.false(model.hasWaypointName('ABC'));
+    expect(model.hasWaypointName('ABC')).toBe(false);
 });
 
-ava('.hasWaypointName() returns true when the specified waypoint exists within the #waypointCollection', (t) => {
+test('.hasWaypointName() returns true when the specified waypoint exists within the #waypointCollection', () => {
     const model = new LegModel(sidRouteStringMock);
 
-    t.true(model.hasWaypointName('BOACH'));
+    expect(model.hasWaypointName('BOACH')).toBe(true);
 });
 
-ava('.moveToNextWaypoint() moves #currentWaypoint into the #_previousWaypointCollection', (t) => {
+test('.moveToNextWaypoint() moves #currentWaypoint into the #_previousWaypointCollection', () => {
     const model = new LegModel(sidRouteStringMock);
 
-    t.true(model._previousWaypointCollection.length === 0);
-    t.true(model._waypointCollection.length === 7);
+    expect(model._previousWaypointCollection.length === 0).toBe(true);
+    expect(model._waypointCollection.length === 7).toBe(true);
 
     model.moveToNextWaypoint();
 
-    t.true(model._previousWaypointCollection.length === 1);
-    t.true(model._waypointCollection.length === 6);
+    expect(model._previousWaypointCollection.length === 1).toBe(true);
+    expect(model._waypointCollection.length === 6).toBe(true);
 });
 
-ava('.skipAllWaypointsInLeg() moves entire #_waypointCollection into the #_previousWaypointCollection', (t) => {
+test('.skipAllWaypointsInLeg() moves entire #_waypointCollection into the #_previousWaypointCollection', () => {
     const model = new LegModel(sidRouteStringMock);
     const oldWaypointCollection = model._waypointCollection;
 
-    t.true(model._previousWaypointCollection.length === 0);
-    t.true(model._waypointCollection.length === 7);
+    expect(model._previousWaypointCollection.length === 0).toBe(true);
+    expect(model._waypointCollection.length === 7).toBe(true);
 
     model.skipAllWaypointsInLeg();
 
-    t.deepEqual(model._waypointCollection, []);
-    t.deepEqual(model._previousWaypointCollection, oldWaypointCollection);
+    expect(model._waypointCollection).toEqual([]);
+    expect(model._previousWaypointCollection).toEqual(oldWaypointCollection);
 });
 
-ava('.skipToWaypointName() returns false early when the specified waypoint is not in the leg', (t) => {
+test('.skipToWaypointName() returns false early when the specified waypoint is not in the leg', () => {
     const model = new LegModel(sidRouteStringMock);
     const fixNotInLeg = 'ABCDE';
     const oldCurrentWaypointName = model.currentWaypoint.name;
     const result = model.skipToWaypointName(fixNotInLeg);
     const currentWaypointName = model.currentWaypoint.name;
 
-    t.false(result);
-    t.true(currentWaypointName === oldCurrentWaypointName);
+    expect(result).toBe(false);
+    expect(currentWaypointName === oldCurrentWaypointName).toBe(true);
 });
 
-ava('.skipToWaypointName() moves all waypoints before the specified waypoint to the #_previousWaypointCollection', (t) => {
+test('.skipToWaypointName() moves all waypoints before the specified waypoint to the #_previousWaypointCollection', () => {
     const model = new LegModel(sidRouteStringMock);
     const expectedPreviousFixNames = ['RBELL', 'ROPPR', 'RODDD'];
     const expectedRemainingFixNames = ['BOACH', 'ZELMA', 'JOTNU', 'TNP'];
@@ -550,34 +550,34 @@ ava('.skipToWaypointName() moves all waypoints before the specified waypoint to 
     const previousFixNames = model._previousWaypointCollection.map((wp) => wp.name);
     const remainingFixNames = model._waypointCollection.map((wp) => wp.name);
 
-    t.true(result);
-    t.deepEqual(previousFixNames, expectedPreviousFixNames);
-    t.deepEqual(remainingFixNames, expectedRemainingFixNames);
+    expect(result).toBe(true);
+    expect(previousFixNames).toEqual(expectedPreviousFixNames);
+    expect(remainingFixNames).toEqual(expectedRemainingFixNames);
 });
 
-ava('.reset() calls ._resetWaypointCollection()', (t) => {
+test('.reset() calls ._resetWaypointCollection()', () => {
     const model = new LegModel(sidRouteStringMock);
     const resetWaypointCollectionSpy = sinon.spy(model, '_resetWaypointCollection');
 
     model.reset();
 
-    t.true(resetWaypointCollectionSpy.calledWithExactly());
+    expect(resetWaypointCollectionSpy.calledWithExactly()).toBe(true);
 });
 
-ava('.reset() resets to default all properties', (t) => {
+test('.reset() resets to default all properties', () => {
     const model = new LegModel(sidRouteStringMock);
 
     model.reset();
 
-    t.true(!model._airwayModel);
-    t.true(model._legType === '');
-    t.true(!model._procedureModel);
-    t.deepEqual(model._previousWaypointCollection, []);
-    t.true(model._routeString === '');
-    t.deepEqual(model._waypointCollection, []);
+    expect(!model._airwayModel).toBe(true);
+    expect(model._legType === '').toBe(true);
+    expect(!model._procedureModel).toBe(true);
+    expect(model._previousWaypointCollection).toEqual([]);
+    expect(model._routeString === '').toBe(true);
+    expect(model._waypointCollection).toEqual([]);
 });
 
-ava('.updateSidLegForDepartureRunwayModel() returns early when this is not a SID leg', (t) => {
+test('.updateSidLegForDepartureRunwayModel() returns early when this is not a SID leg', () => {
     const starLegModel = new LegModel(starRouteStringMock);
     const directLegModel = new LegModel(directRouteStringMock);
     const airport = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
@@ -588,11 +588,11 @@ ava('.updateSidLegForDepartureRunwayModel() returns early when this is not a SID
     starLegModel.updateSidLegForDepartureRunwayModel(runwayModel);
     directLegModel.updateSidLegForDepartureRunwayModel(runwayModel);
 
-    t.true(starLegGenerateWaypointCollectionSpy.notCalled);
-    t.true(directLegGenerateWaypointCollectionSpy.notCalled);
+    expect(starLegGenerateWaypointCollectionSpy.notCalled).toBe(true);
+    expect(directLegGenerateWaypointCollectionSpy.notCalled).toBe(true);
 });
 
-ava('.updateSidLegForDepartureRunwayModel() returns early when the specified runway is already the one in use', (t) => {
+test('.updateSidLegForDepartureRunwayModel() returns early when the specified runway is already the one in use', () => {
     const model = new LegModel(sidRouteStringMock);
     const airport = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const currentRunwayModel = airport.getRunway('25R');
@@ -600,10 +600,10 @@ ava('.updateSidLegForDepartureRunwayModel() returns early when the specified run
 
     model.updateSidLegForDepartureRunwayModel(currentRunwayModel);
 
-    t.true(generateWaypointCollectionSpy.notCalled);
+    expect(generateWaypointCollectionSpy.notCalled).toBe(true);
 });
 
-ava('.updateSidLegForDepartureRunwayModel() returns early when the SID is not valid for the specified runway', (t) => {
+test('.updateSidLegForDepartureRunwayModel() returns early when the SID is not valid for the specified runway', () => {
     const model = new LegModel(sidRouteStringMock);
     const airport = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const illegalRunwayModel = airport.getRunway('01R');
@@ -611,10 +611,10 @@ ava('.updateSidLegForDepartureRunwayModel() returns early when the SID is not va
 
     model.updateSidLegForDepartureRunwayModel(illegalRunwayModel);
 
-    t.true(generateWaypointCollectionSpy.notCalled);
+    expect(generateWaypointCollectionSpy.notCalled).toBe(true);
 });
 
-ava('.updateSidLegForDepartureRunwayModel() regenerates #_waypointCollection IAW the new departure runway', (t) => {
+test('.updateSidLegForDepartureRunwayModel() regenerates #_waypointCollection IAW the new departure runway', () => {
     const model = new LegModel(sidRouteStringMock);
     const airport = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const runwayModel = airport.getRunway('01L');
@@ -625,11 +625,11 @@ ava('.updateSidLegForDepartureRunwayModel() regenerates #_waypointCollection IAW
     const expectedWaypointNames = ['BESSY', 'WITLA', 'JEBBB', 'BOACH', 'ZELMA', 'JOTNU', 'TNP'];
     const waypointNames = model.waypoints.map((waypoint) => waypoint.name);
 
-    t.true(generateWaypointCollectionSpy.calledWithExactly('KLAS01L', 'TNP'));
-    t.deepEqual(waypointNames, expectedWaypointNames);
+    expect(generateWaypointCollectionSpy.calledWithExactly('KLAS01L', 'TNP')).toBe(true);
+    expect(waypointNames).toEqual(expectedWaypointNames);
 });
 
-ava('.updateStarLegForArrivalRunwayModel() returns early when this is not a STAR leg', (t) => {
+test('.updateStarLegForArrivalRunwayModel() returns early when this is not a STAR leg', () => {
     const sidLegModel = new LegModel(sidRouteStringMock);
     const directLegModel = new LegModel(directRouteStringMock);
     const airport = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
@@ -640,11 +640,11 @@ ava('.updateStarLegForArrivalRunwayModel() returns early when this is not a STAR
     sidLegModel.updateStarLegForArrivalRunwayModel(runwayModel);
     directLegModel.updateStarLegForArrivalRunwayModel(runwayModel);
 
-    t.true(sidLegGenerateWaypointCollectionSpy.notCalled);
-    t.true(directLegGenerateWaypointCollectionSpy.notCalled);
+    expect(sidLegGenerateWaypointCollectionSpy.notCalled).toBe(true);
+    expect(directLegGenerateWaypointCollectionSpy.notCalled).toBe(true);
 });
 
-ava('.updateStarLegForArrivalRunwayModel() returns early when the specified runway is already the one in use', (t) => {
+test('.updateStarLegForArrivalRunwayModel() returns early when the specified runway is already the one in use', () => {
     const model = new LegModel(starRouteStringMock);
     const airport = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const currentRunwayModel = airport.getRunway('19R');
@@ -652,10 +652,10 @@ ava('.updateStarLegForArrivalRunwayModel() returns early when the specified runw
 
     model.updateStarLegForArrivalRunwayModel(currentRunwayModel);
 
-    t.true(generateWaypointCollectionSpy.notCalled);
+    expect(generateWaypointCollectionSpy.notCalled).toBe(true);
 });
 
-ava('.updateStarLegForArrivalRunwayModel() returns early when the STAR is not valid for the specified runway', (t) => {
+test('.updateStarLegForArrivalRunwayModel() returns early when the STAR is not valid for the specified runway', () => {
     const model = new LegModel(starRouteStringMock);
     const airport = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const illegalRunwayModel = airport.getRunway('01R');
@@ -663,10 +663,10 @@ ava('.updateStarLegForArrivalRunwayModel() returns early when the STAR is not va
 
     model.updateStarLegForArrivalRunwayModel(illegalRunwayModel);
 
-    t.true(generateWaypointCollectionSpy.notCalled);
+    expect(generateWaypointCollectionSpy.notCalled).toBe(true);
 });
 
-ava('.updateStarLegForArrivalRunwayModel() regenerates #_waypointCollection IAW the new departure runway', (t) => {
+test('.updateStarLegForArrivalRunwayModel() regenerates #_waypointCollection IAW the new departure runway', () => {
     const model = new LegModel(starRouteStringMock);
     const airport = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const runwayModel = airport.getRunway('01L');
@@ -679,36 +679,36 @@ ava('.updateStarLegForArrivalRunwayModel() regenerates #_waypointCollection IAW 
     ];
     const waypointNames = model.waypoints.map((waypoint) => waypoint.name);
 
-    t.true(generateWaypointCollectionSpy.calledWithExactly('DAG', 'KLAS01L'));
-    t.deepEqual(waypointNames, expectedWaypointNames);
+    expect(generateWaypointCollectionSpy.calledWithExactly('DAG', 'KLAS01L')).toBe(true);
+    expect(waypointNames).toEqual(expectedWaypointNames);
 });
 
-ava('._findIndexOfWaypointName() returns -1 when no waypoint in the #waypointCollection has the specified name', (t) => {
+test('._findIndexOfWaypointName() returns -1 when no waypoint in the #waypointCollection has the specified name', () => {
     const model = new LegModel(sidRouteStringMock);
     const expectedResult = -1;
     const result = model._findIndexOfWaypointName('thisFixIsNotInTheRoute');
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('._findIndexOfWaypointName() returns the index of the WaypointModel in the #waypointCollection with the specified name', (t) => {
+test('._findIndexOfWaypointName() returns the index of the WaypointModel in the #waypointCollection with the specified name', () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const expectedResult = 3;
     const result = model._findIndexOfWaypointName('BOACH');
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('._resetWaypointCollection() calls .skipAllWaypointsInLeg()', (t) => {
+test('._resetWaypointCollection() calls .skipAllWaypointsInLeg()', () => {
     const model = new LegModel(shortSidRouteStringMock);
     const skipAllWaypointsInLegSpy = sinon.spy(model, 'skipAllWaypointsInLeg');
 
     model._resetWaypointCollection();
 
-    t.true(skipAllWaypointsInLegSpy.calledWithExactly());
+    expect(skipAllWaypointsInLegSpy.calledWithExactly()).toBe(true);
 });
 
-ava('._resetWaypointCollection() calls .reset() method of all waypoints', (t) => {
+test('._resetWaypointCollection() calls .reset() method of all waypoints', () => {
     const model = new LegModel(shortSidRouteStringMock);
 
     model.skipAllWaypointsInLeg();
@@ -720,149 +720,149 @@ ava('._resetWaypointCollection() calls .reset() method of all waypoints', (t) =>
 
     model._resetWaypointCollection();
 
-    t.true(model._previousWaypointCollection.length === 4);
-    t.true(jesjiWaypointResetSpy.calledWithExactly());
-    t.true(bakrrWaypointResetSpy.calledWithExactly());
-    t.true(tralrWaypointResetSpy.calledWithExactly());
-    t.true(mlfWaypointResetSpy.calledWithExactly());
+    expect(model._previousWaypointCollection.length === 4).toBe(true);
+    expect(jesjiWaypointResetSpy.calledWithExactly()).toBe(true);
+    expect(bakrrWaypointResetSpy.calledWithExactly()).toBe(true);
+    expect(tralrWaypointResetSpy.calledWithExactly()).toBe(true);
+    expect(mlfWaypointResetSpy.calledWithExactly()).toBe(true);
 });
 
-ava('._verifyAirwayAndEntryAndExitAreValid() throws when #_airwayModel is null', (t) => {
+test('._verifyAirwayAndEntryAndExitAreValid() throws when #_airwayModel is null', () => {
     const model = new LegModel(directRouteStringMock);
 
-    t.throws(() => model._verifyAirwayAndEntryAndExitAreValid('entryName', 'exitName'));
+    expect(() => model._verifyAirwayAndEntryAndExitAreValid('entryName', 'exitName')).toThrow();
 });
 
-ava('._verifyAirwayAndEntryAndExitAreValid() throws when the specified entry is not on the airway', (t) => {
+test('._verifyAirwayAndEntryAndExitAreValid() throws when the specified entry is not on the airway', () => {
     const model = new LegModel('CHRLT.V394.LAS');
     const invalidEntryName = 'invalidEntry';
     const validExitName = 'SUVIE';
 
-    t.throws(() => model._verifyAirwayAndEntryAndExitAreValid(invalidEntryName, validExitName));
+    expect(() => model._verifyAirwayAndEntryAndExitAreValid(invalidEntryName, validExitName)).toThrow();
 });
 
-ava('._verifyAirwayAndEntryAndExitAreValid() throws when the specified exit is not on the airway', (t) => {
+test('._verifyAirwayAndEntryAndExitAreValid() throws when the specified exit is not on the airway', () => {
     const model = new LegModel('CHRLT.V394.LAS');
     const validEntryName = 'DISBE';
     const invalidExitName = 'invalidExit';
 
-    t.throws(() => model._verifyAirwayAndEntryAndExitAreValid(validEntryName, invalidExitName));
+    expect(() => model._verifyAirwayAndEntryAndExitAreValid(validEntryName, invalidExitName)).toThrow();
 });
 
-ava('._verifyAirwayAndEntryAndExitAreValid() does not throw when the specified entry and exit are both on the airway', (t) => {
+test('._verifyAirwayAndEntryAndExitAreValid() does not throw when the specified entry and exit are both on the airway', () => {
     const model = new LegModel('CHRLT.V394.LAS');
     const validEntryName = 'DISBE';
     const validExitName = 'SUVIE';
 
-    t.notThrows(() => model._verifyAirwayAndEntryAndExitAreValid(validEntryName, validExitName));
+    expect(() => model._verifyAirwayAndEntryAndExitAreValid(validEntryName, validExitName)).not.toThrow();
 });
 
-ava('._verifyProcedureAndEntryAndExitAreValid() throws when #_procedureModel is null', (t) => {
+test('._verifyProcedureAndEntryAndExitAreValid() throws when #_procedureModel is null', () => {
     const model = new LegModel(directRouteStringMock);
 
-    t.throws(() => model._verifyProcedureAndEntryAndExitAreValid('entryName', 'exitName'));
+    expect(() => model._verifyProcedureAndEntryAndExitAreValid('entryName', 'exitName')).toThrow();
 });
 
-ava('._verifyProcedureAndEntryAndExitAreValid() throws when the specified entry is not valid for the procedure', (t) => {
+test('._verifyProcedureAndEntryAndExitAreValid() throws when the specified entry is not valid for the procedure', () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const invalidEntryName = 'invalidEntry';
     const validExitName = 'HEC';
 
-    t.throws(() => model._verifyProcedureAndEntryAndExitAreValid(invalidEntryName, validExitName));
+    expect(() => model._verifyProcedureAndEntryAndExitAreValid(invalidEntryName, validExitName)).toThrow();
 });
 
-ava('._verifyProcedureAndEntryAndExitAreValid() throws when the specified exit is not valid for the procedure', (t) => {
+test('._verifyProcedureAndEntryAndExitAreValid() throws when the specified exit is not valid for the procedure', () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const validEntryName = 'KLAS25L';
     const invalidExitName = 'invalidExit';
 
-    t.throws(() => model._verifyProcedureAndEntryAndExitAreValid(validEntryName, invalidExitName));
+    expect(() => model._verifyProcedureAndEntryAndExitAreValid(validEntryName, invalidExitName)).toThrow();
 });
 
-ava('._verifyProcedureAndEntryAndExitAreValid() does not throw when the specified entry and exit are valid for the procedure', (t) => {
+test('._verifyProcedureAndEntryAndExitAreValid() does not throw when the specified entry and exit are valid for the procedure', () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const validEntryName = 'KLAS25L';
     const validExitName = 'HEC';
 
-    t.notThrows(() => model._verifyProcedureAndEntryAndExitAreValid(validEntryName, validExitName));
+    expect(() => model._verifyProcedureAndEntryAndExitAreValid(validEntryName, validExitName)).not.toThrow();
 });
 
-// ava('._buildWaypointForDirectRoute() returns an array with a single instance of a WaypointModel', (t) => {
+// test('._buildWaypointForDirectRoute() returns an array with a single instance of a WaypointModel', () => {
 //     const model = new LegModel(directRouteStringMockMock, runwayMock, arrivalFlightPhaseMock, navigationLibraryFixture);
 //     const result = model._buildWaypointForDirectRoute(directRouteStringMockMock);
 //
-//     t.true(_isArray(result));
-//     t.true(result[0] instanceof WaypointModel);
-//     t.true(result[0].name === 'cowby');
+//     expect(_isArray(result)).toBe(true);
+//     expect(result[0] instanceof WaypointModel).toBe(true);
+//     expect(result[0].name === 'cowby').toBe(true);
 // });
 //
-// ava('._buildWaypointForHoldingPattern() returns an array with a single instance of a WaypointModel with hold properties for a Fix', (t) => {
+// test('._buildWaypointForHoldingPattern() returns an array with a single instance of a WaypointModel with hold properties for a Fix', () => {
 //     const model = new LegModel(directRouteStringMockMock, runwayMock, arrivalFlightPhaseMock, navigationLibraryFixture);
 //     const result = model._buildWaypointForHoldingPattern(holdRouteStringMock);
 //
-//     t.true(_isArray(result));
-//     t.true(result[0] instanceof WaypointModel);
-//     t.true(result[0].isHold);
-//     t.true(result[0].name === 'cowby');
-//     t.true(result[0].altitudeMaximum === INVALID_NUMBER);
-//     t.true(result[0].altitudeMinimum === INVALID_NUMBER);
-//     t.true(result[0].speedMaximum === INVALID_NUMBER);
-//     t.true(result[0].speedMinimum === INVALID_NUMBER);
-//     t.true(result[0]._turnDirection === 'right');
-//     t.true(result[0]._legLength === '1min');
-//     t.true(result[0].timer === INVALID_NUMBER);
+//     expect(_isArray(result)).toBe(true);
+//     expect(result[0] instanceof WaypointModel).toBe(true);
+//     expect(result[0].isHold).toBe(true);
+//     expect(result[0].name === 'cowby').toBe(true);
+//     expect(result[0].altitudeMaximum === INVALID_NUMBER).toBe(true);
+//     expect(result[0].altitudeMinimum === INVALID_NUMBER).toBe(true);
+//     expect(result[0].speedMaximum === INVALID_NUMBER).toBe(true);
+//     expect(result[0].speedMinimum === INVALID_NUMBER).toBe(true);
+//     expect(result[0]._turnDirection === 'right').toBe(true);
+//     expect(result[0]._legLength === '1min').toBe(true);
+//     expect(result[0].timer === INVALID_NUMBER).toBe(true);
 // });
 //
-// ava('._buildWaypointForHoldingPatternAtPosition() returns an array with a single instance of a WaypointModel with hold properties for GPS', (t) => {
+// test('._buildWaypointForHoldingPatternAtPosition() returns an array with a single instance of a WaypointModel with hold properties for GPS', () => {
 //     const model = new LegModel(HOLD_AT_PRESENT_LOCATION_MOCK.name, runwayMock, arrivalFlightPhaseMock, navigationLibraryFixture, HOLD_AT_PRESENT_LOCATION_MOCK);
 //     const result = model._buildWaypointForHoldingPatternAtPosition(HOLD_AT_PRESENT_LOCATION_MOCK);
 //
-//     t.true(_isArray(result));
-//     t.true(result[0] instanceof WaypointModel);
-//     t.true(result[0].isHold);
-//     t.true(result[0].name === 'gps');
-//     t.true(result[0].altitudeMaximum === INVALID_NUMBER);
-//     t.true(result[0].altitudeMinimum === INVALID_NUMBER);
-//     t.true(result[0].speedMaximum === INVALID_NUMBER);
-//     t.true(result[0].speedMinimum === INVALID_NUMBER);
-//     t.true(result[0]._turnDirection === 'left');
-//     t.true(result[0]._legLength === '3min');
-//     t.true(result[0].timer === -999);
+//     expect(_isArray(result)).toBe(true);
+//     expect(result[0] instanceof WaypointModel).toBe(true);
+//     expect(result[0].isHold).toBe(true);
+//     expect(result[0].name === 'gps').toBe(true);
+//     expect(result[0].altitudeMaximum === INVALID_NUMBER).toBe(true);
+//     expect(result[0].altitudeMinimum === INVALID_NUMBER).toBe(true);
+//     expect(result[0].speedMaximum === INVALID_NUMBER).toBe(true);
+//     expect(result[0].speedMinimum === INVALID_NUMBER).toBe(true);
+//     expect(result[0]._turnDirection === 'left').toBe(true);
+//     expect(result[0]._legLength === '3min').toBe(true);
+//     expect(result[0].timer === -999).toBe(true);
 // });
 //
-// ava('._buildWaypointForHoldingPatternAtPosition() returns the same position for a hold Waypoint at a fix vs position', (t) => {
+// test('._buildWaypointForHoldingPatternAtPosition() returns the same position for a hold Waypoint at a fix vs position', () => {
 //     const model = new LegModel(HOLD_AT_PRESENT_LOCATION_MOCK.name, runwayMock, arrivalFlightPhaseMock, navigationLibraryFixture, HOLD_AT_PRESENT_LOCATION_MOCK);
 //     const fixResult = model._buildWaypointForHoldingPattern(holdRouteStringMock);
 //     const positionalHoldingProps = Object.assign(HOLD_AT_PRESENT_LOCATION_MOCK, { positionModel: cowbyFixFixture.positionModel });
 //     const positionResult = model._buildWaypointForHoldingPatternAtPosition(positionalHoldingProps);
 //
-//     t.true(_isEqual(fixResult[0].relativePosition, positionResult[0].relativePosition));
+//     expect(_isEqual(fixResult[0].relativePosition, positionResult[0].relativePosition)).toBe(true);
 // });
 //
-// ava('._buildWaypointCollectionForProcedureRoute() returns a list of WaypointModels', (t) => {
+// test('._buildWaypointCollectionForProcedureRoute() returns a list of WaypointModels', () => {
 //     const model = new LegModel(arrivalProcedureRouteStringMock, runwayMock, arrivalFlightPhaseMock, navigationLibraryFixture);
 //     const result = model._buildWaypointCollectionForProcedureRoute(arrivalProcedureRouteStringMock, runwayMock);
 //
-//     t.plan(result.length);
+//     ;
 //     for (let i = 0; i < result.length; i++) {
-//         t.true(result[i] instanceof WaypointModel);
+//         expect(result[i] instanceof WaypointModel).toBe(true);
 //     }
 // });
 //
-// ava('._buildProcedureType() returns early when #routeString is a directRouteStringMock', (t) => {
+// test('._buildProcedureType() returns early when #routeString is a directRouteStringMock', () => {
 //     const model = new LegModel(directRouteStringMockMock, runwayMock, arrivalFlightPhaseMock, navigationLibraryFixture);
 //
-//     t.true(model.procedureType === '');
+//     expect(model.procedureType === '').toBe(true);
 // });
 //
-// ava('._buildProcedureType() sets #procedureType as `SID` the #routeString is a procedureType and #flightPhase is departure', (t) => {
+// test('._buildProcedureType() sets #procedureType as `SID` the #routeString is a procedureType and #flightPhase is departure', () => {
 //     const model = new LegModel(departureProcedureRouteStringMock, runwayMock, departureFlightPhaseMock, navigationLibraryFixture);
 //
-//     t.true(model.procedureType === 'SID');
+//     expect(model.procedureType === 'SID').toBe(true);
 // });
 //
-// ava('._buildProcedureType() sets #procedureType as `STAR` the #routeString is a procedureType and #flightPhase is arrival', (t) => {
+// test('._buildProcedureType() sets #procedureType as `STAR` the #routeString is a procedureType and #flightPhase is arrival', () => {
 //     const model = new LegModel(arrivalProcedureRouteStringMock, runwayMock, arrivalFlightPhaseMock, navigationLibraryFixture);
 //
-//     t.true(model.procedureType === 'STAR');
+//     expect(model.procedureType === 'STAR').toBe(true);
 // });

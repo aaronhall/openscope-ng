@@ -1,21 +1,21 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import NavigationLibrary from '../../src/assets/scripts/client/navigationLibrary/NavigationLibrary';
 import { AIRPORT_JSON_KLAS_MOCK } from '../airport/_mocks/airportJsonMock';
 
-ava('throws when attempting to create an instance', (t) => {
-    t.throws(() => new NavigationLibrary());
-    t.throws(() => new NavigationLibrary(AIRPORT_JSON_KLAS_MOCK));
+test('throws when attempting to create an instance', () => {
+    expect(() => new NavigationLibrary()).toThrow();
+    expect(() => new NavigationLibrary(AIRPORT_JSON_KLAS_MOCK)).toThrow();
 });
 
-ava('.getAllFixNamesInUse() returns list of all fix names used in all procedures and airways', (t) => {
+test('.getAllFixNamesInUse() returns list of all fix names used in all procedures and airways', () => {
     NavigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
 
     const fixNameList = NavigationLibrary._getAllFixNamesInUse();
 
-    t.true(fixNameList.length === 93);
+    expect(fixNameList.length === 93).toBe(true);
 });
 
-ava('._holdCollection() is populated correctly', (t) => {
+test('._holdCollection() is populated correctly', () => {
     NavigationLibrary.reset();
     NavigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
     const bakkrHold = NavigationLibrary.findHoldParametersByFix('BAKRR');
@@ -27,13 +27,13 @@ ava('._holdCollection() is populated correctly', (t) => {
         speedMaximum: 230
     };
 
-    t.deepEqual(bakkrHold, expectedResult);
+    expect(bakkrHold).toEqual(expectedResult);
 });
 
-ava('.getFixSpokenName() returns input in lowercase if fix does not exist', (t) => {
+test('.getFixSpokenName() returns input in lowercase if fix does not exist', () => {
     NavigationLibrary.reset();
     NavigationLibrary.init(AIRPORT_JSON_KLAS_MOCK);
     const result = NavigationLibrary.getFixSpokenName('ASDFG');
 
-    t.deepEqual(result, 'asdfg');
+    expect(result).toEqual('asdfg');
 });

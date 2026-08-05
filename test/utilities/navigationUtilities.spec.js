@@ -1,74 +1,74 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import { assembleProceduralRouteString, parseAltitudeRestriction, parseSpeedRestriction } from '../../src/assets/scripts/client/utilities/navigationUtilities';
 
-ava('assembleProceduralRouteString() concatenates provided strings with appropriate separator character', (t) => {
+test('assembleProceduralRouteString() concatenates provided strings with appropriate separator character', () => {
     const entryFixName = 'ENTRY';
     const procedureName = 'PRCDR';
     const exitFixName = 'EXITT';
     const expectedResult = 'ENTRY.PRCDR.EXITT';
     const result = assembleProceduralRouteString(entryFixName, procedureName, exitFixName);
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('.parseAltitudeRestriction() returns empty array for invalid restrictions', (t) => {
+test('.parseAltitudeRestriction() returns empty array for invalid restrictions', () => {
     const empty = [];
 
     // Empty value
-    t.deepEqual(parseAltitudeRestriction(), empty);
-    t.deepEqual(parseAltitudeRestriction(null), empty);
-    t.deepEqual(parseAltitudeRestriction(''), empty);
+    expect(parseAltitudeRestriction()).toEqual(empty);
+    expect(parseAltitudeRestriction(null)).toEqual(empty);
+    expect(parseAltitudeRestriction('')).toEqual(empty);
     // No prefix
-    t.deepEqual(parseAltitudeRestriction('80'), empty);
-    t.deepEqual(parseAltitudeRestriction('80+'), empty);
+    expect(parseAltitudeRestriction('80')).toEqual(empty);
+    expect(parseAltitudeRestriction('80+')).toEqual(empty);
     // Invalid limit symbol
-    t.deepEqual(parseAltitudeRestriction('A80@'), empty);
+    expect(parseAltitudeRestriction('A80@')).toEqual(empty);
     // More than 99,999 ft
-    t.deepEqual(parseAltitudeRestriction('A1000'), empty);
-    t.deepEqual(parseAltitudeRestriction('A1000+'), empty);
-    t.deepEqual(parseAltitudeRestriction('A1000-'), empty);
+    expect(parseAltitudeRestriction('A1000')).toEqual(empty);
+    expect(parseAltitudeRestriction('A1000+')).toEqual(empty);
+    expect(parseAltitudeRestriction('A1000-')).toEqual(empty);
 });
 
-ava('.parseAltitudeRestriction() returns expected values', (t) => {
+test('.parseAltitudeRestriction() returns expected values', () => {
     const expectedOneDigit = [800, ''];
     const expectedAbove = [8000, '+'];
     const expectedBelow = [14000, '-'];
     const expectedExact = [16000, ''];
 
-    t.deepEqual(parseAltitudeRestriction('A8'), expectedOneDigit);
-    t.deepEqual(parseAltitudeRestriction('A80+'), expectedAbove);
-    t.deepEqual(parseAltitudeRestriction('A140-'), expectedBelow);
-    t.deepEqual(parseAltitudeRestriction('A160'), expectedExact);
+    expect(parseAltitudeRestriction('A8')).toEqual(expectedOneDigit);
+    expect(parseAltitudeRestriction('A80+')).toEqual(expectedAbove);
+    expect(parseAltitudeRestriction('A140-')).toEqual(expectedBelow);
+    expect(parseAltitudeRestriction('A160')).toEqual(expectedExact);
 });
 
-ava('.parseSpeedRestriction() returns empty array for invalid restrictions', (t) => {
+test('.parseSpeedRestriction() returns empty array for invalid restrictions', () => {
     const empty = [];
 
     // Empty value
-    t.deepEqual(parseSpeedRestriction(), empty);
-    t.deepEqual(parseSpeedRestriction(null), empty);
-    t.deepEqual(parseSpeedRestriction(''), empty);
+    expect(parseSpeedRestriction()).toEqual(empty);
+    expect(parseSpeedRestriction(null)).toEqual(empty);
+    expect(parseSpeedRestriction('')).toEqual(empty);
     // No prefix
-    t.deepEqual(parseSpeedRestriction('250'), empty);
-    t.deepEqual(parseSpeedRestriction('250+'), empty);
+    expect(parseSpeedRestriction('250')).toEqual(empty);
+    expect(parseSpeedRestriction('250+')).toEqual(empty);
     // Speed is less than 100 kts
-    t.deepEqual(parseSpeedRestriction('S50'), empty);
-    t.deepEqual(parseSpeedRestriction('S50+'), empty);
-    t.deepEqual(parseSpeedRestriction('S50'), empty);
+    expect(parseSpeedRestriction('S50')).toEqual(empty);
+    expect(parseSpeedRestriction('S50+')).toEqual(empty);
+    expect(parseSpeedRestriction('S50')).toEqual(empty);
     // Invalid limit symbol
-    t.deepEqual(parseSpeedRestriction('S250@'), empty);
+    expect(parseSpeedRestriction('S250@')).toEqual(empty);
     // Speed more than 999 kts
-    t.deepEqual(parseSpeedRestriction('S1000'), empty);
-    t.deepEqual(parseSpeedRestriction('S1000+'), empty);
-    t.deepEqual(parseSpeedRestriction('S1000-'), empty);
+    expect(parseSpeedRestriction('S1000')).toEqual(empty);
+    expect(parseSpeedRestriction('S1000+')).toEqual(empty);
+    expect(parseSpeedRestriction('S1000-')).toEqual(empty);
 });
 
-ava('.parseSpeedRestriction() returns expected values', (t) => {
+test('.parseSpeedRestriction() returns expected values', () => {
     const expectedAbove = [220, '+'];
     const expectedBelow = [185, '-'];
     const expectedExact = [230, ''];
 
-    t.deepEqual(parseSpeedRestriction('S220+'), expectedAbove);
-    t.deepEqual(parseSpeedRestriction('S185-'), expectedBelow);
-    t.deepEqual(parseSpeedRestriction('S230'), expectedExact);
+    expect(parseSpeedRestriction('S220+')).toEqual(expectedAbove);
+    expect(parseSpeedRestriction('S185-')).toEqual(expectedBelow);
+    expect(parseSpeedRestriction('S230')).toEqual(expectedExact);
 });

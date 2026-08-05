@@ -14,7 +14,7 @@
     "lint": "eslint src/assets/scripts/client/**",
     "server": "npm run start",
     "start": "node public/assets/scripts/server/index.js",
-    "test": "ava --concurrency=5",
+    "test": "vitest run",
     "validator": "validator -a"
   },
   "repository": {
@@ -39,23 +39,6 @@
     "url": "https://github.com/openscope/openscope/issues"
   },
   "homepage": "https://github.com/openscope/openscope",
-  "ava": {
-    "files": [
-      "test/**/*.spec.js"
-    ],
-    "sources": [
-      "!**/_mocks/**",
-      "!**/fixtures/**",
-      "!**/testHelpers/**"
-    ],
-    "verbose": true,
-    "require": [
-      "@babel/register",
-      "./test/testHelpers/globalProps.js",
-      "./test/testHelpers/localStorage.js",
-      "./test/testHelpers/setupBrowserEnv.js"
-    ]
-  },
   "dependencies": {
     "ansi-colors": "3.2.4",
     "express": "4.22.2",
@@ -78,7 +61,6 @@
     "@babel/preset-react": "7.0.0",
     "@babel/register": "7.4.4",
     "@openscope/validator": "latest",
-    "ava": "1.4.1",
     "babel-eslint": "10.0.1",
     "babelify": "10.0.0",
     "browser-env": "3.3.0",
@@ -108,13 +90,14 @@
     "handlebars-layouts": "3.1.4",
     "lint-diff": "1.2.1",
     "merge-stream": "1.0.1",
-    "mkdirp": "0.5.1",
+    "mkdirp": "0.5.6",
     "path": "0.12.7",
     "rimraf": "2.6.3",
     "showdown": "1.9.1",
     "sinon": "7.3.2",
     "vinyl-buffer": "1.0.1",
     "vinyl-source-stream": "2.0.0",
+    "vitest": "4.1.10",
     "yargs": "13.2.2"
   }
 }

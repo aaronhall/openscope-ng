@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 
 import {
     createAirportControllerFixture
@@ -19,78 +19,78 @@ function createAircaft() {
     return new AircraftModel(ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK);
 }
 
-ava.before(() => {
+beforeAll(() => {
     createNavigationLibraryFixture();
     createAirportControllerFixture();
 });
 
-ava.beforeEach(() => {
+beforeEach(() => {
     MeasureTool.reset();
 });
 
-ava.serial('.addPoint() throws when #isMeasuring is not set', (t) => {
-    t.throws(() => MeasureTool.addPoint(CURSOR_POSITION));
+test('.addPoint() throws when #isMeasuring is not set', (t) => {
+    expect(() => MeasureTool.addPoint(CURSOR_POSITION)).toThrow();
 });
 
-ava.serial('.removePreviousPoint() throws when #isMeasuring is not set', (t) => {
-    t.throws(() => MeasureTool.removePreviousPoint());
+test('.removePreviousPoint() throws when #isMeasuring is not set', (t) => {
+    expect(() => MeasureTool.removePreviousPoint()).toThrow();
 });
 
-ava.serial('.updateLastPoint() throws when #isMeasuring is not set', (t) => {
-    t.throws(() => MeasureTool.updateLastPoint(CURSOR_POSITION));
+test('.updateLastPoint() throws when #isMeasuring is not set', (t) => {
+    expect(() => MeasureTool.updateLastPoint(CURSOR_POSITION)).toThrow();
 });
 
-ava.serial('.addPoint() throws when point value is invalid', (t) => {
+test('.addPoint() throws when point value is invalid', (t) => {
     MeasureTool.startNewPath();
 
-    t.throws(() => MeasureTool.addPoint({}));
-    t.throws(() => MeasureTool.addPoint(null));
-    t.notThrows(() => MeasureTool.addPoint(FixCollection.findFixByName('BAKRR')));
-    t.notThrows(() => MeasureTool.updateLastPoint(createAircaft()));
-    t.notThrows(() => MeasureTool.addPoint(CURSOR_POSITION));
+    expect(() => MeasureTool.addPoint({})).toThrow();
+    expect(() => MeasureTool.addPoint(null)).toThrow();
+    expect(() => MeasureTool.addPoint(FixCollection.findFixByName('BAKRR'))).not.toThrow();
+    expect(() => MeasureTool.updateLastPoint(createAircaft())).not.toThrow();
+    expect(() => MeasureTool.addPoint(CURSOR_POSITION)).not.toThrow();
 });
 
-ava.serial('.startNewPath() throws when the current path hasn\'t been ended.', (t) => {
-    t.notThrows(() => MeasureTool.startNewPath());
-    t.throws(() => MeasureTool.startNewPath());
+test('.startNewPath() throws when the current path hasn\'t been ended.', (t) => {
+    expect(() => MeasureTool.startNewPath()).not.toThrow();
+    expect(() => MeasureTool.startNewPath()).toThrow();
 });
 
-ava.serial('.updateLastPoint() throws when point value is invalid', (t) => {
+test('.updateLastPoint() throws when point value is invalid', (t) => {
     MeasureTool.startNewPath();
 
-    t.throws(() => MeasureTool.updateLastPoint({}));
-    t.throws(() => MeasureTool.updateLastPoint(null));
-    t.notThrows(() => MeasureTool.updateLastPoint(FixCollection.findFixByName('BAKRR')));
-    t.notThrows(() => MeasureTool.updateLastPoint(createAircaft()));
-    t.notThrows(() => MeasureTool.updateLastPoint(CURSOR_POSITION));
+    expect(() => MeasureTool.updateLastPoint({})).toThrow();
+    expect(() => MeasureTool.updateLastPoint(null)).toThrow();
+    expect(() => MeasureTool.updateLastPoint(FixCollection.findFixByName('BAKRR'))).not.toThrow();
+    expect(() => MeasureTool.updateLastPoint(createAircaft())).not.toThrow();
+    expect(() => MeasureTool.updateLastPoint(CURSOR_POSITION)).not.toThrow();
 });
 
-ava.serial('hasPaths returns correct value', (t) => {
-    t.false(MeasureTool.hasPaths);
+test('hasPaths returns correct value', (t) => {
+    expect(MeasureTool.hasPaths).toBe(false);
 
     MeasureTool.startNewPath();
 
-    t.true(MeasureTool.hasPaths);
+    expect(MeasureTool.hasPaths).toBe(true);
 });
 
-ava.serial('.addPoint() sets the correct flags', (t) => {
+test('.addPoint() sets the correct flags', (t) => {
     MeasureTool.startNewPath();
 
-    t.true(MeasureTool.isMeasuring);
-    t.false(MeasureTool.hasStarted);
+    expect(MeasureTool.isMeasuring).toBe(true);
+    expect(MeasureTool.hasStarted).toBe(false);
 
     MeasureTool.addPoint(FixCollection.findFixByName('DBIGE'));
 
-    t.true(MeasureTool.isMeasuring);
-    t.true(MeasureTool.hasStarted);
+    expect(MeasureTool.isMeasuring).toBe(true);
+    expect(MeasureTool.hasStarted).toBe(true);
 
     MeasureTool.endPath();
 
-    t.false(MeasureTool.isMeasuring);
-    t.false(MeasureTool.hasStarted);
+    expect(MeasureTool.isMeasuring).toBe(false);
+    expect(MeasureTool.hasStarted).toBe(false);
 });
 
-ava.serial('.buildPathInfo() returns an empty array when there are no saved points', (t) => {
+test('.buildPathInfo() returns an empty array when there are no saved points', (t) => {
     const bakrr = FixCollection.findFixByName('BAKRR');
 
     MeasureTool.startNewPath();
@@ -99,10 +99,10 @@ ava.serial('.buildPathInfo() returns an empty array when there are no saved poin
 
     const pathInfo = MeasureTool.buildPathInfo();
 
-    t.deepEqual(pathInfo, []);
+    expect(pathInfo).toEqual([]);
 });
 
-ava.serial('.buildPathInfo() returns an empty array when there is only one saved point', (t) => {
+test('.buildPathInfo() returns an empty array when there is only one saved point', (t) => {
     const bakrr = FixCollection.findFixByName('BAKRR');
 
     MeasureTool.startNewPath();
@@ -112,10 +112,10 @@ ava.serial('.buildPathInfo() returns an empty array when there is only one saved
 
     const pathInfo = MeasureTool.buildPathInfo();
 
-    t.deepEqual(pathInfo, []);
+    expect(pathInfo).toEqual([]);
 });
 
-ava.serial('.buildPathInfo() builds a correct MeasureLegModel from FixModel points', (t) => {
+test('.buildPathInfo() builds a correct MeasureLegModel from FixModel points', (t) => {
     const bakrr = FixCollection.findFixByName('BAKRR');
     const dbige = FixCollection.findFixByName('DBIGE');
 
@@ -128,22 +128,22 @@ ava.serial('.buildPathInfo() builds a correct MeasureLegModel from FixModel poin
     const [pathInfo] = MeasureTool.buildPathInfo();
     const { initialTurn, firstLeg } = pathInfo;
 
-    t.is(initialTurn, null);
-    t.true(firstLeg instanceof MeasureLegModel);
-    t.not(firstLeg.previous, null);
-    t.not(firstLeg.startPoint, null);
-    t.is(firstLeg.next, null);
+    expect(initialTurn).toBe(null);
+    expect(firstLeg instanceof MeasureLegModel).toBe(true);
+    expect(firstLeg.previous).not.toBe(null);
+    expect(firstLeg.startPoint).not.toBe(null);
+    expect(firstLeg.next).toBe(null);
 
-    t.deepEqual(firstLeg.startPoint, bakrr.relativePosition);
-    t.deepEqual(firstLeg.endPoint, dbige.relativePosition);
-    t.not(firstLeg.midPoint, null);
-    t.not(firstLeg.bearing, 0);
-    t.not(firstLeg.distance, 0);
-    t.is(firstLeg.labels.length, 1);
-    t.is(firstLeg.radius, 0);
+    expect(firstLeg.startPoint).toEqual(bakrr.relativePosition);
+    expect(firstLeg.endPoint).toEqual(dbige.relativePosition);
+    expect(firstLeg.midPoint).not.toBe(null);
+    expect(firstLeg.bearing).not.toBe(0);
+    expect(firstLeg.distance).not.toBe(0);
+    expect(firstLeg.labels.length).toBe(1);
+    expect(firstLeg.radius).toBe(0);
 });
 
-ava.serial('.buildPathInfo() builds a correct MeasureLegModel from mixed points', (t) => {
+test('.buildPathInfo() builds a correct MeasureLegModel from mixed points', (t) => {
     const bakrr = FixCollection.findFixByName('BAKRR');
     const aircraft = createAircaft();
     aircraft.groundSpeed = 180;
@@ -160,16 +160,16 @@ ava.serial('.buildPathInfo() builds a correct MeasureLegModel from mixed points'
     const { initialTurn, firstLeg } = pathInfo;
     const leg1 = firstLeg.next;
 
-    t.not(initialTurn, null);
-    t.true(firstLeg instanceof MeasureLegModel);
-    t.is(leg1.next, null);
+    expect(initialTurn).not.toBe(null);
+    expect(firstLeg instanceof MeasureLegModel).toBe(true);
+    expect(leg1.next).toBe(null);
 
-    t.not(initialTurn.turnRadius, 0);
-    t.not(firstLeg.radius, 0);
-    t.is(leg1.radius, 0);
+    expect(initialTurn.turnRadius).not.toBe(0);
+    expect(firstLeg.radius).not.toBe(0);
+    expect(leg1.radius).toBe(0);
 });
 
-ava.serial('.removePreviousPoint() removes the second-to-last point in the current path', (t) => {
+test('.removePreviousPoint() removes the second-to-last point in the current path', (t) => {
     const bakrr = FixCollection.findFixByName('BAKRR');
     const dbige = FixCollection.findFixByName('DBIGE');
 
@@ -178,52 +178,52 @@ ava.serial('.removePreviousPoint() removes the second-to-last point in the curre
     MeasureTool.addPoint(dbige);
     MeasureTool.addPoint(CURSOR_POSITION);
 
-    t.is(MeasureTool._currentPath._points.length, 3);
+    expect(MeasureTool._currentPath._points.length).toBe(3);
 
     MeasureTool.removePreviousPoint();
 
-    t.is(MeasureTool._currentPath._points.length, 2);
-    t.deepEqual(MeasureTool._currentPath._points, [bakrr, CURSOR_POSITION]);
+    expect(MeasureTool._currentPath._points.length).toBe(2);
+    expect(MeasureTool._currentPath._points).toEqual([bakrr, CURSOR_POSITION]);
 });
 
-ava.serial('.reset() clears the flags to their initial state', (t) => {
+test('.reset() clears the flags to their initial state', (t) => {
     MeasureTool.startNewPath();
     MeasureTool.addPoint(FixCollection.findFixByName('BAKRR'));
     MeasureTool.addPoint(FixCollection.findFixByName('DBIGE'));
     MeasureTool.endPath();
     MeasureTool.reset();
 
-    t.is(MeasureTool.hasStarted, false);
-    t.is(MeasureTool.isMeasuring, false);
+    expect(MeasureTool.hasStarted).toBe(false);
+    expect(MeasureTool.isMeasuring).toBe(false);
 });
 
-ava.serial('.setStyle() correctly sets the _style property', (t) => {
+test('.setStyle() correctly sets the _style property', (t) => {
     MeasureTool.setStyle(MEASURE_TOOL_STYLE.STRAIGHT);
-    t.is(MeasureTool._style, MEASURE_TOOL_STYLE.STRAIGHT);
+    expect(MeasureTool._style).toBe(MEASURE_TOOL_STYLE.STRAIGHT);
 
     MeasureTool.setStyle(MEASURE_TOOL_STYLE.ARC_TO_NEXT);
-    t.is(MeasureTool._style, MEASURE_TOOL_STYLE.ARC_TO_NEXT);
+    expect(MeasureTool._style).toBe(MEASURE_TOOL_STYLE.ARC_TO_NEXT);
 
     MeasureTool.setStyle(MEASURE_TOOL_STYLE.ALL_ARCED);
-    t.is(MeasureTool._style, MEASURE_TOOL_STYLE.ALL_ARCED);
+    expect(MeasureTool._style).toBe(MEASURE_TOOL_STYLE.ALL_ARCED);
 
     MeasureTool.setStyle('a random value');
-    t.is(MeasureTool._style, MEASURE_TOOL_STYLE.STRAIGHT);
+    expect(MeasureTool._style).toBe(MEASURE_TOOL_STYLE.STRAIGHT);
 });
 
-ava.serial('.updateLastPoint() adds a new point if there is no point to update', (t) => {
+test('.updateLastPoint() adds a new point if there is no point to update', (t) => {
     MeasureTool.startNewPath();
     MeasureTool.addPoint(FixCollection.findFixByName('BAKRR'));
     MeasureTool.updateLastPoint(CURSOR_POSITION);
 
-    t.is(MeasureTool._currentPath._points.length, 2);
+    expect(MeasureTool._currentPath._points.length).toBe(2);
 });
 
-ava.serial('.updateLastPoint() updates the last point', (t) => {
+test('.updateLastPoint() updates the last point', (t) => {
     MeasureTool.startNewPath();
     MeasureTool.addPoint(FixCollection.findFixByName('BAKRR'));
     MeasureTool.addPoint(FixCollection.findFixByName('DBIGE'));
     MeasureTool.updateLastPoint(CURSOR_POSITION);
 
-    t.is(MeasureTool._currentPath._points.length, 2);
+    expect(MeasureTool._currentPath._points.length).toBe(2);
 });

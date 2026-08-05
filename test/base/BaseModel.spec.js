@@ -1,56 +1,56 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import _isString from 'lodash/isString';
 
 import BaseModel from '../../src/assets/scripts/client/base/BaseModel';
 import ExtendedBaseModelFixture from './_fixtures/ExtendedBaseModelFixture';
 
-ava('sets the #_id when passed valid parameters', (t) => {
+test('sets the #_id when passed valid parameters', () => {
     let model = new BaseModel();
-    t.true(model._id.indexOf('BaseModel') !== -1);
+    expect(model._id.indexOf('BaseModel') !== -1).toBe(true);
 
     model = new BaseModel('modelName');
-    t.true(model._id.indexOf('modelName') !== -1);
+    expect(model._id.indexOf('modelName') !== -1).toBe(true);
 
 });
 
-ava('throws when passed invalid parameters', t => {
-    t.throws(() => new BaseModel([]));
-    t.throws(() => new BaseModel({}));
-    t.throws(() => new BaseModel(42));
-    t.throws(() => new BaseModel(false));
+test('throws when passed invalid parameters', () => {
+    expect(() => new BaseModel([])).toThrow();
+    expect(() => new BaseModel({})).toThrow();
+    expect(() => new BaseModel(42)).toThrow();
+    expect(() => new BaseModel(false)).toThrow();
 });
 
-ava('makes sure the model in instantiates with the correct data type', t => {
-    t.notThrows(() => new BaseModel());
-    t.notThrows(() => new BaseModel('string'));
+test('makes sure the model in instantiates with the correct data type', () => {
+    expect(() => new BaseModel()).not.toThrow();
+    expect(() => new BaseModel('string')).not.toThrow();
 });
 
-ava('instantiates with an _id property', t => {
+test('instantiates with an _id property', () => {
     const model = new BaseModel();
 
-    t.true(_isString(model._id));
+    expect(_isString(model._id)).toBe(true);
 });
 
-ava('._init() throws when called from BaseModel', t => {
+test('._init() throws when called from BaseModel', () => {
     const model = new BaseModel();
 
-    t.throws(() => model._init());
+    expect(() => model._init()).toThrow();
 });
 
-ava('._init() does not throw when called by an extending class', t => {
+test('._init() does not throw when called by an extending class', () => {
     const model = new ExtendedBaseModelFixture();
 
-    t.notThrows(() => model._init());
+    expect(() => model._init()).not.toThrow();
 });
 
-ava('.reset() throws when called from BaseModel', t => {
+test('.reset() throws when called from BaseModel', () => {
     const model = new BaseModel();
 
-    t.throws(() => model.reset());
+    expect(() => model.reset()).toThrow();
 });
 
-ava('.reset() does not throw when called from and extending class', t => {
+test('.reset() does not throw when called from and extending class', () => {
     const model = new ExtendedBaseModelFixture();
 
-    t.notThrows(() => model.reset());
+    expect(() => model.reset()).not.toThrow();
 });

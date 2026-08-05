@@ -1,4 +1,4 @@
-import ava from 'ava';
+import { test, expect, vi } from 'vitest';
 import sinon from 'sinon';
 import _isEqual from 'lodash/isEqual';
 import _round from 'lodash/round';
@@ -24,123 +24,123 @@ import {
 import { INVALID_NUMBER } from '../../src/assets/scripts/client/constants/globalConstants';
 import { DEFAULT_SCREEN_POSITION } from '../../src/assets/scripts/client/constants/positionConstants';
 
-ava.beforeEach(() => {
+beforeEach(() => {
     createNavigationLibraryFixture();
     createAirportControllerFixture();
 });
 
-ava.afterEach(() => {
+afterEach(() => {
     resetNavigationLibraryFixture();
     resetAirportControllerFixture();
 });
 
-ava('does not throw when called without parameters', (t) => {
-    t.notThrows(() => new SpawnPatternModel());
-    t.notThrows(() => new SpawnPatternModel([]));
-    t.notThrows(() => new SpawnPatternModel({}));
-    t.notThrows(() => new SpawnPatternModel(42));
-    t.notThrows(() => new SpawnPatternModel(false));
+test('does not throw when called without parameters', () => {
+    expect(() => new SpawnPatternModel()).not.toThrow();
+    expect(() => new SpawnPatternModel([])).not.toThrow();
+    expect(() => new SpawnPatternModel({})).not.toThrow();
+    expect(() => new SpawnPatternModel(42)).not.toThrow();
+    expect(() => new SpawnPatternModel(false)).not.toThrow();
 });
 
-ava('.init() throws when called with invalid parameters', (t) => {
+test('.init() throws when called with invalid parameters', () => {
     const model = new SpawnPatternModel();
 
-    t.notThrows(() => model.init());
+    expect(() => model.init()).not.toThrow();
 });
 
-ava('does not throw when called with valid parameters', (t) => {
-    t.notThrows(() => new SpawnPatternModel(DEPARTURE_PATTERN_MOCK));
-    t.notThrows(() => new SpawnPatternModel(DEPARTURE_PATTERN_ROUTE_STRING_MOCK));
-    t.notThrows(() => new SpawnPatternModel(ARRIVAL_PATTERN_MOCK));
-    t.notThrows(() => new SpawnPatternModel(ARRIVAL_PATTERN_ROUTE_STRING_MOCK));
+test('does not throw when called with valid parameters', () => {
+    expect(() => new SpawnPatternModel(DEPARTURE_PATTERN_MOCK)).not.toThrow();
+    expect(() => new SpawnPatternModel(DEPARTURE_PATTERN_ROUTE_STRING_MOCK)).not.toThrow();
+    expect(() => new SpawnPatternModel(ARRIVAL_PATTERN_MOCK)).not.toThrow();
+    expect(() => new SpawnPatternModel(ARRIVAL_PATTERN_ROUTE_STRING_MOCK)).not.toThrow();
 });
 
-ava('initializes correctly when spawn pattern definition uses string type for number values', (t) => {
+test('initializes correctly when spawn pattern definition uses string type for number values', () => {
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK_ALL_STRINGS);
 
-    t.true(model._minimumAltitude === 36000);
-    t.true(model._maximumAltitude === 36000);
-    t.true(model.speed === 320);
-    t.true(model.rate === 10);
+    expect(model._minimumAltitude === 36000).toBe(true);
+    expect(model._maximumAltitude === 36000).toBe(true);
+    expect(model.speed === 320).toBe(true);
+    expect(model.rate === 10).toBe(true);
 });
 
-ava('initializes correctly when rate is passed as a float', (t) => {
+test('initializes correctly when rate is passed as a float', () => {
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_FLOAT_RATE_MOCK);
 
-    t.true(model.rate === 3.3);
+    expect(model.rate === 3.3).toBe(true);
 });
 
-ava('#position defaults to DEFAULT_SCREEN_POSITION', (t) => {
+test('#position defaults to DEFAULT_SCREEN_POSITION', () => {
     const model = new SpawnPatternModel(DEPARTURE_PATTERN_MOCK);
 
-    t.true(_isEqual(model.relativePosition, DEFAULT_SCREEN_POSITION));
+    expect(_isEqual(model.relativePosition, DEFAULT_SCREEN_POSITION)).toBe(true);
 });
 
-ava('#altitude returns a random altitude rounded to the nearest 1,000ft', (t) => {
+test('#altitude returns a random altitude rounded to the nearest 1,000ft', () => {
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
     const result = model.altitude;
     const expectedResult = _round(result, -3);
 
-    t.true(_isEqual(result, expectedResult));
-    t.true(typeof result === 'number');
+    expect(_isEqual(result, expectedResult)).toBe(true);
+    expect(typeof result === 'number').toBe(true);
 });
 
-ava('#id returns #_id', (t) => {
+test('#id returns #_id', () => {
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
     const expectedResult = 'some-value';
     model._id = expectedResult;
     const result = model.id;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('#positionModel returns #_positionModel', (t) => {
+test('#positionModel returns #_positionModel', () => {
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
     const expectedResult = 'some-value';
     model._positionModel = expectedResult;
     const result = model.positionModel;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('#airportIcao returns the airport icao when type is arrival', (t) => {
+test('#airportIcao returns the airport icao when type is arrival', () => {
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
     const expectedResult = 'KLAS';
     const result = model.airportIcao;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('#airportIcao returns the airport icao when type is departure', (t) => {
+test('#airportIcao returns the airport icao when type is departure', () => {
     const model = new SpawnPatternModel(DEPARTURE_PATTERN_MOCK);
     const expectedResult = 'KLAS';
     const result = model.airportIcao;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
 
-ava('#airportIcao returns the airport icao when type is overflight', (t) => {
+test('#airportIcao returns the airport icao when type is overflight', () => {
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
     const isOverflightStub = sinon.stub(model, 'isOverflight').returns(true);
     const expectedResult = 'overflight';
     const result = model.airportIcao;
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 
     isOverflightStub.restore();
 });
 
-ava('.cycleStart() returns early if cycleStartTime does not equal -1', (t) => {
+test('.cycleStart() returns early if cycleStartTime does not equal -1', () => {
     const cycleStartTimeMock = 42;
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
     model.cycleStartTime = cycleStartTimeMock;
 
     model.cycleStart(33);
 
-    t.true(model.cycleStartTime === cycleStartTimeMock);
+    expect(model.cycleStartTime === cycleStartTimeMock).toBe(true);
 });
 
-ava('.cycleStart() sets cycleStartTime with a startTime + offset', (t) => {
+test('.cycleStart() sets cycleStartTime with a startTime + offset', () => {
     const cycleStartTimeMock = 42;
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
     model.offset = 0;
@@ -148,37 +148,37 @@ ava('.cycleStart() sets cycleStartTime with a startTime + offset', (t) => {
 
     model.cycleStart(cycleStartTimeMock);
 
-    t.true(model.cycleStartTime === cycleStartTimeMock);
+    expect(model.cycleStartTime === cycleStartTimeMock).toBe(true);
 });
 
-ava('.getNextDelayValue() returns a random number between minimumDelay and maximumDelay', (t) => {
+test('.getNextDelayValue() returns a random number between minimumDelay and maximumDelay', () => {
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
     const result = model.getNextDelayValue();
 
-    t.true(typeof result === 'number');
+    expect(typeof result === 'number').toBe(true);
 });
 
-ava('.getNextDelayValue() calls ._calculateRandomDelayPeriod() if SPAWN_METHOD.RANDOM', (t) => {
+test('.getNextDelayValue() calls ._calculateRandomDelayPeriod() if SPAWN_METHOD.RANDOM', () => {
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
     const _calculateRandomDelayPeriodSpy = sinon.spy(model, '_calculateRandomDelayPeriod');
     model.method = 'random';
 
     model.getNextDelayValue();
 
-    t.true(_calculateRandomDelayPeriodSpy.calledOnce);
+    expect(_calculateRandomDelayPeriodSpy.calledOnce).toBe(true);
 });
 
-ava('.getNextDelayValue() calls ._calculateNextCyclicDelayPeriod() if SPAWN_METHOD.CYCLIC', (t) => {
+test('.getNextDelayValue() calls ._calculateNextCyclicDelayPeriod() if SPAWN_METHOD.CYCLIC', () => {
     const gameTimeMock = 42;
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_CYCLIC_MOCK);
     const _calculateNextCyclicDelayPeriodSpy = sinon.spy(model, '_calculateNextCyclicDelayPeriod');
 
     model.getNextDelayValue(gameTimeMock);
 
-    t.true(_calculateNextCyclicDelayPeriodSpy.calledWithExactly(gameTimeMock));
+    expect(_calculateNextCyclicDelayPeriodSpy.calledWithExactly(gameTimeMock)).toBe(true);
 });
 
-ava('.getNextDelayValue() calls ._calculateNextSurgeDelayPeriod() if SPAWN_METHOD.SURGE', (t) => {
+test('.getNextDelayValue() calls ._calculateNextSurgeDelayPeriod() if SPAWN_METHOD.SURGE', () => {
     const gameTimeMock = 42;
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
     const _calculateNextSurgeDelayPeriodSpy = sinon.spy(model, '_calculateNextSurgeDelayPeriod');
@@ -186,36 +186,36 @@ ava('.getNextDelayValue() calls ._calculateNextSurgeDelayPeriod() if SPAWN_METHO
 
     model.getNextDelayValue(gameTimeMock);
 
-    t.true(_calculateNextSurgeDelayPeriodSpy.calledWithExactly(gameTimeMock));
+    expect(_calculateNextSurgeDelayPeriodSpy.calledWithExactly(gameTimeMock)).toBe(true);
 });
 
-ava('.getNextDelayValue() calls ._calculateNextWaveDelayPeriod() if SPAWN_METHOD.WAVE', (t) => {
+test('.getNextDelayValue() calls ._calculateNextWaveDelayPeriod() if SPAWN_METHOD.WAVE', () => {
     const gameTimeMock = 42;
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_WAVE_MOCK);
     const _calculateNextWaveDelayPeriodSpy = sinon.spy(model, '_calculateNextWaveDelayPeriod');
 
     model.getNextDelayValue(gameTimeMock);
 
-    t.true(_calculateNextWaveDelayPeriodSpy.calledWithExactly(gameTimeMock));
+    expect(_calculateNextWaveDelayPeriodSpy.calledWithExactly(gameTimeMock)).toBe(true);
 });
 
-ava('._calculateNextCyclicDelayPeriod() returns 360 when gameTime is 0', (t) => {
+test('._calculateNextCyclicDelayPeriod() returns 360 when gameTime is 0', () => {
     const gameTimeMock = 0;
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_CYCLIC_MOCK);
     const result = model._calculateNextCyclicDelayPeriod(gameTimeMock);
 
-    t.true(result === 360);
+    expect(result === 360).toBe(true);
 });
 
-ava.skip('._calculateNextWaveDelayPeriod()', (t) => {
+test.skip('._calculateNextWaveDelayPeriod()', (t) => {
     const gameTimeMock = 3320;
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_WAVE_MOCK);
     const result = model._calculateNextWaveDelayPeriod(gameTimeMock);
 
-    // t.true(result === 360);
+    // expect(result === 360).toBe(true);
 });
 
-ava('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when an array of numbers is passed ', (t) => {
+test('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when an array of numbers is passed ', () => {
     // creating new mock here so as not to overwrite and affect original
     const arrivalMock = Object.assign({}, ARRIVAL_PATTERN_MOCK, { altitude: 0 });
     const altitudeMock = [10000, 20000];
@@ -223,11 +223,11 @@ ava('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when an ar
 
     model._setMinMaxAltitude(altitudeMock);
 
-    t.true(model._minimumAltitude === altitudeMock[0]);
-    t.true(model._maximumAltitude === altitudeMock[1]);
+    expect(model._minimumAltitude === altitudeMock[0]).toBe(true);
+    expect(model._maximumAltitude === altitudeMock[1]).toBe(true);
 });
 
-ava('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when an array of strings is passed ', (t) => {
+test('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when an array of strings is passed ', () => {
     // creating new mock here so as not to overwrite and affect original
     const arrivalMock = Object.assign({}, ARRIVAL_PATTERN_MOCK, { altitude: 0 });
     const altitudeMock = ['10000', '20000'];
@@ -235,11 +235,11 @@ ava('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when an ar
 
     model._setMinMaxAltitude(altitudeMock);
 
-    t.true(model._minimumAltitude === 10000);
-    t.true(model._maximumAltitude === 20000);
+    expect(model._minimumAltitude === 10000).toBe(true);
+    expect(model._maximumAltitude === 20000).toBe(true);
 });
 
-ava('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when a number is passed ', (t) => {
+test('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when a number is passed ', () => {
     // creating new mock here so as not to overwrite and affect original
     const arrivalMock = Object.assign({}, ARRIVAL_PATTERN_MOCK, { altitude: 0 });
     const altitudeMock = 23000;
@@ -247,11 +247,11 @@ ava('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when a num
 
     model._setMinMaxAltitude(altitudeMock);
 
-    t.true(model._minimumAltitude === altitudeMock);
-    t.true(model._maximumAltitude === altitudeMock);
+    expect(model._minimumAltitude === altitudeMock).toBe(true);
+    expect(model._maximumAltitude === altitudeMock).toBe(true);
 });
 
-ava('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when a string is passed ', (t) => {
+test('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when a string is passed ', () => {
     // creating new mock here so as not to overwrite and affect original
     const arrivalMock = Object.assign({}, ARRIVAL_PATTERN_MOCK, { altitude: 0 });
     const altitudeMock = '23000';
@@ -259,31 +259,31 @@ ava('._setMinMaxAltitude() sets _minimumAltitude and _maximumAltitude when a str
 
     model._setMinMaxAltitude(altitudeMock);
 
-    t.true(model._minimumAltitude === 23000);
-    t.true(model._maximumAltitude === 23000);
+    expect(model._minimumAltitude === 23000).toBe(true);
+    expect(model._maximumAltitude === 23000).toBe(true);
 });
 
-ava('._initializePositionAndHeadingForArrival() returns early when spawnPattern.category is departure', (t) => {
+test('._initializePositionAndHeadingForArrival() returns early when spawnPattern.category is departure', () => {
     const model = new SpawnPatternModel(DEPARTURE_PATTERN_MOCK);
 
     model._initializePositionAndHeadingForAirborneAircraft(DEPARTURE_PATTERN_MOCK);
 
-    t.true(model.heading === -999);
-    t.true(_isEqual(model.relativePosition, DEFAULT_SCREEN_POSITION));
+    expect(model.heading === -999).toBe(true);
+    expect(_isEqual(model.relativePosition, DEFAULT_SCREEN_POSITION)).toBe(true);
 });
 
-ava('._initializePositionAndHeadingForArrival() calculates aircraft heading and position when provided a route', (t) => {
+test('._initializePositionAndHeadingForArrival() calculates aircraft heading and position when provided a route', () => {
     const expectedHeadingResult = 4.436187691083426;
     const expectedPositionResult = [220.0165474765974, 137.76227044819646];
     const model = new SpawnPatternModel(ARRIVAL_PATTERN_MOCK);
 
     model._initializePositionAndHeadingForAirborneAircraft(ARRIVAL_PATTERN_MOCK);
 
-    t.true(model.heading === expectedHeadingResult);
-    t.true(_isEqual(model.relativePosition, expectedPositionResult));
+    expect(model.heading === expectedHeadingResult).toBe(true);
+    expect(_isEqual(model.relativePosition, expectedPositionResult)).toBe(true);
 });
 
-ava('._calculateSpawnHeading() returns bearing between route\'s first and second waypoints', (t) => {
+test('._calculateSpawnHeading() returns bearing between route\'s first and second waypoints', () => {
     const mock = Object.assign(
         {},
         ARRIVAL_PATTERN_MOCK,
@@ -296,5 +296,5 @@ ava('._calculateSpawnHeading() returns bearing between route\'s first and second
     const expectedResult = 1.3415936051582544;
     const result = model._calculateSpawnHeading();
 
-    t.true(result === expectedResult);
+    expect(result === expectedResult).toBe(true);
 });
