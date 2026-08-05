@@ -15,7 +15,7 @@ import { SELECTORS } from '../../constants/selectors';
 import { AUTOCOMPLETE_COMMAND_TEMPLATE } from './AutocompleteCommandTemplate';
 import { AUTOCOMPLETE_ARGUMENT_TEMPLATE } from './AutocompleteArgumentTemplate';
 
-const Handlebars = require('handlebars');
+import Handlebars from 'handlebars';
 
 /**
  * @class AutocompleteController
