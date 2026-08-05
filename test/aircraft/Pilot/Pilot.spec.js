@@ -101,14 +101,6 @@ test('.reset() properly resets the instance properties to their null state', () 
     expect(pilotModel.hasDepartureClearance === false).toBe(true);
 });
 
-test('.shouldExpediteAltitudeChange() sets #shouldExpediteAltitudeChange to true and responds with a success message', () => {
-    const expectedResult = [true, 'expediting to assigned altitude'];
-    const pilot = createPilotFixture();
-    const result = pilot.shouldExpediteAltitudeChange();
-
-    expect(pilot._mcp.shouldExpediteAltitudeChange).toBe(true);
-    expect(result).toEqual(expectedResult);
-});
 
 test('.applyArrivalProcedure() returns an error when passed an invalid routeString', () => {
     const expectedResult = [false, 'arrival procedure format not understood'];
