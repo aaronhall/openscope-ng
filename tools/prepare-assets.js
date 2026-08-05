@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const showdown = require('showdown');
+const { marked } = require('marked');
 
 const ROOT = path.join(__dirname, '..');
 const SOURCE_ASSETS = path.join(ROOT, 'assets');
@@ -90,10 +90,7 @@ function assembleCollection(directory, outputFilename) {
 
 function assembleGuides() {
     const markdown = {};
-    const converter = new showdown.Converter({
-        tables: true,
-        simpleLineBreaks: true,
-    });
+    const markdownOptions = { breaks: true, gfm: true };
 
     for (const entry of fs.readdirSync(SOURCE_GUIDES, { withFileTypes: true })) {
         if (!entry.isFile() || entry.name.includes('airport-guide-directory')) {
@@ -109,7 +106,10 @@ function assembleGuides() {
     }
 
     const guides = Object.fromEntries(
-        Object.entries(markdown).map(([icao, source]) => [icao, converter.makeHtml(source)])
+        Object.entries(markdown).map(([icao, source]) => [
+            icao,
+            marked.parse(source, markdownOptions),
+        ])
     );
 
     writeJson(path.join(STAGING_ASSETS, 'guides', 'guides.json'), guides);
@@ -120,10 +120,10 @@ function assembleChangelog() {
     const sourceMarkdown = fs.readFileSync(path.join(ROOT, 'CHANGELOG.md'), 'utf8');
     const entries = sourceMarkdown.split(/# [0-9]\.[0-9]+\.[0-9] \(.*\)/g);
     const latestEntry = entries[1];
-    const converter = new showdown.Converter({ simpleLineBreaks: true });
+    const markdownOptions = { breaks: true };
 
     writeJson(path.join(STAGING_ASSETS, 'changelog.json'), {
-        changelog: converter.makeHtml(latestEntry),
+        changelog: marked.parse(latestEntry, markdownOptions),
     });
 }
 
