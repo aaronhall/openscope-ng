@@ -15,7 +15,7 @@ Flughafen Dusseldorf (_English: Dusseldorf Airport_) is the main international a
 As the Northern runway may only be used 56 hours per week, it is common that Dusseldorf operates a single runway configuration, with the Southern runway (23L/05R) in use most of the time.
 
 ##### High Intensity Runway Operations
-When there is a high amount of traffic, a dual-runway configuration may be used. Takeoffs are conducted on the southern runway (23L/05R), and landings on the Northern runway (23R/05L). In OpenScope, a dual-runway configuration is operated, as there is a high quantity of inbound and outbound traffic.
+When there is a high amount of traffic, a dual-runway configuration may be used. Takeoffs are conducted on the southern runway (23L/05R), and landings on the Northern runway (23R/05L). In openScope NG, a dual-runway configuration is operated, as there is a high quantity of inbound and outbound traffic.
 
 ##### Speed restrictions
 All aircraft should be 250kt IAS under 10,000ft in German airspace classes D, E, F and G.
@@ -42,7 +42,7 @@ Aircraft arriving into Dusseldorf mainly come from one of four waypoints, TEBRO,
 ### Airspace
 The airspace is listed within the German Aeronautical Information Publication under the name of "Dusseldorf/Köln Bonn", meaning that the airspace covers Dusseldorf as well as Cologne Bonn. This is likely due to the close proximity of the two aerodromes, hence why the airspace covers a large area. The airspace has a ceiling of 10,000ft.
 
-##### Sectors Available in OpenScope
+##### Sectors Available in openScope NG
 ```
 Langen Radar (Dusseldorf)
 Langen Radar (Köln/Bonn)

@@ -136,7 +136,7 @@ class UiController {
         this.$fastForwards = null;
 
         /**
-         * Footer button element which opens the openScope github page in a new tab
+         * Footer button element which opens the openScope NG GitHub page in a new tab
          *
          * @for UiController
          * @property $githubLinkElement

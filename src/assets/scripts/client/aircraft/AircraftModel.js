@@ -975,7 +975,7 @@ export default class AircraftModel {
         }
 
         // TODO: the `this` here is ugly, but will be needed until `getOffset`
-        // is refactored (#291 - https://github.com/openscope/openscope/issues/291)
+        // is refactored (#291 - https://github.com/aaronhall/openscope-ng/issues/291)
         // TODO: The methods called here should be moved to the AircraftModel,
         // so that it can also be used for non-runway course interception
         return (

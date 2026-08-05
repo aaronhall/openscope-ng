@@ -94,7 +94,7 @@ _Only bugfix branches may be merged (to `release/#.#.# --> develop`) during this
 1. Checkout `master`.
 1. Create and push a new version tag.
     - `git tag v#.#.#` and `git push origin v#.#.#`
-1. On the repository's [tags](https://github.com/openscope/openscope/tags) page, find the newly created tag and add release notes.
+1. On the repository's [tags](https://github.com/aaronhall/openscope-ng/tags) page, find the newly created tag and add release notes.
     - Include title of the version number, eg `v#.#.#`.
     - Include a description copied from the `CHANGELOG`.
 1. On Heroku, change staging app to maintenance mode.

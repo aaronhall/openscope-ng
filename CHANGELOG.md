@@ -1,3 +1,10 @@
+# 0.1.0 (August 4, 2026)
+
+### Fork
+
+- First openScope NG release based on openScope 6.28.0.
+- Includes the Vite build migration and current maintenance updates.
+
 # 6.28.0 (July 3, 2022)
 ### New Features
 - <a href="https://github.com/openscope/openscope/issues/1938" target="_blank">#1938</a> - Add STARS theme

@@ -34,7 +34,7 @@
 
 ## Introduction
 
-This guide will show you how to generate a terrain file for any airport in openScope. This is mainly done using QGIS, a free and open source Geographic Information System. The process can be quite tedious and often frustrating, so if you get stuck somewhere, you can talk to us on [Slack](http://slack.openscope.io/), where we will be happy to help you!
+This guide will show you how to generate a terrain file for any airport in openScope NG. This is mainly done using QGIS, a free and open source Geographic Information System. The process can be quite tedious and often frustrating, so if you get stuck somewhere, [open an issue](https://github.com/aaronhall/openscope-ng/issues) for help!
 
 ## Initial setup (QGIS 2.18)
 
@@ -214,9 +214,9 @@ Download and install QGIS from the [QGIS website](http://www.qgis.org/en/site/fo
 
 ## Congratulations
 
-If you've made it this far, you have successfully generated a terrain file for openScope. Give yourself a break now, you deserve it!
+If you've made it this far, you have successfully generated a terrain file for openScope NG. Give yourself a break now, you deserve it!
 
-If you're having any problems while following this guide, you can talk to us on [Slack](http://slack.openscope.io/), where we will be happy to help you!
+If you're having any problems while following this guide, [open an issue](https://github.com/aaronhall/openscope-ng/issues) and include the relevant details.
 
 # Terrain Generation (QGIS 3.4+)
 
@@ -233,7 +233,7 @@ Intructions on how to install and use the plugin are located in the repository, 
 * [The qgsopenscope repository](https://github.com/openscope/qgsopenscope)
 * Video - [Installing and using the QgsOpenScope plugin for QGIS](https://youtu.be/V0A83VNzLCU)
 * Video - [Reshaping water polygons to match the video map](https://youtu.be/5-rSBTLS3kA)
-* Video - [Adding River Polygons to openScope terrain](https://youtu.be/WHJtp36RYck)
+* Video - [Adding River Polygons to openScope NG terrain](https://youtu.be/WHJtp36RYck)
 
 # Manual generation of river water polygons
 

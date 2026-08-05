@@ -20,7 +20,7 @@ The airport has 3 runways. The southeastern runway (05/23) is 2580m (8465ft) lon
 * Runway 05 for landing
 * Runway 35L for take-off
 
-**This is also the configuration in use in openScope**
+**This is also the configuration in use in openScope NG**
 
 
 ### Instrument Procedures
@@ -48,7 +48,7 @@ STARs:
 |   35L/R  | D        |    
 
 
-### Sectors Available in OpenScope
+### Sectors Available in openScope NG
 The sim features a combination of these sectors:
 
 |     *Yeşilköy Approach/Radar* Sector    | Frequencies       |             |             |

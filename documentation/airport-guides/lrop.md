@@ -16,7 +16,7 @@ Airspace above Bucharest is restricted (LRR3) up to FL105; entering it requires 
 ### Instrument Procedures
 SIDs and STARs are implemented for every exit/entry point in the TMA. Only RNAV departures and arrivals are premitted, non-PRNAV aircraft are vectored.
 
-### Sectors Available in OpenScope
+### Sectors Available in openScope NG
 
 ```
 F - approach  (default)

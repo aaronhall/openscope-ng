@@ -1,7 +1,7 @@
 [
     {
         "title": "Welcome!",
-        "text": "Welcome to the tutorial for the openScope Air Traffic Control Simulator. You can show/hide this tutorial at any time by expanding the \"?\" icon at the bottom right.",
+        "text": "Welcome to the tutorial for the openScope NG Air Traffic Control Simulator. You can show/hide this tutorial at any time by expanding the \"?\" icon at the bottom right.",
         "position": [0.1, 0.85]
     },
     {
@@ -46,7 +46,7 @@
     },
     {
         "title": "Departures: Issuing IFR Clearance",
-        "text": "Let's work on getting some departures moving. The first step is always to clear the aircraft to its destination. With {CALLSIGN} selected, simply type \"caf\" (for \"cleared as filed\") and press enter. As needed, you can also change the aircraft's routing, and much more -- refer to the full list of commands <a title=\"openScope Command Reference\" href=\"https://github.com/openscope/openscope/blob/develop/documentation/commands.md\" target=\"_blank\">here</a>.",
+        "text": "Let's work on getting some departures moving. The first step is always to clear the aircraft to its destination. With {CALLSIGN} selected, simply type \"caf\" (for \"cleared as filed\") and press enter. As needed, you can also change the aircraft's routing, and much more -- refer to the full list of commands <a title=\"openScope NG Command Reference\" href=\"https://github.com/aaronhall/openscope-ng/blob/develop/documentation/commands.md\" target=\"_blank\">here</a>.",
         "replace": [
             {
                 "findWhat": "{CALLSIGN}",
@@ -196,7 +196,7 @@
     },
     {
         "title": "Airport Guides & Command Reference",
-        "text": "For further help on how any particular airport or command works, check out the airport guide (through the \"?\" menu), or see the <a title=\"openScope Command Reference\" href=\"https://github.com/openscope/openscope/blob/develop/documentation/commands.md\" target=\"_blank\">openScope Command Reference</a> for a comprehensive list of the available aircraft and scope commands.",
+        "text": "For further help on how any particular airport or command works, check out the airport guide (through the \"?\" menu), or see the <a title=\"openScope NG Command Reference\" href=\"https://github.com/aaronhall/openscope-ng/blob/develop/documentation/commands.md\" target=\"_blank\">openScope NG Command Reference</a> for a comprehensive list of the available aircraft and scope commands.",
         "side": "left",
         "position": [0.1, 0.85]
     },

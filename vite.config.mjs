@@ -43,7 +43,7 @@ function compileMarkup() {
 
 function handlebarsMarkupPlugin() {
     return {
-        name: 'openscope-handlebars-markup',
+        name: 'openscope-ng-handlebars-markup',
         transformIndexHtml: {
             order: 'pre',
             handler: () => compileMarkup(),
