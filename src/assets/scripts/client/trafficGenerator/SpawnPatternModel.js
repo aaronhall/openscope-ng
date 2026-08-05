@@ -76,7 +76,7 @@ const SPAWN_METHOD = {
  * }
  * ```
  * additional information on `spawnPatterns` can be found in the
- * [spawnPatternReadme](https://github.com/openscope/openscope/tree/develop/documentation/spawnPatternReadme.md)
+ * [spawnPatternReadme](https://github.com/aaronhall/openscope-ng/tree/develop/documentation/spawnPatternReadme.md)
  *
  * @class SpawnPatternModel
  * @extends BaseModel

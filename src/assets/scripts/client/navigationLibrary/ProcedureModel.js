@@ -298,7 +298,7 @@ export default class ProcedureModel {
             throw new TypeError(
                 `Invalid data set in draw segment of the ${this._icao} procedure. Expected a 2D ` +
                     'array: `[[FIXXA, FIXXB*], [FIXXC, FIXXD*]]`. Please see airport documentation for more information ' +
-                    '(https://github.com/openscope/openscope/blob/develop/documentation/airport-format.md#sids).'
+                    '(https://github.com/aaronhall/openscope-ng/blob/develop/documentation/airport-format.md#sids).'
             );
         }
 
