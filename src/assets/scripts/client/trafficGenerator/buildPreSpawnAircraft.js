@@ -34,7 +34,8 @@ export function _calculateOffsetsToEachWaypointInRoute(waypointModelList) {
 
         const previousWaypointModel = waypointModelList[i - 1];
         const nextWaypointModel = waypointModelList[i];
-        const distanceToNextWaypoint = previousWaypointModel.calculateDistanceToWaypoint(nextWaypointModel);
+        const distanceToNextWaypoint =
+            previousWaypointModel.calculateDistanceToWaypoint(nextWaypointModel);
         totalDistanceTraveled += distanceToNextWaypoint;
 
         waypointOffsetMap.push(totalDistanceTraveled);
@@ -67,12 +68,12 @@ export function _calculateAltitudeOffsets(waypointModelList, waypointOffsetMap) 
             continue;
         }
 
-        const altitudes = _without([waypointModel.altitudeMaximum, waypointModel.altitudeMinimum], -1);
+        const altitudes = _without(
+            [waypointModel.altitudeMaximum, waypointModel.altitudeMinimum],
+            -1
+        );
 
-        altitudeOffsets.push([
-            waypointOffsetMap[i],
-            Math.min(...altitudes)
-        ]);
+        altitudeOffsets.push([waypointOffsetMap[i], Math.min(...altitudes)]);
     }
 
     return altitudeOffsets;
@@ -98,27 +99,40 @@ export function _calculateAltitudeAtOffset(altitudeOffsets, offsetDistance) {
         indexOfPreviousAltitudeRestriction = altitudeOffsets.length - 1;
     }
 
-    if (indexOfNextAltitudeRestriction < 0) { // no restrictions ahead
-        if (indexOfPreviousAltitudeRestriction < 0) { // no restrictions ahead or behind
-            throw new TypeError('Expected altitude restrictions to calculate appropriate spawn altiude, but none were received.');
+    if (indexOfNextAltitudeRestriction < 0) {
+        // no restrictions ahead
+        if (indexOfPreviousAltitudeRestriction < 0) {
+            // no restrictions ahead or behind
+            throw new TypeError(
+                'Expected altitude restrictions to calculate appropriate spawn altiude, but none were received.'
+            );
         }
 
         return altitudeOffsets[indexOfPreviousAltitudeRestriction][indexOfAltitude];
     }
 
-    if (indexOfPreviousAltitudeRestriction < 0) { // have restrictions ahead, but none behind
+    if (indexOfPreviousAltitudeRestriction < 0) {
+        // have restrictions ahead, but none behind
         return _floor(altitudeOffsets[indexOfNextAltitudeRestriction][indexOfAltitude], -3);
     }
 
     const previousAltitudeRestriction = altitudeOffsets[indexOfPreviousAltitudeRestriction];
     const nextAltitudeRestriction = altitudeOffsets[indexOfNextAltitudeRestriction];
-    const distanceBetweenRestrictions = nextAltitudeRestriction[indexOfDistance] - previousAltitudeRestriction[indexOfDistance];
-    const altitudeBetweenRestrictions = nextAltitudeRestriction[indexOfAltitude] - previousAltitudeRestriction[indexOfAltitude];
-    const distanceFromPreviousRestrictionToOffsetDistance = offsetDistance - previousAltitudeRestriction[indexOfDistance];
-    const progressBetweenRestrictions = distanceFromPreviousRestrictionToOffsetDistance / distanceBetweenRestrictions;
-    const altitudeChangeFromPreviousRestriction = altitudeBetweenRestrictions * progressBetweenRestrictions;
+    const distanceBetweenRestrictions =
+        nextAltitudeRestriction[indexOfDistance] - previousAltitudeRestriction[indexOfDistance];
+    const altitudeBetweenRestrictions =
+        nextAltitudeRestriction[indexOfAltitude] - previousAltitudeRestriction[indexOfAltitude];
+    const distanceFromPreviousRestrictionToOffsetDistance =
+        offsetDistance - previousAltitudeRestriction[indexOfDistance];
+    const progressBetweenRestrictions =
+        distanceFromPreviousRestrictionToOffsetDistance / distanceBetweenRestrictions;
+    const altitudeChangeFromPreviousRestriction =
+        altitudeBetweenRestrictions * progressBetweenRestrictions;
 
-    return _floor(previousAltitudeRestriction[indexOfAltitude] + altitudeChangeFromPreviousRestriction, -3);
+    return _floor(
+        previousAltitudeRestriction[indexOfAltitude] + altitudeChangeFromPreviousRestriction,
+        -3
+    );
 }
 
 /**
@@ -145,7 +159,8 @@ export function _calculateIdealSpawnAltitudeAtOffset(
     const indexOfAltitude = 1;
     let firstAltitudeRestriction = altitudeOffsets[0];
 
-    if (!firstAltitudeRestriction) { // no altitude restrictions at all
+    if (!firstAltitudeRestriction) {
+        // no altitude restrictions at all
         firstAltitudeRestriction = [totalDistance, airspaceCeiling];
     }
 
@@ -153,11 +168,14 @@ export function _calculateIdealSpawnAltitudeAtOffset(
         return _calculateAltitudeAtOffset(altitudeOffsets, offsetDistance);
     }
 
-    const distanceToFirstAltitudeRestriction = firstAltitudeRestriction[indexOfDistance] - offsetDistance;
-    const minutesToFirstAltitudeRestriction = distanceToFirstAltitudeRestriction / spawnSpeed * TIME.ONE_HOUR_IN_MINUTES;
+    const distanceToFirstAltitudeRestriction =
+        firstAltitudeRestriction[indexOfDistance] - offsetDistance;
+    const minutesToFirstAltitudeRestriction =
+        (distanceToFirstAltitudeRestriction / spawnSpeed) * TIME.ONE_HOUR_IN_MINUTES;
     const assumedDescentRate = 1000;
-    const highestAcceptableAltitude = firstAltitudeRestriction[indexOfAltitude] +
-        (assumedDescentRate * minutesToFirstAltitudeRestriction);
+    const highestAcceptableAltitude =
+        firstAltitudeRestriction[indexOfAltitude] +
+        assumedDescentRate * minutesToFirstAltitudeRestriction;
 
     if (_isArray(spawnAltitude)) {
         spawnAltitude = _random(spawnAltitude[0] / 1000, spawnAltitude[1] / 1000) * 1000;
@@ -204,12 +222,14 @@ function _calculateSpawnPositionsAndAltitudes(
         const nextWaypointModel = waypointModelList[nextWaypointIndex];
         const previousWaypointIndex = Math.max(0, nextWaypointIndex - 1);
         const previousWaypointModel = waypointModelList[previousWaypointIndex];
-        const distanceFromPreviousWaypointToSpawnPoint = spawnOffset - waypointOffsetMap[previousWaypointIndex];
+        const distanceFromPreviousWaypointToSpawnPoint =
+            spawnOffset - waypointOffsetMap[previousWaypointIndex];
         const heading = previousWaypointModel.calculateBearingToWaypoint(nextWaypointModel);
-        const spawnPositionModel = previousWaypointModel.positionModel.generateDynamicPositionFromBearingAndDistance(
-            heading,
-            distanceFromPreviousWaypointToSpawnPoint
-        );
+        const spawnPositionModel =
+            previousWaypointModel.positionModel.generateDynamicPositionFromBearingAndDistance(
+                heading,
+                distanceFromPreviousWaypointToSpawnPoint
+            );
         const altitude = _calculateIdealSpawnAltitudeAtOffset(
             altitudeOffsets,
             spawnOffset,
@@ -223,7 +243,7 @@ function _calculateSpawnPositionsAndAltitudes(
             altitude,
             heading,
             nextFix: nextWaypointModel.name,
-            positionModel: spawnPositionModel
+            positionModel: spawnPositionModel,
         });
     }
 
@@ -256,11 +276,15 @@ const _assembleSpawnOffsets = (entrailDistance, totalDistance = 0) => {
     const clampedEntrailDistance = Math.max(6, entrailDistance);
     let smallestIntervalNm = 15;
     // do not allow prespawned aircraft to have a spacing less than `minimumInTrailNm`
-    const largestIntervalNm = Math.max(clampedEntrailDistance, clampedEntrailDistance +
-        (clampedEntrailDistance - smallestIntervalNm));
+    const largestIntervalNm = Math.max(
+        clampedEntrailDistance,
+        clampedEntrailDistance + (clampedEntrailDistance - smallestIntervalNm)
+    );
 
     if (clampedEntrailDistance < 8) {
-        console.error(`Too many aircraft requested, calculated MIT is ${entrailDistance}, limiting MIT to ${clampedEntrailDistance}`);
+        console.error(
+            `Too many aircraft requested, calculated MIT is ${entrailDistance}, limiting MIT to ${clampedEntrailDistance}`
+        );
     }
 
     // if requesting less than `smallestIntervalNm`, spawn all AT `entrailDistance`
@@ -313,14 +337,18 @@ const _calculateTotalDistanceAlongRoute = (waypointModelList, airport) => {
             continue;
         }
 
-        const distanceBetweenWaypoints = nm(distance2d(previousWaypoint.relativePosition, waypointModel.relativePosition));
+        const distanceBetweenWaypoints = nm(
+            distance2d(previousWaypoint.relativePosition, waypointModel.relativePosition)
+        );
         let distanceToBoundary = Infinity;
 
         for (let j = 0; j < airport.airspace.length; j++) {
             const airspace = airport.airspace[j];
 
             if (airspace.isPointInside2D(waypointModel.relativePosition)) {
-                const distanceToAirspace = airspace.distanceToBoundary(previousWaypoint.relativePosition);
+                const distanceToAirspace = airspace.distanceToBoundary(
+                    previousWaypoint.relativePosition
+                );
                 // find shortest distance, since the waypoint might be inside multiple airspace polygons
                 distanceToBoundary = Math.min(distanceToBoundary, distanceToAirspace);
             }
@@ -360,11 +388,14 @@ const _preSpawn = (spawnPatternJson, airport) => {
     const spawnAltitude = spawnPatternJson.altitude;
     const spawnAvgAltitude = Array.isArray(spawnAltitude) ? avg(spawnAltitude) : spawnAltitude;
     // convert IAS to TAS for better estimate
-    const trueAirspeedIncreaseFactor = spawnAvgAltitude * ENVIRONMENT.DENSITY_ALT_INCREASE_FACTOR_PER_FT;
+    const trueAirspeedIncreaseFactor =
+        spawnAvgAltitude * ENVIRONMENT.DENSITY_ALT_INCREASE_FACTOR_PER_FT;
     const spawnEstTrueAirspeed = spawnSpeed * (1 + trueAirspeedIncreaseFactor);
     // distance between each arriving aircraft, in nm.
     const entrailDistance = spawnEstTrueAirspeed / spawnRate;
-    const routeModel = spawnPatternJson._routeModel ? spawnPatternJson._routeModel : new RouteModel(spawnPatternJson.route);
+    const routeModel = spawnPatternJson._routeModel
+        ? spawnPatternJson._routeModel
+        : new RouteModel(spawnPatternJson.route);
     const waypointModelList = routeModel.waypoints;
     const totalDistance = _calculateTotalDistanceAlongRoute(waypointModelList, airport);
     // calculate number of offsets
@@ -400,19 +431,25 @@ const _preSpawn = (spawnPatternJson, airport) => {
  */
 export const buildPreSpawnAircraft = (spawnPatternJson, currentAirport) => {
     if (_isNil(spawnPatternJson) || _isNil(currentAirport)) {
-        throw new TypeError('Invalid parameter(s) passed to buildPreSpawnAircraft. ' +
-            'Expected spawnPatternJson and currentAirport to be defined, ' +
-            `but received ${typeof spawnPatternJson} and ${typeof currentAirport}`);
+        throw new TypeError(
+            'Invalid parameter(s) passed to buildPreSpawnAircraft. ' +
+                'Expected spawnPatternJson and currentAirport to be defined, ' +
+                `but received ${typeof spawnPatternJson} and ${typeof currentAirport}`
+        );
     }
 
     if (isEmptyOrNotObject(spawnPatternJson)) {
-        throw new TypeError('Invalid spawnPatternJson passed to buildPreSpawnAircraft. ' +
-            `Expected a non-empty object, but received ${typeof spawnPatternJson}`);
+        throw new TypeError(
+            'Invalid spawnPatternJson passed to buildPreSpawnAircraft. ' +
+                `Expected a non-empty object, but received ${typeof spawnPatternJson}`
+        );
     }
 
     if (!(currentAirport instanceof AirportModel)) {
-        throw new TypeError('Invalid currentAirport passed to buildPreSpawnAircraft. ' +
-            `Expected instance of AirportModel, but received ${typeof currentAirport}`);
+        throw new TypeError(
+            'Invalid currentAirport passed to buildPreSpawnAircraft. ' +
+                `Expected instance of AirportModel, but received ${typeof currentAirport}`
+        );
     }
 
     return _preSpawn(spawnPatternJson, currentAirport);

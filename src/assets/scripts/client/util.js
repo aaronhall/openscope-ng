@@ -20,7 +20,7 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 // String repetition copied from http://stackoverflow.com/a/5450113
 if (!String.prototype.hasOwnProperty('repeat')) {
-    String.prototype.repeat = function(count) {
+    String.prototype.repeat = function (count) {
         if (count < 1) {
             return '';
         }
@@ -30,7 +30,7 @@ if (!String.prototype.hasOwnProperty('repeat')) {
 
         while (count > 1) {
             if (count & 1) result += pattern;
-            count >>= 1, pattern += pattern;
+            ((count >>= 1), (pattern += pattern));
         }
 
         return result + pattern;
@@ -46,7 +46,7 @@ if (!String.prototype.hasOwnProperty('repeat')) {
  * Here, the function is added to the String prototype to make later code usable.
  *
  * Solution from: http://xahlee.info/js/js_unicode_code_point.html
-*/
+ */
 if (!String.fromCodePoint) {
     // ES6 Unicode Shims 0.1 , © 2012 Steven Levithan , MIT License
     String.fromCodePoint = function fromCodePoint() {
@@ -58,7 +58,7 @@ if (!String.fromCodePoint) {
         for (let i = 0; i < arguments.length; i++) {
             point = arguments[i];
             offset = point - 0x10000;
-            units = point > 0xFFFF ? [0xD800 + (offset >> 10), 0xDC00 + (offset & 0x3FF)] : [point];
+            units = point > 0xffff ? [0xd800 + (offset >> 10), 0xdc00 + (offset & 0x3ff)] : [point];
             chars.push(String.fromCharCode.apply(null, units));
         }
 
@@ -72,7 +72,7 @@ const log = (message, level = LOG.INFO) => {
         1: 'INFO',
         2: 'WARN',
         3: 'ERROR',
-        4: 'FATAL'
+        4: 'FATAL',
     };
 
     if (prop.log <= level) {

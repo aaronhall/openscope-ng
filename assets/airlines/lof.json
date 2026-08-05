@@ -3,13 +3,9 @@
     "name": "Trans States Airlines",
     "callsign": {
         "name": "Waterski",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["E145", 54]
-        ]
+        "default": [["E145", 54]]
     }
 }

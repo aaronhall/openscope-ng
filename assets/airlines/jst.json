@@ -3,21 +3,15 @@
     "name": "Jetstar Airways",
     "callsign": {
         "name": "Jetstar",
-        "callsignFormats": [
-            "#",
-			"##",
-			"###"
-        ]
+        "callsignFormats": ["#", "##", "###"]
     },
     "fleets": {
         "default": [
             ["A320", 53],
-			["A321", 8],
-			["B788", 11],
-			["DH8C", 2]
+            ["A321", 8],
+            ["B788", 11],
+            ["DH8C", 2]
         ],
-		"b788": [
-			["B788", 11]
-		]
+        "b788": [["B788", 11]]
     }
 }

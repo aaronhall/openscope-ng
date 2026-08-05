@@ -1,8 +1,6 @@
 import { test, expect, vi } from 'vitest';
 
-import {
-    radio_trend
-} from '../../../src/assets/scripts/client/utilities/radioUtilities';
+import { radio_trend } from '../../../src/assets/scripts/client/utilities/radioUtilities';
 
 test('.radio_trend() returns `descend and maintain` when measured > target', () => {
     expect(radio_trend('altitude', 1, 0) === 'descend and maintain').toBe(true);

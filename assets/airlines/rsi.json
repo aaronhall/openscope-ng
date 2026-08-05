@@ -3,9 +3,7 @@
     "name": "Air Sunshine",
     "callsign": {
         "name": "Air Sunshine",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -13,8 +11,6 @@
             ["C402", 4],
             ["SF34", 2]
         ],
-        "c402": [
-            ["C402", 4]
-        ]
+        "c402": [["C402", 4]]
     }
 }

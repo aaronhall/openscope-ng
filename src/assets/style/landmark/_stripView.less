@@ -28,10 +28,10 @@
 
 .stripView-list {
     // LESS itself tries to evaluate calc(), using ~"" here to prevent that
-    width: ~"calc(100% - " @spacing-2x ~")";
+    width: ~'calc(100% - ' @spacing-2x ~')';
     overflow-y: scroll;
     list-style-type: none;
-    height: ~"calc(50% - 1.25em - 10px)";
+    height: ~'calc(50% - 1.25em - 10px)';
     display: flex;
     flex-direction: column;
 }
@@ -72,28 +72,28 @@
 }
 
 .stripView-table-td + .stripView-table-td {
-    border-left: 1px solid
+    border-left: 1px solid;
 }
 
 .stripView-table-td > span {
     float: right;
 }
 
-.stripView-table-tr > .stripView-table-td:nth-child(0n+1) {
+.stripView-table-tr > .stripView-table-td:nth-child(0n + 1) {
     width: 70px;
     text-align: left;
 }
 
-.stripView-table-tr > .stripView-table-td:nth-child(0n+2),
-.stripView-table-tr > .stripView-table-td:nth-child(0n+3) {
+.stripView-table-tr > .stripView-table-td:nth-child(0n + 2),
+.stripView-table-tr > .stripView-table-td:nth-child(0n + 3) {
     width: 50px;
 }
 
-.stripView-table-tr > .stripView-table-td:nth-child(0n+4) {
+.stripView-table-tr > .stripView-table-td:nth-child(0n + 4) {
     text-align: left;
 }
 
-.stripView-table-tr > .stripView-table-td:nth-child(0n+5) {
+.stripView-table-tr > .stripView-table-td:nth-child(0n + 5) {
     width: 50px;
     text-align: right;
     border: none;
@@ -122,7 +122,7 @@
     padding: 20px 6px;
     color: @white;
     font-weight: 700;
-    content: ">|";
+    content: '>|';
     border-radius: 8px 0 0 8px;
 }
 

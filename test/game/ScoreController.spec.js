@@ -29,7 +29,11 @@ test('._penalizeLocalizerInterceptAltitude() records an event and notifies the u
     scoreController._penalizeLocalizerInterceptAltitude(aircraftModel);
 
     expect(uiControllerUiLogStub.calledWithExactly(expectedLogMessage, true)).toBe(true);
-    expect(gameControllerRecordEventStub.calledWithExactly(GAME_EVENTS.LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE)).toBe(true);
+    expect(
+        gameControllerRecordEventStub.calledWithExactly(
+            GAME_EVENTS.LOCALIZER_INTERCEPT_ABOVE_GLIDESLOPE
+        )
+    ).toBe(true);
 
     uiControllerUiLogStub.restore();
     gameControllerRecordEventStub.restore();
@@ -61,5 +65,7 @@ test('._penalizeLocalizerInterceptAngle() records an event and notifies the user
 
     expect(typeof result === 'undefined').toBe(true);
     expect(uiControllerUiLogStub.calledWithExactly(expectedLogMessage, true)).toBe(true);
-    expect(gameControllerRecordEventStub.calledWithExactly(GAME_EVENTS.ILLEGAL_APPROACH_CLEARANCE)).toBe(true);
+    expect(
+        gameControllerRecordEventStub.calledWithExactly(GAME_EVENTS.ILLEGAL_APPROACH_CLEARANCE)
+    ).toBe(true);
 });

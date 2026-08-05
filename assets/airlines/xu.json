@@ -3,9 +3,7 @@
     "name": "General Aviation Cambodia",
     "callsign": {
         "name": "Xray Uniform",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

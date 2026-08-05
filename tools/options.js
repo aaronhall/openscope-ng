@@ -53,7 +53,7 @@ options.DIR = {
     DIST_AUTOCOMPLETE: path.join(distAssets, 'autocomplete'),
     DIST_SCRIPTS_CLIENT: path.join(distAssets, 'scripts/client'),
     DIST_SCRIPTS_SERVER: path.join(distAssets, 'scripts/server'),
-    DIST_STYLE: path.join(distAssets, 'style')
+    DIST_STYLE: path.join(distAssets, 'style'),
 };
 
 // for specific files
@@ -65,7 +65,7 @@ options.FILE = {
     AIRCRAFT_JSON: path.join(options.DIR.ASSETS_AIRCRAFT, 'aircraft.json'),
     AIRLINES_JSON: path.join(options.DIR.ASSETS_AIRLINES, 'airlines.json'),
     CHANGELOG_SOURCE: path.join(options.ROOT, 'CHANGELOG.md'),
-    CHANGELOG_DEST: path.join(options.DIR.DIST_ASSETS, 'changelog.json')
+    CHANGELOG_DEST: path.join(options.DIR.DIST_ASSETS, 'changelog.json'),
 };
 
 options.GLOB = {
@@ -80,7 +80,7 @@ options.GLOB = {
     BUILD: path.join(options.DIR.BUILD, '**/*'),
     JS: path.join(options.DIR.SRC_SCRIPTS, '**/*.js'),
     LESS: path.join(options.DIR.SRC_STYLE, '**/*.less'),
-    MARKUP: path.join(options.DIR.SRC_MARKUP, '**/*.hbs')
+    MARKUP: path.join(options.DIR.SRC_MARKUP, '**/*.hbs'),
 };
 
 options.TASKS = {
@@ -88,31 +88,31 @@ options.TASKS = {
         SCRIPTS: 'build:scripts',
         SERVER: 'build:server',
         STYLES: 'build:styles',
-        DEFAULT: 'build'
+        DEFAULT: 'build',
     },
     CLEAN: {
-        DEFAULT: 'clean'
+        DEFAULT: 'clean',
     },
     COPY: {
         AIRPORTS: 'copy:airports',
         STATIC: 'copy:static',
-        DIST: 'copy:dist'
+        DIST: 'copy:dist',
     },
     DEFAULT: 'default',
     MARKUP: 'markup',
     MARKDOWN: {
         ASSEMBLE: 'markdown:assemble',
-        CHANGELOG: 'markdown:changelog'
+        CHANGELOG: 'markdown:changelog',
     },
     JSON: {
         ASSEMBLE: 'json:assemble',
-        MINIFY: 'json:minify'
+        MINIFY: 'json:minify',
     },
     WATCH: {
         DEFAULT: 'watch',
         SCRIPTS: 'watch:scripts',
-        STYLES: 'watch:styles'
-    }
-}
+        STYLES: 'watch:styles',
+    },
+};
 
 module.exports = options;

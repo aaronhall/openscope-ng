@@ -3,9 +3,7 @@
     "name": "General Aviation Czech Republic",
     "callsign": {
         "name": "Oscar Kilo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

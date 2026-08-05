@@ -1,7 +1,10 @@
 import _isString from 'lodash/isString';
 import BaseModel from '../base/BaseModel';
 import { radians_normalize } from '../math/circle';
-import { isValidCourseString, isValidDirectionString } from '../commands/parsers/argumentValidators';
+import {
+    isValidCourseString,
+    isValidDirectionString,
+} from '../commands/parsers/argumentValidators';
 import { directionNormalizer, isLegLengthArg } from '../commands/parsers/argumentParsers';
 import { parseSpeedRestriction } from '../utilities/navigationUtilities';
 import { degreesToRadians } from '../utilities/unitConverters';
@@ -98,7 +101,9 @@ export default class HoldModel extends BaseModel {
 
         holdString.split('|').forEach((item) => {
             if (holdParameters.inboundHeading == null && isValidCourseString(item)) {
-                holdParameters.inboundHeading = radians_normalize(degreesToRadians(180 + parseInt(item, 10)));
+                holdParameters.inboundHeading = radians_normalize(
+                    degreesToRadians(180 + parseInt(item, 10))
+                );
 
                 return;
             }
@@ -119,7 +124,9 @@ export default class HoldModel extends BaseModel {
             const [value, limit] = parseSpeedRestriction(item);
             if (value != null) {
                 if (limit !== '-') {
-                    throw new Error(`Invalid speedMaximum parameter for Fix '${this.fixName}': ${item} is not valid`);
+                    throw new Error(
+                        `Invalid speedMaximum parameter for Fix '${this.fixName}': ${item} is not valid`
+                    );
                 }
 
                 holdParameters.speedMaximum = value;
@@ -135,7 +142,9 @@ export default class HoldModel extends BaseModel {
         }
 
         if (holdParameters.turnDirection == null) {
-            throw new Error(`Missing turnDirection parameter for Fix '${this.fixName}': ${holdString}`);
+            throw new Error(
+                `Missing turnDirection parameter for Fix '${this.fixName}': ${holdString}`
+            );
         }
 
         if (holdParameters.legLength == null) {

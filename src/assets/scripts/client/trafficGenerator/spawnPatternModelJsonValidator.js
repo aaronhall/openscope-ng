@@ -12,20 +12,12 @@ const ACCEPTED_KEYS = [
     'method',
     'rate',
     'speed',
-    'airlines'
+    'airlines',
 ];
 
-const ACCEPTED_OPTIONAL_KEYS = [
-    'commands',
-    'offset',
-    'period',
-    'variation'
-];
+const ACCEPTED_OPTIONAL_KEYS = ['commands', 'offset', 'period', 'variation'];
 
-const ALL_KEYS = [
-    ...ACCEPTED_KEYS,
-    ...ACCEPTED_OPTIONAL_KEYS
-];
+const ALL_KEYS = [...ACCEPTED_KEYS, ...ACCEPTED_OPTIONAL_KEYS];
 
 /**
  * Validates the presence of correct `SpawnPatternModel` keys.

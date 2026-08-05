@@ -3,9 +3,7 @@
     "name": "General Aviation Tuvalu",
     "callsign": {
         "name": "Tango Two",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

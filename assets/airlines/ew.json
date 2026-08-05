@@ -3,9 +3,7 @@
     "name": "General Aviation Belarus",
     "callsign": {
         "name": "Echo Whiskey",
-        "callsignFormats": [
-            "###@@"
-        ]
+        "callsignFormats": ["###@@"]
     },
     "fleets": {
         "default": [

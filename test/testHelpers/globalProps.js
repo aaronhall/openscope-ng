@@ -6,15 +6,15 @@ global.zlsa = {
     atc: {
         loadAsset: (...args) => ({
             done: (failArgs) => ({
-                fail: _noop
-            })
-        })
-    }
+                fail: _noop,
+            }),
+        }),
+    },
 };
 
 global.prop = {
     canvas: {
         draw_labels: true,
-        dirty: true
-    }
+        dirty: true,
+    },
 };

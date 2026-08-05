@@ -3,9 +3,7 @@
     "name": "VIM Avia",
     "callsign": {
         "name": "VIM Avia",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

@@ -3,13 +3,9 @@
     "name": "Vanilla Air",
     "callsign": {
         "name": "Vanilla",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 15]
-        ]
+        "default": [["A320", 15]]
     }
 }

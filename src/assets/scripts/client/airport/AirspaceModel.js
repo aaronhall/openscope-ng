@@ -24,8 +24,9 @@ export default class AirspaceModel extends BaseModel {
         super();
 
         if (!data || !airportPosition || !_isNumber(magneticNorth)) {
-            // eslint-disable-next-line max-len
-            throw new TypeError('Invalid parameter, expected airspace, airportPosition and magneticNorth to be defined');
+            throw new TypeError(
+                'Invalid parameter, expected airspace, airportPosition and magneticNorth to be defined'
+            );
         }
 
         /**
@@ -127,7 +128,11 @@ export default class AirspaceModel extends BaseModel {
         }
 
         const labelRelativePositions = data.labelPositions.map((position) => {
-            const labelPositionModel = new StaticPositionModel(position, airportPosition, magneticNorth);
+            const labelPositionModel = new StaticPositionModel(
+                position,
+                airportPosition,
+                magneticNorth
+            );
 
             return labelPositionModel.relativePosition;
         });
@@ -156,10 +161,7 @@ export default class AirspaceModel extends BaseModel {
         }
 
         // calculate the center point as the middle of the extremes
-        return [
-            (minX + maxX) / 2,
-            (minY + maxY) / 2
-        ];
+        return [(minX + maxX) / 2, (minY + maxY) / 2];
     }
 
     /**

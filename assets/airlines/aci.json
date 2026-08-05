@@ -3,20 +3,14 @@
     "name": "Aircalin",
     "callsign": {
         "name": "Aircalin",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["####", "###", "##"]
     },
     "fleets": {
         "default": [
             ["A320", 2],
             ["A339", 2],
-			["DHC6", 2]
+            ["DHC6", 2]
         ],
-		"a339": [
-			["A339", 2]
-		]
+        "a339": [["A339", 2]]
     }
 }

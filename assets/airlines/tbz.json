@@ -3,9 +3,7 @@
     "name": "ATA Airlines",
     "callsign": {
         "name": "Atalar",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
@@ -15,11 +13,7 @@
             ["E145", 1],
             ["MD83", 7]
         ],
-        "a320": [
-            ["A320", 3]
-        ],
-        "md83": [
-            ["MD83", 7]
-        ]
+        "a320": [["A320", 3]],
+        "md83": [["MD83", 7]]
     }
 }

@@ -3,9 +3,7 @@
     "name": "General Aviation Gabon",
     "callsign": {
         "name": "Tango Romeo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

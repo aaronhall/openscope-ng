@@ -3,9 +3,7 @@
     "name": "General Aviation Rwanda",
     "callsign": {
         "name": "Niner Xray Romeo",
-        "callsignFormats": [
-            "@@"
-        ]
+        "callsignFormats": ["@@"]
     },
     "fleets": {
         "default": [

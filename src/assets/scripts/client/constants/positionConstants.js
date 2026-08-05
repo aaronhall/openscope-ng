@@ -34,7 +34,7 @@ export const GPS_COORDINATE_INDEX = {
      * @type {number}
      * @final
      */
-    ELEVATION: 2
+    ELEVATION: 2,
 };
 
 /**
@@ -57,5 +57,5 @@ export const RELATIVE_POSITION_OFFSET_INDEX = {
      * @type {number}
      * @final
      */
-    LONGITUDINAL: 1
+    LONGITUDINAL: 1,
 };

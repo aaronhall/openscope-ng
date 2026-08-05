@@ -3,16 +3,10 @@
     "name": "SaudiGulf Airlines",
     "callsign": {
         "name": "Saudi Gold",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 4]
-        ],
-        "a320": [
-            ["A320", 4]
-        ]
+        "default": [["A320", 4]],
+        "a320": [["A320", 4]]
     }
 }

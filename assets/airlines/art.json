@@ -3,17 +3,13 @@
     "name": "SmartLynx",
     "callsign": {
         "name": "Smart Lynx",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
             ["A320", 15],
             ["A321", 2]
         ],
-        "a320": [
-            ["A320", 15]
-        ]
+        "a320": [["A320", 15]]
     }
 }

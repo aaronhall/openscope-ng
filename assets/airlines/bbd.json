@@ -3,9 +3,7 @@
     "name": "Bluebird Nordic",
     "callsign": {
         "name": "Blue Cargo",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

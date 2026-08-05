@@ -25,11 +25,10 @@
     "departureRunway": "22",
     "airspace": [
         {
-            "floor":             0,
-            "ceiling":         9500,
-            "airspace_class":    "D",
-            "poly":
-            [
+            "floor": 0,
+            "ceiling": 9500,
+            "airspace_class": "D",
+            "poly": [
                 ["N52d48m20.00", "E005d20m00.00"],
                 ["N52d25m45.00", "E005d40m52.00"],
                 ["N52d22m41.00", "E005d40m05.00"],
@@ -59,13 +58,13 @@
         "BEDUM": ["N53d20m53.41", "E006d35m19.92"],
         "BERGI": ["N52d44m55.50", "E004d21m32.15"],
         "BETUS": ["N52d41m17.31", "E005d09m45.19"],
-        "CH":    ["N52d13m14.22", "E004d33m27.36"],
-        "COA":   ["N51d20.90000", "E003d21.30000"],
+        "CH": ["N52d13m14.22", "E004d33m27.36"],
+        "COA": ["N51d20.90000", "E003d21.30000"],
         "DENAG": ["N52d04m56.59", "E003d53m26.87"],
         "DENUT": ["N51d14m10.00", "E003d39m27.00"],
         "DOBAK": ["N53d12m48.00", "E007d13m01.00"],
         "EDUPO": ["N51d58m31.89", "E005d50m09.37"],
-        "EEL":   ["N53d09.80000", "E006d40.00000"],
+        "EEL": ["N53d09.80000", "E006d40.00000"],
         "EH001": ["N52d16m31.00", "E004d42m04.00"],
         "EH005": ["N52d15m25.78", "E004d41m50.99"],
         "EH006": ["N52d35m26.65", "E004d32m46.44"],
@@ -161,9 +160,9 @@
         "EH669": ["N52d09m19.00", "E004d45m53.00"],
         "ELPAT": ["N52d07m38.71", "E005d57m04.11"],
         "GORLO": ["N51d55m26.64", "E003d10m18.61"],
-        "HDR":   ["N52d54m24.68", "E004d45m56.60"],
+        "HDR": ["N52d54m24.68", "E004d45m56.60"],
         "HELEN": ["N51d14m07.13", "E003d52m10.96"],
-        "HSD":   ["N51d43.40000", "E003d51.50000"],
+        "HSD": ["N51d43.40000", "E003d51.50000"],
         "INBAM": ["N52d21m11.20", "E005d15m10.74"],
         "IVLUT": ["N52d14m38.81", "E005d15m25.06"],
         "KUBAT": ["N53d20m11.00", "E006d59m37.00"],
@@ -185,14 +184,14 @@
         "NOPSU": ["N52d35m12.97", "E004d57m02.89"],
         "NORKU": ["N52d12m56.00", "E006d58m35.00"],
         "NOVEN": ["N52d42m36.77", "E005d53m54.43"],
-        "NV":    ["N52d09m05.02", "E004d45m53.40"],
+        "NV": ["N52d09m05.02", "E004d45m53.40"],
         "NYKER": ["N52d13m49.40", "E005d31m43.69"],
-        "OA":    ["N52d28m12.87", "E004d45m11.78"],
+        "OA": ["N52d28m12.87", "E004d45m11.78"],
         "OGINA": ["N52d05m50.92", "E005d03m16.68"],
         "OLGAX": ["N52d10m22.40", "E004d43m31.88"],
         "OMORU": ["N52d21m10.41", "E005d16m20.16"],
         "OSKUR": ["N52d29m25.64", "E006d01m26.48"],
-        "PAM":   ["N52d20m05.11", "E005d05m31.79"],
+        "PAM": ["N52d20m05.11", "E005d05m31.79"],
         "PEPEL": ["N52d35m06.44", "E003d24m51.04"],
         "PESER": ["N51d36m52.73", "E004d31m36.53"],
         "PEVOS": ["N52d29m35.51", "E004d43m26.02"],
@@ -200,18 +199,18 @@
         "REDFA": ["N52d06m52.51", "E002d29m16.61"],
         "RENDI": ["N52d03m41.56", "E005d40m31.53"],
         "RIVER": ["N51d54m45.95", "E004d07m57.34"],
-        "RKN":   ["N52d08m00.00", "E006d45m48.00"],
+        "RKN": ["N52d08m00.00", "E006d45m48.00"],
         "ROBIS": ["N52d28m07.00", "E006d28m02.00"],
         "ROBVI": ["N52d34m17.93", "E003d46m35.21"],
         "ROVEN": ["N51d57m46.52", "E005d06m53.46"],
-        "RTM":   ["N51d58m25.31", "E004d28m51.49"],
+        "RTM": ["N51d58m25.31", "E004d28m51.49"],
         "SOKSI": ["N52d14m14.56", "E004d21m51.96"],
         "SOMPO": ["N53d23m56.00", "E006d56m58.00"],
         "SONEB": ["N52d01m25.00", "E006d45m51.00"],
         "SONSA": ["N52d19m51.22", "E006d44m44.11"],
-        "SPL":   ["N52d19m55.72", "E004d44m59.58"],
-        "SPY":   ["N52d32m25.01", "E004d51m13.61"],
-        "STD":   ["N51d44.50000", "E004d14.60000"],
+        "SPL": ["N52d19m55.72", "E004d44m59.58"],
+        "SPY": ["N52d32m25.01", "E004d51m13.61"],
+        "STD": ["N51d44.50000", "E004d14.60000"],
         "SUGOL": ["N52d31m31.84", "E003d58m02.46"],
         "SULUT": ["N52d26m52.53", "E003d25m15.83"],
         "TEMLU": ["N53d28m28.00", "E006d51m49.00"],
@@ -225,47 +224,83 @@
     "runways": [
         {
             "name": ["04", "22"],
-            "name_offset": [[0, 0], [0, 0]],
-            "end":    [["N52d18m01.34", "E004d47m00.54", "-13.0ft"], ["N52d18m50.49", "E004d48m10.89", "-13.8ft"]],
+            "name_offset": [
+                [0, 0],
+                [0, 0]
+            ],
+            "end": [
+                ["N52d18m01.34", "E004d47m00.54", "-13.0ft"],
+                ["N52d18m50.49", "E004d48m10.89", "-13.8ft"]
+            ],
             "delay": [30, 50],
             "ils": [false, false]
         },
         {
-            "name": ["06","24"],
-            "name_offset": [[0, 0], [0, 0]],
-            "end": [["N52d17m20.87", "E004d44m14.25", "-10.9ft"], ["N52d18m16.49", "E004d46m39.06", "-11.6ft"]],
+            "name": ["06", "24"],
+            "name_offset": [
+                [0, 0],
+                [0, 0]
+            ],
+            "end": [
+                ["N52d17m20.87", "E004d44m14.25", "-10.9ft"],
+                ["N52d18m16.49", "E004d46m39.06", "-11.6ft"]
+            ],
             "delay": [30, 10],
             "ils": [true, false],
             "loc_maxDist": [28, 20]
         },
         {
             "name": ["09", "27"],
-            "name_offset": [[0, 0], [0, 0]],
-            "end": [["N52d19m00.008", "E004d44m51.58", "-12.0ft"], ["N52d19m06.15", "E004d47m48.81", "-12.1ft"]],
+            "name_offset": [
+                [0, 0],
+                [0, 0]
+            ],
+            "end": [
+                ["N52d19m00.008", "E004d44m51.58", "-12.0ft"],
+                ["N52d19m06.15", "E004d47m48.81", "-12.1ft"]
+            ],
             "delay": [40, 50],
             "ils": [false, true],
             "loc_maxDist": [40, 28]
         },
         {
-            "name": ["18C","36C"],
-            "name_offset": [[0, 0], [0, 0]],
-            "end": [["N52d19m53.03", "E004d44m24.11", "-12.0ft"], ["N52d18m20.99", "E004d44m15.66", "-12.0ft"]],
+            "name": ["18C", "36C"],
+            "name_offset": [
+                [0, 0],
+                [0, 0]
+            ],
+            "end": [
+                ["N52d19m53.03", "E004d44m24.11", "-12.0ft"],
+                ["N52d18m20.99", "E004d44m15.66", "-12.0ft"]
+            ],
             "delay": [50, 70],
             "ils": [true, true],
             "loc_maxDist": [28, 28]
         },
         {
             "name": ["18L", "36R"],
-            "name_offset": [[0, 0], [0, 0]],
-            "end": [["N52d18m58.14", "E004d46m46.89", "-12.0ft"], ["N52d17m26.97", "E004d46m38.45", "-11.1ft"]],
+            "name_offset": [
+                [0, 0],
+                [0, 0]
+            ],
+            "end": [
+                ["N52d18m58.14", "E004d46m46.89", "-12.0ft"],
+                ["N52d17m26.97", "E004d46m38.45", "-11.1ft"]
+            ],
             "delay": [40, 30],
             "ils": [false, true],
             "loc_maxDist": [40, 28]
         },
         {
-            "name": ["18R","36L"],
-            "name_offset": [[0, 0], [0, 0]],
-            "end": [["N52d21m36.93", "E004d42m42.21", "-13.0ft"], ["N52d19m42.89", "E004d42m31.81", "-11.9ft"]],
+            "name": ["18R", "36L"],
+            "name_offset": [
+                [0, 0],
+                [0, 0]
+            ],
+            "end": [
+                ["N52d21m36.93", "E004d42m42.21", "-13.0ft"],
+                ["N52d19m42.89", "E004d42m31.81", "-11.9ft"]
+            ],
             "delay": [80, 120],
             "ils": [true, false],
             "loc_maxDist": [28, 20]
@@ -275,13 +310,13 @@
         "ANDIK": {
             "icao": "ANDIK",
             "name": "Andik",
-            "suffix": {"04":"2F", "22":"2G", "06":"2R", "24":"1S", "09":"1N", "18L":"2E"},
+            "suffix": { "04": "2F", "22": "2G", "06": "2R", "24": "1S", "09": "1N", "18L": "2E" },
             "rwy": {
-                "04":  ["EH019", "EH020", "EH043", "ANDIK"],
-                "22":  [["EH023", "S220"], "EH027", "PAM", "ANDIK"],
-                "06":  ["EH014", "EH020", "EH043", "ANDIK"],
-                "24":  ["EH005", ["EH008", "S220"], "EH026", "PAM", "ANDIK"],
-                "09":  ["EH052", "EH043", "ANDIK"],
+                "04": ["EH019", "EH020", "EH043", "ANDIK"],
+                "22": [["EH023", "S220"], "EH027", "PAM", "ANDIK"],
+                "06": ["EH014", "EH020", "EH043", "ANDIK"],
+                "24": ["EH005", ["EH008", "S220"], "EH026", "PAM", "ANDIK"],
+                "09": ["EH052", "EH043", "ANDIK"],
                 "18L": [["EH037", "S220"], "EH024", "PAM", "ANDIK"]
             },
             "draw": []
@@ -289,14 +324,23 @@
         "ARNEM": {
             "icao": "ARNEM",
             "name": "Arnem",
-            "suffix": {"04":"2F", "22":"3G", "06":"2R", "24":"2S", "09":"2N", "27":"2P", "18L":"3E", "36L":"1V"},
+            "suffix": {
+                "04": "2F",
+                "22": "3G",
+                "06": "2R",
+                "24": "2S",
+                "09": "2N",
+                "27": "2P",
+                "18L": "3E",
+                "36L": "1V"
+            },
             "rwy": {
-                "04":  [["EH060", "S220"], "IVLUT", "NYKER", "ARNEM"],
-                "22":  [["EH023", "S220"], "IVLUT", "NYKER", "ARNEM"],
-                "06":  ["EH018", "IVLUT", "NYKER", "ARNEM"],
-                "24":  ["EH005", ["EH008", "S220"], "EH026", "IVLUT", "NYKER", "ARNEM"],
-                "09":  ["EH005", "EH042", "IVLUT", "NYKER", "ARNEM"],
-                "27":  ["EH056", ["EH032", "S220"], "NV", "IVLUT", "NYKER", "ARNEM"],
+                "04": [["EH060", "S220"], "IVLUT", "NYKER", "ARNEM"],
+                "22": [["EH023", "S220"], "IVLUT", "NYKER", "ARNEM"],
+                "06": ["EH018", "IVLUT", "NYKER", "ARNEM"],
+                "24": ["EH005", ["EH008", "S220"], "EH026", "IVLUT", "NYKER", "ARNEM"],
+                "09": ["EH005", "EH042", "IVLUT", "NYKER", "ARNEM"],
+                "27": ["EH056", ["EH032", "S220"], "NV", "IVLUT", "NYKER", "ARNEM"],
                 "18L": [["EH037", "S220"], "IVLUT", "NYKER", "ARNEM"],
                 "36L": ["EH012", "EH087", "EH088", "PAM", "ARNEM"]
             },
@@ -314,14 +358,23 @@
         "BERGI": {
             "icao": "BERGI",
             "name": "Bergi",
-            "suffix": {"04":"1F", "22":"1G", "06":"2R", "24":"1S", "09":"2N", "27":"1P", "18L":"3E", "36L":"3V"},
+            "suffix": {
+                "04": "1F",
+                "22": "1G",
+                "06": "2R",
+                "24": "1S",
+                "09": "2N",
+                "27": "1P",
+                "18L": "3E",
+                "36L": "3V"
+            },
             "rwy": {
-                "04":  ["EH019", "SPY", "BERGI"],
-                "22":  [["EH063", "S220"], "EH041", "BERGI"],
-                "06":  [["EH014", "S220"], "EH094", "EH022", "BERGI"],
-                "24":  ["EH001", "EH051", ["EH009", "A25+"], "EH028", "BERGI"],
-                "09":  [["EH053", "S220"], ["EH094", "A25+"], "EH022", "BERGI"],
-                "27":  ["EH058", "EH041", "BERGI"],
+                "04": ["EH019", "SPY", "BERGI"],
+                "22": [["EH063", "S220"], "EH041", "BERGI"],
+                "06": [["EH014", "S220"], "EH094", "EH022", "BERGI"],
+                "24": ["EH001", "EH051", ["EH009", "A25+"], "EH028", "BERGI"],
+                "09": [["EH053", "S220"], ["EH094", "A25+"], "EH022", "BERGI"],
+                "27": ["EH058", "EH041", "BERGI"],
                 "18L": [["EH029", "S220"], ["EH009", "A25+"], "EH028", "BERGI"],
                 "36L": ["EH047", ["EH094", "A25+"], "EH034", "BERGI"]
             },
@@ -339,14 +392,23 @@
         "LEKKO": {
             "icao": "LEKKO",
             "name": "Lekko",
-            "suffix": {"04":"1F", "22":"1G", "06":"1R", "24":"1S", "09":"1N", "27":"1P", "18L":"3E", "36L":"3V"},
+            "suffix": {
+                "04": "1F",
+                "22": "1G",
+                "06": "1R",
+                "24": "1S",
+                "09": "1N",
+                "27": "1P",
+                "18L": "3E",
+                "36L": "3V"
+            },
             "rwy": {
-                "04":  [["EH036", "S220"], "EH072", "LEKKO"],
-                "22":  [["EH064", "S220"], "EH073", "LEKKO"],
-                "06":  [["EH036", "S220"], "EH072", "LEKKO"],
-                "24":  ["EH005", ["EH039", "S220"], "LEKKO"],
-                "09":  [["EH036", "S220"], "EH072", "LEKKO"],
-                "27":  ["EH056", ["EH032", "S220"], "EH075", "LEKKO"],
+                "04": [["EH036", "S220"], "EH072", "LEKKO"],
+                "22": [["EH064", "S220"], "EH073", "LEKKO"],
+                "06": [["EH036", "S220"], "EH072", "LEKKO"],
+                "24": ["EH005", ["EH039", "S220"], "LEKKO"],
+                "09": [["EH036", "S220"], "EH072", "LEKKO"],
+                "27": ["EH056", ["EH032", "S220"], "EH075", "LEKKO"],
                 "18L": ["EH073", "LEKKO"],
                 "36L": ["EH084", ["EH045", "S220"], "EH036", "EH072", "LEKKO"]
             },
@@ -362,12 +424,12 @@
         "GORLO": {
             "icao": "GORLO",
             "name": "Gorlo",
-            "suffix": {"04":"2F", "06":"2R", "09":"2N", "27":"1P", "36L":"3V"},
+            "suffix": { "04": "2F", "06": "2R", "09": "2N", "27": "1P", "36L": "3V" },
             "rwy": {
-                "04":  [["EH059", "S220"], "EH094", "EH090", "EH091", "VOLLA", "GORLO"],
-                "06":  [["EH014", "S220"], "EH094", "EH090", "EH091", "VOLLA", "GORLO"],
-                "09":  [["EH053", "S220"], "EH094", "EH090", "EH091", "VOLLA", "GORLO"],
-                "27":  ["EH058", "VOLLA", "GORLO"],
+                "04": [["EH059", "S220"], "EH094", "EH090", "EH091", "VOLLA", "GORLO"],
+                "06": [["EH014", "S220"], "EH094", "EH090", "EH091", "VOLLA", "GORLO"],
+                "09": [["EH053", "S220"], "EH094", "EH090", "EH091", "VOLLA", "GORLO"],
+                "27": ["EH058", "VOLLA", "GORLO"],
                 "36L": ["EH047", "EH094", "EH090", "EH091", "VOLLA", "GORLO"]
             },
             "draw": [
@@ -382,14 +444,23 @@
         "LOPIK": {
             "icao": "LOPIK",
             "name": "Lopik",
-            "suffix": {"04":"1F", "22":"1G", "06":"1R", "24":"2S", "09":"1N", "27":"1P", "18L":"3E", "36L":"3V"},
+            "suffix": {
+                "04": "1F",
+                "22": "1G",
+                "06": "1R",
+                "24": "2S",
+                "09": "1N",
+                "27": "1P",
+                "18L": "3E",
+                "36L": "3V"
+            },
             "rwy": {
-                "04":  [["EH061", "S220"], "OGINA", "LOPIK"],
-                "22":  [["EH064", "S220"], "EH029", "EH050", "LOPIK"],
-                "06":  [["EH036", "S220"], "OGINA", "LOPIK"],
-                "24":  ["EH005", ["EH008", "S220"], "EH050", "LOPIK"],
-                "09":  [["EH036", "S220"], "OGINA", "LOPIK"],
-                "27":  ["EH056", ["EH032", "S220"], "NV", "LOPIK"],
+                "04": [["EH061", "S220"], "OGINA", "LOPIK"],
+                "22": [["EH064", "S220"], "EH029", "EH050", "LOPIK"],
+                "06": [["EH036", "S220"], "OGINA", "LOPIK"],
+                "24": ["EH005", ["EH008", "S220"], "EH050", "LOPIK"],
+                "09": [["EH036", "S220"], "OGINA", "LOPIK"],
+                "27": ["EH056", ["EH032", "S220"], "NV", "LOPIK"],
                 "18L": ["EH029", "EH050", "LOPIK"],
                 "36L": ["EH084", ["EH045", "S220"], "EH036", "OGINA", "LOPIK"]
             },
@@ -397,7 +468,7 @@
                 ["EH061", "OGINA", "LOPIK"],
                 ["EH064", "EH029", "EH050", "LOPIK"],
                 ["EH036", "OGINA"],
-                ["EH005", "EH008", "EH050"] ,
+                ["EH005", "EH008", "EH050"],
                 ["EH056", "EH032", "NV", "LOPIK"],
                 ["EH029", "EH050"],
                 ["EH084", "EH045", "EH036"],
@@ -407,17 +478,25 @@
         "LUNIX": {
             "icao": "LUNIX",
             "name": "Lunix",
-            "suffix": {"04":"1F", "22":"1G", "24":"1S", "09":"1N", "27":"1P", "18L":"1E", "36L":"1V"},
+            "suffix": {
+                "04": "1F",
+                "22": "1G",
+                "24": "1S",
+                "09": "1N",
+                "27": "1P",
+                "18L": "1E",
+                "36L": "1V"
+            },
             "exitPoints": {
                 "EDUPO": ["RENDI", "EDUPO"]
             },
             "rwy": {
-                "04":  [["EH060", "S220"], "IVLUT", "LUNIX"],
-                "22":  [["EH023", "S220"], "IVLUT", "LUNIX"],
-                "06":  ["EH018", "IVLUT", "LUNIX"],
-                "24":  ["EH005", ["EH008", "S220"], "EH026", "IVLUT", "LUNIX"],
-                "09":  ["EH055", "EH042", "IVLUT", "LUNIX"],
-                "27":  ["EH056", ["EH032", "S220"], "NV", "IVLUT", "LUNIX"],
+                "04": [["EH060", "S220"], "IVLUT", "LUNIX"],
+                "22": [["EH023", "S220"], "IVLUT", "LUNIX"],
+                "06": ["EH018", "IVLUT", "LUNIX"],
+                "24": ["EH005", ["EH008", "S220"], "EH026", "IVLUT", "LUNIX"],
+                "09": ["EH055", "EH042", "IVLUT", "LUNIX"],
+                "27": ["EH056", ["EH032", "S220"], "NV", "IVLUT", "LUNIX"],
                 "18L": [["EH037", "S220"], "IVLUT", "LUNIX"],
                 "36L": ["EH012", "EH087", "EH088", "PAM", "IVLUT", "LUNIX"]
             },
@@ -430,11 +509,11 @@
         "VALKO": {
             "icao": "VALKO",
             "name": "Valko",
-            "suffix": {"09":"1N", "22":"1G", "24":"1S", "18L":"3E"},
+            "suffix": { "09": "1N", "22": "1G", "24": "1S", "18L": "3E" },
             "rwy": {
-                "09":  [["EH030", "S220"], "EH025", "EH040", "VALKO"],
-                "22":  ["EH062", ["EH009", "A25+"], "VALKO"],
-                "24":  ["EH001", "EH051", ["EH009", "A25+"], "VALKO"],
+                "09": [["EH030", "S220"], "EH025", "EH040", "VALKO"],
+                "22": ["EH062", ["EH009", "A25+"], "VALKO"],
+                "24": ["EH001", "EH051", ["EH009", "A25+"], "VALKO"],
                 "18L": [["EH029", "S220"], ["EH009", "A25+"], "VALKO"]
             },
             "draw": [
@@ -447,13 +526,13 @@
         "SPY": {
             "icao": "SPY",
             "name": "Spijkerboor",
-            "suffix": {"24":"2K", "27":"1P", "36L":"2V"},
+            "suffix": { "24": "2K", "27": "1P", "36L": "2V" },
             "exitPoints": {
                 "ANDIK": ["ANDIK"]
             },
             "rwy": {
-                "24":  ["EH001", ["EH049", "S220"], "SPY"],
-                "27":  [["EH057", "S220"], "SPY"],
+                "24": ["EH001", ["EH049", "S220"], "SPY"],
+                "27": [["EH057", "S220"], "SPY"],
                 "36L": ["EH013", "NOPSU"]
             },
             "draw": [
@@ -466,18 +545,15 @@
             "icao": "ARNEM1Z",
             "name": "Arnem One Zulu",
             "rwy": {
-                "36L":  ["EH013", "SPY", "PAM", "ARNEM"]
+                "36L": ["EH013", "SPY", "PAM", "ARNEM"]
             },
-            "draw": [
-                ["EH013", "SPY", "PAM"],
-                ["ARNEM"]
-            ]
+            "draw": [["EH013", "SPY", "PAM"], ["ARNEM"]]
         },
         "BERGI1Z": {
             "icao": "BERGI1Z",
             "name": "Bergi One Zulu",
             "rwy": {
-                "36L":  ["EH015", "BERGI"]
+                "36L": ["EH015", "BERGI"]
             },
             "draw": [["EH015", "BERGI"]]
         },
@@ -485,33 +561,25 @@
             "icao": "GORLO1Z",
             "name": "Gorlo One Zulu",
             "rwy": {
-                "36L":  ["EH015", "EH006", "EH016", "VOLLA", "GORLO"]
+                "36L": ["EH015", "EH006", "EH016", "VOLLA", "GORLO"]
             },
-            "draw": [
-                ["EH015", "EH006", "EH016", "VOLLA"],
-                ["GORLO"]
-            ]
+            "draw": [["EH015", "EH006", "EH016", "VOLLA"], ["GORLO"]]
         },
         "LEKKO1Z": {
             "icao": "LEKKO1Z",
             "name": "Lekko One Zulu",
             "rwy": {
-                "36L":  ["EH013", "SPY", "EH072", "LEKKO"]
+                "36L": ["EH013", "SPY", "EH072", "LEKKO"]
             },
-            "draw": [
-                ["SPY", "EH072"],
-                ["LEKKO"]
-            ]
+            "draw": [["SPY", "EH072"], ["LEKKO"]]
         },
         "LOPIK1Z": {
             "icao": "LOPIK1Z",
             "name": "Lopik One Zulu",
             "rwy": {
-                "36L":  ["EH013", "SPY", "LOPIK"]
+                "36L": ["EH013", "SPY", "LOPIK"]
             },
-            "draw": [
-                ["SPY", "LOPIK"]
-            ]
+            "draw": [["SPY", "LOPIK"]]
         },
         "LUNIX1Z": {
             "icao": "LUNIX1Z",
@@ -520,38 +588,31 @@
                 "EDUPO": ["RENDI", "EDUPO"]
             },
             "rwy": {
-                "36L":  ["EH013", "SPY", "PAM", "IVLUT", "LUNIX"]
+                "36L": ["EH013", "SPY", "PAM", "IVLUT", "LUNIX"]
             },
-            "draw": [
-                ["EDUPO*"]
-            ]
+            "draw": [["EDUPO*"]]
         },
         "ANDIK1T": {
             "icao": "ANDIK1T",
             "name": "Andik One Tango",
             "rwy": {
-                "06":  [["EH014", "S220"], "EH021", "SPY", "ANDIK"]
+                "06": [["EH014", "S220"], "EH021", "SPY", "ANDIK"]
             },
-            "draw": [
-                ["EH014", "EH021", "SPY", "ANDIK"]
-            ]
+            "draw": [["EH014", "EH021", "SPY", "ANDIK"]]
         },
         "ARNEM2T": {
             "icao": "ARNEM2T",
             "name": "Arnem Two Tango",
             "rwy": {
-                "06":  [["EH036", "S220"], "EH017", "IVLUT", "NYKER", "ARNEM"]
+                "06": [["EH036", "S220"], "EH017", "IVLUT", "NYKER", "ARNEM"]
             },
-            "draw": [
-                ["EH036", "EH017", "IVLUT"],
-                ["ARNEM"]
-            ]
+            "draw": [["EH036", "EH017", "IVLUT"], ["ARNEM"]]
         },
         "BETUS3Y": {
             "icao": "BETUS3Y",
             "name": "Betus Three Yankee",
             "rwy": {
-                "18C":  ["EH048", ["EH049", "S220"], "SPY", "BETUS"]
+                "18C": ["EH048", ["EH049", "S220"], "SPY", "BETUS"]
             },
             "draw": [
                 ["EH048", "EH049"],
@@ -565,7 +626,7 @@
                 "VALKO": ["VALKO"]
             },
             "rwy": {
-                "18C":  ["EH080", "EH051", ["EH009", "A25+"], "DENAG"]
+                "18C": ["EH080", "EH051", ["EH009", "A25+"], "DENAG"]
             },
             "draw": [
                 ["EH080", "EH051"],
@@ -576,12 +637,9 @@
             "icao": "EDUPO2X",
             "name": "Edupo Two Xray",
             "rwy": {
-                "18C":  ["EH046", "EH026", "IVLUT", "LUNIX", "RENDI", "EDUPO"]
+                "18C": ["EH046", "EH026", "IVLUT", "LUNIX", "RENDI", "EDUPO"]
             },
-            "draw": [
-                ["EH046", "EH026"],
-                ["EDUPO"]
-            ]
+            "draw": [["EH046", "EH026"], ["EDUPO"]]
         },
         "ELPAT2X": {
             "icao": "ELPAT2X",
@@ -590,21 +648,17 @@
                 "ARNEM": ["ARNEM"]
             },
             "rwy": {
-                "18C":  ["EH046", "EH026", "IVLUT", "NYKER", "ELPAT"]
+                "18C": ["EH046", "EH026", "IVLUT", "NYKER", "ELPAT"]
             },
-            "draw": [
-                ["NYKER", "ELPAT"]
-            ]
+            "draw": [["NYKER", "ELPAT"]]
         },
         "LARAS1X": {
             "icao": "LARAS1X",
             "name": "Laras One Xray",
             "rwy": {
-                "18C":  ["EH046", "EH074", "LEKKO", "LARAS"]
+                "18C": ["EH046", "EH074", "LEKKO", "LARAS"]
             },
-            "draw": [
-                ["EH046", "EH074", "LEKKO", "LARAS"]
-            ]
+            "draw": [["EH046", "EH074", "LEKKO", "LARAS"]]
         },
         "ROVEN2X": {
             "icao": "ROVEN2X",
@@ -613,11 +667,9 @@
                 "LOPIK": ["LOPIK"]
             },
             "rwy": {
-                "18C":  ["EH046", "EH069", "ROVEN"]
+                "18C": ["EH046", "EH069", "ROVEN"]
             },
-            "draw": [
-                ["EH046", "EH069", "ROVEN", "LOPIK*"]
-            ]
+            "draw": [["EH046", "EH069", "ROVEN", "LOPIK*"]]
         },
         "TORGA1X": {
             "icao": "TORGA1X",
@@ -626,11 +678,9 @@
                 "ANDIK": ["ANDIK"]
             },
             "rwy": {
-                "18C":  ["EH046", "EH026", "PAM", "TORGA"]
+                "18C": ["EH046", "EH026", "PAM", "TORGA"]
             },
-            "draw": [
-                ["PAM", "TORGA", "ANDIK*"]
-            ]
+            "draw": [["PAM", "TORGA", "ANDIK*"]]
         },
         "WISPA1X": {
             "icao": "WISPA1X",
@@ -639,11 +689,9 @@
                 "BERGI": ["BERGI"]
             },
             "rwy": {
-                "18C":  ["EH080", "EH051", ["EH009", "A25+"], "EH028", "WISPA"]
+                "18C": ["EH080", "EH051", ["EH009", "A25+"], "EH028", "WISPA"]
             },
-            "draw": [
-                ["EH028", "WISPA", "BERGI*"]
-            ]
+            "draw": [["EH028", "WISPA", "BERGI*"]]
         },
         "IVLUT2W": {
             "icao": "IVLUT2W",
@@ -652,13 +700,9 @@
                 "EDUPO": ["RENDI", "EDUPO"]
             },
             "rwy": {
-                "36C":  ["EH033", "EH081", "EH082", "PAM", "IVLUT"]
+                "36C": ["EH033", "EH081", "EH082", "PAM", "IVLUT"]
             },
-            "draw": [
-                ["EH033", "EH081", "EH082", "PAM"],
-                ["IVLUT", "RENDI"],
-                ["EDUPO*"]
-            ]
+            "draw": [["EH033", "EH081", "EH082", "PAM"], ["IVLUT", "RENDI"], ["EDUPO*"]]
         },
         "NOPSU1W": {
             "icao": "NOPSU1W",
@@ -667,11 +711,9 @@
                 "ANDIK": ["ANDIK"]
             },
             "rwy": {
-                "36C":  ["EH033", "EH044", "SPY", "NOPSU"]
+                "36C": ["EH033", "EH044", "SPY", "NOPSU"]
             },
-            "draw": [
-                ["EH033", "EH044", "SPY", "NOPSU", "ANDIK*"]
-            ]
+            "draw": [["EH033", "EH044", "SPY", "NOPSU", "ANDIK*"]]
         },
         "NYKER3W": {
             "icao": "NYKER3W",
@@ -680,12 +722,9 @@
                 "ARNEM": ["ARNEM"]
             },
             "rwy": {
-                "36C":  ["EH033", "EH081", "EH082", "PAM", "NYKER"]
+                "36C": ["EH033", "EH081", "EH082", "PAM", "NYKER"]
             },
-            "draw": [
-                ["PAM", "NYKER"],
-                ["ARNEM*"]
-            ]
+            "draw": [["PAM", "NYKER"], ["ARNEM*"]]
         },
         "OGINA2W": {
             "icao": "OGINA2W",
@@ -694,32 +733,25 @@
                 "LOPIK": ["LOPIK"]
             },
             "rwy": {
-                "36C":  ["EH010", ["EH070", "S220"], "EH036", "OGINA"]
+                "36C": ["EH010", ["EH070", "S220"], "EH036", "OGINA"]
             },
-            "draw": [
-                ["EH010", "EH070", "EH036"],
-                ["LOPIK*"]
-            ]
+            "draw": [["EH010", "EH070", "EH036"], ["LOPIK*"]]
         },
         "WOODY1W": {
             "icao": "WOODY1W",
             "name": "Woody One Whiskey",
             "rwy": {
-                "36C":  ["EH010", ["EH070", "S220"], "EH036", "EH072", "LEKKO", "WOODY"]
+                "36C": ["EH010", ["EH070", "S220"], "EH036", "EH072", "LEKKO", "WOODY"]
             },
-            "draw": [
-                ["LEKKO", "WOODY"]
-            ]
+            "draw": [["LEKKO", "WOODY"]]
         },
         "LEKKO1T": {
             "icao": "LEKKO1T",
             "name": "Lekko One Tango",
             "rwy": {
-                "06":  [["EH036", "S220"], "EH038", "LEKKO"]
+                "06": [["EH036", "S220"], "EH038", "LEKKO"]
             },
-            "draw": [
-                ["EH036", "EH038", "LEKKO"]
-            ]
+            "draw": [["EH036", "EH038", "LEKKO"]]
         },
         "LUNIX1T": {
             "icao": "LUNIX1T",
@@ -728,11 +760,9 @@
                 "EDUPO": ["RENDI", "EDUPO"]
             },
             "rwy": {
-                "06":  [["EH036", "S220"], "EH017", "IVLUT", "LUNIX"]
+                "06": [["EH036", "S220"], "EH017", "IVLUT", "LUNIX"]
             },
-            "draw": [
-                ["EDUPO*"]
-            ]
+            "draw": [["EDUPO*"]]
         }
     },
     "stars": {
@@ -743,9 +773,7 @@
                 "REDFA": ["REDFA"]
             },
             "body": ["SULUT", "SUGOL"],
-            "draw": [
-                ["REDFA", "SULUT", "SUGOL"]
-            ]
+            "draw": [["REDFA", "SULUT", "SUGOL"]]
         },
         "LAMSO1A": {
             "icao": "LAMSO1A",
@@ -754,9 +782,7 @@
                 "LAMSO": ["LAMSO"]
             },
             "body": ["PEPEL", "SUGOL"],
-            "draw": [
-                ["LAMSO", "PEPEL", "SUGOL"]
-            ]
+            "draw": [["LAMSO", "PEPEL", "SUGOL"]]
         },
         "MOLIX2A": {
             "icao": "MOLIX2A",
@@ -765,9 +791,7 @@
                 "MOLIX": ["MOLIX"]
             },
             "body": ["LUTEX", "SUGOL"],
-            "draw": [
-                ["MOLIX", "LUTEX", "SUGOL"]
-            ]
+            "draw": [["MOLIX", "LUTEX", "SUGOL"]]
         },
         "TOPPA2A": {
             "icao": "TOPPA2A",
@@ -776,9 +800,7 @@
                 "TOPPA": ["TOPPA"]
             },
             "body": ["MONIL", "ROBVI", "SUGOL"],
-            "draw": [
-                ["TOPPA", "MONIL", "ROBVI", "SUGOL"]
-            ]
+            "draw": [["TOPPA", "MONIL", "ROBVI", "SUGOL"]]
         },
         "EEL1A": {
             "icao": "EEL1A",
@@ -821,9 +843,7 @@
                 "REKKEN": ["RKN"]
             },
             "body": ["OSKUR", "ARTIP"],
-            "draw": [
-                ["RKN", "OSKUR", "ARTIP"]
-            ]
+            "draw": [["RKN", "OSKUR", "ARTIP"]]
         },
         "RKN2B": {
             "icao": "RKN2B",
@@ -832,9 +852,7 @@
                 "REKKEN": ["RKN"]
             },
             "body": ["SONSA", "NARSO", "ARTIP"],
-            "draw": [
-                ["RKN", "SONSA", "NARSO", "ARTIP"]
-            ]
+            "draw": [["RKN", "SONSA", "NARSO", "ARTIP"]]
         },
         "NORKU2A": {
             "icao": "NORKU2A",
@@ -843,9 +861,7 @@
                 "NORKU": ["NORKU"]
             },
             "body": ["SONSA", "ROBIS", "OSKUR", "ARTIP"],
-            "draw": [
-                ["NORKU", "SONSA", "ROBIS", "OSKUR", "ARTIP"]
-            ]
+            "draw": [["NORKU", "SONSA", "ROBIS", "OSKUR", "ARTIP"]]
         },
         "NORKU2B": {
             "icao": "NORKU2B",
@@ -854,9 +870,7 @@
                 "NORKU": ["NORKU"]
             },
             "body": ["SONSA", "NARSO", "ARTIP"],
-            "draw": [
-                ["NORKU", "SONSA", "NARSO", "ARTIP"]
-            ]
+            "draw": [["NORKU", "SONSA", "NARSO", "ARTIP"]]
         },
         "DENUT1A": {
             "icao": "DENUT1A",
@@ -865,9 +879,7 @@
                 "DENUT": ["DENUT"]
             },
             "body": ["HSD", "RIVER"],
-            "draw": [
-                ["DENUT", "HSD", "RIVER"]
-            ]
+            "draw": [["DENUT", "HSD", "RIVER"]]
         },
         "HELEN1A": {
             "icao": "HELEN1A",
@@ -876,9 +888,7 @@
                 "HELEN": ["HELEN"]
             },
             "body": ["HSD", "RIVER"],
-            "draw": [
-                ["HELEN", "HSD", "RIVER"]
-            ]
+            "draw": [["HELEN", "HSD", "RIVER"]]
         },
         "PUTTY1A": {
             "icao": "PUTTY1A",
@@ -887,9 +897,7 @@
                 "PUTTY": ["PUTTY"]
             },
             "body": ["HSD", "RIVER"],
-            "draw": [
-                ["PUTTY", "HSD", "RIVER"]
-            ]
+            "draw": [["PUTTY", "HSD", "RIVER"]]
         },
         "PESER2A": {
             "icao": "PESER2A",
@@ -898,9 +906,7 @@
                 "PESER": ["PESER"]
             },
             "body": ["STD", "RIVER"],
-            "draw": [
-                ["PESER", "STD", "RIVER"]
-            ]
+            "draw": [["PESER", "STD", "RIVER"]]
         },
         "ARTIP1X": {
             "_comment": "ARTIP1X is a day transition for 36R",
@@ -909,10 +915,15 @@
             "entryPoints": {
                 "ARTIP": [["ARTIP", "A100|S250"]]
             },
-            "body": ["INBAM", ["EH665", "S220"], "EH667", ["EH668", "S180"], ["EH669", "A20"], ["EH636", "A20"]],
-            "draw": [
-                ["ARTIP", "PAM", "EH611", "EH612", "SOKSI", "EH613", "EH614", "EH609"]
-            ]
+            "body": [
+                "INBAM",
+                ["EH665", "S220"],
+                "EH667",
+                ["EH668", "S180"],
+                ["EH669", "A20"],
+                ["EH636", "A20"]
+            ],
+            "draw": [["ARTIP", "PAM", "EH611", "EH612", "SOKSI", "EH613", "EH614", "EH609"]]
         },
         "ARTIP2A": {
             "_comment_": "Beyond this point are the instrument approach procedures/transitions for night usage",
@@ -921,7 +932,16 @@
             "entryPoints": {
                 "ARTIP": [["ARTIP", "A100|S250"]]
             },
-            "body": ["PAM", ["EH611", "A70"], "EH612", ["SOKSI", "A40|S220"], "EH613", ["EH614", "A29"], ["EH609", "A20"], "EH616"],
+            "body": [
+                "PAM",
+                ["EH611", "A70"],
+                "EH612",
+                ["SOKSI", "A40|S220"],
+                "EH613",
+                ["EH614", "A29"],
+                ["EH609", "A20"],
+                "EH616"
+            ],
             "draw": [
                 ["ARTIP", "PAM", "EH611", "EH612", "SOKSI", "EH613", "EH614", "EH609", "EH616"]
             ]
@@ -933,9 +953,7 @@
                 "SOKSI": [["SOKSI", "A40|S220"]]
             },
             "body": ["EH613", ["EH614", "A29"], ["EH609", "A20"], "EH616"],
-            "draw": [
-                ["SOKSI", "EH613", "EH614", "EH609", "EH616"]
-            ]
+            "draw": [["SOKSI", "EH613", "EH614", "EH609", "EH616"]]
         },
         "RIVER2A": {
             "icao": "RIVER2A",
@@ -943,10 +961,15 @@
             "entryPoints": {
                 "RIVER": [["RIVER", "A100|S250"]]
             },
-            "body": ["EH605", "EH610", ["SOKSI", "A40|S220"], "EH613", ["EH614", "A29"], ["EH609", "A20"]],
-            "draw": [
-                ["RIVER", "EH605", "EH610", "SOKSI", "EH613", "EH614", "EH609"]
-            ]
+            "body": [
+                "EH605",
+                "EH610",
+                ["SOKSI", "A40|S220"],
+                "EH613",
+                ["EH614", "A29"],
+                ["EH609", "A20"]
+            ],
+            "draw": [["RIVER", "EH605", "EH610", "SOKSI", "EH613", "EH614", "EH609"]]
         },
         "SUGOL2A": {
             "icao": "SUGOL2A",
@@ -955,9 +978,7 @@
                 "SUGOL": [["SUGOL", "A100|S250"]]
             },
             "body": ["EH606", ["SOKSI", "A40|S220"], "EH613", ["EH614", "A29"], ["EH609", "A20"]],
-            "draw": [
-                ["SUGOL", "EH606", "SOKSI", "EH613", "EH614", "EH609"]
-            ]
+            "draw": [["SUGOL", "EH606", "SOKSI", "EH613", "EH614", "EH609"]]
         },
         "ARTIP3B": {
             "icao": "ARTIP3B",
@@ -965,10 +986,16 @@
             "entryPoints": {
                 "ARTIP": [["ARTIP", "A100|S250"]]
             },
-            "body": [["EH601", "A70"], ["EH602", "A70"], "EH603", ["NIRSI", "A55|S220"], "EH607", ["EH608", "A34"], ["EH621", "A20"]],
-            "draw": [
-                ["ARTIP", "EH601", "EH602", "EH603", "NIRSI", "EH607", "EH608", "EH621"]
-            ]
+            "body": [
+                ["EH601", "A70"],
+                ["EH602", "A70"],
+                "EH603",
+                ["NIRSI", "A55|S220"],
+                "EH607",
+                ["EH608", "A34"],
+                ["EH621", "A20"]
+            ],
+            "draw": [["ARTIP", "EH601", "EH602", "EH603", "NIRSI", "EH607", "EH608", "EH621"]]
         },
         "NIRSI1B": {
             "icao": "NIRSI1B",
@@ -977,9 +1004,7 @@
                 "NIRSI": [["NIRSI", "A55|S220"]]
             },
             "body": ["EH607", ["EH608", "A34"], ["EH621", "A20"]],
-            "draw": [
-                ["NIRSI", "EH601", "EH602", "EH603", "NIRSI", "EH607", "EH608", "EH621"]
-            ]
+            "draw": [["NIRSI", "EH601", "EH602", "EH603", "NIRSI", "EH607", "EH608", "EH621"]]
         },
         "ARTIP2C": {
             "icao": "ARTIP2C",
@@ -987,10 +1012,14 @@
             "entryPoints": {
                 "ARTIP": [["ARTIP", "A100|S250"]]
             },
-            "body": [["EH600", "A70"], ["NARIX", "A60|S250"], ["EH604", "A40|S220"], ["EH608", "A34"], ["EH621", "A20"]],
-            "draw": [
-                ["ARTIP", "EH600", "NARIX", "EH604", "EH608", "EH621"]
-            ]
+            "body": [
+                ["EH600", "A70"],
+                ["NARIX", "A60|S250"],
+                ["EH604", "A40|S220"],
+                ["EH608", "A34"],
+                ["EH621", "A20"]
+            ],
+            "draw": [["ARTIP", "EH600", "NARIX", "EH604", "EH608", "EH621"]]
         },
         "NARIX1C": {
             "icao": "NARIX1C",
@@ -998,10 +1027,12 @@
             "entryPoints": {
                 "ARTIP": [["NARIX", "A60|S250"]]
             },
-            "body": [["EH604", "A40|S220"], ["EH608", "A34"], ["EH621", "A20"]],
-            "draw": [
-                ["NARIX", "EH604", "EH608", "EH621"]
-            ]
+            "body": [
+                ["EH604", "A40|S220"],
+                ["EH608", "A34"],
+                ["EH621", "A20"]
+            ],
+            "draw": [["NARIX", "EH604", "EH608", "EH621"]]
         },
         "RIVER3B": {
             "icao": "RIVER3B",
@@ -1010,9 +1041,7 @@
                 "RIVER": [["RIVER", "A100|S250"]]
             },
             "body": ["EH605", ["NIRSI", "A55|S220"], "EH607", ["EH608", "A34"], ["EH621", "A20"]],
-            "draw": [
-                ["RIVER", "EH605", "NIRSI", "EH607", "EH608", "EH621"]
-            ]
+            "draw": [["RIVER", "EH605", "NIRSI", "EH607", "EH608", "EH621"]]
         },
         "SUGOL3B": {
             "icao": "SUGOL3B",
@@ -1021,9 +1050,7 @@
                 "SUGOL": [["SUGOL", "A100|S250"]]
             },
             "body": ["EH606", ["NIRSI", "A55|S220"], "EH607", ["EH608", "A34"], ["EH621", "A20"]],
-            "draw": [
-                ["SUGOL", "EH606", "NIRSI", "EH607", "EH608", "EH621"]
-            ]
+            "draw": [["SUGOL", "EH606", "NIRSI", "EH607", "EH608", "EH621"]]
         }
     },
     "spawnPatterns": [
@@ -1037,71 +1064,71 @@
             "method": "random",
             "rate": 3,
             "airlines": [
-                ["aee",   1],
-                ["ein",   2],
-                ["afl",   1],
-                ["amx",   1],
-                ["aca",   1],
-                ["afr",   6],
-                ["amc",   1],
-                ["asl",   1],
-                ["aza",   2],
-                ["aal",   1],
-                ["aua",   1],
-                ["baw",   3],
-                ["lzb",   2],
-                ["cpa",   5],
-                ["ces",   1],
-                ["csn",   6],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["cal",   5],
-                ["ctn",   1],
-                ["csa",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["ely",   1],
-                ["uae",   4],
-                ["etd",   5],
-                ["ewg",   2],
-                ["eva",   2],
-                ["gia",   1],
-                ["ibs",   1],
-                ["exs",   1],
+                ["aee", 1],
+                ["ein", 2],
+                ["afl", 1],
+                ["amx", 1],
+                ["aca", 1],
+                ["afr", 6],
+                ["amc", 1],
+                ["asl", 1],
+                ["aza", 2],
+                ["aal", 1],
+                ["aua", 1],
+                ["baw", 3],
+                ["lzb", 2],
+                ["cpa", 5],
+                ["ces", 1],
+                ["csn", 6],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["cal", 5],
+                ["ctn", 1],
+                ["csa", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["ely", 1],
+                ["uae", 4],
+                ["etd", 5],
+                ["ewg", 2],
+                ["eva", 2],
+                ["gia", 1],
+                ["ibs", 1],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["lot",   1],
-                ["dlh",   3],
-                ["mph",  20],
-                ["nax",   3],
-                ["pgt",   2],
-                ["qtr",   3],
-                ["rja",   2],
-                ["ryr",   1],
-                ["sas",   3],
-                ["sia",   1],
-                ["sxd",   2],
-                ["swr",   1],
-                ["tap",   2],
-                ["rot",   1],
-                ["tra",  88],
-                ["tvf",   1],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53],
-                ["aui",   1],
-                ["ual",   4],
-                ["vlg",  16],
-                ["clx",   1],
-                ["cwc",   3],
-                ["ckk",   3],
-                ["fdx",   2],
-                ["mas",   3],
-                ["nca",   1],
-                ["azq",   1],
+                ["klc", 44],
+                ["kal", 2],
+                ["lot", 1],
+                ["dlh", 3],
+                ["mph", 20],
+                ["nax", 3],
+                ["pgt", 2],
+                ["qtr", 3],
+                ["rja", 2],
+                ["ryr", 1],
+                ["sas", 3],
+                ["sia", 1],
+                ["sxd", 2],
+                ["swr", 1],
+                ["tap", 2],
+                ["rot", 1],
+                ["tra", 88],
+                ["tvf", 1],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53],
+                ["aui", 1],
+                ["ual", 4],
+                ["vlg", 16],
+                ["clx", 1],
+                ["cwc", 3],
+                ["ckk", 3],
+                ["fdx", 2],
+                ["mas", 3],
+                ["nca", 1],
+                ["azq", 1],
                 ["sia/cargo", 9],
-                ["yzr",   4]
+                ["yzr", 4]
             ]
         },
         {
@@ -1114,71 +1141,71 @@
             "method": "random",
             "rate": 3,
             "airlines": [
-                ["aee",   1],
-                ["ein",   2],
-                ["afl",   1],
-                ["amx",   1],
-                ["aca",   1],
-                ["afr",   6],
-                ["amc",   1],
-                ["asl",   1],
-                ["aza",   2],
-                ["aal",   1],
-                ["aua",   1],
-                ["baw",   3],
-                ["lzb",   2],
-                ["cpa",   5],
-                ["ces",   1],
-                ["csn",   6],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["cal",   5],
-                ["ctn",   1],
-                ["csa",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["ely",   1],
-                ["uae",   4],
-                ["etd",   5],
-                ["ewg",   2],
-                ["eva",   2],
-                ["gia",   1],
-                ["ibs",   1],
-                ["exs",   1],
+                ["aee", 1],
+                ["ein", 2],
+                ["afl", 1],
+                ["amx", 1],
+                ["aca", 1],
+                ["afr", 6],
+                ["amc", 1],
+                ["asl", 1],
+                ["aza", 2],
+                ["aal", 1],
+                ["aua", 1],
+                ["baw", 3],
+                ["lzb", 2],
+                ["cpa", 5],
+                ["ces", 1],
+                ["csn", 6],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["cal", 5],
+                ["ctn", 1],
+                ["csa", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["ely", 1],
+                ["uae", 4],
+                ["etd", 5],
+                ["ewg", 2],
+                ["eva", 2],
+                ["gia", 1],
+                ["ibs", 1],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["lot",   1],
-                ["dlh",   3],
-                ["mph",  20],
-                ["nax",   3],
-                ["pgt",   2],
-                ["qtr",   3],
-                ["rja",   2],
-                ["ryr",   1],
-                ["sas",   3],
-                ["sia",   1],
-                ["sxd",   2],
-                ["swr",   1],
-                ["tap",   2],
-                ["rot",   1],
-                ["tra",  88],
-                ["tvf",   1],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53],
-                ["aui",   1],
-                ["ual",   4],
-                ["vlg",  16],
-                ["clx",   1],
-                ["cwc",   3],
-                ["ckk",   3],
-                ["fdx",   2],
-                ["mas",   3],
-                ["nca",   1],
-                ["azq",   1],
+                ["klc", 44],
+                ["kal", 2],
+                ["lot", 1],
+                ["dlh", 3],
+                ["mph", 20],
+                ["nax", 3],
+                ["pgt", 2],
+                ["qtr", 3],
+                ["rja", 2],
+                ["ryr", 1],
+                ["sas", 3],
+                ["sia", 1],
+                ["sxd", 2],
+                ["swr", 1],
+                ["tap", 2],
+                ["rot", 1],
+                ["tra", 88],
+                ["tvf", 1],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53],
+                ["aui", 1],
+                ["ual", 4],
+                ["vlg", 16],
+                ["clx", 1],
+                ["cwc", 3],
+                ["ckk", 3],
+                ["fdx", 2],
+                ["mas", 3],
+                ["nca", 1],
+                ["azq", 1],
                 ["sia/cargo", 9],
-                ["yzr",   4]
+                ["yzr", 4]
             ]
         },
         {
@@ -1191,71 +1218,71 @@
             "method": "random",
             "rate": 3,
             "airlines": [
-                ["aee",   1],
-                ["ein",   2],
-                ["afl",   1],
-                ["amx",   1],
-                ["aca",   1],
-                ["afr",   6],
-                ["amc",   1],
-                ["asl",   1],
-                ["aza",   2],
-                ["aal",   1],
-                ["aua",   1],
-                ["baw",   3],
-                ["lzb",   2],
-                ["cpa",   5],
-                ["ces",   1],
-                ["csn",   6],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["cal",   5],
-                ["ctn",   1],
-                ["csa",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["ely",   1],
-                ["uae",   4],
-                ["etd",   5],
-                ["ewg",   2],
-                ["eva",   2],
-                ["gia",   1],
-                ["ibs",   1],
-                ["exs",   1],
+                ["aee", 1],
+                ["ein", 2],
+                ["afl", 1],
+                ["amx", 1],
+                ["aca", 1],
+                ["afr", 6],
+                ["amc", 1],
+                ["asl", 1],
+                ["aza", 2],
+                ["aal", 1],
+                ["aua", 1],
+                ["baw", 3],
+                ["lzb", 2],
+                ["cpa", 5],
+                ["ces", 1],
+                ["csn", 6],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["cal", 5],
+                ["ctn", 1],
+                ["csa", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["ely", 1],
+                ["uae", 4],
+                ["etd", 5],
+                ["ewg", 2],
+                ["eva", 2],
+                ["gia", 1],
+                ["ibs", 1],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["lot",   1],
-                ["dlh",   3],
-                ["mph",  20],
-                ["nax",   3],
-                ["pgt",   2],
-                ["qtr",   3],
-                ["rja",   2],
-                ["ryr",   1],
-                ["sas",   3],
-                ["sia",   1],
-                ["sxd",   2],
-                ["swr",   1],
-                ["tap",   2],
-                ["rot",   1],
-                ["tra",  88],
-                ["tvf",   1],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53],
-                ["aui",   1],
-                ["ual",   4],
-                ["vlg",  16],
-                ["clx",   1],
-                ["cwc",   3],
-                ["ckk",   3],
-                ["fdx",   2],
-                ["mas",   3],
-                ["nca",   1],
-                ["azq",   1],
+                ["klc", 44],
+                ["kal", 2],
+                ["lot", 1],
+                ["dlh", 3],
+                ["mph", 20],
+                ["nax", 3],
+                ["pgt", 2],
+                ["qtr", 3],
+                ["rja", 2],
+                ["ryr", 1],
+                ["sas", 3],
+                ["sia", 1],
+                ["sxd", 2],
+                ["swr", 1],
+                ["tap", 2],
+                ["rot", 1],
+                ["tra", 88],
+                ["tvf", 1],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53],
+                ["aui", 1],
+                ["ual", 4],
+                ["vlg", 16],
+                ["clx", 1],
+                ["cwc", 3],
+                ["ckk", 3],
+                ["fdx", 2],
+                ["mas", 3],
+                ["nca", 1],
+                ["azq", 1],
                 ["sia/cargo", 9],
-                ["yzr",   4]
+                ["yzr", 4]
             ]
         },
         {
@@ -1268,71 +1295,71 @@
             "method": "random",
             "rate": 3,
             "airlines": [
-                ["aee",   1],
-                ["ein",   2],
-                ["afl",   1],
-                ["amx",   1],
-                ["aca",   1],
-                ["afr",   6],
-                ["amc",   1],
-                ["asl",   1],
-                ["aza",   2],
-                ["aal",   1],
-                ["aua",   1],
-                ["baw",   3],
-                ["lzb",   2],
-                ["cpa",   5],
-                ["ces",   1],
-                ["csn",   6],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["cal",   5],
-                ["ctn",   1],
-                ["csa",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["ely",   1],
-                ["uae",   4],
-                ["etd",   5],
-                ["ewg",   2],
-                ["eva",   2],
-                ["gia",   1],
-                ["ibs",   1],
-                ["exs",   1],
+                ["aee", 1],
+                ["ein", 2],
+                ["afl", 1],
+                ["amx", 1],
+                ["aca", 1],
+                ["afr", 6],
+                ["amc", 1],
+                ["asl", 1],
+                ["aza", 2],
+                ["aal", 1],
+                ["aua", 1],
+                ["baw", 3],
+                ["lzb", 2],
+                ["cpa", 5],
+                ["ces", 1],
+                ["csn", 6],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["cal", 5],
+                ["ctn", 1],
+                ["csa", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["ely", 1],
+                ["uae", 4],
+                ["etd", 5],
+                ["ewg", 2],
+                ["eva", 2],
+                ["gia", 1],
+                ["ibs", 1],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["lot",   1],
-                ["dlh",   3],
-                ["mph",  20],
-                ["nax",   3],
-                ["pgt",   2],
-                ["qtr",   3],
-                ["rja",   2],
-                ["ryr",   1],
-                ["sas",   3],
-                ["sia",   1],
-                ["sxd",   2],
-                ["swr",   1],
-                ["tap",   2],
-                ["rot",   1],
-                ["tra",  88],
-                ["tvf",   1],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53],
-                ["aui",   1],
-                ["ual",   4],
-                ["vlg",  16],
-                ["clx",   1],
-                ["cwc",   3],
-                ["ckk",   3],
-                ["fdx",   2],
-                ["mas",   3],
-                ["nca",   1],
-                ["azq",   1],
+                ["klc", 44],
+                ["kal", 2],
+                ["lot", 1],
+                ["dlh", 3],
+                ["mph", 20],
+                ["nax", 3],
+                ["pgt", 2],
+                ["qtr", 3],
+                ["rja", 2],
+                ["ryr", 1],
+                ["sas", 3],
+                ["sia", 1],
+                ["sxd", 2],
+                ["swr", 1],
+                ["tap", 2],
+                ["rot", 1],
+                ["tra", 88],
+                ["tvf", 1],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53],
+                ["aui", 1],
+                ["ual", 4],
+                ["vlg", 16],
+                ["clx", 1],
+                ["cwc", 3],
+                ["ckk", 3],
+                ["fdx", 2],
+                ["mas", 3],
+                ["nca", 1],
+                ["azq", 1],
                 ["sia/cargo", 9],
-                ["yzr",   4]
+                ["yzr", 4]
             ]
         },
         {
@@ -1345,71 +1372,71 @@
             "method": "random",
             "rate": 3,
             "airlines": [
-                ["aee",   1],
-                ["ein",   2],
-                ["afl",   1],
-                ["amx",   1],
-                ["aca",   1],
-                ["afr",   6],
-                ["amc",   1],
-                ["asl",   1],
-                ["aza",   2],
-                ["aal",   1],
-                ["aua",   1],
-                ["baw",   3],
-                ["lzb",   2],
-                ["cpa",   5],
-                ["ces",   1],
-                ["csn",   6],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["cal",   5],
-                ["ctn",   1],
-                ["csa",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["ely",   1],
-                ["uae",   4],
-                ["etd",   5],
-                ["ewg",   2],
-                ["eva",   2],
-                ["gia",   1],
-                ["ibs",   1],
-                ["exs",   1],
+                ["aee", 1],
+                ["ein", 2],
+                ["afl", 1],
+                ["amx", 1],
+                ["aca", 1],
+                ["afr", 6],
+                ["amc", 1],
+                ["asl", 1],
+                ["aza", 2],
+                ["aal", 1],
+                ["aua", 1],
+                ["baw", 3],
+                ["lzb", 2],
+                ["cpa", 5],
+                ["ces", 1],
+                ["csn", 6],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["cal", 5],
+                ["ctn", 1],
+                ["csa", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["ely", 1],
+                ["uae", 4],
+                ["etd", 5],
+                ["ewg", 2],
+                ["eva", 2],
+                ["gia", 1],
+                ["ibs", 1],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["lot",   1],
-                ["dlh",   3],
-                ["mph",  20],
-                ["nax",   3],
-                ["pgt",   2],
-                ["qtr",   3],
-                ["rja",   2],
-                ["ryr",   1],
-                ["sas",   3],
-                ["sia",   1],
-                ["sxd",   2],
-                ["swr",   1],
-                ["tap",   2],
-                ["rot",   1],
-                ["tra",  88],
-                ["tvf",   1],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53],
-                ["aui",   1],
-                ["ual",   4],
-                ["vlg",  16],
-                ["clx",   1],
-                ["cwc",   3],
-                ["ckk",   3],
-                ["fdx",   2],
-                ["mas",   3],
-                ["nca",   1],
-                ["azq",   1],
+                ["klc", 44],
+                ["kal", 2],
+                ["lot", 1],
+                ["dlh", 3],
+                ["mph", 20],
+                ["nax", 3],
+                ["pgt", 2],
+                ["qtr", 3],
+                ["rja", 2],
+                ["ryr", 1],
+                ["sas", 3],
+                ["sia", 1],
+                ["sxd", 2],
+                ["swr", 1],
+                ["tap", 2],
+                ["rot", 1],
+                ["tra", 88],
+                ["tvf", 1],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53],
+                ["aui", 1],
+                ["ual", 4],
+                ["vlg", 16],
+                ["clx", 1],
+                ["cwc", 3],
+                ["ckk", 3],
+                ["fdx", 2],
+                ["mas", 3],
+                ["nca", 1],
+                ["azq", 1],
                 ["sia/cargo", 9],
-                ["yzr",   4]
+                ["yzr", 4]
             ]
         },
         {
@@ -1422,71 +1449,71 @@
             "method": "random",
             "rate": 3,
             "airlines": [
-                ["aee",   1],
-                ["ein",   2],
-                ["afl",   1],
-                ["amx",   1],
-                ["aca",   1],
-                ["afr",   6],
-                ["amc",   1],
-                ["asl",   1],
-                ["aza",   2],
-                ["aal",   1],
-                ["aua",   1],
-                ["baw",   3],
-                ["lzb",   2],
-                ["cpa",   5],
-                ["ces",   1],
-                ["csn",   6],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["cal",   5],
-                ["ctn",   1],
-                ["csa",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["ely",   1],
-                ["uae",   4],
-                ["etd",   5],
-                ["ewg",   2],
-                ["eva",   2],
-                ["gia",   1],
-                ["ibs",   1],
-                ["exs",   1],
+                ["aee", 1],
+                ["ein", 2],
+                ["afl", 1],
+                ["amx", 1],
+                ["aca", 1],
+                ["afr", 6],
+                ["amc", 1],
+                ["asl", 1],
+                ["aza", 2],
+                ["aal", 1],
+                ["aua", 1],
+                ["baw", 3],
+                ["lzb", 2],
+                ["cpa", 5],
+                ["ces", 1],
+                ["csn", 6],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["cal", 5],
+                ["ctn", 1],
+                ["csa", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["ely", 1],
+                ["uae", 4],
+                ["etd", 5],
+                ["ewg", 2],
+                ["eva", 2],
+                ["gia", 1],
+                ["ibs", 1],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["lot",   1],
-                ["dlh",   3],
-                ["mph",  20],
-                ["nax",   3],
-                ["pgt",   2],
-                ["qtr",   3],
-                ["rja",   2],
-                ["ryr",   1],
-                ["sas",   3],
-                ["sia",   1],
-                ["sxd",   2],
-                ["swr",   1],
-                ["tap",   2],
-                ["rot",   1],
-                ["tra",  88],
-                ["tvf",   1],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53],
-                ["aui",   1],
-                ["ual",   4],
-                ["vlg",  16],
-                ["clx",   1],
-                ["cwc",   3],
-                ["ckk",   3],
-                ["fdx",   2],
-                ["mas",   3],
-                ["nca",   1],
-                ["azq",   1],
+                ["klc", 44],
+                ["kal", 2],
+                ["lot", 1],
+                ["dlh", 3],
+                ["mph", 20],
+                ["nax", 3],
+                ["pgt", 2],
+                ["qtr", 3],
+                ["rja", 2],
+                ["ryr", 1],
+                ["sas", 3],
+                ["sia", 1],
+                ["sxd", 2],
+                ["swr", 1],
+                ["tap", 2],
+                ["rot", 1],
+                ["tra", 88],
+                ["tvf", 1],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53],
+                ["aui", 1],
+                ["ual", 4],
+                ["vlg", 16],
+                ["clx", 1],
+                ["cwc", 3],
+                ["ckk", 3],
+                ["fdx", 2],
+                ["mas", 3],
+                ["nca", 1],
+                ["azq", 1],
                 ["sia/cargo", 9],
-                ["yzr",   4]
+                ["yzr", 4]
             ]
         },
         {
@@ -1499,71 +1526,71 @@
             "method": "random",
             "rate": 3,
             "airlines": [
-                ["aee",   1],
-                ["ein",   2],
-                ["afl",   1],
-                ["amx",   1],
-                ["aca",   1],
-                ["afr",   6],
-                ["amc",   1],
-                ["asl",   1],
-                ["aza",   2],
-                ["aal",   1],
-                ["aua",   1],
-                ["baw",   3],
-                ["lzb",   2],
-                ["cpa",   5],
-                ["ces",   1],
-                ["csn",   6],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["cal",   5],
-                ["ctn",   1],
-                ["csa",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["ely",   1],
-                ["uae",   4],
-                ["etd",   5],
-                ["ewg",   2],
-                ["eva",   2],
-                ["gia",   1],
-                ["ibs",   1],
-                ["exs",   1],
+                ["aee", 1],
+                ["ein", 2],
+                ["afl", 1],
+                ["amx", 1],
+                ["aca", 1],
+                ["afr", 6],
+                ["amc", 1],
+                ["asl", 1],
+                ["aza", 2],
+                ["aal", 1],
+                ["aua", 1],
+                ["baw", 3],
+                ["lzb", 2],
+                ["cpa", 5],
+                ["ces", 1],
+                ["csn", 6],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["cal", 5],
+                ["ctn", 1],
+                ["csa", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["ely", 1],
+                ["uae", 4],
+                ["etd", 5],
+                ["ewg", 2],
+                ["eva", 2],
+                ["gia", 1],
+                ["ibs", 1],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["lot",   1],
-                ["dlh",   3],
-                ["mph",  20],
-                ["nax",   3],
-                ["pgt",   2],
-                ["qtr",   3],
-                ["rja",   2],
-                ["ryr",   1],
-                ["sas",   3],
-                ["sia",   1],
-                ["sxd",   2],
-                ["swr",   1],
-                ["tap",   2],
-                ["rot",   1],
-                ["tra",  88],
-                ["tvf",   1],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53],
-                ["aui",   1],
-                ["ual",   4],
-                ["vlg",  16],
-                ["clx",   1],
-                ["cwc",   3],
-                ["ckk",   3],
-                ["fdx",   2],
-                ["mas",   3],
-                ["nca",   1],
-                ["azq",   1],
+                ["klc", 44],
+                ["kal", 2],
+                ["lot", 1],
+                ["dlh", 3],
+                ["mph", 20],
+                ["nax", 3],
+                ["pgt", 2],
+                ["qtr", 3],
+                ["rja", 2],
+                ["ryr", 1],
+                ["sas", 3],
+                ["sia", 1],
+                ["sxd", 2],
+                ["swr", 1],
+                ["tap", 2],
+                ["rot", 1],
+                ["tra", 88],
+                ["tvf", 1],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53],
+                ["aui", 1],
+                ["ual", 4],
+                ["vlg", 16],
+                ["clx", 1],
+                ["cwc", 3],
+                ["ckk", 3],
+                ["fdx", 2],
+                ["mas", 3],
+                ["nca", 1],
+                ["azq", 1],
                 ["sia/cargo", 9],
-                ["yzr",   4]
+                ["yzr", 4]
             ]
         },
         {
@@ -1576,71 +1603,71 @@
             "method": "random",
             "rate": 3,
             "airlines": [
-                ["aee",   1],
-                ["ein",   2],
-                ["afl",   1],
-                ["amx",   1],
-                ["aca",   1],
-                ["afr",   6],
-                ["amc",   1],
-                ["asl",   1],
-                ["aza",   2],
-                ["aal",   1],
-                ["aua",   1],
-                ["baw",   3],
-                ["lzb",   2],
-                ["cpa",   5],
-                ["ces",   1],
-                ["csn",   6],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["cal",   5],
-                ["ctn",   1],
-                ["csa",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["ely",   1],
-                ["uae",   4],
-                ["etd",   5],
-                ["ewg",   2],
-                ["eva",   2],
-                ["gia",   1],
-                ["ibs",   1],
-                ["exs",   1],
+                ["aee", 1],
+                ["ein", 2],
+                ["afl", 1],
+                ["amx", 1],
+                ["aca", 1],
+                ["afr", 6],
+                ["amc", 1],
+                ["asl", 1],
+                ["aza", 2],
+                ["aal", 1],
+                ["aua", 1],
+                ["baw", 3],
+                ["lzb", 2],
+                ["cpa", 5],
+                ["ces", 1],
+                ["csn", 6],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["cal", 5],
+                ["ctn", 1],
+                ["csa", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["ely", 1],
+                ["uae", 4],
+                ["etd", 5],
+                ["ewg", 2],
+                ["eva", 2],
+                ["gia", 1],
+                ["ibs", 1],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["lot",   1],
-                ["dlh",   3],
-                ["mph",  20],
-                ["nax",   3],
-                ["pgt",   2],
-                ["qtr",   3],
-                ["rja",   2],
-                ["ryr",   1],
-                ["sas",   3],
-                ["sia",   1],
-                ["sxd",   2],
-                ["swr",   1],
-                ["tap",   2],
-                ["rot",   1],
-                ["tra",  88],
-                ["tvf",   1],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53],
-                ["aui",   1],
-                ["ual",   4],
-                ["vlg",  16],
-                ["clx",   1],
-                ["cwc",   3],
-                ["ckk",   3],
-                ["fdx",   2],
-                ["mas",   3],
-                ["nca",   1],
-                ["azq",   1],
+                ["klc", 44],
+                ["kal", 2],
+                ["lot", 1],
+                ["dlh", 3],
+                ["mph", 20],
+                ["nax", 3],
+                ["pgt", 2],
+                ["qtr", 3],
+                ["rja", 2],
+                ["ryr", 1],
+                ["sas", 3],
+                ["sia", 1],
+                ["sxd", 2],
+                ["swr", 1],
+                ["tap", 2],
+                ["rot", 1],
+                ["tra", 88],
+                ["tvf", 1],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53],
+                ["aui", 1],
+                ["ual", 4],
+                ["vlg", 16],
+                ["clx", 1],
+                ["cwc", 3],
+                ["ckk", 3],
+                ["fdx", 2],
+                ["mas", 3],
+                ["nca", 1],
+                ["azq", 1],
                 ["sia/cargo", 9],
-                ["yzr",   4]
+                ["yzr", 4]
             ]
         },
         {
@@ -1653,71 +1680,71 @@
             "method": "random",
             "rate": 3,
             "airlines": [
-                ["aee",   1],
-                ["ein",   2],
-                ["afl",   1],
-                ["amx",   1],
-                ["aca",   1],
-                ["afr",   6],
-                ["amc",   1],
-                ["asl",   1],
-                ["aza",   2],
-                ["aal",   1],
-                ["aua",   1],
-                ["baw",   3],
-                ["lzb",   2],
-                ["cpa",   5],
-                ["ces",   1],
-                ["csn",   6],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["cal",   5],
-                ["ctn",   1],
-                ["csa",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["ely",   1],
-                ["uae",   4],
-                ["etd",   5],
-                ["ewg",   2],
-                ["eva",   2],
-                ["gia",   1],
-                ["ibs",   1],
-                ["exs",   1],
+                ["aee", 1],
+                ["ein", 2],
+                ["afl", 1],
+                ["amx", 1],
+                ["aca", 1],
+                ["afr", 6],
+                ["amc", 1],
+                ["asl", 1],
+                ["aza", 2],
+                ["aal", 1],
+                ["aua", 1],
+                ["baw", 3],
+                ["lzb", 2],
+                ["cpa", 5],
+                ["ces", 1],
+                ["csn", 6],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["cal", 5],
+                ["ctn", 1],
+                ["csa", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["ely", 1],
+                ["uae", 4],
+                ["etd", 5],
+                ["ewg", 2],
+                ["eva", 2],
+                ["gia", 1],
+                ["ibs", 1],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["lot",   1],
-                ["dlh",   3],
-                ["mph",  20],
-                ["nax",   3],
-                ["pgt",   2],
-                ["qtr",   3],
-                ["rja",   2],
-                ["ryr",   1],
-                ["sas",   3],
-                ["sia",   1],
-                ["sxd",   2],
-                ["swr",   1],
-                ["tap",   2],
-                ["rot",   1],
-                ["tra",  88],
-                ["tvf",   1],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53],
-                ["aui",   1],
-                ["ual",   4],
-                ["vlg",  16],
-                ["clx",   1],
-                ["cwc",   3],
-                ["ckk",   3],
-                ["fdx",   2],
-                ["mas",   3],
-                ["nca",   1],
-                ["azq",   1],
+                ["klc", 44],
+                ["kal", 2],
+                ["lot", 1],
+                ["dlh", 3],
+                ["mph", 20],
+                ["nax", 3],
+                ["pgt", 2],
+                ["qtr", 3],
+                ["rja", 2],
+                ["ryr", 1],
+                ["sas", 3],
+                ["sia", 1],
+                ["sxd", 2],
+                ["swr", 1],
+                ["tap", 2],
+                ["rot", 1],
+                ["tra", 88],
+                ["tvf", 1],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53],
+                ["aui", 1],
+                ["ual", 4],
+                ["vlg", 16],
+                ["clx", 1],
+                ["cwc", 3],
+                ["ckk", 3],
+                ["fdx", 2],
+                ["mas", 3],
+                ["nca", 1],
+                ["azq", 1],
                 ["sia/cargo", 9],
-                ["yzr",   4]
+                ["yzr", 4]
             ]
         },
         {
@@ -1730,26 +1757,26 @@
             "method": "random",
             "rate": 2,
             "airlines": [
-                ["ein",   2],
-                ["amx",   1],
-                ["aca",   1],
-                ["amc",   1],
-                ["aal",   1],
-                ["baw",   3],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["exs",   1],
+                ["ein", 2],
+                ["amx", 1],
+                ["aca", 1],
+                ["amc", 1],
+                ["aal", 1],
+                ["baw", 3],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["mph",  20],
-                ["ryr",   1],
-                ["tra",  88],
-                ["tfl",  53],
-                ["ual",   4],
-                ["fdx",   2]
+                ["klc", 44],
+                ["kal", 2],
+                ["mph", 20],
+                ["ryr", 1],
+                ["tra", 88],
+                ["tfl", 53],
+                ["ual", 4],
+                ["fdx", 2]
             ]
         },
         {
@@ -1762,26 +1789,26 @@
             "method": "random",
             "rate": 2,
             "airlines": [
-                ["ein",   2],
-                ["amx",   1],
-                ["aca",   1],
-                ["amc",   1],
-                ["aal",   1],
-                ["baw",   3],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["exs",   1],
+                ["ein", 2],
+                ["amx", 1],
+                ["aca", 1],
+                ["amc", 1],
+                ["aal", 1],
+                ["baw", 3],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["mph",  20],
-                ["ryr",   1],
-                ["tra",  88],
-                ["tfl",  53],
-                ["ual",   4],
-                ["fdx",   2]
+                ["klc", 44],
+                ["kal", 2],
+                ["mph", 20],
+                ["ryr", 1],
+                ["tra", 88],
+                ["tfl", 53],
+                ["ual", 4],
+                ["fdx", 2]
             ]
         },
         {
@@ -1794,26 +1821,26 @@
             "method": "random",
             "rate": 2,
             "airlines": [
-                ["ein",   2],
-                ["amx",   1],
-                ["aca",   1],
-                ["amc",   1],
-                ["aal",   1],
-                ["baw",   3],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["exs",   1],
+                ["ein", 2],
+                ["amx", 1],
+                ["aca", 1],
+                ["amc", 1],
+                ["aal", 1],
+                ["baw", 3],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["mph",  20],
-                ["ryr",   1],
-                ["tra",  88],
-                ["tfl",  53],
-                ["ual",   4],
-                ["fdx",   2]
+                ["klc", 44],
+                ["kal", 2],
+                ["mph", 20],
+                ["ryr", 1],
+                ["tra", 88],
+                ["tfl", 53],
+                ["ual", 4],
+                ["fdx", 2]
             ]
         },
         {
@@ -1826,28 +1853,28 @@
             "method": "random",
             "rate": 2,
             "airlines": [
-                ["ein",   2],
-                ["amx",   1],
-                ["aca",   1],
-                ["amc",   1],
-                ["aal",   1],
-                ["baw",   3],
-                ["cnd",  15],
-                ["bcy",   1],
-                ["dal",   9],
-                ["ezy",  40],
-                ["exs",   1],
+                ["ein", 2],
+                ["amx", 1],
+                ["aca", 1],
+                ["amc", 1],
+                ["aal", 1],
+                ["baw", 3],
+                ["cnd", 15],
+                ["bcy", 1],
+                ["dal", 9],
+                ["ezy", 40],
+                ["exs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["mph",  20],
-                ["ryr",   1],
-                ["tra",  88],
-                ["tfl",  53],
-                ["ual",   4],
-                ["fdx",   2],
-                ["sas",   3],
-                ["nax",   3]
+                ["klc", 44],
+                ["kal", 2],
+                ["mph", 20],
+                ["ryr", 1],
+                ["tra", 88],
+                ["tfl", 53],
+                ["ual", 4],
+                ["fdx", 2],
+                ["sas", 3],
+                ["nax", 3]
             ]
         },
         {
@@ -1860,44 +1887,44 @@
             "method": "random",
             "rate": 2,
             "airlines": [
-                ["afl",   1],
-                ["asl",   1],
-                ["lzb",   2],
-                ["cpa",   5],
-                ["ces",   1],
-                ["csn",   6],
-                ["cnd",  15],
-                ["cal",   5],
-                ["ctn",   1],
-                ["csa",   1],
-                ["ezy",  40],
-                ["ely",   1],
-                ["uae",   4],
-                ["etd",   5],
-                ["ewg",   2],
-                ["eva",   2],
-                ["gia",   1],
+                ["afl", 1],
+                ["asl", 1],
+                ["lzb", 2],
+                ["cpa", 5],
+                ["ces", 1],
+                ["csn", 6],
+                ["cnd", 15],
+                ["cal", 5],
+                ["ctn", 1],
+                ["csa", 1],
+                ["ezy", 40],
+                ["ely", 1],
+                ["uae", 4],
+                ["etd", 5],
+                ["ewg", 2],
+                ["eva", 2],
+                ["gia", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["lot",   1],
-                ["dlh",   3],
-                ["mph",  20],
-                ["nax",   3],
-                ["pgt",   2],
-                ["rja",   2],
-                ["sas",   3],
-                ["sxd",   2],
-                ["rot",   1],
-                ["tra",  88],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53],
-                ["aui",   1],
-                ["ual",   4],
-                ["ckk",   3],
-                ["nca",   1],
-                ["azq",   1],
-                ["yzr",   4]
+                ["klc", 44],
+                ["lot", 1],
+                ["dlh", 3],
+                ["mph", 20],
+                ["nax", 3],
+                ["pgt", 2],
+                ["rja", 2],
+                ["sas", 3],
+                ["sxd", 2],
+                ["rot", 1],
+                ["tra", 88],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53],
+                ["aui", 1],
+                ["ual", 4],
+                ["ckk", 3],
+                ["nca", 1],
+                ["azq", 1],
+                ["yzr", 4]
             ]
         },
         {
@@ -1910,36 +1937,36 @@
             "method": "random",
             "rate": 2,
             "airlines": [
-                ["aee",   1],
-                ["asl",   1],
-                ["aza",   2],
-                ["aua",   1],
-                ["lzb",   2],
-                ["cnd",  15],
-                ["ctn",   1],
-                ["ezy",  40],
-                ["ely",   1],
-                ["uae",   4],
-                ["etd",   5],
-                ["ewg",   2],
-                ["gia",   1],
+                ["aee", 1],
+                ["asl", 1],
+                ["aza", 2],
+                ["aua", 1],
+                ["lzb", 2],
+                ["cnd", 15],
+                ["ctn", 1],
+                ["ezy", 40],
+                ["ely", 1],
+                ["uae", 4],
+                ["etd", 5],
+                ["ewg", 2],
+                ["gia", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["kal",   2],
-                ["dlh",   3],
-                ["mph",  20],
-                ["pgt",   2],
-                ["qtr",   3],
-                ["rja",   2],
-                ["sia",   1],
-                ["sxd",   2],
-                ["swr",   1],
-                ["rot",   1],
-                ["tra",  88],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53],
-                ["mas",   3],
+                ["klc", 44],
+                ["kal", 2],
+                ["dlh", 3],
+                ["mph", 20],
+                ["pgt", 2],
+                ["qtr", 3],
+                ["rja", 2],
+                ["sia", 1],
+                ["sxd", 2],
+                ["swr", 1],
+                ["rot", 1],
+                ["tra", 88],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53],
+                ["mas", 3],
                 ["sia/cargo", 9]
             ]
         },
@@ -1953,26 +1980,26 @@
             "method": "random",
             "rate": 2,
             "airlines": [
-                ["aee",   1],
-                ["asl",   1],
-                ["aza",   2],
-                ["aua",   1],
-                ["lzb",   2],
-                ["cnd",  15],
-                ["ctn",   1],
-                ["ezy",  40],
-                ["ely",   1],
-                ["ewg",   2],
+                ["aee", 1],
+                ["asl", 1],
+                ["aza", 2],
+                ["aua", 1],
+                ["lzb", 2],
+                ["cnd", 15],
+                ["ctn", 1],
+                ["ezy", 40],
+                ["ely", 1],
+                ["ewg", 2],
                 ["klm", 138],
-                ["klc",  44],
-                ["dlh",   3],
-                ["mph",  20],
-                ["swr",   1],
-                ["rot",   1],
-                ["tra",  88],
-                ["tar",   1],
-                ["thy",   5],
-                ["tfl",  53]
+                ["klc", 44],
+                ["dlh", 3],
+                ["mph", 20],
+                ["swr", 1],
+                ["rot", 1],
+                ["tra", 88],
+                ["tar", 1],
+                ["thy", 5],
+                ["tfl", 53]
             ]
         },
         {
@@ -1985,17 +2012,17 @@
             "method": "random",
             "rate": 2,
             "airlines": [
-                ["cnd",  15],
-                ["ezy",  40],
-                ["ibs",   1],
+                ["cnd", 15],
+                ["ezy", 40],
+                ["ibs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["mph",  20],
-                ["tap",   2],
-                ["tra",  88],
-                ["tvf",   1],
-                ["tfl",  53],
-                ["vlg",  16]
+                ["klc", 44],
+                ["mph", 20],
+                ["tap", 2],
+                ["tra", 88],
+                ["tvf", 1],
+                ["tfl", 53],
+                ["vlg", 16]
             ]
         },
         {
@@ -2008,17 +2035,17 @@
             "method": "random",
             "rate": 2,
             "airlines": [
-                ["cnd",  15],
-                ["ezy",  40],
-                ["ibs",   1],
+                ["cnd", 15],
+                ["ezy", 40],
+                ["ibs", 1],
                 ["klm", 138],
-                ["klc",  44],
-                ["mph",  20],
-                ["tap",   2],
-                ["tra",  88],
-                ["tvf",   1],
-                ["tfl",  53],
-                ["vlg",  16]
+                ["klc", 44],
+                ["mph", 20],
+                ["tap", 2],
+                ["tra", 88],
+                ["tvf", 1],
+                ["tfl", 53],
+                ["vlg", 16]
             ]
         },
         {
@@ -2031,9 +2058,9 @@
             "method": "random",
             "rate": 2,
             "airlines": [
-                ["clx",   1],
-                ["dlh",   3],
-                ["sxd",   1]
+                ["clx", 1],
+                ["dlh", 3],
+                ["sxd", 1]
             ]
         },
         {
@@ -2046,9 +2073,9 @@
             "method": "random",
             "rate": 2,
             "airlines": [
-                ["clx",   1],
-                ["dlh",   3],
-                ["sxd",   1]
+                ["clx", 1],
+                ["dlh", 3],
+                ["sxd", 1]
             ]
         }
     ]

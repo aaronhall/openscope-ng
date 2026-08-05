@@ -3,9 +3,7 @@
     "name": "General Aviation Isle of Man",
     "callsign": {
         "name": "Mike",
-        "callsignFormats": [
-            "@@@@"
-        ]
+        "callsignFormats": ["@@@@"]
     },
     "fleets": {
         "default": [

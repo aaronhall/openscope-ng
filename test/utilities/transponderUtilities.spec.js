@@ -1,6 +1,8 @@
 import { test, expect } from 'vitest';
 import {
-    generateTransponderCode, isDiscreteTransponderCode, isValidTransponderCode
+    generateTransponderCode,
+    isDiscreteTransponderCode,
+    isValidTransponderCode,
 } from '../../src/assets/scripts/client/utilities/transponderUtilities';
 
 const USA_ICAO = 'klax';

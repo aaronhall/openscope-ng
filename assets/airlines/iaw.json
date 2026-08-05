@@ -3,10 +3,7 @@
     "name": "Iraqi Airways",
     "callsign": {
         "name": "Iraqi",
-        "callsignFormats": [
-            "####",
-            "###"
-        ]
+        "callsignFormats": ["####", "###"]
     },
     "fleets": {
         "default": [
@@ -27,8 +24,6 @@
             ["B738", 14],
             ["CRJ9", 6]
         ],
-        "b738": [
-            ["B738", 14]
-        ]
+        "b738": [["B738", 14]]
     }
 }

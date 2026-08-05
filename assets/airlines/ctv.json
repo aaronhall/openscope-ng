@@ -3,9 +3,7 @@
     "name": "Citilink",
     "callsign": {
         "name": "Supergreen",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

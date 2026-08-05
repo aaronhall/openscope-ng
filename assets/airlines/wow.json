@@ -3,9 +3,7 @@
     "name": "WOW Air",
     "callsign": {
         "name": "Wow Air",
-        "callsignFormats": [
-            "#@@"
-        ]
+        "callsignFormats": ["#@@"]
     },
     "fleets": {
         "default": [
@@ -15,8 +13,6 @@
             ["A321", 12],
             ["A333", 3]
         ],
-        "a320": [
-            ["A320", 2]
-        ]
+        "a320": [["A320", 2]]
     }
 }

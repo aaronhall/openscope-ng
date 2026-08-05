@@ -3,10 +3,7 @@
     "name": "Flexjet",
     "callsign": {
         "name": "Flexjet",
-        "callsignFormats": [
-            "##",
-            "###"
-        ]
+        "callsignFormats": ["##", "###"]
     },
     "fleets": {
         "default": [

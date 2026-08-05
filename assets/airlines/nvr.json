@@ -3,13 +3,9 @@
     "name": "Novair",
     "callsign": {
         "name": "Navigator",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["A21N", 2]
-        ]
+        "default": [["A21N", 2]]
     }
 }

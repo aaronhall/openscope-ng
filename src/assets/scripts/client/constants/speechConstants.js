@@ -9,7 +9,7 @@ export const VOICES = [
     'Fiona',
     'Google US English',
     'Google UK English Female',
-    'Google UK English Male'
+    'Google UK English Male',
 ];
 
 /**

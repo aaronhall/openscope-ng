@@ -3,9 +3,7 @@
     "name": "General Aviation Ghana",
     "callsign": {
         "name": "Niner Golf",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

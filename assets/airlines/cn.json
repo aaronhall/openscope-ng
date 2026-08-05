@@ -3,9 +3,7 @@
     "name": "General Aviation Morocco",
     "callsign": {
         "name": "Charlie November",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

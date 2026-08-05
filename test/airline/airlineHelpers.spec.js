@@ -3,16 +3,14 @@ import { test, expect, vi } from 'vitest';
 
 import {
     airlineNameAndFleetHelper,
-    randomAirlineSelectionHelper
+    randomAirlineSelectionHelper,
 } from '../../src/assets/scripts/client/airline/airlineHelpers';
 
-const AIRLINE_LIST_WITH_SEPERATOR_MOCK = [
-    ['a7/fastGA', 4]
-];
+const AIRLINE_LIST_WITH_SEPERATOR_MOCK = [['a7/fastGA', 4]];
 
 const AIRLINE_LIST_WITHOUT_SEPERATOR_MOCK = [
     ['aay', 15],
-    ['aay', 15]
+    ['aay', 15],
 ];
 
 test('.airlineNameAndFleetHelper() throws when called with an invalid parameter', () => {

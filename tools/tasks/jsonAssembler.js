@@ -7,7 +7,7 @@ const OPTIONS = require('../options');
 
 const BUILD_CONFIG = [
     [OPTIONS.DIR.ASSETS_AIRCRAFT, 'aircraft.json', OPTIONS.DIR.DIST_AIRCRAFT],
-    [OPTIONS.DIR.ASSETS_AIRLINES, 'airlines.json', OPTIONS.DIR.DIST_AIRLINES]
+    [OPTIONS.DIR.ASSETS_AIRLINES, 'airlines.json', OPTIONS.DIR.DIST_AIRLINES],
 ];
 
 /**

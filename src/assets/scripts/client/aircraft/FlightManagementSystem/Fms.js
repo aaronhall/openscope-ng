@@ -8,10 +8,7 @@ import AirportController from '../../airport/AirportController';
 import NavigationLibrary from '../../navigationLibrary/NavigationLibrary';
 import RunwayModel from '../../airport/runway/RunwayModel';
 import { isEmptyOrNotObject } from '../../utilities/validatorUtilities';
-import {
-    FLIGHT_CATEGORY,
-    FLIGHT_PHASE
-} from '../../constants/aircraftConstants';
+import { FLIGHT_CATEGORY, FLIGHT_PHASE } from '../../constants/aircraftConstants';
 import { INVALID_NUMBER } from '../../constants/globalConstants';
 import { PROCEDURE_OR_AIRWAY_SEGMENT_DIVIDER } from '../../constants/routeConstants';
 
@@ -61,8 +58,10 @@ export default class Fms {
      */
     constructor(aircraftInitProps) {
         if (isEmptyOrNotObject(aircraftInitProps)) {
-            throw new TypeError('Invalid aircraftInitProps passed to Fms constructor. ' +
-                `Expected a non-empty object, but received ${typeof aircraftInitProps}`);
+            throw new TypeError(
+                'Invalid aircraftInitProps passed to Fms constructor. ' +
+                    `Expected a non-empty object, but received ${typeof aircraftInitProps}`
+            );
         }
 
         /**
@@ -178,8 +177,9 @@ export default class Fms {
      * @type {WaypointModel}
      */
     get nextHardAltitudeRestrictedWaypoint() {
-        const waypoints = this.getAltitudeRestrictedWaypoints()
-            .filter((waypoint) => waypoint.altitudeMaximum === waypoint.altitudeMinimum);
+        const waypoints = this.getAltitudeRestrictedWaypoints().filter(
+            (waypoint) => waypoint.altitudeMaximum === waypoint.altitudeMinimum
+        );
 
         return waypoints[0];
     }
@@ -192,8 +192,9 @@ export default class Fms {
      * @type {WaypointModel}
      */
     get nextHardSpeedRestrictedWaypoint() {
-        const waypoints = this.getSpeedRestrictedWaypoints()
-            .filter((waypoint) => waypoint.speedMaximum === waypoint.speedMinimum);
+        const waypoints = this.getSpeedRestrictedWaypoints().filter(
+            (waypoint) => waypoint.speedMaximum === waypoint.speedMinimum
+        );
 
         return waypoints[0];
     }
@@ -257,15 +258,8 @@ export default class Fms {
      * @chainable
      */
     init(aircraftInitProps) {
-        const {
-            altitude,
-            category,
-            destination,
-            model,
-            nextFix,
-            origin,
-            routeString
-        } = aircraftInitProps;
+        const { altitude, category, destination, model, nextFix, origin, routeString } =
+            aircraftInitProps;
 
         this._routeModel = new RouteModel(routeString);
 
@@ -412,7 +406,9 @@ export default class Fms {
                 return this.setFlightPhase(FLIGHT_PHASE.APRON);
 
             default:
-                throw new TypeError(`Expected known spawn pattern category, but received "${category}"`);
+                throw new TypeError(
+                    `Expected known spawn pattern category, but received "${category}"`
+                );
         }
     }
 
@@ -461,7 +457,9 @@ export default class Fms {
         }
 
         if (!this._routeModel.hasWaypointName(fixName)) {
-            throw new TypeError(`Expected initial fix to be in flight plan route, but received '${fixName}'`);
+            throw new TypeError(
+                `Expected initial fix to be in flight plan route, but received '${fixName}'`
+            );
         }
 
         this.skipToWaypointName(fixName);
@@ -481,13 +479,23 @@ export default class Fms {
      */
     activateHoldForWaypointName(waypointName, holdParameters, fallbackInboundHeading = undefined) {
         if (!this._routeModel.hasWaypointName(waypointName)) {
-            return [false, {
-                log: `unable to hold at ${waypointName.toUpperCase()}; it is not on our route!`,
-                say: `unable to hold at ${NavigationLibrary.getFixSpokenName(waypointName)}; it is not on our route!`
-            }];
+            return [
+                false,
+                {
+                    log: `unable to hold at ${waypointName.toUpperCase()}; it is not on our route!`,
+                    say: `unable to hold at ${NavigationLibrary.getFixSpokenName(waypointName)}; it is not on our route!`,
+                },
+            ];
         }
 
-        return [true, this._routeModel.activateHoldForWaypointName(waypointName, holdParameters, fallbackInboundHeading)];
+        return [
+            true,
+            this._routeModel.activateHoldForWaypointName(
+                waypointName,
+                holdParameters,
+                fallbackInboundHeading
+            ),
+        ];
     }
 
     /**
@@ -539,7 +547,9 @@ export default class Fms {
      * @return {WaypointModel}
      */
     findNextWaypointWithMaximumAltitudeAtOrBelow(altitude) {
-        return _find(this.waypoints, (waypointModel) => waypointModel.hasMaximumAltitudeAtOrBelow(altitude));
+        return _find(this.waypoints, (waypointModel) =>
+            waypointModel.hasMaximumAltitudeAtOrBelow(altitude)
+        );
     }
 
     /**
@@ -566,7 +576,9 @@ export default class Fms {
      * @return {WaypointModel}
      */
     findNextWaypointWithMaximumSpeedAtOrBelow(speed) {
-        return _find(this.waypoints, (waypointModel) => waypointModel.hasMaximumSpeedAtOrBelow(speed));
+        return _find(this.waypoints, (waypointModel) =>
+            waypointModel.hasMaximumSpeedAtOrBelow(speed)
+        );
     }
 
     /**
@@ -582,7 +594,9 @@ export default class Fms {
      * @return {WaypointModel}
      */
     findNextWaypointWithMinimumAltitudeAtOrAbove(altitude) {
-        return _find(this.waypoints, (waypointModel) => waypointModel.hasMinimumAltitudeAtOrAbove(altitude));
+        return _find(this.waypoints, (waypointModel) =>
+            waypointModel.hasMinimumAltitudeAtOrAbove(altitude)
+        );
     }
 
     /**
@@ -609,7 +623,9 @@ export default class Fms {
      * @return {WaypointModel}
      */
     findNextWaypointWithMinimumSpeedAtOrAbove(speed) {
-        return _find(this.waypoints, (waypointModel) => waypointModel.hasMinimumSpeedAtOrAbove(speed));
+        return _find(this.waypoints, (waypointModel) =>
+            waypointModel.hasMinimumSpeedAtOrAbove(speed)
+        );
     }
 
     /**
@@ -878,7 +894,9 @@ export default class Fms {
      * @return {array<boolean, string>}
      */
     replaceArrivalProcedure(routeString) {
-        const routeStringElements = routeString.toUpperCase().split(PROCEDURE_OR_AIRWAY_SEGMENT_DIVIDER);
+        const routeStringElements = routeString
+            .toUpperCase()
+            .split(PROCEDURE_OR_AIRWAY_SEGMENT_DIVIDER);
 
         if (routeStringElements.length !== 3) {
             return [false, 'arrival procedure format not understood'];
@@ -910,7 +928,9 @@ export default class Fms {
      * @return {boolean}
      */
     replaceDepartureProcedure(routeString, airportIcao) {
-        const routeStringElements = routeString.toUpperCase().split(PROCEDURE_OR_AIRWAY_SEGMENT_DIVIDER);
+        const routeStringElements = routeString
+            .toUpperCase()
+            .split(PROCEDURE_OR_AIRWAY_SEGMENT_DIVIDER);
 
         if (routeStringElements.length > 3) {
             return [false, 'departure procedure format not understood'];
@@ -918,7 +938,8 @@ export default class Fms {
 
         let procedureId = routeStringElements[0];
 
-        if (routeStringElements.length === 3) { // if the runway IS specified in the route string
+        if (routeStringElements.length === 3) {
+            // if the runway IS specified in the route string
             procedureId = routeStringElements[1];
         }
 
@@ -928,17 +949,24 @@ export default class Fms {
             return [false, `unknown procedure "${procedureId}"`];
         }
 
-        if (routeStringElements.length === 1) { // RouteString looks like PROC
-            const exitPoint = _findLast(this.waypoints, (waypointModel) => sidModel.hasExit(waypointModel.name));
+        if (routeStringElements.length === 1) {
+            // RouteString looks like PROC
+            const exitPoint = _findLast(this.waypoints, (waypointModel) =>
+                sidModel.hasExit(waypointModel.name)
+            );
 
             if (!exitPoint) {
-                return [false, `the ${procedureId.toUpperCase()} departure doesn't have an exit along our route`];
+                return [
+                    false,
+                    `the ${procedureId.toUpperCase()} departure doesn't have an exit along our route`,
+                ];
             }
 
             routeStringElements.push(exitPoint.name);
         }
 
-        if (routeStringElements.length === 2) { // RouteString looks like PROC.EXIT
+        if (routeStringElements.length === 2) {
+            // RouteString looks like PROC.EXIT
             const expectedRunwayModel = this.departureRunwayModel;
             let entryPoint = `${airportIcao.toUpperCase()}${expectedRunwayModel.name}`;
 
@@ -1015,7 +1043,9 @@ export default class Fms {
      */
     setArrivalRunway(nextRunwayModel) {
         if (!(nextRunwayModel instanceof RunwayModel)) {
-            throw new TypeError(`Expected instance of RunwayModel, but received ${nextRunwayModel}`);
+            throw new TypeError(
+                `Expected instance of RunwayModel, but received ${nextRunwayModel}`
+            );
         }
 
         this.arrivalRunwayModel = nextRunwayModel;
@@ -1104,7 +1134,9 @@ export default class Fms {
         const currentArrivalRunway = this.arrivalRunwayModel;
 
         if (!(nextRunwayModel instanceof RunwayModel)) {
-            throw new TypeError(`Expected instance of RunwayModel, but received ${nextRunwayModel}`);
+            throw new TypeError(
+                `Expected instance of RunwayModel, but received ${nextRunwayModel}`
+            );
         }
 
         if (currentArrivalRunway && currentArrivalRunway.name === nextRunwayModel.name) {
@@ -1117,10 +1149,12 @@ export default class Fms {
 
         if (!this._routeModel.isRunwayModelValidForStar(nextRunwayModel)) {
             const readback = {};
-            readback.log = `unable, according to our charts, Runway ${nextRunwayModel.name} is ` +
+            readback.log =
+                `unable, according to our charts, Runway ${nextRunwayModel.name} is ` +
                 `not valid for the ${this._routeModel.getStarIcao()} arrival, expecting ` +
                 `Runway ${currentArrivalRunway.name} instead`;
-            readback.say = `unable, according to our charts, Runway ${nextRunwayModel.getRadioName()} ` +
+            readback.say =
+                `unable, according to our charts, Runway ${nextRunwayModel.getRadioName()} ` +
                 `is not valid for the ${this._routeModel.getStarName()} arrival, expecting ` +
                 `Runway ${currentArrivalRunway.getRadioName()} instead`;
 
@@ -1186,8 +1220,10 @@ export default class Fms {
      */
     _verifyRouteContainsMultipleWaypoints() {
         if (this.waypoints.length < 2) {
-            throw new TypeError('Expected flight plan route to have at least two ' +
-                `waypoints, but only found ${this.waypoints.length} waypoints`);
+            throw new TypeError(
+                'Expected flight plan route to have at least two ' +
+                    `waypoints, but only found ${this.waypoints.length} waypoints`
+            );
         }
     }
 }

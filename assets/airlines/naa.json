@@ -3,13 +3,9 @@
     "name": "Norwegian Air Argentina",
     "callsign": {
         "name": "Noruega",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["B738", 3]
-        ]
+        "default": [["B738", 3]]
     }
 }

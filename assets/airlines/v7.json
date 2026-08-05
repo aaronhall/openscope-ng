@@ -3,9 +3,7 @@
     "name": "General Aviation Marshall Islands",
     "callsign": {
         "name": "Victor Seven",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

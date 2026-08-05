@@ -3,9 +3,7 @@
     "name": "Air Leap",
     "callsign": {
         "name": "Leap",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

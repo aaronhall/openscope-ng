@@ -24,7 +24,7 @@ export const CLASS_MAP = {
      * @type {SpawnPatternModel}
      * @final
      */
-    SpawnPatternModel: SpawnPatternModel
+    SpawnPatternModel: SpawnPatternModel,
 };
 
 /**

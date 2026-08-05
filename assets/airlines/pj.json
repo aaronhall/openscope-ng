@@ -3,9 +3,7 @@
     "name": "General Aviation Netherlands Antilles",
     "callsign": {
         "name": "Papa Juliet",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

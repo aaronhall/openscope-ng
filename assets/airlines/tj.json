@@ -3,9 +3,7 @@
     "name": "General Aviation Cameroon",
     "callsign": {
         "name": "Tango Juliet",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,19 +3,15 @@
     "name": "Aurora",
     "callsign": {
         "name": "Aurora",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
-	"fleets": {
-		"default": [
-			["A319", 10],
-			["DH8B", 2],
-			["DH8C", 4],
-			["DH8D", 5]
-		],
-		"a319": [
-			["A319", 10]
-		]
-	}
+    "fleets": {
+        "default": [
+            ["A319", 10],
+            ["DH8B", 2],
+            ["DH8C", 4],
+            ["DH8D", 5]
+        ],
+        "a319": [["A319", 10]]
+    }
 }

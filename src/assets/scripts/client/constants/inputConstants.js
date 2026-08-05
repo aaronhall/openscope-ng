@@ -6,7 +6,7 @@
  */
 export const COMMAND_CONTEXT = {
     AIRCRAFT: 'aircraft',
-    SCOPE: 'scope'
+    SCOPE: 'scope',
 };
 
 /**
@@ -19,7 +19,6 @@ export const COMMAND_CONTEXT = {
  * @final
  */
 export const KEY_CODES = {
-
     CONTROL_LEFT: 'ControlLeft',
     CONTROL_RIGHT: 'ControlRight',
     SHIFT_LEFT: 'ShiftLeft',
@@ -54,7 +53,7 @@ export const KEY_CODES = {
     F11: 'F11',
     F12: 'F12',
     // `
-    BACKQUOTE: 'Backquote'
+    BACKQUOTE: 'Backquote',
 };
 
 /**
@@ -65,7 +64,6 @@ export const KEY_CODES = {
  * @final
  */
 export const LEGACY_KEY_CODES = {
-
     ENTER: 13,
     ESCAPE: 27,
     TAB: 9,
@@ -95,7 +93,7 @@ export const LEGACY_KEY_CODES = {
     F11: 122,
     F12: 123,
     // `
-    BACKQUOTE: 220
+    BACKQUOTE: 220,
 };
 
 /**
@@ -104,7 +102,7 @@ export const LEGACY_KEY_CODES = {
 export const MEASURE_TOOL_STYLE = {
     STRAIGHT: 'straight',
     ARC_TO_NEXT: 'initial_turn',
-    ALL_ARCED: 'arced'
+    ALL_ARCED: 'arced',
 };
 
 /**
@@ -117,7 +115,7 @@ export const MEASURE_TOOL_STYLE = {
 export const MOUSE_BUTTON_NAMES = {
     LEFT: 'left',
     MIDDLE: 'middle',
-    RIGHT: 'right'
+    RIGHT: 'right',
 };
 
 /**
@@ -132,7 +130,7 @@ export const MOUSE_BUTTON_NAMES = {
 export const MOUSE_EVENT_CODE = {
     LEFT_PRESS: 1,
     MIDDLE_PRESS: 2,
-    RIGHT_PRESS: 3
+    RIGHT_PRESS: 3,
 };
 
 /**
@@ -151,5 +149,5 @@ export const PARSED_COMMAND_NAME = {
     RATE: 'rate',
     TIMEWARP: 'timewarp',
     TRANSMIT: 'transmit',
-    TUTORIAL: 'tutorial'
+    TUTORIAL: 'tutorial',
 };

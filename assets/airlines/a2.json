@@ -3,9 +3,7 @@
     "name": "General Aviation Botswana",
     "callsign": {
         "name": "Alpha Two",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

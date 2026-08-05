@@ -4,7 +4,7 @@ import StaticPositionModel from '../../src/assets/scripts/client/base/StaticPosi
 import { airportPositionFixtureKLAS } from '../fixtures/airportFixtures';
 import {
     DEFAULT_SCREEN_POSITION,
-    RELATIVE_POSITION_OFFSET_INDEX
+    RELATIVE_POSITION_OFFSET_INDEX,
 } from '../../src/assets/scripts/client/constants/positionConstants';
 
 const INVALID_COORDINATES_MOCK = ['NN36d38m01.199', -114.5];
@@ -19,14 +19,22 @@ test('throws when called to instantiate without parameters', () => {
 });
 
 test('sets internal properties when provided valid parameters', () => {
-    const result = new StaticPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
+    const result = new StaticPositionModel(
+        LAT_LONG_MOCK,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
 
     expect(result.latitude === LAT_LONG_DECIMAL_MOCK[0]).toBe(true);
     expect(result.longitude === LAT_LONG_DECIMAL_MOCK[1]).toBe(true);
     expect(result.elevation === 0).toBe(true);
     expect(_isEqual(result.relativePosition, expectedRelativePosition)).toBe(true);
-    expect(result.x === expectedRelativePosition[RELATIVE_POSITION_OFFSET_INDEX.LONGITUDINAL]).toBe(true);
-    expect(result.y === expectedRelativePosition[RELATIVE_POSITION_OFFSET_INDEX.LATITUDINAL]).toBe(true);
+    expect(result.x === expectedRelativePosition[RELATIVE_POSITION_OFFSET_INDEX.LONGITUDINAL]).toBe(
+        true
+    );
+    expect(result.y === expectedRelativePosition[RELATIVE_POSITION_OFFSET_INDEX.LATITUDINAL]).toBe(
+        true
+    );
     expect(_isEqual(result._referencePosition, airportPositionFixtureKLAS)).toBe(true);
     expect(result._magneticNorth === 0.2076941809873252).toBe(true);
     expect(_isEqual(result.gps, LAT_LONG_DECIMAL_MOCK)).toBe(true);
@@ -43,7 +51,11 @@ test('get relativePosition() returns [0, 0] if no reference position is provided
 });
 
 test('.setCoordinates() makes no changes if invalid coordinates are passed', () => {
-    const position1 = new StaticPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
+    const position1 = new StaticPositionModel(
+        LAT_LONG_MOCK,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
     const originalCoordinates = position1.gps;
 
     position1.setCoordinates(INVALID_COORDINATES_MOCK);
@@ -54,7 +66,11 @@ test('.setCoordinates() makes no changes if invalid coordinates are passed', () 
 });
 
 test('.setCoordinates() makes no changes if valid coordinates are passed', () => {
-    const position1 = new StaticPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
+    const position1 = new StaticPositionModel(
+        LAT_LONG_MOCK,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
     const originalCoordinates = position1.gps;
 
     position1.setCoordinates(LAT_LONG_DECIMAL_MOCK_2);

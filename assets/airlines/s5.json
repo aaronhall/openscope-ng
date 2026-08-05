@@ -3,9 +3,7 @@
     "name": "General Aviation Slovenia",
     "callsign": {
         "name": "Sierra Five",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

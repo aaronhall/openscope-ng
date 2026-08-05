@@ -3,13 +3,9 @@
     "name": "Indonesia Air Asia",
     "callsign": {
         "name": "Wagon Air",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 37]
-        ]
+        "default": [["A320", 37]]
     }
 }

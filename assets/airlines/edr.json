@@ -3,9 +3,7 @@
     "name": "Fly All Ways",
     "callsign": {
         "name": "Birdview",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

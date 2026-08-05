@@ -3,9 +3,7 @@
     "name": "General Aviation Cuba",
     "callsign": {
         "name": "Charlie Uniform",
-        "callsignFormats": [
-            "@####"
-        ]
+        "callsignFormats": ["@####"]
     },
     "fleets": {
         "default": [

@@ -54,7 +54,7 @@ function parseMarkdown(markdown) {
 function writeOutput(stringToWrite) {
     const destFile = OPTIONS.FILE.CHANGELOG_DEST;
     const outputJSON = JSON.stringify({
-        changelog: stringToWrite
+        changelog: stringToWrite,
     });
 
     fs.writeFile(destFile, outputJSON, (err) => {

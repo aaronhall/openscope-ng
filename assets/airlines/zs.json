@@ -3,9 +3,7 @@
     "name": "General Aviation South Africa",
     "callsign": {
         "name": "Zulu Sierra",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

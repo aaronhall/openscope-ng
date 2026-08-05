@@ -3,9 +3,7 @@
     "name": "General Aviation Bosnia and Herzegovina",
     "callsign": {
         "name": "Echo Seven",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

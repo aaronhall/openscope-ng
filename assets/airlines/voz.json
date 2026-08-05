@@ -3,11 +3,7 @@
     "name": "Virgin Australia",
     "callsign": {
         "name": "Velocity",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["####", "###", "##"]
     },
     "fleets": {
         "default": [
@@ -26,8 +22,6 @@
             ["A332", 6],
             ["B77W", 5]
         ],
-        "b77w": [
-            ["B77W", 5]
-        ]
+        "b77w": [["B77W", 5]]
     }
 }

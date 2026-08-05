@@ -3,9 +3,7 @@
     "name": "Czech Airlines",
     "callsign": {
         "name": "CSA",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

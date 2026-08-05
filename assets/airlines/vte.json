@@ -3,10 +3,7 @@
     "name": "Contour Airlines",
     "callsign": {
         "name": "Volunteer",
-        "callsignFormats": [
-            "####",
-            "###"
-        ]
+        "callsignFormats": ["####", "###"]
     },
     "fleets": {
         "default": [

@@ -3,10 +3,7 @@
     "name": "Hong Kong Airlines",
     "callsign": {
         "name": "Bauhinia",
-        "callsignFormats": [
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["###", "##"]
     },
     "fleets": {
         "default": [
@@ -15,16 +12,12 @@
             ["A333", 10],
             ["A359", 4]
         ],
-        "short": [
-            ["A320", 11]
-        ],
+        "short": [["A320", 11]],
         "long": [
             ["A332", 11],
             ["A333", 10],
             ["A359", 4]
         ],
-        "cargo": [
-            ["A332", 2]
-        ]
+        "cargo": [["A332", 2]]
     }
 }

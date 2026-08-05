@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle, no-unused-vars, no-undef, global-require */
 import $ from 'jquery';
 import _get from 'lodash/get';
 import _has from 'lodash/has';
@@ -11,7 +10,7 @@ import {
     LOWER_PITCH,
     HIGHER_PITCH,
     NORMAL_SPEED,
-    FASTER_SPEED
+    FASTER_SPEED,
 } from './constants/speechConstants';
 import { TRACKABLE_EVENT } from './constants/trackableEvents';
 
@@ -42,7 +41,7 @@ export const randomizePilotVoice = () => {
     return {
         voice,
         pitch,
-        rate
+        rate,
     };
 };
 
@@ -65,7 +64,8 @@ export const speech_say = (sentence, pilotVoice) => {
                 case 'altitude':
                     textToSay += ` ${radio_altitude(singleSentence.content)} `;
                     break;
-                case 'speed': case 'heading':
+                case 'speed':
+                case 'heading':
                     textToSay += ` ${radio_heading(singleSentence.content)} `;
                     break;
                 case 'text':

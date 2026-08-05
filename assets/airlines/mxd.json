@@ -3,15 +3,13 @@
     "name": "Malindo Air",
     "callsign": {
         "name": "Malindo",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
             ["AT76", 11],
             ["B738", 12],
-            ["B739",  6]
+            ["B739", 6]
         ]
     }
 }

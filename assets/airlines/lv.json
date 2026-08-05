@@ -3,9 +3,7 @@
     "name": "General Aviation Argentina",
     "callsign": {
         "name": "Lima Victor",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -1,15 +1,11 @@
 import { test, expect, vi } from 'vitest';
 import FixModel from '../../../src/assets/scripts/client/navigationLibrary/FixModel';
 import DynamicPositionModel from '../../../src/assets/scripts/client/base/DynamicPositionModel';
-import {
-    FIXNAME_MOCK,
-    FIX_COORDINATE_MOCK,
-    REAL_FIXNAME_MOCK
-} from './_mocks/fixMocks';
+import { FIXNAME_MOCK, FIX_COORDINATE_MOCK, REAL_FIXNAME_MOCK } from './_mocks/fixMocks';
 import { airportPositionFixtureKSFO } from '../../fixtures/airportFixtures';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../../fixtures/navigationLibraryFixtures';
 
 beforeEach(() => {
@@ -29,7 +25,9 @@ test('throws when instantiated with invalid parameters', () => {
     expect(() => new FixModel(FIXNAME_MOCK, undefined, airportPositionFixtureKSFO)).toThrow();
     expect(() => new FixModel(FIXNAME_MOCK, FIX_COORDINATE_MOCK, undefined)).toThrow();
     expect(() => new FixModel(FIXNAME_MOCK, undefined, undefined)).toThrow();
-    expect(() => new FixModel(undefined, FIX_COORDINATE_MOCK, airportPositionFixtureKSFO)).toThrow();
+    expect(
+        () => new FixModel(undefined, FIX_COORDINATE_MOCK, airportPositionFixtureKSFO)
+    ).toThrow();
     expect(() => new FixModel(undefined, undefined, airportPositionFixtureKSFO)).toThrow();
     expect(() => new FixModel(undefined, FIX_COORDINATE_MOCK, undefined)).toThrow();
 });
@@ -43,10 +41,18 @@ test('.init() sets name in upperCase', () => {
 });
 
 test('.init() sets spoken to specified value (lower-cased) when "spoken" parameter is given', () => {
-    let model = new FixModel(FIXNAME_MOCK, [...FIX_COORDINATE_MOCK, 'Spoken Werds'], airportPositionFixtureKSFO);
+    let model = new FixModel(
+        FIXNAME_MOCK,
+        [...FIX_COORDINATE_MOCK, 'Spoken Werds'],
+        airportPositionFixtureKSFO
+    );
     expect(model.spoken === 'spoken werds').toBe(true);
 
-    model = new FixModel(FIXNAME_MOCK, [...FIX_COORDINATE_MOCK, 'L0W3RC4S3'], airportPositionFixtureKSFO);
+    model = new FixModel(
+        FIXNAME_MOCK,
+        [...FIX_COORDINATE_MOCK, 'L0W3RC4S3'],
+        airportPositionFixtureKSFO
+    );
     expect(model.spoken === 'l0w3rc4s3').toBe(true);
 });
 

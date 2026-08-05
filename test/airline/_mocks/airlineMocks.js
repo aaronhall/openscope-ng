@@ -1,17 +1,12 @@
 export const AIRLINE_DEFINITION_MOCK = {
     name: 'American Airlines',
     icao: 'AAL',
-    callsignFormats: [
-        '##@@',
-        '###',
-        '##',
-        '#'
-    ],
+    callsignFormats: ['##@@', '###', '##', '#'],
     fleets: {
         '90long': [
             ['DC10', 57],
             ['B752', 77],
-            ['MD11', 47]
+            ['MD11', 47],
         ],
         '90default': [
             ['B732', 20],
@@ -19,7 +14,7 @@ export const AIRLINE_DEFINITION_MOCK = {
             ['B735', 10],
             ['B738', 1],
             ['MD82', 80],
-            ['F100', 20]
+            ['F100', 20],
         ],
         long: [
             ['A332', 15],
@@ -28,7 +23,7 @@ export const AIRLINE_DEFINITION_MOCK = {
             ['B763', 40],
             ['B772', 47],
             ['B77W', 20],
-            ['B788', 15]
+            ['B788', 15],
         ],
         default: [
             ['A319', 125],
@@ -37,26 +32,21 @@ export const AIRLINE_DEFINITION_MOCK = {
             ['B738', 269],
             ['E190', 20],
             ['MD82', 42],
-            ['MD83', 51]
-        ]
-    }
+            ['MD83', 51],
+        ],
+    },
 };
 
 export const AIRLINE_DEFINITION_SIMPLE_FLEET_MOCK = {
     name: 'American Airlines',
     icao: 'aal',
-    callsignFormats: [
-        '##@@',
-        '###',
-        '##',
-        '#'
-    ],
+    callsignFormats: ['##@@', '###', '##', '#'],
     fleets: {
         default: [
             ['A319', 125],
-            ['B738', 269]
-        ]
-    }
+            ['B738', 269],
+        ],
+    },
 };
 
 export const NOVEMBER_AIRLINE_MOCK = {
@@ -66,7 +56,7 @@ export const NOVEMBER_AIRLINE_MOCK = {
         name: 'November',
         length: 5,
         alpha: true,
-        prefix: 'N'
+        prefix: 'N',
     },
     fleets: {
         default: [
@@ -76,11 +66,10 @@ export const NOVEMBER_AIRLINE_MOCK = {
             ['E135', 1],
             ['C510', 1],
             ['C550', 2],
-            ['C750', 1]
-        ]
-    }
+            ['C750', 1],
+        ],
+    },
 };
-
 
 export const AIRLINE_DEFINITION_LIST_MOCK = [
     AIRLINE_DEFINITION_MOCK,
@@ -89,19 +78,19 @@ export const AIRLINE_DEFINITION_LIST_MOCK = [
         icao: 'ual',
         callsign: {
             name: 'United',
-            length: 3
+            length: 3,
         },
         fleets: {
             '90long': [
                 ['B762', 15],
                 ['B752', 15],
                 ['DC10', 5],
-                ['B744', 23]
+                ['B744', 23],
             ],
             '90default': [
                 ['B722', 15],
                 ['B735', 7],
-                ['B733', 15]
+                ['B733', 15],
             ],
             long: [
                 ['B744', 24],
@@ -110,17 +99,17 @@ export const AIRLINE_DEFINITION_LIST_MOCK = [
                 ['B763', 35],
                 ['B772', 22],
                 ['b77l', 55],
-                ['B788', 11]
+                ['B788', 11],
             ],
             default: [
                 ['A319', 55],
                 ['A320', 97],
                 ['B737', 36],
                 ['B738', 130],
-                ['B739', 97]
-            ]
-        }
-    }
+                ['B739', 97],
+            ],
+        },
+    },
 ];
 
 // Data here needs to be congruent with data in `AIRCRAFT_DEFINITION_LIST_MOCK` used in `AircraftTypeDefinitionCollection.spec`
@@ -130,27 +119,27 @@ export const AIRLINE_DEFINITION_LIST_FOR_FIXTURE = [
         icao: 'aal',
         callsign: {
             name: 'American',
-            length: 3
+            length: 3,
         },
         fleets: {
             default: [
                 ['A320', 125],
-                ['B737', 269]
-            ]
-        }
+                ['B737', 269],
+            ],
+        },
     },
     {
         name: 'United Airlines',
         icao: 'ual',
         callsign: {
             name: 'United',
-            length: 3
+            length: 3,
         },
         fleets: {
             default: [
                 ['A320', 55],
-                ['B737', 233]
-            ]
-        }
-    }
+                ['B737', 233],
+            ],
+        },
+    },
 ];

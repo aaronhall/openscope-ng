@@ -12,7 +12,7 @@ export const AIRLINE_NAME_FLEET_SEPARATOR = '/';
  *
  * @enum DEFAULT_CALLSIGN_FORMAT
  * @type {string}
-*/
+ */
 export const DEFAULT_CALLSIGN_FORMAT = '###';
 
 /**
@@ -21,7 +21,7 @@ export const DEFAULT_CALLSIGN_FORMAT = '###';
  *
  * @enum CALLSIGN_RANDOM_LETTER_CHARACTER
  * @type {string}
-*/
+ */
 export const CALLSIGN_RANDOM_LETTER_CHARACTER = '@';
 
 /**
@@ -30,5 +30,5 @@ export const CALLSIGN_RANDOM_LETTER_CHARACTER = '@';
  *
  * @enum CALLSIGN_RANDOM_DIGIT_CHARACTER
  * @type {string}
-*/
+ */
 export const CALLSIGN_RANDOM_DIGIT_CHARACTER = '#';

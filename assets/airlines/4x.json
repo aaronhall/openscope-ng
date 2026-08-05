@@ -3,9 +3,7 @@
     "name": "General Aviation Israel",
     "callsign": {
         "name": "Four Xray",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "General Aviation Bahrain",
     "callsign": {
         "name": "Alpha Niner Charlie",
-        "callsignFormats": [
-            "@@"
-        ]
+        "callsignFormats": ["@@"]
     },
     "fleets": {
         "default": [

@@ -12,7 +12,7 @@ export const MCP_ALTITUDE_MODE = {
     LEVEL_CHANGE: 'LEVEL_CHANGE',
     OFF: 'OFF',
     VERTICAL_SPEED: 'VERTICAL_SPEED',
-    VNAV: 'VNAV'
+    VNAV: 'VNAV',
 };
 
 /**
@@ -25,7 +25,7 @@ export const MCP_ALTITUDE_MODE = {
  */
 export const MCP_AUTOPILOT_MODE = {
     ON: 'ON',
-    OFF: 'OFF'
+    OFF: 'OFF',
 };
 
 /**
@@ -40,7 +40,7 @@ export const MCP_HEADING_MODE = {
     HOLD: 'HOLD',
     LNAV: 'LNAV',
     OFF: 'OFF',
-    VOR_LOC: 'VOR_LOC'
+    VOR_LOC: 'VOR_LOC',
 };
 
 /**
@@ -56,7 +56,7 @@ export const MCP_SPEED_MODE = {
     N1: 'N1',
     OFF: 'OFF',
     HOLD: 'HOLD',
-    VNAV: 'VNAV'
+    VNAV: 'VNAV',
 };
 
 /**
@@ -70,7 +70,7 @@ export const MCP_MODE = {
     ALTITUDE: MCP_ALTITUDE_MODE,
     AUTOPILOT: MCP_AUTOPILOT_MODE,
     HEADING: MCP_HEADING_MODE,
-    SPEED: MCP_SPEED_MODE
+    SPEED: MCP_SPEED_MODE,
 };
 
 /**
@@ -84,7 +84,7 @@ export const MCP_MODE_NAME = {
     ALTITUDE: 'altitudeMode',
     AUTOPILOT: 'autopilotMode',
     HEADING: 'headingMode',
-    SPEED: 'speedMode'
+    SPEED: 'speedMode',
 };
 
 /**
@@ -98,5 +98,5 @@ export const MCP_FIELD_NAME = {
     ALTITUDE: 'altitude',
     COURSE: 'course',
     HEADING: 'heading',
-    SPEED: 'speed'
+    SPEED: 'speed',
 };

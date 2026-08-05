@@ -3,9 +3,7 @@
     "name": "General Aviation Vietnam",
     "callsign": {
         "name": "Victor November",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

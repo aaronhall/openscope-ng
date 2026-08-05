@@ -3,9 +3,7 @@
     "name": "General Aviation Cook Islands",
     "callsign": {
         "name": "Echo Five",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

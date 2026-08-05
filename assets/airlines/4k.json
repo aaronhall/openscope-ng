@@ -3,12 +3,7 @@
     "name": "General Aviation Azerbaijan",
     "callsign": {
         "name": "Four Kilo",
-        "callsignFormats": [
-            "#####",
-            "@@#",
-            "@@##",
-            "@@###"
-        ]
+        "callsignFormats": ["#####", "@@#", "@@##", "@@###"]
     },
     "fleets": {
         "default": [

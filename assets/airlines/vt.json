@@ -3,9 +3,7 @@
     "name": "General Aviation India",
     "callsign": {
         "name": "Victor Tango",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

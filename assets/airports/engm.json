@@ -133,13 +133,13 @@
         "_RWY01L01DME": ["N60.16900720999", "E11.06464703654"],
         "_RWY01R01DME": ["N60.15976273369", "E11.09868854742"],
         "_RWY19R01DME": ["N60.23205873258", "E11.10077865628"],
-        "AAL"  : ["N57d06.22", "E09d59.73"],
+        "AAL": ["N57d06.22", "E09d59.73"],
         "ABUNO": ["N62d00.00", "E11d56.42"],
         "ADOPI": ["N60d19.42", "E09d23.00"],
         "AGEKU": ["N60d12.08", "E08d17.71"],
         "AGNIL": ["N60d56.08", "E10d49.87"],
         "ARGIB": ["N59d50.88", "E16d44.68"],
-        "ARS"  : ["N59d35.17", "E16d39.02"],
+        "ARS": ["N59d35.17", "E16d39.02"],
         "ARTOR": ["N58d20.07", "E10d08.93"],
         "ATLAP": ["N60d08.77", "E09d48.04"],
         "ATRIB": ["N56d25.40", "E12d30.80"],
@@ -161,7 +161,7 @@
         "EVNEN": ["N63d00.00", "E11d38.45"],
         "EVTOG": ["N60d49.01", "E09d56.19"],
         "EXUDA": ["N60d23.85", "E09d55.58"],
-        "FLS"  : ["N60d18.67", "E05d12.73"],
+        "FLS": ["N60d18.67", "E05d12.73"],
         "GETPA": ["N59d02.15", "E11d55.53"],
         "GIGIR": ["N62d12.64", "E07d22.72"],
         "GIGNI": ["N62d00.00", "E11d29.12"],
@@ -301,12 +301,12 @@
         "SABAK": ["N58d10.59", "E11d38.56"],
         "SOMUB": ["N63d20.95", "E11d48.30"],
         "SUSIB": ["N60d46.00", "E12d08.32"],
-        "SVA"  : ["N58d05.07", "E07d54.50"],
-        "SVD"  : ["N56d10.13", "E12d34.43"],
+        "SVA": ["N58d05.07", "E07d54.50"],
+        "SVD": ["N56d10.13", "E12d34.43"],
         "TEKVA": ["N59d59.08", "E12d43.17"],
         "TITLA": ["N60d25.28", "E11d24.16"],
         "TOPLA": ["N57d08.15", "E12d20.34"],
-        "TOR"  : ["N59d10.15", "E10d15.56"],
+        "TOR": ["N59d10.15", "E10d15.56"],
         "TUMGU": ["N59d53.47", "E12d01.20"],
         "TUTBI": ["N62d00.00", "E10d38.85"],
         "ULMUG": ["N59d11.28", "E09d34.22"],
@@ -321,7 +321,7 @@
         "VEMIN": ["N60d13.83", "E10d47.08"],
         "VEPUL": ["N62d12.06", "E08d21.54"],
         "VIBUK": ["N60d10.00", "E11d26.92"],
-        "VIG"  : ["N62d33.12", "E06d02.07"],
+        "VIG": ["N62d33.12", "E06d02.07"],
         "XELVI": ["N61d29.98", "E12d40.07"],
         "XEMEN": ["N60d02.17", "E11d01.66"],
         "XENTA": ["N58d41.49", "E11d28.96"],
@@ -329,7 +329,7 @@
         "XINLO": ["N60d21.32", "E11d10.34"],
         "XISCO": ["N61d41.44", "E08d03.12"],
         "XIVTA": ["N60d20.40", "E11d12.19"],
-        "ZOL"  : ["N58d52.50", "E05d38.40"]
+        "ZOL": ["N58d52.50", "E05d38.40"]
     },
     "restricted": [
         {
@@ -585,7 +585,7 @@
             ]
         }
     ],
-    "runways":[
+    "runways": [
         {
             "name": ["01L", "19R"],
             "end": [
@@ -605,11 +605,75 @@
     ],
     "airways": {
         "L24": ["FLS", "GOKAB", "ULVAN", "ADOPI", "GIMEX", "MASEV"],
-        "L996": ["NONVU", "EVNEN", "ABUNO", "INREX", "TUMGU", "OKSAT", "GETPA", "KORET", "LATKU", "KELIN", "LALIL", "TOPLA", "ATRIB", "SVD"],
-        "L997": ["VEDAR", "LASLI", "RISMA", "GIXUN", "SABAK", "XENTA", "REGMA", "LUNIP", "ELVOM", "EVTOG", "OSVIG", "XISCO", "OBITI", "VIG"],
-        "M609": ["RASVI", "SVA", "VAVET", "PIPEX", "ULMUG", "RIPAM", "GIMEX", "BELGU", "TUTBI", "UTUNA", "NONVU"],
-        "N623": ["ARS", "BEDLA", "IBGAX", "EBURI", "TEKVA", "ESEBA", "ATLAP", "AGEKU", "PESUR", "FLS"],
-        "P600": ["OVDAL", "XELVI", "INREX", "GIMEX", "ATLAP", "IPMOD", "ROPNO", "ZOL", "LAPOT", "KLONN"],
+        "L996": [
+            "NONVU",
+            "EVNEN",
+            "ABUNO",
+            "INREX",
+            "TUMGU",
+            "OKSAT",
+            "GETPA",
+            "KORET",
+            "LATKU",
+            "KELIN",
+            "LALIL",
+            "TOPLA",
+            "ATRIB",
+            "SVD"
+        ],
+        "L997": [
+            "VEDAR",
+            "LASLI",
+            "RISMA",
+            "GIXUN",
+            "SABAK",
+            "XENTA",
+            "REGMA",
+            "LUNIP",
+            "ELVOM",
+            "EVTOG",
+            "OSVIG",
+            "XISCO",
+            "OBITI",
+            "VIG"
+        ],
+        "M609": [
+            "RASVI",
+            "SVA",
+            "VAVET",
+            "PIPEX",
+            "ULMUG",
+            "RIPAM",
+            "GIMEX",
+            "BELGU",
+            "TUTBI",
+            "UTUNA",
+            "NONVU"
+        ],
+        "N623": [
+            "ARS",
+            "BEDLA",
+            "IBGAX",
+            "EBURI",
+            "TEKVA",
+            "ESEBA",
+            "ATLAP",
+            "AGEKU",
+            "PESUR",
+            "FLS"
+        ],
+        "P600": [
+            "OVDAL",
+            "XELVI",
+            "INREX",
+            "GIMEX",
+            "ATLAP",
+            "IPMOD",
+            "ROPNO",
+            "ZOL",
+            "LAPOT",
+            "KLONN"
+        ],
         "P615": ["VEPUL", "PIGED", "EVTOG", "TOR", "ARTOR", "AAL"],
         "P850": ["ETOMI", "DIKVI", "ROGED", "ELVOM", "TOR", "LUTOT", "OSVAL", "DANKO"],
         "Z125": ["NUVSA", "GIGNI", "SOMUB"],
@@ -629,9 +693,7 @@
             "exitPoints": {
                 "ATLAP": ["ATLAP"]
             },
-            "draw": [
-                ["GM604", "GM602", "ODAXI", "GM451", "ATLAP"]
-            ]
+            "draw": [["GM604", "GM602", "ODAXI", "GM451", "ATLAP"]]
         },
         "ATLAP5A": {
             "icao": "ATLAP5A",
@@ -643,9 +705,7 @@
             "exitPoints": {
                 "ATLAP": ["ATLAP"]
             },
-            "draw": [
-                ["GM436", "GM437", "GM439", "GM614", "ATLAP"]
-            ]
+            "draw": [["GM436", "GM437", "GM439", "GM614", "ATLAP"]]
         },
         "ATLAP7D": {
             "icao": "ATLAP7D",
@@ -657,9 +717,7 @@
             "exitPoints": {
                 "ATLAP": ["ATLAP"]
             },
-            "draw": [
-                ["_RWY19RGM442242", "GM442", "GM616", "GM619", "GM448", "ATLAP"]
-            ]
+            "draw": [["_RWY19RGM442242", "GM442", "GM616", "GM619", "GM448", "ATLAP"]]
         },
         "ATLAP9B": {
             "icao": "ATLAP9B",
@@ -671,9 +729,7 @@
             "exitPoints": {
                 "ATLAP": ["ATLAP"]
             },
-            "draw": [
-                ["GM440", "GM441", "GM514", "GM614", "ATLAP"]
-            ]
+            "draw": [["GM440", "GM441", "GM514", "GM614", "ATLAP"]]
         },
         "EVTOG3C": {
             "icao": "EVTOG3C",
@@ -685,9 +741,7 @@
             "exitPoints": {
                 "EVTOG": ["EVTOG"]
             },
-            "draw": [
-                ["ODAXI", "GM619", "GM717", "EVTOG"]
-            ]
+            "draw": [["ODAXI", "GM619", "GM717", "EVTOG"]]
         },
         "EVTOG5A": {
             "icao": "EVTOG5A",
@@ -699,9 +753,7 @@
             "exitPoints": {
                 "EVTOG": ["EVTOG"]
             },
-            "draw": [
-                ["GM437", "GM438", "GM446", "GM722", "GM445", "GM450", "EVTOG"]
-            ]
+            "draw": [["GM437", "GM438", "GM446", "GM722", "GM445", "GM450", "EVTOG"]]
         },
         "EVTOG7D": {
             "icao": "EVTOG7D",
@@ -713,9 +765,7 @@
             "exitPoints": {
                 "EVTOG": ["EVTOG"]
             },
-            "draw": [
-                ["EVTOG"]
-            ]
+            "draw": [["EVTOG"]]
         },
         "EVTOG9B": {
             "icao": "EVTOG9B",
@@ -723,13 +773,19 @@
             "rwy": {
                 "ENGM01R": []
             },
-            "body": [["GM440", "S230-"], ["GM441", "S230-"], "GM514", "GM614", "GM400", "GM445", "GM450"],
+            "body": [
+                ["GM440", "S230-"],
+                ["GM441", "S230-"],
+                "GM514",
+                "GM614",
+                "GM400",
+                "GM445",
+                "GM450"
+            ],
             "exitPoints": {
                 "EVTOG": ["EVTOG"]
             },
-            "draw": [
-                ["GM614", "GM400", "GM445", "GM450", "EVTOG"]
-            ]
+            "draw": [["GM614", "GM400", "GM445", "GM450", "EVTOG"]]
         },
         "MASEV4A": {
             "icao": "MASEV4A",
@@ -741,9 +797,7 @@
             "exitPoints": {
                 "MASEV": ["MASEV"]
             },
-            "draw": [
-                ["GM437", "NIDIM", "MASEV"]
-            ]
+            "draw": [["GM437", "NIDIM", "MASEV"]]
         },
         "MASEV5C": {
             "icao": "MASEV5C",
@@ -755,9 +809,7 @@
             "exitPoints": {
                 "MASEV": ["MASEV"]
             },
-            "draw": [
-                ["GM604", "GM444", "VIBUK", "GM508", "GM422", "MASEV"]
-            ]
+            "draw": [["GM604", "GM444", "VIBUK", "GM508", "GM422", "MASEV"]]
         },
         "MASEV6B": {
             "icao": "MASEV6B",
@@ -769,9 +821,7 @@
             "exitPoints": {
                 "MASEV": ["MASEV"]
             },
-            "draw": [
-                ["GM440", "GM506", "GM504", "GM617", "MASEV"]
-            ]
+            "draw": [["GM440", "GM506", "GM504", "GM617", "MASEV"]]
         },
         "MASEV6D": {
             "icao": "MASEV6D",
@@ -783,9 +833,7 @@
             "exitPoints": {
                 "MASEV": ["MASEV"]
             },
-            "draw": [
-                ["GM442", "GM603", "VEMIN", "GM507", "GM508", "MASEV"]
-            ]
+            "draw": [["GM442", "GM603", "VEMIN", "GM507", "GM508", "MASEV"]]
         },
         "NUVSA4A": {
             "icao": "NUVSA4A",
@@ -797,9 +845,7 @@
             "exitPoints": {
                 "NUVSA": ["NUVSA"]
             },
-            "draw": [
-                ["GM438", "PEMUS", "NUVSA"]
-            ]
+            "draw": [["GM438", "PEMUS", "NUVSA"]]
         },
         "NUVSA4C": {
             "icao": "NUVSA4C",
@@ -811,9 +857,7 @@
             "exitPoints": {
                 "NUVSA": ["NUVSA"]
             },
-            "draw": [
-                ["VIBUK", "NIDIM", "LILBA", "NUVSA"]
-            ]
+            "draw": [["VIBUK", "NIDIM", "LILBA", "NUVSA"]]
         },
         "NUVSA7D": {
             "icao": "NUVSA7D",
@@ -825,10 +869,7 @@
             "exitPoints": {
                 "NUVSA": ["NUVSA"]
             },
-            "draw": [
-                ["VEMIN", "GM443", "PEMUS"],
-                ["NUVSA"]
-            ]
+            "draw": [["VEMIN", "GM443", "PEMUS"], ["NUVSA"]]
         },
         "NUVSA9B": {
             "icao": "NUVSA9B",
@@ -840,10 +881,7 @@
             "exitPoints": {
                 "NUVSA": ["NUVSA"]
             },
-            "draw": [
-                ["GM440", "LULIL", "LILBA"],
-                ["NUVSA"]
-            ]
+            "draw": [["GM440", "LULIL", "LILBA"], ["NUVSA"]]
         },
         "OKSAT1C": {
             "icao": "OKSAT1C",
@@ -851,13 +889,20 @@
             "rwy": {
                 "ENGM19L": []
             },
-            "body": [["GM604", "S230-"], "GM444", "GM612", "GM613", "GM449", "TUMGU", "ERLUM", "ENEPO"],
+            "body": [
+                ["GM604", "S230-"],
+                "GM444",
+                "GM612",
+                "GM613",
+                "GM449",
+                "TUMGU",
+                "ERLUM",
+                "ENEPO"
+            ],
             "exitPoints": {
                 "OKSAT": ["OKSAT"]
             },
-            "draw": [
-                ["GM444", "GM612", "GM613", "GM449", "TUMGU", "ERLUM", "ENEPO", "OKSAT"]
-            ]
+            "draw": [["GM444", "GM612", "GM613", "GM449", "TUMGU", "ERLUM", "ENEPO", "OKSAT"]]
         },
         "OKSAT4A": {
             "icao": "OKSAT4A",
@@ -869,9 +914,7 @@
             "exitPoints": {
                 "OKSAT": ["OKSAT"]
             },
-            "draw": [
-                ["NIDIM", "OKAKI", "OKSAT"]
-            ]
+            "draw": [["NIDIM", "OKAKI", "OKSAT"]]
         },
         "OKSAT6B": {
             "icao": "OKSAT6B",
@@ -883,10 +926,7 @@
             "exitPoints": {
                 "OKSAT": ["OKSAT"]
             },
-            "draw": [
-                ["GM504", "GM503", "OKAKI"],
-                ["OKSAT"]
-            ]
+            "draw": [["GM504", "GM503", "OKAKI"], ["OKSAT"]]
         },
         "OKSAT6D": {
             "icao": "OKSAT6D",
@@ -894,14 +934,19 @@
             "rwy": {
                 "ENGM19R": []
             },
-            "body": [["_RWY19RGM442242", "S230-"], "GM442", "GM603", "VEMIN", "GM507", "GM608", "OKAKI"],
+            "body": [
+                ["_RWY19RGM442242", "S230-"],
+                "GM442",
+                "GM603",
+                "VEMIN",
+                "GM507",
+                "GM608",
+                "OKAKI"
+            ],
             "exitPoints": {
                 "OKSAT": ["OKSAT"]
             },
-            "draw": [
-                ["GM507", "GM608", "OKAKI"],
-                ["OKSAT"]
-            ]
+            "draw": [["GM507", "GM608", "OKAKI"], ["OKSAT"]]
         },
         "TOR4A": {
             "icao": "TOR4A",
@@ -913,9 +958,7 @@
             "exitPoints": {
                 "TOR": ["TOR"]
             },
-            "draw": [
-                ["GM614", "NANON", "TOR"]
-            ]
+            "draw": [["GM614", "NANON", "TOR"]]
         },
         "TOR4C": {
             "icao": "TOR4C",
@@ -927,9 +970,7 @@
             "exitPoints": {
                 "TOR": ["TOR"]
             },
-            "draw": [
-                ["GM602", "KUBUB", "TOR"]
-            ]
+            "draw": [["GM602", "KUBUB", "TOR"]]
         },
         "TOR6D": {
             "icao": "TOR6D",
@@ -941,10 +982,7 @@
             "exitPoints": {
                 "TOR": ["TOR"]
             },
-            "draw": [
-                ["GM442", "GM607", "NANON"],
-                ["TOR"]
-            ]
+            "draw": [["GM442", "GM607", "NANON"], ["TOR"]]
         },
         "TOR9B": {
             "icao": "TOR9B",
@@ -956,10 +994,7 @@
             "exitPoints": {
                 "TOR": ["TOR"]
             },
-            "draw": [
-                ["GM441", "KUBUB"],
-                ["TOR"]
-            ]
+            "draw": [["GM441", "KUBUB"], ["TOR"]]
         },
         "VEMIN4A": {
             "icao": "VEMIN4A",
@@ -1014,12 +1049,7 @@
                 "NUVSA": ["NIDIM", "LILBA", "NUVSA"],
                 "OKSAT": ["GM449", "TUMGU", "ERLUM", "ENEPO", "OKSAT"]
             },
-            "draw": [
-                ["_RWY01R01DME", "VIBUK", "GM449"],
-                ["MASEV*"],
-                ["NUVSA*"],
-                ["OKSAT*"]
-            ]
+            "draw": [["_RWY01R01DME", "VIBUK", "GM449"], ["MASEV*"], ["NUVSA*"], ["OKSAT*"]]
         }
     },
     "stars": {
@@ -1029,14 +1059,20 @@
             "entryPoints": {
                 "ADOPI": [["ADOPI", "S250-"]]
             },
-            "body": ["NIVDU", ["GM402", "A100|S220-"], "GM405", "GM406", "GM404", ["GM455", "A100"], ["@VALPU", "A50+"]],
+            "body": [
+                "NIVDU",
+                ["GM402", "A100|S220-"],
+                "GM405",
+                "GM406",
+                "GM404",
+                ["GM455", "A100"],
+                ["@VALPU", "A50+"]
+            ],
             "rwy": {
                 "ENGM01L": [],
                 "ENGM01R": []
             },
-            "draw": [
-                ["ADOPI", "NIVDU", "GM405", "GM406", "GM404", "GM455", "VALPU"]
-            ]
+            "draw": [["ADOPI", "NIVDU", "GM405", "GM406", "GM404", "GM455", "VALPU"]]
         },
         "ADOPI3M": {
             "icao": "ADOPI3M",
@@ -1044,14 +1080,20 @@
             "entryPoints": {
                 "ADOPI": [["ADOPI", "S250-"]]
             },
-            "body": ["EXUDA", ["GM428", "A100|S220-"], "GM429", "GM430", "GM431", ["GM452", "A100"], ["@BAVAD", "A50+"]],
+            "body": [
+                "EXUDA",
+                ["GM428", "A100|S220-"],
+                "GM429",
+                "GM430",
+                "GM431",
+                ["GM452", "A100"],
+                ["@BAVAD", "A50+"]
+            ],
             "rwy": {
                 "ENGM19L": [],
                 "ENGM19R": []
             },
-            "draw": [
-                ["ADOPI", "EXUDA", "GM429", "GM430", "GM431", "GM452", "BAVAD"]
-            ]
+            "draw": [["ADOPI", "EXUDA", "GM429", "GM430", "GM431", "GM452", "BAVAD"]]
         },
         "BELGU3L": {
             "icao": "BELGU3L",
@@ -1059,14 +1101,22 @@
             "entryPoints": {
                 "BELGU": [["BELGU", "S250-"]]
             },
-            "body": [["VANUK", "S250-"], ["GM456", "A120-"], ["GM400", "A90"], ["GM402", "S220-"], "GM405", "GM406", "GM404", ["GM455", "A90"], ["@VALPU", "A50+"]],
+            "body": [
+                ["VANUK", "S250-"],
+                ["GM456", "A120-"],
+                ["GM400", "A90"],
+                ["GM402", "S220-"],
+                "GM405",
+                "GM406",
+                "GM404",
+                ["GM455", "A90"],
+                ["@VALPU", "A50+"]
+            ],
             "rwy": {
                 "ENGM01L": [],
                 "ENGM01R": []
             },
-            "draw": [
-                ["BELGU", "AGNIL", "GM432", "GM433", "GM434", "GM435", "BAVAD"]
-            ]
+            "draw": [["BELGU", "AGNIL", "GM432", "GM433", "GM434", "GM435", "BAVAD"]]
         },
         "BELGU3M": {
             "icao": "BELGU3M",
@@ -1074,14 +1124,19 @@
             "entryPoints": {
                 "BELGU": [["BELGU", "S250-"]]
             },
-            "body": ["AGNIL", ["GM432", "A110|S220-"], "GM433", "GM434", ["GM435", "A110"], ["@BAVAD", "A50+"]],
+            "body": [
+                "AGNIL",
+                ["GM432", "A110|S220-"],
+                "GM433",
+                "GM434",
+                ["GM435", "A110"],
+                ["@BAVAD", "A50+"]
+            ],
             "rwy": {
                 "ENGM19L": [],
                 "ENGM19R": []
             },
-            "draw": [
-                ["BELGU", "VANUK", "GM456", "GM400", "GM402"]
-            ]
+            "draw": [["BELGU", "VANUK", "GM456", "GM400", "GM402"]]
         },
         "ESEBA4L": {
             "icao": "ESEBA4L",
@@ -1089,14 +1144,20 @@
             "entryPoints": {
                 "ESEBA": [["ESEBA", "S250-"]]
             },
-            "body": ["IDAMO", ["GM403", "A100|S220-"], "GM411", "GM413", "GM412", ["GM454", "A100"], ["@INSUV", "A50+"]],
+            "body": [
+                "IDAMO",
+                ["GM403", "A100|S220-"],
+                "GM411",
+                "GM413",
+                "GM412",
+                ["GM454", "A100"],
+                ["@INSUV", "A50+"]
+            ],
             "rwy": {
                 "ENGM01L": [],
                 "ENGM01R": []
             },
-            "draw": [
-                ["ESEBA", "IDAMO", "GM403", "GM411", "GM413", "GM412", "GM454", "INSUV"]
-            ]
+            "draw": [["ESEBA", "IDAMO", "GM403", "GM411", "GM413", "GM412", "GM454", "INSUV"]]
         },
         "ESEBA4M": {
             "icao": "ESEBA4M",
@@ -1104,14 +1165,20 @@
             "entryPoints": {
                 "ESEBA": [["ESEBA", "S250-"]]
             },
-            "body": ["KEGET", ["GM422", "A100|S220-"], "GM423", "GM424", "GM425", ["GM453", "A100"], ["@TITLA", "A50+"]],
+            "body": [
+                "KEGET",
+                ["GM422", "A100|S220-"],
+                "GM423",
+                "GM424",
+                "GM425",
+                ["GM453", "A100"],
+                ["@TITLA", "A50+"]
+            ],
             "rwy": {
                 "ENGM19L": [],
                 "ENGM19R": []
             },
-            "draw": [
-                ["ESEBA", "KEGET", "GM422", "GM423", "GM424", "GM425", "GM453", "TITLA"]
-            ]
+            "draw": [["ESEBA", "KEGET", "GM422", "GM423", "GM424", "GM425", "GM453", "TITLA"]]
         },
         "INREX4L": {
             "icao": "INREX4L",
@@ -1119,14 +1186,22 @@
             "entryPoints": {
                 "INREX": [["INREX", "S250-"]]
             },
-            "body": [["SUSIB", "S250-"], ["GM457", "A120-"], ["GM401", "A90"], ["GM403", "S220-"], "GM411", "GM413", "GM412", ["GM454", "A90"], ["@INSUV", "A50+"]],
+            "body": [
+                ["SUSIB", "S250-"],
+                ["GM457", "A120-"],
+                ["GM401", "A90"],
+                ["GM403", "S220-"],
+                "GM411",
+                "GM413",
+                "GM412",
+                ["GM454", "A90"],
+                ["@INSUV", "A50+"]
+            ],
             "rwy": {
                 "ENGM01L": [],
                 "ENGM01R": []
             },
-            "draw": [
-                ["INREX", "IXUMA", "GM418", "GM419", "GM420", "GM421", "TITLA"]
-            ]
+            "draw": [["INREX", "IXUMA", "GM418", "GM419", "GM420", "GM421", "TITLA"]]
         },
         "INREX4M": {
             "icao": "INREX4M",
@@ -1134,14 +1209,19 @@
             "entryPoints": {
                 "INREX": [["INREX", "S250-"]]
             },
-            "body": ["IXUMA", ["GM418", "A110|S220-"], "GM419", "GM420", ["GM421", "A110"], ["@TITLA", "A50+"]],
+            "body": [
+                "IXUMA",
+                ["GM418", "A110|S220-"],
+                "GM419",
+                "GM420",
+                ["GM421", "A110"],
+                ["@TITLA", "A50+"]
+            ],
             "rwy": {
                 "ENGM19L": [],
                 "ENGM19R": []
             },
-            "draw": [
-                ["INREX", "SUSIB", "GM457", "GM401", "GM403"]
-            ]
+            "draw": [["INREX", "SUSIB", "GM457", "GM401", "GM403"]]
         },
         "LUNIP4L": {
             "icao": "LUNIP4L",
@@ -1149,14 +1229,19 @@
             "entryPoints": {
                 "LUNIP": [["LUNIP", "S250-"]]
             },
-            "body": [["DEVKU", "A120+"], ["GM416", "A110|S220-"], "GM417", "GM415", ["GM414", "A110"], ["@INSUV", "A50+"]],
+            "body": [
+                ["DEVKU", "A120+"],
+                ["GM416", "A110|S220-"],
+                "GM417",
+                "GM415",
+                ["GM414", "A110"],
+                ["@INSUV", "A50+"]
+            ],
             "rwy": {
                 "ENGM01L": [],
                 "ENGM01R": []
             },
-            "draw": [
-                ["LUNIP", "DEVKU", "GM416", "GM417", "GM415", "GM414", "INSUV"]
-            ]
+            "draw": [["LUNIP", "DEVKU", "GM416", "GM417", "GM415", "GM414", "INSUV"]]
         },
         "LUNIP4M": {
             "icao": "LUNIP4M",
@@ -1164,14 +1249,22 @@
             "entryPoints": {
                 "LUNIP": [["LUNIP", "S250-"]]
             },
-            "body": [["DIDAX", "S250-"], ["GM447", "A120-"], ["GM426", "A90"], ["GM422", "S220-"], "GM423", "GM424", "GM425", ["GM453", "A90"], ["@TITLA", "A50+"]],
+            "body": [
+                ["DIDAX", "S250-"],
+                ["GM447", "A120-"],
+                ["GM426", "A90"],
+                ["GM422", "S220-"],
+                "GM423",
+                "GM424",
+                "GM425",
+                ["GM453", "A90"],
+                ["@TITLA", "A50+"]
+            ],
             "rwy": {
                 "ENGM19L": [],
                 "ENGM19R": []
             },
-            "draw": [
-                ["LUNIP", "DIDAX", "GM447", "GM426", "GM422"]
-            ]
+            "draw": [["LUNIP", "DIDAX", "GM447", "GM426", "GM422"]]
         },
         "RIPAM3L": {
             "icao": "RIPAM3L",
@@ -1179,14 +1272,19 @@
             "entryPoints": {
                 "RIPAM": [["RIPAM", "S250-"]]
             },
-            "body": [["ROXIM", "A120+"], ["GM410", "A110|S220-"], "GM409", "GM408", ["GM407", "A110"], ["@VALPU", "A50+"]],
+            "body": [
+                ["ROXIM", "A120+"],
+                ["GM410", "A110|S220-"],
+                "GM409",
+                "GM408",
+                ["GM407", "A110"],
+                ["@VALPU", "A50+"]
+            ],
             "rwy": {
                 "ENGM01L": [],
                 "ENGM01R": []
             },
-            "draw": [
-                ["RIPAM", "ROXIM", "GM410", "GM409", "GM408", "GM407", "VALPU"]
-            ]
+            "draw": [["RIPAM", "ROXIM", "GM410", "GM409", "GM408", "GM407", "VALPU"]]
         },
         "RIPAM4M": {
             "icao": "RIPAM4M",
@@ -1194,18 +1292,27 @@
             "entryPoints": {
                 "RIPAM": [["RIPAM", "S250-"]]
             },
-            "body": [["INGAR", "S250-"], ["UTEXO", "S250-"], ["GM451", "A120-"], ["GM427", "A90"], ["GM428", "S220-"], "GM429", "GM430", "GM431", ["GM452", "A90"], ["@BAVAD", "A50+"]],
+            "body": [
+                ["INGAR", "S250-"],
+                ["UTEXO", "S250-"],
+                ["GM451", "A120-"],
+                ["GM427", "A90"],
+                ["GM428", "S220-"],
+                "GM429",
+                "GM430",
+                "GM431",
+                ["GM452", "A90"],
+                ["@BAVAD", "A50+"]
+            ],
             "rwy": {
                 "ENGM19L": [],
                 "ENGM19R": []
             },
-            "draw": [
-                ["RIPAM", "INGAR", "UTEXO", "GM451", "GM427", "GM428"]
-            ]
+            "draw": [["RIPAM", "INGAR", "UTEXO", "GM451", "GM427", "GM428"]]
         }
     },
     "spawnPatterns": [
-       {
+        {
             "origin": "ENGM",
             "destination": "",
             "category": "departure",

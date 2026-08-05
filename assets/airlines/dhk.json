@@ -3,9 +3,7 @@
     "name": "DHL Air UK",
     "callsign": {
         "name": "World Express",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

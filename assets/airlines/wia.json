@@ -3,9 +3,7 @@
     "name": "Winair",
     "callsign": {
         "name": "Windward",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

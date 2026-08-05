@@ -3,9 +3,7 @@
     "name": "General Aviation El Salvador",
     "callsign": {
         "name": "Yankee Sierra",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

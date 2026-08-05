@@ -5,12 +5,20 @@ import _map from 'lodash/map';
 import AirwayModel from '../../src/assets/scripts/client/navigationLibrary/AirwayModel';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../fixtures/navigationLibraryFixtures';
 
 const airwayNameMock = 'V587';
 const validAirwayFixes = ['DAG', 'JOKUR', 'DANBY', 'WHIGG', 'BOACH', 'CRESO', 'BLD'];
-const airwayWithUnknownFix = ['DAG', 'JOKUR', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'WHIGG', 'BOACH', 'CRESO', 'BLD'];
+const airwayWithUnknownFix = [
+    'DAG',
+    'JOKUR',
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    'WHIGG',
+    'BOACH',
+    'CRESO',
+    'BLD',
+];
 const fixNotOnAirway = 'PRINO';
 
 beforeEach(() => {

@@ -3,20 +3,14 @@
     "name": "JetSMART Airlines",
     "callsign": {
         "name": "Smartbird",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
             ["A320", 4],
             ["B738", 3]
         ],
-        "a320": [
-            ["A320", 4]
-        ],
-        "naa": [
-            ["B738", 3]
-        ]
+        "a320": [["A320", 4]],
+        "naa": [["B738", 3]]
     }
 }

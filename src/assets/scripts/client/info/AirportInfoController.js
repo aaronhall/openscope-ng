@@ -22,7 +22,7 @@ const INFO_VIEW_SELECTORS = {
     ALTIMETER_LABEL: '.js-airportInfo-altimeter-label',
     ALTIMETER_VALUE: '.js-airportInfo-altimeter-value',
     ELEVATION_LABEL: '.js-airportInfo-elevation-label',
-    ELEVATION_VALUE: '.js-airportInfo-elevation-value'
+    ELEVATION_VALUE: '.js-airportInfo-elevation-value',
 };
 
 /**
@@ -135,11 +135,7 @@ export default class AirportInfoController {
          */
         this._eventBus = EventBus;
 
-        return this.init()
-            ._createChildren()
-            ._setupHandlers()
-            .enable()
-            .onAirportChange();
+        return this.init()._createChildren()._setupHandlers().enable().onAirportChange();
     }
 
     // ------------------------------ LIFECYCLE ------------------------------
@@ -268,7 +264,10 @@ export default class AirportInfoController {
      * @method onWindChange
      */
     onWindChange(currentWind) {
-        this.wind = this._buildWindAndGustReadout({ speed: currentWind.speed, angle: currentWind.angle });
+        this.wind = this._buildWindAndGustReadout({
+            speed: currentWind.speed,
+            angle: currentWind.angle,
+        });
 
         this._render();
     }
@@ -303,7 +302,7 @@ export default class AirportInfoController {
         const minGustStrength = 5;
         const { speed } = wind;
         const { angle } = wind;
-        const newAngle = leftPad((angle || 360), 3);
+        const newAngle = leftPad(angle || 360, 3);
         const newSpeed = leftPad(speed, 2);
         // Creates a fake "gusting" speed
         const gustStrength = speed * Math.random();
@@ -326,7 +325,7 @@ export default class AirportInfoController {
      * @private
      */
     _generateHighAltimeterReading(windSpeed) {
-        const pressure = PERFORMANCE.DEFAULT_ALTIMETER_IN_INHG + (windSpeed * Math.random() / 100);
+        const pressure = PERFORMANCE.DEFAULT_ALTIMETER_IN_INHG + (windSpeed * Math.random()) / 100;
 
         return pressure.toFixed(2);
     }

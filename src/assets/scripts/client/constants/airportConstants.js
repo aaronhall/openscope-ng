@@ -59,8 +59,8 @@ export const AIRPORT_CONSTANTS = {
     SRS_REDUCED_MINIMA_FEET: {
         CAT1: 3000,
         CAT2: 4500,
-        CAT3: 6000
-    }
+        CAT3: 6000,
+    },
 };
 
 /**
@@ -72,34 +72,34 @@ export const AIRPORT_CONSTANTS = {
  */
 export const AIRPORT_CONTROL_POSITION_NAME = {
     /**
-    * Provides approach control services
-    *
-    * @memberof AIRPORT_CONTROL_POSITION_NAME
-    * @property APPROACH
-    * @type {string}
-    * @final
-    */
+     * Provides approach control services
+     *
+     * @memberof AIRPORT_CONTROL_POSITION_NAME
+     * @property APPROACH
+     * @type {string}
+     * @final
+     */
     APPROACH: 'app',
 
     /**
-    * Provides departure control services
-    *
-    * @memberof AIRPORT_CONTROL_POSITION_NAME
-    * @property TOWER
-    * @type {string}
-    * @final
-    */
+     * Provides departure control services
+     *
+     * @memberof AIRPORT_CONTROL_POSITION_NAME
+     * @property TOWER
+     * @type {string}
+     * @final
+     */
     DEPARTURE: 'dep',
 
     /**
-    * Provides Air Traffic Control Tower (ATCT) services for surface and runway movements
-    *
-    * @memberof AIRPORT_CONTROL_POSITION_NAME
-    * @property TOWER
-    * @type {string}
-    * @final
-    */
-    TOWER: 'twr'
+     * Provides Air Traffic Control Tower (ATCT) services for surface and runway movements
+     *
+     * @memberof AIRPORT_CONTROL_POSITION_NAME
+     * @property TOWER
+     * @type {string}
+     * @final
+     */
+    TOWER: 'twr',
 };
 
 /**

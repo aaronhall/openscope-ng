@@ -3,9 +3,7 @@
     "name": "General Aviation Eritrea",
     "callsign": {
         "name": "Echo Three",
-        "callsignFormats": [
-            "@@@@"
-        ]
+        "callsignFormats": ["@@@@"]
     },
     "fleets": {
         "default": [

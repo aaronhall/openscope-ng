@@ -3,9 +3,7 @@
     "name": "General Aviation Bhutan",
     "callsign": {
         "name": "Alpha Five",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "Air Atlanta Icelandic",
     "callsign": {
         "name": "Iceland",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

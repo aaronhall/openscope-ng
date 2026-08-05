@@ -3,13 +3,9 @@
     "name": "Volaris Costa Rica",
     "callsign": {
         "name": "Costa Rican",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["A319", 3]
-        ]
+        "default": [["A319", 3]]
     }
 }

@@ -3,16 +3,10 @@
     "name": "Eritrean Airlines",
     "callsign": {
         "name": "Eritrean",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A319", 1]
-        ],
-        "a319": [
-            ["A319", 1]
-        ]
+        "default": [["A319", 1]],
+        "a319": [["A319", 1]]
     }
 }

@@ -3,13 +3,9 @@
     "name": "Libyan Wings",
     "callsign": {
         "name": "Libyan Wings",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A319", 2]
-        ]
+        "default": [["A319", 2]]
     }
 }

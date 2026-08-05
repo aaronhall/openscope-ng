@@ -3,9 +3,7 @@
     "name": "General Aviation Bolivia",
     "callsign": {
         "name": "Charlie Papa",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

@@ -3,16 +3,10 @@
     "name": "Salamair",
     "callsign": {
         "name": "Mahan Air",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 3]
-        ],
-        "a320": [
-            ["A320", 3]
-        ]
+        "default": [["A320", 3]],
+        "a320": [["A320", 3]]
     }
 }

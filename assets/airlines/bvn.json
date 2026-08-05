@@ -3,13 +3,9 @@
     "name": "Baron Aviation Services",
     "callsign": {
         "name": "Show Me",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["C208", 34]
-        ]
+        "default": [["C208", 34]]
     }
 }

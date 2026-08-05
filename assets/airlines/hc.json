@@ -3,9 +3,7 @@
     "name": "General Aviation Ecuador",
     "callsign": {
         "name": "Hotel Charlie",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "General Aviation Saint Vincent and the Grenadines",
     "callsign": {
         "name": "Juliet Eight",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

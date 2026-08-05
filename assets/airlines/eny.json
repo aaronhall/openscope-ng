@@ -3,13 +3,9 @@
     "name": "Envoy Air",
     "callsign": {
         "name": "Envoy",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["E170", 44]
-        ]
+        "default": [["E170", 44]]
     }
 }

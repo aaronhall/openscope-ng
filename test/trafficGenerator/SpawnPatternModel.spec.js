@@ -5,11 +5,11 @@ import _round from 'lodash/round';
 import SpawnPatternModel from '../../src/assets/scripts/client/trafficGenerator/SpawnPatternModel';
 import {
     createAirportControllerFixture,
-    resetAirportControllerFixture
+    resetAirportControllerFixture,
 } from '../fixtures/airportFixtures';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../fixtures/navigationLibraryFixtures';
 import {
     DEPARTURE_PATTERN_MOCK,
@@ -19,7 +19,7 @@ import {
     ARRIVAL_PATTERN_CYCLIC_MOCK,
     ARRIVAL_PATTERN_WAVE_MOCK,
     ARRIVAL_PATTERN_ROUTE_STRING_MOCK,
-    ARRIVAL_PATTERN_FLOAT_RATE_MOCK
+    ARRIVAL_PATTERN_FLOAT_RATE_MOCK,
 } from './_mocks/spawnPatternMocks';
 import { INVALID_NUMBER } from '../../src/assets/scripts/client/constants/globalConstants';
 import { DEFAULT_SCREEN_POSITION } from '../../src/assets/scripts/client/constants/positionConstants';
@@ -283,14 +283,10 @@ test('._initializePositionAndHeadingForArrival() calculates aircraft heading and
     expect(_isEqual(model.relativePosition, expectedPositionResult)).toBe(true);
 });
 
-test('._calculateSpawnHeading() returns bearing between route\'s first and second waypoints', () => {
-    const mock = Object.assign(
-        {},
-        ARRIVAL_PATTERN_MOCK,
-        {
-            route: 'JESJI..BAKRR'
-        }
-    );
+test("._calculateSpawnHeading() returns bearing between route's first and second waypoints", () => {
+    const mock = Object.assign({}, ARRIVAL_PATTERN_MOCK, {
+        route: 'JESJI..BAKRR',
+    });
 
     const model = new SpawnPatternModel(mock);
     const expectedResult = 1.3415936051582544;

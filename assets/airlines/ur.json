@@ -3,11 +3,7 @@
     "name": "General Aviation Ukraine",
     "callsign": {
         "name": "Uniform Romeo",
-        "callsignFormats": [
-            "@@@",
-            "#####",
-            "@@@@"
-        ]
+        "callsignFormats": ["@@@", "#####", "@@@@"]
     },
     "fleets": {
         "default": [

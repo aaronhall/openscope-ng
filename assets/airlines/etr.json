@@ -3,10 +3,7 @@
     "name": "Estelar Latinoamérica",
     "callsign": {
         "name": "Estelar",
-        "callsignFormats": [
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["###", "####"]
     },
     "fleets": {
         "default": [
@@ -18,8 +15,6 @@
             ["B732", 3],
             ["B733", 3]
         ],
-        "long": [
-            ["A343", 1]
-        ]
+        "long": [["A343", 1]]
     }
 }

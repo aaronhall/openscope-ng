@@ -5,11 +5,11 @@ import SpawnScheduler from '../../src/assets/scripts/client/trafficGenerator/Spa
 import SpawnPatternCollection from '../../src/assets/scripts/client/trafficGenerator/SpawnPatternCollection';
 import {
     createAirportControllerFixture,
-    resetAirportControllerFixture
+    resetAirportControllerFixture,
 } from '../fixtures/airportFixtures';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../fixtures/navigationLibraryFixtures';
 import { AIRPORT_JSON_FOR_SPAWN_MOCK } from './_mocks/spawnPatternMocks';
 import { INVALID_NUMBER } from '../../src/assets/scripts/client/constants/globalConstants';
@@ -26,7 +26,7 @@ beforeEach(() => {
     sandbox = sinon.createSandbox();
     aircraftControllerStub = {
         createAircraftWithSpawnPatternModel: sinon.stub(),
-        createPreSpawnAircraftWithSpawnPatternModel: sinon.stub()
+        createPreSpawnAircraftWithSpawnPatternModel: sinon.stub(),
     };
 });
 
@@ -74,8 +74,8 @@ test.skip('.createNextSchedule() calls GameController.game_timeout()', (t) => {
     const gameControllerGameTimeoutStub = {
         game_timeout: sandbox.stub(),
         game: {
-            time: 0
-        }
+            time: 0,
+        },
     };
     SpawnScheduler.init(aircraftControllerStub);
     const spawnPatternModel = SpawnPatternCollection._items[0];
@@ -89,7 +89,10 @@ test('.createAircraftAndRegisterNextTimeout() calls aircraftController.createAir
     SpawnScheduler.init(aircraftControllerStub);
     const spawnPatternModel = SpawnPatternCollection._items[0];
 
-    SpawnScheduler.createAircraftAndRegisterNextTimeout([spawnPatternModel, aircraftControllerStub]);
+    SpawnScheduler.createAircraftAndRegisterNextTimeout([
+        spawnPatternModel,
+        aircraftControllerStub,
+    ]);
 
     expect(aircraftControllerStub.createAircraftWithSpawnPatternModel.called).toBe(true);
 });
@@ -99,7 +102,10 @@ test('.createAircraftAndRegisterNextTimeout() calls .createNextSchedule()', () =
     const createNextScheduleSpy = sandbox.spy(SpawnScheduler, 'createNextSchedule');
     const spawnPatternModel = SpawnPatternCollection._items[0];
 
-    SpawnScheduler.createAircraftAndRegisterNextTimeout([spawnPatternModel, aircraftControllerStub]);
+    SpawnScheduler.createAircraftAndRegisterNextTimeout([
+        spawnPatternModel,
+        aircraftControllerStub,
+    ]);
 
     expect(createNextScheduleSpy.calledOnce).toBe(true);
 

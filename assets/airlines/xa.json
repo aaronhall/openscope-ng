@@ -3,9 +3,7 @@
     "name": "General Aviation Mexico",
     "callsign": {
         "name": "Xray Alpha",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

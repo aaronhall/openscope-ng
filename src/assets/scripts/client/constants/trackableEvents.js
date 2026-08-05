@@ -73,5 +73,5 @@ export const TRACKABLE_EVENT = {
      * @memberof TRACKABLE_EVENT
      * @property UI_LOG
      */
-    UI_LOG: 'ui-log'
+    UI_LOG: 'ui-log',
 };

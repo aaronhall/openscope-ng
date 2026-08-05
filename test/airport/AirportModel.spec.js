@@ -15,7 +15,9 @@ test('#runways retuns an array of RunwayModels with the correct data', () => {
 
     expect(model.runways[0][0].name === '07L').toBe(true);
     expect(model.runways[0][1].name === '25R').toBe(true);
-    expect(model.runways[0][0].relativePosition).toEqual([-1.5972765965064895, -0.7590007123826077]);
+    expect(model.runways[0][0].relativePosition).toEqual([
+        -1.5972765965064895, -0.7590007123826077,
+    ]);
     expect(model.runways[0][1].relativePosition).toEqual([2.8236983855119275, 0.17990498917699685]);
 });
 
@@ -145,7 +147,11 @@ test('.getActiveRunwayForCategory() returns the arrivalRunway when an invalid ca
 test('.isPointWithinAirspace() returns true when the provided point is inside the lateral and vertical boundaries', () => {
     const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const coordinatesMock = [36, -114.5];
-    const positionMock = DynamicPositionModel.calculateRelativePosition(coordinatesMock, model.positionModel, model.magneticNorth);
+    const positionMock = DynamicPositionModel.calculateRelativePosition(
+        coordinatesMock,
+        model.positionModel,
+        model.magneticNorth
+    );
     const altitudeMock = 19000;
     const result = model.isPointWithinAirspace(positionMock, altitudeMock);
 
@@ -155,7 +161,11 @@ test('.isPointWithinAirspace() returns true when the provided point is inside th
 test('.isPointWithinAirspace() returns false when the provided point is inside the lateral boundary but not within vertical boundaries', () => {
     const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const coordinatesMock = [36, -114.5];
-    const positionMock = DynamicPositionModel.calculateRelativePosition(coordinatesMock, model.positionModel, model.magneticNorth);
+    const positionMock = DynamicPositionModel.calculateRelativePosition(
+        coordinatesMock,
+        model.positionModel,
+        model.magneticNorth
+    );
     const altitudeMock = 19001;
     const result = model.isPointWithinAirspace(positionMock, altitudeMock);
 
@@ -165,7 +175,11 @@ test('.isPointWithinAirspace() returns false when the provided point is inside t
 test('.isPointWithinAirspace() returns false when the provided point is inside the vertical boundary but not within lateral boundaries', () => {
     const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const coordinatesMock = [36, -114];
-    const positionMock = DynamicPositionModel.calculateRelativePosition(coordinatesMock, model.positionModel, model.magneticNorth);
+    const positionMock = DynamicPositionModel.calculateRelativePosition(
+        coordinatesMock,
+        model.positionModel,
+        model.magneticNorth
+    );
     const altitudeMock = 19000;
     const result = model.isPointWithinAirspace(positionMock, altitudeMock);
 
@@ -180,7 +194,10 @@ test('.mapCollection is valid', () => {
 
 test.skip('.removeAircraftFromAllRunwayQueues()', (t) => {
     const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
-    const removeAircraftFromAllRunwayQueuesSpy = sinon.spy(model._runwayCollection, 'removeAircraftFromAllRunwayQueues');
+    const removeAircraftFromAllRunwayQueuesSpy = sinon.spy(
+        model._runwayCollection,
+        'removeAircraftFromAllRunwayQueues'
+    );
     model.removeAircraftFromAllRunwayQueues({});
 
     expect(removeAircraftFromAllRunwayQueuesSpy.calledOnce).toBe(true);
@@ -188,14 +205,38 @@ test.skip('.removeAircraftFromAllRunwayQueues()', (t) => {
 
 test('.resetAllRunwayQueues() calls .resetQueue() for all runways', () => {
     const model = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
-    const resetQueueSpy07L = sinon.spy(model._runwayCollection.findRunwayModelByName('07L'), 'resetQueue');
-    const resetQueueSpy25R = sinon.spy(model._runwayCollection.findRunwayModelByName('25R'), 'resetQueue');
-    const resetQueueSpy07R = sinon.spy(model._runwayCollection.findRunwayModelByName('07R'), 'resetQueue');
-    const resetQueueSpy25L = sinon.spy(model._runwayCollection.findRunwayModelByName('25L'), 'resetQueue');
-    const resetQueueSpy01L = sinon.spy(model._runwayCollection.findRunwayModelByName('01L'), 'resetQueue');
-    const resetQueueSpy19R = sinon.spy(model._runwayCollection.findRunwayModelByName('19R'), 'resetQueue');
-    const resetQueueSpy01R = sinon.spy(model._runwayCollection.findRunwayModelByName('01R'), 'resetQueue');
-    const resetQueueSpy19L = sinon.spy(model._runwayCollection.findRunwayModelByName('19L'), 'resetQueue');
+    const resetQueueSpy07L = sinon.spy(
+        model._runwayCollection.findRunwayModelByName('07L'),
+        'resetQueue'
+    );
+    const resetQueueSpy25R = sinon.spy(
+        model._runwayCollection.findRunwayModelByName('25R'),
+        'resetQueue'
+    );
+    const resetQueueSpy07R = sinon.spy(
+        model._runwayCollection.findRunwayModelByName('07R'),
+        'resetQueue'
+    );
+    const resetQueueSpy25L = sinon.spy(
+        model._runwayCollection.findRunwayModelByName('25L'),
+        'resetQueue'
+    );
+    const resetQueueSpy01L = sinon.spy(
+        model._runwayCollection.findRunwayModelByName('01L'),
+        'resetQueue'
+    );
+    const resetQueueSpy19R = sinon.spy(
+        model._runwayCollection.findRunwayModelByName('19R'),
+        'resetQueue'
+    );
+    const resetQueueSpy01R = sinon.spy(
+        model._runwayCollection.findRunwayModelByName('01R'),
+        'resetQueue'
+    );
+    const resetQueueSpy19L = sinon.spy(
+        model._runwayCollection.findRunwayModelByName('19L'),
+        'resetQueue'
+    );
 
     model.resetAllRunwayQueues();
 

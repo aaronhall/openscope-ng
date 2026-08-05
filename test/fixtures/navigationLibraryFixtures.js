@@ -14,7 +14,10 @@ import { airportPositionFixtureKSFO } from './airportFixtures';
 
 // export const arrivalRouteModelFixture = new RouteModel(arrivalProcedureRouteStringMock);
 // export const departureRouteModelFixture = new RouteModel(departureProcedureRouteStringMock);
-export const fixCollectionFixture = FixCollection.addItems(FIX_LIST_MOCK, airportPositionFixtureKSFO);
+export const fixCollectionFixture = FixCollection.addItems(
+    FIX_LIST_MOCK,
+    airportPositionFixtureKSFO
+);
 
 // In lieu of importing `navigationLibraryFixture` directly, when the test requires
 // changes to be made to the navigation library, it is wiser to call this function

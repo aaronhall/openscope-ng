@@ -3,9 +3,7 @@
     "name": "General Aviation Tonga",
     "callsign": {
         "name": "Alpha Three",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

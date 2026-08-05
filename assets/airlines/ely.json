@@ -3,9 +3,7 @@
     "name": "El Al Israel Airlines",
     "callsign": {
         "name": "El Al",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -17,12 +15,8 @@
             ["B788", 2],
             ["B789", 12]
         ],
-        "b739": [
-            ["B739", 8]
-        ],
-        "b738": [
-            ["B738", 15]
-        ],
+        "b739": [["B739", 8]],
+        "b738": [["B738", 15]],
         "long": [
             ["B744", 6],
             ["B763", 7],

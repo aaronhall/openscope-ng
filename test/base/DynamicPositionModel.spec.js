@@ -21,7 +21,11 @@ test('throws when called to instantiate without parameters', () => {
 });
 
 test('sets internal properties when provided valid parameters', () => {
-    const result = new DynamicPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
+    const result = new DynamicPositionModel(
+        LAT_LONG_MOCK,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
 
     expect(result.latitude === LAT_LONG_DECIMAL_MOCK[0]).toBe(true);
     expect(result.longitude === LAT_LONG_DECIMAL_MOCK[1]).toBe(true);
@@ -50,8 +54,16 @@ test('get magneticNorth() returns the value of #_magneticNorth', () => {
 });
 
 test('.bearingFromPosition() returns the correct bearing between two DynamicPositionModel instances', () => {
-    const position1 = new DynamicPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
-    const position2 = new DynamicPositionModel(LAT_LONG_MOCK_2, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
+    const position1 = new DynamicPositionModel(
+        LAT_LONG_MOCK,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
+    const position2 = new DynamicPositionModel(
+        LAT_LONG_MOCK_2,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
     const expectedResult = 0.09716579176803017;
     const result = position1.bearingFromPosition(position2);
 
@@ -59,8 +71,16 @@ test('.bearingFromPosition() returns the correct bearing between two DynamicPosi
 });
 
 test('.bearingToPosition() returns the correct bearing between two DynamicPositionModel instances', () => {
-    const position1 = new DynamicPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
-    const position2 = new DynamicPositionModel(LAT_LONG_MOCK_2, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
+    const position1 = new DynamicPositionModel(
+        LAT_LONG_MOCK,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
+    const position2 = new DynamicPositionModel(
+        LAT_LONG_MOCK_2,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
     const expectedResult = 3.2419080533939235;
     const result = position1.bearingToPosition(position2);
 
@@ -70,54 +90,98 @@ test('.bearingToPosition() returns the correct bearing between two DynamicPositi
 test('.calculateRelativePosition() static method throws when coordinates are undefined', () => {
     const referencePosition = new DynamicPositionModel(LAT_LONG_MOCK, null, MAGNETIC_NORTH_MOCK);
 
-    expect(() => DynamicPositionModel.calculateRelativePosition(undefined, referencePosition, MAGNETIC_NORTH_MOCK)).toThrow();
+    expect(() =>
+        DynamicPositionModel.calculateRelativePosition(
+            undefined,
+            referencePosition,
+            MAGNETIC_NORTH_MOCK
+        )
+    ).toThrow();
 });
 
 test('.calculateRelativePosition() static method throws when referencePosition is undefined', () => {
-    expect(() => DynamicPositionModel.calculateRelativePosition(LAT_LONG_MOCK, undefined, MAGNETIC_NORTH_MOCK)).toThrow();
+    expect(() =>
+        DynamicPositionModel.calculateRelativePosition(
+            LAT_LONG_MOCK,
+            undefined,
+            MAGNETIC_NORTH_MOCK
+        )
+    ).toThrow();
 });
 
 test('.calculateRelativePosition() static method throws when magnetic north is undefined', () => {
     const referencePosition = new DynamicPositionModel(LAT_LONG_MOCK, null, MAGNETIC_NORTH_MOCK);
 
-    expect(() => DynamicPositionModel.calculateRelativePosition(LAT_LONG_MOCK, referencePosition)).toThrow();
+    expect(() =>
+        DynamicPositionModel.calculateRelativePosition(LAT_LONG_MOCK, referencePosition)
+    ).toThrow();
 });
 
 test('.calculateRelativePosition() static method returns correctly translated value', () => {
     const referencePosition = new DynamicPositionModel(LAT_LONG_MOCK, null, MAGNETIC_NORTH_MOCK);
     const expectedResult = [-8.81063082871495, -90.26632595066663];
-    const result = DynamicPositionModel.calculateRelativePosition(LAT_LONG_MOCK_2, referencePosition, MAGNETIC_NORTH_MOCK);
+    const result = DynamicPositionModel.calculateRelativePosition(
+        LAT_LONG_MOCK_2,
+        referencePosition,
+        MAGNETIC_NORTH_MOCK
+    );
 
     expect(result).toEqual(expectedResult);
 });
 
 // user bug test case
 test('.calculateRelativePosition() static method does not throw when it receives 0 for magnetic_north', () => {
-    expect(() => new DynamicPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, 0)).not.toThrow();
-    expect(() => DynamicPositionModel.calculateRelativePosition(LAT_LONG_MOCK, airportPositionFixtureKLAS, 0)).not.toThrow();
+    expect(
+        () => new DynamicPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, 0)
+    ).not.toThrow();
+    expect(() =>
+        DynamicPositionModel.calculateRelativePosition(LAT_LONG_MOCK, airportPositionFixtureKLAS, 0)
+    ).not.toThrow();
 });
 
 test('.calculateGpsCoordinatesFromRelativePosition() static method throws when offset values are undefined', () => {
     const referencePosition = new DynamicPositionModel(LAT_LONG_MOCK, null, MAGNETIC_NORTH_MOCK);
 
-    expect(() => DynamicPositionModel.calculateGpsCoordinatesFromRelativePosition(undefined, referencePosition)).toThrow();
+    expect(() =>
+        DynamicPositionModel.calculateGpsCoordinatesFromRelativePosition(
+            undefined,
+            referencePosition
+        )
+    ).toThrow();
 });
 
 test('.calculateGpsCoordinatesFromRelativePosition() static method throws when referencePosition is undefined', () => {
-    expect(() => DynamicPositionModel.calculateGpsCoordinatesFromRelativePosition(LAT_LONG_MOCK)).toThrow();
+    expect(() =>
+        DynamicPositionModel.calculateGpsCoordinatesFromRelativePosition(LAT_LONG_MOCK)
+    ).toThrow();
 });
 
 test('.calculateGpsCoordinatesFromRelativePosition() static method returns correctly translated value', () => {
-    const referencePosition = new DynamicPositionModel(LAT_LONG_DECIMAL_MOCK, null, MAGNETIC_NORTH_MOCK);
+    const referencePosition = new DynamicPositionModel(
+        LAT_LONG_DECIMAL_MOCK,
+        null,
+        MAGNETIC_NORTH_MOCK
+    );
     const expectedResult = [36.66329597581823, -114.5626240216674];
-    const result = DynamicPositionModel.calculateGpsCoordinatesFromRelativePosition(RELATIVE_POSITION_MOCK, referencePosition);
+    const result = DynamicPositionModel.calculateGpsCoordinatesFromRelativePosition(
+        RELATIVE_POSITION_MOCK,
+        referencePosition
+    );
 
     expect(result).toEqual(expectedResult);
 });
 
 test('.distanceToPosition() returns the correct distance between two DynamicPositionModel instances', () => {
-    const position1 = new DynamicPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
-    const position2 = new DynamicPositionModel(LAT_LONG_MOCK_2, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
+    const position1 = new DynamicPositionModel(
+        LAT_LONG_MOCK,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
+    const position2 = new DynamicPositionModel(
+        LAT_LONG_MOCK_2,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
     const expectedResult = 48.99277192716842;
     const result = position1.distanceToPosition(position2);
 
@@ -125,8 +189,15 @@ test('.distanceToPosition() returns the correct distance between two DynamicPosi
 });
 
 test('.generateDynamicPositionFromBearingAndDistance() returns an accurate new DynamicPositionModel instance', () => {
-    const position1 = new DynamicPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
-    const position2 = position1.generateDynamicPositionFromBearingAndDistance(BEARING_RADIANS_MOCK, DISTANCE_NM_MOCK);
+    const position1 = new DynamicPositionModel(
+        LAT_LONG_MOCK,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
+    const position2 = position1.generateDynamicPositionFromBearingAndDistance(
+        BEARING_RADIANS_MOCK,
+        DISTANCE_NM_MOCK
+    );
     const result = position2.gps;
     const expectedResult = [37.200260478622035, -113.84138604883545];
 
@@ -135,7 +206,11 @@ test('.generateDynamicPositionFromBearingAndDistance() returns an accurate new D
 });
 
 test('.setCoordinates() returns early with error and makes no changes if invalid coordinates are passed', () => {
-    const position1 = new DynamicPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
+    const position1 = new DynamicPositionModel(
+        LAT_LONG_MOCK,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
     const originalCoordinates = position1.gps;
     const retval = position1.setCoordinates(INVALID_COORDINATES_MOCK);
     const endingCoordinates = position1.gps;
@@ -145,7 +220,11 @@ test('.setCoordinates() returns early with error and makes no changes if invalid
 });
 
 test('.setCoordinates() sets the latitude and longitude when provided valid data', () => {
-    const position1 = new DynamicPositionModel(LAT_LONG_MOCK, airportPositionFixtureKLAS, MAGNETIC_NORTH_MOCK);
+    const position1 = new DynamicPositionModel(
+        LAT_LONG_MOCK,
+        airportPositionFixtureKLAS,
+        MAGNETIC_NORTH_MOCK
+    );
 
     position1.setCoordinates(LAT_LONG_DECIMAL_MOCK_2);
 

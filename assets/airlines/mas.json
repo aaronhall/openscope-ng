@@ -3,17 +3,15 @@
     "name": "Malaysia Airlines",
     "callsign": {
         "name": "Malaysian",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
-            ["A332",  4],
+            ["A332", 4],
             ["A333", 15],
-            ["A388",  6],
+            ["A388", 6],
             ["B738", 56],
-            ["B744",  3]
+            ["B744", 3]
         ]
     }
 }

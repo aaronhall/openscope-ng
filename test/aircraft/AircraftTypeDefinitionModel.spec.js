@@ -4,35 +4,36 @@ import AircraftTypeDefinitionModel from '../../src/assets/scripts/client/aircraf
 import { AIRCRAFT_DEFINITION_MOCK } from './_mocks/aircraftMocks';
 
 test('throws when passed invalid parameters', () => {
-    const expectedMessage = /Invalid aircraftTypeDefinition passed to AircraftTypeDefinitionModel constructor\. Expected a non-empty object, but received .*/;
+    const expectedMessage =
+        /Invalid aircraftTypeDefinition passed to AircraftTypeDefinitionModel constructor\. Expected a non-empty object, but received .*/;
 
     expect(() => new AircraftTypeDefinitionModel(), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionModel(null), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionModel([]), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionModel({}), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionModel(42), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionModel('threeve'), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AircraftTypeDefinitionModel(false), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
 });
 

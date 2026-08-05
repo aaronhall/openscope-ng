@@ -3,9 +3,7 @@
     "name": "General Aviation Honduras",
     "callsign": {
         "name": "Hotel Romeo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

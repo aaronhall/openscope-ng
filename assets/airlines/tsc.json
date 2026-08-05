@@ -3,9 +3,7 @@
     "name": "Air Transat",
     "callsign": {
         "name": "Air Transat",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

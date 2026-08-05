@@ -3,9 +3,7 @@
     "name": "General Aviation San Marino",
     "callsign": {
         "name": "Tango Seven",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

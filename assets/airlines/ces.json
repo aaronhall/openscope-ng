@@ -3,10 +3,7 @@
     "name": "China Eastern Airlines",
     "callsign": {
         "name": "China Eastern",
-        "callsignFormats": [
-            "####",
-            "###"
-        ]
+        "callsignFormats": ["####", "###"]
     },
     "fleets": {
         "default": [
@@ -33,11 +30,7 @@
             ["B737", 37],
             ["B738", 92]
         ],
-        "a332": [
-            ["A332", 27]
-        ],
-        "jfk": [
-            ["B77W", 16 ]
-        ]
+        "a332": [["A332", 27]],
+        "jfk": [["B77W", 16]]
     }
 }

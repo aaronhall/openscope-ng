@@ -18,8 +18,8 @@ import LoadableContentModel from './LoadableContentModel';
  * @module zlsa.atc.loadAsset
  */
 /**
-* Implementation of the queueing
-*/
+ * Implementation of the queueing
+ */
 export default class ContentQueueClass {
     constructor(loadingView) {
         this.loadingView = loadingView;
@@ -45,7 +45,7 @@ export default class ContentQueueClass {
         if (c.url in this.queuedContent) {
             c = this.queuedContent[c.url];
 
-            if (c.immediate && (!this.queuedContent[c.url].immediate)) {
+            if (c.immediate && !this.queuedContent[c.url].immediate) {
                 const idx = $.inArray(c.url, this.lowPriorityQueue);
 
                 if (idx > -1) {

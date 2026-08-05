@@ -3,9 +3,7 @@
     "name": "General Aviation Burundi",
     "callsign": {
         "name": "Niner Uniform",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

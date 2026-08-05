@@ -14,7 +14,7 @@ import {
     degreesToRadians,
     convertMinutesToSeconds,
     parseCoordinate,
-    parseElevation
+    parseElevation,
 } from '../../src/assets/scripts/client/utilities/unitConverters';
 
 test('.km() converts kilometers to nautical miles', () => {

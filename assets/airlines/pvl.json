@@ -3,10 +3,7 @@
     "name": "Provincial Airlines",
     "callsign": {
         "name": "Provincial",
-        "callsignFormat": [
-            "####",
-            "###"
-        ]
+        "callsignFormat": ["####", "###"]
     },
     "fleets": {
         "default": [

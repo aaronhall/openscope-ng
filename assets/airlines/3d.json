@@ -3,9 +3,7 @@
     "name": "General Aviation Swaziland",
     "callsign": {
         "name": "Three Delta",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

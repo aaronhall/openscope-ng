@@ -25,7 +25,7 @@ export const CANVAS_NAME = {
      * @memberOf CANVAS_NAME
      * @property STATIC
      */
-    DYNAMIC: 'dynamic'
+    DYNAMIC: 'dynamic',
 };
 
 /**
@@ -41,7 +41,7 @@ export const BASE_CANVAS_FONT = '10px monoOne, monospace';
 export const DEFAULT_CANVAS_SIZE = {
     HEIGHT: 480,
     WIDTH: 640,
-    FOTTER_HEIGHT_OFFSET: 36
+    FOTTER_HEIGHT_OFFSET: 36,
 };
 
 /**
@@ -53,7 +53,7 @@ export const SCALE = {
     CHANGE_FACTOR: 0.9,
     DEFAULT: 8,
     MIN: 1,
-    MAX: 120
+    MAX: 120,
 };
 
 /**
@@ -62,5 +62,5 @@ export const SCALE = {
  */
 export const PAN = {
     X: 0,
-    Y: 0
+    Y: 0,
 };

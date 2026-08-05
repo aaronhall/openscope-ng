@@ -3,9 +3,7 @@
     "name": "Enter Air",
     "callsign": {
         "name": "EnterAir",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

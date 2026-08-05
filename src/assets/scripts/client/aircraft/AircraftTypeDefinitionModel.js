@@ -25,8 +25,10 @@ export default class AircraftTypeDefinitionModel extends BaseModel {
         super();
 
         if (isEmptyOrNotObject(aircraftTypeDefinition)) {
-            throw new TypeError('Invalid aircraftTypeDefinition passed to AircraftTypeDefinitionModel constructor. ' +
-                `Expected a non-empty object, but received ${typeof aircraftTypeDefinition}`);
+            throw new TypeError(
+                'Invalid aircraftTypeDefinition passed to AircraftTypeDefinitionModel constructor. ' +
+                    `Expected a non-empty object, but received ${typeof aircraftTypeDefinition}`
+            );
         }
 
         /**
@@ -193,7 +195,9 @@ export default class AircraftTypeDefinitionModel extends BaseModel {
     _buildTypeForStripView() {
         let aircraftIcao = `${this.icao}/L`;
 
-        const wtc = Object.values(WAKE_TURBULENCE_CATEGORY).find((WTC) => WTC.LETTER === this.weightClass) ?? { APPEND: false };
+        const wtc = Object.values(WAKE_TURBULENCE_CATEGORY).find(
+            (WTC) => WTC.LETTER === this.weightClass
+        ) ?? { APPEND: false };
 
         if (wtc.APPEND) {
             aircraftIcao = `${wtc.LETTER}/${this.icao}/L`;
@@ -228,8 +232,10 @@ export default class AircraftTypeDefinitionModel extends BaseModel {
      * @returns {Boolean}
      */
     isHeavyOrSuper() {
-        return this.weightClass === WAKE_TURBULENCE_CATEGORY.HEAVY.LETTER ||
-            this.weightClass === WAKE_TURBULENCE_CATEGORY.SUPER.LETTER;
+        return (
+            this.weightClass === WAKE_TURBULENCE_CATEGORY.HEAVY.LETTER ||
+            this.weightClass === WAKE_TURBULENCE_CATEGORY.SUPER.LETTER
+        );
     }
 
     /**
@@ -274,6 +280,9 @@ export default class AircraftTypeDefinitionModel extends BaseModel {
      * @return {string}
      */
     getRadioWeightClass() {
-        return Object.values(WAKE_TURBULENCE_CATEGORY).find((WTC) => WTC.LETTER === this.weightClass)?.SPOKEN ?? '';
+        return (
+            Object.values(WAKE_TURBULENCE_CATEGORY).find((WTC) => WTC.LETTER === this.weightClass)
+                ?.SPOKEN ?? ''
+        );
     }
 }

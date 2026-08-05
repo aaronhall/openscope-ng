@@ -3,10 +3,7 @@
     "name": "Wideroe",
     "callsign": {
         "name": "Wideroe",
-        "callsignFormats": [
-            "###",
-            "##@"
-        ]
+        "callsignFormats": ["###", "##@"]
     },
     "fleets": {
         "default": [
@@ -16,8 +13,6 @@
             ["DH8D", 10],
             ["E290", 4]
         ],
-        "e290": [
-            ["E290", 3]
-        ]
+        "e290": [["E290", 3]]
     }
 }

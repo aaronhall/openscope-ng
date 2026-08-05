@@ -3,9 +3,7 @@
     "name": "General Aviation Malaysia",
     "callsign": {
         "name": "Niner Mike",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

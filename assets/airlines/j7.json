@@ -3,9 +3,7 @@
     "name": "General Aviation Dominica",
     "callsign": {
         "name": "Juliet Seven",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

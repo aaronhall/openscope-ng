@@ -3,9 +3,7 @@
     "name": "General Aviation Grenada",
     "callsign": {
         "name": "Juliet Three",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

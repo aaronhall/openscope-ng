@@ -237,5 +237,5 @@ export const DATA_BLOCK_THEME = {
      * @memberof DATA_BLOCK_THEME
      * @property WIDTH
      */
-    WIDTH: 60
+    WIDTH: 60,
 };

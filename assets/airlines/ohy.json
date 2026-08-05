@@ -3,11 +3,7 @@
     "name": "Onur Air",
     "callsign": {
         "name": "Onur Air",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["####", "###", "##"]
     },
     "fleets": {
         "default": [
@@ -19,8 +15,6 @@
             ["A320", 7],
             ["A321", 9]
         ],
-        "a320": [
-            ["A320", 7]
-        ]
+        "a320": [["A320", 7]]
     }
 }

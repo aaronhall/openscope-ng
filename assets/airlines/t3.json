@@ -3,9 +3,7 @@
     "name": "General Aviation Kiribati",
     "callsign": {
         "name": "Tango Three",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

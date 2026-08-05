@@ -3,14 +3,9 @@
     "name": "21-Air",
     "callsign": {
         "name": "Cargo South",
-        "callsignFormats": [
-            "###",
-            "####"
-        ]
+        "callsignFormats": ["###", "####"]
     },
     "fleets": {
-        "default": [
-            ["B762", 2]
-        ]
+        "default": [["B762", 2]]
     }
 }

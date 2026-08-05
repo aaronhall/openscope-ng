@@ -3,9 +3,7 @@
     "name": "Alliance Air",
     "callsign": {
         "name": "Allied",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

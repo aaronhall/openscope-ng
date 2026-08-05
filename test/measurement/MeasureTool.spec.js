@@ -1,11 +1,7 @@
 import { test, expect, vi } from 'vitest';
 
-import {
-    createAirportControllerFixture
-} from '../fixtures/airportFixtures';
-import {
-    createNavigationLibraryFixture
-} from '../fixtures/navigationLibraryFixtures';
+import { createAirportControllerFixture } from '../fixtures/airportFixtures';
+import { createNavigationLibraryFixture } from '../fixtures/navigationLibraryFixtures';
 import AircraftModel from '../../src/assets/scripts/client/aircraft/AircraftModel';
 import MeasureTool from '../../src/assets/scripts/client/measurement/MeasureTool';
 import FixCollection from '../../src/assets/scripts/client/navigationLibrary/FixCollection';
@@ -50,7 +46,7 @@ test('.addPoint() throws when point value is invalid', (t) => {
     expect(() => MeasureTool.addPoint(CURSOR_POSITION)).not.toThrow();
 });
 
-test('.startNewPath() throws when the current path hasn\'t been ended.', (t) => {
+test(".startNewPath() throws when the current path hasn't been ended.", (t) => {
     expect(() => MeasureTool.startNewPath()).not.toThrow();
     expect(() => MeasureTool.startNewPath()).toThrow();
 });

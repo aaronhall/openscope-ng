@@ -170,7 +170,7 @@ class AirportController {
      * @method getAiracCycle
      * @property airac
      * @return {number}
-    */
+     */
     getAiracCycle() {
         return this.current.airac;
     }

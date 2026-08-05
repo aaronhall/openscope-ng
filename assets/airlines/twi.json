@@ -3,13 +3,9 @@
     "name": "Tailwind Airlines",
     "callsign": {
         "name": "Tailwind",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["B734", 5]
-        ]
+        "default": [["B734", 5]]
     }
 }

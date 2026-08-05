@@ -3,9 +3,7 @@
     "name": "General Aviation Iran",
     "callsign": {
         "name": "Echo Papa",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

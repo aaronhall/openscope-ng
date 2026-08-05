@@ -3,9 +3,7 @@
     "name": "West Air Sweden",
     "callsign": {
         "name": "Air Sweden",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

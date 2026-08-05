@@ -3,9 +3,7 @@
     "name": "General Aviation Haiti",
     "callsign": {
         "name": "Eight Romeo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

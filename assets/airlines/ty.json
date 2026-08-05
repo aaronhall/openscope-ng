@@ -3,9 +3,7 @@
     "name": "General Aviation Benin",
     "callsign": {
         "name": "Tango Yankee",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

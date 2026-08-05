@@ -3,13 +3,9 @@
     "name": "Norwegian Air UK",
     "callsign": {
         "name": "Rednose",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["B789", 13]
-        ]
+        "default": [["B789", 13]]
     }
 }

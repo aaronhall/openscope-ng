@@ -3,9 +3,7 @@
     "name": "General Aviation Sebia",
     "callsign": {
         "name": "Yankee Uniform",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

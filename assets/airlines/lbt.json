@@ -3,16 +3,10 @@
     "name": "Nouvelair Tunisie",
     "callsign": {
         "name": "Nouvelair",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 8]
-        ],
-        "a320": [
-            ["A320", 8]
-        ]
+        "default": [["A320", 8]],
+        "a320": [["A320", 8]]
     }
 }

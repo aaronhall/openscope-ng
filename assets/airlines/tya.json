@@ -3,9 +3,7 @@
     "name": "NordStar Airlines",
     "callsign": {
         "name": "Taimyr",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

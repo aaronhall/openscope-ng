@@ -3,11 +3,7 @@
     "name": "Eastern Airways",
     "callsign": {
         "name": "Eastflight",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##@"
-        ]
+        "callsignFormats": ["####", "###", "##@"]
     },
     "fleets": {
         "default": [
@@ -17,8 +13,6 @@
             ["JS41", 13],
             ["SB20", 8]
         ],
-        "e170": [
-            ["E170", 2]
-        ]
+        "e170": [["E170", 2]]
     }
 }

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import _has from 'lodash/has';
 import _isNil from 'lodash/isNil';
 import GameController from '../game/GameController';
@@ -76,8 +75,7 @@ export default class ScopeModel {
          */
         this.radarTargetCollection = new RadarTargetCollection(this._theme);
 
-        this.init()
-            .enable();
+        this.init().enable();
     }
 
     get ptlLength() {
@@ -98,21 +96,21 @@ export default class ScopeModel {
     }
 
     /**
-    * Enable handlers
-    *
-    * @for ScopeModel
-    * @method enable
-    */
+     * Enable handlers
+     *
+     * @for ScopeModel
+     * @method enable
+     */
     enable() {
         this._eventBus.on(EVENT.SET_THEME, this._setTheme);
     }
 
     /**
-    * Disable handlers
-    *
-    * @for ScopeModel
-    * @method disable
-    */
+     * Disable handlers
+     *
+     * @for ScopeModel
+     * @method disable
+     */
     disable() {
         this._eventBus.off(EVENT.SET_THEME, this._setTheme);
     }
@@ -156,7 +154,9 @@ export default class ScopeModel {
      * @param {number} direction - either -1 or 1 to indicate increment direction
      */
     changePtlLength(direction) {
-        const validValues = GameController.getGameOption(GAME_OPTION_NAMES.PROJECTED_TRACK_LINE_LENGTHS)
+        const validValues = GameController.getGameOption(
+            GAME_OPTION_NAMES.PROJECTED_TRACK_LINE_LENGTHS
+        )
             .split('-')
             .map((val) => parseFloat(val));
         const currentIndex = validValues.indexOf(this._ptlLength);
@@ -271,9 +271,10 @@ export default class ScopeModel {
     runScopeCommand(scopeCommandModel) {
         const functionName = scopeCommandModel.commandFunction;
         const functionArguments = scopeCommandModel.commandArguments;
-        const radarTargetModel = this.radarTargetCollection.findRadarTargetModelForAircraftReference(
-            scopeCommandModel.aircraftReference
-        );
+        const radarTargetModel =
+            this.radarTargetCollection.findRadarTargetModelForAircraftReference(
+                scopeCommandModel.aircraftReference
+            );
 
         if (!(functionName in this)) {
             return [false, 'ERR: BAD SYNTAX'];
@@ -359,5 +360,5 @@ export default class ScopeModel {
         }
 
         this._theme = THEME[themeName];
-    }
+    };
 }

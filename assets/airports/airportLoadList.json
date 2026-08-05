@@ -505,12 +505,12 @@
         "name": "Tokyo Narita International Airport",
         "premium": false
     },
-	{
+    {
         "icao": "rjoa",
         "level": "beginner",
         "name": "Hiroshima Airport",
         "premium": false,
-		"disabled": false
+        "disabled": false
     },
     {
         "icao": "rjss",

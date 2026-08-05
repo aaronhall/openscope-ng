@@ -1,5 +1,9 @@
 import { test, expect, vi } from 'vitest';
-import { assembleProceduralRouteString, parseAltitudeRestriction, parseSpeedRestriction } from '../../src/assets/scripts/client/utilities/navigationUtilities';
+import {
+    assembleProceduralRouteString,
+    parseAltitudeRestriction,
+    parseSpeedRestriction,
+} from '../../src/assets/scripts/client/utilities/navigationUtilities';
 
 test('assembleProceduralRouteString() concatenates provided strings with appropriate separator character', () => {
     const entryFixName = 'ENTRY';

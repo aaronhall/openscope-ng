@@ -119,7 +119,7 @@
         "CARPS": ["N34d24m25.00", "E132d21m34.00"],
         "CAVES": ["N40d15m50.87", "E141d54m54.67"],
         "CAYAH": ["N38d40m30.06", "E138d21m20.30"],
-        "CHE"  : ["N42d41m59.65", "E141d41m10.20"],
+        "CHE": ["N42d41m59.65", "E141d41m10.20"],
         "CUBIC": ["N37d55m17.80", "E141d35m03.00"],
         "DATTE": ["N37d48m56.90", "E140d33m12.20"],
         "DANDY": ["N37d10m26.00", "E139d30m42.00"],
@@ -133,12 +133,12 @@
         "ETIGO": ["N37d33m39.00", "E139d12m52.00"],
         "FINCH": ["N38d06m33.00", "E140d36m22.01"],
         "FINGA": ["N37d07m33.00", "E138d33m19.00"],
-        "FKE"  : ["N37d13m27.50", "E140d26m13.51"],
+        "FKE": ["N37d13m27.50", "E140d26m13.51"],
         "FUBOU": ["N37d55m40.20", "E140d35m51.60"],
         "GLAXY": ["N36d30m59.70", "E140d38m57.51"],
         "GOLDO": ["N38d03m57.00", "E138d24m35.00"],
         "GORYU": ["N37d11m54.55", "E137d46m10.35"],
-        "GTC"  : ["N37d57m29.86", "E139d06m53.59"],
+        "GTC": ["N37d57m29.86", "E139d06m53.59"],
         "GYODA": ["N36d09m50.00", "E139d18m40.00"],
         "HACHA": ["N28d09m24.00", "E129d00m51.00"],
         "HAKBA": ["N37d15m35.83", "E137d53m04.71"],
@@ -147,9 +147,9 @@
         "HEIKE": ["N37d24m15.00", "E139d44m13.00"],
         "HERON": ["N37d31m55.90", "E140d35m55.59"],
         "HIBAR": ["N41d06m38.30", "E140d45m01.60"],
-        "HKC"  : ["N31d41m50.00", "E130d34m59.00"],
-        "HPE"  : ["N39d26m00.09", "E141d08m00.60"],
-        "HWE"  : ["N41d46m26.51", "E140d49m55.98"],
+        "HKC": ["N31d41m50.00", "E130d34m59.00"],
+        "HPE": ["N39d26m00.09", "E141d08m00.60"],
+        "HWE": ["N41d46m26.51", "E140d49m55.98"],
         "IGOBI": ["N37d54m07.00", "E137d17m01.00"],
         "IGROD": ["N41d39m00.00", "E136d47m00.00"],
         "IKUJI": ["N37d02m17.50", "E137d29m32.53"],
@@ -157,14 +157,14 @@
         "INAHO": ["N38d09m47.11", "E139d12m17.05"],
         "INAWA": ["N37d32m56.00", "E140d00m01.00"],
         "ISKID": ["N31d35m47.00", "E130d32m14.00"],
-        "IXE"  : ["N37d08m55.91", "E140d58m32.47"],
+        "IXE": ["N37d08m55.91", "E140d58m32.47"],
         "KADBO": ["N39d14m09.98", "E137d44m48.45"],
         "KALON": ["N36d29m23.79", "E139d39m46.44"],
         "KAMSA": ["N37d43m05.00", "E133d44m02.00"],
-        "KEC"  : ["N33d26m52.00", "E135d47m40.00"],
-        "KCC"  : ["N35d15m54.96", "E136d54m53.73"],
+        "KEC": ["N33d26m52.00", "E135d47m40.00"],
+        "KCC": ["N35d15m54.96", "E136d54m53.73"],
         "KENSI": ["N38d41m55.70", "E139d35m12.06"],
-        "KMC"  : ["N36d23m47.00", "E136d24m15.00"],
+        "KMC": ["N36d23m47.00", "E136d24m15.00"],
         "KOHWA": ["N34d42m17.00", "E136d57m29.00"],
         "KYOKA": ["N35d10m46.00", "E132d51m54.00"],
         "LANCE": ["N37d54m22.00", "E140d28m33.60"],
@@ -176,20 +176,20 @@
         "MAKRA": ["N31d16m22.00", "E130d23m42.00"],
         "MAMRO": ["N38d50m00.59", "E140d17m48.16"],
         "MARCO": ["N34d04m46.00", "E132d08m50.00"],
-        "MBE"  : ["N36d09m22.00", "E137d55m11.00"],
+        "MBE": ["N36d09m22.00", "E137d55m11.00"],
         "MEKAX": ["N28d26m55.00", "E129d08m26.00"],
         "METEL": ["N38d33m26.00", "E140d59m21.00"],
         "MIHOU": ["N35d31m52.00", "E133d05m38.00"],
-        "MIS"  : ["N40d42m13.76", "E141d22m51.99"],
+        "MIS": ["N40d42m13.76", "E141d22m51.99"],
         "MOCOS": ["N32d07m40.00", "E130d53m51.00"],
         "MORIO": ["N39d36m45.20", "E141d28m18.24"],
-        "MRE"  : ["N40d44m19.65", "E140d42m19.20"],
+        "MRE": ["N40d44m19.65", "E140d42m19.20"],
         "MYOGI": ["N36d12m28.00", "E138d32m10.00"],
-        "MQE"  : ["N39d51m56.30", "E141d57m03.84"],
+        "MQE": ["N39d51m56.30", "E141d57m03.84"],
         "NAEBA": ["N37d15m14.90", "E138d32m08.58"],
         "NAKTU": ["N35d28m02.00", "E137d27m47.00"],
         "NESKO": ["N37d05m58.00", "E136d43m15.00"],
-        "NHC"  : ["N26d12m31.00", "E127d38m34.00"],
+        "NHC": ["N26d12m31.00", "E127d38m34.00"],
         "NIRAX": ["N37d43m74.00", "E140d23m79.00"],
         "NISIN": ["N40d00m09.66", "E137d49m54.29"],
         "NODAN": ["N40d25m10.29", "E144d59m45.93"],
@@ -197,7 +197,7 @@
         "OBAKO": ["N40d04m22.34", "E140d03m16.11"],
         "OBCHI": ["N40d52m26.72", "E141d51m27.82"],
         "OKUMA": ["N26d40m17.00", "E128d02m19.00"],
-        "ONC"  : ["N27d25m58.00", "E128d41m56.00"],
+        "ONC": ["N27d25m58.00", "E128d41m56.00"],
         "ONUMA": ["N37d17m55.00", "E139d55m28.00"],
         "OOITA": ["N33d13m13.00", "E131d42m12.00"],
         "OTOME": ["N40d00m13.00", "E139d46m46.00"],
@@ -222,7 +222,7 @@
         "SANOH": ["N36d23m46.00", "E139d36m49.00"],
         "SASAP": ["N37d10m55.00", "E140d28m24.00"],
         "SAZMA": ["N31d04m31.00", "E130d18m08.00"],
-        "SDE"  : ["N38d08m18.86", "E140d55m17.34"],
+        "SDE": ["N38d08m18.86", "E140d55m17.34"],
         "SHIMA": ["N34d18m16.00", "E136d35m19.00"],
         "SHIPS": ["N38d00m10.40", "E140d39m27.40"],
         "SHIRO": ["N37d36m78.00", "E140d08m80.00"],
@@ -234,7 +234,7 @@
         "SS901": ["N38d08m54.60", "E140d59m35.60"],
         "STEED": ["N37d43m36.20", "E140d59m32.80"],
         "SWAMP": ["N36d19m14.44", "E140d32m17.02"],
-        "SYE"  : ["N36d00m39.33", "E139d50m21.02"],
+        "SYE": ["N36d00m39.33", "E139d50m21.02"],
         "TADMI": ["N36d49m02.00", "E139d08m57.00"],
         "TAPPI": ["N41d08m05.00", "E140d09m54.00"],
         "TATAM": ["N37d55m50.00", "E138d06m13.00"],
@@ -247,7 +247,7 @@
         "TERAD": ["N37d36m13.22", "E138d28m49.19"],
         "TSURU": ["N40d55m45.68", "E140d26m36.82"],
         "URUSI": ["N36d49m09.15", "E137d07m53.52"],
-        "UWE"  : ["N39d37m01.66", "E140d11m12.97"],
+        "UWE": ["N39d37m01.66", "E140d11m12.97"],
         "VIKET": ["N37d42m05.00", "E139d34m15.00"],
         "WAPPA": ["N39d42m04.07", "E140d33m05.58"],
         "YANAI": ["N33d46m23.00", "E131d59m17.00"],
@@ -258,8 +258,7 @@
         "YUCCA": ["N38d09m06.50", "E141d01m32.24"],
         "ZUWAI": ["N36d23m47.00", "E136d56m59.00"]
     },
-    "restricted": [
-    ],
+    "restricted": [],
     "runways": [
         {
             "name": ["09", "27"],
@@ -270,7 +269,7 @@
             "ils": [false, true],
             "ils_distance": [27, 27],
             "loc_maxDist": [27, 27],
-            "glideslope": [3.00, 3.00]
+            "glideslope": [3.0, 3.0]
         },
         {
             "name": ["12", "30"],
@@ -283,26 +282,123 @@
     ],
     "airways": {
         "L512": ["GTC", "TATAM", "IGOBI", "KAMSA", "ANDOL"],
-        "R211": ["AVGOK", "NISIN", "KADBO", "TAVIS", "CAYAH", "BASIN", "GTC", "IXE", "GLAXY", "SWAMP"],
+        "R211": [
+            "AVGOK",
+            "NISIN",
+            "KADBO",
+            "TAVIS",
+            "CAYAH",
+            "BASIN",
+            "GTC",
+            "IXE",
+            "GLAXY",
+            "SWAMP"
+        ],
         "R217": ["NODAN", "ASTER", "SDE", "FINCH", "YONEX", "ELDAK", "GTC"],
-        "V10" : ["GTC", "WAPPA", "SAMBO", "MIS"],
-        "V15" : ["GTC", "KALON", "AKAGI", "SYE"],
-        "V22" : ["CHE", "TOBBY", "OBCHI", "CAVES", "MQE", "SDE", "HERON", "FKE"],
-        "V30" : ["CHE", "ESANN", "HWE", "TSURU", "OBAKO", "ATUMI", "BUDOH", "INAHO", "GTC", "TERAD", "HAKBA", "GORYU", "IKUJI", "URUSI", "IMIZU", "OYABE", "KMC"],
-        "V31" : ["HWE", "HIBAR", "BYOBU", "MRE", "MAGGY", "UWE", "YAYOI", "KENSI", "AWASI", "GTC", "MAGNA", "NAEBA", "AZUMI", "OWARI", "KCC"],
-        "V33" : ["MIS", "HPE", "SDE"],
-        "V34" : ["MQE", "MORIO", "HPE", "HANKA", "MAMRO", "GTC"],
+        "V10": ["GTC", "WAPPA", "SAMBO", "MIS"],
+        "V15": ["GTC", "KALON", "AKAGI", "SYE"],
+        "V22": ["CHE", "TOBBY", "OBCHI", "CAVES", "MQE", "SDE", "HERON", "FKE"],
+        "V30": [
+            "CHE",
+            "ESANN",
+            "HWE",
+            "TSURU",
+            "OBAKO",
+            "ATUMI",
+            "BUDOH",
+            "INAHO",
+            "GTC",
+            "TERAD",
+            "HAKBA",
+            "GORYU",
+            "IKUJI",
+            "URUSI",
+            "IMIZU",
+            "OYABE",
+            "KMC"
+        ],
+        "V31": [
+            "HWE",
+            "HIBAR",
+            "BYOBU",
+            "MRE",
+            "MAGGY",
+            "UWE",
+            "YAYOI",
+            "KENSI",
+            "AWASI",
+            "GTC",
+            "MAGNA",
+            "NAEBA",
+            "AZUMI",
+            "OWARI",
+            "KCC"
+        ],
+        "V33": ["MIS", "HPE", "SDE"],
+        "V34": ["MQE", "MORIO", "HPE", "HANKA", "MAMRO", "GTC"],
         "Y102": ["CAVES", "HPE", "METEL", "SDE", "HERON", "FKE"],
         "Y106": ["MQE", "SDE", "RUBIS"],
-        "Y12" : ["CHE", "HWE", "TAPPI", "ARIKA", "OTOME", "GTC", "FINGA", "MBE", "TOLUM", "NAKTU", "KOHWA", "SHIMA", "AYANO", "RAYJO", "KEC", "LAXEL"],
+        "Y12": [
+            "CHE",
+            "HWE",
+            "TAPPI",
+            "ARIKA",
+            "OTOME",
+            "GTC",
+            "FINGA",
+            "MBE",
+            "TOLUM",
+            "NAKTU",
+            "KOHWA",
+            "SHIMA",
+            "AYANO",
+            "RAYJO",
+            "KEC",
+            "LAXEL"
+        ],
         "Y122": ["HWE", "OBAKO", "YOHKO", "ATUMI", "BUDOH", "INAHO", "GTC"],
         "Y124": ["MQE", "HPE", "TOLEK", "HANKA", "MAMRO", "GTC"],
         "Y142": ["GTC", "NESKO", "SAMON"],
-        "Y15" : ["TENRU", "MYOGI", "TADMI", "DANDY", "HEIKE", "INAWA", "SHIRO", "NIRAX", "OWLET"],
+        "Y15": ["TENRU", "MYOGI", "TADMI", "DANDY", "HEIKE", "INAWA", "SHIRO", "NIRAX", "OWLET"],
         "Y303": ["GTC", "VIKET", "AKTIL", "SASAP", "ESKAS", "ENTAK"],
         "Y312": ["KCC", "AZUMI", "PAPNA", "NAEBA", "MAGNA", "GTC", "KENSI", "YAYOI", "UWE"],
         "Y347": ["IGROD", "EKVIK", "HANAB", "GOLDO", "GTC"],
-        "Y45":  ["GTC", "TERAD", "HAKBA", "GORYU", "IKUJI", "URUSI", "IMIZU", "OYABE", "KMC", "SONBU", "MADUL", "SAKYU", "MIHOU", "KYOKA", "CARPS", "MARCO", "SQRUM", "YANAI", "OOITA", "SOBOH", "RAFUL", "MOCOS", "HKC", "ISKID", "MAKRA", "SAZMA", "BOMAP", "ANOXA", "MEKAX", "HACHA", "ONC", "LEXUS", "OKUMA", "NHC"],
+        "Y45": [
+            "GTC",
+            "TERAD",
+            "HAKBA",
+            "GORYU",
+            "IKUJI",
+            "URUSI",
+            "IMIZU",
+            "OYABE",
+            "KMC",
+            "SONBU",
+            "MADUL",
+            "SAKYU",
+            "MIHOU",
+            "KYOKA",
+            "CARPS",
+            "MARCO",
+            "SQRUM",
+            "YANAI",
+            "OOITA",
+            "SOBOH",
+            "RAFUL",
+            "MOCOS",
+            "HKC",
+            "ISKID",
+            "MAKRA",
+            "SAZMA",
+            "BOMAP",
+            "ANOXA",
+            "MEKAX",
+            "HACHA",
+            "ONC",
+            "LEXUS",
+            "OKUMA",
+            "NHC"
+        ],
         "Y512": ["ADNAP", "OATIS", "BEKEN", "SDE", "ELDAK", "GTC"],
         "Y514": ["ASTER", "SDE"],
         "Y515": ["KMC", "ZUWAI", "ETIGO", "VIKET", "AIZUH", "LANCE"],
@@ -357,9 +453,7 @@
             "exitPoints": {
                 "IXE": ["IXE"]
             },
-            "draw": [
-                ["_SDE120005", "_IXE024SDE120", "IXE"]
-            ]
+            "draw": [["_SDE120005", "_IXE024SDE120", "IXE"]]
         },
         "SDE6R": {
             "icao": "SDE6R",
@@ -374,9 +468,7 @@
             "exitPoints": {
                 "SDE": [["SDE", "A70+"]]
             },
-            "draw": [
-                ["_SDE120010", "SDE"]
-            ]
+            "draw": [["_SDE120010", "SDE"]]
         },
         "STEED3": {
             "icao": "STEED3",
@@ -403,13 +495,16 @@
             "entryPoints": {
                 "LANCE": [["LANCE", "A110+"]]
             },
-            "body": [["FUBOU", "A60+"], ["SNOOK", "A40+"], ["TOPAZ", "S230-"], ["PERID", "A15+"]],
+            "body": [
+                ["FUBOU", "A60+"],
+                ["SNOOK", "A40+"],
+                ["TOPAZ", "S230-"],
+                ["PERID", "A15+"]
+            ],
             "rwy": {
                 "RJSS27": []
             },
-            "draw": [
-                ["LANCE*", "FUBOU", "SNOOK", "TOPAZ", "PERID"]
-            ]
+            "draw": [["LANCE*", "FUBOU", "SNOOK", "TOPAZ", "PERID"]]
         },
         "LANCEB": {
             "icao": "LANCEB",
@@ -417,13 +512,14 @@
             "entryPoints": {
                 "LANCE": [["LANCE", "A110+"]]
             },
-            "body": [["FUBOU", "A60+"], ["SNOOK", "A40+"]],
+            "body": [
+                ["FUBOU", "A60+"],
+                ["SNOOK", "A40+"]
+            ],
             "rwy": {
                 "RJSS27": []
             },
-            "draw": [
-                ["LANCE*", "FUBOU", "SNOOK"]
-            ]
+            "draw": [["LANCE*", "FUBOU", "SNOOK"]]
         },
         "LANCEW": {
             "icao": "LANCEW",
@@ -431,13 +527,14 @@
             "entryPoints": {
                 "LANCE": [["LANCE", "A110+"]]
             },
-            "body": [["QUAIL", "S250-"], ["RIBON", "A60+"]],
+            "body": [
+                ["QUAIL", "S250-"],
+                ["RIBON", "A60+"]
+            ],
             "rwy": {
                 "RJSS09": [["SHIPS", "A40+"]]
             },
-            "draw": [
-                ["LANCE*", "QUAIL", "RIBON", "SHIPS"]
-            ]
+            "draw": [["LANCE*", "QUAIL", "RIBON", "SHIPS"]]
         },
         "OWLEEA": {
             "icao": "OWLEEA",
@@ -445,13 +542,17 @@
             "entryPoints": {
                 "OWLET": [["OWLET", "A130+"]]
             },
-            "body": [["DATTE", "A80+"], ["RIBON", "A60+"], ["SNOOK", "A40+"], ["TOPAZ", "S230-"], ["PERID", "A15+"]],
+            "body": [
+                ["DATTE", "A80+"],
+                ["RIBON", "A60+"],
+                ["SNOOK", "A40+"],
+                ["TOPAZ", "S230-"],
+                ["PERID", "A15+"]
+            ],
             "rwy": {
                 "RJSS27": []
             },
-            "draw": [
-                ["OWLET*", "DATTE", "RIBON", "SNOOK", "TOPAZ", "PERID"]
-            ]
+            "draw": [["OWLET*", "DATTE", "RIBON", "SNOOK", "TOPAZ", "PERID"]]
         },
         "OWLEEB": {
             "icao": "OWLEEB",
@@ -459,13 +560,15 @@
             "entryPoints": {
                 "OWLET": [["OWLET", "A130+"]]
             },
-            "body": [["DATTE", "A80+"], ["RIBON", "A60+"], ["SNOOK", "A40+"]],
+            "body": [
+                ["DATTE", "A80+"],
+                ["RIBON", "A60+"],
+                ["SNOOK", "A40+"]
+            ],
             "rwy": {
                 "RJSS27": []
             },
-            "draw": [
-                ["OWLET*", "DATTE", "RIBON", "SNOOK"]
-            ]
+            "draw": [["OWLET*", "DATTE", "RIBON", "SNOOK"]]
         },
         "OWLETW": {
             "icao": "OWLETW",
@@ -473,13 +576,15 @@
             "entryPoints": {
                 "OWLET": [["OWLET", "A130+"]]
             },
-            "body": [["PRINK", "A80+"], ["QUIST", "S250-"], ["RIBON", "A60+"]],
+            "body": [
+                ["PRINK", "A80+"],
+                ["QUIST", "S250-"],
+                ["RIBON", "A60+"]
+            ],
             "rwy": {
                 "RJSS09": [["SHIPS", "A40+"]]
             },
-            "draw": [
-                ["OWLET*", "PRINK", "QUIST", "RIBON", "SHIPS"]
-            ]
+            "draw": [["OWLET*", "PRINK", "QUIST", "RIBON", "SHIPS"]]
         },
         "PERID": {
             "icao": "PERID",
@@ -491,9 +596,7 @@
             "rwy": {
                 "RJSS27": ["PERID"]
             },
-            "draw": [
-                ["AOBAR*", "_SDE135010", "_SDE120010", "_SDE105010", "PERID"]
-            ]
+            "draw": [["AOBAR*", "_SDE135010", "_SDE120010", "_SDE105010", "PERID"]]
         }
     },
     "spawnPatterns": [

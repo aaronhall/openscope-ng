@@ -3,14 +3,9 @@
     "name": "WestJet Encore",
     "callsign": {
         "name": "Encore",
-        "callsignFormats": [
-            "####",
-            "###"
-        ]
+        "callsignFormats": ["####", "###"]
     },
     "fleets": {
-        "default": [
-            ["DH8D", 46]
-        ]
+        "default": [["DH8D", 46]]
     }
 }

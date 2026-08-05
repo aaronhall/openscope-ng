@@ -3,9 +3,7 @@
     "name": "Aerovías DAP",
     "callsign": {
         "name": "DAP",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -21,8 +19,6 @@
             ["BE20", 2],
             ["DHC6", 1]
         ],
-        "rj1h": [
-            ["RJ1H", 5]
-        ]
+        "rj1h": [["RJ1H", 5]]
     }
 }

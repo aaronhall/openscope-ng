@@ -3,14 +3,11 @@ import { test, expect, vi } from 'vitest';
 
 import ModelSourceFactory from '../../../src/assets/scripts/client/base/ModelSource/ModelSourceFactory';
 import FixModel from '../../../src/assets/scripts/client/navigationLibrary/FixModel';
-import {
-    FIXNAME_MOCK,
-    FIX_COORDINATE_MOCK
-} from '../../navigationLibrary/Fix/_mocks/fixMocks';
+import { FIXNAME_MOCK, FIX_COORDINATE_MOCK } from '../../navigationLibrary/Fix/_mocks/fixMocks';
 import { airportPositionFixtureKSFO } from '../../fixtures/airportFixtures';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../../fixtures/navigationLibraryFixtures';
 
 const SOURCE_NAME_MOCK = 'FixModel';
@@ -33,7 +30,9 @@ test('.getModelSourceForType() throws when provided an unsupported type', () => 
 });
 
 test('.getModelSourceForType() does not throw when provided a supported type', () => {
-    expect(() => ModelSourceFactory.getModelSourceForType(SOURCE_NAME_MOCK, ...FIX_ARGS_MOCK)).not.toThrow();
+    expect(() =>
+        ModelSourceFactory.getModelSourceForType(SOURCE_NAME_MOCK, ...FIX_ARGS_MOCK)
+    ).not.toThrow();
 });
 
 test('.getModelSourceForType() returns a constructor when one doesnt exist in the pool', () => {

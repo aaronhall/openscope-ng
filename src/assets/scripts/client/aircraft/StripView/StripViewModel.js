@@ -395,7 +395,7 @@ export default class StripViewModel extends BaseModel {
             flightPlanAltitude,
             arrivalAirportId,
             departureAirportId,
-            flightPlan
+            flightPlan,
         } = aircraftModel.getViewModel();
 
         this.insideCenter = insideCenter;
@@ -429,11 +429,21 @@ export default class StripViewModel extends BaseModel {
         this.$aircraftTypeView = this.$element.find(SELECTORS.CLASSNAMES.STRIP_VIEW_AIRCRAFT_TYPE);
         this.$cidView = this.$element.find(SELECTORS.CLASSNAMES.STRIP_VIEW_CID);
         this.$transponderView = this.$element.find(SELECTORS.CLASSNAMES.STRIP_VIEW_TRANSPONDER);
-        this.$assignedAltitudeView = this.$element.find(SELECTORS.CLASSNAMES.STRIP_VIEW_ASSIGNED_ALTITUDE);
-        this.$flightPlanAltitudeView = this.$element.find(SELECTORS.CLASSNAMES.STRIP_VIEW_FLIGHT_PLAN_ALTITUDE);
-        this.$arrivalAirportView = this.$element.find(SELECTORS.CLASSNAMES.STRIP_VIEW_ARRIVAL_AIRPORT_ID);
-        this.$departureAirportView = this.$element.find(SELECTORS.CLASSNAMES.STRIP_VIEW_DEPARTURE_AIRPORT_ID);
-        this.$alternateAirportView = this.$element.find(SELECTORS.CLASSNAMES.STRIP_VIEW_ALTERNATE_AIRPORT_ID);
+        this.$assignedAltitudeView = this.$element.find(
+            SELECTORS.CLASSNAMES.STRIP_VIEW_ASSIGNED_ALTITUDE
+        );
+        this.$flightPlanAltitudeView = this.$element.find(
+            SELECTORS.CLASSNAMES.STRIP_VIEW_FLIGHT_PLAN_ALTITUDE
+        );
+        this.$arrivalAirportView = this.$element.find(
+            SELECTORS.CLASSNAMES.STRIP_VIEW_ARRIVAL_AIRPORT_ID
+        );
+        this.$departureAirportView = this.$element.find(
+            SELECTORS.CLASSNAMES.STRIP_VIEW_DEPARTURE_AIRPORT_ID
+        );
+        this.$alternateAirportView = this.$element.find(
+            SELECTORS.CLASSNAMES.STRIP_VIEW_ALTERNATE_AIRPORT_ID
+        );
         this.$flightPlanView = this.$element.find(SELECTORS.CLASSNAMES.STRIP_VIEW_FLIGHT_PLAN);
         this.$remarks = this.$element.find(SELECTORS.CLASSNAMES.STRIP_VIEW_REMARKS);
         this.$runway = this.$element.find(SELECTORS.CLASSNAMES.STRIP_VIEW_RUNWAY);
@@ -658,20 +668,20 @@ export default class StripViewModel extends BaseModel {
         if (aircraftModel.isDeparture() && aircraftModel.isOnGround()) {
             return {
                 hasRunwayAssigned: !aircraftModel.isApron(),
-                name: aircraftModel.fms.departureRunwayModel.name
+                name: aircraftModel.fms.departureRunwayModel.name,
             };
         }
 
         if (aircraftModel.isArrival()) {
             return {
                 hasRunwayAssigned: aircraftModel.pilot.hasApproachClearance,
-                name: aircraftModel.fms.arrivalRunwayModel.name
+                name: aircraftModel.fms.arrivalRunwayModel.name,
             };
         }
 
         return {
             hasRunwayAssigned: false,
-            name: ''
+            name: '',
         };
     }
 
@@ -710,7 +720,6 @@ export default class StripViewModel extends BaseModel {
         this._eventBus.trigger(EVENT.STRIP_DOUBLE_CLICK, this._callsign);
     }
 
-
     /**
      * Encapsulation of boolean logic used to determine if the view needs to be updated
      *
@@ -731,11 +740,12 @@ export default class StripViewModel extends BaseModel {
             flightPlanAltitude,
             arrivalAirportId,
             departureAirportId,
-            flightPlan
+            flightPlan,
         } = aircraftModel.getViewModel();
         const runwayInfo = this._buildRunwayInformation(aircraftModel);
 
-        return this.insideCenter !== insideCenter ||
+        return (
+            this.insideCenter !== insideCenter ||
             this._transponder !== transponderCode ||
             this._assignedAltitude !== assignedAltitude ||
             this._flightPlanAltitude !== flightPlanAltitude ||
@@ -743,7 +753,8 @@ export default class StripViewModel extends BaseModel {
             this._departureAirport !== departureAirportId ||
             this._flightPlan !== flightPlan ||
             this._runwayInformation.hasRunwayAssigned !== runwayInfo.hasRunwayAssigned ||
-            this._runwayInformation.name !== runwayInfo.name;
+            this._runwayInformation.name !== runwayInfo.name
+        );
     }
 
     /**
@@ -765,7 +776,7 @@ export default class StripViewModel extends BaseModel {
             flightPlanAltitude,
             arrivalAirportId,
             departureAirportId,
-            flightPlan
+            flightPlan,
         } = aircraftModel.getViewModel();
 
         this.insideCenter = insideCenter;

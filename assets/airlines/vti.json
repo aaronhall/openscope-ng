@@ -3,13 +3,9 @@
     "name": "Vistara",
     "callsign": {
         "name": "Vistara",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 20]
-        ]
+        "default": [["A320", 20]]
     }
 }

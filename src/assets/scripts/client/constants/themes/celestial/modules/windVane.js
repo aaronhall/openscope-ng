@@ -7,7 +7,6 @@ import { COLOR } from '../color';
  * @type {object}
  */
 export const WIND_VANE_THEME = {
-
     /**
      * Color of the line indicating the wind direction in gusty winds
      *
@@ -46,5 +45,5 @@ export const WIND_VANE_THEME = {
      * @memberof WIND_VANE_THEME
      * @property WIND_SPEED_TEXT
      */
-    WIND_SPEED_TEXT: COLOR.GREEN_DARK
+    WIND_SPEED_TEXT: COLOR.GREEN_DARK,
 };

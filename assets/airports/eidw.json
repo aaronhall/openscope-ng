@@ -184,9 +184,7 @@
             "floor": 0,
             "ceiling": 245,
             "airspace_class": "B",
-            "labelPositions": [
-                [53.466, -6.152]
-            ],
+            "labelPositions": [[53.466, -6.152]],
             "poly": [
                 ["N53.19773", "W6.35843"],
                 ["N53.19042", "W6.29522"],
@@ -237,9 +235,7 @@
             "floor": 35,
             "ceiling": 245,
             "airspace_class": "B",
-            "labelPositions": [
-                [53.78072553582, -6.49146959384]
-            ],
+            "labelPositions": [[53.78072553582, -6.49146959384]],
             "poly": [
                 ["N53.24234", "W6.86467"],
                 ["N53.24276", "W6.83333"],
@@ -349,9 +345,7 @@
             "floor": 15,
             "ceiling": 245,
             "airspace_class": "B",
-            "labelPositions": [
-                [53.63771251005, -6.27]
-            ],
+            "labelPositions": [[53.63771251005, -6.27]],
             "poly": [
                 ["N53.39957", "W6.58333"],
                 ["N53.39630", "W6.52112"],
@@ -522,21 +516,21 @@
         "BAGSO": ["N53.68000", "W5.50000"],
         "BAKOX": ["N53.52867", "W5.15917"],
         "BAKUR": ["N52.24170", "W5.68030"],
-        "BAL"  : ["N53.29989", "W6.44778"],
+        "BAL": ["N53.29989", "W6.44778"],
         "BAMLI": ["N54.14111", "W6.65111"],
         "BANBA": ["N51.95273", "W6.23914"],
         "BAPDA": ["N53.62778", "W6.40103"],
         "BATED": ["N53.49522", "W6.11189"],
         "BAVUD": ["N53.51883", "W4.85250"],
-        "BEL"  : ["N54.66112", "W6.22998"],
+        "BEL": ["N54.66112", "W6.22998"],
         "BEPAN": ["N52.52672", "W6.26375"],
         "BERMO": ["N53.29414", "W6.41411"],
         "BIVDI": ["N53.18319", "W6.66822"],
         "BLACA": ["N54.88333", "W5.15883"],
         "BOYNE": ["N53.76722", "W5.50000"],
         "BUNED": ["N52.62278", "W6.63000"],
-        "CML"  : ["N52.45378", "W7.48004"],
-        "CRK"  : ["N51.84064", "W8.49426"],
+        "CML": ["N52.45378", "W7.48004"],
+        "CRK": ["N51.84064", "W8.49426"],
         "DANDI": ["N53.68450", "W3.94950"],
         "DETAX": ["N53.24186", "W6.20989"],
         "DEVOL": ["N53.89033", "W10.43417"],
@@ -548,7 +542,7 @@
         "DODIG": ["N53.96278", "W6.49278"],
         "DOLOP": ["N53.21417", "W3.63083"],
         "DONAX": ["N53.48633", "W3.96117"],
-        "DUB"  : ["N53.49939", "W6.30711"],
+        "DUB": ["N53.49939", "W6.30711"],
         "DUNLO": ["N53.33000", "W5.50000"],
         "DW001": ["N53.31139", "W6.14610"],
         "DW004": ["N53.23502", "W6.41780"],
@@ -577,7 +571,7 @@
         "DW931": ["N53.49585", "W6.13978"],
         "DWS80": ["N53.27026", "W6.18056"],
         "DWW02": ["N53.40474", "W6.53034"],
-        "EGT"  : ["N55.04557", "W7.15608"],
+        "EGT": ["N55.04557", "W7.15608"],
         "EKREN": ["N53.64528", "W5.76475"],
         "ELBON": ["N53.59281", "W6.15600"],
         "ENOKU": ["N53.10106", "W7.66077"],
@@ -598,14 +592,14 @@
         "IDEXA": ["N53.47050", "W5.16412"],
         "INKUR": ["N53.59758", "W7.39128"],
         "INTOP": ["N53.22428", "W6.10900"],
-        "IOM"  : ["N54.06691", "W4.76349"],
+        "IOM": ["N54.06691", "W4.76349"],
         "IRDEX": ["N53.19586", "W6.06392"],
         "IRKUM": ["N52.99667", "W5.37750"],
         "KANUS": ["N53.10847", "W6.44781"],
         "KEPOR": ["N53.17125", "W6.36686"],
         "KERAV": ["N53.62853", "W5.76592"],
         "KISHA": ["N53.48389", "W5.63944"],
-        "KLY"  : ["N53.26954", "W6.10647"],
+        "KLY": ["N53.26954", "W6.10647"],
         "KOGAX": ["N53.57183", "W5.63725"],
         "KORAK": ["N53.39501", "W7.79297"],
         "KUDOM": ["N53.49050", "W5.55397"],
@@ -636,11 +630,11 @@
         "NOCAD": ["N53.97700", "W4.98700"],
         "NOSLO": ["N53.38167", "W3.64500"],
         "NUMPI": ["N54.14442", "W5.59332"],
-        "OE"   : ["N53.43010", "W6.42773"],
+        "OE": ["N53.43010", "W6.42773"],
         "OGTUG": ["N53.67003", "W5.14728"],
         "OLAPO": ["N53.78028", "W7.29472"],
         "OLONO": ["N52.72308", "W6.77900"],
-        "OP"   : ["N53.41379", "W6.13834"],
+        "OP": ["N53.41379", "W6.13834"],
         "ORVEN": ["N53.66486", "W6.19161"],
         "OSGAR": ["N53.04942", "W7.27022"],
         "OSLEX": ["N53.36550", "W6.69569"],
@@ -661,12 +655,12 @@
         "ROTEV": ["N54.02881", "W6.06622"],
         "RUBAR": ["N53.13581", "W5.80150"],
         "RULAV": ["N53.43717", "W5.16700"],
-        "SHA"  : ["N52.72099", "W8.88519"],
+        "SHA": ["N52.72099", "W8.88519"],
         "SITKU": ["N53.74333", "W4.83167"],
         "SIVNA": ["N53.19786", "W5.64103"],
         "SOPAX": ["N53.64700", "W4.45217"],
         "SORIN": ["N53.14147", "W5.80625"],
-        "STU"  : ["N51.99469", "W5.04016"],
+        "STU": ["N51.99469", "W5.04016"],
         "SUGAD": ["N53.28958", "W5.52772"],
         "SUROX": ["N53.99667", "W6.99347"],
         "SUTEX": ["N52.82444", "W6.93028"],
@@ -1385,7 +1379,7 @@
             ]
         }
     ],
-    "runways":[
+    "runways": [
         {
             "name": ["10R", "28L"],
             "end": [
@@ -1407,16 +1401,65 @@
         "L149": ["OLAPO", "DUB", "PESIT"],
         "L18": ["DIKAS", "MEDOG", "LANON", "BADSI", "ABLIN", "IRKUM", "LIPGO", "DUB", "SUROX"],
         "L28": ["PENIL", "DANDI", "LELDO"],
-        "L975": ["SHA", "RIKUL", "KORAK", "INKUR", "DUB", "KISHA", "LIFFY", "IDEXA", "GINIS", "NATKO", "LYNAS", "ROLEX", "MALUD"],
+        "L975": [
+            "SHA",
+            "RIKUL",
+            "KORAK",
+            "INKUR",
+            "DUB",
+            "KISHA",
+            "LIFFY",
+            "IDEXA",
+            "GINIS",
+            "NATKO",
+            "LYNAS",
+            "ROLEX",
+            "MALUD"
+        ],
         "M144": ["PENIL", "BABRA", "GIGTO", "UNDUX", "SOPAX", "RAMOX", "OGTUG", "BAGSO"],
-        "M145": ["SHA", "DIGAN", "ENOKU", "PELIG", "DUB", "BAGSO", "RIMVU", "SITKU", "LANVA", "LELDO"],
+        "M145": [
+            "SHA",
+            "DIGAN",
+            "ENOKU",
+            "PELIG",
+            "DUB",
+            "BAGSO",
+            "RIMVU",
+            "SITKU",
+            "LANVA",
+            "LELDO"
+        ],
         "M17": ["STU", "PEMOB", "LEMGU", "VATRY", "KLY", "DUB"],
         "N34": ["BUNED", "DUB", "NEVRI", "ABSUN", "BEL"],
         "N546": ["BAKUR", "STU"],
         "P600": ["DUB", "ROTEV", "GOTNA", "BLACA"],
         "P620": ["BLACA", "NELBO", "NUMPI", "NIMAT", "DUB", "BEPAN"],
-        "Q36": ["CRK", "TISMO", "CML", "SUTEX", "DIRUM", "GERVO", "KLY", "LIFFY", "RULAV", "ABGEP", "ALAVA", "NOSLO"],
-        "Q37": ["SHA", "TOMTO", "TORLU", "OSGAR", "KLY", "LIFFY", "BAKOX", "BAVUD", "DONAX", "MALUD"],
+        "Q36": [
+            "CRK",
+            "TISMO",
+            "CML",
+            "SUTEX",
+            "DIRUM",
+            "GERVO",
+            "KLY",
+            "LIFFY",
+            "RULAV",
+            "ABGEP",
+            "ALAVA",
+            "NOSLO"
+        ],
+        "Q37": [
+            "SHA",
+            "TOMTO",
+            "TORLU",
+            "OSGAR",
+            "KLY",
+            "LIFFY",
+            "BAKOX",
+            "BAVUD",
+            "DONAX",
+            "MALUD"
+        ],
         "UL70": ["PENIL", "BABRA", "GIGTO", "UNDUX", "SOPAX", "RAMOX", "OGTUG", "BAGSO"],
         "UL975": ["LIFFY", "IDEXA", "GINIS", "NATKO", "LYNAS", "ROLEX", "MALUD"],
         "UY124": ["DEXEN", "LOMVO", "LUTIP", "BAGIT", "DOLOP", "AMPIT"],
@@ -1435,9 +1478,7 @@
             "exitPoints": {
                 "BEPAN": ["BEPAN"]
             },
-            "draw": [
-                ["DW554", "IRDEX", "ERVAD", "NEPOD", "BEPAN*"]
-            ]
+            "draw": [["DW554", "IRDEX", "ERVAD", "NEPOD", "BEPAN*"]]
         },
         "BEPA3M": {
             "icao": "BEPA3M",
@@ -1450,9 +1491,7 @@
             "exitPoints": {
                 "BEPAN": ["BEPAN"]
             },
-            "draw": [
-                ["DW001", "NEPOD", "BEPAN*"]
-            ]
+            "draw": [["DW001", "NEPOD", "BEPAN*"]]
         },
         "BEPA5A": {
             "icao": "BEPA5A",
@@ -1465,9 +1504,7 @@
             "exitPoints": {
                 "BEPAN": ["BEPAN"]
             },
-            "draw": [
-                ["OE", "BAL", "NEPOD", "BEPAN*"]
-            ]
+            "draw": [["OE", "BAL", "NEPOD", "BEPAN*"]]
         },
         "BEPA5G": {
             "icao": "BEPA5G",
@@ -1480,9 +1517,7 @@
             "exitPoints": {
                 "BEPAN": ["BEPAN"]
             },
-            "draw": [
-                ["DW026", "BAL", "NEPOD", "BEPAN*"]
-            ]
+            "draw": [["DW026", "BAL", "NEPOD", "BEPAN*"]]
         },
         "DEXE1A": {
             "icao": "DEXE1A",
@@ -1495,9 +1530,7 @@
             "exitPoints": {
                 "DEXEN": [["DEXEN", "A120+"]]
             },
-            "draw": [
-                ["OE", "_DEXEN272034", "DEXEN*"]
-            ]
+            "draw": [["OE", "_DEXEN272034", "DEXEN*"]]
         },
         "DEXE2E": {
             "icao": "DEXE2E",
@@ -1510,9 +1543,7 @@
             "exitPoints": {
                 "DEXEN": [["DEXEN", "A120+"]]
             },
-            "draw": [
-                ["DW554", "DW555", "DEXEN*"]
-            ]
+            "draw": [["DW554", "DW555", "DEXEN*"]]
         },
         "DEXE3M": {
             "icao": "DEXE3M",
@@ -1525,9 +1556,7 @@
             "exitPoints": {
                 "DEXEN": [["DEXEN", "A120+"]]
             },
-            "draw": [
-                ["DW001", "DEXEN*"]
-            ]
+            "draw": [["DW001", "DEXEN*"]]
         },
         "INKU1G": {
             "icao": "INKU1G",
@@ -1540,9 +1569,7 @@
             "exitPoints": {
                 "INKUR": ["INKUR"]
             },
-            "draw": [
-                ["DW026", "DW010", "INKUR*"]
-            ]
+            "draw": [["DW026", "DW010", "INKUR*"]]
         },
         "INKU5A": {
             "icao": "INKU5A",
@@ -1555,9 +1582,7 @@
             "exitPoints": {
                 "INKUR": ["INKUR"]
             },
-            "draw": [
-                ["OE", "INKUR*"]
-            ]
+            "draw": [["OE", "INKUR*"]]
         },
         "INKU6E": {
             "icao": "INKU6E",
@@ -1570,9 +1595,7 @@
             "exitPoints": {
                 "INKUR": ["INKUR"]
             },
-            "draw": [
-                ["DW551", "LEMTA", "DODIG", "INKUR*"]
-            ]
+            "draw": [["DW551", "LEMTA", "DODIG", "INKUR*"]]
         },
         "INKU7M": {
             "icao": "INKU7M",
@@ -1585,9 +1608,7 @@
             "exitPoints": {
                 "INKUR": ["INKUR"]
             },
-            "draw": [
-                ["DW001", "DW004", "NITIL", "INKUR*"]
-            ]
+            "draw": [["DW001", "DW004", "NITIL", "INKUR*"]]
         },
         "LIFY6A": {
             "icao": "LIFY6A",
@@ -1600,9 +1621,7 @@
             "exitPoints": {
                 "LIFFY": ["LIFFY"]
             },
-            "draw": [
-                ["OE", "DUB", "DW024", "LIFFY*"]
-            ]
+            "draw": [["OE", "DUB", "DW024", "LIFFY*"]]
         },
         "LIFY2E": {
             "icao": "LIFY2E",
@@ -1615,9 +1634,7 @@
             "exitPoints": {
                 "LIFFY": ["LIFFY"]
             },
-            "draw": [
-                ["DW551", "LIFFY*"]
-            ]
+            "draw": [["DW551", "LIFFY*"]]
         },
         "LIFY7M": {
             "icao": "LIFY7M",
@@ -1630,9 +1647,7 @@
             "exitPoints": {
                 "LIFFY": ["LIFFY"]
             },
-            "draw": [
-                ["DW001", "DW011", "LIFFY*"]
-            ]
+            "draw": [["DW001", "DW011", "LIFFY*"]]
         },
         "LIFY6G": {
             "icao": "LIFY6G",
@@ -1645,12 +1660,10 @@
             "exitPoints": {
                 "LIFFY": ["LIFFY"]
             },
-            "draw": [
-                ["DW026", "BATED", "DW024", "LIFFY*"]
-            ]
+            "draw": [["DW026", "BATED", "DW024", "LIFFY*"]]
         },
         "NEVR1A": {
-          "icao": "NEVR1A",
+            "icao": "NEVR1A",
             "name": "Nevri One Alpha",
             "altitude": 9000,
             "rwy": {
@@ -1660,12 +1673,10 @@
             "exitPoints": {
                 "NEVRI": ["NEVRI"]
             },
-            "draw": [
-                ["OE", "DW029", "NEVRI*"]
-            ]
+            "draw": [["OE", "DW029", "NEVRI*"]]
         },
         "NEVR1G": {
-          "icao": "NEVR1G",
+            "icao": "NEVR1G",
             "name": "Nevri One Golf",
             "altitude": 9000,
             "rwy": {
@@ -1675,12 +1686,10 @@
             "exitPoints": {
                 "NEVRI": ["NEVRI"]
             },
-            "draw": [
-                ["DW026", "DW029", "NEVRI*"]
-            ]
+            "draw": [["DW026", "DW029", "NEVRI*"]]
         },
         "NEVR6E": {
-          "icao": "NEVR6E",
+            "icao": "NEVR6E",
             "name": "Nevri Six Echo",
             "altitude": 9000,
             "rwy": {
@@ -1690,12 +1699,10 @@
             "exitPoints": {
                 "NEVRI": ["NEVRI"]
             },
-            "draw": [
-                ["DW551", "LEMTA", "NEVRI*"]
-            ]
+            "draw": [["DW551", "LEMTA", "NEVRI*"]]
         },
         "NEVR7M": {
-          "icao": "NEVR7M",
+            "icao": "NEVR7M",
             "name": "Nevri Seven Mike",
             "altitude": 9000,
             "rwy": {
@@ -1705,9 +1712,7 @@
             "exitPoints": {
                 "NEVRI": ["NEVRI"]
             },
-            "draw": [
-                ["DW001", "DW011", "BATED", "ERUDA", "NEVRI*"]
-            ]
+            "draw": [["DW001", "DW011", "BATED", "ERUDA", "NEVRI*"]]
         },
         "OLON5A": {
             "icao": "OLON5A",
@@ -1720,9 +1725,7 @@
             "exitPoints": {
                 "OLONO": ["OLONO"]
             },
-            "draw": [
-                ["OE", "BAL", "NEPOD", "OLONO*"]
-            ]
+            "draw": [["OE", "BAL", "NEPOD", "OLONO*"]]
         },
         "OLON2E": {
             "icao": "OLON2E",
@@ -1735,9 +1738,7 @@
             "exitPoints": {
                 "OLONO": ["OLONO"]
             },
-            "draw": [
-                ["DW554", "IRDEX", "ERVAD", "NEPOD", "OLONO*"]
-            ]
+            "draw": [["DW554", "IRDEX", "ERVAD", "NEPOD", "OLONO*"]]
         },
         "OLON3M": {
             "icao": "OLON3M",
@@ -1750,9 +1751,7 @@
             "exitPoints": {
                 "OLONO": ["OLONO"]
             },
-            "draw": [
-                ["DW001", "NEPOD", "OLONO*"]
-            ]
+            "draw": [["DW001", "NEPOD", "OLONO*"]]
         },
         "OLON5G": {
             "icao": "OLON5G",
@@ -1765,9 +1764,7 @@
             "exitPoints": {
                 "OLONO": ["OLONO"]
             },
-            "draw": [
-                ["DW026", "BAL", "NEPOD", "OLONO*"]
-            ]
+            "draw": [["DW026", "BAL", "NEPOD", "OLONO*"]]
         },
         "PELI5A": {
             "icao": "PELI5A",
@@ -1780,9 +1777,7 @@
             "exitPoints": {
                 "PELIG": ["PELIG"]
             },
-            "draw": [
-                ["OE", "PELIG*"]
-            ]
+            "draw": [["OE", "PELIG*"]]
         },
         "PELI5G": {
             "icao": "PELI5G",
@@ -1795,9 +1790,7 @@
             "exitPoints": {
                 "PELIG": ["PELIG"]
             },
-            "draw": [
-                ["DW026", "PELIG*"]
-            ]
+            "draw": [["DW026", "PELIG*"]]
         },
         "PELI7M": {
             "icao": "PELI7M",
@@ -1810,9 +1803,7 @@
             "exitPoints": {
                 "PELIG": ["PELIG"]
             },
-            "draw": [
-                ["DW001", "DW004", "PELIG*"]
-            ]
+            "draw": [["DW001", "DW004", "PELIG*"]]
         },
         "PESI5A": {
             "icao": "PESI5A",
@@ -1825,9 +1816,7 @@
             "exitPoints": {
                 "PESIT": ["PESIT"]
             },
-            "draw": [
-                ["OE", "BAL", "NEPOD", "PESIT*"]
-            ]
+            "draw": [["OE", "BAL", "NEPOD", "PESIT*"]]
         },
         "PESI2E": {
             "icao": "PESI2E",
@@ -1840,9 +1829,7 @@
             "exitPoints": {
                 "PESIT": ["PESIT"]
             },
-            "draw": [
-                ["DW554", "IRDEX", "ERVAD", "PESIT*"]
-            ]
+            "draw": [["DW554", "IRDEX", "ERVAD", "PESIT*"]]
         },
         "PESI3M": {
             "icao": "PESI3M",
@@ -1855,9 +1842,7 @@
             "exitPoints": {
                 "PESIT": ["PESIT"]
             },
-            "draw": [
-                ["DW001", "NEPOD", "PESIT*"]
-            ]
+            "draw": [["DW001", "NEPOD", "PESIT*"]]
         },
         "PESI5G": {
             "icao": "PESI5G",
@@ -1870,9 +1855,7 @@
             "exitPoints": {
                 "PESIT": ["PESIT"]
             },
-            "draw": [
-                ["DW026", "BAL", "NEPOD", "PESIT*"]
-            ]
+            "draw": [["DW026", "BAL", "NEPOD", "PESIT*"]]
         },
         "ROTE1A": {
             "icao": "ROTE1A",
@@ -1885,9 +1868,7 @@
             "exitPoints": {
                 "ROTEV": ["ROTEV"]
             },
-            "draw": [
-                ["OE", "DW029", "ROTEV*"]
-            ]
+            "draw": [["OE", "DW029", "ROTEV*"]]
         },
         "ROTE1G": {
             "icao": "ROTE1G",
@@ -1900,9 +1881,7 @@
             "exitPoints": {
                 "ROTEV": ["ROTEV"]
             },
-            "draw": [
-                ["DW026", "DW029", "ROTEV*"]
-            ]
+            "draw": [["DW026", "DW029", "ROTEV*"]]
         },
         "ROTE6E": {
             "icao": "ROTE6E",
@@ -1915,9 +1894,7 @@
             "exitPoints": {
                 "ROTEV": ["ROTEV"]
             },
-            "draw": [
-                ["DW551", "LEMTA", "ROTEV*"]
-            ]
+            "draw": [["DW551", "LEMTA", "ROTEV*"]]
         },
         "ROTE7M": {
             "icao": "ROTE7M",
@@ -1930,9 +1907,7 @@
             "exitPoints": {
                 "ROTEV": ["ROTEV"]
             },
-            "draw": [
-                ["DW001", "DW011", "BATED", "ERUDA", "ROTEV*"]
-            ]
+            "draw": [["DW001", "DW011", "BATED", "ERUDA", "ROTEV*"]]
         },
         "SURO1A": {
             "icao": "SURO1A",
@@ -1945,9 +1920,7 @@
             "exitPoints": {
                 "SUROX": ["SUROX"]
             },
-            "draw": [
-                ["OE", "DW104", "SUROX*"]
-            ]
+            "draw": [["OE", "DW104", "SUROX*"]]
         },
         "SURO1G": {
             "icao": "SURO1G",
@@ -1960,9 +1933,7 @@
             "exitPoints": {
                 "SUROX": ["SUROX"]
             },
-            "draw": [
-                ["DW026", "DW010", "DW104", "SUROX*"]
-            ]
+            "draw": [["DW026", "DW010", "DW104", "SUROX*"]]
         },
         "SURO6E": {
             "icao": "SURO6E",
@@ -1975,9 +1946,7 @@
             "exitPoints": {
                 "SUROX": ["SUROX"]
             },
-            "draw": [
-                ["DW551", "LEMTA", "DODIG", "SUROX*"]
-            ]
+            "draw": [["DW551", "LEMTA", "DODIG", "SUROX*"]]
         },
         "SURO7M": {
             "icao": "SURO7M",
@@ -1990,9 +1959,7 @@
             "exitPoints": {
                 "SUROX": ["SUROX"]
             },
-            "draw": [
-                ["DW001", "DW011", "BATED", "ERUDA", "DODIG", "SUROX*"]
-            ]
+            "draw": [["DW001", "DW011", "BATED", "ERUDA", "DODIG", "SUROX*"]]
         }
     },
     "stars": {
@@ -2000,14 +1967,37 @@
             "icao": "ABLI2L",
             "name": "Ablin Two Lima",
             "entryPoints": {
-                "ABLIN": [["ABLIN", "A150+|A180-"], ["IRKUM", "A90+"], ["LIPGO", "S240-"]]
+                "ABLIN": [
+                    ["ABLIN", "A150+|A180-"],
+                    ["IRKUM", "A90+"],
+                    ["LIPGO", "S240-"]
+                ]
             },
             "body": [],
             "rwy": {
-                "EIDW28L": [["PEKOK", "A70"], ["SIVNA", "A70|S230-"], ["SUGAD", "A70|S230-"], ["DW704", "A70|S230-"], ["DW705", "A70|S230-"], ["DW706", "A70|S230-"], ["LAPMO", "A30+|S180-"]]
+                "EIDW28L": [
+                    ["PEKOK", "A70"],
+                    ["SIVNA", "A70|S230-"],
+                    ["SUGAD", "A70|S230-"],
+                    ["DW704", "A70|S230-"],
+                    ["DW705", "A70|S230-"],
+                    ["DW706", "A70|S230-"],
+                    ["LAPMO", "A30+|S180-"]
+                ]
             },
             "draw": [
-                ["ABLIN*", "IRKUM", "LIPGO", "PEKOK", "SIVNA", "SUGAD", "DW704", "DW705", "DW706", "LAPMO"]
+                [
+                    "ABLIN*",
+                    "IRKUM",
+                    "LIPGO",
+                    "PEKOK",
+                    "SIVNA",
+                    "SUGAD",
+                    "DW704",
+                    "DW705",
+                    "DW706",
+                    "LAPMO"
+                ]
             ]
         },
         "BAGS1K": {
@@ -2017,16 +2007,14 @@
                 "BAGSO": ["BAGSO"]
             },
             "body": ["ADSIS"],
-            "holds":{
+            "holds": {
                 "KERAV": "030|right|1min|S230-"
             },
             "rwy": {
                 "EIDW16": [["@KERAV", "A60+|S230-"]],
                 "EIDW34": [["KERAV", "A60+|S230-"]]
             },
-            "draw": [
-                ["BAGSO*", "ADSIS", "KERAV"]
-            ]
+            "draw": [["BAGSO*", "ADSIS", "KERAV"]]
         },
         "BAGS2L": {
             "icao": "BAGS2L",
@@ -2036,7 +2024,16 @@
             },
             "body": [],
             "rwy": {
-                "EIDW28L": ["ADSIS", ["KERAV", "A80|S230-"], ["KOGAX", "A80|S230-"], ["KUDOM", "A80|S230-"], ["DW814", "A80|S230-"], ["DW815", "A80|S230-"], ["DW816", "A80|S230-"], ["LAPMO", "A30+|S180-"]]
+                "EIDW28L": [
+                    "ADSIS",
+                    ["KERAV", "A80|S230-"],
+                    ["KOGAX", "A80|S230-"],
+                    ["KUDOM", "A80|S230-"],
+                    ["DW814", "A80|S230-"],
+                    ["DW815", "A80|S230-"],
+                    ["DW816", "A80|S230-"],
+                    ["LAPMO", "A30+|S180-"]
+                ]
             },
             "draw": [
                 ["BAGSO*", "ADSIS", "KERAV", "KOGAX", "KUDOM", "DW814", "DW815", "DW816", "LAPMO"]
@@ -2050,10 +2047,31 @@
             },
             "body": [],
             "rwy": {
-                "EIDW10R": ["EKREN", "ELBON", ["ASDER", "A80|S230-"], ["AKIVA", "A80|S230-"], ["ADNAL", "A80|S230-"], ["APRUT", "A80|S230-"], ["DW865", "A80|S230-"], ["DW866", "A80|S230-"], ["NEKIL", "A40+"]]
+                "EIDW10R": [
+                    "EKREN",
+                    "ELBON",
+                    ["ASDER", "A80|S230-"],
+                    ["AKIVA", "A80|S230-"],
+                    ["ADNAL", "A80|S230-"],
+                    ["APRUT", "A80|S230-"],
+                    ["DW865", "A80|S230-"],
+                    ["DW866", "A80|S230-"],
+                    ["NEKIL", "A40+"]
+                ]
             },
             "draw": [
-                ["BAGSO*", "EKREN", "ELBON", "ASDER", "AKIVA", "ADNAL", "APRUT", "DW865", "DW866", "NEKIL"]
+                [
+                    "BAGSO*",
+                    "EKREN",
+                    "ELBON",
+                    "ASDER",
+                    "AKIVA",
+                    "ADNAL",
+                    "APRUT",
+                    "DW865",
+                    "DW866",
+                    "NEKIL"
+                ]
             ]
         },
         "BAML1K": {
@@ -2066,9 +2084,7 @@
             "rwy": {
                 "EIDW34": ["RONON", ["ORVEN", "S250-"], "GIRAS", ["KERAV", "A60+|S230-"]]
             },
-            "draw": [
-                ["BAMLI*", "RONON", "ORVEN", "GIRAS", "KERAV"]
-            ]
+            "draw": [["BAMLI*", "RONON", "ORVEN", "GIRAS", "KERAV"]]
         },
         "BAML2L": {
             "icao": "BAML2L",
@@ -2078,10 +2094,33 @@
             },
             "body": [],
             "rwy": {
-                "EIDW28L": ["RONON", "ORVEN", "GIRAS", ["KERAV", "A80|S230-"], ["KOGAX", "A80|S230-"], ["KUDOM", "A80|S230-"], ["DW814", "A80|S230-"], ["DW815", "A80|S230-"], ["DW816", "A80|S230-"], ["LAPMO", "A30+|S180-"]]
+                "EIDW28L": [
+                    "RONON",
+                    "ORVEN",
+                    "GIRAS",
+                    ["KERAV", "A80|S230-"],
+                    ["KOGAX", "A80|S230-"],
+                    ["KUDOM", "A80|S230-"],
+                    ["DW814", "A80|S230-"],
+                    ["DW815", "A80|S230-"],
+                    ["DW816", "A80|S230-"],
+                    ["LAPMO", "A30+|S180-"]
+                ]
             },
             "draw": [
-                ["BAMLI*", "RONON", "ORVEN", "GIRAS", "KERAV", "KOGAX", "KUDOM", "DW814", "DW815", "DW816", "LAPMO"]
+                [
+                    "BAMLI*",
+                    "RONON",
+                    "ORVEN",
+                    "GIRAS",
+                    "KERAV",
+                    "KOGAX",
+                    "KUDOM",
+                    "DW814",
+                    "DW815",
+                    "DW816",
+                    "LAPMO"
+                ]
             ]
         },
         "BAML1R": {
@@ -2092,11 +2131,16 @@
             },
             "body": [],
             "rwy": {
-                "EIDW10R": [["EPIDU", "S230-"], ["ADNAL", "A80|S230-"], ["APRUT", "A80|S230-"], ["DW865", "A80|S230-"], ["DW866", "A80|S230-"], ["NEKIL", "A40+"]]
+                "EIDW10R": [
+                    ["EPIDU", "S230-"],
+                    ["ADNAL", "A80|S230-"],
+                    ["APRUT", "A80|S230-"],
+                    ["DW865", "A80|S230-"],
+                    ["DW866", "A80|S230-"],
+                    ["NEKIL", "A40+"]
+                ]
             },
-            "draw": [
-                ["BAMLI*", "EPIDU", "ADNAL", "APRUT", "DW865", "DW866", "NEKIL"]
-            ]
+            "draw": [["BAMLI*", "EPIDU", "ADNAL", "APRUT", "DW865", "DW866", "NEKIL"]]
         },
         "BOYN1K": {
             "icao": "BOYN1K",
@@ -2105,16 +2149,14 @@
                 "BOYNE": ["BOYNE"]
             },
             "body": ["ADSIS"],
-            "holds":{
+            "holds": {
                 "KERAV": "030|right|1min|S230-"
             },
             "rwy": {
                 "EIDW16": [["@KERAV", "A60+|S230-"]],
                 "EIDW34": [["KERAV", "A60+|S230-"]]
             },
-            "draw": [
-                ["BOYNE*", "ADSIS", "KERAV"]
-            ]
+            "draw": [["BOYNE*", "ADSIS", "KERAV"]]
         },
         "BOYN2L": {
             "icao": "BOYN2L",
@@ -2124,7 +2166,16 @@
             },
             "body": [],
             "rwy": {
-                "EIDW28L": ["ADSIS", ["KERAV", "A80|S230-"], ["KOGAX", "A80|S230-"], ["KUDOM", "A80|S230-"], ["DW814", "A80|S230-"], ["DW815", "A80|S230-"], ["DW816", "A80|S230-"], ["LAPMO", "A30+|S180-"]]
+                "EIDW28L": [
+                    "ADSIS",
+                    ["KERAV", "A80|S230-"],
+                    ["KOGAX", "A80|S230-"],
+                    ["KUDOM", "A80|S230-"],
+                    ["DW814", "A80|S230-"],
+                    ["DW815", "A80|S230-"],
+                    ["DW816", "A80|S230-"],
+                    ["LAPMO", "A30+|S180-"]
+                ]
             },
             "draw": [
                 ["BOYNE*", "ADSIS", "KERAV", "KOGAX", "KUDOM", "DW814", "DW815", "DW816", "LAPMO"]
@@ -2138,10 +2189,31 @@
             },
             "body": [],
             "rwy": {
-                "EIDW10R": ["EKREN", "ELBON", ["ASDER", "A80|S230-"], ["AKIVA", "A80|S230-"], ["ADNAL", "A80|S230-"], ["APRUT", "A80|S230-"], ["DW865", "A80|S230-"], ["DW866", "A80|S230-"], ["NEKIL", "A40+"]]
+                "EIDW10R": [
+                    "EKREN",
+                    "ELBON",
+                    ["ASDER", "A80|S230-"],
+                    ["AKIVA", "A80|S230-"],
+                    ["ADNAL", "A80|S230-"],
+                    ["APRUT", "A80|S230-"],
+                    ["DW865", "A80|S230-"],
+                    ["DW866", "A80|S230-"],
+                    ["NEKIL", "A40+"]
+                ]
             },
             "draw": [
-                ["BOYNE*", "EKREN", "ELBON", "ASDER", "AKIVA", "ADNAL", "APRUT", "DW865", "DW866", "NEKIL"]
+                [
+                    "BOYNE*",
+                    "EKREN",
+                    "ELBON",
+                    "ASDER",
+                    "AKIVA",
+                    "ADNAL",
+                    "APRUT",
+                    "DW865",
+                    "DW866",
+                    "NEKIL"
+                ]
             ]
         },
         "BUNE2L": {
@@ -2152,10 +2224,33 @@
             },
             "body": [],
             "rwy": {
-                "EIDW28L": ["DIRUM", "KEPOR", "ARVOK", ["SORIN", "A70|S230-"], ["SIVNA", "A70|S230-"], ["SUGAD", "A70|S230-"], ["DW704", "A70|S230-"], ["DW705", "A70|S230-"], ["DW706", "A70|S230-"], ["LAPMO", "A30+|S180-"]]
+                "EIDW28L": [
+                    "DIRUM",
+                    "KEPOR",
+                    "ARVOK",
+                    ["SORIN", "A70|S230-"],
+                    ["SIVNA", "A70|S230-"],
+                    ["SUGAD", "A70|S230-"],
+                    ["DW704", "A70|S230-"],
+                    ["DW705", "A70|S230-"],
+                    ["DW706", "A70|S230-"],
+                    ["LAPMO", "A30+|S180-"]
+                ]
             },
             "draw": [
-                ["BUNED*", "DIRUM", "KEPOR", "ARVOK", "SORIN", "SIVNA", "SUGAD", "DW704", "DW705", "DW706", "LAPMO"]
+                [
+                    "BUNED*",
+                    "DIRUM",
+                    "KEPOR",
+                    "ARVOK",
+                    "SORIN",
+                    "SIVNA",
+                    "SUGAD",
+                    "DW704",
+                    "DW705",
+                    "DW706",
+                    "LAPMO"
+                ]
             ]
         },
         "BUNE1R": {
@@ -2166,11 +2261,17 @@
             },
             "body": [],
             "rwy": {
-                "EIDW10R": ["DIRUM", ["KANUS", "S230-"], ["BABON", "A70|S230-"], ["BIVDI", "A70|S230-"], ["DW754", "A70|S230-"], ["DW755", "A70|S230-"], ["OSLEX", "A50+"]]
+                "EIDW10R": [
+                    "DIRUM",
+                    ["KANUS", "S230-"],
+                    ["BABON", "A70|S230-"],
+                    ["BIVDI", "A70|S230-"],
+                    ["DW754", "A70|S230-"],
+                    ["DW755", "A70|S230-"],
+                    ["OSLEX", "A50+"]
+                ]
             },
-            "draw": [
-                ["BUNED*", "DIRUM", "KANUS", "BABON", "BIVDI", "DW754", "DW755", "OSLEX"]
-            ]
+            "draw": [["BUNED*", "DIRUM", "KANUS", "BABON", "BIVDI", "DW754", "DW755", "OSLEX"]]
         },
         "BUNE1S": {
             "icao": "BUNE1S",
@@ -2182,9 +2283,7 @@
             "rwy": {
                 "EIDW34": ["DIRUM", ["KEPOR", "S250-"], "ARVOK", ["SORIN", "A60+|S230-"]]
             },
-            "draw": [
-                ["BUNED*", "DIRUM", "KEPOR", "ARVOK", "SORIN"]
-            ]
+            "draw": [["BUNED*", "DIRUM", "KEPOR", "ARVOK", "SORIN"]]
         },
         "BUNE5U": {
             "icao": "BUNE5U",
@@ -2193,15 +2292,13 @@
                 "BUNED": ["BUNED"]
             },
             "body": [],
-            "holds":{
+            "holds": {
                 "ULTAG": "320|left|1min|S220-"
             },
             "rwy": {
                 "EIDW16": ["DIRUM", "KEPOR", ["OTNER", "S250-"], "DW005", ["@ULTAG", "A60+|S220-"]]
             },
-            "draw": [
-                ["BUNED*", "DIRUM", "KEPOR", "OTNER", "DW005", "ULTAG"]
-            ]
+            "draw": [["BUNED*", "DIRUM", "KEPOR", "OTNER", "DW005", "ULTAG"]]
         },
         "LIPG1R": {
             "icao": "LIPG1R",
@@ -2211,7 +2308,16 @@
             },
             "body": [],
             "rwy": {
-                "EIDW10R": ["RUBAR", "DETAX", ["BERMO", "A70|S230-"], ["BABON", "A70|S230-"], ["BIVDI", "A70|S230-"], ["DW754", "A70|S230-"], ["DW755", "A70|S230-"], ["OSLEX", "A50+"]]
+                "EIDW10R": [
+                    "RUBAR",
+                    "DETAX",
+                    ["BERMO", "A70|S230-"],
+                    ["BABON", "A70|S230-"],
+                    ["BIVDI", "A70|S230-"],
+                    ["DW754", "A70|S230-"],
+                    ["DW755", "A70|S230-"],
+                    ["OSLEX", "A50+"]
+                ]
             },
             "draw": [
                 ["LIPGO*", "RUBAR", "DETAX", "BERMO", "BABON", "BIVDI", "DW754", "DW755", "OSLEX"]
@@ -2227,9 +2333,7 @@
             "rwy": {
                 "EIDW34": [["SORIN", "A60+|S230-"]]
             },
-            "draw": [
-                ["LIPGO*", "SORIN"]
-            ]
+            "draw": [["LIPGO*", "SORIN"]]
         },
         "LIPG2U": {
             "icao": "LIPG2U",
@@ -2241,9 +2345,7 @@
             "rwy": {
                 "EIDW16": ["RUBAR", ["OTNER", "S250-"], "DW005", ["@ULTAG", "A60+|S220-"]]
             },
-            "draw": [
-                ["LIPGO*", "RUBAR", "OTNER", "DW005", "ULTAG"]
-            ]
+            "draw": [["LIPGO*", "RUBAR", "OTNER", "DW005", "ULTAG"]]
         },
         "NIMA1K": {
             "icao": "NIMA1K",
@@ -2252,16 +2354,14 @@
                 "NIMAT": ["NIMAT"]
             },
             "body": [],
-            "holds":{
+            "holds": {
                 "KERAV": "030|right|1min|S230-"
             },
             "rwy": {
                 "EIDW16": [["@KERAV", "A60+|S230-"]],
                 "EIDW34": [["KERAV", "A60+|S230-"]]
             },
-            "draw": [
-                ["NIMAT*", "KERAV"]
-            ]
+            "draw": [["NIMAT*", "KERAV"]]
         },
         "NIMA2L": {
             "icao": "NIMA2L",
@@ -2271,11 +2371,17 @@
             },
             "body": [],
             "rwy": {
-                "EIDW28L": [["KERAV", "A80|S230-"], ["KOGAX", "A80|S230-"], ["KUDOM", "A80|S230-"], ["DW814", "A80|S230-"], ["DW815", "A80|S230-"], ["DW816", "A80|S230-"], ["LAPMO", "A30+|S180-"]]
+                "EIDW28L": [
+                    ["KERAV", "A80|S230-"],
+                    ["KOGAX", "A80|S230-"],
+                    ["KUDOM", "A80|S230-"],
+                    ["DW814", "A80|S230-"],
+                    ["DW815", "A80|S230-"],
+                    ["DW816", "A80|S230-"],
+                    ["LAPMO", "A30+|S180-"]
+                ]
             },
-            "draw": [
-                ["NIMAT*", "KERAV", "KOGAX", "KUDOM", "DW814", "DW815", "DW816", "LAPMO"]
-            ]
+            "draw": [["NIMAT*", "KERAV", "KOGAX", "KUDOM", "DW814", "DW815", "DW816", "LAPMO"]]
         },
         "NIMA1R": {
             "icao": "NIMA1R",
@@ -2285,10 +2391,31 @@
             },
             "body": [],
             "rwy": {
-                "EIDW10R": ["EKREN", "ELBON", ["ASDER", "A80|S230-"], ["AKIVA", "A80|S230-"], ["ADNAL", "A80|S230-"], ["APRUT", "A80|S230-"], ["DW865", "A80|S230-"], ["DW866", "A80|S230-"], ["NEKIL", "A40+"]]
+                "EIDW10R": [
+                    "EKREN",
+                    "ELBON",
+                    ["ASDER", "A80|S230-"],
+                    ["AKIVA", "A80|S230-"],
+                    ["ADNAL", "A80|S230-"],
+                    ["APRUT", "A80|S230-"],
+                    ["DW865", "A80|S230-"],
+                    ["DW866", "A80|S230-"],
+                    ["NEKIL", "A40+"]
+                ]
             },
             "draw": [
-                ["NIMAT*", "EKREN", "ELBON", "ASDER", "AKIVA", "ADNAL", "APRUT", "DW865", "DW866", "NEKIL"]
+                [
+                    "NIMAT*",
+                    "EKREN",
+                    "ELBON",
+                    "ASDER",
+                    "AKIVA",
+                    "ADNAL",
+                    "APRUT",
+                    "DW865",
+                    "DW866",
+                    "NEKIL"
+                ]
             ]
         },
         "OLAP1K": {
@@ -2301,9 +2428,7 @@
             "rwy": {
                 "EIDW34": ["RONON", ["ORVEN", "S250-"], "GIRAS", ["KERAV", "A60+|S230-"]]
             },
-            "draw": [
-                ["OLAPO*", "RONON", "ORVEN", "GIRAS", "KERAV"]
-            ]
+            "draw": [["OLAPO*", "RONON", "ORVEN", "GIRAS", "KERAV"]]
         },
         "OLAP2L": {
             "icao": "OLAP2L",
@@ -2313,10 +2438,33 @@
             },
             "body": [],
             "rwy": {
-                "EIDW28L": ["RONON", "ORVEN", "GIRAS", ["KERAV", "A80|S230-"], ["KOGAX", "A80|S230-"], ["KUDOM", "A80|S230-"], ["DW814", "A80|S230-"], ["DW815", "A80|S230-"], ["DW816", "A80|S230-"], ["LAPMO", "A30+|S180-"]]
+                "EIDW28L": [
+                    "RONON",
+                    "ORVEN",
+                    "GIRAS",
+                    ["KERAV", "A80|S230-"],
+                    ["KOGAX", "A80|S230-"],
+                    ["KUDOM", "A80|S230-"],
+                    ["DW814", "A80|S230-"],
+                    ["DW815", "A80|S230-"],
+                    ["DW816", "A80|S230-"],
+                    ["LAPMO", "A30+|S180-"]
+                ]
             },
             "draw": [
-                ["OLAPO*", "RONON", "ORVEN", "GIRAS", "KERAV", "KOGAX", "KUDOM", "DW814", "DW815", "DW816", "LAPMO"]
+                [
+                    "OLAPO*",
+                    "RONON",
+                    "ORVEN",
+                    "GIRAS",
+                    "KERAV",
+                    "KOGAX",
+                    "KUDOM",
+                    "DW814",
+                    "DW815",
+                    "DW816",
+                    "LAPMO"
+                ]
             ]
         },
         "OLAP1R": {
@@ -2327,11 +2475,16 @@
             },
             "body": [],
             "rwy": {
-                "EIDW10R": [["EPIDU", "S230-"], ["ADNAL", "A80|S230-"], ["APRUT", "A80|S230-"], ["DW865", "A80|S230-"], ["DW866", "A80|S230-"], ["NEKIL", "A40+"]]
+                "EIDW10R": [
+                    ["EPIDU", "S230-"],
+                    ["ADNAL", "A80|S230-"],
+                    ["APRUT", "A80|S230-"],
+                    ["DW865", "A80|S230-"],
+                    ["DW866", "A80|S230-"],
+                    ["NEKIL", "A40+"]
+                ]
             },
-            "draw": [
-                ["OLAPO*", "EPIDU", "ADNAL", "APRUT", "DW865", "DW866", "NEKIL"]
-            ]
+            "draw": [["OLAPO*", "EPIDU", "ADNAL", "APRUT", "DW865", "DW866", "NEKIL"]]
         },
         "OLAP4U": {
             "icao": "OLAP4U",
@@ -2340,15 +2493,13 @@
                 "OLAPO": ["OLAPO"]
             },
             "body": [],
-            "holds":{
+            "holds": {
                 "ULTAG": "320|left|1min|S220-"
             },
             "rwy": {
                 "EIDW16": [["@ULTAG", "A60+|S220-"]]
             },
-            "draw": [
-                ["OLAPO*", "ULTAG"]
-            ]
+            "draw": [["OLAPO*", "ULTAG"]]
         },
         "OSGA2L": {
             "icao": "OSGA2L",
@@ -2358,10 +2509,33 @@
             },
             "body": [],
             "rwy": {
-                "EIDW28L": ["DIRUM", "KEPOR", "ARVOK", ["SORIN", "A70|S230-"], ["SIVNA", "A70|S230-"], ["SUGAD", "A70|S230-"], ["DW704", "A70|S230-"], ["DW705", "A70|S230-"], ["DW706", "A70|S230-"], ["LAPMO", "A30+|S180-"]]
+                "EIDW28L": [
+                    "DIRUM",
+                    "KEPOR",
+                    "ARVOK",
+                    ["SORIN", "A70|S230-"],
+                    ["SIVNA", "A70|S230-"],
+                    ["SUGAD", "A70|S230-"],
+                    ["DW704", "A70|S230-"],
+                    ["DW705", "A70|S230-"],
+                    ["DW706", "A70|S230-"],
+                    ["LAPMO", "A30+|S180-"]
+                ]
             },
             "draw": [
-                ["OSGAR*", "DIRUM", "KEPOR", "ARVOK", "SORIN", "SIVNA", "SUGAD", "DW704", "DW705", "DW706", "LAPMO"]
+                [
+                    "OSGAR*",
+                    "DIRUM",
+                    "KEPOR",
+                    "ARVOK",
+                    "SORIN",
+                    "SIVNA",
+                    "SUGAD",
+                    "DW704",
+                    "DW705",
+                    "DW706",
+                    "LAPMO"
+                ]
             ]
         },
         "OSGA1R": {
@@ -2372,11 +2546,17 @@
             },
             "body": [],
             "rwy": {
-                "EIDW10R": ["DIRUM", ["KANUS", "S230-"], ["BABON", "A70|S230-"], ["BIVDI", "A70|S230-"], ["DW754", "A70|S230-"], ["DW755", "A70|S230-"], ["OSLEX", "A50+"]]
+                "EIDW10R": [
+                    "DIRUM",
+                    ["KANUS", "S230-"],
+                    ["BABON", "A70|S230-"],
+                    ["BIVDI", "A70|S230-"],
+                    ["DW754", "A70|S230-"],
+                    ["DW755", "A70|S230-"],
+                    ["OSLEX", "A50+"]
+                ]
             },
-            "draw": [
-                ["OSGAR*", "DIRUM", "KANUS", "BABON", "BIVDI", "DW754", "DW755", "OSLEX"]
-            ]
+            "draw": [["OSGAR*", "DIRUM", "KANUS", "BABON", "BIVDI", "DW754", "DW755", "OSLEX"]]
         },
         "OSGA1S": {
             "icao": "OSGA1S",
@@ -2388,9 +2568,7 @@
             "rwy": {
                 "EIDW34": ["DIRUM", ["KEPOR", "S250-"], "ARVOK", ["SORIN", "A60+|S230-"]]
             },
-            "draw": [
-                ["OSGAR*", "DIRUM", "KEPOR", "ARVOK", "SORIN"]
-            ]
+            "draw": [["OSGAR*", "DIRUM", "KEPOR", "ARVOK", "SORIN"]]
         },
         "OSGA5U": {
             "icao": "OSGA5U",
@@ -2399,15 +2577,13 @@
                 "OSGAR": ["OSGAR"]
             },
             "body": [],
-            "holds":{
+            "holds": {
                 "ULTAG": "320|left|1min|S220-"
             },
             "rwy": {
                 "EIDW16": ["DIRUM", "KEPOR", ["OTNER", "S250-"], "DW005", ["@ULTAG", "A60+|S220-"]]
             },
-            "draw": [
-                ["OSGAR*", "DIRUM", "KEPOR", "OTNER", "DW005", "ULTAG"]
-            ]
+            "draw": [["OSGAR*", "DIRUM", "KEPOR", "OTNER", "DW005", "ULTAG"]]
         },
         "SUTE2L": {
             "icao": "SUTE2L",
@@ -2417,10 +2593,33 @@
             },
             "body": [],
             "rwy": {
-                "EIDW28L": ["DIRUM", "KEPOR", "ARVOK", ["SORIN", "A70|S230-"], ["SIVNA", "A70|S230-"], ["SUGAD", "A70|S230-"], ["DW704", "A70|S230-"], ["DW705", "A70|S230-"], ["DW706", "A70|S230-"], ["LAPMO", "A30+|S180-"]]
+                "EIDW28L": [
+                    "DIRUM",
+                    "KEPOR",
+                    "ARVOK",
+                    ["SORIN", "A70|S230-"],
+                    ["SIVNA", "A70|S230-"],
+                    ["SUGAD", "A70|S230-"],
+                    ["DW704", "A70|S230-"],
+                    ["DW705", "A70|S230-"],
+                    ["DW706", "A70|S230-"],
+                    ["LAPMO", "A30+|S180-"]
+                ]
             },
             "draw": [
-                ["SUTEX*", "DIRUM", "KEPOR", "ARVOK", "SORIN", "SIVNA", "SUGAD", "DW704", "DW705", "DW706", "LAPMO"]
+                [
+                    "SUTEX*",
+                    "DIRUM",
+                    "KEPOR",
+                    "ARVOK",
+                    "SORIN",
+                    "SIVNA",
+                    "SUGAD",
+                    "DW704",
+                    "DW705",
+                    "DW706",
+                    "LAPMO"
+                ]
             ]
         },
         "SUTE1R": {
@@ -2431,11 +2630,17 @@
             },
             "body": [],
             "rwy": {
-                "EIDW10R": ["DIRUM", ["KANUS", "S230-"], ["BABON", "A70|S230-"], ["BIVDI", "A70|S230-"], ["DW754", "A70|S230-"], ["DW755", "A70|S230-"], ["OSLEX", "A50+"]]
+                "EIDW10R": [
+                    "DIRUM",
+                    ["KANUS", "S230-"],
+                    ["BABON", "A70|S230-"],
+                    ["BIVDI", "A70|S230-"],
+                    ["DW754", "A70|S230-"],
+                    ["DW755", "A70|S230-"],
+                    ["OSLEX", "A50+"]
+                ]
             },
-            "draw": [
-                ["SUTEX*", "DIRUM", "KANUS", "BABON", "BIVDI", "DW754", "DW755", "OSLEX"]
-            ]
+            "draw": [["SUTEX*", "DIRUM", "KANUS", "BABON", "BIVDI", "DW754", "DW755", "OSLEX"]]
         },
         "SUTE1S": {
             "icao": "SUTE1S",
@@ -2447,9 +2652,7 @@
             "rwy": {
                 "EIDW34": ["DIRUM", ["KEPOR", "S250-"], "ARVOK", ["SORIN", "A60+|S230-"]]
             },
-            "draw": [
-                ["SUTEX*", "DIRUM", "KEPOR", "ARVOK", "SORIN"]
-            ]
+            "draw": [["SUTEX*", "DIRUM", "KEPOR", "ARVOK", "SORIN"]]
         },
         "SUTE5U": {
             "icao": "SUTE5U",
@@ -2458,15 +2661,13 @@
                 "SUTEX": ["SUTEX"]
             },
             "body": [],
-            "holds":{
+            "holds": {
                 "ULTAG": "320|left|1min|S220-"
             },
             "rwy": {
                 "EIDW16": ["DIRUM", "KEPOR", ["OTNER", "S250-"], "DW005", ["@ULTAG", "A60+|S220-"]]
             },
-            "draw": [
-                ["SUTEX*", "DIRUM", "KEPOR", "OTNER", "DW005", "ULTAG"]
-            ]
+            "draw": [["SUTEX*", "DIRUM", "KEPOR", "OTNER", "DW005", "ULTAG"]]
         },
         "VATR2L": {
             "icao": "VATR2L",
@@ -2476,11 +2677,17 @@
             },
             "body": [],
             "rwy": {
-                "EIDW28L": [["SORIN", "A70|S230-"], ["SIVNA", "A70|S230-"], ["SUGAD", "A70|S230-"], ["DW704", "A70|S230-"], ["DW705", "A70|S230-"], ["DW706", "A70|S230-"], ["LAPMO", "A30+|S180-"]]
+                "EIDW28L": [
+                    ["SORIN", "A70|S230-"],
+                    ["SIVNA", "A70|S230-"],
+                    ["SUGAD", "A70|S230-"],
+                    ["DW704", "A70|S230-"],
+                    ["DW705", "A70|S230-"],
+                    ["DW706", "A70|S230-"],
+                    ["LAPMO", "A30+|S180-"]
+                ]
             },
-            "draw": [
-                ["VATRY*", "SORIN", "SIVNA", "SUGAD", "DW704", "DW705", "DW706", "LAPMO"]
-            ]
+            "draw": [["VATRY*", "SORIN", "SIVNA", "SUGAD", "DW704", "DW705", "DW706", "LAPMO"]]
         },
         "VATR1R": {
             "icao": "VATR1R",
@@ -2490,7 +2697,16 @@
             },
             "body": [],
             "rwy": {
-                "EIDW10R": ["RUBAR", "DETAX", ["BERMO", "A70|S230-"], ["BABON", "A70|S230-"], ["BIVDI", "A70|S230-"], ["DW754", "A70|S230-"], ["DW755", "A70|S230-"], ["OSLEX", "A50+"]]
+                "EIDW10R": [
+                    "RUBAR",
+                    "DETAX",
+                    ["BERMO", "A70|S230-"],
+                    ["BABON", "A70|S230-"],
+                    ["BIVDI", "A70|S230-"],
+                    ["DW754", "A70|S230-"],
+                    ["DW755", "A70|S230-"],
+                    ["OSLEX", "A50+"]
+                ]
             },
             "draw": [
                 ["VATRY*", "RUBAR", "DETAX", "BERMO", "BABON", "BIVDI", "DW754", "DW755", "OSLEX"]
@@ -2506,9 +2722,7 @@
             "rwy": {
                 "EIDW34": [["SORIN", "A60+|S230-"]]
             },
-            "draw": [
-                ["VATRY*", "SORIN"]
-            ]
+            "draw": [["VATRY*", "SORIN"]]
         },
         "VATR2U": {
             "icao": "VATR2U",
@@ -2520,9 +2734,7 @@
             "rwy": {
                 "EIDW16": ["RUBAR", ["OTNER", "S250-"], "DW005", ["@ULTAG", "A60+|S220-"]]
             },
-            "draw": [
-                ["VATRY*", "RUBAR", "OTNER", "DW005", "ULTAG"]
-            ]
+            "draw": [["VATRY*", "RUBAR", "OTNER", "DW005", "ULTAG"]]
         }
     },
     "spawnPatterns": [
@@ -2930,9 +3142,7 @@
             "speed": 240,
             "method": "random",
             "rate": 0.18,
-            "airlines": [
-                ["stk/einRegional", 2]
-            ]
+            "airlines": [["stk/einRegional", 2]]
         }
     ],
     "maps": [

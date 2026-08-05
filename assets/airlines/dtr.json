@@ -3,9 +3,7 @@
     "name": "Danish Air Transport",
     "callsign": {
         "name": "Danish",
-        "callsignFormats": [
-            "##"
-        ]
+        "callsignFormats": ["##"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "General Aviation Italy",
     "callsign": {
         "name": "India",
-        "callsignFormats": [
-            "@@@@"
-        ]
+        "callsignFormats": ["@@@@"]
     },
     "fleets": {
         "default": [

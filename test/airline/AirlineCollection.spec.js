@@ -6,34 +6,35 @@ import AirlineModel from '../../src/assets/scripts/client/airline/AirlineModel';
 import { AIRLINE_DEFINITION_LIST_MOCK } from './_mocks/airlineMocks';
 
 test('throws when called with invalid data', () => {
-    const expectedMessage = /Invalid airlineList passed to AirlineCollection constructor\. Expected a non-empty array, but received .*/;
+    const expectedMessage =
+        /Invalid airlineList passed to AirlineCollection constructor\. Expected a non-empty array, but received .*/;
     expect(() => new AirlineCollection(), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineCollection(null), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineCollection({}), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineCollection([]), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineCollection(42), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineCollection('threeve'), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineCollection(false), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
 });
 

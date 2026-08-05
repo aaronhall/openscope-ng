@@ -2,7 +2,7 @@
 import { test, expect, vi } from 'vitest';
 import {
     isEmptyOrNotObject,
-    isEmptyOrNotArray
+    isEmptyOrNotArray,
 } from '../../src/assets/scripts/client/utilities/validatorUtilities';
 
 test('.isEmptyOrNotObject() returns true when passed a non object', () => {
@@ -20,11 +20,13 @@ test('.isEmptyOrNotObject returns true when passed an empty object', () => {
 
 test('.isEmptyOrNotObject() returns false when passed a non-empty object', () => {
     expect(isEmptyOrNotObject([1, 2, 3])).toBe(false);
-    expect(isEmptyOrNotObject({
-        a: 'threeve',
-        b: 42,
-        c: false
-    })).toBe(false);
+    expect(
+        isEmptyOrNotObject({
+            a: 'threeve',
+            b: 42,
+            c: false,
+        })
+    ).toBe(false);
 });
 
 test('.isEmptyOrNotArray() returns true when passed a non array', () => {
@@ -45,9 +47,11 @@ test('.isEmptyOrNotArray return false when passed an array with values', () => {
 });
 
 test('.isEmptyOrNotArray() returns true when passed an object with properties', () => {
-    expect(isEmptyOrNotArray({
-        a: 'threeve',
-        b: 42,
-        c: false
-    })).toBe(true);
+    expect(
+        isEmptyOrNotArray({
+            a: 'threeve',
+            b: 42,
+            c: false,
+        })
+    ).toBe(true);
 });

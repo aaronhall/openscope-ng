@@ -3,9 +3,7 @@
     "name": "General Aviation Solomon Islands",
     "callsign": {
         "name": "Hotel Four",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

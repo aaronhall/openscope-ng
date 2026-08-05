@@ -1,6 +1,5 @@
 import { test, expect, vi } from 'vitest';
-import AircraftCommandModel
-    from '../../../src/assets/scripts/client/commands/aircraftCommand/AircraftCommandModel';
+import AircraftCommandModel from '../../../src/assets/scripts/client/commands/aircraftCommand/AircraftCommandModel';
 import { AIRCRAFT_COMMAND_MAP } from '../../../src/assets/scripts/client/commands/aircraftCommand/aircraftCommandMap';
 import { timewarpParser } from '../../../src/assets/scripts/client/commands/parsers/argumentParsers';
 import {
@@ -10,9 +9,8 @@ import {
     strToNumArrayParse,
     zeroOrOneArgumentVal,
     self_alias,
-    test_aliases
+    test_aliases,
 } from './testUtils';
-
 
 const extractParseAndValidate = (cmd) => {
     const model = new AircraftCommandModel(cmd);
@@ -73,6 +71,7 @@ test('aliases, timewarp parser and zeroOrOneArgumentValidator used by timewarp',
 });
 
 test('make sure we test all 8 system commands', () => {
-    expect(Object.values(AIRCRAFT_COMMAND_MAP)
-        .filter(val => val.isSystemCommand).length === 8).toBe(true);
+    expect(
+        Object.values(AIRCRAFT_COMMAND_MAP).filter((val) => val.isSystemCommand).length === 8
+    ).toBe(true);
 });

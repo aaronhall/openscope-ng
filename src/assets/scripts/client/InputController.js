@@ -1,4 +1,3 @@
-/* eslint-disable camelcase, no-mixed-operators, object-shorthand, expected-return */
 import $ from 'jquery';
 import _has from 'lodash/has';
 import _includes from 'lodash/includes';
@@ -24,7 +23,7 @@ import {
     LEGACY_KEY_CODES,
     MOUSE_BUTTON_NAMES,
     MOUSE_EVENT_CODE,
-    PARSED_COMMAND_NAME
+    PARSED_COMMAND_NAME,
 } from './constants/inputConstants';
 import { SELECTORS, CLASSNAMES } from './constants/selectors';
 import { TRACKABLE_EVENT } from './constants/trackableEvents';
@@ -52,13 +51,21 @@ export default class InputController {
         this._eventBus = EventBus;
         this._aircraftController = aircraftController;
         this._scopeModel = scopeModel;
-        this._autocompleteController = new AutocompleteController(this.$element, this, this._aircraftController);
+        this._autocompleteController = new AutocompleteController(
+            this.$element,
+            this,
+            this._aircraftController
+        );
 
         prop.input = input;
         this.input = input;
+        this.input.command = '';
         this.input.callsign = '';
+        this.input.data = '';
         this.input.history = [];
         this.input.history_item = null;
+        this.input.click = [0, 0];
+        this._mouseDelta = [0, 0];
         this._mouseDownScreenPosition = [0, 0];
         this.input.isMouseDown = false;
         this.commandBarContext = COMMAND_CONTEXT.AIRCRAFT;
@@ -86,6 +93,7 @@ export default class InputController {
     setupHandlers() {
         this.onKeydownHandler = this._onKeydown.bind(this);
         this.onKeyupHandler = this._onKeyup.bind(this);
+        this.onCommandInputChangeHandler = this._onCommandInputChange.bind(this);
         this.onMouseScrollHandler = this._onMouseScroll.bind(this);
         this.onMouseClickAndDragHandler = this._onMouseClickAndDrag.bind(this);
         this.onMouseUpHandler = this._onMouseUp.bind(this);
@@ -104,6 +112,7 @@ export default class InputController {
     enable() {
         this.$window.on('keydown', this.onKeydownHandler);
         this.$window.on('keyup', this.onKeyupHandler);
+        this.$commandInput.on('input', this.onCommandInputChangeHandler);
         // TODO: these are non-standard events and will be deprecated soon. this should be moved
         // over to the `wheel` event. This should also be moved over to `.on()` instead of `.bind()`
         // https://developer.mozilla.org/en-US/docs/Web/Events/wheel
@@ -130,6 +139,7 @@ export default class InputController {
     disable() {
         this.$window.off('keydown', this.onKeydownHandler);
         this.$window.off('keyup', this.onKeyupHandler);
+        this.$commandInput.off('input', this.onCommandInputChangeHandler);
         // uncomment only after `.on()` for this event has been implemented.
         // this.$commandInput.off('DOMMouseScroll mousewheel', this.onMouseScrollHandler);
         this.$canvases.off('mousemove', this.onMouseClickAndDragHandler);
@@ -157,9 +167,13 @@ export default class InputController {
         this._autocompleteController = null;
 
         this.input = input;
+        this.input.command = '';
         this.input.callsign = '';
+        // this.input.data = '';
         this.input.history = [];
         this.input.history_item = null;
+        this.input.click = [0, 0];
+        this._mouseDelta = [0, 0];
         this._mouseDownScreenPosition = [0, 0];
         this.input.isMouseDown = false;
 
@@ -173,9 +187,13 @@ export default class InputController {
     input_init_pre() {
         // TODO: these prop properties can be removed except for `this.input`
         this.input = input;
+        this.input.command = '';
         this.input.callsign = '';
+        this.input.data = '';
         this.input.history = [];
         this.input.history_item = null;
+        this.input.click = [0, 0];
+        this._mouseDelta = [0, 0];
         this._mouseDownScreenPosition = [0, 0];
         this.input.isMouseDown = false;
     }
@@ -195,7 +213,9 @@ export default class InputController {
         // TODO: Refactor out the prop
         // using `prop` here so CanvasController knows which aircraft is selected
         prop.input.callsign = '';
+        prop.input.command = '';
         this.input.callsign = '';
+        this.input.command = '';
         this.$commandInput.val('');
 
         this._eventBus.trigger(EVENT.DESELECT_AIRCRAFT, {});
@@ -212,16 +232,20 @@ export default class InputController {
      */
     _addMeasurePoint(event, shouldReplaceLastPoint = false) {
         const mouseCanvasPosition = CanvasStageModel.calculateCanvasPositionFromPagePosition(
-            event.pageX, event.pageY
+            event.pageX,
+            event.pageY
         );
-        let relativePosition = CanvasStageModel.calculateRelativePositionFromCanvasPosition(...mouseCanvasPosition);
+        let relativePosition = CanvasStageModel.calculateRelativePositionFromCanvasPosition(
+            ...mouseCanvasPosition
+        );
 
         // Snapping should only be done when the shift key is depressed
         if (event.originalEvent.shiftKey) {
-            const [aircraftModel, distanceFromAircraft] = this._findClosestAircraftAndDistanceToCanvasPosition(
+            const [aircraftModel, distanceFromAircraft] =
+                this._findClosestAircraftAndDistanceToCanvasPosition(...mouseCanvasPosition);
+            const [fixModel, distanceFromFix] = this._findClosestFixAndDistanceToCanvasPosition(
                 ...mouseCanvasPosition
             );
-            const [fixModel, distanceFromFix] = this._findClosestFixAndDistanceToCanvasPosition(...mouseCanvasPosition);
             let distance;
             let nearestModel;
 
@@ -342,6 +366,10 @@ export default class InputController {
         const nextXPan = event.pageX - this._mouseDownScreenPosition[0];
         const nextYPan = event.pageY - this._mouseDownScreenPosition[1];
 
+        // TODO: investigate `_mouseDelta` and what exactly it does
+        // this updates the current mouseDelta so the next time through we have correct values
+        this._mouseDelta = [nextXPan, nextYPan];
+
         CanvasStageModel.updatePan(nextXPan, nextYPan);
     }
 
@@ -350,7 +378,7 @@ export default class InputController {
      * @method _onMouseUp
      * @param event {jquery Event}
      */
-    _onMouseUp(event) {
+    _onMouseUp(_event) {
         this.input.isMouseDown = false;
     }
 
@@ -385,7 +413,7 @@ export default class InputController {
      * @method _onMouseDblclick
      * @param event {jquery Event}
      */
-    _onMouseDblclick(event) {
+    _onMouseDblclick(_event) {
         // HACK: for "when an aircraft's radar return is double clicked"
         // caveat: double click is series of mousedown-mouseup-mousedown-mouseup events in rapid succession
         // there is no guarantee that pointer is stationary throughout the process!
@@ -404,6 +432,15 @@ export default class InputController {
 
     /**
      * @for InputController
+     * @method _onCommandInputChange
+     * @private
+     */
+    _onCommandInputChange() {
+        this.input.command = this.$commandInput.val();
+    }
+
+    /**
+     * @for InputController
      * @method selectAircraft
      * @param aircraftModel {AircraftModel}
      */
@@ -417,7 +454,9 @@ export default class InputController {
         // TODO: Refactor out the prop
         // using `prop` here so CanvasController knows which aircraft is selected
         prop.input.callsign = aircraftModel.callsign;
+        prop.input.command = '';
         this.input.callsign = aircraftModel.callsign;
+        this.input.command = '';
         this.$commandInput.val(`${aircraftModel.callsign} `);
 
         if (!this.$commandInput.is(':focus')) {
@@ -438,7 +477,7 @@ export default class InputController {
         const aircraftModel = this._aircraftController.findAircraftByCallsign(callsign);
 
         this.selectAircraft(aircraftModel);
-    }
+    };
 
     /**
      * @for InputController
@@ -462,7 +501,6 @@ export default class InputController {
         }
 
         const currentCommandInputValue = this.$commandInput.val();
-
 
         if (code == null) {
             // fallback for legacy browsers like IE/Edge
@@ -497,26 +535,38 @@ export default class InputController {
             // turning
             case KEY_CODES.LEFT_ARROW:
             case LEGACY_KEY_CODES.LEFT_ARROW:
-                if (this._isArrowControlMethod() && this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
+                if (
+                    this._isArrowControlMethod() &&
+                    this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT
+                ) {
                     this.$commandInput.val(`${currentCommandInputValue} t l `);
                     event.preventDefault();
+                    this.onCommandInputChangeHandler();
                 }
 
                 break;
             case KEY_CODES.RIGHT_ARROW:
             case LEGACY_KEY_CODES.RIGHT_ARROW:
-                if (this._isArrowControlMethod() && this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
+                if (
+                    this._isArrowControlMethod() &&
+                    this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT
+                ) {
                     this.$commandInput.val(`${currentCommandInputValue} t r `);
                     event.preventDefault();
+                    this.onCommandInputChangeHandler();
                 }
 
                 break;
             // climb / descend
             case KEY_CODES.UP_ARROW:
             case LEGACY_KEY_CODES.UP_ARROW:
-                if (this._isArrowControlMethod() && this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
+                if (
+                    this._isArrowControlMethod() &&
+                    this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT
+                ) {
                     this.$commandInput.val(`${currentCommandInputValue} c `);
                     event.preventDefault();
+                    this.onCommandInputChangeHandler();
                 } else {
                     this.selectPreviousAircraft();
                     event.preventDefault();
@@ -525,9 +575,13 @@ export default class InputController {
                 break;
             case KEY_CODES.DOWN_ARROW:
             case LEGACY_KEY_CODES.DOWN_ARROW:
-                if (this._isArrowControlMethod() && this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
+                if (
+                    this._isArrowControlMethod() &&
+                    this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT
+                ) {
                     this.$commandInput.val(`${currentCommandInputValue} d `);
                     event.preventDefault();
+                    this.onCommandInputChangeHandler();
                 } else {
                     this.selectNextAircraft();
                     event.preventDefault();
@@ -540,6 +594,7 @@ export default class InputController {
                 if (this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
                     this.$commandInput.val(`${currentCommandInputValue} / `);
                     event.preventDefault();
+                    this.onCommandInputChangeHandler();
                 }
 
                 break;
@@ -548,6 +603,7 @@ export default class InputController {
                 if (this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
                     this.$commandInput.val(`${currentCommandInputValue} * `);
                     event.preventDefault();
+                    this.onCommandInputChangeHandler();
                 }
 
                 break;
@@ -557,6 +613,7 @@ export default class InputController {
                 if (this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
                     this.$commandInput.val(`${currentCommandInputValue} + `);
                     event.preventDefault();
+                    this.onCommandInputChangeHandler();
                 }
 
                 break;
@@ -565,6 +622,7 @@ export default class InputController {
                 if (this.commandBarContext === COMMAND_CONTEXT.AIRCRAFT) {
                     this.$commandInput.val(`${currentCommandInputValue} - `);
                     event.preventDefault();
+                    this.onCommandInputChangeHandler();
                 }
 
                 break;
@@ -588,6 +646,7 @@ export default class InputController {
 
                 this.$commandInput.val('QP_J ');
                 event.preventDefault();
+                this.onCommandInputChangeHandler();
 
                 break;
             case KEY_CODES.BACKQUOTE:
@@ -607,7 +666,7 @@ export default class InputController {
 
                 break;
             case KEY_CODES.ESCAPE:
-            case LEGACY_KEY_CODES.ESCAPE:
+            case LEGACY_KEY_CODES.ESCAPE: {
                 // TODO: Probably should have its own cancel button
                 this._resetMeasuring();
 
@@ -626,11 +685,11 @@ export default class InputController {
                 this.$commandInput.val(`${this.input.callsign} `);
 
                 break;
+            }
             default:
                 this.$commandInput.focus();
         }
     }
-
 
     /**
      * @for InputController
@@ -694,7 +753,7 @@ export default class InputController {
         }
 
         if (this.input.history_item == null) {
-            this.input.history.unshift(this.$commandInput.val());
+            this.input.history.unshift(this.input.command);
             this.input.history_item = 0;
         }
 
@@ -705,6 +764,7 @@ export default class InputController {
         const aircraftModel = this._aircraftController.findAircraftByCallsign(callsign);
 
         this.selectAircraft(aircraftModel);
+        this.onCommandInputChangeHandler();
     }
 
     /**
@@ -721,6 +781,8 @@ export default class InputController {
         if (this.input.history_item <= 0) {
             this.$commandInput.val(this.input.history[0]);
 
+            this.onCommandInputChangeHandler();
+
             this.input.history.splice(0, 1);
             this.input.history_item = null;
 
@@ -733,6 +795,7 @@ export default class InputController {
         const aircraftModel = this._aircraftController.findAircraftByCallsign(callsign);
 
         this.selectAircraft(aircraftModel);
+        this.onCommandInputChangeHandler();
     }
 
     /**
@@ -743,7 +806,10 @@ export default class InputController {
      * @return {boolean}
      */
     _isArrowControlMethod() {
-        return GameController.game.option.getOptionByName(GAME_OPTION_NAMES.CONTROL_METHOD) === 'arrows';
+        return (
+            GameController.game.option.getOptionByName(GAME_OPTION_NAMES.CONTROL_METHOD) ===
+            'arrows'
+        );
     }
 
     /**
@@ -778,7 +844,8 @@ export default class InputController {
      * @method processAircraftCommand
      */
     processAircraftCommand() {
-        const userCommand = this.$commandInput.val().trim().toLowerCase();
+        // this could use $commandInput.val() as an alternative
+        const userCommand = this.input.command.trim().toLowerCase();
 
         // Using try/catch here very much on purpose. the `CommandParser` will throw when it encounters any kind
         // of error; invalid length, validation, parse, etc. Here we catch those errors, log them to the screen
@@ -831,7 +898,7 @@ export default class InputController {
      */
     processScopeCommand() {
         let scopeCommandModel;
-        const userCommand = this.$commandInput.val().trim().toLowerCase();
+        const userCommand = this.input.command.trim().toLowerCase();
 
         try {
             scopeCommandModel = new ScopeCommandModel(userCommand);
@@ -877,7 +944,7 @@ export default class InputController {
 
                 return true;
 
-            case PARSED_COMMAND_NAME.TIMEWARP:
+            case PARSED_COMMAND_NAME.TIMEWARP: {
                 let nextTimewarpValue = 0;
 
                 if (parsedCommand.args) {
@@ -886,9 +953,14 @@ export default class InputController {
                 }
 
                 GameController.updateTimescale(nextTimewarpValue);
-                EventTracker.recordEvent(TRACKABLE_EVENT.OPTIONS, 'timewarp-maunal-entry', `${nextTimewarpValue}`);
+                EventTracker.recordEvent(
+                    TRACKABLE_EVENT.OPTIONS,
+                    'timewarp-maunal-entry',
+                    `${nextTimewarpValue}`
+                );
 
                 return true;
+            }
 
             case PARSED_COMMAND_NAME.CLEAR:
                 localStorage.clear();
@@ -975,8 +1047,13 @@ export default class InputController {
      * @return {array<number>}
      */
     _calculateRelativePositionFromEvent(event) {
-        const canvasPosition = CanvasStageModel.calculateCanvasPositionFromPagePosition(event.pageX, event.pageY);
-        const relativePosition = CanvasStageModel.calculateRelativePositionFromCanvasPosition(...canvasPosition);
+        const canvasPosition = CanvasStageModel.calculateCanvasPositionFromPagePosition(
+            event.pageX,
+            event.pageY
+        );
+        const relativePosition = CanvasStageModel.calculateRelativePositionFromCanvasPosition(
+            ...canvasPosition
+        );
 
         return relativePosition;
     }
@@ -1031,7 +1108,10 @@ export default class InputController {
 
         window.navigator.clipboard.writeText(coordinateText).then(() => {
             console.log(coordinateText);
-            UiController.ui_log(`Clicked coordinates: ${coordinateText} (logged to console and copied to clipboard!)`, true);
+            UiController.ui_log(
+                `Clicked coordinates: ${coordinateText} (logged to console and copied to clipboard!)`,
+                true
+            );
         });
     }
 
@@ -1056,9 +1136,11 @@ export default class InputController {
         if (event.originalEvent.shiftKey && event.originalEvent.altKey) {
             const relativePosition = this._calculateRelativePositionFromEvent(event);
             const referencePosition = AirportController.current.positionModel;
-            const latLonCoordinates = DynamicPositionModel.calculateGpsCoordinatesFromRelativePosition(
-                relativePosition, referencePosition
-            );
+            const latLonCoordinates =
+                DynamicPositionModel.calculateGpsCoordinatesFromRelativePosition(
+                    relativePosition,
+                    referencePosition
+                );
 
             return this._logAndCopyCoordinates(latLonCoordinates);
         }
@@ -1085,14 +1167,21 @@ export default class InputController {
             return;
         }
 
-        const mouseCanvasPos = CanvasStageModel.calculateCanvasPositionFromPagePosition(event.pageX, event.pageY);
-        const [aircraftModel, distanceFromPosition] = this._findClosestAircraftAndDistanceToCanvasPosition(...mouseCanvasPos);
+        const mouseCanvasPos = CanvasStageModel.calculateCanvasPositionFromPagePosition(
+            event.pageX,
+            event.pageY
+        );
+        const [aircraftModel, distanceFromPosition] =
+            this._findClosestAircraftAndDistanceToCanvasPosition(...mouseCanvasPos);
 
         if (distanceFromPosition > CanvasStageModel.translatePixelsToKilometers(50)) {
             this.deselectAircraft();
             this._markMousePressed(event, MOUSE_BUTTON_NAMES.LEFT);
         } else if (this.commandBarContext === COMMAND_CONTEXT.SCOPE) {
-            this.$commandInput.val(`${this.$commandInput.val()} ${aircraftModel.callsign}`);
+            const newCommandValue = `${this.$commandInput.val()} ${aircraftModel.callsign}`;
+            this.input.command = newCommandValue;
+            this.$commandInput.val(newCommandValue);
+
             this.processCommand();
         } else if (aircraftModel) {
             this.selectAircraft(aircraftModel);
@@ -1121,10 +1210,7 @@ export default class InputController {
         const mousePositionY = event.pageY - CanvasStageModel._panY;
 
         // Record mouse down position for panning
-        this._mouseDownScreenPosition = [
-            mousePositionX,
-            mousePositionY
-        ];
+        this._mouseDownScreenPosition = [mousePositionX, mousePositionY];
         this.input.isMouseDown = true;
     }
 }

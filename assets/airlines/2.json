@@ -3,9 +3,7 @@
     "name": "General Aviation Guernsey",
     "callsign": {
         "name": "Two",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [

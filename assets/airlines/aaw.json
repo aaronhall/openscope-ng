@@ -3,10 +3,7 @@
     "name": "Afriqiyah Airways",
     "callsign": {
         "name": "Afriqiyah",
-        "callsignFormats": [
-            "####",
-            "###"
-        ]
+        "callsignFormats": ["####", "###"]
     },
     "fleets": {
         "default": [
@@ -19,11 +16,7 @@
             ["A319", 2],
             ["A320", 3]
         ],
-        "long": [
-            ["A333", 1]
-        ],
-        "cargo": [
-            ["A306", 1]
-        ]
+        "long": [["A333", 1]],
+        "cargo": [["A306", 1]]
     }
 }

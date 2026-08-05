@@ -3,9 +3,7 @@
     "name": "Silk Air",
     "callsign": {
         "name": "Silkair",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "General Aviation Slovakia",
     "callsign": {
         "name": "Oscar Mike",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

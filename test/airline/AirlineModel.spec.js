@@ -7,39 +7,40 @@ import _map from 'lodash/map';
 import AirlineModel from '../../src/assets/scripts/client/airline/AirlineModel';
 import {
     AIRLINE_DEFINITION_MOCK,
-    AIRLINE_DEFINITION_SIMPLE_FLEET_MOCK
+    AIRLINE_DEFINITION_SIMPLE_FLEET_MOCK,
 } from './_mocks/airlineMocks';
 
 test('throws when called with invalid data', () => {
-    const expectedMessage = /Invalid airlineDefinition passed to AirlineModel constructor\. Expected a non-empty object, but received .*/;
+    const expectedMessage =
+        /Invalid airlineDefinition passed to AirlineModel constructor\. Expected a non-empty object, but received .*/;
 
     expect(() => new AirlineModel(), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineModel(null), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineModel({}), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineModel([]), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineModel(42), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineModel('threeve'), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => new AirlineModel(false), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
 });
 
@@ -58,7 +59,10 @@ test('flightNumbers returns a list of all activeFlightNumbers', () => {
 
 test('.getRandomAircraftType() calls _getRandomAircraftTypeFromAllFleets when no parameter is passed', () => {
     const model = new AirlineModel(AIRLINE_DEFINITION_MOCK);
-    const _getRandomAircraftTypeFromAllFleetsSpy = sinon.spy(model, '_getRandomAircraftTypeFromAllFleets');
+    const _getRandomAircraftTypeFromAllFleetsSpy = sinon.spy(
+        model,
+        '_getRandomAircraftTypeFromAllFleets'
+    );
 
     model._getRandomAircraftTypeFromAllFleets();
 
@@ -99,7 +103,10 @@ test('.removeFlightNumber() removes a provided flightNumber from activeFlightNum
 
 test('.getRandomAircraftType() calls ._getRandomAircraftTypeFromAllFleets() when no fleet is provided', () => {
     const model = new AirlineModel(AIRLINE_DEFINITION_MOCK);
-    const _getRandomAircraftTypeFromAllFleetsSpy = sinon.spy(model, '_getRandomAircraftTypeFromAllFleets');
+    const _getRandomAircraftTypeFromAllFleetsSpy = sinon.spy(
+        model,
+        '_getRandomAircraftTypeFromAllFleets'
+    );
 
     model.getRandomAircraftType();
 
@@ -125,7 +132,10 @@ test('._getRandomAircraftTypeFromFleet() throws if it received an invalid fleetN
 
 test('._getRandomAircraftTypeFromFleet() returns a random aircraft types form a specific fleet', () => {
     const fleetNameMock = '90long';
-    const expectedResult = _map(AIRLINE_DEFINITION_MOCK.fleets['90long'], (aircraft) => aircraft[0]);
+    const expectedResult = _map(
+        AIRLINE_DEFINITION_MOCK.fleets['90long'],
+        (aircraft) => aircraft[0]
+    );
     const model = new AirlineModel(AIRLINE_DEFINITION_MOCK);
     const result = model._getRandomAircraftTypeFromFleet(fleetNameMock);
 

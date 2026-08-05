@@ -3,7 +3,7 @@ import ModeController from '../../src/assets/scripts/client/aircraft/ModeControl
 // import { airportModelFixture } from './airportFixtures';
 import {
     ARRIVAL_AIRCRAFT_INIT_PROPS_MOCK,
-    DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK
+    DEPARTURE_AIRCRAFT_INIT_PROPS_MOCK,
 } from '../aircraft/_mocks/aircraftMocks';
 
 // mocks

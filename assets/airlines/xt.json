@@ -3,9 +3,7 @@
     "name": "General Aviation Burkina Faso",
     "callsign": {
         "name": "Xray Tango",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

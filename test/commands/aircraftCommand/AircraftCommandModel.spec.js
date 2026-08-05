@@ -3,7 +3,6 @@ import { test, expect, vi } from 'vitest';
 
 import AircraftCommandModel from '../../../src/assets/scripts/client/commands/aircraftCommand/AircraftCommandModel';
 
-
 test('does not thow when instantiated without parameters', () => {
     expect(() => new AircraftCommandModel()).not.toThrow();
 });

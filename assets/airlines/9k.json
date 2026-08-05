@@ -3,9 +3,7 @@
     "name": "General Aviation Kuwait",
     "callsign": {
         "name": "Niner Kilo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

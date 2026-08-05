@@ -3,12 +3,7 @@
     "name": "Cape Air",
     "callsign": {
         "name": "Cair",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##",
-            "#"
-        ]
+        "callsignFormats": ["####", "###", "##", "#"]
     },
     "fleets": {
         "default": [
@@ -17,12 +12,8 @@
             ["C402", 78],
             ["P212", 41]
         ],
-        "c402": [
-           ["C402", 78]
-        ],
-        "micronesia": [
-            ["AT43", 3]
-        ],
+        "c402": [["C402", 78]],
+        "micronesia": [["AT43", 3]],
         "usa": [
             ["BN2P", 2],
             ["C402", 78],

@@ -9,7 +9,7 @@ import {
     isLegLengthArg,
     timewarpParser,
     optionalAltitudeParser,
-    crossingParser
+    crossingParser,
 } from '../../../src/assets/scripts/client/commands/parsers/argumentParsers';
 
 test('.altitudeParser() converts a string flight level altitude to a number altitude in thousands', () => {
@@ -231,7 +231,6 @@ test('.timewarpParser() returns an array with 50 as a value when provided as an 
 
     expect(result[0] === 50).toBe(true);
 });
-
 
 test('.crossingParser() returns an array with the correct values when provided all args', () => {
     const result = crossingParser(['LEMDY', 'a50', 's210']);

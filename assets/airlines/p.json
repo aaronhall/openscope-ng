@@ -3,9 +3,7 @@
     "name": "General Aviation North Korea",
     "callsign": {
         "name": "Papa",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

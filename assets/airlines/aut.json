@@ -3,13 +3,9 @@
     "name": "Austral Líneas Aéreas",
     "callsign": {
         "name": "Austral",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["E190", 26]
-        ]
+        "default": [["E190", 26]]
     }
 }

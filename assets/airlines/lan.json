@@ -3,9 +3,7 @@
     "name": "LATAM Airlines Chile",
     "callsign": {
         "name": "Lan Chile",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

@@ -3,11 +3,7 @@
     "name": "General Aviation Japen",
     "callsign": {
         "name": "Juliet Alpha",
-        "callsignFormats": [
-            "####",
-            "###@",
-            "##@@"
-        ]
+        "callsignFormats": ["####", "###@", "##@@"]
     },
     "fleets": {
         "default": [

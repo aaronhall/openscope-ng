@@ -10,11 +10,11 @@ import ProcedureModel from '../../../src/assets/scripts/client/navigationLibrary
 import { AIRPORT_JSON_KLAS_MOCK } from '../../airport/_mocks/airportJsonMock';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../../fixtures/navigationLibraryFixtures';
 import {
     LEG_TYPE,
-    PROCEDURE_TYPE
+    PROCEDURE_TYPE,
 } from '../../../src/assets/scripts/client/constants/routeConstants';
 
 // const holdRouteStringMock = '@COWBY';
@@ -68,7 +68,7 @@ test('throws when instantiated with procedure route string with procedure not de
     expect(() => new LegModel(routeStringWithInvalidProcedure)).toThrow();
 });
 
-test('instantiates correctly when given a single airway leg\'s route string', () => {
+test("instantiates correctly when given a single airway leg's route string", () => {
     const model = new LegModel(airwayRouteStringMock);
 
     expect(model._airwayModel instanceof AirwayModel).toBe(true);
@@ -78,7 +78,7 @@ test('instantiates correctly when given a single airway leg\'s route string', ()
     expect(model._waypointCollection.length === 4).toBe(true);
 });
 
-test('instantiates correctly when given a single direct leg\'s route string', () => {
+test("instantiates correctly when given a single direct leg's route string", () => {
     const model = new LegModel(directRouteStringMock);
 
     expect(!model._airwayModel).toBe(true);
@@ -88,7 +88,7 @@ test('instantiates correctly when given a single direct leg\'s route string', ()
     expect(model._waypointCollection.length === 1).toBe(true);
 });
 
-test('instantiates correctly when given a single SID leg\'s route string', () => {
+test("instantiates correctly when given a single SID leg's route string", () => {
     const model = new LegModel(sidRouteStringMock);
 
     expect(!model._airwayModel).toBe(true);
@@ -99,7 +99,7 @@ test('instantiates correctly when given a single SID leg\'s route string', () =>
     expect(model._waypointCollection.length === 7).toBe(true);
 });
 
-test('instantiates correctly when given a single STAR leg\'s route string', () => {
+test("instantiates correctly when given a single STAR leg's route string", () => {
     const model = new LegModel(starRouteStringMock);
 
     expect(!model._airwayModel).toBe(true);
@@ -223,7 +223,10 @@ test('#waypoints returns an array containing all `WaypointModel`s', () => {
 test('.activateHoldForWaypointName() returns early when the specified waypoint does not exist in the route', () => {
     const model = new LegModel('KEPEC');
     const waypointModel = model._waypointCollection[0];
-    const setHoldParametersAndActivateHoldSpy = sinon.spy(waypointModel, 'setHoldParametersAndActivateHold');
+    const setHoldParametersAndActivateHoldSpy = sinon.spy(
+        waypointModel,
+        'setHoldParametersAndActivateHold'
+    );
     const holdParametersMock = { turnDirection: 'left' };
     const result = model.activateHoldForWaypointName('PRINO', holdParametersMock);
 
@@ -234,7 +237,10 @@ test('.activateHoldForWaypointName() returns early when the specified waypoint d
 test('.activateHoldForWaypointName() calls .setHoldParametersAndActivateHold() with the appropriate arguments', () => {
     const model = new LegModel('KEPEC');
     const waypointModel = model._waypointCollection[0];
-    const setHoldParametersAndActivateHoldSpy = sinon.spy(waypointModel, 'setHoldParametersAndActivateHold');
+    const setHoldParametersAndActivateHoldSpy = sinon.spy(
+        waypointModel,
+        'setHoldParametersAndActivateHold'
+    );
     const holdParametersMock = { turnDirection: 'left' };
     const result = model.activateHoldForWaypointName('KEPEC', holdParametersMock);
 
@@ -350,7 +356,7 @@ test('.getEntryFixName() returns the name of the fix when this leg is a direct l
     expect(result === expectedResult).toBe(true);
 });
 
-test('.getEntryFixName() returns route string before the first \'.\' when this leg is a SID leg', () => {
+test(".getEntryFixName() returns route string before the first '.' when this leg is a SID leg", () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const expectedResult = 'KLAS25R';
     const result = model.getEntryFixName();
@@ -358,7 +364,7 @@ test('.getEntryFixName() returns route string before the first \'.\' when this l
     expect(result === expectedResult).toBe(true);
 });
 
-test('.getEntryFixName() returns route string before the first \'.\' when this leg is a STAR leg', () => {
+test(".getEntryFixName() returns route string before the first '.' when this leg is a STAR leg", () => {
     const model = new LegModel('DAG.KEPEC3.KLAS19R');
     const expectedResult = 'DAG';
     const result = model.getEntryFixName();
@@ -374,7 +380,7 @@ test('.getExitFixName() returns the name of the fix when this leg is a direct le
     expect(result === expectedResult).toBe(true);
 });
 
-test('.getExitFixName() returns route string after the last \'.\' when this leg is a SID leg', () => {
+test(".getExitFixName() returns route string after the last '.' when this leg is a SID leg", () => {
     const model = new LegModel('KLAS25R.BOACH6.TNP');
     const expectedResult = 'TNP';
     const result = model.getExitFixName();
@@ -382,7 +388,7 @@ test('.getExitFixName() returns route string after the last \'.\' when this leg 
     expect(result === expectedResult).toBe(true);
 });
 
-test('.getExitFixName() returns route string after the last \'.\' when this leg is a STAR leg', () => {
+test(".getExitFixName() returns route string after the last '.' when this leg is a STAR leg", () => {
     const model = new LegModel('DAG.KEPEC3.KLAS19R');
     const expectedResult = 'KLAS19R';
     const result = model.getExitFixName();
@@ -582,8 +588,14 @@ test('.updateSidLegForDepartureRunwayModel() returns early when this is not a SI
     const directLegModel = new LegModel(directRouteStringMock);
     const airport = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const runwayModel = airport.getRunway('01L');
-    const starLegGenerateWaypointCollectionSpy = sinon.spy(starLegModel, '_generateWaypointCollection');
-    const directLegGenerateWaypointCollectionSpy = sinon.spy(directLegModel, '_generateWaypointCollection');
+    const starLegGenerateWaypointCollectionSpy = sinon.spy(
+        starLegModel,
+        '_generateWaypointCollection'
+    );
+    const directLegGenerateWaypointCollectionSpy = sinon.spy(
+        directLegModel,
+        '_generateWaypointCollection'
+    );
 
     starLegModel.updateSidLegForDepartureRunwayModel(runwayModel);
     directLegModel.updateSidLegForDepartureRunwayModel(runwayModel);
@@ -634,8 +646,14 @@ test('.updateStarLegForArrivalRunwayModel() returns early when this is not a STA
     const directLegModel = new LegModel(directRouteStringMock);
     const airport = new AirportModel(AIRPORT_JSON_KLAS_MOCK);
     const runwayModel = airport.getRunway('01L');
-    const sidLegGenerateWaypointCollectionSpy = sinon.spy(sidLegModel, '_generateWaypointCollection');
-    const directLegGenerateWaypointCollectionSpy = sinon.spy(directLegModel, '_generateWaypointCollection');
+    const sidLegGenerateWaypointCollectionSpy = sinon.spy(
+        sidLegModel,
+        '_generateWaypointCollection'
+    );
+    const directLegGenerateWaypointCollectionSpy = sinon.spy(
+        directLegModel,
+        '_generateWaypointCollection'
+    );
 
     sidLegModel.updateStarLegForArrivalRunwayModel(runwayModel);
     directLegModel.updateStarLegForArrivalRunwayModel(runwayModel);
@@ -674,8 +692,19 @@ test('.updateStarLegForArrivalRunwayModel() regenerates #_waypointCollection IAW
 
     model.updateStarLegForArrivalRunwayModel(runwayModel);
 
-    const expectedWaypointNames = ['DAG', 'MISEN', 'CLARR', 'SKEBR', 'KEPEC',
-        'IPUMY', 'NIPZO', 'SUNST', 'KIMME', 'CHIPZ', 'POKRR', 'PRINO'
+    const expectedWaypointNames = [
+        'DAG',
+        'MISEN',
+        'CLARR',
+        'SKEBR',
+        'KEPEC',
+        'IPUMY',
+        'NIPZO',
+        'SUNST',
+        'KIMME',
+        'CHIPZ',
+        'POKRR',
+        'PRINO',
     ];
     const waypointNames = model.waypoints.map((waypoint) => waypoint.name);
 
@@ -738,7 +767,9 @@ test('._verifyAirwayAndEntryAndExitAreValid() throws when the specified entry is
     const invalidEntryName = 'invalidEntry';
     const validExitName = 'SUVIE';
 
-    expect(() => model._verifyAirwayAndEntryAndExitAreValid(invalidEntryName, validExitName)).toThrow();
+    expect(() =>
+        model._verifyAirwayAndEntryAndExitAreValid(invalidEntryName, validExitName)
+    ).toThrow();
 });
 
 test('._verifyAirwayAndEntryAndExitAreValid() throws when the specified exit is not on the airway', () => {
@@ -746,7 +777,9 @@ test('._verifyAirwayAndEntryAndExitAreValid() throws when the specified exit is 
     const validEntryName = 'DISBE';
     const invalidExitName = 'invalidExit';
 
-    expect(() => model._verifyAirwayAndEntryAndExitAreValid(validEntryName, invalidExitName)).toThrow();
+    expect(() =>
+        model._verifyAirwayAndEntryAndExitAreValid(validEntryName, invalidExitName)
+    ).toThrow();
 });
 
 test('._verifyAirwayAndEntryAndExitAreValid() does not throw when the specified entry and exit are both on the airway', () => {
@@ -754,7 +787,9 @@ test('._verifyAirwayAndEntryAndExitAreValid() does not throw when the specified 
     const validEntryName = 'DISBE';
     const validExitName = 'SUVIE';
 
-    expect(() => model._verifyAirwayAndEntryAndExitAreValid(validEntryName, validExitName)).not.toThrow();
+    expect(() =>
+        model._verifyAirwayAndEntryAndExitAreValid(validEntryName, validExitName)
+    ).not.toThrow();
 });
 
 test('._verifyProcedureAndEntryAndExitAreValid() throws when #_procedureModel is null', () => {
@@ -768,7 +803,9 @@ test('._verifyProcedureAndEntryAndExitAreValid() throws when the specified entry
     const invalidEntryName = 'invalidEntry';
     const validExitName = 'HEC';
 
-    expect(() => model._verifyProcedureAndEntryAndExitAreValid(invalidEntryName, validExitName)).toThrow();
+    expect(() =>
+        model._verifyProcedureAndEntryAndExitAreValid(invalidEntryName, validExitName)
+    ).toThrow();
 });
 
 test('._verifyProcedureAndEntryAndExitAreValid() throws when the specified exit is not valid for the procedure', () => {
@@ -776,7 +813,9 @@ test('._verifyProcedureAndEntryAndExitAreValid() throws when the specified exit 
     const validEntryName = 'KLAS25L';
     const invalidExitName = 'invalidExit';
 
-    expect(() => model._verifyProcedureAndEntryAndExitAreValid(validEntryName, invalidExitName)).toThrow();
+    expect(() =>
+        model._verifyProcedureAndEntryAndExitAreValid(validEntryName, invalidExitName)
+    ).toThrow();
 });
 
 test('._verifyProcedureAndEntryAndExitAreValid() does not throw when the specified entry and exit are valid for the procedure', () => {
@@ -784,7 +823,9 @@ test('._verifyProcedureAndEntryAndExitAreValid() does not throw when the specifi
     const validEntryName = 'KLAS25L';
     const validExitName = 'HEC';
 
-    expect(() => model._verifyProcedureAndEntryAndExitAreValid(validEntryName, validExitName)).not.toThrow();
+    expect(() =>
+        model._verifyProcedureAndEntryAndExitAreValid(validEntryName, validExitName)
+    ).not.toThrow();
 });
 
 // test('._buildWaypointForDirectRoute() returns an array with a single instance of a WaypointModel', () => {

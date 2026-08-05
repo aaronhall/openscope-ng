@@ -3,9 +3,7 @@
     "name": "Avianca",
     "callsign": {
         "name": "Avianca",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -41,11 +39,7 @@
             ["A320", 57],
             ["A321", 13]
         ],
-        "b788": [
-            ["B788", 13]
-        ],
-        "jfk": [
-            ["A332",  9]
-        ]
+        "b788": [["B788", 13]],
+        "jfk": [["A332", 9]]
     }
 }

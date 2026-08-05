@@ -3,9 +3,7 @@
     "name": "PrivatAir",
     "callsign": {
         "name": "PrivatAir",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

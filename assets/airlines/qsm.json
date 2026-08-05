@@ -3,10 +3,7 @@
     "name": "Qeshm Airlines",
     "callsign": {
         "name": "Queshm Air",
-        "callsignFormats": [
-            "####",
-            "###"
-        ]
+        "callsignFormats": ["####", "###"]
     },
     "fleets": {
         "default": [
@@ -18,11 +15,7 @@
             ["F100", 4],
             ["F50", 4]
         ],
-        "a319": [
-            ["A319", 1]
-        ],
-        "rj1h": [
-            ["RJ1H", 5]
-        ]
+        "a319": [["A319", 1]],
+        "rj1h": [["RJ1H", 5]]
     }
 }

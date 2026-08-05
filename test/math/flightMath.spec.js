@@ -7,7 +7,7 @@ import {
     calcTurnInitiationDistanceNm,
     bearingToPoint,
     fixRadialDist,
-    calculateCrosswindAngle
+    calculateCrosswindAngle,
 } from '../../src/assets/scripts/client/math/flightMath';
 
 test('calcTurnRadiusByBankAngle() returns a turn radius based on speed and bank angle', () => {
@@ -33,13 +33,17 @@ test('calcTurnInitiationDistanceNm() returns the distance required for a turn', 
     const speedB = 500;
     const turnRate = 0.0523598776;
 
-    expect(calcTurnInitiationDistanceNm(speedA, turnRate, 0.26420086153126987)).toBe(0.1339347496990795);
-    expect(calcTurnInitiationDistanceNm(speedA, turnRate, Math.PI*0.5)).toBe(1.0079813054753544);
-    expect(calcTurnInitiationDistanceNm(speedA, turnRate, Math.PI*0.75)).toBe(2.4334821382971388);
+    expect(calcTurnInitiationDistanceNm(speedA, turnRate, 0.26420086153126987)).toBe(
+        0.1339347496990795
+    );
+    expect(calcTurnInitiationDistanceNm(speedA, turnRate, Math.PI * 0.5)).toBe(1.0079813054753544);
+    expect(calcTurnInitiationDistanceNm(speedA, turnRate, Math.PI * 0.75)).toBe(2.4334821382971388);
 
-    expect(calcTurnInitiationDistanceNm(speedB, turnRate, 0.26420086153126987)).toBe(0.35245986762915654);
-    expect(calcTurnInitiationDistanceNm(speedB, turnRate, Math.PI*0.5)).toBe(2.65258238282988);
-    expect(calcTurnInitiationDistanceNm(speedB, turnRate, Math.PI*0.75)).toBe(6.403900363939838);
+    expect(calcTurnInitiationDistanceNm(speedB, turnRate, 0.26420086153126987)).toBe(
+        0.35245986762915654
+    );
+    expect(calcTurnInitiationDistanceNm(speedB, turnRate, Math.PI * 0.5)).toBe(2.65258238282988);
+    expect(calcTurnInitiationDistanceNm(speedB, turnRate, Math.PI * 0.75)).toBe(6.403900363939838);
 });
 
 test('bearingToPoint() returns the bearing from one point to another', () => {

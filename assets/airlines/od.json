@@ -3,9 +3,7 @@
     "name": "General Aviation Lebanon",
     "callsign": {
         "name": "Oscar Delta",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

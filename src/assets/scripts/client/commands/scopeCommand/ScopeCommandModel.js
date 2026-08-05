@@ -3,11 +3,7 @@ import _has from 'lodash/has';
 import _last from 'lodash/last';
 import _without from 'lodash/without';
 import _values from 'lodash/values';
-import {
-    IMPLIED_COMMANDS,
-    EXPLICIT_COMMANDS,
-    COMMAND_FUNCTIONS
-} from './scopeCommandMap';
+import { IMPLIED_COMMANDS, EXPLICIT_COMMANDS, COMMAND_FUNCTIONS } from './scopeCommandMap';
 import { DATA_BLOCK_DIRECTION_LENGTH_SEPARATOR } from '../../constants/scopeConstants';
 
 // TODO: Replace dummy sector codes with a proper `SectorCollection`
@@ -111,7 +107,10 @@ export default class ScopeCommandModel {
             return COMMAND_FUNCTIONS.SCRATCHPAD;
         }
 
-        if (firstElement.indexOf(DATA_BLOCK_DIRECTION_LENGTH_SEPARATOR) !== -1 || firstElement.length < 2) {
+        if (
+            firstElement.indexOf(DATA_BLOCK_DIRECTION_LENGTH_SEPARATOR) !== -1 ||
+            firstElement.length < 2
+        ) {
             return COMMAND_FUNCTIONS.MOVE_DATA_BLOCK;
         }
 

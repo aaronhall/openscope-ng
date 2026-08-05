@@ -3,9 +3,7 @@
     "name": "General Aviation Cyprus",
     "callsign": {
         "name": "Five Bravo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

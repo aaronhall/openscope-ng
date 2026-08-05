@@ -3,9 +3,7 @@
     "name": "General Aviation Lithuania",
     "callsign": {
         "name": "Lima Yankee",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

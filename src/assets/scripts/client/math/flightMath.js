@@ -1,21 +1,7 @@
-import {
-    abs,
-    sin,
-    cos
-} from './core';
-import {
-    tau,
-    angle_offset
-} from './circle';
-import {
-    vradial,
-    vsub,
-    vlen
-} from './vector';
-import {
-    degreesToRadians,
-    radiansToDegrees
-} from '../utilities/unitConverters';
+import { abs, sin, cos } from './core';
+import { tau, angle_offset } from './circle';
+import { vradial, vsub, vlen } from './vector';
+import { degreesToRadians, radiansToDegrees } from '../utilities/unitConverters';
 import { PERFORMANCE } from '../constants/aircraftConstants';
 
 /**
@@ -39,7 +25,6 @@ export function calcTurnRadiusByBankAngle(speed, bankAngle) {
 
     return (speed * speed) / (conversionFactor * Math.tan(bankAngle));
 }
-
 
 /**
  * Calculate the radius of turn of the aircraft, given its groundspeed and
@@ -122,7 +107,9 @@ export function getOffset(aircraft, target, headingThruTarget = null) {
  * @return nominalNewCourse {number}
  * */
 function _calculateNominalNewCourse(nextWaypointRelativePosition, currentWaypointRelativePosition) {
-    let nominalNewCourse = vradial(vsub(nextWaypointRelativePosition, currentWaypointRelativePosition));
+    let nominalNewCourse = vradial(
+        vsub(nextWaypointRelativePosition, currentWaypointRelativePosition)
+    );
 
     // normalize angle within 0 to 2pi
     if (nominalNewCourse < 0) {
@@ -182,7 +169,11 @@ export function calculateTurnInitiationDistance(aircraft, currentWaypointPositio
         currentWaypointPosition.relativePosition
     );
     const courseChange = _calculateCourseChangeInRadians(targetHeading, nominalNewCourse);
-    const turnInitiationDistanceNm = calcTurnInitiationDistanceNm(aircraft.groundSpeed, turnRate, courseChange);
+    const turnInitiationDistanceNm = calcTurnInitiationDistanceNm(
+        aircraft.groundSpeed,
+        turnRate,
+        courseChange
+    );
 
     return turnInitiationDistanceNm;
 }

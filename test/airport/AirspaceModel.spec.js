@@ -20,31 +20,43 @@ test('throws if called with invalid parameters', () => {
 
 test('does not throw when instantiated with a 0 magneticNorth', () => {
     expect(() => new AirspaceModel(AIRSPACE_MOCK, airportPositionFixtureKSFO, 0)).not.toThrow();
-})
+});
 
 test('accepts an airspace object that is used to set the instance properties', () => {
     const model = new AirspaceModel(AIRSPACE_MOCK, airportPositionFixtureKSFO, magneticNorth);
 
     expect(typeof model._id === 'undefined').toBe(false);
-    expect(model.floor === (AIRSPACE_MOCK.floor * 100)).toBe(true);
-    expect(model.ceiling === (AIRSPACE_MOCK.ceiling * 100)).toBe(true);
+    expect(model.floor === AIRSPACE_MOCK.floor * 100).toBe(true);
+    expect(model.ceiling === AIRSPACE_MOCK.ceiling * 100).toBe(true);
     expect(model.airspace_class === AIRSPACE_MOCK.airspace_class).toBe(true);
     expect(model.poly.length === AIRSPACE_MOCK.poly.length).toBe(true);
 });
 
 test('removes last element in poly array if it is the same as the first element', () => {
-    const model = new AirspaceModel(AIRSPACE_MOCK_WITH_CLOSING_ENTRY, airportPositionFixtureKSFO, magneticNorth);
+    const model = new AirspaceModel(
+        AIRSPACE_MOCK_WITH_CLOSING_ENTRY,
+        airportPositionFixtureKSFO,
+        magneticNorth
+    );
 
     expect(model.poly.length === AIRSPACE_MOCK_WITH_CLOSING_ENTRY.poly.length).toBe(false);
     expect(model.poly.length === AIRSPACE_MOCK_WITH_CLOSING_ENTRY.poly.length - 1).toBe(true);
 });
 
 test('.isPointInside() returns true if the specified point is inside the lateral and vertical boundaries', () => {
-    const model = new AirspaceModel(AIRSPACE_MOCK_WITH_CLOSING_ENTRY, airportPositionFixtureKSFO, magneticNorth);
+    const model = new AirspaceModel(
+        AIRSPACE_MOCK_WITH_CLOSING_ENTRY,
+        airportPositionFixtureKSFO,
+        magneticNorth
+    );
     const airportPosition = airportPositionFixtureKSFO;
     const airportMagNorth = airportPositionFixtureKSFO.magneticNorth;
     const coordinatesMock = [36, -114.5];
-    const positionMock = DynamicPositionModel.calculateRelativePosition(coordinatesMock, airportPosition, airportMagNorth);
+    const positionMock = DynamicPositionModel.calculateRelativePosition(
+        coordinatesMock,
+        airportPosition,
+        airportMagNorth
+    );
     const altitudeMock = 19000;
     const result = model.isPointInside(positionMock, altitudeMock);
 
@@ -52,11 +64,19 @@ test('.isPointInside() returns true if the specified point is inside the lateral
 });
 
 test('.isPointInside() returns false if the specified point is within the lateral boundaries but not within the vertical boundaries', () => {
-    const model = new AirspaceModel(AIRSPACE_MOCK_WITH_CLOSING_ENTRY, airportPositionFixtureKSFO, magneticNorth);
+    const model = new AirspaceModel(
+        AIRSPACE_MOCK_WITH_CLOSING_ENTRY,
+        airportPositionFixtureKSFO,
+        magneticNorth
+    );
     const airportPosition = airportPositionFixtureKSFO;
     const airportMagNorth = airportPositionFixtureKSFO.magneticNorth;
     const coordinatesMock = [36, -114.5];
-    const positionMock = DynamicPositionModel.calculateRelativePosition(coordinatesMock, airportPosition, airportMagNorth);
+    const positionMock = DynamicPositionModel.calculateRelativePosition(
+        coordinatesMock,
+        airportPosition,
+        airportMagNorth
+    );
     const altitudeMock = 19001;
     const result = model.isPointInside(positionMock, altitudeMock);
 
@@ -64,11 +84,19 @@ test('.isPointInside() returns false if the specified point is within the latera
 });
 
 test('.isPointInside() returns false if the specified point is within vertical boundaries but not within the lateral boundaries', () => {
-    const model = new AirspaceModel(AIRSPACE_MOCK_WITH_CLOSING_ENTRY, airportPositionFixtureKSFO, magneticNorth);
+    const model = new AirspaceModel(
+        AIRSPACE_MOCK_WITH_CLOSING_ENTRY,
+        airportPositionFixtureKSFO,
+        magneticNorth
+    );
     const airportPosition = airportPositionFixtureKSFO;
     const airportMagNorth = airportPositionFixtureKSFO.magneticNorth;
     const coordinatesMock = [36, -114];
-    const positionMock = DynamicPositionModel.calculateRelativePosition(coordinatesMock, airportPosition, airportMagNorth);
+    const positionMock = DynamicPositionModel.calculateRelativePosition(
+        coordinatesMock,
+        airportPosition,
+        airportMagNorth
+    );
     const altitudeMock = 19000;
     const result = model.isPointInside(positionMock, altitudeMock);
 

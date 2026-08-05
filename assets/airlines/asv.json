@@ -3,13 +3,9 @@
     "name": "Air Seoul",
     "callsign": {
         "name": "Air Seoul",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A321",    1]
-        ]
+        "default": [["A321", 1]]
     }
 }

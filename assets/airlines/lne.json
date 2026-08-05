@@ -3,13 +3,9 @@
     "name": "LATAM Airlines Ecuador",
     "callsign": {
         "name": "Lan Ecuador",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
-        "default": [
-            ["A319", 4]
-        ]
+        "default": [["A319", 4]]
     }
 }

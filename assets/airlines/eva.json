@@ -3,9 +3,7 @@
     "name": "EVA Air",
     "callsign": {
         "name": "EVA",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -17,12 +15,8 @@
             ["A333", 9],
             ["B77L", 2],
             ["B77W", 34]
-        ],        
-        "b77w": [
-            ["B77W", 34]
         ],
-        "cargo": [
-            ["B744", 4]
-        ]
+        "b77w": [["B77W", 34]],
+        "cargo": [["B744", 4]]
     }
 }

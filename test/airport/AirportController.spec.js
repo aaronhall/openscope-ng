@@ -8,5 +8,7 @@ test('throws when called to instantiate', () => {
 });
 
 test('does not throw when .init() is called with initialization props', () => {
-    expect(() => AirportController.init('klas', AIRPORT_JSON_KLAS_MOCK, AIRPORT_LOAD_LIST_MOCK)).not.toThrow();
+    expect(() =>
+        AirportController.init('klas', AIRPORT_JSON_KLAS_MOCK, AIRPORT_LOAD_LIST_MOCK)
+    ).not.toThrow();
 });

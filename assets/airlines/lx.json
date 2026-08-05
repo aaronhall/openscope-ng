@@ -3,9 +3,7 @@
     "name": "General Aviation Luxembourg",
     "callsign": {
         "name": "Lima Xray",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

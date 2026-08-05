@@ -3,9 +3,7 @@
     "name": "General Aviation Turkey",
     "callsign": {
         "name": "Tango Charlie",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

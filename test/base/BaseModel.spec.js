@@ -10,7 +10,6 @@ test('sets the #_id when passed valid parameters', () => {
 
     model = new BaseModel('modelName');
     expect(model._id.indexOf('modelName') !== -1).toBe(true);
-
 });
 
 test('throws when passed invalid parameters', () => {

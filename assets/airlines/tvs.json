@@ -3,11 +3,7 @@
     "name": "Smartwings",
     "callsign": {
         "name": "Skytravel",
-        "callsignFormats": [
-            "####",
-            "#@@",
-            "#@"
-        ]
+        "callsignFormats": ["####", "#@@", "#@"]
     },
     "fleets": {
         "default": [

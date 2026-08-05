@@ -3,9 +3,7 @@
     "name": "GoAir",
     "callsign": {
         "name": "Go Air",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

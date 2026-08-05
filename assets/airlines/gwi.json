@@ -3,11 +3,7 @@
     "name": "Germanwings",
     "callsign": {
         "name": "German Wings",
-        "callsignFormats": [
-            "##@",
-            "#@@",
-            "###"
-        ]
+        "callsignFormats": ["##@", "#@@", "###"]
     },
     "fleets": {
         "default": [

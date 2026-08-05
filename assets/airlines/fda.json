@@ -3,13 +3,9 @@
     "name": "Fuji Dream Airlines",
     "callsign": {
         "name": "Fuji Dream",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["E170", 16]
-        ]
+        "default": [["E170", 16]]
     }
 }

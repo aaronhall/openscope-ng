@@ -3,10 +3,7 @@
     "name": "Garuda Indonesia",
     "callsign": {
         "name": "Indonesia",
-        "callsignFormats": [
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["###", "##"]
     },
     "fleets": {
         "default": [

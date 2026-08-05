@@ -3,9 +3,7 @@
     "name": "Somon Air",
     "callsign": {
         "name": "Somon Air",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -14,8 +12,6 @@
             ["B739", 2],
             ["B788", 1]
         ],
-        "b739": [
-            ["B739", 2]
-        ]
+        "b739": [["B739", 2]]
     }
 }

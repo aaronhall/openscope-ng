@@ -3,11 +3,7 @@
     "name": "Ural Airlines",
     "callsign": {
         "name": "Sverdlovsk Air",
-        "callsignFormats": [
-            "####",
-            "###",
-            "##"
-        ]
+        "callsignFormats": ["####", "###", "##"]
     },
     "fleets": {
         "default": [

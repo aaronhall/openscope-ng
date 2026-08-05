@@ -499,9 +499,9 @@
     "fixes": {
         "_RWY04R": [40.680525, -74.172375],
         "_RWY04L": [40.68165556, -74.17546111],
-        "_RWY04R01DME": [40.71018600, -74.15231323],
+        "_RWY04R01DME": [40.710186, -74.15231323],
         "_RWY04L01DME": [40.71131516, -74.15539551],
-        "_RWY04R04DME": [40.75083542, -74.09413910],
+        "_RWY04R04DME": [40.75083542, -74.0941391],
         "_RWY04L04DME": [40.75253677, -74.09641266],
         "_RWY22L": [40.69786111, -74.16135278],
         "_RWY22R": [40.699, -74.16443611],
@@ -514,18 +514,18 @@
         "_RWY2901DME": [40.70414734, -74.19864655],
         "ACOVE": [42.23478333, -74.03183056],
         "AEVON": [42.91317222, -77.863925],
-        "ALB"  : [42.74727778, -73.80318611, "Albany"],
-        "ARD"  : [40.25334167, -74.90761111, "Yardley"],
+        "ALB": [42.74727778, -73.80318611, "Albany"],
+        "ARD": [40.25334167, -74.90761111, "Yardley"],
         "AUDII": [36.20214167, -78.81007222],
         "BACKY": [39.01603056, -76.0847],
-        "BAF"  : [42.16195833, -72.7162],
+        "BAF": [42.16195833, -72.7162],
         "BAGGA": [40.6218, -74.19218333],
         "BAYYS": [41.28924167, -72.97131389],
         "BENEE": [42.51499444, -78.32474444],
         "BERYS": [42.90943611, -83.29993056],
         "BIGGY": [40.41961667, -74.97270278],
         "BMPAH": [43.18888889, -78.32391944],
-        "BOS"  : [42.35745, -70.98954722],
+        "BOS": [42.35745, -70.98954722],
         "BOWAN": [42.10642778, -73.52470833],
         "BRAND": [40.03507778, -74.73597222],
         "BREZY": [41.15825278, -74.13490556, "Breezy"],
@@ -534,18 +534,18 @@
         "BUFFY": [41.94110833, -75.6126],
         "BUZZD": [40.76550556, -74.11845833],
         "BYRDD": [40.09220278, -75.81869167],
-        "CAM"  : [42.99428889, -73.34401944],
-        "CFB"  : [42.15749167, -76.13647222],
+        "CAM": [42.99428889, -73.34401944],
+        "CFB": [42.15749167, -76.13647222],
         "CFJHV": [42.80182778, -82.48040278],
         "CFKHS": [42.57115833, -79.61789444],
         "COATE": [41.13622778, -74.69516667],
-        "COL"  : [40.31163056, -74.15972778, "Colts Neck"],
+        "COL": [40.31163056, -74.15972778, "Colts Neck"],
         "COLNS": [38.84041111, -79.19683611],
         "COPES": [40.13071389, -75.37676944],
         "CORDS": [41.56973333, -75.13986111],
         "CRANK": [41.41660833, -74.38886944],
-        "CSN"  : [38.64120278, -77.8655],
-        "CYN"  : [39.81733889, -74.431625],
+        "CSN": [38.64120278, -77.8655],
+        "CYN": [39.81733889, -74.431625],
         "DANNR": [40.66642222, -76.24018889],
         "DASDE": [40.11877222, -75.39339167],
         "DGRAF": [41.68625556, -76.22254167],
@@ -553,14 +553,14 @@
         "DOOIN": [40.60213611, -74.22213056],
         "DOOTH": [40.87511389, -77.68985],
         "DORET": [41.80163889, -80.58462222],
-        "DQO"  : [39.67813889, -75.60708611, "Dupont"],
+        "DQO": [39.67813889, -75.60708611, "Dupont"],
         "DYLIN": [40.28746944, -74.85979167],
         "ELIOT": [40.81851389, -75.13011944],
         "ELVAE": [40.5463333, -74.27633333],
-        "EMI"  : [39.49500833, -76.97857222],
+        "EMI": [39.49500833, -76.97857222],
         "EXTOL": [42.65769167, -76.61836111],
         "EYTEE": [38.97923056, -78.85911667],
-        "FAK"  : [37.52850833, -77.82821944, "Flat Rock"],
+        "FAK": [37.52850833, -77.82821944, "Flat Rock"],
         "FARGN": [42.61171944, -79.78845],
         "FENLY": [40.70572778, -74.56834722],
         "FLASK": [37.01775556, -80.3162833],
@@ -570,14 +570,14 @@
         "FROSE": [40.06218333, -75.47188889],
         "FROSS": [48.15333333, -61.24083333],
         "FUBRR": [39.26593056, -76.09488611],
-        "FQM"  : [41.33855833, -76.77486667, "Williamsport"],
+        "FQM": [41.33855833, -76.77486667, "Williamsport"],
         "GATBY": [39.26111667, -76.10051111],
         "GAYEL": [41.40669167, -74.35714444],
-        "GEE"  : [42.83439722, -77.73275, "Geneseo"],
+        "GEE": [42.83439722, -77.73275, "Geneseo"],
         "GIMEE": [40.81313056, -74.08790278],
         "GREKI": [41.48000833, -73.31416111],
         "GRITY": [40.51558889, -74.27693056],
-        "GVE"  : [38.0136, -78.15302778, "Gordonsville"],
+        "GVE": [38.0136, -78.15302778, "Gordonsville"],
         "GYNTS": [40.86843611, -75.39898889],
         "HAAGN": [39.96149722, -76.0762],
         "HAAYS": [41.32000556, -74.46718056],
@@ -587,17 +587,17 @@
         "HAYED": [41.14391667, -76.05345278],
         "HELON": [41.66742222, -74.28042222],
         "HERBA": [42.24313611, -78.2744],
-        "HFD"  : [41.64110556, -72.54741667],
+        "HFD": [41.64110556, -72.54741667],
         "HIDON": [40.16666667, -81.62416667],
-        "HNK"  : [42.06305833, -75.31628333, "Hancock"],
+        "HNK": [42.06305833, -75.31628333, "Hancock"],
         "HOKIR": [40.65559722, -74.55088056],
         "HOPCE": [41.31184722, -74.71686111],
         "HOTEE": [40.34333333, -76.49361111],
         "HOUTN": [40.33768889, -75.82733889],
         "HYPER": [39.68393333, -77.22509444],
-        "HVQ"  : [38.349675, -81.76991389],
+        "HVQ": [38.349675, -81.76991389],
         "ICHOL": [42.64207222, -80.50388611],
-        "IGN"  : [41.66545, -73.822225, "Kingston"],
+        "IGN": [41.66545, -73.822225, "Kingston"],
         "JAAJA": [42.66666667, -81.26666667],
         "JARIT": [40.71404167, -74.38903056],
         "JEENO": [40.70866111, -74.28403889],
@@ -612,9 +612,9 @@
         "LANNA": [40.55974167, -75.027725],
         "LEESA": [37.48716667, -76.31104167],
         "LOUIE": [38.61231389, -76.30121389],
-        "LRP"  : [40.119975, -76.29129444],
-        "LVZ"  : [41.2728, -75.68946667],
-        "LYH"  : [37.25457778, -79.23638056],
+        "LRP": [40.119975, -76.29129444],
+        "LVZ": [41.2728, -75.68946667],
+        "LYH": [37.25457778, -79.23638056],
         "MARRT": [40.60695278, -74.62026944],
         "MAZIE": [40.32209722, -75.1098],
         "MEGSS": [41.18702222, -76.21139444],
@@ -622,20 +622,20 @@
         "MERSR": [40.31012222, -74.82801111],
         "METRO": [40.42271389, -74.66952778],
         "MIKYG": [40.60166667, -75.81972222],
-        "MOL"  : [37.900525, -79.10688889],
-        "MRB"  : [39.38557222, -77.84835556],
+        "MOL": [37.900525, -79.10688889],
+        "MRB": [39.38557222, -77.84835556],
         "MSLIN": [41.49189444, -74.55396667],
         "MTCAF": [41.76981667, -76.52238333],
         "MUDNE": [40.09720833, -75.42335556],
         "MURPH": [39.46422778, -76.38534444],
-        "MXE"  : [39.91805, -75.67082222],
+        "MXE": [39.91805, -75.67082222],
         "NEION": [41.22811389, -74.58077222],
         "NELIE": [41.94101111, -72.68857778],
         "NEWEL": [40.92194444, -75.17083333],
         "NOSIK": [43.98333333, -82.19786111],
         "ODESA": [39.49138889, -75.82899167],
         "OHRYN": [39.1995, -71.5697],
-        "OTT"  : [38.70587222, -76.74474722, "Nottingham"],
+        "OTT": [38.70587222, -76.74474722, "Nottingham"],
         "OWENZ": [39.82335556, -72.83052778],
         "PALEO": [39.02799444, -76.372725],
         "PARKE": [40.68318333, -75.07647778],
@@ -647,11 +647,11 @@
         "PHLBO": [40.83038611, -74.56018889],
         "POPPN": [39.6493, -72.1933],
         "PORTT": [40.59080556, -74.29395],
-        "PSB"  : [40.91625833, -77.99271667],
+        "PSB": [40.91625833, -77.99271667],
         "PSYKO": [40.14361111, -79.15361111],
-        "PTW"  : [40.22223056, -75.56025],
-        "PUT"  : [41.95546111, -71.84409444],
-        "PXT"  : [38.28785556, -76.40023056, "Patuxent"],
+        "PTW": [40.22223056, -75.56025],
+        "PUT": [41.95546111, -71.84409444],
+        "PXT": [38.28785556, -76.40023056, "Patuxent"],
         "RAAKK": [42.39972222, -78.91083333],
         "RACKI": [41.01216667, -75.57695833],
         "REBBL": [41.882675, -76.93279444],
@@ -663,15 +663,15 @@
         "RUUTH": [39.85034444, -74.99976944, "Ruth"],
         "SAAME": [40.03106111, -76.48399722],
         "SACRI": [39.60203889, -76.17352778],
-        "SAX"  : [41.06754167, -74.53830833, "Sparta"],
-        "SBJ"  : [40.58304444, -74.74179167, "Solberg"],
-        "SBY"  : [38.34500556, -75.510575],
+        "SAX": [41.06754167, -74.53830833, "Sparta"],
+        "SBJ": [40.58304444, -74.74179167, "Solberg"],
+        "SBY": [38.34500556, -75.510575],
         "SHAFF": [41.28970556, -74.44340556],
         "SHIPP": [40.32943333, -73.24727222],
         "SHLBK": [38.33783611, -76.43625278],
         "SHONA": [37.79931667, -77.58288889],
         "SIRLY": [40.65000833, -74.4163361],
-        "SLT"  : [41.51275833, -77.97011111],
+        "SLT": [41.51275833, -77.97011111],
         "SOMTO": [40.12616667, -75.06372778],
         "SPAYD": [38.19348889, -82.32463611],
         "SPOTZ": [40.76527778, -75.38305556],
@@ -682,12 +682,12 @@
         "SWANN": [39.15146667, -76.22887222],
         "SWEET": [40.82827222, -74.92431944],
         "TALCO": [42.06276944, -74.10773611],
-        "TEB"  : [40.84871944, -74.06224167],
+        "TEB": [40.84871944, -74.06224167],
         "TOOBN": [38.99841944, -76.99050833],
         "TOWIN": [40.53521111, -75.40037778],
         "TUSKY": [43.565, -67],
         "TWIGS": [42.80947222, -82.55286111],
-        "ULW"  : [42.09415556, -77.02480556],
+        "ULW": [42.09415556, -77.02480556],
         "UPPRR": [41.24406944, -80.13883056],
         "VIEEW": [42.43946389, -77.02591667],
         "VILLS": [39.301075, -75.11052778],
@@ -701,10 +701,9 @@
         "YOCKY": [37.65410833, -84.15623611],
         "YYOST": [41.58271667, -75.85584722],
         "ZIMMZ": [40.80305556, -75.12361111]
-},
-    "restricted": [
-    ],
-    "runways":[
+    },
+    "restricted": [],
+    "runways": [
         {
             "name": ["4L", "22R"],
             "end": [
@@ -731,28 +730,42 @@
         }
     ],
     "airways": {
-        "Q75" : ["BIGGY", "COPES", "MXE", "STOEN", "SACRI", "MURPH", "TOOBN", "HAMMZ", "GVE"],
-        "V3"  : ["BIGGY", "HARRS", "MAZIE", "DASDE", "MUDNE", "FROSE", "MXE"],
+        "Q75": ["BIGGY", "COPES", "MXE", "STOEN", "SACRI", "MURPH", "TOOBN", "HAMMZ", "GVE"],
+        "V3": ["BIGGY", "HARRS", "MAZIE", "DASDE", "MUDNE", "FROSE", "MXE"],
         "Q436": ["COATE", "LAAYK", "YYOST", "DGRAF", "MTCAF", "REBBL", "REXXY", "HERBA", "RAAKK"],
         "Q438": ["RAAKK", "CFKHS", "FARGN", "ICHOL", "JAAJA", "CFJHV", "TWIGS", "BERYS", "RUBYY"],
         "Y481": ["DIXIE", "OWENZ", "POPPN", "OHRYN"],
         "J209": ["WHITE", "CYN", "VILLS", "SBY"],
-        "J79" : ["SBY", "LEESA"],
+        "J79": ["SBY", "LEESA"],
         "Q818": ["GAYEL", "MSLIN", "STOMP", "BUFFY", "CFB", "VIEEW", "KELIE", "WOZEE"],
-        "J48" : ["LANNA", "PTW", "BYRDD", "HAAGN", "PENSY", "EMI", "CSN", "MOL", "FLASK"],
+        "J48": ["LANNA", "PTW", "BYRDD", "HAAGN", "PENSY", "EMI", "CSN", "MOL", "FLASK"],
         "J223": ["NEION", "HOPCE", "CORDS"],
-        "J60" : ["NEWEL", "GYNTS", "DANNR", "FORTT", "DOOTH", "PSB"],
-        "J6"  : ["PARKE", "TOWIN", "KAYNE", "HOUTN", "LRP", "SAAME", "FLIRT", "HYPER", "MRB", "EYTEE", "COLNS", "PERKS", "HVQ"],
-        "Q68" : ["HVQ", "SPAYD", "YOCKY"],
-        "Q42" : ["ZIMMZ", "SPOTZ", "MIKYG", "HOTEE", "BRNAN", "PSYKO", "BUBBA", "HIDON"]
+        "J60": ["NEWEL", "GYNTS", "DANNR", "FORTT", "DOOTH", "PSB"],
+        "J6": [
+            "PARKE",
+            "TOWIN",
+            "KAYNE",
+            "HOUTN",
+            "LRP",
+            "SAAME",
+            "FLIRT",
+            "HYPER",
+            "MRB",
+            "EYTEE",
+            "COLNS",
+            "PERKS",
+            "HVQ"
+        ],
+        "Q68": ["HVQ", "SPAYD", "YOCKY"],
+        "Q42": ["ZIMMZ", "SPOTZ", "MIKYG", "HOTEE", "BRNAN", "PSYKO", "BUBBA", "HIDON"]
     },
     "sids": {
         "EWR4": {
             "icao": "EWR4",
             "name": "Newark Four",
             "rwy": {
-                "KEWR4L" : [["_RWY04L01DME", "A05+"], "_RWY04L04DME", "#290"],
-                "KEWR4R" : [["_RWY04R01DME", "A05+"], "_RWY04R04DME", "#290"],
+                "KEWR4L": [["_RWY04L01DME", "A05+"], "_RWY04L04DME", "#290"],
+                "KEWR4R": [["_RWY04R01DME", "A05+"], "_RWY04R04DME", "#290"],
                 "KEWR22L": [["_RWY22L01DME", "A05+"], "_RWY22L02DME", "#220"],
                 "KEWR22R": [["_RWY22R01DME", "A05+"], "_RWY22R02DME", "#220"],
                 "KEWR11": [["_RWY1101DME", "A04+"], "_RWY1104DME", "#290"],
@@ -764,7 +777,7 @@
                 "BIGGY": ["BIGGY"],
                 "BREZY": ["BREZY"],
                 "COATE": ["COATE"],
-                "DIXIE": ["ELVAE", "COL","DIXIE"],
+                "DIXIE": ["ELVAE", "COL", "DIXIE"],
                 "ELIOT": ["ELIOT"],
                 "GAYEL": ["GAYEL"],
                 "GREKI": ["GREKI"],
@@ -806,13 +819,16 @@
                 "KEWR22L": [["_RWY22L01DME", "A05+"]],
                 "KEWR22R": [["_RWY22R01DME", "A05+"]]
             },
-            "body": [["BAGGA", "S220-"], ["PORTT", "A25"]],
+            "body": [
+                ["BAGGA", "S220-"],
+                ["PORTT", "A25"]
+            ],
             "exitPoints": {
                 "BAYYS": ["#261", "BAYYS"],
                 "BIGGY": ["RIETA", "SBJ", "BIGGY"],
                 "BREZY": ["#261", "BREZY"],
                 "COATE": ["#261", "COATE"],
-                "DIXIE": ["#261", "ELVAE", "COL","DIXIE"],
+                "DIXIE": ["#261", "ELVAE", "COL", "DIXIE"],
                 "ELIOT": ["SIRLY", "FENLY", "ELIOT"],
                 "GAYEL": ["#261", "GAYEL"],
                 "HAAYS": ["#261", "HAAYS"],
@@ -832,7 +848,7 @@
                 ["BREZY*"],
                 ["COATE*"],
                 ["DIXIE*"],
-                ["PORTT", "SIRLY", "FENLY","ELIOT*"],
+                ["PORTT", "SIRLY", "FENLY", "ELIOT*"],
                 ["GAYEL*"],
                 ["HAAYS*"],
                 ["SBJ", "LANNA*"],
@@ -856,7 +872,7 @@
                 "BIGGY": ["BIGGY"],
                 "BREZY": ["BREZY"],
                 "COATE": ["COATE"],
-                "DIXIE": ["ELVAE", "COL","DIXIE"],
+                "DIXIE": ["ELVAE", "COL", "DIXIE"],
                 "ELIOT": ["ELIOT"],
                 "GAYEL": ["GAYEL"],
                 "HAAYS": ["HAAYS"],
@@ -898,7 +914,6 @@
                 "SWANN": ["SWANN", "GATBY", "KERNO", "ODESA", "DQO", "RUUTH"],
                 "SHLBK": ["SHLBK", ["LOUIE", "A130"], "BACKY", "ODESA", "DQO", "RUUTH"],
                 "RUUTH": ["RUUTH"]
-
             },
             "body": ["WNDYL", ["BRAND", "A70"], "KORRY", "WATJA", "#061"],
             "rwy": {
@@ -924,7 +939,15 @@
                 "PXT": ["PXT", "PEEDS", ["FUBRR", "A270+"]],
                 "DQO": []
             },
-            "body": [["DQO", "A200+"],["STEFE", "A130+"], ["SOMTO", "A110"], "ARD", ["DYLIN", "A80"], "MERSR", "METRO" ],
+            "body": [
+                ["DQO", "A200+"],
+                ["STEFE", "A130+"],
+                ["SOMTO", "A110"],
+                "ARD",
+                ["DYLIN", "A80"],
+                "MERSR",
+                "METRO"
+            ],
             "rwy": {
                 "KEWR4L": [],
                 "KEWR4R": [],
@@ -944,14 +967,14 @@
             "icao": "FLOSI4",
             "name": "Flossy Four",
             "entryPoints": {
-                "GEE":   ["GEE", "EXTOL", "KODEY", "HNK", "HELON"],
-                "BAF":   ["BAF", "BOWAN", "WIGAN", "TALCO", "WEETS", "HELON"],
+                "GEE": ["GEE", "EXTOL", "KODEY", "HNK", "HELON"],
+                "BAF": ["BAF", "BOWAN", "WIGAN", "TALCO", "WEETS", "HELON"],
                 "HANAA": ["HANAA", "ALB", "ACOVE", "TALCO", "WEETS", "HELON"],
-                "HNK":   ["HNK", "HELON"],
+                "HNK": ["HNK", "HELON"],
                 "NELIE": ["NELIE", "IGN"],
                 "FLOSI": []
             },
-            "body": ["FLOSI",["CRANK", "A70"], "SHAFF", "SAX", "PHLBO", "^HOKIR", "#180"],
+            "body": ["FLOSI", ["CRANK", "A70"], "SHAFF", "SAX", "PHLBO", "^HOKIR", "#180"],
             "rwy": {
                 "KEWR4L": [],
                 "KEWR4R": [],
@@ -973,8 +996,8 @@
             "icao": "PENNS2",
             "name": "Penns Two",
             "entryPoints": {
-                "FQM":   [["FQM", "S250-"], "HAYED", "RACKI", "PENNS"],
-                "LVZ":   [["LVZ", "S250-"], "RACKI", "PENNS"],
+                "FQM": [["FQM", "S250-"], "HAYED", "RACKI", "PENNS"],
+                "LVZ": [["LVZ", "S250-"], "RACKI", "PENNS"],
                 "PENNS": [["PENNS", "S250-"]]
             },
             "body": ["SWEET"],
@@ -996,11 +1019,29 @@
             "name": "Filbo Three",
             "entryPoints": {
                 "GVE": ["GVE", "OTT", "PALEO", "PEEDS", ["FUBRR", "A270"], ["DQO", "A200+"]],
-                "FAK": ["FAK", "SHONA", "OTT", "PALEO", "PEEDS", ["FUBRR", "A270"], ["DQO", "A200+"]],
+                "FAK": [
+                    "FAK",
+                    "SHONA",
+                    "OTT",
+                    "PALEO",
+                    "PEEDS",
+                    ["FUBRR", "A270"],
+                    ["DQO", "A200+"]
+                ],
                 "PXT": ["PXT", "PEEDS", "FUBRR", ["DQO", "A200+"]],
                 "DQO": [["DQO", "A200+"]]
             },
-            "body": [["STEFE", "A130+"], ["SOMTO", "A110"], "ARD", ["DYLIN", "A80"], "MERSR", "METRO", "MARRT", "PHLBO", "#025" ],
+            "body": [
+                ["STEFE", "A130+"],
+                ["SOMTO", "A110"],
+                "ARD",
+                ["DYLIN", "A80"],
+                "MERSR",
+                "METRO",
+                "MARRT",
+                "PHLBO",
+                "#025"
+            ],
             "rwy": {
                 "KEWR4L": [],
                 "KEWR4R": [],
@@ -1020,11 +1061,39 @@
             "icao": "SHAFF7",
             "name": "Shaff Seven",
             "entryPoints": {
-                "GEE":   ["GEE", "EXTOL", "KODEY", "HNK", "HELON", "FLOSI", ["CRANK", "A70"], "SHAFF"],
-                "BAF":   ["BAF", "BOWAN", "WIGAN", "TALCO", "WEETS", "HELON", "FLOSI", ["CRANK", "A70"], "SHAFF"],
-                "ALB":   ["ALB", "ACOVE", "TALCO", "WEETS", "HELON", "FLOSI", ["CRANK", "A70"], "SHAFF"],
-                "HNK":   ["HNK", "HELON", "FLOSI", ["CRANK", "A70"], "SHAFF"],
-                "IGN":   ["IGN", "FLOSI", ["CRANK", "A70"], "SHAFF"],
+                "GEE": [
+                    "GEE",
+                    "EXTOL",
+                    "KODEY",
+                    "HNK",
+                    "HELON",
+                    "FLOSI",
+                    ["CRANK", "A70"],
+                    "SHAFF"
+                ],
+                "BAF": [
+                    "BAF",
+                    "BOWAN",
+                    "WIGAN",
+                    "TALCO",
+                    "WEETS",
+                    "HELON",
+                    "FLOSI",
+                    ["CRANK", "A70"],
+                    "SHAFF"
+                ],
+                "ALB": [
+                    "ALB",
+                    "ACOVE",
+                    "TALCO",
+                    "WEETS",
+                    "HELON",
+                    "FLOSI",
+                    ["CRANK", "A70"],
+                    "SHAFF"
+                ],
+                "HNK": ["HNK", "HELON", "FLOSI", ["CRANK", "A70"], "SHAFF"],
+                "IGN": ["IGN", "FLOSI", ["CRANK", "A70"], "SHAFF"],
                 "SHAFF": ["SHAFF"]
             },
             "body": ["SAX"],
@@ -1045,12 +1114,12 @@
                 ["SHAFF*", "SAX"]
             ]
         },
-        "FQM3"  : {
+        "FQM3": {
             "icao": "FQM3",
             "name": "Williamsport Three",
             "entryPoints": {
-                "FQM":   ["FQM"],
-                "SLT":   ["SLT", "FQM"]
+                "FQM": ["FQM"],
+                "SLT": ["SLT", "FQM"]
             },
             "body": ["MEGSS", "HAYED", ["RACKI", "A130"], "PENNS", ["SWEET", "A70"], "#122"],
             "rwy": {
@@ -1063,10 +1132,9 @@
             },
             "draw": [
                 ["SLT*", "FQM"],
-                ["FQM*","MEGSS", "HAYED", "RACKI", "PENNS", "SWEET"]
+                ["FQM*", "MEGSS", "HAYED", "RACKI", "PENNS", "SWEET"]
             ]
         }
-
     },
     "spawnPatterns": [
         {
@@ -1075,12 +1143,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.BIGGY.Q75.GVE..LYH",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1098,12 +1166,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.BIGGY.V3.MXE",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1121,20 +1189,18 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.COATE..LAAYK..ULW..WOZEE",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
             "method": "random",
             "rate": 0.625,
-            "airlines": [
-                ["ual", 5]
-            ]
+            "airlines": [["ual", 5]]
         },
         {
             "origin": "kewr",
@@ -1142,12 +1208,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.COATE.Q436.RAAKK.Q438.RUBYY",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1169,12 +1235,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.DIXIE.Y481.OHRYN",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1194,12 +1260,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.WHITE.J209.SBY.J79.LEESA",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1220,12 +1286,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.GAYEL.Q818.WOZEE..NOSIK",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1244,12 +1310,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.GREKI..JUDDS..CAM..PBERG",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1268,12 +1334,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.LANNA.J48.FLASK",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1295,12 +1361,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.MERIT",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1318,12 +1384,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.MERIT..HFD..PUT..FROSS..RIKAL",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1342,12 +1408,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.MERIT..HFD..PUT..BOS..TUSKY",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1364,12 +1430,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.NEION.J223.CORDS..ULW..BENEE",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1386,12 +1452,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.NEWEL.J60.PSB..UPPRR",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1408,12 +1474,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.PARKE.J6.MRB.J6.EYTEE.J6.HVQ.Q68.YOCKY",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1433,12 +1499,12 @@
             "category": "departure",
             "route": "KEWR4L.EWR4.ZIMMZ.Q42.HIDON..RINTE",
             "commands": {
-                "4L" : "c 30",
-                "4R" : "c 30",
+                "4L": "c 30",
+                "4R": "c 30",
                 "22L": "c 25",
                 "22R": "c 25",
-                "11" : "c 30",
-                "29" : "c 50"
+                "11": "c 30",
+                "29": "c 50"
             },
             "altitude": "",
             "speed": "",
@@ -1487,7 +1553,7 @@
                 ["ual", 30],
                 ["jza", 7],
                 ["aca", 1],
-                ["aca/short",2],
+                ["aca/short", 2],
                 ["asa", 3],
                 ["rpa", 2],
                 ["gjs", 7],

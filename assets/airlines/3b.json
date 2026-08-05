@@ -3,9 +3,7 @@
     "name": "General Aviation Mauritius",
     "callsign": {
         "name": "Three Bravo",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

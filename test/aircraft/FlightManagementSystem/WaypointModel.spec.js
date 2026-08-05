@@ -4,7 +4,7 @@ import WaypointModel from '../../../src/assets/scripts/client/aircraft/FlightMan
 import StaticPositionModel from '../../../src/assets/scripts/client/base/StaticPositionModel';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../../fixtures/navigationLibraryFixtures';
 import { INVALID_NUMBER } from '../../../src/assets/scripts/client/constants/globalConstants';
 import { DEFAULT_HOLD_PARAMETERS } from '../../../src/assets/scripts/client/constants/waypointConstants';
@@ -496,19 +496,16 @@ test('#hasSpeedRestriction returns true when a minimum or maximum speed restrict
     expect(modelWithRangedRestriction.hasSpeedRestriction).toBe(true);
 });
 
-
 test('#hasSpeedRestriction returns true when a hold with a speed restriction is set', () => {
     const modelWithHold = new WaypointModel('@BOACH');
     const holdParametersMock = {
         inboundHeading: 3.14,
         legLength: '2min',
         speedMaximum: 220,
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
 
-    modelWithHold.setHoldParameters(
-        holdParametersMock
-    );
+    modelWithHold.setHoldParameters(holdParametersMock);
 
     expect(modelWithHold.hasSpeedRestriction).toBe(true);
 });
@@ -533,7 +530,7 @@ test('#holdParameters returns object with appropriate contents when #_isHoldWayp
         legLength: '1min',
         speedMaximum: undefined,
         timer: INVALID_NUMBER,
-        turnDirection: 'right'
+        turnDirection: 'right',
     };
     const result = model.holdParameters;
 
@@ -629,12 +626,10 @@ test('#speedMaximum returns expected value when hold with speed restriction is i
         inboundHeading: 3.14,
         legLength: '2min',
         speedMaximum: 220,
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
 
-    modelWithHold.setHoldParameters(
-        holdParametersMock
-    );
+    modelWithHold.setHoldParameters(holdParametersMock);
 
     expect(modelWithHold.speedMaximum).toBe(250);
 });
@@ -645,12 +640,10 @@ test('#speedMaximum returns expected value when hold with speed restriction is a
         inboundHeading: 3.14,
         legLength: '2min',
         speedMaximum: 220,
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
 
-    modelWithHold.setHoldParameters(
-        holdParametersMock
-    );
+    modelWithHold.setHoldParameters(holdParametersMock);
 
     expect(modelWithHold.speedMaximum).toBe(holdParametersMock.speedMaximum);
 });
@@ -669,7 +662,10 @@ test('.activateHold() sets #_isHoldWaypoint to true', () => {
 test('.calculateBearingToWaypoint() calls ._ensureNonVectorWaypointsForThisAndWaypoint()', () => {
     const model = new WaypointModel('BOACH');
     const otherModel = new WaypointModel('FRAWG');
-    const ensureNonVectorWaypointsForThisAndWaypointSpy = sinon.spy(model, '_ensureNonVectorWaypointsForThisAndWaypoint');
+    const ensureNonVectorWaypointsForThisAndWaypointSpy = sinon.spy(
+        model,
+        '_ensureNonVectorWaypointsForThisAndWaypoint'
+    );
 
     model.calculateBearingToWaypoint(otherModel);
 
@@ -688,7 +684,10 @@ test('.calculateBearingToWaypoint() returns correct bearing', () => {
 test('.calculateDistanceToWaypoint() calls ._ensureNonVectorWaypointsForThisAndWaypoint()', () => {
     const model = new WaypointModel('BOACH');
     const otherModel = new WaypointModel('FRAWG');
-    const ensureNonVectorWaypointsForThisAndWaypointSpy = sinon.spy(model, '_ensureNonVectorWaypointsForThisAndWaypoint');
+    const ensureNonVectorWaypointsForThisAndWaypointSpy = sinon.spy(
+        model,
+        '_ensureNonVectorWaypointsForThisAndWaypoint'
+    );
 
     model.calculateDistanceToWaypoint(otherModel);
 
@@ -876,14 +875,14 @@ test('.setHoldParameters() sets #_holdParameters according to provided parameter
         inboundHeading: 3.14,
         legLength: '2min',
         speedMaximum: 220,
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
     const expectedResult = {
         inboundHeading: 3.14,
         legLength: '2min',
         speedMaximum: 220,
         timer: -1,
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
 
     const result = model.setHoldParameters(holdParametersMock);
@@ -910,7 +909,7 @@ test('.setHoldParametersAndActivateHold() calls .setHoldParameters() and .activa
     const holdParametersMock = {
         inboundHeading: 3.14,
         legLength: '2min',
-        turnDirection: 'left'
+        turnDirection: 'left',
     };
     const result = model.setHoldParametersAndActivateHold(holdParametersMock);
 
@@ -1076,7 +1075,7 @@ test('._initializePosition() sets #_positionModel to the position corresponding 
     model._name = 'BOACH';
 
     const result = model._initializePosition();
-    const expectedGpsCoordinates = [35.67826104359460, -115.29470074200118];
+    const expectedGpsCoordinates = [35.6782610435946, -115.29470074200118];
     const resultingGpsCoordinates = model.positionModel.gps;
 
     expect(typeof result === 'undefined').toBe(true);

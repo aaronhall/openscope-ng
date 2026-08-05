@@ -6,8 +6,6 @@
         "length": 3
     },
     "fleets": {
-        "default": [
-            ["MD11", 7]
-        ]
+        "default": [["MD11", 7]]
     }
 }

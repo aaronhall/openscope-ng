@@ -2,11 +2,7 @@ import _round from 'lodash/round';
 import { radians_normalize } from '../math/circle';
 import { bearingToPoint } from '../math/flightMath';
 import { distance2d } from '../math/distance';
-import {
-    heading_to_string,
-    km,
-    nm
-} from '../utilities/unitConverters';
+import { heading_to_string, km, nm } from '../utilities/unitConverters';
 import MeasureLegModel from './MeasureLegModel';
 import AircraftModel from '../aircraft/AircraftModel';
 import FixModel from '../navigationLibrary/FixModel';
@@ -104,8 +100,10 @@ export default class MeasurePath {
      * @returns {boolean}
      */
     get hasStyleInitialTurn() {
-        return this._style === MEASURE_TOOL_STYLE.ARC_TO_NEXT ||
-            this._style === MEASURE_TOOL_STYLE.ALL_ARCED;
+        return (
+            this._style === MEASURE_TOOL_STYLE.ARC_TO_NEXT ||
+            this._style === MEASURE_TOOL_STYLE.ALL_ARCED
+        );
     }
 
     /**
@@ -127,8 +125,7 @@ export default class MeasurePath {
      * @method _init
      * @private
      */
-    _init() {
-    }
+    _init() {}
 
     // ------------------------------ PUBLIC ------------------------------
 
@@ -175,7 +172,7 @@ export default class MeasurePath {
         const initialValues = {
             previousLeg: null,
             totalDistance: 0,
-            totalDuration: 0
+            totalDuration: 0,
         };
 
         // If there is an initialTurn (eg. a turn onto the first leg), then the exit point is used
@@ -196,11 +193,7 @@ export default class MeasurePath {
         pointsList.reduce((lastValues, point, index) => {
             const { previousLeg } = lastValues;
             let { totalDistance, totalDuration } = lastValues;
-            const leg = new MeasureLegModel(
-                this._getRelativePosition(point),
-                radius,
-                previousLeg
-            );
+            const leg = new MeasureLegModel(this._getRelativePosition(point), radius, previousLeg);
             const bearing = heading_to_string(leg.bearing);
             let distance = nm(leg.distance);
             let duration = 0;
@@ -216,9 +209,7 @@ export default class MeasurePath {
 
             // We only want labels that have a distance
             if (distance > 1) {
-                const labels = [
-                    this._buildLabel(distance, duration, bearing)
-                ];
+                const labels = [this._buildLabel(distance, duration, bearing)];
 
                 totalDistance += distance;
                 totalDuration = _round(totalDuration + duration, 1);
@@ -233,13 +224,13 @@ export default class MeasurePath {
             return {
                 previousLeg: leg,
                 totalDistance,
-                totalDuration
+                totalDuration,
             };
         }, initialValues);
 
         return {
             initialTurn,
-            firstLeg: initialLeg.next
+            firstLeg: initialLeg.next,
         };
     }
 
@@ -343,25 +334,26 @@ export default class MeasurePath {
         const direction = isRHT ? 1 : -1;
 
         // The centre of the turn circle is offset to the left or right by 90°
-        const bearingToCenter = groundTrack + (direction * Math.PI / 2);
+        const bearingToCenter = groundTrack + (direction * Math.PI) / 2;
         const center = [
-            start[0] + (turnRadius * Math.sin(bearingToCenter)),
-            start[1] + (turnRadius * Math.cos(bearingToCenter))
+            start[0] + turnRadius * Math.sin(bearingToCenter),
+            start[1] + turnRadius * Math.cos(bearingToCenter),
         ];
 
         // Turn exit (tangent from turn circle to the fix)
         const centerToFixBearing = bearingToPoint(center, fix);
         const centerToFixDistance = distance2d(center, fix);
-        const outboundCourse = centerToFixBearing + (direction * Math.asin(turnRadius / centerToFixDistance));
+        const outboundCourse =
+            centerToFixBearing + direction * Math.asin(turnRadius / centerToFixDistance);
 
         // Entry and exit angles
         const entryAngle = bearingToCenter + Math.PI;
-        const exitAngle = outboundCourse - (direction * Math.PI / 2);
+        const exitAngle = outboundCourse - (direction * Math.PI) / 2;
 
         // The exit point is the point on the turn circle at the exit angle
         const exitPoint = [
-            center[0] + (turnRadius * Math.sin(exitAngle)),
-            center[1] + (turnRadius * Math.cos(exitAngle))
+            center[0] + turnRadius * Math.sin(exitAngle),
+            center[1] + turnRadius * Math.cos(exitAngle),
         ];
 
         // Length around the arc
@@ -380,7 +372,7 @@ export default class MeasurePath {
             entryAngle,
             exitAngle,
             center,
-            exitPoint
+            exitPoint,
         };
     }
 
@@ -441,10 +433,16 @@ export default class MeasurePath {
      * @for MeasurePath
      * @method _throwIfPointInvalid
      * @param value {AircraftModel|FixModel|array<number>}
-    */
+     */
     _throwIfPointInvalid(value) {
-        if (!(value instanceof Array || value instanceof AircraftModel || value instanceof FixModel)) {
-            throw new TypeError(`value cannot be ${typeof value}. An Array, AircraftModel or FixModel is expected.`);
+        if (!(
+            value instanceof Array ||
+            value instanceof AircraftModel ||
+            value instanceof FixModel
+        )) {
+            throw new TypeError(
+                `value cannot be ${typeof value}. An Array, AircraftModel or FixModel is expected.`
+            );
         }
     }
 }

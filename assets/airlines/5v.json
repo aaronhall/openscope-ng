@@ -3,9 +3,7 @@
     "name": "General Aviation Togo",
     "callsign": {
         "name": "Five Victor",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

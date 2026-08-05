@@ -3,9 +3,7 @@
     "name": "General Aviation Montenegro",
     "callsign": {
         "name": "Four Oscar",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "General Aviation Costa Rica",
     "callsign": {
         "name": "Tango India",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

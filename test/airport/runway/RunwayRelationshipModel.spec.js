@@ -1,10 +1,7 @@
 import { test, expect, vi } from 'vitest';
 
 import RunwayRelationshipModel from '../../../src/assets/scripts/client/airport/runway/RunwayRelationshipModel';
-import {
-    runwayModel07lFixture,
-    runwayModel07rFixture
-} from '../../fixtures/runwayFixtures';
+import { runwayModel07lFixture, runwayModel07rFixture } from '../../fixtures/runwayFixtures';
 
 test('throws when passed invalid parameters', () => {
     expect(() => new RunwayRelationshipModel()).toThrow();
@@ -13,7 +10,9 @@ test('throws when passed invalid parameters', () => {
 });
 
 test('does not throws when passed valid parameters', () => {
-    expect(() => new RunwayRelationshipModel(runwayModel07lFixture, runwayModel07rFixture)).not.toThrow();
+    expect(
+        () => new RunwayRelationshipModel(runwayModel07lFixture, runwayModel07rFixture)
+    ).not.toThrow();
 });
 
 test('.calculateSeparationMinimums() returns 5.556 when #lateral_dist is <= 2500', () => {

@@ -20,12 +20,12 @@
     },
     "runway": {
         "takeoff": 0.963,
-        "landing": 0.890
+        "landing": 0.89
     },
-    "speed":{
-        "min":  100,
+    "speed": {
+        "min": 100,
         "landing": 110,
-        "cruise":  430,
+        "cruise": 430,
         "cruiseM": 0.73,
         "max": 450,
         "maxM": null

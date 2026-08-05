@@ -3,9 +3,7 @@
     "name": "General Aviation Dominica",
     "callsign": {
         "name": "Hotel India",
-        "callsignFormats": [
-            "###@@"
-        ]
+        "callsignFormats": ["###@@"]
     },
     "fleets": {
         "default": [

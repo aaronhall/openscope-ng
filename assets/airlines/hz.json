@@ -3,14 +3,7 @@
     "name": "General Aviation Saudi Arabia",
     "callsign": {
         "name": "Hotel Zulu",
-        "callsignFormats": [
-            "@@@",
-            "@@#",
-            "@@##",
-            "@@@#",
-            "@@@##",
-            "@@@@"
-        ]
+        "callsignFormats": ["@@@", "@@#", "@@##", "@@@#", "@@@##", "@@@@"]
     },
     "fleets": {
         "default": [

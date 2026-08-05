@@ -3,9 +3,7 @@
     "name": "General Aviation Namibia",
     "callsign": {
         "name": "Victor Five",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [

@@ -3,9 +3,7 @@
     "name": "Air Namibia",
     "callsign": {
         "name": "Namibia",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [
@@ -17,8 +15,6 @@
             ["A319", 4],
             ["E135", 4]
         ],
-        "long": [
-            ["A332", 2]
-        ]
+        "long": [["A332", 2]]
     }
 }

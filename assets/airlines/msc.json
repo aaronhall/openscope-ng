@@ -3,16 +3,10 @@
     "name": "Air Cairo",
     "callsign": {
         "name": "Air Cairo",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
-        "default": [
-            ["A320", 7]
-        ],
-        "a320": [
-            ["A320", 7]
-        ]
+        "default": [["A320", 7]],
+        "a320": [["A320", 7]]
     }
 }

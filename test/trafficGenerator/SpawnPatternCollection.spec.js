@@ -3,13 +3,16 @@ import sinon from 'sinon';
 import SpawnPatternCollection from '../../src/assets/scripts/client/trafficGenerator/SpawnPatternCollection';
 import {
     createAirportControllerFixture,
-    resetAirportControllerFixture
+    resetAirportControllerFixture,
 } from '../fixtures/airportFixtures';
 import {
     createNavigationLibraryFixture,
-    resetNavigationLibraryFixture
+    resetNavigationLibraryFixture,
 } from '../fixtures/navigationLibraryFixtures';
-import { spawnPatternModelArrivalFixture, spawnPatternModelDepartureFixture } from '../fixtures/trafficGeneratorFixtures';
+import {
+    spawnPatternModelArrivalFixture,
+    spawnPatternModelDepartureFixture,
+} from '../fixtures/trafficGeneratorFixtures';
 import { AIRPORT_JSON_FOR_SPAWN_MOCK } from './_mocks/spawnPatternMocks';
 
 let sandbox; // using the sinon sandbox ensures stubs are restored after each test
@@ -30,44 +33,50 @@ afterEach(() => {
 });
 
 test('.init() throws when the provided airport JSON data is empty or invalid', () => {
-    const expectedMessage = /Invalid airportJson passed to SpawnPatternCollection\.init\. Expected a non-empty object, but received .*/;
+    const expectedMessage =
+        /Invalid airportJson passed to SpawnPatternCollection\.init\. Expected a non-empty object, but received .*/;
 
     expect(() => SpawnPatternCollection.init(), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => SpawnPatternCollection.init(null), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => SpawnPatternCollection.init([]), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => SpawnPatternCollection.init({}), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => SpawnPatternCollection.init(42), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => SpawnPatternCollection.init('threeve'), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
     expect(() => SpawnPatternCollection.init(false), {
         instanceOf: TypeError,
-        message: expectedMessage
+        message: expectedMessage,
     }).toThrow();
 });
 
 test('.init() calls _buildSpawnPatternModels()', () => {
-    const _buildSpawnPatternModelsSpy = sandbox.spy(SpawnPatternCollection, '_buildSpawnPatternModels');
+    const _buildSpawnPatternModelsSpy = sandbox.spy(
+        SpawnPatternCollection,
+        '_buildSpawnPatternModels'
+    );
 
     SpawnPatternCollection.init(AIRPORT_JSON_FOR_SPAWN_MOCK);
 
-    expect(_buildSpawnPatternModelsSpy.calledWithExactly(AIRPORT_JSON_FOR_SPAWN_MOCK.spawnPatterns)).toBe(true);
+    expect(
+        _buildSpawnPatternModelsSpy.calledWithExactly(AIRPORT_JSON_FOR_SPAWN_MOCK.spawnPatterns)
+    ).toBe(true);
 });
 
 test('.addItems() does not call .addItem() if passed an invalid value', () => {
@@ -89,7 +98,10 @@ test('.addItems() calls .addItem() for each item in the list passed as an argume
 
     const addItemSpy = sandbox.spy(SpawnPatternCollection, 'addItem');
 
-    SpawnPatternCollection.addItems([spawnPatternModelArrivalFixture, spawnPatternModelDepartureFixture]);
+    SpawnPatternCollection.addItems([
+        spawnPatternModelArrivalFixture,
+        spawnPatternModelDepartureFixture,
+    ]);
 
     expect(addItemSpy.calledTwice).toBe(true);
 
@@ -111,7 +123,10 @@ test('.addItem() throws if anything other than a SpawnPatternModel is passed as 
 
 test('.findSpawnPatternsByCategory() returns an empty array when no spawn patterns of the specified category are found', () => {
     SpawnPatternCollection.init(AIRPORT_JSON_FOR_SPAWN_MOCK);
-    SpawnPatternCollection.addItems([spawnPatternModelArrivalFixture, spawnPatternModelDepartureFixture]);
+    SpawnPatternCollection.addItems([
+        spawnPatternModelArrivalFixture,
+        spawnPatternModelDepartureFixture,
+    ]);
 
     const categoryMock = 'threeve';
     const expectedResult = [];
@@ -124,11 +139,13 @@ test('.findSpawnPatternsByCategory() returns all SpawnPatternModels in the colle
     SpawnPatternCollection.init(AIRPORT_JSON_FOR_SPAWN_MOCK);
     SpawnPatternCollection.addItems([
         spawnPatternModelArrivalFixture,
-        spawnPatternModelDepartureFixture
+        spawnPatternModelDepartureFixture,
     ]);
 
     const categoryMock = 'arrival';
     const result = SpawnPatternCollection.findSpawnPatternsByCategory(categoryMock);
 
-    expect(result.every((spawnPatternModel) => spawnPatternModel.category === categoryMock)).toBe(true);
+    expect(result.every((spawnPatternModel) => spawnPatternModel.category === categoryMock)).toBe(
+        true
+    );
 });

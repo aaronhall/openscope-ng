@@ -26,7 +26,9 @@ test('.translatePixelsToKilometers() divides pixels by scale', () => {
 test('.calculateCanvasPositionFromPagePosition() returns an [x, y] array with precise canvas coordinate values', () => {
     const pagePositionMock = [533.6571116862411, 529.6559736409592];
     const expectedCanvasPosition = [213.65711168624114, -289.65597364095925];
-    const canvasPosition = CanvasStageModel.calculateCanvasPositionFromPagePosition(...pagePositionMock);
+    const canvasPosition = CanvasStageModel.calculateCanvasPositionFromPagePosition(
+        ...pagePositionMock
+    );
 
     expect(canvasPosition).toEqual(expectedCanvasPosition);
 });
@@ -34,7 +36,9 @@ test('.calculateCanvasPositionFromPagePosition() returns an [x, y] array with pr
 test('.calculateRelativePositionFromCanvasPosition() returns an [x, y] array of kilometers offset from the airport', () => {
     const canvasPositionMock = [533.6571116862411, -529.6559736409592];
     const expectedResult = [66.70713896078014, -66.2069967051199];
-    const result = CanvasStageModel.calculateRelativePositionFromCanvasPosition(...canvasPositionMock);
+    const result = CanvasStageModel.calculateRelativePositionFromCanvasPosition(
+        ...canvasPositionMock
+    );
 
     expect(result).toEqual(expectedResult);
 });
@@ -42,7 +46,8 @@ test('.calculateRelativePositionFromCanvasPosition() returns an [x, y] array of 
 test('.calculatePreciseCanvasPositionFromRelativePosition() returns an [x, y] array with precise canvas coordinate values', () => {
     const expectedResult = [533.6571116862411, -529.6559736409592];
     const positionMock = [66.70713896078014, 66.2069967051199];
-    const result = CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(positionMock);
+    const result =
+        CanvasStageModel.calculatePreciseCanvasPositionFromRelativePosition(positionMock);
 
     expect(result).toEqual(expectedResult);
 });
@@ -50,7 +55,8 @@ test('.calculatePreciseCanvasPositionFromRelativePosition() returns an [x, y] ar
 test('.calculateRoundedCanvasPositionFromRelativePosition() returns an [x, y] array and rounded canvas coordinate values', () => {
     const expectedResult = [534, -530];
     const positionMock = [66.70713896078014, 66.2069967051199];
-    const result = CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(positionMock);
+    const result =
+        CanvasStageModel.calculateRoundedCanvasPositionFromRelativePosition(positionMock);
 
     expect(result).toEqual(expectedResult);
 });
@@ -84,7 +90,6 @@ test('.zoomOut() increases #_scale by SCALE.CHANGE_FACTOR', () => {
 test('.zoomOut() resets #_scale to #_scaleMin when #_scale is < #scaleMin', () => {
     CanvasStageModel._scale = 0.5;
     CanvasStageModel.zoomOut();
-
 
     expect(CanvasStageModel._scale === CanvasStageModel._scaleMin).toBe(true);
 });

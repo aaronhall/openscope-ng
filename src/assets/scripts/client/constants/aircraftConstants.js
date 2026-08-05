@@ -6,7 +6,7 @@
 export const FLIGHT_CATEGORY = {
     ARRIVAL: 'arrival',
     DEPARTURE: 'departure',
-    OVERFLIGHT: 'overflight'
+    OVERFLIGHT: 'overflight',
 };
 
 /**
@@ -112,7 +112,7 @@ export const FLIGHT_PHASE = {
      * @property LANDING
      * @type {string}
      */
-    LANDING: 'LANDING'
+    LANDING: 'LANDING',
 };
 
 /**
@@ -144,13 +144,13 @@ export const PERFORMANCE = {
     MAXIMUM_ALTITUDE_DIFFERENCE_CONSIDERED_ESTABLISHED_ON_GLIDEPATH: 100,
 
     /**
-    * Maximum distance from the current waypoint to allow us to proceed to the next waypoint
-    * due to a tight turn, without requiring us to continue toward the current waypoint.
-    *
-    * @property MAXIMUM_DISTANCE_TO_FLY_BY_WAYPOINT_NM
-    * @type {number}
-    * @final
-    */
+     * Maximum distance from the current waypoint to allow us to proceed to the next waypoint
+     * due to a tight turn, without requiring us to continue toward the current waypoint.
+     *
+     * @property MAXIMUM_DISTANCE_TO_FLY_BY_WAYPOINT_NM
+     * @type {number}
+     * @final
+     */
     MAXIMUM_DISTANCE_TO_FLY_BY_WAYPOINT_NM: 5,
 
     /**
@@ -260,7 +260,7 @@ export const PERFORMANCE = {
      * @type {number}
      * @final
      */
-    DEFAULT_ALTIMETER_IN_INHG: 29.92
+    DEFAULT_ALTIMETER_IN_INHG: 29.92,
 };
 
 /**
@@ -297,7 +297,7 @@ export const SEPARATION = {
      * @type {number}
      * @final
      */
-    VERTICAL_FT: 1000
+    VERTICAL_FT: 1000,
 };
 
 /**
@@ -311,23 +311,23 @@ export const WAKE_TURBULENCE_CATEGORY = {
     LIGHT: {
         LETTER: 'L',
         APPEND: false,
-        SPOKEN: ''
+        SPOKEN: '',
     },
     MEDIUM: {
         LETTER: 'M',
         APPEND: false,
-        SPOKEN: ''
+        SPOKEN: '',
     },
     HEAVY: {
         LETTER: 'H',
         APPEND: true,
-        SPOKEN: 'heavy'
+        SPOKEN: 'heavy',
     },
     SUPER: {
         LETTER: 'J',
         APPEND: true,
-        SPOKEN: 'super'
-    }
+        SPOKEN: 'super',
+    },
 };
 
 /**
@@ -342,5 +342,5 @@ export const ENGINE_TYPE = {
     JET: 'J',
     PISTON: 'P',
     ROCKET: 'R',
-    TURBOPROP: 'T'
+    TURBOPROP: 'T',
 };

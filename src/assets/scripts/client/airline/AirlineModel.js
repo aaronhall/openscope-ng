@@ -32,8 +32,10 @@ export default class AirlineModel extends BaseModel {
         super();
 
         if (isEmptyOrNotObject(airlineDefinition)) {
-            throw new TypeError('Invalid airlineDefinition passed to AirlineModel constructor. ' +
-                `Expected a non-empty object, but received ${typeof airlineDefinition}`);
+            throw new TypeError(
+                'Invalid airlineDefinition passed to AirlineModel constructor. ' +
+                    `Expected a non-empty object, but received ${typeof airlineDefinition}`
+            );
         }
 
         /**
@@ -75,9 +77,9 @@ export default class AirlineModel extends BaseModel {
              * @property callsignFormats
              * @type {Array}
              * @default ['###']
-            */
+             */
 
-            callsignFormats: [DEFAULT_CALLSIGN_FORMAT]
+            callsignFormats: [DEFAULT_CALLSIGN_FORMAT],
         };
 
         /**
@@ -92,7 +94,7 @@ export default class AirlineModel extends BaseModel {
              * @type {array}
              * @default []
              */
-            default: []
+            default: [],
         };
 
         /**
@@ -151,7 +153,11 @@ export default class AirlineModel extends BaseModel {
         // TODO: these _get() lines are likely redundant and could be removed only after proper testing
         this.icao = _get(airlineDefinition, 'icao', this.icao).toLowerCase();
         this.radioName = _get(airlineDefinition, 'callsign.name', this.radioName);
-        this.flightNumberGeneration.callsignFormats = _get(airlineDefinition, 'callsign.callsignFormats', this.flightNumberGeneration.callsignFormats); // eslint-disable-line max-len
+        this.flightNumberGeneration.callsignFormats = _get(
+            airlineDefinition,
+            'callsign.callsignFormats',
+            this.flightNumberGeneration.callsignFormats
+        );
         this.fleets = _get(airlineDefinition, 'fleets');
 
         this._transformFleetNamesToLowerCase();
@@ -204,7 +210,7 @@ export default class AirlineModel extends BaseModel {
      * @for AirlineModel
      * @method generateFlightNumber
      * @return flightNumber {string}
-    */
+     */
     generateFlightNumber() {
         const flightNumber = buildFlightNumber(this.flightNumberGeneration.callsignFormats);
 
@@ -250,8 +256,9 @@ export default class AirlineModel extends BaseModel {
     _getRandomAircraftTypeFromFleet(fleetName) {
         // if we want to be uber defensive here we would lowercase the `fleetName` param
         if (!this._hasFleet(fleetName)) {
-            // eslint-disable-next-line max-len
-            throw new Error(`Invalid fleetName passed to AirlineModel. ${fleetName} is not a fleet defined in ${this.icao}`);
+            throw new Error(
+                `Invalid fleetName passed to AirlineModel. ${fleetName} is not a fleet defined in ${this.icao}`
+            );
         }
 
         const fleet = this.fleets[fleetName];

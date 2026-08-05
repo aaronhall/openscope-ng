@@ -1,11 +1,6 @@
 import _forEach from 'lodash/forEach';
 import _map from 'lodash/map';
-import {
-    sin,
-    cos,
-    abs,
-    clamp
-} from './core';
+import { sin, cos, abs, clamp } from './core';
 import { radians_normalize } from './circle';
 import { degreesToRadians } from '../utilities/unitConverters';
 
@@ -16,7 +11,7 @@ import { degreesToRadians } from '../utilities/unitConverters';
  */
 export const vlen = (v) => {
     try {
-        return Math.sqrt((v[0] * v[0]) + (v[1] * v[1]));
+        return Math.sqrt(v[0] * v[0] + v[1] * v[1]);
     } catch (err) {
         console.error(`call to vlen() failed. v:${v} | Err:${err}`);
     }
@@ -75,10 +70,7 @@ export const vnorm = (v, length) => {
         length = 1;
     }
 
-    return [
-        sin(angle) * length,
-        cos(angle) * length
-    ];
+    return [sin(angle) * length, cos(angle) * length];
 };
 
 /**
@@ -91,10 +83,7 @@ export const vectorize2dFromRadians = (heading_angle) => {
     // normalize the angle beetween 0 and 2*PI
     heading_angle = radians_normalize(heading_angle);
 
-    return [
-        sin(heading_angle),
-        cos(heading_angle)
-    ];
+    return [sin(heading_angle), cos(heading_angle)];
 };
 
 /**
@@ -196,14 +185,13 @@ export const vscale = (vectors, factor) => {
 const vdet = (v1, v2, /* optional */ v3) => {
     if (Math.min(v1.length, v2.length) === 2) {
         // 2x2 determinant
-        return (v1[0] * v2[1]) - (v1[1] * v2[0]);
+        return v1[0] * v2[1] - v1[1] * v2[0];
     } else if (Math.min(v1.length, v2.length, v3.length) === 3 && v3) {
         // 3x3 determinant
         return (
-            v1[0] *
-            vdet([v2[1], v2[2]], [v3[1], v3[2]]) - v1[1] *
-            vdet([v2[0], v2[2]], [v3[0], v3[2]]) + v1[2] *
-            vdet([v2[0], v2[1]], [v3[0], v3[1]])
+            v1[0] * vdet([v2[1], v2[2]], [v3[1], v3[2]]) -
+            v1[1] * vdet([v2[0], v2[2]], [v3[0], v3[2]]) +
+            v1[2] * vdet([v2[0], v2[1]], [v3[0], v3[1]])
         );
     }
 };
@@ -225,7 +213,7 @@ const vcp = (v1, v2) => {
         return [
             vdet([v1[1], v1[2]], [v2[1], v2[2]]),
             -vdet([v1[0], v1[2]], [v2[0], v2[2]]),
-            vdet([v1[0], v1[1]], [v2[0], v2[1]])
+            vdet([v1[0], v1[1]], [v2[0], v2[1]]),
         ];
     }
 };
@@ -243,10 +231,7 @@ export const vturn = (radians, v) => {
     const cs = cos(-radians);
     const sn = sin(-radians);
 
-    return [
-        x * cs - y * sn,
-        x * sn + y * cs
-    ];
+    return [x * cs - y * sn, x * sn + y * cs];
 };
 
 /**
@@ -267,12 +252,11 @@ export const raysIntersect = (pos1, dir1, pos2, dir2, deg_allowance) => {
     const t_norm = abs(vcp(vsub(vnorm(q), vnorm(p)), s) / vcp(r, s));
     const u_norm = abs(vcp(vsub(vnorm(q), vnorm(p)), r) / vcp(r, s));
 
-    if (abs(vcp(r, s)) < abs(vcp([0, 1], vectorize2dFromRadians(degreesToRadians(deg_allowance))))) {
+    if (
+        abs(vcp(r, s)) < abs(vcp([0, 1], vectorize2dFromRadians(degreesToRadians(deg_allowance))))
+    ) {
         // parallel (within allowance)
-        const crossProduct = vcp(
-            vsub(vnorm(q), vnorm(p)),
-            r
-        );
+        const crossProduct = vcp(vsub(vnorm(q), vnorm(p)), r);
 
         if (crossProduct === 0) {
             // collinear
@@ -281,7 +265,7 @@ export const raysIntersect = (pos1, dir1, pos2, dir2, deg_allowance) => {
 
         // parallel, non-intersecting
         return false;
-    } else if ((t_norm >= 0 && t_norm <= 1) && (u_norm >= 0 && u_norm <= 1)) {
+    } else if (t_norm >= 0 && t_norm <= 1 && u_norm >= 0 && u_norm <= 1) {
         // rays intersect here
         return vadd(p, vscale(r, t));
     }
@@ -353,18 +337,16 @@ export const distance_to_poly = (point, poly) => {
         let j;
 
         if (y2 !== 0) {
-            j = (x3 - x1 - x2 * y3 / y2 + x2 * y1 / y2) / (x2 * y4 / y2 - x4);
+            j = (x3 - x1 - (x2 * y3) / y2 + (x2 * y1) / y2) / ((x2 * y4) / y2 - x4);
             k = (y3 + j * y4 - y1) / y2;
-        } else if (x2 !== 0) { // normal can't be zero unless the edge has 0 length
-            j = (y3 - y1 - y2 * x3 / x2 + y2 * x1 / x2) / (y2 * x4 / x2 - y4);
+        } else if (x2 !== 0) {
+            // normal can't be zero unless the edge has 0 length
+            j = (y3 - y1 - (y2 * x3) / x2 + (y2 * x1) / x2) / ((y2 * x4) / x2 - y4);
             k = (x3 + j * x4 - x1) / x2;
         }
 
         if (j < 0 || j > 1 || !j) {
-            return Math.min(
-                vlen(vsub(point, vertex1)),
-                vlen(vsub(point, vertex2))
-            );
+            return Math.min(vlen(vsub(point, vertex1)), vlen(vsub(point, vertex2)));
         }
 
         return vlen(vscale(norm, k));
@@ -388,7 +370,7 @@ export const point_in_poly = (point, vs) => {
         const yi = poly[1];
         const xj = vs[j][0];
         const yj = vs[j][1];
-        const intersect = ((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+        const intersect = yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi;
 
         if (intersect) {
             inside = !inside;
@@ -423,7 +405,7 @@ export const point_to_mpoly = (point, mpoly) => {
             // if by change in one of inner rings, it's out of poly, return distance to the inner ring
             return {
                 inside: false,
-                distance: distance_to_poly(point, ring)
+                distance: distance_to_poly(point, ring),
             };
         }
     });
@@ -431,7 +413,7 @@ export const point_to_mpoly = (point, mpoly) => {
     // if not matched to inner circles, return the match to outer and distance to it
     return {
         inside: inside,
-        distance: distance_to_poly(point, mpoly[0])
+        distance: distance_to_poly(point, mpoly[0]),
     };
 };
 
@@ -450,7 +432,6 @@ export const area_to_poly = (area) => {
 export const point_in_area = (point, area) => {
     return point_in_poly(point, area_to_poly(area));
 };
-
 
 // TODO: this might be best accomplished with a Rectangle class, with this function working as the middleman
 // creating the class and asking if there is an intersection.

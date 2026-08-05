@@ -3,9 +3,7 @@
     "name": "Shanghai Airlines",
     "callsign": {
         "name": "Shanghai Air",
-        "callsignFormats": [
-            "###"
-        ]
+        "callsignFormats": ["###"]
     },
     "fleets": {
         "default": [

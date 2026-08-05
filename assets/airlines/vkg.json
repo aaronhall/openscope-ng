@@ -3,9 +3,7 @@
     "name": "Sunclass Airlines",
     "callsign": {
         "name": "Viking",
-        "callsignFormats": [
-            "####"
-        ]
+        "callsignFormats": ["####"]
     },
     "fleets": {
         "default": [
@@ -17,8 +15,6 @@
             ["A332", 1],
             ["A333", 3]
         ],
-        "short": [
-            ["A321", 8]
-        ]
+        "short": [["A321", 8]]
     }
 }

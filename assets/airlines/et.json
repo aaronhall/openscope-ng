@@ -3,9 +3,7 @@
     "name": "General Aviation Ethiopia",
     "callsign": {
         "name": "Echo Tanga",
-        "callsignFormats": [
-            "@@@"
-        ]
+        "callsignFormats": ["@@@"]
     },
     "fleets": {
         "default": [
