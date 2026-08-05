@@ -20,7 +20,7 @@ Most procedures for KABQ are RNAV, so controllers only need to vector arriving a
 
 Non-RNAV departures apply to all runways.
 
-### Sectors Available in openScope
+### Sectors Available in openScope NG
 ```
 N - North Approach
 S - South Approach

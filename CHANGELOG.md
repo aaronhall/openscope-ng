@@ -1,3 +1,10 @@
+# 0.1.0 (August 5, 2026)
+
+### Fork
+
+- First openScope NG release, based on openScope 6.29.0-BETA (upstream develop).
+- Includes the Vite build migration and current maintenance updates.
+
 # 6.29.0 (October 1, 2022)
 ### New Features
 - <a href="https://github.com/openscope/openscope/issues/2000" target="_blank">#2000</a> - Add popup info for score changes

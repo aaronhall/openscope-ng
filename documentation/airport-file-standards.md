@@ -4,9 +4,9 @@
 
 This document serves as a checklist for airport contributors to review to ensure their airport file is "up to snuff". There are two levels of airports: `Standard` and `Premium`, the latter designator being used only for our most pristine, complete, realistic, and well-documented airports. In order for a new airport to be merged, it must at least meet all the `Standard` specifications listed in the section below. If it does not meet these requirements, it will require extra work before being merged. It will often require a team of people to complete work on an airport, because of the wide variety of tasks to complete.
 
-If you ever need help working on an airport, the best place to go is the [openScope Slack](https://openscopeatc.slack.com) ([click here if you need an invite](https://join.slack.com/t/openscopeatc/shared_invite/zt-g9wq2mch-B7Z9IltlgxgCBC2dBYPjiw)). There is always somebody available, and many who will be glad to walk you through anything you may need help with.
+If you ever need help working on an airport, open an [issue](https://github.com/aaronhall/openscope-ng/issues) on the repository.
 
-If you have not contributed before, please note that we will need to add you to the organization so you can keep your branch _directly_ on the openScope repository. We do all branching and pull requests internally like this, instead of using forks. Join slack and request to be invited to the openScope team by `@erikquinn`.
+If you have not contributed before, please note that this project is a fork of [openScope](https://github.com/openscope/openscope). Fork the repository, create a branch off `develop`, and open a pull request back into `develop` with your changes.
 
 ---
 
@@ -14,7 +14,7 @@ If you have not contributed before, please note that we will need to add you to 
 
 ### Terrain GeoJSON File
 
-Even if it is empty, a terrain file must be included as part of the pull request. We ask that the qGIS files used in the generation of the terrain GeoJSON file also be uploaded to the [openscope/airport-modeling](https://github.com/openscope/airport-modeling) repository. This way, if an airspace boundary is changed, we can regenerate the terrain file in far less time. This takes a long time to generate, and is quite a pain, but there are people on slack who would be happy to do it for you. See the Reference Materials for a step-by-step guide on how to generate terrain using qGIS.
+Even if it is empty, a terrain file must be included as part of the pull request. We ask that the qGIS files used in the generation of the terrain GeoJSON file also be uploaded to the [openscope/airport-modeling](https://github.com/openscope/airport-modeling) repository. This way, if an airspace boundary is changed, we can regenerate the terrain file in far less time. This takes a long time to generate, and is quite a pain, but there are people who would be happy to do it for you. See the Reference Materials for a step-by-step guide on how to generate terrain using qGIS.
 
 ### Polygonal Airspace Boundary
 
@@ -35,7 +35,7 @@ A reference link shall be provided, validating the yearly traffic count, so the 
 
 ### Base video map
 
-A "video map" must be provided with all airports. For most US airports, these are easily found by checking with the appropriate ARTCC within VATUSA on VATSIM. In many other countries, however, these are not available to the public. If the originals cannot be obtained, an appropriate and well-thought-out video map must be created. Using qGIS (see reference materials) is the best way to do this. If you need any help with the creation of a video map, feel free to reach out to us on Slack, where someone will be happy to help you out.
+A "video map" must be provided with all airports. For most US airports, these are easily found by checking with the appropriate ARTCC within VATUSA on VATSIM. In many other countries, however, these are not available to the public. If the originals cannot be obtained, an appropriate and well-thought-out video map must be created. Using qGIS (see reference materials) is the best way to do this. If you need any help with the creation of a video map, feel free to open an [issue](https://github.com/aaronhall/openscope-ng/issues), where someone will be happy to help you out.
 
 ### Spacing
 
