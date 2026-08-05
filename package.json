@@ -9,15 +9,12 @@
   "scripts": {
     "build": "gulp build --prod",
     "build:dev": "gulp build",
-    "coveralls": "nyc report -r text-lcov | coveralls",
     "gulp": "gulp build",
     "lint-diff": "lint-diff",
     "lint": "eslint src/assets/scripts/client/**",
-    "posttest": "npm run report",
-    "report": "nyc report --reporter=cobertura --reporter=lcov",
     "server": "npm run start",
     "start": "node public/assets/scripts/server/index.js",
-    "test": "nyc ava --concurrency=5",
+    "test": "ava --concurrency=5",
     "validator": "validator -a"
   },
   "repository": {
@@ -59,23 +56,12 @@
       "./test/testHelpers/setupBrowserEnv.js"
     ]
   },
-  "nyc": {
-    "all": false,
-    "include": [
-      "src/assets/scripts/**/*.js",
-      "!src/assets/scripts/client/constants/**/*.js",
-      "!**/_mocks/**",
-      "!**/fixtures/**",
-      "!**/testHelpers/**",
-      "!**/public/**"
-    ]
-  },
   "dependencies": {
     "ansi-colors": "3.2.4",
-    "express": "4.16.4",
-    "handlebars": "4.1.2",
+    "express": "4.22.2",
+    "handlebars": "4.7.9",
     "jquery": "3.5.0",
-    "lodash": "4.17.21",
+    "lodash": "4.18.1",
     "raf": "3.4.1"
   },
   "devDependencies": {
@@ -123,7 +109,6 @@
     "lint-diff": "1.2.1",
     "merge-stream": "1.0.1",
     "mkdirp": "0.5.1",
-    "nyc": "14.1.0",
     "path": "0.12.7",
     "rimraf": "2.6.3",
     "showdown": "1.9.1",
