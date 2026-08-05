@@ -46,8 +46,8 @@ jobs:
                   node-version: 24.19.0
             - name: Install dependencies
               run: npm install
-            - name: Run test suite
-              run: npm run test
+            - name: Run test suite with coverage
+              run: npm run test -- --coverage
             - name: Check test coverage versus previous commit (via coveralls.io)
               uses: coverallsapp/github-action@master
               with:

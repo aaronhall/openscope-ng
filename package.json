@@ -57,6 +57,7 @@
     "devDependencies": {
         "@eslint/js": "9.39.0",
         "@openscope/validator": "latest",
+        "@vitest/coverage-v8": "4.1.10",
         "autoprefixer": "10.5.4",
         "eslint": "9.39.5",
         "eslint-config-prettier": "10.1.8",

@@ -9,5 +9,8 @@ export default defineConfig({
             './test/testHelpers/setupBrowserEnv.js',
         ],
         globals: true,
+        coverage: {
+            reporter: ['text', 'html', 'clover', 'json', 'lcov'],
+        },
     },
 });
